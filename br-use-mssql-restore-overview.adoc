@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: br-use-mssql-restore-overview.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: Sicherungen Ihrer Daten stehen zur Wiederherstellung an den Speicherorten zur Verfügung, an denen Sie Sicherungen erstellt haben. Dazu gehören Snapshots, Replikationen und Sicherungen im Objektspeicher.  Überprüfen Sie die Wiederherstellungsorte, Wiederherstellungspunkte und wiederherzustellenden Ressourcentypen. 
+---
+= Übersicht über die Wiederherstellung von Microsoft SQL-Workloads mit NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sicherungen Ihrer Microsoft SQL Server-Daten von NetApp Backup and Recovery stehen für die Wiederherstellung an den Speicherorten zur Verfügung, an die Sie die Sicherungen verschoben haben: Snapshots, Replikationen oder Sicherungen im Objektspeicher.  Sie können eine Workload auf dem ursprünglichen System, auf einem anderen System, das dasselbe Cloud-Konto verwendet, oder auf einem lokalen ONTAP -System wiederherstellen.  Überprüfen Sie die Wiederherstellungsorte, Wiederherstellungspunkte und wiederherzustellenden Ressourcentypen.
+
+.Von diesen Speicherorten wiederherstellen
+Sie können Workloads von verschiedenen Startorten wiederherstellen:
+
+* Wiederherstellung von einem primären Speicherort
+* Wiederherstellen aus einer replizierten Ressource
+* Wiederherstellung aus einer Objektspeichersicherung
+
+
+.Stellen Sie diese Punkte wieder her
+Sie können Daten bis zum letzten Snapshot oder bis zu diesen Punkten wiederherstellen:
+
+* Wiederherstellen aus Snapshots
+* Wiederherstellung zu einem bestimmten Zeitpunkt.  Dies ist hilfreich, wenn Sie den Namen und Speicherort der Datei sowie das Datum kennen, an dem sie zuletzt in gutem Zustand war.
+* Wiederherstellen der neuesten Sicherung
+
+
+
+
+== Was kommt als nächstes
+
+Einzelheiten zum Wiederherstellen von Workloads finden Sie unterlink:br-use-mssql-restore.html["Wiederherstellen von Workloads"] .

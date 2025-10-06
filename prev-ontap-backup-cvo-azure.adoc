@@ -1,0 +1,468 @@
+---
+sidebar: sidebar 
+permalink: prev-ontap-backup-cvo-azure.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Schützen Sie Ihre VMware-Workloads mit NetApp NetApp Backup and Recovery. 
+---
+= Sichern Sie Cloud Volumes ONTAP -Daten mit NetApp Backup and Recovery auf Azure Blob Storage
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Führen Sie einige Schritte in NetApp Backup and Recovery aus, um mit der Sicherung von Volumedaten von Ihren Cloud Volumes ONTAP -Systemen in Azure Blob Storage zu beginnen.
+
+[]
+====
+*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup und Recovery-Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup- und Recovery-Workloads"] .
+
+====
+
+
+== Überprüfen der Unterstützung für Ihre Konfiguration
+
+Lesen Sie die folgenden Anforderungen, um sicherzustellen, dass Sie über eine unterstützte Konfiguration verfügen, bevor Sie mit der Sicherung von Volumes im Azure Blob-Speicher beginnen.
+
+Das folgende Bild zeigt jede Komponente und die Verbindungen, die Sie zwischen ihnen vorbereiten müssen.
+
+Optional können Sie auch über die öffentliche oder private Verbindung eine Verbindung zu einem sekundären ONTAP System für replizierte Volumes herstellen.
+
+image:diagram_cloud_backup_cvo_azure.png["Ein Diagramm, das zeigt, wie NetApp Backup and Recovery mit den Volumes auf den Quellsystemen und dem Zielspeicher kommuniziert, auf dem sich die Sicherungsdateien befinden."]
+
+Unterstützte ONTAP -Versionen:: Mindestens ONTAP 9.8; ONTAP 9.8P13 und höher wird empfohlen.
+Unterstützte Azure-Regionen:: NetApp Backup and Recovery wird in allen Azure-Regionen unterstützt, einschließlich der Azure Government-Regionen.
++
+--
+Standardmäßig stellt NetApp Backup and Recovery den Blob-Container zur Kostenoptimierung mit lokaler Redundanz (LRS) bereit.  Sie können diese Einstellung nach der Aktivierung von NetApp Backup and Recovery in Zonenredundanz (ZRS) ändern, wenn Sie sicherstellen möchten, dass Ihre Daten zwischen verschiedenen Zonen repliziert werden.  Siehe die Microsoft-Anweisungen für https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration?tabs=portal["Ändern der Replikation Ihres Speicherkontos"^] .
+
+--
+Erforderliche Einrichtung zum Erstellen von Sicherungen in einem anderen Azure-Abonnement:: Standardmäßig werden Backups mit demselben Abonnement erstellt, das auch für Ihr Cloud Volumes ONTAP -System verwendet wird.
+
+
+
+
+== Überprüfen der Lizenzanforderungen
+
+Für die PAYGO-Lizenzierung von NetApp Backup and Recovery ist ein Abonnement über den Azure Marketplace erforderlich, bevor Sie NetApp Backup and Recovery aktivieren.  Die Abrechnung für NetApp Backup and Recovery erfolgt über dieses Abonnement. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-otc-azure.html["Sie können sich über die Seite „Details und Anmeldeinformationen“ des Systemassistenten anmelden."^] .
+
+Für die NetApp Backup and Recovery BYOL-Lizenzierung benötigen Sie die Seriennummer von NetApp , die Ihnen die Nutzung des Dienstes für die Dauer und Kapazität der Lizenz ermöglicht. link:br-start-licensing.html["Erfahren Sie, wie Sie Ihre BYOL-Lizenzen verwalten"] .  Sie müssen eine BYOL-Lizenz verwenden, wenn der Konsolenagent und das Cloud Volumes ONTAP -System an einem dunklen Standort („privater Modus“) bereitgestellt werden.
+
+Und Sie benötigen ein Microsoft Azure-Abonnement für den Speicherplatz, auf dem Ihre Backups gespeichert werden.
+
+
+
+== Vorbereiten Ihres Konsolenagenten
+
+Der Konsolen-Agent kann in einer Azure-Region mit vollständigem oder eingeschränktem Internetzugang („Standard“- oder „eingeschränkter“ Modus) installiert werden. https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Weitere Informationen finden Sie unter Bereitstellungsmodi der NetApp Konsole."^] .
+
+* https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["Erfahren Sie mehr über Konsolenagenten"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-azure.html["Bereitstellen eines Konsolen-Agenten in Azure im Standardmodus (vollständiger Internetzugang)"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-restricted-mode.html["Installieren Sie den Konsolenagenten im eingeschränkten Modus (eingeschränkter ausgehender Zugriff)."^]
+
+
+
+
+=== Überprüfen oder Hinzufügen von Berechtigungen für den Konsolenagenten
+
+Um die Such- und Wiederherstellungsfunktion von NetApp Backup and Recovery verwenden zu können, benötigen Sie bestimmte Berechtigungen in der Rolle für den Konsolenagenten, damit dieser auf den Azure Synapse-Arbeitsbereich und das Data Lake-Speicherkonto zugreifen kann.  Sehen Sie sich die Berechtigungen unten an und befolgen Sie die Schritte, wenn Sie die Richtlinie ändern müssen.
+
+.Bevor Sie beginnen
+* Sie müssen den Azure Synapse Analytics-Ressourcenanbieter (genannt „Microsoft.Synapse“) mit Ihrem Abonnement registrieren. https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["Erfahren Sie, wie Sie diesen Ressourcenanbieter für Ihr Abonnement registrieren."^] .  Sie müssen der *Eigentümer* oder *Mitwirkende* des Abonnements sein, um den Ressourcenanbieter zu registrieren.
+* Port 1433 muss für die Kommunikation zwischen dem Konsolen-Agent und den Azure Synapse SQL-Diensten geöffnet sein.
+
+
+.Schritte
+. Identifizieren Sie die der virtuellen Maschine des Konsolenagenten zugewiesene Rolle:
++
+.. Öffnen Sie im Azure-Portal den Dienst für virtuelle Computer.
+.. Wählen Sie die virtuelle Maschine des Konsolenagenten aus.
+.. Wählen Sie unter „Einstellungen“ die Option „Identität“ aus.
+.. Wählen Sie *Azure-Rollenzuweisungen* aus.
+.. Notieren Sie sich die benutzerdefinierte Rolle, die der virtuellen Maschine des Konsolenagenten zugewiesen ist.
+
+
+. Aktualisieren Sie die benutzerdefinierte Rolle:
++
+.. Öffnen Sie im Azure-Portal Ihr Azure-Abonnement.
+.. Wählen Sie *Zugriffskontrolle (IAM) > Rollen*.
+.. Wählen Sie die Auslassungspunkte (*...*) für die benutzerdefinierte Rolle und wählen Sie dann *Bearbeiten*.
+.. Wählen Sie *JSON* aus und fügen Sie die folgenden Berechtigungen hinzu:
++
+[%collapsible]
+====
+[source, json]
+----
+"Microsoft.Storage/storageAccounts/listkeys/action",
+"Microsoft.Storage/storageAccounts/read",
+"Microsoft.Storage/storageAccounts/write",
+"Microsoft.Storage/storageAccounts/blobServices/containers/read",
+"Microsoft.Storage/storageAccounts/listAccountSas/action",
+"Microsoft.KeyVault/vaults/read",
+"Microsoft.KeyVault/vaults/accessPolicies/write",
+"Microsoft.Network/networkInterfaces/read",
+"Microsoft.Resources/subscriptions/locations/read",
+"Microsoft.Network/virtualNetworks/read",
+"Microsoft.Network/virtualNetworks/subnets/read",
+"Microsoft.Resources/subscriptions/resourceGroups/read",
+"Microsoft.Resources/subscriptions/resourcegroups/resources/read",
+"Microsoft.Resources/subscriptions/resourceGroups/write",
+"Microsoft.Authorization/locks/*",
+"Microsoft.Network/privateEndpoints/write",
+"Microsoft.Network/privateEndpoints/read",
+"Microsoft.Network/privateDnsZones/virtualNetworkLinks/write",
+"Microsoft.Network/virtualNetworks/join/action",
+"Microsoft.Network/privateDnsZones/A/write",
+"Microsoft.Network/privateDnsZones/read",
+"Microsoft.Network/privateDnsZones/virtualNetworkLinks/read",
+"Microsoft.Network/networkInterfaces/delete",
+"Microsoft.Network/networkSecurityGroups/delete",
+"Microsoft.Resources/deployments/delete",
+"Microsoft.ManagedIdentity/userAssignedIdentities/assign/action",
+"Microsoft.Synapse/workspaces/write",
+"Microsoft.Synapse/workspaces/read",
+"Microsoft.Synapse/workspaces/delete",
+"Microsoft.Synapse/register/action",
+"Microsoft.Synapse/checkNameAvailability/action",
+"Microsoft.Synapse/workspaces/operationStatuses/read",
+"Microsoft.Synapse/workspaces/firewallRules/read",
+"Microsoft.Synapse/workspaces/replaceAllIpFirewallRules/action",
+"Microsoft.Synapse/workspaces/operationResults/read",
+"Microsoft.Synapse/workspaces/privateEndpointConnectionsApproval/action"
+----
+====
++
+https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-azure.html["Vollständiges JSON-Format für die Richtlinie anzeigen"^]
+
+.. Wählen Sie *Überprüfen + Aktualisieren* und dann *Aktualisieren*.
+
+
+
+
+
+
+=== Erforderliche Informationen zur Verwendung von kundenverwalteten Schlüsseln zur Datenverschlüsselung
+
+Sie können im Aktivierungsassistenten Ihre eigenen, vom Kunden verwalteten Schlüssel zur Datenverschlüsselung verwenden, anstatt die standardmäßigen, von Microsoft verwalteten Verschlüsselungsschlüssel zu verwenden.  In diesem Fall benötigen Sie das Azure-Abonnement, den Key Vault-Namen und den Schlüssel. https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["Erfahren Sie, wie Sie Ihre eigenen Schlüssel verwenden"^] .
+
+NetApp Backup and Recovery unterstützt _Azure-Zugriffsrichtlinien_, das _Azure-rollenbasierte Zugriffssteuerungsmodell_ (Azure RBAC) und das _Managed Hardware Security Model_ (HSM) (siehe https://learn.microsoft.com/en-us/azure/key-vault/managed-hsm/overview["Was ist Azure Key Vault Managed HSM?"] ).
+
+
+
+=== Erstellen Ihres Azure Blob-Speicherkontos
+
+Standardmäßig erstellt der Dienst Speicherkonten für Sie.  Wenn Sie Ihre eigenen Speicherkonten verwenden möchten, können Sie diese vor dem Starten des Sicherungsaktivierungsassistenten erstellen und diese Speicherkonten dann im Assistenten auswählen.
+
+link:prev-ontap-protect-journey.html["Erfahren Sie mehr über das Erstellen eigener Speicherkonten"] .
+
+
+
+== Überprüfen Sie die ONTAP Netzwerkanforderungen für die Replikation von Volumes
+
+Wenn Sie mit NetApp Backup and Recovery replizierte Volumes auf einem sekundären ONTAP System erstellen möchten, stellen Sie sicher, dass die Quell- und Zielsysteme die folgenden Netzwerkanforderungen erfüllen.
+
+
+
+==== On-Premises ONTAP Netzwerkanforderungen
+
+* Wenn sich der Cluster in Ihren Räumlichkeiten befindet, sollten Sie über eine Verbindung von Ihrem Unternehmensnetzwerk zu Ihrem virtuellen Netzwerk beim Cloud-Anbieter verfügen.  Dies ist normalerweise eine VPN-Verbindung.
+* ONTAP -Cluster müssen zusätzliche Subnetz-, Port-, Firewall- und Clusteranforderungen erfüllen.
++
+Da Sie auf Cloud Volumes ONTAP oder lokale Systeme replizieren können, überprüfen Sie die Peering-Anforderungen für lokale ONTAP -Systeme. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Voraussetzungen für Cluster-Peering in der ONTAP Dokumentation anzeigen"^] .
+
+
+
+
+
+==== Netzwerkanforderungen für Cloud Volumes ONTAP
+
+* Die Sicherheitsgruppe der Instanz muss die erforderlichen eingehenden und ausgehenden Regeln enthalten: insbesondere Regeln für ICMP und die Ports 11104 und 11105.  Diese Regeln sind in der vordefinierten Sicherheitsgruppe enthalten.
+
+
+* Um Daten zwischen zwei Cloud Volumes ONTAP Systemen in unterschiedlichen Subnetzen zu replizieren, müssen die Subnetze zusammen geroutet werden (dies ist die Standardeinstellung).
+
+
+
+
+== Aktivieren Sie NetApp Backup und Recovery auf Cloud Volumes ONTAP
+
+Die Aktivierung von NetApp Backup and Recovery ist einfach.  Die Schritte unterscheiden sich geringfügig, je nachdem, ob Sie über ein vorhandenes oder ein neues Cloud Volumes ONTAP System verfügen.
+
+* NetApp Backup and Recovery auf einem neuen System aktivieren*
+
+NetApp Backup and Recovery ist im Systemassistenten standardmäßig aktiviert.  Stellen Sie sicher, dass die Option aktiviert bleibt.
+
+Sehen https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-otc-azure.html["Starten von Cloud Volumes ONTAP in Azure"^] Informationen zu Anforderungen und Details zum Erstellen Ihres Cloud Volumes ONTAP Systems.
+
+
+NOTE: Wenn Sie den Namen der Ressourcengruppe auswählen möchten, *deaktivieren* Sie NetApp Backup and Recovery, wenn Sie Cloud Volumes ONTAP bereitstellen.
+
+.Schritte
+. Wählen Sie auf der Konsolenseite *Systeme* die Option *System hinzufügen*, wählen Sie den Cloud-Anbieter und wählen Sie *Neu hinzufügen*.  Wählen Sie * Cloud Volumes ONTAP erstellen*.
+. Wählen Sie *Microsoft Azure* als Cloud-Anbieter und wählen Sie dann einen Einzelknoten oder ein HA-System.
+. Geben Sie auf der Seite „Azure-Anmeldeinformationen definieren“ den Anmeldeinformationsnamen, die Client-ID, das Clientgeheimnis und die Verzeichnis-ID ein und wählen Sie *Weiter* aus.
+. Füllen Sie die Seite „Details und Anmeldeinformationen“ aus, stellen Sie sicher, dass ein Azure Marketplace-Abonnement vorhanden ist, und wählen Sie *Weiter* aus.
+. Lassen Sie den Dienst auf der Seite „Dienste“ aktiviert und wählen Sie *Weiter*.
+. Füllen Sie die Seiten im Assistenten aus, um das System bereitzustellen.
+
+
+.Ergebnis
+NetApp Backup and Recovery ist auf dem System aktiviert.  Nachdem Sie Volumes auf diesen Cloud Volumes ONTAP -Systemen erstellt haben, starten Sie NetApp Backup and Recovery undlink:prev-ontap-backup-manage.html["Aktivieren Sie die Sicherung auf jedem Volume, das Sie schützen möchten"] .
+
+*Aktivieren Sie NetApp Backup und Recovery auf einem vorhandenen System*
+
+Aktivieren Sie NetApp Backup und Recovery jederzeit direkt vom System aus.
+
+.Schritte
+. Wählen Sie auf der Konsolenseite *Systeme* das System aus und wählen Sie im rechten Bereich neben „Sicherung und Wiederherstellung“ die Option „Aktivieren“ aus.
++
+Wenn das Azure Blob-Ziel für Ihre Sicherungen als System auf der Konsolenseite *Systeme* vorhanden ist, können Sie den Cluster auf das Azure Blob-System ziehen, um den Setup-Assistenten zu starten.
+
+. Füllen Sie die Seiten im Assistenten aus, um NetApp Backup and Recovery bereitzustellen.
+. Wenn Sie Backups starten möchten, fahren Sie fort mit<<Aktivieren Sie Backups auf Ihren ONTAP -Volumes>> .
+
+
+
+
+== Aktivieren Sie Backups auf Ihren ONTAP -Volumes
+
+Aktivieren Sie Backups jederzeit direkt von Ihrem lokalen System aus.
+
+Ein Assistent führt Sie durch die folgenden Hauptschritte:
+
+* <<Wählen Sie die Volumes aus, die Sie sichern möchten>>
+* <<Definieren Sie die Sicherungsstrategie>>
+* <<Überprüfen Sie Ihre Auswahl>>
+
+
+Sie können auch<<API-Befehle anzeigen>> im Überprüfungsschritt, damit Sie den Code kopieren können, um die Sicherungsaktivierung für zukünftige Systeme zu automatisieren.
+
+
+
+=== Starten des Assistenten
+
+.Schritte
+. Greifen Sie auf eine der folgenden Arten auf den Assistenten „Sicherung und Wiederherstellung aktivieren“ zu:
++
+** Wählen Sie auf der Konsolenseite *Systeme* das System aus und wählen Sie im rechten Bereich neben „Sicherung und Wiederherstellung“ die Option „Aktivieren > Sicherungsvolumes“ aus.
++
+Wenn das Azure-Ziel für Ihre Sicherungen als System auf der Seite *Systeme* vorhanden ist, können Sie den ONTAP Cluster auf den Azure Blob-Objektspeicher ziehen.
+
+** Wählen Sie in der Leiste „Sichern und Wiederherstellen“ *Volumes* aus.  Wählen Sie auf der Registerkarte „Volumes“ die Option „Aktionen“ aus.image:icon-action.png["Symbol „Aktionen“"] und wählen Sie *Sicherung aktivieren* für ein einzelnes Volume (für das die Replikation oder Sicherung in den Objektspeicher noch nicht aktiviert ist).
+
+
++
+Auf der Einführungsseite des Assistenten werden die Schutzoptionen angezeigt, darunter lokale Snapshots, Replikation und Backups.  Wenn Sie in diesem Schritt die zweite Option gewählt haben, wird die Seite „Sicherungsstrategie definieren“ mit einem ausgewählten Volume angezeigt.
+
+. Fahren Sie mit den folgenden Optionen fort:
++
+** Wenn Sie bereits über einen Konsolenagenten verfügen, sind Sie startklar.  Wählen Sie einfach *Weiter*.
+** Wenn Sie noch keinen Konsolenagenten haben, wird die Option *Konsolenagenten hinzufügen* angezeigt. Weitere Informationen finden Sie unter <<Vorbereiten Ihres Konsolenagenten>> .
+
+
+
+
+
+
+=== Wählen Sie die Volumes aus, die Sie sichern möchten
+
+Wählen Sie die Volumes aus, die Sie schützen möchten.  Ein geschütztes Volume verfügt über eine oder mehrere der folgenden Eigenschaften: Snapshot-Richtlinie, Replikationsrichtlinie, Backup-to-Object-Richtlinie.
+
+Sie können FlexVol oder FlexGroup -Volumes schützen. Sie können jedoch keine Mischung dieser Volumes auswählen, wenn Sie die Sicherung für ein System aktivieren.  Erfahren Sie, wie Sielink:prev-ontap-backup-manage.html["Aktivieren Sie die Sicherung für zusätzliche Volumes im System"] (FlexVol oder FlexGroup), nachdem Sie die Sicherung für die ersten Volumes konfiguriert haben.
+
+[NOTE]
+====
+* Sie können eine Sicherung jeweils nur auf einem einzigen FlexGroup -Volume aktivieren.
+* Die von Ihnen ausgewählten Volumes müssen über dieselbe SnapLock Einstellung verfügen.  Auf allen Volumes muss SnapLock Enterprise aktiviert oder SnapLock sein.
+
+
+====
+.Schritte
+Wenn auf die von Ihnen ausgewählten Volumes bereits Snapshot- oder Replikationsrichtlinien angewendet wurden, werden diese vorhandenen Richtlinien durch die später ausgewählten Richtlinien überschrieben.
+
+. Wählen Sie auf der Seite „Volumes auswählen“ das oder die Volumes aus, die Sie schützen möchten.
++
+** Filtern Sie die Zeilen optional, um nur Bände mit bestimmten Bandtypen, Stilen usw. anzuzeigen und so die Auswahl zu erleichtern.
+** Nachdem Sie das erste Volume ausgewählt haben, können Sie alle FlexVol -Volumes auswählen.  (FlexGroup -Volumes können jeweils nur einzeln ausgewählt werden.)  Um alle vorhandenen FlexVol Volumes zu sichern, markieren Sie zuerst ein Volume und aktivieren Sie dann das Kontrollkästchen in der Titelzeile.
+** Um einzelne Volumes zu sichern, aktivieren Sie das Kontrollkästchen für jedes Volume.
+
+
+. Wählen Sie *Weiter*.
+
+
+
+
+=== Definieren Sie die Sicherungsstrategie
+
+Zum Definieren der Sicherungsstrategie müssen die folgenden Optionen festgelegt werden:
+
+* Ob Sie eine oder alle der Backup-Optionen wünschen: lokale Snapshots, Replikation und Backup auf Objektspeicher
+* Architektur
+* Lokale Snapshot-Richtlinie
+* Replikationsziel und -richtlinie
++
+
+NOTE: Wenn die von Ihnen ausgewählten Volumes andere Snapshot- und Replikationsrichtlinien haben als die Richtlinien, die Sie in diesem Schritt auswählen, werden die vorhandenen Richtlinien überschrieben.
+
+* Informationen zur Sicherung in Objektspeichern (Anbieter, Verschlüsselung, Netzwerk, Sicherungsrichtlinie und Exportoptionen).
+
+
+.Schritte
+. Wählen Sie auf der Seite „Sicherungsstrategie definieren“ eine oder alle der folgenden Optionen aus.  Alle drei sind standardmäßig ausgewählt:
++
+** *Lokale Snapshots*: Wenn Sie eine Replikation oder Sicherung im Objektspeicher durchführen, müssen lokale Snapshots erstellt werden.
+** *Replikation*: Erstellt replizierte Volumes auf einem anderen ONTAP Speichersystem.
+** *Backup*: Sichert Volumes im Objektspeicher.
+
+
+. *Architektur*: Wenn Sie Replikation und Sicherung gewählt haben, wählen Sie einen der folgenden Informationsflüsse:
++
+** *Kaskadierung*: Informationen fließen vom primären Speichersystem zum sekundären und vom sekundären zum Objektspeicher.
+** *Fan-out*: Informationen fließen vom primären Speichersystem zum sekundären _und_ vom primären zum Objektspeicher.
++
+Weitere Informationen zu diesen Architekturen finden Sie unterlink:prev-ontap-protect-journey.html["Planen Sie Ihren Schutzweg"] .
+
+
+
+. *Lokaler Snapshot*: Wählen Sie eine vorhandene Snapshot-Richtlinie aus oder erstellen Sie eine.
++
+
+TIP: Informationen zum Erstellen einer benutzerdefinierten Richtlinie vor der Aktivierung des Snapshots finden Sie unterlink:br-use-policies-create.html["Erstellen einer Richtlinie"] .
+
++
+Um eine Richtlinie zu erstellen, wählen Sie *Neue Richtlinie erstellen* und gehen Sie wie folgt vor:
+
++
+** Geben Sie den Namen der Richtlinie ein.
+** Wählen Sie bis zu fünf Zeitpläne aus, normalerweise mit unterschiedlicher Häufigkeit.
+** Wählen Sie *Erstellen*.
+
+
+. *Replikation*: Legen Sie die folgenden Optionen fest:
++
+** *Replikationsziel*: Wählen Sie das Zielsystem und die SVM aus.  Wählen Sie optional das oder die Zielaggregate sowie das Präfix oder Suffix aus, das dem Namen des replizierten Volumes hinzugefügt wird.
+** *Replikationsrichtlinie*: Wählen Sie eine vorhandene Replikationsrichtlinie aus oder erstellen Sie eine.
++
+
+TIP: Informationen zum Erstellen einer benutzerdefinierten Richtlinie vor der Aktivierung der Replikation finden Sie unterlink:br-use-policies-create.html["Erstellen einer Richtlinie"] .
+
++
+Um eine Richtlinie zu erstellen, wählen Sie *Neue Richtlinie erstellen* und gehen Sie wie folgt vor:
+
++
+*** Geben Sie den Namen der Richtlinie ein.
+*** Wählen Sie bis zu fünf Zeitpläne aus, normalerweise mit unterschiedlicher Häufigkeit.
+*** Wählen Sie *Erstellen*.
+
+
+
+
+. *Sichern auf Objekt*: Wenn Sie *Sichern* ausgewählt haben, legen Sie die folgenden Optionen fest:
++
+** *Anbieter*: Wählen Sie *Microsoft Azure*.
+** *Anbietereinstellungen*: Geben Sie die Anbieterdetails ein.
++
+Geben Sie die Region ein, in der die Sicherungen gespeichert werden.  Dies kann eine andere Region sein als die, in der sich das Cloud Volumes ONTAP -System befindet.
+
++
+Erstellen Sie entweder ein neues Speicherkonto oder wählen Sie ein vorhandenes aus.
+
++
+Geben Sie das Azure-Abonnement ein, das zum Speichern der Sicherungen verwendet wird.  Dies kann ein anderes Abonnement sein als das, in dem sich das Cloud Volumes ONTAP -System befindet.
+
++
+Erstellen Sie entweder Ihre eigene Ressourcengruppe, die den Blob-Container verwaltet, oder wählen Sie den Ressourcengruppentyp und die Gruppe aus.
+
++
+
+TIP: Wenn Sie Ihre Sicherungsdateien vor Änderungen oder Löschungen schützen möchten, stellen Sie sicher, dass das Speicherkonto mit aktiviertem unveränderlichem Speicher und einer Aufbewahrungsfrist von 30 Tagen erstellt wurde.
+
++
+
+TIP: Wenn Sie ältere Sicherungsdateien zur weiteren Kostenoptimierung in Azure Archive Storage auslagern möchten, stellen Sie sicher, dass das Speicherkonto über die entsprechende Lebenszyklusregel verfügt.
+
+** *Verschlüsselungsschlüssel*: Wenn Sie ein neues Azure-Speicherkonto erstellt haben, geben Sie die Informationen zum Verschlüsselungsschlüssel ein, die Sie vom Anbieter erhalten haben.  Wählen Sie, ob Sie die standardmäßigen Azure-Verschlüsselungsschlüssel verwenden oder Ihre eigenen, vom Kunden verwalteten Schlüssel aus Ihrem Azure-Konto auswählen möchten, um die Verschlüsselung Ihrer Daten zu verwalten.
++
+Wenn Sie Ihre eigenen, vom Kunden verwalteten Schlüssel verwenden möchten, geben Sie den Schlüsseltresor und die Schlüsselinformationen ein. https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["Erfahren Sie, wie Sie Ihre eigenen Schlüssel verwenden"^] .
+
+
+
++
+
+NOTE: Wenn Sie ein vorhandenes Microsoft-Speicherkonto ausgewählt haben, sind die Verschlüsselungsinformationen bereits verfügbar, sodass Sie sie jetzt nicht eingeben müssen.
+
++
+** *Netzwerk*: Wählen Sie den IP-Bereich und geben Sie an, ob Sie einen privaten Endpunkt verwenden möchten.  Privater Endpunkt ist standardmäßig deaktiviert.
++
+... Der IP-Bereich im ONTAP -Cluster, in dem sich die Volumes befinden, die Sie sichern möchten.  Die Intercluster-LIFs für diesen IPspace müssen über ausgehenden Internetzugang verfügen.
+... Wählen Sie optional aus, ob Sie einen zuvor konfigurierten privaten Azure-Endpunkt verwenden möchten. https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview["Erfahren Sie mehr über die Verwendung eines privaten Azure-Endpunkts"^] .
+
+
+** *Sicherungsrichtlinie*: Wählen Sie eine vorhandene Richtlinie für die Sicherung in Objektspeichern aus.
++
+
+TIP: Informationen zum Erstellen einer benutzerdefinierten Richtlinie vor der Aktivierung der Sicherung finden Sie unterlink:br-use-policies-create.html["Erstellen einer Richtlinie"] .
+
++
+Um eine Richtlinie zu erstellen, wählen Sie *Neue Richtlinie erstellen* und gehen Sie wie folgt vor:
+
++
+*** Geben Sie den Namen der Richtlinie ein.
+*** Legen Sie für Backup-to-Object-Richtlinien die Einstellungen für DataLock und Ransomware-Schutz fest.  Weitere Informationen zu DataLock und Ransomware-Schutz finden Sie unterlink:prev-ontap-policy-object-options.html["Einstellungen der Backup-to-Object-Richtlinie"] .
+*** Wählen Sie bis zu fünf Zeitpläne aus, normalerweise mit unterschiedlicher Häufigkeit.
+*** Wählen Sie *Erstellen*.
+
+
+** *Exportieren Sie vorhandene Snapshot-Kopien als Sicherungskopien in den Objektspeicher*: Wenn es lokale Snapshot-Kopien für Volumes in diesem System gibt, die mit der Bezeichnung des Sicherungszeitplans übereinstimmen, die Sie gerade für dieses System ausgewählt haben (z. B. täglich, wöchentlich usw.), wird diese zusätzliche Eingabeaufforderung angezeigt.  Aktivieren Sie dieses Kontrollkästchen, um alle historischen Snapshots als Sicherungsdateien in den Objektspeicher zu kopieren und so den umfassendsten Schutz für Ihre Volumes zu gewährleisten.
+
+
+. Wählen Sie *Weiter*.
+
+
+
+
+=== Überprüfen Sie Ihre Auswahl
+
+Dies ist die Gelegenheit, Ihre Auswahl zu überprüfen und gegebenenfalls Anpassungen vorzunehmen.
+
+.Schritte
+. Überprüfen Sie Ihre Auswahl auf der Überprüfungsseite.
+. Aktivieren Sie optional das Kontrollkästchen, um *die Snapshot-Richtlinienbezeichnungen automatisch mit den Replikations- und Sicherungsrichtlinienbezeichnungen zu synchronisieren*.  Dadurch werden Snapshots mit einer Bezeichnung erstellt, die mit den Bezeichnungen in den Replikations- und Sicherungsrichtlinien übereinstimmt.
+. Wählen Sie *Sicherung aktivieren*.
+
+
+.Ergebnis
+NetApp Backup and Recovery beginnt mit der Durchführung der ersten Sicherungen Ihrer Volumes.  Die Basisübertragung des replizierten Volumes und der Sicherungsdatei umfasst eine vollständige Kopie der Daten des primären Speichersystems.  Nachfolgende Übertragungen enthalten differenzielle Kopien der in Snapshot-Kopien enthaltenen primären Speicherdaten.
+
+Im Zielcluster wird ein repliziertes Volume erstellt, das mit dem primären Volume synchronisiert wird.
+
+In der von Ihnen eingegebenen Ressourcengruppe wird ein Blob-Speichercontainer erstellt und die Sicherungsdateien werden dort gespeichert.
+
+Standardmäßig stellt NetApp Backup and Recovery den Blob-Container zur Kostenoptimierung mit lokaler Redundanz (LRS) bereit.  Sie können diese Einstellung in Zonenredundanz (ZRS) ändern, wenn Sie sicherstellen möchten, dass Ihre Daten zwischen verschiedenen Zonen repliziert werden.  Siehe die Microsoft-Anweisungen für https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration?tabs=portal["Ändern der Replikation Ihres Speicherkontos"^] .
+
+Das Volume-Backup-Dashboard wird angezeigt, damit Sie den Status der Backups überwachen können.
+
+Sie können den Status von Sicherungs- und Wiederherstellungsaufträgen auch mithilfe derlink:br-use-monitor-tasks.html["Seite „Jobüberwachung“"] .
+
+
+
+=== API-Befehle anzeigen
+
+Möglicherweise möchten Sie die im Assistenten „Sicherung und Wiederherstellung aktivieren“ verwendeten API-Befehle anzeigen und optional kopieren.  Möglicherweise möchten Sie dies tun, um die Sicherungsaktivierung in zukünftigen Systemen zu automatisieren.
+
+.Schritte
+. Wählen Sie im Assistenten „Sicherung und Wiederherstellung aktivieren“ die Option „API-Anforderung anzeigen“ aus.
+. Um die Befehle in die Zwischenablage zu kopieren, wählen Sie das Symbol *Kopieren*.
+
+
+
+
+== Wie geht es weiter?
+
+* Sie können link:prev-ontap-backup-manage.html["Verwalten Sie Ihre Sicherungsdateien und Sicherungsrichtlinien"] . Dazu gehören das Starten und Stoppen von Sicherungen, das Löschen von Sicherungen, das Hinzufügen und Ändern des Sicherungszeitplans und mehr.
+* Sie können link:prev-ontap-policy-object-advanced-settings.html["Verwalten von Backup-Einstellungen auf Clusterebene"] . Dazu gehört das Ändern der Speicherschlüssel, die ONTAP für den Zugriff auf den Cloud-Speicher verwendet, das Ändern der verfügbaren Netzwerkbandbreite zum Hochladen von Backups in den Objektspeicher, das Ändern der automatischen Backup-Einstellung für zukünftige Volumes und mehr.
+* Sie können auchlink:prev-ontap-restore.html["Wiederherstellen von Volumes, Ordnern oder einzelnen Dateien aus einer Sicherungsdatei"] zu einem Cloud Volumes ONTAP -System in AWS oder zu einem lokalen ONTAP System.
+

@@ -1,0 +1,73 @@
+= Verbesserungen der Benutzeroberfläche
+:allow-uri-read: 
+
+
+
+
+=== Verbesserungen der Benutzeroberfläche
+
+Diese Version verbessert Ihr Erlebnis durch Vereinfachung der Benutzeroberfläche:
+
+* Das Entfernen der Spalte „Aggregat“ aus den Volume-Tabellen sowie der Spalten „Snapshot-Richtlinie“, „Sicherungsrichtlinie“ und „Replikationsrichtlinie“ aus der Volume-Tabelle im V2-Dashboard führt zu einem optimierteren Layout.
+* Durch das Ausschließen nicht aktivierter Arbeitsumgebungen aus der Dropdown-Liste wird die Benutzeroberfläche übersichtlicher, die Navigation effizienter und das Laden beschleunigt.
+* Während die Sortierung nach der Spalte „Tags“ deaktiviert ist, können Sie die Tags weiterhin anzeigen und so sicherstellen, dass wichtige Informationen weiterhin leicht zugänglich sind.
+* Das Entfernen von Beschriftungen auf Schutzsymbolen trägt zu einem übersichtlicheren Erscheinungsbild bei und verkürzt die Ladezeit.
+* Während des Aktivierungsprozesses der Arbeitsumgebung wird in einem Dialogfeld ein Ladesymbol angezeigt, um Feedback zu geben, bis der Erkennungsprozess abgeschlossen ist. Dies erhöht die Transparenz und das Vertrauen in die Funktionsweise des Systems.
+
+
+
+
+=== Verbessertes Volume-Dashboard (Vorschau)
+
+Das Volume Dashboard wird jetzt in weniger als 10 Sekunden geladen und bietet eine viel schnellere und effizientere Benutzeroberfläche.  Diese Vorschauversion steht ausgewählten Kunden zur Verfügung und bietet ihnen einen ersten Einblick in diese Verbesserungen.
+
+
+
+=== Unterstützung für Wasabi-Objektspeicher von Drittanbietern (Vorschau)
+
+NetApp Backup and Recovery erweitert jetzt seine Unterstützung auf Objektspeicher von Drittanbietern mit einem Schwerpunkt auf Wasabi.  Mit dieser neuen Vorschaufunktion können Sie jeden S3-kompatiblen Objektspeicher für Ihre Sicherungs- und Wiederherstellungsanforderungen nutzen.
+
+
+
+==== Erste Schritte mit Wasabi
+
+Um Drittanbieterspeicher als Objektspeicher zu verwenden, müssen Sie im Konsolenagenten ein Flag aktivieren.  Anschließend können Sie die Verbindungsdetails für Ihren Objektspeicher eines Drittanbieters eingeben und ihn in Ihre Sicherungs- und Wiederherstellungs-Workflows integrieren.
+
+.Schritte
+. Melden Sie sich per SSH bei Ihrem Connector an.
+. Gehen Sie in den CBS-Servercontainer von NetApp Backup and Recovery:
++
+[listing]
+----
+docker exec -it cloudmanager_cbs sh
+----
+. Öffnen Sie die `default.json` Datei innerhalb der `config` Ordner über VIM oder einen anderen Editor:
++
+[listing]
+----
+vi default.json
+----
+. Ändern `allow-s3-compatible` : false bis `allow-s3-compatible` : WAHR.
+. Speichern Sie die Änderungen.
+. Verlassen Sie den Container.
+. Starten Sie den CBS-Servercontainer von NetApp Backup and Recovery neu.
+
+
+.Ergebnis
+Nachdem der Container wieder eingeschaltet ist, öffnen Sie die NetApp Backup and Recovery-Benutzeroberfläche.  Wenn Sie eine Sicherung initiieren oder eine Sicherungsstrategie bearbeiten, wird der neue Anbieter „S3-kompatibel“ zusammen mit anderen Sicherungsanbietern von AWS, Microsoft Azure, Google Cloud, StorageGRID und ONTAP S3 aufgeführt.
+
+
+
+==== Einschränkungen des Vorschaumodus
+
+Während sich diese Funktion in der Vorschauphase befindet, beachten Sie bitte die folgenden Einschränkungen:
+
+* Das Mitbringen eigener Eimer (BYOB) wird nicht unterstützt.
+* Das Aktivieren von DataLock in einer Richtlinie wird nicht unterstützt.
+* Das Aktivieren des Archivierungsmodus in einer Richtlinie wird nicht unterstützt.
+* Es werden nur lokale ONTAP Umgebungen unterstützt.
+* MetroCluster wird nicht unterstützt.
+* Optionen zum Aktivieren der Verschlüsselung auf Bucket-Ebene werden nicht unterstützt.
+
+
+Wir empfehlen Ihnen, während dieser Vorschau diese neue Funktion zu erkunden und Feedback zur Integration mit Objektspeichern von Drittanbietern zu geben, bevor die vollständige Funktionalität eingeführt wird.

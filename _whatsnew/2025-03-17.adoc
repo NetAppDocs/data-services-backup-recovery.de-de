@@ -1,0 +1,27 @@
+= Durchsuchen von SMB-Snapshots
+:allow-uri-read: 
+
+
+
+
+=== Durchsuchen von SMB-Snapshots
+
+Dieses Update für NetApp Backup und Recovery behebt ein Problem, das Kunden daran hinderte, lokale Snapshots in einer SMB-Umgebung zu durchsuchen.
+
+
+
+=== AWS GovCloud-Umgebungsupdate
+
+Dieses Update für NetApp Backup and Recovery behebt ein Problem, das aufgrund von TLS-Zertifikatfehlern die Verbindung der Benutzeroberfläche mit einer AWS GovCloud-Umgebung verhinderte.  Das Problem wurde behoben, indem anstelle der IP-Adresse der Hostname des Konsolenagenten verwendet wurde.
+
+
+
+=== Aufbewahrungsgrenzen für Sicherungsrichtlinien
+
+Zuvor beschränkte die NetApp Backup and Recovery-Benutzeroberfläche die Anzahl der Backups auf 999 Kopien, während die CLI mehr zuließ.  Jetzt können Sie bis zu 4.000 Volumes an eine Sicherungsrichtlinie anhängen und 1.018 Volumes einschließen, die keiner Sicherungsrichtlinie angehängt sind.  Dieses Update enthält zusätzliche Validierungen, die ein Überschreiten dieser Grenzwerte verhindern.
+
+
+
+=== SnapMirror Cloud-Neusynchronisierung
+
+Dieses Update stellt sicher, dass die SnapMirror Cloud-Neusynchronisierung nicht von NetApp Backup and Recovery für nicht unterstützte ONTAP Versionen gestartet werden kann, nachdem eine SnapMirror Beziehung gelöscht wurde.

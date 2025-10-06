@@ -1,0 +1,26 @@
+= Unterstützung für den Schutz von VMware-Workloads in der Vorschau
+:allow-uri-read: 
+
+
+
+
+=== Unterstützung für den Schutz von VMware-Workloads in der Vorschau
+
+Diese Version fügt Vorschauunterstützung zum Schutz von VMware-Workloads hinzu. Sichern Sie VMware-VMs und Datenspeicher von lokalen ONTAP -Systemen auf Amazon Web Services und StorageGRID.
+
+
+NOTE: Dokumentation zum Schutz von VMware-Workloads wird als Technologievorschau bereitgestellt. Bei diesem Vorschauangebot behält sich NetApp das Recht vor, Angebotsdetails, Inhalte und Zeitplan vor der allgemeinen Verfügbarkeit zu ändern.
+
+link:br-use-vmware-protect-overview.html["Erfahren Sie mehr über den Schutz von VMware-Workloads mit NetApp Backup and Recovery"] .
+
+
+
+=== Hochleistungsindizierung für AWS, Azure und GCP ist allgemein verfügbar
+
+Im Februar 2025 haben wir die Vorschau der Hochleistungsindizierung (Indexed Catalog v2) für AWS, Azure und GCP angekündigt. Diese Funktion ist jetzt allgemein verfügbar (GA). Im Juni 2025 haben wir es allen _neuen_ Kunden standardmäßig zur Verfügung gestellt. Mit dieser Version steht der Support _allen_ Kunden zur Verfügung. Durch die Hochleistungsindizierung wird die Leistung von Sicherungs- und Wiederherstellungsvorgängen für Workloads verbessert, die im Objektspeicher geschützt sind.
+
+Standardmäßig aktiviert:
+
+* Wenn Sie ein neuer Kunde sind, ist die Hochleistungsindizierung standardmäßig aktiviert.
+* Wenn Sie bereits Kunde sind, können Sie die Neuindizierung aktivieren, indem Sie zum Abschnitt „Wiederherstellen“ der Benutzeroberfläche gehen.
+

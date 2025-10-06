@@ -1,0 +1,71 @@
+---
+sidebar: sidebar 
+permalink: br-use-oracle-backup.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database, protection group 
+summary: Schützen Sie Ihre Oracle-Workloads mit NetApp Backup und Recovery. 
+---
+= Sichern Sie Oracle-Workloads mit NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sichern Sie Oracle Database-Schutzgruppen oder Datenbanken von lokalen ONTAP -Systemen auf Amazon Web Services S3, NetApp StorageGRID, Microsoft Azure Blob Storage oder ONTAP S3, um sicherzustellen, dass Ihre Daten geschützt sind.  Wenn Sie eine Schutzgruppe sichern, sichert die NetApp Konsole die in der Schutzgruppe enthaltenen Datenbanken und Protokolldaten.
+
+
+NOTE: Um Schutzgruppen oder einzelne Datenbanken nach einem Zeitplan zu sichern, erstellen Sie Richtlinien, die die Sicherungs- und Wiederherstellungsvorgänge steuern. Sehenlink:br-use-policies-create.html["Erstellen von Richtlinien"] Anweisungen hierzu finden Sie unter.
+
+* Erstellen Sie Schutzgruppen, um die Sicherungs- und Wiederherstellungsvorgänge für eine Reihe von Ressourcen zu verwalten. Sehen link:br-use-kvm-protection-groups.html["Erstellen und verwalten Sie Schutzgruppen für Oracle-Workloads mit NetApp Backup and Recovery"] für weitere Informationen.
+* Sichern Sie jetzt eine Schutzgruppe (erstellen Sie jetzt ein On-Demand-Backup).
+* Sichern Sie jetzt eine Datenbank.
+
+
+
+
+== Sichern Sie Schutzgruppen jetzt mit einem On-Demand-Backup
+
+Sie können sofort eine On-Demand-Sicherung ausführen.  Dies ist hilfreich, wenn Sie Änderungen an Ihrem System vornehmen und sicherstellen möchten, dass Sie vor dem Start über eine Sicherungskopie verfügen.
+
+*Erforderliche Konsolenrolle* Organisationsadministrator, Ordner- oder Projektadministrator, Superadministrator für Backup und Wiederherstellung oder Backup-Administratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+
+.Schritte
+. Wählen Sie im NetApp -Konsolenmenü *Schutz > Sicherung und Wiederherstellung*.
+. Wählen Sie in der Oracle-Kachel *Erkennen und verwalten* aus.
+. Wählen Sie *Inventar*.
+. Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.
+. Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*.
+. Wählen Sie die Registerkarte *Schutzgruppen*, *Datenspeicher* oder *Virtuelle Maschinen*.
+. Wählen Sie die Schutzgruppe aus, die Sie sichern möchten.
+. Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Jetzt sichern*.
++
+
+NOTE: Die auf die Sicherung angewendete Richtlinie ist dieselbe Richtlinie, die der Schutzgruppe zugewiesen ist.
+
+. Wählen Sie die Zeitplanstufe aus.
+. Wählen Sie *Sichern*.
+
+
+
+
+== Sichern Sie jetzt eine Datenbank mit einem On-Demand-Backup
+
+Sie können bei Bedarf eine Sicherung einer einzelnen Datenbank ausführen.
+
+*Erforderliche Konsolenrolle* Organisationsadministrator, Ordner- oder Projektadministrator, Superadministrator für Backup und Wiederherstellung oder Backup-Administratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+
+.Schritte
+. Wählen Sie im NetApp -Konsolenmenü *Schutz > Sicherung und Wiederherstellung*.
+. Wählen Sie in der Oracle-Kachel *Erkennen und verwalten* aus.
+. Wählen Sie *Inventar*.
+. Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.
+. Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*.
+. Wählen Sie die Registerkarte *Datenbanken*.
+. Wählen Sie die Datenbank aus, die Sie sichern möchten.
+. Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Jetzt sichern*.
+. Wählen Sie die Zeitplanstufe aus.
+. Wählen Sie *Sichern*.
+

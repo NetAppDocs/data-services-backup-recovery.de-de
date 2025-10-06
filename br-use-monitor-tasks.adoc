@@ -1,0 +1,195 @@
+---
+sidebar: sidebar 
+permalink: br-use-monitor-tasks.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, jobs 
+summary: Überwachen Sie mit NetApp Backup and Recovery den Status lokaler Snapshots, Replikationen und Backups auf Objektspeicherjobs, die Sie initiiert haben, sowie von Ihnen initiierte Wiederherstellungsjobs. 
+---
+= Überwachen von Jobs in NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Überwachen Sie mit NetApp Backup and Recovery den Status lokaler Snapshots, Replikationen und Backups auf Objektspeicherjobs, die Sie initiiert haben, und stellen Sie die von Ihnen initiierten Jobs wieder her.  Sie können die abgeschlossenen, laufenden oder fehlgeschlagenen Jobs sehen, sodass Sie Probleme diagnostizieren und beheben können.  Mithilfe des Benachrichtigungscenters der NetApp Konsole können Sie das Senden von Benachrichtigungen per E-Mail aktivieren, sodass Sie über wichtige Systemaktivitäten informiert werden, auch wenn Sie nicht beim System angemeldet sind.  Mithilfe der Konsolenzeitleiste können Sie Details zu allen über die Benutzeroberfläche oder API initiierten Aktionen anzeigen.
+
+NetApp Backup and Recovery speichert Jobinformationen 15 Tage lang. Danach werden sie gelöscht und sind im Job Monitor nicht mehr sichtbar.
+
+*Erforderliche NetApp Konsolenrolle* Speicherbetrachter, Superadministrator für Backup und Recovery, Backupadministrator für Backup und Recovery, Wiederherstellungsadministrator für Backup und Recovery, Klonadministrator für Backup und Recovery oder Betrachterrolle für Backup und Recovery. Erfahren Sie mehr überlink:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+
+
+
+== Anzeigen des Auftragsstatus im Auftragsmonitor
+
+Sie können eine Liste aller Snapshot-, Replikations-, Backup-to-Object-Storage- und Wiederherstellungsvorgänge sowie deren aktuellen Status auf der Registerkarte *Jobüberwachung* anzeigen.  Dies umfasst Vorgänge von Ihrem Cloud Volumes ONTAP, Ihrem lokalen ONTAP, Ihren Anwendungen und virtuellen Maschinen.  Jeder Vorgang oder Auftrag hat eine eindeutige ID und einen Status.
+
+Der Status kann sein:
+
+* Erfolg
+* Im Gange
+* In der Warteschlange
+* Warnung
+* Fehlgeschlagen
+
+
+Snapshots, Replikationen, Backups auf Objektspeicher und Wiederherstellungsvorgänge, die Sie über die NetApp Backup and Recovery-Benutzeroberfläche und -API initiiert haben, sind auf der Registerkarte „Jobüberwachung“ verfügbar.
+
+
+NOTE: Wenn Sie Ihre ONTAP -Systeme auf 9.13.x aktualisiert haben und im Job Monitor keine laufenden geplanten Sicherungsvorgänge sehen, müssen Sie NetApp Backup and Recovery neu starten. link:reference-restart-backup.html["Erfahren Sie, wie Sie NetApp Backup and Recovery neu starten"] .
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery-Menü *Überwachung* aus.
+. Um zusätzliche Spalten (System, SVM, Benutzername, Workload, Richtlinienname, Snapshot-Bezeichnung) anzuzeigen, wählen Sie das Pluszeichen aus.
+
+
+
+
+=== Suchen und filtern Sie die Liste der Jobs
+
+Sie können die Vorgänge auf der Seite „Jobüberwachung“ mithilfe mehrerer Filter filtern, z. B. Richtlinie, Snapshot-Bezeichnung, Vorgangstyp (Schutz, Wiederherstellung, Aufbewahrung oder Sonstiges) und Schutztyp (lokaler Snapshot, Replikation oder Sicherung in der Cloud).
+
+Standardmäßig werden auf der Seite „Jobüberwachung“ Schutz- und Wiederherstellungsjobs der letzten 24 Stunden angezeigt.  Sie können den Zeitrahmen mithilfe des Zeitrahmenfilters ändern.
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery-Menü *Überwachung* aus.
+. Um die Ergebnisse anders zu sortieren, wählen Sie jede Spaltenüberschrift aus, um sie nach Status, Startzeit, Ressourcenname usw. zu sortieren.
+. Wenn Sie nach bestimmten Jobs suchen, wählen Sie den Bereich *Erweiterte Suche und Filterung* aus, um das Suchfeld zu öffnen.
++
+Verwenden Sie dieses Feld, um eine Freitextsuche nach einer beliebigen Ressource einzugeben, beispielsweise „Band 1“ oder „Anwendung 3“.  Sie können die Jobliste auch nach den Elementen in den Dropdown-Menüs filtern.
+
++
+Die meisten Filter sind selbsterklärend.  Mit dem Filter „Arbeitsbelastung“ können Sie sich Jobs in folgenden Kategorien anzeigen lassen:
+
++
+** ONTAP -Volumes (Cloud Volumes ONTAP und lokale ONTAP -Volumes)
+** Microsoft SQL Server
+** Virtuelle Maschinen
+** Kubernetes
+
+
++
+[TIP]
+====
+** Sie können nur dann innerhalb einer bestimmten „SVM“ nach Daten suchen, wenn Sie zuerst ein System ausgewählt haben.
+** Sie können mit dem Filter „Schutzart“ nur suchen, wenn Sie die „Art“ von „Schutz“ ausgewählt haben.
+
+
+====
+. Um die Seite sofort zu aktualisieren, wählen Sie dasimage:button_refresh.png["Aktualisieren"] Taste.  Andernfalls wird diese Seite alle 15 Minuten aktualisiert, sodass Sie immer die aktuellsten Jobstatusergebnisse sehen.
+
+
+
+
+=== Jobdetails anzeigen
+
+Sie können Details zu einem bestimmten abgeschlossenen Auftrag anzeigen.  Sie können Details für einen bestimmten Job in einem JSON-Format exportieren.
+
+Sie können Details wie Auftragstyp (geplant oder auf Abruf), SnapMirror -Sicherungstyp (anfänglich oder regelmäßig), Start- und Endzeiten, Dauer, Menge der vom System zum Objektspeicher übertragenen Daten, durchschnittliche Übertragungsrate, Richtlinienname, aktivierte Aufbewahrungssperre, durchgeführter Ransomware-Scan, Details zur Schutzquelle und Details zum Schutzziel anzeigen.
+
+Wiederherstellungsaufträge zeigen Details wie den Sicherungszielanbieter (Amazon Web Services, Microsoft Azure, Google Cloud, vor Ort), den S3-Bucket-Namen, den SVM-Namen, den Quellvolume-Namen, das Zielvolume, die Snapshot-Bezeichnung, die Anzahl der wiederhergestellten Objekte, Dateinamen, Dateigrößen, das Datum der letzten Änderung und den vollständigen Dateipfad an.
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery-Menü *Überwachung* aus.
+. Wählen Sie den Namen des Jobs aus.
+. Wählen Sie das Menü Aktionenimage:icon-action.png["Symbol „Aktionen“"] und wählen Sie *Details anzeigen*.
+. Erweitern Sie jeden Abschnitt, um Details anzuzeigen.
+
+
+
+
+=== Ergebnisse der Jobüberwachung als Bericht herunterladen
+
+Sie können den Inhalt der Hauptseite zur Jobüberwachung nach der Verfeinerung als Bericht herunterladen.  NetApp Backup and Recovery generiert und lädt eine CSV-Datei herunter, die Sie überprüfen und bei Bedarf an andere Gruppen senden können. Die CSV-Datei enthält bis zu 10.000 Datenzeilen.
+
+Aus den Informationen zu den Jobüberwachungsdetails können Sie eine JSON-Datei mit Details zu einem einzelnen Job herunterladen.
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery-Menü *Überwachung* aus.
+. Um eine CSV-Datei für alle Jobs herunterzuladen, wählen Sie die Schaltfläche „Herunterladen“ und suchen Sie die Datei in Ihrem Download-Verzeichnis.
+. Um eine JSON-Datei für einen einzelnen Job herunterzuladen, wählen Sie das Menü Aktionenimage:icon-action.png["Symbol „Aktionen“"] Wählen Sie für den Job *JSON-Datei herunterladen* und suchen Sie die Datei in Ihrem Download-Verzeichnis.
+
+
+
+
+== Aufbewahrungsaufträge (Sicherungslebenszyklus) überprüfen
+
+Die Überwachung der Aufbewahrungsflüsse (oder des _Backup-Lebenszyklus_) hilft Ihnen bei der Vollständigkeit der Prüfung, der Verantwortlichkeit und der Backup-Sicherheit.  Um den Lebenszyklus der Sicherung besser verfolgen zu können, möchten Sie möglicherweise das Ablaufdatum aller Sicherungskopien ermitteln.
+
+Ein Backup-Lebenszyklusjob verfolgt alle Snapshot-Kopien, die gelöscht wurden oder sich in der Warteschlange zum Löschen befinden.  Ab ONTAP 9.13 können Sie sich alle Jobtypen mit der Bezeichnung „Retention“ auf der Seite „Jobüberwachung“ ansehen.
+
+Der Auftragstyp „Aufbewahrung“ erfasst alle Snapshot-Löschaufträge, die auf einem Volume initiiert werden, das durch NetApp Backup and Recovery geschützt ist.
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery-Menü *Überwachung* aus.
+. Wählen Sie den Bereich *Erweiterte Suche und Filterung* aus, um das Suchfeld zu öffnen.
+. Wählen Sie als Auftragstyp „Aufbewahrung“ aus.
+
+
+
+
+== Überprüfen Sie Sicherungs- und Wiederherstellungswarnungen im Benachrichtigungscenter der NetApp Konsole
+
+Das Benachrichtigungscenter der NetApp Konsole verfolgt den Fortschritt der von Ihnen initiierten Sicherungs- und Wiederherstellungsaufträge, sodass Sie überprüfen können, ob der Vorgang erfolgreich war oder nicht.
+
+Zusätzlich zur Anzeige der Warnungen im Benachrichtigungscenter können Sie die Konsole so konfigurieren, dass bestimmte Arten von Benachrichtigungen per E-Mail als Warnungen gesendet werden, sodass Sie über wichtige Systemaktivitäten informiert werden, auch wenn Sie nicht beim System angemeldet sind. https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html["Erfahren Sie mehr über das Benachrichtigungscenter und wie Sie Warn-E-Mails für Sicherungs- und Wiederherstellungsaufträge senden"^] .
+
+Das Benachrichtigungscenter zeigt zahlreiche Snapshot-, Replikations-, Cloud-Backup- und Wiederherstellungsereignisse an, aber nur bestimmte Ereignisse lösen E-Mail-Benachrichtigungen aus:
+
+[cols="1,2,1,1"]
+|===
+| Vorgangstyp | Ereignis | Alarmstufe | E-Mail gesendet 
+
+
+| Aktivierung | Die Aktivierung von Backup und Recovery für das System ist fehlgeschlagen | Fehler | Ja 
+
+
+| Aktivierung | Bearbeiten von Sicherung und Wiederherstellung für das System fehlgeschlagen | Fehler | Ja 
+
+
+| Lokaler Schnappschuss | Fehler beim Erstellen eines Ad-hoc-Snapshots bei NetApp Backup and Recovery | Fehler | Ja 
+
+
+| Replikation | Fehler beim Ad-hoc-Replikationsjob von NetApp Backup and Recovery | Fehler | Ja 
+
+
+| Replikation | Fehler beim Anhalten des Replikationsjobs bei NetApp Backup and Recovery | Fehler | Nein 
+
+
+| Replikation | Fehler beim Abbrechen des Replikationsjobs bei NetApp Backup and Recovery | Fehler | Nein 
+
+
+| Replikation | Fehler beim Resynchronisierungsjob für NetApp Backup and Recovery-Replikation | Fehler | Nein 
+
+
+| Replikation | Fehler beim Stoppen des Replikationsjobs bei NetApp Backup and Recovery | Fehler | Nein 
+
+
+| Replikation | Fehler beim Reverse-Resync-Job für die Replikation von NetApp Backup and Recovery | Fehler | Ja 
+
+
+| Replikation | Fehler beim Löschen des Replikationsjobs bei NetApp Backup and Recovery | Fehler | Ja 
+|===
+
+NOTE: Ab ONTAP 9.13.0 werden alle Warnungen für Cloud Volumes ONTAP und lokale ONTAP -Systeme angezeigt.  Bei Systemen mit Cloud Volumes ONTAP 9.13.0 und lokalem ONTAP wird nur die Warnmeldung „Wiederherstellungsauftrag abgeschlossen, aber mit Warnungen“ angezeigt.
+
+Standardmäßig erhalten die Organisations- und Kontoadministratoren der NetApp Konsole E-Mails für alle Warnmeldungen vom Typ „Kritisch“ und „Empfehlung“.  Alle anderen Benutzer und Empfänger sind standardmäßig so eingerichtet, dass sie keine Benachrichtigungs-E-Mails erhalten.  E-Mails können an alle Konsolenbenutzer gesendet werden, die Teil Ihres NetApp Cloud-Kontos sind, oder an alle anderen Empfänger, die über Sicherungs- und Wiederherstellungsaktivitäten informiert werden müssen.
+
+Um E-Mail-Benachrichtigungen zu NetApp Backup and Recovery zu erhalten, müssen Sie auf der Einstellungsseite für Benachrichtigungen die Schweregrade „Kritisch“, „Warnung“ und „Fehler“ auswählen.
+
+https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html["Erfahren Sie, wie Sie Warn-E-Mails für Sicherungs- und Wiederherstellungsaufträge senden"^] .
+
+.Schritte
+. Wählen Sie im Konsolenmenü die Option (image:icon_bell.png["Benachrichtigungsglocke"] ).
+. Überprüfen Sie die Benachrichtigungen.
+
+
+
+
+== Überprüfen der Vorgangsaktivität in der Konsolenzeitleiste
+
+Sie können Details zu Sicherungs- und Wiederherstellungsvorgängen zur weiteren Untersuchung in der Konsolenzeitleiste anzeigen.  Die Konsolenzeitleiste bietet Details zu jedem Ereignis, unabhängig davon, ob es vom Benutzer oder vom System initiiert wurde, und zeigt Aktionen an, die in der Benutzeroberfläche oder über die API initiiert wurden.
+
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html["Erfahren Sie mehr über die Unterschiede zwischen der Timeline und dem Benachrichtigungscenter"^] .

@@ -1,0 +1,115 @@
+---
+sidebar: sidebar 
+permalink: prev-vmware-manage.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Schützen Sie Ihre VMware-Workloads mit NetApp NetApp Backup and Recovery. 
+---
+= Verwalten Sie den Schutz von Datenspeichern und VMs in NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können Richtlinien, Datenspeicher und virtuelle Maschinen anzeigen, bevor Sie Daten mit NetApp Backup and Recovery sichern und wiederherstellen.  Abhängig von den Änderungen in der Datenbank, den Richtlinien oder den Ressourcengruppen können Sie die Aktualisierungen über die Benutzeroberfläche der NetApp Konsole anzeigen.
+
+[]
+====
+*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup und Recovery-Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup- und Recovery-Workloads"] .
+
+====
+
+
+== Richtlinien anzeigen
+
+Sie können alle vorgefertigten Standardrichtlinien anzeigen.  Wenn Sie die Details zu jeder dieser Richtlinien anzeigen, werden alle zugehörigen Richtlinien und virtuellen Maschinen aufgelistet.
+
+. Wählen Sie in der Konsolen-Benutzeroberfläche *Schutz* > *Sicherung und Wiederherstellung* > *Virtuelle Maschinen*.
+. Wählen Sie im Dropdownmenü *Einstellungen* die Option *Richtlinien* aus.
+. Wählen Sie *Details anzeigen* für die Richtlinie aus, deren Details Sie anzeigen möchten.
+
+
+Die zugehörigen Richtlinien und virtuellen Maschinen werden aufgelistet.
+
+
+
+== Anzeigen von Datenspeichern und virtuellen Maschinen
+
+Es werden die Datenspeicher und virtuellen Maschinen angezeigt, die mit dem registrierten SnapCenter Plug-in for VMware vSphere Host geschützt sind.
+
+.Schritte
+. Wählen Sie in der Konsolen-Benutzeroberfläche *Schutz* > *Sicherung und Wiederherstellung* > *Virtuelle Maschinen* > *Einstellungen* > * SnapCenter Plug-in for VMware vSphere*.
+. Wählen Sie das SnapCenter Plug-in for VMware vSphere Host aus, für den Sie die Datenspeicher und virtuellen Maschinen anzeigen möchten.
+
+
+
+
+== Schutz von Datenspeichern aufheben
+
+Sie können den Schutz eines Datenspeichers aufheben, der bereits zuvor geschützt war.  Sie können den Schutz eines Datenspeichers aufheben, wenn Sie die Cloud-Sicherungen löschen oder keine Sicherungen mehr in der Cloud durchführen möchten.  Nach erfolgreicher Aufhebung des Schutzes kann der Datenspeicher erneut geschützt werden.
+
+.Schritte
+. Wählen Sie in der Konsolen-Benutzeroberfläche *Schutz* > *Sicherung und Wiederherstellung* > *Virtuelle Maschinen*.
+. Wählen Sie das Symbol Aktionenimage:icon-action.png["Aktion"] entsprechend dem Datenspeicher, dessen Schutz Sie aufheben möchten, und wählen Sie *Schutz aufheben*.
+
+
+
+
+== Bearbeiten Sie das SnapCenter Plug-in for VMware vSphere Instanz
+
+Sie können die Details des SnapCenter Plug-in for VMware vSphere Host in der Konsole bearbeiten.
+
+.Schritte
+. Wählen Sie in der Konsolen-Benutzeroberfläche *Schutz* > *Sicherung und Wiederherstellung* > *Virtuelle Maschinen* > *Einstellungen* > * SnapCenter Plug-in for VMware vSphere*.
+. Wählen Sie das Symbol Aktionenimage:icon-action.png["Aktion"] und wählen Sie *Bearbeiten*.
+. Ändern Sie die Details nach Bedarf.
+. Wählen Sie *Speichern*.
+
+
+
+
+== Aktualisieren von Ressourcen und Sicherungen
+
+Wenn Sie die neuesten Datenspeicher und Sicherungen anzeigen möchten, die der Anwendung hinzugefügt wurden, sollten Sie die Ressourcen und Sicherungen aktualisieren.  Dadurch wird die Erkennung der Ressourcen und Sicherungen eingeleitet und die neuesten Details werden angezeigt.
+
+. Wählen Sie *Sicherung und Wiederherstellung* > *Virtuelle Maschinen*.
+. Wählen Sie im Dropdown-Menü *Einstellungen* die Option * SnapCenter Plug-in for VMware vSphere* aus.
+. Wählen Sie das Symbol Aktionenimage:icon-action.png["Aktion"] entsprechend dem SnapCenter Plug-in for VMware vSphere Host und wählen Sie *Ressourcen und Backups aktualisieren*.
+
+
+
+
+== Aktualisierungsrichtlinie oder Ressourcengruppe
+
+Wenn sich die Richtlinie oder die Ressourcengruppe ändert, sollten Sie die Schutzbeziehung aktualisieren.
+
+. Wählen Sie *Sicherung und Wiederherstellung* > *Virtuelle Maschinen*.
+. Wählen Sie das Symbol Aktionenimage:icon-action.png["Aktion"] entsprechend dem Datenspeicher und wählen Sie *Schutz aktualisieren*.
+
+
+
+
+== Aufheben der Registrierung des SnapCenter Plug-in for VMware vSphere Host
+
+Alle mit dem SnapCenter Plug-in for VMware vSphere Host verbundenen Datenspeicher und virtuellen Maschinen sind ungeschützt.
+
+. Wählen Sie *Sicherung und Wiederherstellung* > *Virtuelle Maschinen*.
+. Wählen Sie im Dropdown-Menü *Einstellungen* die Option * SnapCenter Plug-in for VMware vSphere* aus.
+. Wählen Sie das Symbol Aktionenimage:icon-action.png["Aktion"] entsprechend dem SnapCenter Plug-in for VMware vSphere Host und wählen Sie *Registrierung aufheben*.
+
+
+
+
+== Jobs überwachen
+
+Für alle NetApp -Sicherungs- und Wiederherstellungsvorgänge werden Jobs erstellt.  Sie können alle Jobs und alle Unteraufgaben überwachen, die im Rahmen jeder Aufgabe ausgeführt werden.
+
+. Wählen Sie *Sicherung und Wiederherstellung* > *Auftragsüberwachung*.
++
+Wenn Sie einen Vorgang starten, wird ein Fenster angezeigt, das Sie darüber informiert, dass der Auftrag gestartet wurde.  Sie können den Link auswählen, um den Job zu überwachen.
+
+. Wählen Sie die Hauptaufgabe aus, um die Unteraufgaben und den Status jeder dieser Unteraufgaben anzuzeigen.
+

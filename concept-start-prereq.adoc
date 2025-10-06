@@ -1,0 +1,280 @@
+---
+sidebar: sidebar 
+permalink: concept-start-prereq.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, backup and recovery 
+summary: Beginnen Sie mit NetApp Backup and Recovery, indem Sie die Bereitschaft Ihrer Betriebsumgebung, Ihres Konsolenagenten und Ihres Konsolenkontos überprüfen.  Um NetApp Backup and Recovery verwenden zu können, benötigen Sie diese Voraussetzungen. 
+---
+= Voraussetzungen für NetApp Backup und Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Beginnen Sie mit NetApp Backup and Recovery, indem Sie die Bereitschaft Ihrer Betriebsumgebung, NetApp Console-Agenten und NetApp Console-Kontos überprüfen.  Um NetApp Backup and Recovery verwenden zu können, benötigen Sie diese Voraussetzungen.
+
+
+
+== Voraussetzung für ONTAP 9.8 und höher
+
+Auf der lokalen ONTAP Instanz muss eine ONTAP One-Lizenz aktiviert sein.
+
+
+
+== Voraussetzungen für Backups im Objektspeicher
+
+Um Objektspeicher als Sicherungsziele zu verwenden, benötigen Sie ein Konto bei AWS S3, Microsoft Azure Blob, StorageGRID oder ONTAP und die entsprechenden Zugriffsberechtigungen.
+
+* link:prev-ontap-protect-overview.html["Schützen Sie Ihre ONTAP Volume-Daten"]
+
+
+
+
+== Anforderungen zum Schutz von Microsoft SQL Server-Workloads
+
+Um NetApp Backup and Recovery für Microsoft SQL Server-Workloads zu verwenden, benötigen Sie die folgenden Voraussetzungen hinsichtlich Hostsystem, Speicherplatz und Größe.
+
+[cols="33,66a"]
+|===
+| Artikel | Anforderungen 
+
+
+| Betriebssysteme  a| 
+Microsoft Windows: Aktuelle Informationen zu unterstützten Versionen finden Sie im https://imt.netapp.com/matrix/imt.jsp?components=121074;&solution=1257&isHWU&src=IMT#welcome["NetApp Interoperabilitätsmatrix-Tool"^] .
+
+
+
+| Microsoft SQL Server-Versionen  a| 
+Version 2012 und höher werden für VMware Virtual Machine File System (VMFS) und VMware Virtual Machine Disk (VMDK) NFS unterstützt.
+
+
+
+| SnapCenter Server-Version  a| 
+Wenn Sie Ihre vorhandenen Daten aus SnapCenter in NetApp Backup and Recovery importieren möchten, ist SnapCenter Server Version 5.0 oder höher erforderlich.
+
+
+NOTE: Wenn Sie bereits über SnapCenter verfügen, überprüfen Sie zunächst, ob Sie die Voraussetzungen erfüllt haben, bevor Sie aus SnapCenter importieren. Sehen link:concept-start-prereq-snapcenter-import.html["Voraussetzungen für den Import von Ressourcen aus SnapCenter"] .
+
+
+
+| Mindest-RAM für das Plug-In auf dem SQL Server-Host  a| 
+1 GB
+
+
+
+| Minimaler Installations- und Protokollspeicherplatz für das Plug-In auf dem SQL Server-Host  a| 
+5 GB
+
+Weisen Sie ausreichend Speicherplatz zu und überwachen Sie den Speicherverbrauch des Protokollordners.  Der erforderliche Protokollspeicherplatz variiert je nach Anzahl der durchgeführten Sicherungen und der Häufigkeit der Datenschutzvorgänge.  Wenn nicht genügend Speicherplatz vorhanden ist, werden die Protokolle für die Vorgänge nicht erstellt.
+
+
+
+| Erforderliche Softwarepakete  a| 
+* ASP.NET Core Runtime 8.0.12 Hosting Bundle (und alle nachfolgenden 8.0.x-Patches)
+* PowerShell 7.4.2
+
+
+Die neuesten Informationen zu unterstützten Versionen finden Sie im https://imt.netapp.com/matrix/imt.jsp?components=121074;&solution=1257&isHWU&src=IMT#welcome["NetApp Interoperabilitätsmatrix-Tool"^] .
+
+|===
+
+
+== Anforderungen zum Schutz von VMware-Workloads
+
+Sie benötigen bestimmte Anforderungen, um Ihre VMware-Workloads zu erkennen und zu schützen.
+
+*Softwareunterstützung*
+
+* NFS- und VMFS-Datenspeicher werden unterstützt. vVols werden nicht unterstützt.
+* Unterstützte NFS-Versionen: NFS 3 und NFS 4.1
+* Unterstützte VMware ESXi Server-Versionen: 7.0U1 und höher
+* Unterstützte VMware vCenter vSphere-Versionen: 7.0U1 und höher
+* IP-Adressen: IPv4 und IPv6
+* VMware TLS: 1.2, 1.3
+
+
+*Verbindungs- und Portanforderungen zum Schutz von VMware-Workloads*
+
+[cols="33,66a"]
+|===
+| Art des Anschlusses | Vorkonfigurierter Port 
+
+
+| VMware ESXi-Server-Port  a| 
+443 (HTTPS), bidirektional. Die Funktion „Gastdateiwiederherstellung“ verwendet diesen Port.
+
+
+
+| VMware vSphere vCenter Server-Port  a| 
+Wenn Sie vVol-VMs schützen, müssen Sie Port 443 verwenden.
+
+
+
+| Speichercluster oder Speicher-VM-Port  a| 
+443 (HTTPS), bidirektional. 80 (HTTP), bidirektional. Dieser Port wird für die Kommunikation zwischen der virtuellen Appliance und der Speicher-VM oder dem Cluster verwendet, der die Speicher-VM enthält.
+
+|===
+*Anforderungen an die rollenbasierte Zugriffskontrolle (RBAC) zum Schutz von VMware-Workloads*
+
+Das vCenter-Administratorkonto muss über die erforderlichen vCenter-Berechtigungen verfügen.
+
+Eine Liste der erforderlichen vCenter-Berechtigungen finden Sie unter https://docs.netapp.com/us-en/sc-plugin-vmware-vsphere/scpivs44_deployment_planning_and_requirements.html#rbac-privileges-required["SnapCenter Plug-in for VMware vSphere vCenter-Berechtigungen erforderlich"^] .
+
+
+
+== Anforderungen zum Schutz von KVM-Workloads
+
+Sie benötigen bestimmte Anforderungen, um virtuelle KVM-Maschinen zu erkennen und zu schützen.
+
+* Eine moderne Linux-Distribution mit Kernelversion 5.14.0-503.22.1.el9_5.x86_64 (longterm) oder höher
+* Stellen Sie sicher, dass eingehender Datenverkehr vom Konsolenagenten zum KVM-Host über Port 22 zulässig ist
+* QEMU-Gastagent Version 9.0.0 oder höher
+* libvirt Version 10.5.0 oder höher
+
+
+
+
+== Anforderungen zum Schutz von Oracle-Workloads
+
+Stellen Sie sicher, dass Ihre Umgebung bestimmte Anforderungen zum Erkennen und Schützen von Oracle-Ressourcen erfüllt.
+
+* Oracle-Datenbank:
++
+** Oracle 19C und 21C werden in einer eigenständigen Bereitstellung unterstützt.
+** Oracle Database muss im primären oder sekundären NetApp ONTAP Speicher bereitgestellt werden.
+
+
+* Objektspeicherunterstützung:
++
+** Azure-Objektspeicher
+** Amazon AWS
+** NetApp StorageGRID
+** ONTAP S3
+
+
+
+
+
+
+== Anforderungen zum Schutz von Kubernetes-Anwendungen
+
+Sie benötigen spezifische Anforderungen, um Kubernetes-Ressourcen zu erkennen und Ihre Kubernetes-Anwendungen zu schützen.
+
+Informationen zu den NetApp Konsolenanforderungen finden Sie unter<<In der NetApp Konsole>> .
+
+* Ein primäres ONTAP System (ONTAP 9.16.1 oder höher)
+* Ein Kubernetes-Cluster – Zu den unterstützten Kubernetes-Distributionen und -Versionen gehören:
++
+** Anthos On-Prem (VMware) und Anthos auf Bare Metal 1.16
+** Kubernetes 1.27 – 1.33
+** OpenShift 4.10 – 4.18
+** Rancher Kubernetes Engine 2 (RKE2) v1.26.7+rke2r1, v1.28.5+rke2r1
+** Suse Rancher
+
+
+* NetApp Trident 24.10 oder höher
+* NetApp Trident Protect 25.07 oder höher (installiert während der Kubernetes-Workload-Erkennung)
+* NetApp Trident Protect Connector 25.07 oder höher (während der Kubernetes-Workload-Erkennung installiert)
++
+** Stellen Sie sicher, dass der TCP-Port 443 in ausgehender Richtung zwischen dem Kubernetes-Cluster, dem Trident Protect Connector und dem Trident Protect-Proxy ungefiltert ist.
+
+
+
+
+
+
+== Anforderungen zum Schutz von Hyper-V-Workloads
+
+Stellen Sie sicher, dass Ihre Hyper-V-Instanz bestimmte Anforderungen zum Erkennen und Schützen virtueller Maschinen erfüllt.
+
+* Softwareanforderungen für den Hyper-V-Host:
++
+** Microsoft Hyper-V 2019, 2022 und 2025 Editionen
+** ASP.NET Core Runtime 8.0.12 Hosting Bundle (und alle nachfolgenden 8.0.x-Patches)
+** PowerShell 7.4.2
+
+
+* Hardwareanforderungen für den Hyper-V-Host:
++
+** Standalone- und FCI-Cluster-Hosts werden unterstützt
+** Mindestens 1 GB RAM für das NetApp Hyper-V-Plug-In auf dem Hyper-V-Host
+** Mindestens 5 GB Installations- und Protokollspeicherplatz für das Plug-In auf dem Hyper-V-Host
++
+
+NOTE: Stellen Sie sicher, dass Sie auf dem Hyper-V-Host genügend Speicherplatz für den Protokollordner zuweisen und dessen Nutzung regelmäßig überwachen.  Der erforderliche Speicherplatz hängt davon ab, wie oft Backups und Datenschutzvorgänge durchgeführt werden.  Wenn nicht genügend Speicherplatz vorhanden ist, werden keine Protokolle erstellt.
+
+
+
+* NetApp ONTAP Konfigurationsanforderungen:
++
+** Ein primäres ONTAP System (ONTAP 9.15.1 oder höher)
+** Stellen Sie bei Hyper-V-Bereitstellungen, die CIFS-Freigaben zum Speichern von Daten virtueller Maschinen verwenden, sicher, dass die Eigenschaft „Continuous Availability Share“ auf dem ONTAP System aktiviert ist.  Weitere Informationen finden Sie im https://docs.netapp.com/us-en/ontap/smb-hyper-v-sql/configure-shares-continuous-availability-task.html["ONTAP-Dokumentation"^] Anweisungen hierzu finden Sie unter.
+
+
+
+
+
+
+== In der NetApp Konsole
+
+Stellen Sie sicher, dass die NetApp Konsole die folgenden Anforderungen erfüllt.
+
+* Ein Konsolenbenutzer sollte über die erforderliche Rolle und die erforderlichen Berechtigungen verfügen, um Vorgänge an Microsoft SQL Server- und Kubernetes-Workloads auszuführen.  Um die Ressourcen zu erkennen, müssen Sie über die NetApp Backup and Recovery-Rolle des Superadministrators verfügen.  Sehenlink:reference-roles.html["Rollenbasierter Zugriff auf Funktionen von NetApp Backup and Recovery"] Weitere Informationen zu den Rollen und Berechtigungen, die zum Ausführen von Vorgängen in NetApp Backup and Recovery erforderlich sind.
+* Eine Konsolenorganisation mit mindestens einem aktiven Konsolenagenten, der eine Verbindung zu lokalen ONTAP Clustern oder Cloud Volumes ONTAP.
+* Mindestens ein Konsolensystem mit einem lokalen NetApp ONTAP oder Cloud Volumes ONTAP Cluster.
+* Ein Konsolenagent
++
+Siehe https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["Erfahren Sie, wie Sie einen Konsolenagenten konfigurieren"] Und https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-checklist-cm.html["Standardanforderungen für die NetApp -Konsole"^] .
+
++
+** Die Vorschauversion erfordert das Betriebssystem Ubuntu 22.04 LTS für den Konsolenagenten.
+
+
+
+
+
+
+=== Einrichten der NetApp -Konsole
+
+Der nächste Schritt besteht darin, die Konsole und NetApp Backup and Recovery einzurichten.
+
+Rezension https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-checklist-cm.html["Standardanforderungen für die NetApp -Konsole"^] .
+
+
+
+=== Erstellen eines Konsolenagenten
+
+Sie sollten sich an Ihr NetApp -Produktteam wenden, um diesen Service auszuprobieren.  Wenn Sie dann den Konsolenagenten verwenden, enthält dieser die entsprechenden Funktionen für den Dienst.
+
+Informationen zum Erstellen eines Konsolenagenten in der NetApp -Konsole vor der Verwendung des Dienstes finden Sie in der Konsolendokumentation. Dort wird beschrieben, https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["So erstellen Sie einen Konsolenagenten"^] .
+
+.Wo soll der Konsolenagent installiert werden?
+Um einen Wiederherstellungsvorgang abzuschließen, kann der Konsolenagent an den folgenden Speicherorten installiert werden:
+
+ifdef::aws[]
+
+* Für Amazon S3 kann der Konsolenagent bei Ihnen vor Ort bereitgestellt werden.
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* Für Azure Blob kann der Konsolen-Agent vor Ort bereitgestellt werden.
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+endif::gcp[]
+
+* Für StorageGRID muss der Konsolenagent in Ihren Räumlichkeiten bereitgestellt werden, mit oder ohne Internetzugang.
+* Für ONTAP S3 kann der Konsolenagent in Ihren Räumlichkeiten (mit oder ohne Internetzugang) oder in einer Cloud-Provider-Umgebung bereitgestellt werden
+
+
+
+NOTE: Verweise auf „On-Premises ONTAP -Systeme“ umfassen FAS und AFF Systeme.

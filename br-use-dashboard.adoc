@@ -1,0 +1,68 @@
+---
+sidebar: sidebar 
+permalink: br-use-dashboard.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, backup, recovery, dashboard, view, health, status, alerts, notifications 
+summary: Durch die Überwachung des Zustands Ihrer Workloads wird sichergestellt, dass Sie über Probleme beim Workload-Schutz informiert sind und Schritte zu deren Lösung unternehmen können.  Zeigen Sie den Status Ihrer Backups und Wiederherstellungen an und reagieren Sie auf alle Warnungen, die im NetApp Backup and Recovery Dashboard angezeigt werden.  Sie können die Schutzzusammenfassung, die Wiederherstellungszusammenfassung, die Systemzusammenfassung und mehr überprüfen. 
+---
+= Anzeigen des Schutzstatus im NetApp Backup and Recovery Dashboard
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Durch die Überwachung des Zustands Ihrer Workloads wird sichergestellt, dass Sie über Probleme beim Workload-Schutz informiert sind und Schritte zu deren Lösung unternehmen können.  Zeigen Sie den Status Ihrer Backups und Wiederherstellungen im NetApp Backup and Recovery Dashboard an.  Sie können die Systemübersicht, die Schutzübersicht, die Jobübersicht, die Wiederherstellungsübersicht und mehr überprüfen.
+
+*Erforderliche NetApp Konsolenrolle* Speicherbetrachter, Superadministrator für Backup und Recovery, Backupadministrator für Backup und Recovery, Wiederherstellungsadministrator für Backup und Recovery, Klonadministrator für Backup und Recovery oder Betrachterrolle für Backup und Recovery. Erfahren Sie mehr überlink:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery-Menü *Dashboard* aus.
++
+** Anzahl der erkannten Hosts oder VMs
+** Anzahl der erkannten Kubernetes-Cluster
+** Anzahl der Sicherungsziele im Objektspeicher
+** Anzahl der vCenter
+** Anzahl der Speichercluster in ONTAP
+
+
+
+
+
+
+== Schutzübersicht anzeigen
+
+Überprüfen Sie die folgenden Informationen in der Schutzzusammenfassung:
+
+* Die Gesamtzahl der geschützten und ungeschützten Datenbanken, VMs und Datenspeicher.
++
+
+TIP: Eine geschützte Datenbank ist eine Datenbank, der eine Sicherungsrichtlinie zugewiesen ist.  Eine ungeschützte Datenbank ist eine Datenbank, der keine Sicherungsrichtlinie zugewiesen ist.
+
+* Die Anzahl der Sicherungen, die erfolgreich waren, eine Warnung aufweisen oder fehlgeschlagen sind.
+* Die vom Sicherungsdienst ermittelte Gesamtkapazität und die geschützte bzw. ungeschützte Kapazität.  Bewegen Sie den Mauszeiger über das Symbol „*i*“, um die Details anzuzeigen.
+
+
+
+
+== Jobzusammenfassung anzeigen
+
+Überprüfen Sie in der Auftragszusammenfassung die Gesamtzahl der abgeschlossenen, laufenden oder fehlgeschlagenen Aufträge.
+
+.Schritte
+. Ändern Sie für jede Jobverteilung einen Filter, um die Zusammenfassung der fehlgeschlagenen, laufenden und abgeschlossenen Jobs basierend auf der Anzahl der Tage anzuzeigen, z. B. die letzten 30 Tage, die letzten 7 Tage, die letzten 24 Stunden oder das letzte Jahr.
+. Zeigen Sie Details zu fehlgeschlagenen, laufenden und abgeschlossenen Jobs an, indem Sie *Jobüberwachung anzeigen* auswählen.
+
+
+
+
+== Wiederherstellungszusammenfassung anzeigen
+
+Überprüfen Sie die folgenden Informationen in der Wiederherstellungszusammenfassung:
+
+* Die Gesamtzahl der durchgeführten Wiederherstellungsaufträge
+* Die Gesamtmenge der wiederhergestellten Kapazität
+* Die Anzahl der Wiederherstellungsaufträge, die auf lokalem, sekundärem und Objektspeicher ausgeführt wurden.  Bewegen Sie den Mauszeiger über das Diagramm, um die Details anzuzeigen.
+

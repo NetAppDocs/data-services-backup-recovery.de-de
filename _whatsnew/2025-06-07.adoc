@@ -1,0 +1,40 @@
+= Verbessertes ONTAP Volume Dashboard
+:allow-uri-read: 
+
+
+
+
+=== Verbessertes ONTAP Volume Dashboard
+
+Im April 2025 haben wir eine Vorschau eines verbesserten ONTAP Volume Dashboards veröffentlicht, das viel schneller und effizienter ist.
+
+Dieses Dashboard wurde entwickelt, um Unternehmenskunden mit einer hohen Anzahl an Workloads zu helfen.  Selbst für Kunden mit 20.000 Bänden wird das neue Dashboard in <10 Sekunden geladen.
+
+Nach einer erfolgreichen Vorschau und großartigem Feedback von Vorschaukunden machen wir es jetzt zum Standarderlebnis für alle unsere Kunden.  Machen Sie sich bereit für ein blitzschnelles Dashboard.
+
+Weitere Informationen finden Sie unter link:br-use-dashboard.html["Anzeigen des Schutzstatus im Dashboard"] .
+
+
+
+=== Microsoft SQL Server-Workload-Unterstützung als Public Technology Preview
+
+Diese Version von NetApp Backup and Recovery bietet eine aktualisierte Benutzeroberfläche, mit der Sie Microsoft SQL Server-Workloads mithilfe einer 3-2-1-Schutzstrategie verwalten können, die Sie von NetApp Backup and Recovery kennen.  Mit dieser neuen Version können Sie diese Workloads im Primärspeicher sichern, sie im Sekundärspeicher replizieren und sie im Cloud-Objektspeicher sichern.
+
+Sie können sich für die Vorschau anmelden, indem Sie dieses Formular ausfüllen. https://forms.office.com/pages/responsepage.aspx?id=oBEJS5uSFUeUS8A3RRZbOojtBW63mDRDv3ZK50MaTlJUNjdENllaVTRTVFJGSDQ2MFJIREcxN0EwQi4u&route=shorturl["Vorschau des Anmeldeformulars"^] .
+
+
+NOTE: Diese Dokumentation zum Schutz von Microsoft SQL Server-Workloads wird als Technologievorschau bereitgestellt. NetApp behält sich das Recht vor, Details, Inhalte und Zeitplan dieses Vorschauangebots vor der allgemeinen Verfügbarkeit zu ändern.
+
+Diese Version von NetApp Backup and Recovery enthält die folgenden Updates:
+
+* *3-2-1-Backup-Funktion*: Diese Version integriert SnapCenter -Funktionen und ermöglicht Ihnen die Verwaltung und den Schutz Ihrer SnapCenter -Ressourcen mit einer 3-2-1-Datensicherungsstrategie über die NetApp Backup and Recovery-Benutzeroberfläche.
+* *Import aus SnapCenter*: Sie können SnapCenter -Sicherungsdaten und -Richtlinien in NetApp Backup and Recovery importieren.
+* *Eine neu gestaltete Benutzeroberfläche* ermöglicht eine intuitivere Verwaltung Ihrer Sicherungs- und Wiederherstellungsaufgaben.
+* *Sicherungsziele*: Sie können Buckets in Amazon Web Services (AWS), Microsoft Azure Blob Storage, StorageGRID und ONTAP S3-Umgebungen hinzufügen, um sie als Sicherungsziele für Ihre Microsoft SQL Server-Workloads zu verwenden.
+* *Workload-Unterstützung*: Mit dieser Version können Sie Microsoft SQL Server-Datenbanken und Verfügbarkeitsgruppen sichern, wiederherstellen, überprüfen und klonen.  (Unterstützung für andere Workloads wird in zukünftigen Versionen hinzugefügt.)
+* *Flexible Wiederherstellungsoptionen*: Mit dieser Version können Sie Datenbanken im Falle einer Beschädigung oder eines versehentlichen Datenverlusts sowohl am ursprünglichen als auch an alternativen Speicherorten wiederherstellen.
+* *Sofortige Produktionskopien*: Erstellen Sie platzsparende Produktionskopien für Entwicklung, Tests oder Analysen in Minuten statt in Stunden oder Tagen.
+* Diese Version beinhaltet die Möglichkeit, detaillierte Berichte zu erstellen.
+
+
+Weitere Informationen zum Schutz von Microsoft SQL Server-Workloads finden Sie unterlink:br-use-mssql-protect-overview.html["Übersicht zum Schützen von Microsoft SQL Server-Workloads"] .

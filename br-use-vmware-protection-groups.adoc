@@ -1,0 +1,105 @@
+---
+sidebar: sidebar 
+permalink: br-use-vmware-protection-groups.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, vmware, vm, virtual machines, workloads, volumes, snapshots 
+summary: Erstellen und verwalten Sie Schutzgruppen für VMware-Workloads in NetApp Backup and Recovery. 
+---
+= Erstellen und verwalten Sie Schutzgruppen für VMware-Workloads mit NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Erstellen Sie Schutzgruppen, um die Sicherungs- und Wiederherstellungsvorgänge für eine Reihe von Workloads zu verwalten. Eine Schutzgruppe ist eine logische Gruppierung von Ressourcen wie VMs und Datenspeichern, die Sie gemeinsam schützen möchten.
+
+Sie können die folgenden Aufgaben im Zusammenhang mit Schutzgruppen ausführen:
+
+* Erstellen Sie eine Schutzgruppe.
+* Schutzdetails anzeigen.
+* Sichern Sie jetzt eine Schutzgruppe. Sehen link:br-use-vmware-backup.html["Sichern Sie jetzt VMware-Workloads"] .
+* Unterbrechen und Fortsetzen des Sicherungszeitplans einer Schutzgruppe.
+* Löschen Sie eine Schutzgruppe.
+
+
+
+
+== Erstellen einer Schutzgruppe
+
+Gruppieren Sie Workloads, die Sie gemeinsam schützen möchten, in einer Schutzgruppe. Sie können eine Schutzgruppe für eine Reihe von Workloads erstellen, die Sie gemeinsam sichern und wiederherstellen möchten.
+
+*Erforderliche Konsolenrolle* Organisationsadministrator, Ordner- oder Projektadministrator, Superadministrator für Backup und Wiederherstellung oder Backup-Administratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery-Menü *Inventar* aus.
+. Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.
+. Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*.
+. Wählen Sie die Registerkarte *Schutzgruppen*.
+. Wählen Sie *Schutzgruppe erstellen*.
+. Geben Sie einen Namen für die Schutzgruppe ein.
+. Wählen Sie die VMs oder Datenbanken aus, die Sie in die Schutzgruppe aufnehmen möchten.
+. Wählen Sie *Weiter*.
+. Wählen Sie die *Sicherungsrichtlinie* aus, die Sie auf die Schutzgruppe anwenden möchten.
++
+Wenn Sie eine Richtlinie erstellen möchten, wählen Sie *Neue Richtlinie erstellen* und folgen Sie den Anweisungen zum Erstellen einer Richtlinie. Sehen link:br-use-policies-create.html["Erstellen von Richtlinien"] für weitere Informationen.
+
+. Wählen Sie *Weiter*.
+. Überprüfen Sie die Konfiguration.
+. Wählen Sie *Erstellen* aus, um die Schutzgruppe zu erstellen.
+
+
+
+
+== Aussetzen des Sicherungszeitplans einer Schutzgruppe
+
+Durch das Aussetzen einer Schutzgruppe werden die geplanten Sicherungen für die Schutzgruppe angehalten. Möglicherweise möchten Sie eine Schutzgruppe aussetzen, wenn Sie die Sicherungen für die Workloads in dieser Gruppe vorübergehend stoppen möchten.
+
+Wenn Sie eine Schutzgruppe aussetzen, ändert sich der Schutzstatus in „In Wartung“. Sie können den Sicherungszeitplan jederzeit fortsetzen.
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery-Menü *Inventar* aus.
+. Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.
+. Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*.
+. Wählen Sie die Registerkarte *Schutzgruppen*.
+. Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Schutzgruppe aussetzen*.
+. Überprüfen Sie die Bestätigungsnachricht und wählen Sie *Aussetzen*.
+
+
+
+
+== Fortsetzen des Sicherungszeitplans einer Schutzgruppe
+
+Durch die Wiederaufnahme einer angehaltenen Schutzgruppe werden die geplanten Sicherungen für die Schutzgruppe neu gestartet.
+
+Der Schutzstatus ändert sich von „In Wartung“, wenn Sie eine Schutzgruppe aussetzen, zu „Geschützt“, wenn Sie sie wieder aufnehmen. Sie können den Sicherungszeitplan jederzeit fortsetzen.
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery-Menü *Inventar* aus.
+. Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.
+. Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*.
+. Wählen Sie die Registerkarte *Schutzgruppen*.
+. Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Schutzgruppe fortsetzen*.
+. Überprüfen Sie die Bestätigungsnachricht und wählen Sie *Fortsetzen*.
+
+
+.Ergebnis
+Das System validiert die Zeitpläne und ändert den Schutzstatus auf „Geschützt“, wenn die Zeitpläne gültig sind. Wenn die Zeitpläne ungültig sind, zeigt das System eine Fehlermeldung an und nimmt die Schutzgruppe nicht wieder auf.
+
+
+
+== Löschen einer Schutzgruppe
+
+Durch das Löschen einer Schutzgruppe werden diese und alle zugehörigen Sicherungszeitpläne entfernt. Möglicherweise möchten Sie eine Schutzgruppe löschen, wenn sie nicht mehr benötigt wird.
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery-Menü *Inventar* aus.
+. Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.
+. Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*.
+. Wählen Sie die Registerkarte *Schutzgruppen*.
+. Wählen Sie die Schutzgruppe aus, die Sie löschen möchten.
+. Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Löschen*.
+. Überprüfen Sie die Bestätigungsmeldung zum Löschen der zugehörigen Sicherungen und bestätigen Sie den Löschvorgang.
+

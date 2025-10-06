@@ -1,0 +1,171 @@
+---
+sidebar: sidebar 
+permalink: concept-start-prereq-snapcenter-import.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, backup and recovery, snapcenter, import, migration, migrate 
+summary: Beginnen Sie mit NetApp Backup and Recovery, indem Sie die Bereitschaft Ihrer Betriebsumgebung, Ihres Konsolenagenten und Ihres Konsolenkontos überprüfen.  Um NetApp Backup and Recovery verwenden zu können, benötigen Sie diese Voraussetzungen. 
+---
+= Voraussetzungen für den Import vom Plug-in-Dienst in NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Wenn Sie Ressourcen aus dem SnapCenter Plug-in-Dienst für Microsoft SQL Server in NetApp Backup and Recovery importieren möchten, müssen Sie noch einige weitere Elemente konfigurieren.
+
+
+
+== Erstellen Sie zuerst Systeme in der NetApp Konsole
+
+Wenn Sie Ressourcen aus SnapCenter importieren möchten, sollten Sie vor dem Importieren aus SnapCenter zunächst den gesamten lokalen SnapCenter -Clusterspeicher zur Konsolenseite *Systeme* hinzufügen.  Dadurch wird sichergestellt, dass Hostressourcen korrekt erkannt und importiert werden können.
+
+
+
+== Stellen Sie sicher, dass die Hostanforderungen für die Installation des SnapCenter -Plug-Ins erfüllt sind
+
+Um Ressourcen aus dem SnapCenter -Plug-in für Microsoft SQL Server zu importieren, stellen Sie sicher, dass die Hostanforderungen für die Installation des SnapCenter -Plug-ins für Microsoft SQL Server erfüllt sind.
+
+Informieren Sie sich insbesondere über die SnapCenter -Anforderungen inlink:concept-start-prereq.html["Voraussetzungen für NetApp Backup und Recovery"] .
+
+
+
+== Deaktivieren Sie die Remote-Einschränkungen der Benutzerkontensteuerung
+
+Deaktivieren Sie vor dem Importieren von Ressourcen aus SnapCenter die Remote-Einschränkungen der Benutzerkontensteuerung (UAC) auf dem SnapCenter Windows-Host.  Deaktivieren Sie UAC, wenn Sie ein lokales Administratorkonto verwenden, um eine Remoteverbindung mit dem SnapCenter Server-Host oder dem SQL-Host herzustellen.
+
+*Sicherheitsüberlegungen*
+
+Berücksichtigen Sie die folgenden Probleme, bevor Sie die Remote-Einschränkungen der Benutzerkontensteuerung deaktivieren:
+
+* Sicherheitsrisiken: Durch die Deaktivierung der Token-Filterung kann Ihr System Sicherheitslücken ausgesetzt sein, insbesondere wenn lokale Administratorkonten von böswilligen Akteuren kompromittiert werden.
+* Mit Vorsicht verwenden:
++
+** Ändern Sie diese Einstellung nur, wenn dies für Ihre Verwaltungsaufgaben unbedingt erforderlich ist.
+** Stellen Sie sicher, dass sichere Passwörter und andere Sicherheitsmaßnahmen zum Schutz der Administratorkonten vorhanden sind.
+
+
+
+
+*Alternative Lösungen*
+
+* Wenn ein Remote-Verwaltungszugriff erforderlich ist, sollten Sie die Verwendung von Domänenkonten mit entsprechenden Berechtigungen in Betracht ziehen.
+* Verwenden Sie sichere Remote-Management-Tools, die den besten Sicherheitspraktiken entsprechen, um Risiken zu minimieren.
+
+
+.Schritte zum Deaktivieren der Remote-Einschränkungen der Benutzerkontensteuerung
+. Ändern Sie die `LocalAccountTokenFilterPolicy` Registrierungsschlüssel auf dem SnapCenter Windows-Host.
++
+Verwenden Sie dazu eine der folgenden Methoden (Anweisungen folgen):
+
++
+** Methode 1: Registrierungseditor
+** Methode 2: PowerShell-Skript
+
+
+
+
+
+
+=== Methode 1: Deaktivieren Sie die Benutzerkontensteuerung mithilfe des Registrierungseditors
+
+Dies ist eine der Methoden, mit denen Sie die Benutzerkontensteuerung deaktivieren können.
+
+.Schritte
+. Öffnen Sie den Registrierungseditor auf dem SnapCenter Windows-Host, indem Sie die folgenden Schritte ausführen:
++
+.. Drücken `Windows+R` , um das Dialogfeld „Ausführen“ zu öffnen.
+.. Typ `regedit` und drücken Sie `Enter` .
+
+
+. Navigieren Sie zum Richtlinienschlüssel:
++
+`HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System`
+
+. Erstellen oder ändern Sie die `DWORD` Wert:
++
+.. Lokalisieren: `LocalAccountTokenFilterPolicy`
+.. Wenn es nicht existiert, erstellen Sie ein neues `DWORD` (32-Bit) Wert mit dem Namen `LocalAccountTokenFilterPolicy` .
+
+
+. Die folgenden Werte werden unterstützt.  Setzen Sie für dieses Szenario den Wert auf `1` :
++
+** `0`(Standard): UAC-Remotebeschränkungen sind aktiviert.  Lokale Konten verfügen beim Remote-Zugriff über gefilterte Token.
+** `1`: UAC-Remotebeschränkungen sind deaktiviert.  Lokale Konten umgehen die Token-Filterung und verfügen beim Remote-Zugriff über vollständige Administratorrechte.
+
+
+. Klicken Sie auf *OK*.
+. Schließen Sie den Registrierungseditor.
+. Starten Sie den SnapCenter Windows-Host neu.
+
+
+.Beispiel einer Registrierungsänderung
+In diesem Beispiel wird LocalAccountTokenFilterPolicy auf „1“ gesetzt, wodurch UAC-Remotebeschränkungen deaktiviert werden.
+
+[listing]
+----
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
+
+"LocalAccountTokenFilterPolicy"=dword:00000001
+----
+
+
+=== Methode 2: Deaktivieren der Benutzerkontensteuerung mithilfe eines PowerShell-Skripts
+
+Dies ist eine weitere Methode, mit der Sie die Benutzerkontensteuerung deaktivieren können.
+
+
+CAUTION: Das Ausführen von PowerShell-Befehlen mit erhöhten Rechten kann sich auf die Systemeinstellungen auswirken.  Stellen Sie sicher, dass Sie die Befehle und ihre Auswirkungen verstehen, bevor Sie sie ausführen.
+
+.Schritte
+. Öffnen Sie ein PowerShell-Fenster mit Administratorrechten auf dem SnapCenter Windows-Host:
++
+.. Klicken Sie auf das Startmenü.
+.. Suchen Sie nach *PowerShell 7* oder *Windows Powershell*.
+.. Klicken Sie mit der rechten Maustaste auf diese Option und wählen Sie *Als Administrator ausführen*.
+
+
+. Stellen Sie sicher, dass PowerShell auf Ihrem System installiert ist.  Nach der Installation sollte es im *Start*-Menü erscheinen.
++
+
+TIP: PowerShell ist standardmäßig in Windows 7 und späteren Versionen enthalten.
+
+. Um die Remote-Einschränkungen der Benutzerkontensteuerung zu deaktivieren, setzen Sie LocalAccountTokenFilterPolicy auf „1“, indem Sie den folgenden Befehl ausführen:
++
+[listing]
+----
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" -Name "LocalAccountTokenFilterPolicy" -Value 1 -Type DWord
+----
+. Überprüfen Sie, ob der aktuelle Wert auf „1“ eingestellt ist in `LocalAccountTokenFilterPolicy`` durch Ausführen von:
++
+[listing]
+----
+Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" -Name "LocalAccountTokenFilterPolicy"
+----
++
+** Wenn der Wert 1 ist, sind UAC-Remotebeschränkungen deaktiviert.
+** Wenn der Wert 0 ist, sind UAC-Remote-Einschränkungen aktiviert.
+
+
+. Starten Sie Ihren Computer neu, um die Änderungen zu übernehmen.
+
+
+.Beispiele für PowerShell 7-Befehle zum Deaktivieren von UAC-Remotebeschränkungen:
+Dieses Beispiel mit dem Wert „1“ zeigt an, dass die UAC-Remotebeschränkungen deaktiviert sind.
+
+[listing]
+----
+# Disable UAC remote restrictions
+
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" -Name "LocalAccountTokenFilterPolicy" -Value 1 -Type DWord
+
+# Verify the change
+
+Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" -Name "LocalAccountTokenFilterPolicy"
+
+# Output
+
+LocalAccountTokenFilterPolicy : 1
+----

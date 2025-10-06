@@ -1,0 +1,53 @@
+---
+sidebar: sidebar 
+permalink: prev-vmware-backup-storagegrid.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Schützen Sie Ihre VMware-Workloads mit NetApp NetApp Backup and Recovery. 
+---
+= Sichern Sie Datenspeicher mit NetApp Backup and Recovery in StorageGRID
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können einen oder mehrere Datenspeicher in StorageGRID sichern, indem Sie das SnapCenter Plug-in for VMware vSphere Hosts mit NetApp Backup and Recovery integrieren.  Dies wird den VM-Administratoren dabei helfen, Daten einfach und schnell zu sichern und zu archivieren, um die Speichereffizienz zu steigern und den Übergang in die Cloud zu beschleunigen.
+
+[]
+====
+*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup und Recovery-Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup- und Recovery-Workloads"] .
+
+====
+.Bevor Sie beginnen
+Stellen Sie sicher, dass Sie allelink:prev-vmware-prereqs.html["Anforderungen für den Schutz virtueller Maschinen"] bevor Sie Datenspeicher in der Cloud sichern.
+
+.Schritte
+. Wählen Sie in der NetApp -Konsolen-Benutzeroberfläche *Schutz* > *Sicherung und Wiederherstellung* > *Virtuelle Maschinen*.
+. Wählenimage:icon-action.png["Aktion"] entsprechend dem Datenspeicher, den Sie sichern möchten, und klicken Sie auf *Sicherung aktivieren*.
+. Wählen Sie auf der Seite „Richtlinie zuweisen“ die Richtlinie aus und klicken Sie auf *Weiter*.
+. Fügen Sie das System hinzu.
++
+Konfigurieren Sie das Cluster-Management-LIF, das die Konsole erkennen soll.  Nachdem das System für einen der Datenspeicher hinzugefügt wurde, kann es für alle anderen Datenspeicher wiederverwendet werden, die sich auf demselben ONTAP Cluster befinden.
+
++
+.. Wählen Sie *System hinzufügen* entsprechend der SVM.
+.. Gehen Sie im Assistent „System hinzufügen“ wie folgt vor:
++
+... Geben Sie die IP-Adresse des Cluster-Management-LIF an.
+... Geben Sie die Anmeldeinformationen des ONTAP Clusterbenutzers an.
+
+
+.. Wählen Sie *System hinzufügen*.
+
+
+. Wählen Sie * StorageGRID*.
++
+.. Geben Sie die IP des Speicherservers an.
+.. Wählen Sie den Zugriffsschlüssel und den geheimen Schlüssel aus.
+
+
+. Überprüfen Sie die Details und wählen Sie *Backup aktivieren*.
+

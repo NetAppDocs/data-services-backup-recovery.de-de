@@ -1,0 +1,20 @@
+= Vorschauversion von NetApp Backup und Recovery
+:allow-uri-read: 
+
+
+
+
+=== Vorschauversion von NetApp Backup und Recovery
+
+Diese Vorschauversion von NetApp Backup and Recovery bietet eine aktualisierte Benutzeroberfläche, mit der Sie Microsoft SQL Server-Workloads mithilfe einer 3-2-1-Schutzstrategie verwalten können, die Sie von NetApp Backup and Recovery kennen.  Mit dieser neuen Version können Sie diese Workloads im Primärspeicher sichern, sie im Sekundärspeicher replizieren und sie im Cloud-Objektspeicher sichern.
+
+
+NOTE: Diese Dokumentation wird als Technologievorschau bereitgestellt. Bei diesem Vorschauangebot behält sich NetApp das Recht vor, Angebotsdetails, Inhalte und Zeitplan vor der allgemeinen Verfügbarkeit zu ändern.
+
+Diese Version von NetApp Backup and Recovery Preview 2025 enthält die folgenden Updates.
+
+* Eine neu gestaltete Benutzeroberfläche, die eine intuitivere Erfahrung bei der Verwaltung Ihrer Sicherungs- und Wiederherstellungsaufgaben bietet.
+* Mit der Vorschauversion können Sie Microsoft SQL Server-Datenbanken sichern und wiederherstellen.  (Unterstützung für andere Workloads wird in zukünftigen Versionen hinzugefügt.)
+* Diese Version integriert SnapCenter -Funktionen und ermöglicht Ihnen die Verwaltung und den Schutz Ihrer SnapCenter -Ressourcen mit einer 3-2-1-Datensicherungsstrategie über die NetApp Backup and Recovery-Benutzeroberfläche.
+* Mit dieser Version können Sie SnapCenter -Workloads in NetApp Backup and Recovery importieren.
+

@@ -1,0 +1,245 @@
+---
+sidebar: sidebar 
+permalink: br-use-mssql-restore.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: Stellen Sie Datenbank-Workloads aus einer Snapshot-Kopie, einem auf einen sekundären Speicher replizierten Workload-Backup oder aus im Objektspeicher gespeicherten Backups wieder her. 
+---
+= Wiederherstellen von Microsoft SQL Server-Workloads mit NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Stellen Sie Microsoft SQL Server-Workloads aus Snapshot-Kopien, aus einem auf einen sekundären Speicher replizierten Workload-Backup oder aus im Objektspeicher gespeicherten Backups mit NetApp Backup and Recovery wieder her.  Sie können eine Workload auf dem ursprünglichen System, auf einem anderen System, das dasselbe Cloud-Konto verwendet, oder auf einem lokalen ONTAP -System wiederherstellen.
+
+.Von diesen Speicherorten wiederherstellen
+Sie können Workloads von verschiedenen Startorten wiederherstellen:
+
+* Wiederherstellung von einem primären Speicherort
+* Wiederherstellen aus einer replizierten Ressource
+* Wiederherstellung aus einer Objektspeichersicherung
+
+
+.Stellen Sie diese Punkte wieder her
+Sie können Daten bis zum letzten Snapshot oder bis zu diesen Punkten wiederherstellen:
+
+* Wiederherstellen aus Snapshots
+* Wiederherstellung zu einem bestimmten Zeitpunkt.  Dies ist hilfreich, wenn Sie den Namen und Speicherort der Datei sowie das Datum kennen, an dem sie zuletzt in gutem Zustand war.
+* Wiederherstellen der neuesten Sicherung
+
+
+.Überlegungen zur Wiederherstellung aus dem Objektspeicher
+Wenn Sie eine Sicherungsdatei im Objektspeicher auswählen und Ransomware Resilience für diese Sicherung aktiv ist (wenn Sie DataLock und Ransomware Resilience in der Sicherungsrichtlinie aktiviert haben), werden Sie aufgefordert, vor der Wiederherstellung der Daten eine zusätzliche Integritätsprüfung der Sicherungsdatei durchzuführen.  Wir empfehlen Ihnen, den Scan durchzuführen.
+
+
+TIP: Für den Zugriff auf den Inhalt der Sicherungsdatei fallen bei Ihrem Cloud-Anbieter zusätzliche Kosten für den Datenverkehr an.
+
+
+
+== So funktioniert die Wiederherstellung von Workloads
+
+Beim Wiederherstellen von Workloads geschieht Folgendes:
+
+* Wenn Sie eine Workload aus einer Sicherungsdatei wiederherstellen, erstellt NetApp Backup and Recovery mithilfe der Daten aus der Sicherung eine _neue_ Ressource.
+* Wenn Sie eine Wiederherstellung aus einem replizierten Workload durchführen, können Sie den Workload auf dem ursprünglichen System oder auf einem lokalen ONTAP System wiederherstellen.
++
+image:diagram_browse_restore_volume-unified.png["Ein Diagramm, das den Ablauf zum Wiederherstellen einer Ressource zeigt"]
+
+* Wenn Sie ein Backup aus dem Objektspeicher wiederherstellen, können Sie die Daten auf dem ursprünglichen System oder auf einem lokalen ONTAP -System wiederherstellen.
+
+
+
+
+== Wiederherstellungsmethoden
+
+Sie können Workloads mit einer der folgenden Methoden wiederherstellen.  Wählen Sie je nach Ihren Wiederherstellungsanforderungen normalerweise eine der folgenden Methoden:
+
+* *Von der Seite „Wiederherstellen“*: Verwenden Sie dies, wenn Sie eine Ressource wiederherstellen müssen, sich aber nicht an den genauen Namen oder den Speicherort erinnern oder an das Datum, an dem sie zuletzt in gutem Zustand war. Sie können mithilfe von Filtern nach dem Schnappschuss suchen.
+* *Von der Inventarseite*: Verwenden Sie dies, wenn Sie eine bestimmte Ressource aus der letzten Woche oder dem letzten Monat wiederherstellen müssen – und Sie den Namen und Standort der Ressource sowie das Datum kennen, an dem sie zuletzt in gutem Zustand war.  Sie durchsuchen eine Liste von Ressourcen, um die Ressource zu finden, die Sie wiederherstellen möchten.
+
+
+*Erforderliche NetApp -Konsolenrolle* Speicherbetrachter, Superadministrator für Backup und Wiederherstellung oder Backup-Administratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+
+
+
+== Wiederherstellen von Workload-Daten über die Option „Wiederherstellen“
+
+Stellen Sie Datenbank-Workloads mithilfe der Option „Wiederherstellen“ wieder her.
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery-Menü *Wiederherstellen* aus.
+. Wählen Sie die Datenbank aus, die Sie wiederherstellen möchten.  Verwenden Sie die Filter zur Suche.
+. Wählen Sie die Wiederherstellungsoption:
++
+** Wiederherstellen aus Snapshots
+** Wiederherstellung zu einem bestimmten Zeitpunkt.  Dies ist hilfreich, wenn Sie den Namen und Speicherort der Datei sowie das Datum kennen, an dem sie zuletzt in gutem Zustand war.
+** Wiederherstellen der neuesten Sicherung
+
+
+
+
+
+
+=== Wiederherstellen von Workloads aus Snapshots
+
+. Wählen Sie auf der Seite „Wiederherstellungsoptionen“ die Option „Aus Snapshots wiederherstellen“ aus.
++
+Es wird eine Liste mit Snapshots angezeigt.
+
+. Wählen Sie den Snapshot aus, den Sie wiederherstellen möchten.
+. Wählen Sie *Weiter*.
++
+Als Nächstes werden die Zieloptionen angezeigt.
+
+. Geben Sie auf der Seite „Zieldetails“ die folgenden Informationen ein:
++
+** *Zieleinstellungen*: Wählen Sie, ob Sie die Daten an ihrem ursprünglichen Speicherort oder an einem anderen Speicherort wiederherstellen möchten.  Wählen Sie für einen alternativen Speicherort den Hostnamen und die Instanz aus, geben Sie den Datenbanknamen ein und geben Sie den Zielpfad ein, in dem Sie den Snapshot wiederherstellen möchten.
+** *Optionen vor der Wiederherstellung*:
++
+*** *Datenbank beim Wiederherstellen mit gleichem Namen überschreiben*: Beim Wiederherstellen bleibt der ursprüngliche Datenbankname erhalten.
+*** *Replikationseinstellungen der SQL-Datenbank beibehalten*: Behält die Replikationseinstellungen für die SQL-Datenbank nach dem Wiederherstellungsvorgang bei.
+*** *Transaktionsprotokollsicherung vor der Wiederherstellung erstellen*: Erstellt vor dem Wiederherstellungsvorgang eine Transaktionsprotokollsicherung.***  *Wiederherstellung beenden, wenn die Sicherung des Transaktionsprotokolls vor der Wiederherstellung fehlschlägt*: Beendet den Wiederherstellungsvorgang, wenn die Sicherung des Transaktionsprotokolls fehlschlägt.
+*** *Prescript*: Geben Sie den vollständigen Pfad für ein Skript ein, das vor dem Wiederherstellungsvorgang ausgeführt werden soll, alle Argumente, die das Skript benötigt, und wie lange auf die Fertigstellung des Skripts gewartet werden soll.
+
+
+** *Optionen nach der Wiederherstellung*:
++
+*** *Betriebsbereit*, aber nicht zum Wiederherstellen zusätzlicher Transaktionsprotokolle verfügbar.  Dadurch wird die Datenbank nach der Anwendung der Transaktionsprotokollsicherungen wieder online geschaltet.
+*** *Nicht betriebsbereit*, aber zum Wiederherstellen zusätzlicher Transaktionsprotokolle verfügbar.  Hält die Datenbank nach dem Wiederherstellungsvorgang in einem nicht betriebsbereiten Zustand, während die Sicherungen des Transaktionsprotokolls wiederhergestellt werden.  Diese Option ist nützlich, um zusätzliche Transaktionsprotokolle wiederherzustellen.
+*** *Nur-Lese-Modus* und verfügbar zum Wiederherstellen zusätzlicher Transaktionsprotokolle.  Stellt die Datenbank im schreibgeschützten Modus wieder her und wendet Transaktionsprotokollsicherungen an.
+*** *Postscript*: Geben Sie den vollständigen Pfad für ein Skript ein, das nach dem Wiederherstellungsvorgang ausgeführt werden soll, sowie alle Argumente, die das Skript verwendet.
+
+
+
+
+. Wählen Sie *Wiederherstellen*.
+
+
+
+
+=== Wiederherstellung zu einem bestimmten Zeitpunkt
+
+NetApp Backup and Recovery verwendet Protokolle und die aktuellsten Snapshots, um eine zeitpunktbezogene Wiederherstellung Ihrer Daten zu erstellen.
+
+. Fahren Sie auf der Seite „Wiederherstellungsoptionen“ fort und wählen Sie „Zu einem bestimmten Zeitpunkt wiederherstellen“ aus.
+. Wählen Sie *Weiter*.
+. Geben Sie auf der Seite „Zu einem bestimmten Zeitpunkt wiederherstellen“ die folgenden Informationen ein:
++
+** *Datum und Uhrzeit der Datenwiederherstellung*: Geben Sie das genaue Datum und die Uhrzeit der Daten ein, die Sie wiederherstellen möchten.  Dieses Datum und diese Uhrzeit stammen vom Microsoft SQL Server-Datenbankhost.
+
+
+. Wählen Sie *Suchen*.
+. Wählen Sie den Snapshot aus, den Sie wiederherstellen möchten.
+. Wählen Sie *Weiter*.
+. Geben Sie auf der Seite „Zieldetails“ die folgenden Informationen ein:
++
+** *Zieleinstellungen*: Wählen Sie, ob Sie die Daten an ihrem ursprünglichen Speicherort oder an einem anderen Speicherort wiederherstellen möchten.  Wählen Sie für einen alternativen Speicherort den Hostnamen und die Instanz aus, geben Sie den Datenbanknamen ein und geben Sie den Zielpfad ein.
+** *Optionen vor der Wiederherstellung*:
++
+*** *Ursprünglichen Datenbanknamen beibehalten*: Während der Wiederherstellung bleibt der ursprüngliche Datenbankname erhalten.
+*** *Replikationseinstellungen der SQL-Datenbank beibehalten*: Behält die Replikationseinstellungen für die SQL-Datenbank nach dem Wiederherstellungsvorgang bei.
+*** *Prescript*: Geben Sie den vollständigen Pfad für ein Skript ein, das vor dem Wiederherstellungsvorgang ausgeführt werden soll, alle Argumente, die das Skript benötigt, und wie lange auf die Fertigstellung des Skripts gewartet werden soll.
+
+
+** *Optionen nach der Wiederherstellung*:
++
+*** *Betriebsbereit*, aber nicht zum Wiederherstellen zusätzlicher Transaktionsprotokolle verfügbar.  Dadurch wird die Datenbank nach der Anwendung der Transaktionsprotokollsicherungen wieder online geschaltet.
+*** *Nicht betriebsbereit*, aber zum Wiederherstellen zusätzlicher Transaktionsprotokolle verfügbar.  Hält die Datenbank nach dem Wiederherstellungsvorgang in einem nicht betriebsbereiten Zustand, während die Sicherungen des Transaktionsprotokolls wiederhergestellt werden.  Diese Option ist nützlich, um zusätzliche Transaktionsprotokolle wiederherzustellen.
+*** *Nur-Lese-Modus* und verfügbar zum Wiederherstellen zusätzlicher Transaktionsprotokolle.  Stellt die Datenbank im schreibgeschützten Modus wieder her und wendet Transaktionsprotokollsicherungen an.
+*** *Postscript*: Geben Sie den vollständigen Pfad für ein Skript ein, das nach dem Wiederherstellungsvorgang ausgeführt werden soll, sowie alle Argumente, die das Skript verwendet.
+
+
+
+
+. Wählen Sie *Wiederherstellen*.
+
+
+
+
+=== Wiederherstellen der neuesten Sicherung
+
+Diese Option verwendet die neuesten vollständigen und Protokollsicherungen, um Ihre Daten in den letzten fehlerfreien Zustand zurückzusetzen.  Das System scannt Protokolle vom letzten Snapshot bis zur Gegenwart.  Der Prozess verfolgt Änderungen und Aktivitäten, um die aktuellste und genaueste Version Ihrer Daten wiederherzustellen.
+
+. Fahren Sie auf der Seite „Wiederherstellungsoptionen“ fort und wählen Sie „Auf die neueste Sicherung wiederherstellen“ aus.
++
+NetApp Backup and Recovery zeigt Ihnen die Snapshots, die für den Wiederherstellungsvorgang verfügbar sind.
+
+. Wählen Sie auf der Seite „Auf den neuesten Stand wiederherstellen“ den Snapshot-Speicherort des lokalen, sekundären Speichers oder Objektspeichers aus.
+. Wählen Sie *Weiter*.
+. Geben Sie auf der Seite „Zieldetails“ die folgenden Informationen ein:
++
+** *Zieleinstellungen*: Wählen Sie, ob Sie die Daten an ihrem ursprünglichen Speicherort oder an einem anderen Speicherort wiederherstellen möchten.  Wählen Sie für einen alternativen Speicherort den Hostnamen und die Instanz aus, geben Sie den Datenbanknamen ein und geben Sie den Zielpfad ein.
+** *Optionen vor der Wiederherstellung*:
++
+*** *Datenbank beim Wiederherstellen mit gleichem Namen überschreiben*: Beim Wiederherstellen bleibt der ursprüngliche Datenbankname erhalten.
+*** *Replikationseinstellungen der SQL-Datenbank beibehalten*: Behält die Replikationseinstellungen für die SQL-Datenbank nach dem Wiederherstellungsvorgang bei.
+*** *Vor der Wiederherstellung eine Sicherungskopie des Transaktionsprotokolls erstellen*: Erstellt vor dem Wiederherstellungsvorgang eine Sicherungskopie des Transaktionsprotokolls.
+*** *Wiederherstellung beenden, wenn die Sicherung des Transaktionsprotokolls vor der Wiederherstellung fehlschlägt*: Beendet den Wiederherstellungsvorgang, wenn die Sicherung des Transaktionsprotokolls fehlschlägt.
+*** *Prescript*: Geben Sie den vollständigen Pfad für ein Skript ein, das vor dem Wiederherstellungsvorgang ausgeführt werden soll, alle Argumente, die das Skript benötigt, und wie lange auf die Fertigstellung des Skripts gewartet werden soll.
+
+
+** *Optionen nach der Wiederherstellung*:
++
+*** *Betriebsbereit*, aber nicht zum Wiederherstellen zusätzlicher Transaktionsprotokolle verfügbar.  Dadurch wird die Datenbank nach der Anwendung der Transaktionsprotokollsicherungen wieder online geschaltet.
+*** *Nicht betriebsbereit*, aber zum Wiederherstellen zusätzlicher Transaktionsprotokolle verfügbar.  Hält die Datenbank nach dem Wiederherstellungsvorgang in einem nicht betriebsbereiten Zustand, während die Sicherungen des Transaktionsprotokolls wiederhergestellt werden.  Diese Option ist nützlich, um zusätzliche Transaktionsprotokolle wiederherzustellen.
+*** *Nur-Lese-Modus* und verfügbar zum Wiederherstellen zusätzlicher Transaktionsprotokolle.  Stellt die Datenbank im schreibgeschützten Modus wieder her und wendet Transaktionsprotokollsicherungen an.
+*** *Postscript*: Geben Sie den vollständigen Pfad für ein Skript ein, das nach dem Wiederherstellungsvorgang ausgeführt werden soll, sowie alle Argumente, die das Skript verwendet.
+
+
+
+
+. Wählen Sie *Wiederherstellen*.
+
+
+
+
+== Wiederherstellen von Workload-Daten aus der Inventaroption
+
+Stellen Sie Datenbank-Workloads von der Inventarseite aus wieder her.  Mit der Inventaroption können Sie nur Datenbanken, keine Instanzen wiederherstellen.
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery-Menü *Inventar* aus.
+. Wählen Sie den Host aus, auf dem sich die Ressource befindet, die Sie wiederherstellen möchten.
+. Wählen Sie die *Aktionen*image:icon-action.png["Symbol „Aktionen“"] Symbol und wählen Sie *Details anzeigen*.
+. Wählen Sie auf der Microsoft SQL Server-Seite die Registerkarte *Datenbanken* aus.
+. Wählen Sie auf der Registerkarte „Datenbanken“ die Datenbank aus, die den Status „Geschützt“ aufweist. Dies bedeutet, dass eine Sicherung vorhanden ist, die Sie wiederherstellen können.
+. Wählen Sie die *Aktionen*image:icon-action.png["Symbol „Aktionen“"] Symbol und wählen Sie *Wiederherstellen*.
++
+Es werden dieselben drei Optionen angezeigt wie beim Wiederherstellen über die Seite „Wiederherstellen“:
+
++
+** Wiederherstellen aus Snapshots
+** Wiederherstellung zu einem bestimmten Zeitpunkt
+** Wiederherstellen der neuesten Sicherung
+
+
+. Fahren Sie mit den gleichen Schritten für die Wiederherstellungsoption auf der Seite „Wiederherstellen“ fort
+
+
+ifdef::aws[]
+
+endif::aws[]
+
+ifdef::azure[]
+
+endif::azure[]
+
+ifdef::gcp[]
+
+endif::gcp[]
+
+ifdef::aws[]
+
+endif::aws[]
+
+ifdef::azure[]
+
+endif::azure[]
+
+ifdef::gcp[]
+
+endif::gcp[]

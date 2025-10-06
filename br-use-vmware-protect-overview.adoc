@@ -1,0 +1,40 @@
+---
+sidebar: sidebar 
+permalink: br-use-vmware-protect-overview.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Schützen Sie Ihre VMware-Workloads mit NetApp NetApp Backup and Recovery. 
+---
+= Überblick zum Schutz von VMware-Workloads mit NetApp Backup und Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Schützen Sie Ihre VMware-VMs und Datenspeicher mit NetApp Backup and Recovery.  NetApp Backup and Recovery bietet schnelle, platzsparende, absturzkonsistente und VM-konsistente Sicherungs- und Wiederherstellungsvorgänge. Sie können VMware-Workloads auf Amazon Web Services S3 oder StorageGRID sichern und VMware-Workloads auf einem lokalen VMware-Host wiederherstellen.
+
+
+NOTE: Diese Version von NetApp Backup and Recovery unterstützt nur VMware vCenter und erkennt keine vVols oder VMs auf vVols.
+
+Verwenden Sie NetApp Backup and Recovery, um eine 3-2-1-Strategie zu implementieren, bei der Sie 3 Kopien Ihrer Quelldaten auf 2 verschiedenen Speichersystemen sowie 1 Kopie in der Cloud haben. Zu den Vorteilen des 3-2-1-Ansatzes gehören:
+
+* Mehrere Datenkopien bieten mehrschichtigen Schutz vor internen (Insider-) und externen Cybersicherheitsbedrohungen.
+* Mehrere Medientypen gewährleisten die Failover-Funktionalität im Falle eines physischen oder logischen Ausfalls eines Medientyps.
+* Die Vor-Ort-Kopie ermöglicht eine schnelle Wiederherstellung, wobei die Offsite-Kopien für den Fall verfügbar sind, dass die Vor-Ort-Kopie kompromittiert wird.
+
+
+[]
+====
+*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup und Recovery UI-Versionen finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zur vorherigen NetApp Backup and Recovery-Benutzeroberfläche"] .
+
+====
+Mit NetApp Backup and Recovery können Sie die folgenden Aufgaben im Zusammenhang mit VMware-Workloads ausführen:
+
+* link:br-use-vmware-discovery.html["Entdecken Sie VMware-Workloads"]
+* link:br-use-vmware-protection-groups.html["Erstellen und Verwalten von Schutzgruppen für VMware-Workloads"]
+* link:br-use-vmware-backup.html["Sichern Sie VMware-Workloads"]
+* link:br-use-vmware-restore.html["Wiederherstellen von VMware-Workloads"]
+

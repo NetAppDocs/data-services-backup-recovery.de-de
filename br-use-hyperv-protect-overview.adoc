@@ -1,0 +1,41 @@
+---
+sidebar: sidebar 
+permalink: br-use-hyperv-protect-overview.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: Sie können virtuelle Hyper-V-Maschinen von lokalen ONTAP Systemen auf primärem und sekundärem Speicher schützen und so sicherstellen, dass Ihre Daten geschützt sind. 
+---
+= Übersicht zum Schützen von Hyper-V-Workloads
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Schützen Sie Ihre Hyper-V-VMs mit NetApp Backup and Recovery.  NetApp Backup and Recovery bietet schnelle, platzsparende, absturzkonsistente und VM-konsistente Sicherungs- und Wiederherstellungsvorgänge sowohl für eigenständige als auch für FCI-Clusterinstanzen.
+
+Sie können Hyper-V-Workloads auf Amazon Web Services S3 oder StorageGRID sichern und Hyper-V-Workloads auf einem lokalen Hyper-V-Host wiederherstellen.
+
+image:../media/diagram-backup-recovery-general.png["Architekturdiagramm für Backup und Wiederherstellung im Allgemeinen"]
+
+Verwenden Sie NetApp Backup and Recovery, um eine 3-2-1-Schutzstrategie zu implementieren, bei der Sie 3 Kopien Ihrer Quelldaten auf 2 verschiedenen Speichersystemen sowie 1 Kopie in der Cloud haben. Zu den Vorteilen des 3-2-1-Ansatzes gehören:
+
+* Mehrere Datenkopien bieten mehrschichtigen Schutz vor internen (Insider-) und externen Cybersicherheitsbedrohungen.
+* Mehrere Medientypen gewährleisten die Failover-Funktionalität im Falle eines physischen oder logischen Ausfalls eines Medientyps.
+* Die Vor-Ort-Kopie ermöglicht eine schnelle Wiederherstellung, wobei die Offsite-Kopien für den Fall verfügbar sind, dass die Vor-Ort-Kopie kompromittiert wird.
+
+
+Wenn Sie Hyper-V-Hosts hinzufügen und Ressourcen ermitteln, installiert NetApp Backup and Recovery das NetApp Hyper-V-Plug-in und das NetApp SnapCenter Windows FileSystem-Plug-in auf dem Hyper-V-Host, um die Verwaltung und den Schutz virtueller Maschinen zu unterstützen.
+
+
+NOTE: Informationen zum Wechseln zwischen NetApp Backup- und Recovery-UI-Versionen finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zur vorherigen NetApp Backup and Recovery-Benutzeroberfläche"] .
+
+Mit NetApp Backup and Recovery können Sie die folgenden Aufgaben im Zusammenhang mit Hyper-V-Workloads ausführen:
+
+* link:br-start-discover-hyperv.html["Entdecken Sie Hyper-V-Workloads"]
+* link:br-use-hyperv-protection-groups.html["Erstellen und Verwalten von Schutzgruppen für Hyper-V-Workloads"]
+* link:br-use-hyperv-backup.html["Sichern Sie Hyper-V-Workloads"]
+* link:br-use-hyperv-restore.html["Wiederherstellen von Hyper-V-Workloads"]
+

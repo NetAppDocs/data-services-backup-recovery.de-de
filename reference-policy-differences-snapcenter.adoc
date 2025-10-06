@@ -1,0 +1,104 @@
+---
+sidebar: sidebar 
+permalink: reference-policy-differences-snapcenter.html 
+keywords: backup policy, backup policies, snapcenter, migration 
+summary: Es gibt einige Unterschiede zwischen den in NetApp Backup and Recovery und den in SnapCenter verwendeten Richtlinien. 
+---
+= Richtlinien in SnapCenter im Vergleich zu denen in NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Es gibt einige Unterschiede zwischen den in SnapCenter und den in NetApp Backup and Recovery verwendeten Richtlinien, die sich auf die Anzeige nach dem Importieren von Ressourcen und Richtlinien aus SnapCenter auswirken können.
+
+
+
+== Zeitplanstufen
+
+SnapCenter verwendet die folgenden Zeitplanebenen:
+
+* *Stündlich*: Mehrere Stunden und Minuten mit beliebigen Stunden (0-23) und beliebigen Minuten (0-60).
+* *Täglich*: Enthält eine Option zur Wiederholung alle paar Tage, zum Beispiel alle 3 Tage.
+* *Wöchentlich*: Sonntag bis Montag, mit der Option, am ersten Tag der Woche oder an mehreren Tagen der Woche einen Snapshot durchzuführen.
+* *Monatlich*: Monate Januar bis Dezember, mit der Option, an bestimmten Tagen im Monat aufzutreten, beispielsweise am 7. jedes Monats und sogar an mehreren Tagen im Monat.
+
+
+NetApp Backup and Recovery verwendet die folgenden Zeitplanebenen, die sich leicht unterscheiden:
+
+* *Stündlich*: Führt Snapshots nur in 15-Minuten-Intervallen aus, beispielsweise alle 1 Stunde oder in 15-Minuten-Intervallen unter 60.
+* *Täglich*: Stunden des Tages (0–23) mit Startzeit beispielsweise um 10:00 Uhr mit der Option, alle paar Stunden eine Ausführung durchzuführen.
+* *Wöchentlich*: Wochentag (Sonntag bis Montag) mit der Option, an einem oder mehreren Tagen aufzutreten.  Dies ist dasselbe wie SnapCenter.
+* *Monatlich*: Daten des Monats (0–30) mit einer Startzeit an mehreren Daten des Monats.
+* *Jährlich*: Monatlich.  Dies entspricht dem monatlichen SnapCenter.
+
+
+
+
+== Mehrere Richtlinien in SnapCenter mit derselben Zeitplanebene
+
+Sie können einer Ressource in SnapCenter mehrere Richtlinien mit derselben Zeitplanebene zuweisen.  NetApp Backup and Recovery unterstützt jedoch nicht mehrere Richtlinien für eine Ressource, die dieselbe Zeitplanebene verwendet.
+
+*Beispiel*: Wenn Sie in SnapCenter drei Richtlinien (für Daten, Protokoll und Protokoll von Snapshots) verwenden, verwendet NetApp Backup and Recovery nach der Migration von SnapCenter eine einzige Richtlinie anstelle aller drei.
+
+
+
+== Importierte SnapCenter -Tagespläne
+
+NetApp Backup and Recovery passt die SnapCenter -Zeitpläne wie folgt an:
+
+* Wenn der SnapCenter -Zeitplan auf weniger als oder gleich 7 Tage eingestellt ist, legt NetApp Backup and Recovery den Zeitplan auf wöchentlich fest.  Einige Schnappschüsse werden während der Woche übersprungen.
++
+*Beispiel*: Wenn Sie über eine SnapCenter -Tagesrichtlinie mit einem Wiederholungsintervall von drei Tagen ab Montag verfügen, legt NetApp Backup and Recovery den Zeitplan auf wöchentlich am Montag, Donnerstag und Sonntag fest.  Einige Tage werden übersprungen, da es nicht genau alle 3 Tage ist.
+
+* Wenn der SnapCenter -Zeitplan auf mehr als 7 Tage eingestellt ist, legt NetApp Backup and Recovery den Zeitplan auf monatlich fest.  Einige Schnappschüsse werden im Laufe des Monats übersprungen.
++
+*Beispiel*: Wenn Sie über eine SnapCenter -Tagesrichtlinie mit einem Wiederholungsintervall von 10 Tagen ab dem 2. des Monats verfügen, legt NetApp Backup and Recovery (nach der Migration) den Zeitplan auf monatlich am 2., 12. und 22. Tag des Monats fest.  Im nächsten Monat werden einige Tage ausgelassen.
+
+
+
+
+
+== Importierte SnapCenter -Stundenpläne
+
+Stündliche SnapCenter -Richtlinien mit Wiederholungsintervallen von mehr als einer Stunde werden in NetApp Backup and Recovery in eine tägliche Richtlinie umgewandelt.
+
+Bei jeder stündlichen Richtlinie mit Wiederholungsintervallen, die kein Faktor von 24 sind (z. B. 5, 7 usw.), werden einige Snapshots an einem Tag übersprungen.
+
+*Beispiel*: Wenn Sie über eine stündliche SnapCenter -Richtlinie mit einem Wiederholungsintervall alle 5 Stunden ab 1:00 Uhr verfügen, legt NetApp Backup and Recovery (nach der Migration) den Zeitplan auf täglich mit 5-Stunden-Intervallen um 1:00 Uhr, 6:00 Uhr, 11:00 Uhr, 16:00 Uhr und 21:00 Uhr fest.  Einige Stunden werden übersprungen. Nach 21:00 Uhr sollte es 2:00 Uhr sein, um die Wiederholung alle 5 Stunden durchzuführen, aber es wird immer 1:00 Uhr sein.
+
+
+
+== Protokollaufbewahrung aus SnapCenter -Richtlinien
+
+Wenn Sie in SnapCenter über eine Ressource mit mehreren Richtlinien verfügen, verwendet NetApp Backup and Recovery die folgende Prioritätsreihenfolge, um den Protokollaufbewahrungswert zuzuweisen:
+
+* Für „Vollständige Sicherung mit Protokollsicherungsrichtlinie“ plus „Nur-Protokoll“-Richtlinien in SnapCenter verwendet NetApp Backup and Recovery den Aufbewahrungswert der Nur-Protokoll-Richtlinie.
+* Für die Richtlinien „Vollständige Sicherung nur mit Protokoll“ und „Vollständig und Protokoll“ in SnapCenter verwendet NetApp Backup and Recovery den Nur-Protokoll-Aufbewahrungswert.
+* Für „Vollständige Sicherung und Protokoll“ plus „Vollständige Sicherung“ in SnapCenter verwendet NetApp Backup and Recovery den Aufbewahrungswert „Vollständige Sicherung und Protokoll“.
+* Wenn Sie in SnapCenter nur über eine vollständige Sicherung verfügen, aktiviert NetApp Backup and Recovery die Protokollsicherung nicht.
+
+
+
+
+== Aufbewahrungsdauer der Protokollsicherung
+
+Mit SnapCenter können Sie einer Ressource mehrere Aufbewahrungswerte über mehrere Richtlinien hinweg zuordnen. NetApp Backup and Recovery unterstützt jedoch nur einen einzigen Aufbewahrungswert für alle einer Ressource zugeordneten Richtlinien.
+
+
+
+== Aufbewahrungsanzahl aus SnapCenter -Richtlinien
+
+Wenn Sie über eine Ressource mit aktiviertem sekundärem Schutz in SnapCenter mit mehreren Quellvolumes, mehreren Zielvolumes und mehreren SnapMirror -Beziehungen verfügen, verwendet NetApp Backup and Recovery nur die Aufbewahrungsanzahl der ersten Richtlinie.
+
+*Beispiel*: Wenn Sie eine SnapCenter -Richtlinie mit einer Aufbewahrungsanzahl von 5 und eine andere Richtlinie mit einer Aufbewahrungsanzahl von 10 haben, verwendet NetApp Backup and Recovery die Aufbewahrungsanzahl von 5.
+
+
+
+== SnapMirror -Labels aus SnapCenter -Richtlinien
+
+SnapMirror -Beschriftungen für jede Richtlinie in SnapCenter bleiben nach der Migration intakt, auch wenn die Ebene geändert wird.
+
+*Beispiel*: Eine stündliche Richtlinie von SnapCenter kann in NetApp Backup and Recovery auf täglich geändert werden.  Die SnapMirror -Beschriftungen bleiben jedoch nach der Migration gleich.

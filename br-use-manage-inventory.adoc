@@ -1,0 +1,308 @@
+---
+sidebar: sidebar 
+permalink: br-use-manage-inventory.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, snapcenter 
+summary: Mit NetApp Backup and Recovery können Sie Ihre Workload-Host-Informationen, Datenbankinformationen und Instanzinformationen verwalten.  Sie können Schutzeinstellungen für Ihr Inventar anzeigen, bearbeiten und löschen. 
+---
+= Verwalten Sie den Microsoft SQL Server-Bestand mit NetApp Backup und Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Mit NetApp Backup and Recovery können Sie die Host-, Datenbank- und Instanzinformationen Ihrer Microsoft SQL Server-Workload verwalten.  Sie können die Schutzeinstellungen Ihres Inventars anzeigen, bearbeiten und löschen.
+
+Sie können die folgenden Aufgaben im Zusammenhang mit der Verwaltung Ihres Inventars ausführen:
+
+* Hostinformationen verwalten
++
+** Zeitpläne aussetzen
+** Hosts bearbeiten oder löschen
+
+
+* Verwalten von Instanzinformationen
++
+** Anmeldeinformationen einer Ressource zuordnen
+** Sichern Sie jetzt, indem Sie ein On-Demand-Backup starten
+** Schutzeinstellungen bearbeiten
+
+
+* Verwalten von Datenbankinformationen
++
+** Schützen Sie Datenbanken
+** Datenbanken wiederherstellen
+** Schutzeinstellungen bearbeiten
+** Sichern Sie jetzt, indem Sie ein On-Demand-Backup starten
+
+
+* Konfigurieren Sie das Protokollverzeichnis (unter Inventar > Hosts).  Wenn Sie Protokolle für Ihre Datenbankhosts im Snapshot sichern möchten, konfigurieren Sie zuerst die Protokolle in NetApp Backup and Recovery. Weitere Einzelheiten finden Sie unterlink:br-start-setup.html["Konfigurieren der NetApp Backup- und Recovery-Einstellungen"] .
+
+
+
+
+== Hostinformationen verwalten
+
+Sie können Hostinformationen verwalten, um sicherzustellen, dass die richtigen Hosts geschützt sind.  Sie können Hostinformationen anzeigen, bearbeiten und löschen.
+
+*Erforderliche NetApp Konsolenrolle* Speicherbetrachter, Superadministrator für Backup und Recovery, Backupadministrator für Backup und Recovery, Wiederherstellungsadministrator für Backup und Recovery oder Administratorrolle für Klonadministrator für Backup und Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+
+* Konfigurieren Sie das Protokollverzeichnis. Weitere Einzelheiten finden Sie unterlink:br-start-setup.html["Konfigurieren der NetApp Backup- und Recovery-Einstellungen"] .
+* Zeitpläne aussetzen
+* Einen Host bearbeiten
+* Löschen eines Hosts
+
+
+
+
+=== Hosts verwalten
+
+Sie können die in Ihrem System erkannten Hosts verwalten.  Sie können sie einzeln oder als Gruppe verwalten.
+
+
+TIP: Sie können nur die Hosts verwalten, die in der Spalte „Hosts“ den Status „Nicht verwaltet“ anzeigen.  Wenn der Status „Managed“ lautet, bedeutet dies, dass der Host bereits von NetApp Backup and Recovery verwaltet wird.
+
+Nachdem Sie die Hosts in NetApp Backup and Recovery verwaltet haben, verwaltet SnapCenter die Ressourcen auf diesen Hosts nicht mehr.
+
+*Erforderliche NetApp -Konsolenrolle* Speicherbetrachter oder Superadministrator für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+
+.Schritte
+. Wählen Sie im Menü *Inventar* aus.
+. Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.
+. Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*.
+. Wählen Sie die Registerkarte *Hosts*.
+. Wählen Sie einen oder mehrere Hosts aus.  Wenn Sie mehrere Hosts auswählen, wird die Option „Massenaktionen“ angezeigt, in der Sie *Verwalten (bis zu 5 Hosts)* auswählen können.
+. Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Verwalten*.
+. Überprüfen Sie die Hostabhängigkeiten:
++
+** Wenn das vCenter nicht angezeigt wird, wählen Sie das Stiftsymbol aus, um die vCenter-Details hinzuzufügen oder zu bearbeiten.
+** Wenn Sie ein vCenter hinzufügen, müssen Sie das vCenter auch registrieren, indem Sie *vCenter registrieren* auswählen.
+
+
+. Wählen Sie *Einstellungen validieren*, um Ihre Einstellungen zu testen.
+. Wählen Sie *Verwalten*, um den Host zu verwalten.
+
+
+
+
+=== Zeitpläne aussetzen
+
+Sie können Zeitpläne aussetzen, um die Sicherungs- und Wiederherstellungsvorgänge für einen Host zu stoppen.  Dies ist möglicherweise sinnvoll, wenn Sie Wartungsarbeiten am Host durchführen müssen.
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery-Menü *Inventar* aus.
+. Wählen Sie den Host aus, auf dem Sie Zeitpläne aussetzen möchten.
+. Wählen Sie die *Aktionen*image:icon-action.png["Symbol „Aktionen“"] Symbol und wählen Sie *Zeitpläne aussetzen*.
+. Wählen Sie im Bestätigungsdialogfeld *Suspend* aus.
+
+
+
+
+=== Einen Host bearbeiten
+
+Sie können die vCenter-Serverinformationen, die Anmeldeinformationen für die Hostregistrierung und die erweiterten Einstellungsoptionen ändern.
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery-Menü *Inventar* aus.
+. Wählen Sie den Host aus, den Sie bearbeiten möchten.
+. Wählen Sie die *Aktionen*image:icon-action.png["Symbol „Aktionen“"] Symbol und wählen Sie *Host bearbeiten*.
+. Bearbeiten Sie die Hostinformationen.
+. Wählen Sie *Fertig*.
+
+
+
+
+=== Löschen eines Hosts
+
+Sie können die Host-Informationen löschen, um die Servicegebühren zu stoppen.
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery-Menü *Inventar* aus.
+. Wählen Sie den Host aus, den Sie löschen möchten.
+. Wählen Sie die *Aktionen*image:icon-action.png["Symbol „Aktionen“"] Symbol und wählen Sie *Host löschen*.
+. Überprüfen Sie die Bestätigungsinformationen und wählen Sie *Löschen*.
+
+
+
+
+== Verwalten von Instanzinformationen
+
+Sie können Instanzinformationen verwalten, um sicherzustellen, dass Ressourcen über die entsprechenden Anmeldeinformationen für den Schutz verfügen, und Sie können Ressourcen auf folgende Weise sichern:
+
+* Schützen von Instanzen
+* Anmeldeinformationen zuordnen
+* Trennen der Anmeldeinformationen
+* Bearbeitungsschutz
+* Jetzt sichern
+
+
+*Erforderliche NetApp -Konsolenrolle* Speicherbetrachter, Superadministrator für Backup und Wiederherstellung, Backup-Administratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+
+
+
+=== Schützen Sie Datenbankinstanzen
+
+Sie können einer Datenbankinstanz eine Richtlinie zuweisen, indem Sie Richtlinien verwenden, die die Zeitpläne und die Beibehaltung des Ressourcenschutzes regeln.
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery-Menü *Inventar* aus.
+. Wählen Sie die Arbeitslast aus, die Sie anzeigen möchten, und wählen Sie *Anzeigen*.
+. Wählen Sie die Registerkarte *Instanzen*.
+. Wählen Sie die Instanz aus.
+. Wählen Sie die *Aktionen*image:icon-action.png["Symbol „Aktionen“"] Symbol und wählen Sie *Schützen*.
+. Wählen Sie eine Richtlinie aus oder erstellen Sie eine neue.
++
+Einzelheiten zum Erstellen einer Richtlinie finden Sie unterlink:br-use-policies-create.html["Erstellen einer Richtlinie"] .
+
+. Geben Sie Informationen zu den Skripten an, die Sie vor und nach der Sicherung ausführen möchten.
++
+** *Vorskript*: Geben Sie den Dateinamen und den Speicherort Ihres Skripts ein, um es automatisch auszuführen, bevor die Schutzaktion ausgelöst wird.  Dies ist hilfreich, um zusätzliche Aufgaben oder Konfigurationen durchzuführen, die vor dem Schutz-Workflow ausgeführt werden müssen.
+** *Postskriptum*: Geben Sie den Dateinamen und den Speicherort Ihres Skripts ein, um es nach Abschluss der Schutzaktion automatisch auszuführen.  Dies ist hilfreich, um zusätzliche Aufgaben oder Konfigurationen durchzuführen, die nach dem Schutz-Workflow ausgeführt werden müssen.
+
+
+. Geben Sie an, wie der Snapshot überprüft werden soll:
++
+** Speicherort: Wählen Sie den Speicherort aus, an dem der Überprüfungs-Snapshot gespeichert werden soll.
+** Überprüfungsressource: Wählen Sie aus, ob sich die Ressource, die Sie überprüfen möchten, im lokalen Snapshot und im sekundären ONTAP -Speicher befindet.
+** Überprüfungsplan: Wählen Sie die Häufigkeit stündlich, täglich, wöchentlich, monatlich oder jährlich.
+
+
+
+
+
+
+=== Anmeldeinformationen einer Ressource zuordnen
+
+Sie können Anmeldeinformationen mit einer Ressource verknüpfen, um Schutz zu gewährleisten.
+
+Weitere Informationen finden Sie unter link:br-start-configure.html["Konfigurieren Sie die NetApp Backup- und Recovery-Einstellungen, einschließlich der Anmeldeinformationen"] .
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery-Menü *Inventar* aus.
+. Wählen Sie die Arbeitslast aus, die Sie anzeigen möchten, und wählen Sie *Anzeigen*.
+. Wählen Sie die Registerkarte *Instanzen*.
+. Wählen Sie die Instanz aus.
+. Wählen Sie die *Aktionen*image:icon-action.png["Symbol „Aktionen“"] Symbol und wählen Sie *Anmeldeinformationen verknüpfen*.
+. Verwenden Sie vorhandene Anmeldeinformationen oder erstellen Sie neue.
+
+
+
+
+=== Schutzeinstellungen bearbeiten
+
+Sie können die Richtlinie ändern, eine neue Richtlinie erstellen, einen Zeitplan festlegen und Aufbewahrungseinstellungen festlegen.
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery-Menü *Inventar* aus.
+. Wählen Sie die Arbeitslast aus, die Sie anzeigen möchten, und wählen Sie *Anzeigen*.
+. Wählen Sie die Registerkarte *Instanzen*.
+. Wählen Sie die Instanz aus.
+. Wählen Sie die *Aktionen*image:icon-action.png["Symbol „Aktionen“"] Symbol und wählen Sie *Schutz bearbeiten*.
++
+Einzelheiten zum Erstellen einer Richtlinie finden Sie unterlink:br-use-policies-create.html["Erstellen einer Richtlinie"] .
+
+
+
+
+
+=== Jetzt sichern
+
+Sie können Ihre Daten jetzt sichern, um sicherzustellen, dass Ihre Daten sofort geschützt sind.
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery-Menü *Inventar* aus.
+. Wählen Sie die Arbeitslast aus, die Sie anzeigen möchten, und wählen Sie *Anzeigen*.
+. Wählen Sie die Registerkarte *Instanzen*.
+. Wählen Sie die Instanz aus.
+. Wählen Sie die *Aktionen*image:icon-action.png["Symbol „Aktionen“"] Symbol und wählen Sie *Jetzt sichern*.
+. Wählen Sie den Sicherungstyp und legen Sie den Zeitplan fest.
++
+Einzelheiten zum Erstellen einer Ad-hoc-Sicherung finden Sie unterlink:br-use-mssql-backup.html["Erstellen einer Richtlinie"] .
+
+
+
+
+
+== Verwalten von Datenbankinformationen
+
+Sie können Datenbankinformationen auf folgende Weise verwalten:
+
+* Schützen Sie Datenbanken
+* Datenbanken wiederherstellen
+* Schutzdetails anzeigen
+* Schutzeinstellungen bearbeiten
+* Jetzt sichern
+
+
+
+
+=== Schützen Sie Datenbanken
+
+Sie können die Richtlinie ändern, eine neue Richtlinie erstellen, einen Zeitplan festlegen und Aufbewahrungseinstellungen festlegen.
+
+*Erforderliche NetApp -Konsolenrolle* Speicherbetrachter, Superadministrator für Backup und Wiederherstellung, Backup-Administratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery-Menü *Inventar* aus.
+. Wählen Sie die Arbeitslast aus, die Sie anzeigen möchten, und wählen Sie *Anzeigen*.
+. Wählen Sie die Registerkarte *Datenbanken*.
+. Wählen Sie die Datenbank aus.
+. Wählen Sie die *Aktionen*image:icon-action.png["Symbol „Aktionen“"] Symbol und wählen Sie *Schützen*.
++
+Einzelheiten zum Erstellen einer Richtlinie finden Sie unterlink:br-use-policies-create.html["Erstellen einer Richtlinie"] .
+
+
+
+
+
+=== Datenbanken wiederherstellen
+
+Sie können eine Datenbank wiederherstellen, um sicherzustellen, dass Ihre Daten geschützt sind.
+
+*Erforderliche NetApp -Konsolenrolle* Speicherbetrachter, Superadministrator für Backup und Wiederherstellung, Backup-Administratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+
+. Wählen Sie die Registerkarte *Datenbanken*.
+. Wählen Sie die Datenbank aus.
+. Wählen Sie die *Aktionen*image:icon-action.png["Symbol „Aktionen“"] Symbol und wählen Sie *Wiederherstellen*.
++
+Informationen zum Wiederherstellen von Workloads finden Sie unterlink:br-use-mssql-restore.html["Wiederherstellen von Workloads"] .
+
+
+
+
+
+=== Schutzeinstellungen bearbeiten
+
+Sie können die Richtlinie ändern, eine neue Richtlinie erstellen, einen Zeitplan festlegen und Aufbewahrungseinstellungen festlegen.
+
+*Erforderliche NetApp -Konsolenrolle* Speicherbetrachter, Superadministrator für Backup und Wiederherstellung, Backup-Administratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery-Menü *Inventar* aus.
+. Wählen Sie die Arbeitslast aus, die Sie anzeigen möchten, und wählen Sie *Anzeigen*.
+. Wählen Sie die Registerkarte *Datenbanken*.
+. Wählen Sie die Datenbank aus.
+. Wählen Sie die *Aktionen*image:icon-action.png["Symbol „Aktionen“"] Symbol und wählen Sie *Schutz bearbeiten*.
++
+Einzelheiten zum Erstellen einer Richtlinie finden Sie unterlink:br-use-policies-create.html["Erstellen einer Richtlinie"] .
+
+
+
+
+
+=== Jetzt sichern
+
+Sie können jetzt Ihre Microsoft SQL Server-Instanzen und -Datenbanken sichern, um sicherzustellen, dass Ihre Daten sofort geschützt sind.
+
+*Erforderliche NetApp -Konsolenrolle* Speicherbetrachter, Superadministrator für Backup und Wiederherstellung, Backup-Administratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery-Menü *Inventar* aus.
+. Wählen Sie die Arbeitslast aus, die Sie anzeigen möchten, und wählen Sie *Anzeigen*.
+. Wählen Sie die Registerkarte *Instanzen* oder *Datenbanken*.
+. Wählen Sie die Instanz oder Datenbank aus.
+. Wählen Sie die *Aktionen*image:icon-action.png["Symbol „Aktionen“"] Symbol und wählen Sie *Jetzt sichern*.
+

@@ -1,0 +1,48 @@
+---
+sidebar: sidebar 
+permalink: br-limitations-kvm.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, KVM, SAP HANA database, virtual machine, vm 
+summary: Diese Version von NetApp Backup and Recovery weist die folgenden bekannten Einschränkungen auf. 
+---
+= Bekannte Einschränkungen bei NetApp Backup and Recovery für KVM-Workloads
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Bekannte Einschränkungen kennzeichnen Plattformen, Geräte oder Funktionen, die von dieser Produktversion nicht unterstützt werden oder nicht ordnungsgemäß mit ihr zusammenarbeiten. Lesen Sie diese Einschränkungen sorgfältig durch.
+
+Die folgenden Aktionen und Konfigurationen werden in der privaten Vorschauversion von KVM-Workloads in NetApp Backup and Recovery nicht unterstützt:
+
+
+
+== Nicht unterstützte Aktionen
+
+Die folgenden Aktionen werden in der privaten Vorschauversion nicht unterstützt:
+
+* Klonen, Mounten oder Unmounten von VMs
+* Wiederherstellen von VMs an einem anderen Standort
+* Schützen Sie im SAN gespeicherte VMs
+* Anwendungen schützen
+* Sichern oder Wiederherstellen aus Objektspeichern
+* Schutzgruppen bearbeiten
+* Erstellen Sie Schutzgruppen mithilfe von VMs von mehreren KVM-Hosts
+* Erstellen Sie benutzerdefinierte Backups (es werden nur Backups unterstützt, die von der NetApp Konsole aus initiiert werden).
+
+
+
+
+== Nicht unterstützte Konfigurationen
+
+Die folgenden Konfigurationen werden nicht unterstützt:
+
+* Rollenbasierte Zugriffskontrolle (RBAC)
+* Direkt an den KVM-Host angeschlossene Festplatten
+* Datenträger, die sich über mehrere NFS-Mount-Punkte oder Freigaben erstrecken
+* RAW-Festplattenformat
+* Andere Speicherpooltypen als NetFS (nur NetFS wird unterstützt)
+

@@ -1,0 +1,120 @@
+---
+indexpage:
+  title: NetApp Backup- und Recovery-Dokumentation
+  summary: NetApp Backup and Recovery ist ein Datenservice, der effizienten, sicheren
+    und kostengünstigen Datenschutz für alle Ihre ONTAP Workloads bietet, einschließlich
+    Volumes, Datenbanken, virtuellen Maschinen und Kubernetes-Workloads.
+  keywords: netapp console, netapp backup recovery, ontap, on-premises, data protection,
+    sql, workloads, backup,
+  lead: NetApp Backup and Recovery ist ein Datenservice, der effizienten, sicheren
+    und kostengünstigen Datenschutz für alle Ihre ONTAP Workloads bietet, einschließlich
+    Volumes, Datenbanken, virtuellen Maschinen und Kubernetes-Workloads.
+  tiles:
+  - title: Erste Schritte
+    links:
+    - title: Erfahren Sie mehr über NetApp Backup und Recovery
+      url: concept-backup-to-cloud.html
+    - title: Was ist neu
+      url: whats-new.html
+    - title: Voraussetzungen
+      url: concept-start-prereq.html
+    - title: Richten Sie Sicherungsziele ein, bevor Sie NetApp Backup and Recovery
+        verwenden
+      url: br-start-setup.html
+    - title: Konfigurieren der NetApp Backup- und Recovery-Einstellungen
+      url: br-start-configure.html
+  - title: Schützen Sie ONTAP Volumes-Workloads
+    links:
+    - title: Übersicht über Protect ONTAP Volume-Workloads
+      url: prev-ontap-protect-overview.html
+    - title: Planen Sie Ihren Schutz für ONTAP Volumes-Workloads
+      url: prev-ontap-protect-journey.html
+    - title: Verwalten von Richtlinien für ONTAP Volumes-Workloads
+      url: prev-ontap-policy-manage.html
+    - title: Backup-to-Object-Richtlinienoptionen für ONTAP Volumes
+      url: prev-ontap-policy-object-options.html
+    - title: Wiederherstellen von ONTAP -Volumes-Workloads
+      url: prev-ontap-restore.html
+  - title: Schützen Sie Microsoft SQL Server-Workloads
+    links:
+    - title: Übersicht zum Schützen von Microsoft SQL Server-Workloads
+      url: br-use-mssql-protect-overview.html
+    - title: Entdecken Sie Microsoft SQL Server-Workloads und importieren Sie optional
+        SnapCenter -Ressourcen
+      url: br-start-discover.html
+    - title: Sichern Sie Microsoft SQL Server-Workloads
+      url: br-use-mssql-backup.html
+    - title: Wiederherstellen von Microsoft SQL Server-Workloads
+      url: br-use-mssql-restore.html
+    - title: Klonen von Microsoft SQL Server-Workloads
+      url: br-use-mssql-clone.html
+  - title: Schützen Sie VMware-Workloads (private Vorschau)
+    links:
+    - title: Übersicht zum Schützen von VMware-Workloads
+      url: br-use-vmware-protect-overview.html
+    - title: Entdecken Sie VMware-Workloads
+      url: br-use-vmware-discovery.html
+    - title: Erstellen und Verwalten von Schutzgruppen für VMware-Workloads
+      url: br-use-vmware-protection-groups.html
+    - title: Sichern Sie VMware-Workloads
+      url: br-use-vmware-backup.html
+    - title: Wiederherstellen von VMware-Workloads
+      url: br-use-vmware-restore.html
+  - title: KVM-Workloads schützen (private Vorschau)
+    links:
+    - title: Übersicht über den Schutz von KVM-Workloads
+      url: "/br-use-kvm-protect-overview.html"
+    - title: Entdecken Sie KVM-Workloads
+      url: "/br-start-discover-kvm.html"
+    - title: Erstellen und Verwalten von Schutzgruppen für KVM-Workloads
+      url: "/br-use-kvm-protection-groups.html"
+    - title: KVM-Workloads sichern
+      url: "/br-use-kvm-backup.html"
+    - title: KVM-Workloads wiederherstellen
+      url: "/br-use-kvm-restore.html"
+  - title: Schützen Sie Hyper-V-Workloads (private Vorschau)
+    links:
+    - title: Übersicht zum Schützen von Hyper-V-Workloads
+      url: "/br-use-hyperv-protect-overview.html"
+    - title: Entdecken Sie Hyper-V-Workloads
+      url: "/br-start-discover-hyperv.html"
+    - title: Erstellen und Verwalten von Schutzgruppen für Hyper-V-Workloads
+      url: "/br-use-hyperv-protection-groups.html"
+    - title: Sichern Sie Hyper-V-Workloads
+      url: "/br-use-hyperv-backup.html"
+    - title: Wiederherstellen von Hyper-V-Workloads
+      url: "/br-use-hyperv-restore.html"
+  - title: Schützen Sie Oracle-Workloads (private Vorschau)
+    links:
+    - title: Übersicht zum Schützen von Oracle-Workloads
+      url: "/br-use-oracle-protect-overview.html"
+    - title: Entdecken Sie Oracle-Workloads
+      url: "/br-start-discover-oracle.html"
+    - title: Erstellen und Verwalten von Schutzgruppen für Oracle-Workloads
+      url: "/br-use-oracle-protection-groups.html"
+    - title: Sichern Sie Oracle-Workloads
+      url: "/br-use-oracle-backup.html"
+    - title: Wiederherstellen von Oracle-Workloads
+      url: "/br-use-oracle-restore.html"
+  - title: Schützen von Kubernetes-Workloads (Vorschau)
+    links:
+    - title: Übersicht zum Schützen von Kubernetes-Workloads
+      url: br-use-kubernetes-protect-overview.html
+    - title: Entdecken Sie Kubernetes-Workloads
+      url: br-start-discover-kubernetes.html
+    - title: Kubernetes-Anwendungen hinzufügen und schützen
+      url: br-use-protect-kubernetes-applications.html
+    - title: Verwalten von Kubernetes-Clustern
+      url: br-use-manage-kubernetes-clusters.html
+    - title: Verwalten von Kubernetes-Anwendungen
+      url: br-use-manage-kubernetes-applications.html
+    - title: Wiederherstellen von Kubernetes-Anwendungen
+      url: br-use-restore-kubernetes-applications.html
+  - title: Blogs und Community
+    links:
+    - title: NetApp Konsole
+      url: https://www.netapp.com/console
+    - title: NetApp Datenservices
+      url: https://www.netapp.com/data-services/
+    - title: NetApp Community
+      url: https://community.netapp.com/

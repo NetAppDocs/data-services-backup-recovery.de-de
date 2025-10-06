@@ -1,0 +1,45 @@
+---
+sidebar: sidebar 
+permalink: br-use-hyperv-backup.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Schützen Sie Ihre Hyper-V-Workloads mit NetApp Backup und Recovery. 
+---
+= Sichern Sie Hyper-V-Workloads mit NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sichern Sie Hyper-V-VMs von lokalen ONTAP Systemen auf Amazon Web Services, Azure NetApp Files oder StorageGRID, um sicherzustellen, dass Ihre Daten geschützt sind. Backups werden automatisch erstellt und in einem Objektspeicher in Ihrem öffentlichen oder privaten Cloud-Konto gespeichert.
+
+* Um Workloads nach einem Zeitplan zu sichern, erstellen Sie Richtlinien, die die Sicherungs- und Wiederherstellungsvorgänge steuern. Sehenlink:br-use-policies-create.html["Erstellen von Richtlinien"] Anweisungen hierzu finden Sie unter.
+* Erstellen Sie Schutzgruppen, um die Sicherungs- und Wiederherstellungsvorgänge für eine Reihe von Ressourcen zu verwalten. Sehen link:br-use-hyper-v-protection-groups.html["Erstellen und verwalten Sie Schutzgruppen für Hyper-V-Workloads mit NetApp Backup and Recovery"] für weitere Informationen.
+* Sichern Sie jetzt Workloads (erstellen Sie jetzt ein On-Demand-Backup).
+
+
+
+
+== Sichern Sie Workloads jetzt mit einem On-Demand-Backup
+
+Sie können sofort eine On-Demand-Sicherung ausführen.  Dies ist hilfreich, wenn Sie Änderungen an Ihrem System vornehmen und sicherstellen möchten, dass Sie vor dem Start über eine Sicherungskopie verfügen.
+
+*Erforderliche Konsolenrolle* Organisationsadministrator, Ordner- oder Projektadministrator, Superadministrator für Backup und Wiederherstellung oder Backup-Administratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+
+.Schritte
+. Wählen Sie im Menü *Inventar* aus.
+. Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.
+. Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*.
+. Wählen Sie die Registerkarte *Schutzgruppen*, *Datenspeicher* oder *Virtuelle Maschinen*.
+. Wählen Sie die Schutzgruppe oder virtuellen Maschinen aus, die Sie sichern möchten.
+. Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Jetzt sichern*.
++
+
+NOTE: Die auf die Sicherung angewendete Richtlinie ist dieselbe Richtlinie, die der Schutzgruppe oder virtuellen Maschine zugewiesen ist.
+
+. Wählen Sie die Zeitplanstufe aus.
+. Wählen Sie *Sichern*.
+

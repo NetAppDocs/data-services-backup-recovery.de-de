@@ -1,0 +1,69 @@
+---
+sidebar: sidebar 
+permalink: br-use-oracle-mount-unmount.html 
+keywords: restore, vm, oracle, databases, snapshots, object storage, cloud storage, backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Schützen Sie Ihre Oracle-Workloads mit NetApp Backup und Recovery. 
+---
+= Mounten und Unmounten von Oracle-Datenbankwiederherstellungspunkten mit NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Möglicherweise möchten Sie einen Wiederherstellungspunkt für die Oracle-Datenbank bereitstellen, wenn Sie zum Durchführen von Wiederherstellungsvorgängen in einem kontrollierten Zustand auf die Datenbank zugreifen müssen.
+
+
+
+== Mounten eines Oracle-Datenbank-Wiederherstellungspunkts
+
+Wenn Sie die Schutzrichtlinie für eine Datenbank so konfigurieren, dass Archivprotokolle aufbewahrt werden, können Sie die Wiederherstellungspunkte für die Datenbank bereitstellen, um den Verlauf aller an der Datenbank vorgenommenen Änderungen anzuzeigen.
+
+.Schritte
+. Wählen Sie im NetApp -Konsolenmenü *Schutz > Sicherung und Wiederherstellung*.
+. Wählen Sie die Oracle-Kachel aus.
+. Wählen Sie im Menü „Sichern und Wiederherstellen“ die Option „Inventar“ aus.
+. Wählen Sie für die Oracle-Datenbank-Workload in der Liste *Anzeigen* aus.
+. Wählen Sie das Menü *Datenbanken*.
+. Wählen Sie eine Datenbank aus der Liste und wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Schutzdetails anzeigen*.
++
+Eine Liste mit Wiederherstellungspunkten für diese Datenbank wird angezeigt.
+
+. Wählen Sie einen Wiederherstellungspunkt aus der Liste und wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Mount*.
+. Führen Sie im angezeigten Dialogfeld die folgenden Schritte aus:
++
+.. Wählen Sie aus der Liste den Host aus, der den Wiederherstellungspunkt mounten soll.
+.. Wählen Sie den Speicherort aus, den Backup and Recovery zum Bereitstellen des Wiederherstellungspunkts verwenden soll.  Für die Vorabversion wird das Mounten aus dem Objektspeicher nicht unterstützt.
++
+Der Mount-Pfad, den Backup und Recovery verwenden soll, wird angezeigt.
+
+
+
+. Wählen Sie *Mount*.
++
+Der Wiederherstellungspunkt wird auf dem Oracle-Host bereitgestellt.
+
+
+
+
+
+== Unmounten eines Oracle-Datenbank-Wiederherstellungspunkts
+
+Heben Sie die Bereitstellung des Wiederherstellungspunkts auf, wenn Sie die an dieser Datenbank vorgenommenen Änderungen nicht mehr anzeigen müssen.
+
+.Schritte
+. Wählen Sie im NetApp -Konsolenmenü *Schutz > Sicherung und Wiederherstellung*.
+. Wählen Sie die Oracle-Kachel aus.
+. Wählen Sie im Menü „Sichern und Wiederherstellen“ die Option „Inventar“ aus.
+. Wählen Sie für die Oracle-Workload in der Liste *Anzeigen* aus.
+. Wählen Sie das Menü *Datenbanken*.
+. Wählen Sie eine Datenbank aus der Liste und wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Schutzdetails anzeigen*.
++
+Eine Liste mit Wiederherstellungspunkten für diese Datenbank wird angezeigt.
+
+. Wählen Sie einen Wiederherstellungspunkt aus der Liste und wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Aushängen*.
+. Bestätigen Sie die Aktion, indem Sie *Unmount* auswählen.
+

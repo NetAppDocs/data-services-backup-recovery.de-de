@@ -1,0 +1,42 @@
+= Entdecken Sie Ihre ONTAP -Systeme in der NetApp Konsole
+:allow-uri-read: 
+
+
+Sie müssen Ihr lokales ONTAP Quellsystem und alle sekundären lokalen ONTAP oder Cloud Volumes ONTAP Systeme vorbereiten.
+
+Die Vorbereitung Ihrer ONTAP Cluster umfasst die folgenden Schritte:
+
+* Entdecken Sie Ihre ONTAP -Systeme in der NetApp Konsole
+* Überprüfen der ONTAP Systemanforderungen
+* Überprüfen Sie die ONTAP Netzwerkanforderungen für die Datensicherung im Objektspeicher
+* Überprüfen Sie die ONTAP Netzwerkanforderungen für die Replikation von Volumes
+
+
+
+
+=== Entdecken Sie Ihre ONTAP -Systeme in der NetApp Konsole
+
+Sowohl Ihr lokales ONTAP Quellsystem als auch alle sekundären lokalen ONTAP oder Cloud Volumes ONTAP -Systeme müssen auf der Seite *Systeme* der NetApp Konsole verfügbar sein.
+
+Sie müssen die IP-Adresse der Clusterverwaltung und das Kennwort für das Administratorbenutzerkonto kennen, um den Cluster hinzuzufügen. https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-ontap.html["Erfahren Sie, wie Sie einen Cluster erkennen"^] .
+
+
+
+=== Überprüfen der ONTAP Systemanforderungen
+
+Stellen Sie sicher, dass die folgenden ONTAP Anforderungen erfüllt sind:
+
+* Mindestens ONTAP 9.8; ONTAP 9.8P13 und höher wird empfohlen.
+* Eine SnapMirror -Lizenz (im Premium-Paket oder Datenschutz-Paket enthalten).
++
+*Hinweis:* Das „Hybrid Cloud Bundle“ ist bei der Verwendung von NetApp Backup and Recovery nicht erforderlich.
+
++
+Erfahren Sie, wie Sie https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["Verwalten Sie Ihre Cluster-Lizenzen"^] .
+
+* Uhrzeit und Zeitzone sind richtig eingestellt.  Erfahren Sie, wie Sie https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["Konfigurieren Sie Ihre Clusterzeit"^] .
+* Wenn Sie Daten replizieren möchten, sollten Sie vor der Datenreplikation sicherstellen, dass auf den Quell- und Zielsystemen kompatible ONTAP Versionen ausgeführt werden.
++
+https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["Kompatible ONTAP -Versionen für SnapMirror -Beziehungen anzeigen"^] .
+
+

@@ -1,0 +1,399 @@
+---
+sidebar: sidebar 
+permalink: prev-ontap-policy-object-options.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Schützen Sie Ihre VMware-Workloads mit NetApp NetApp Backup and Recovery. 
+---
+= Optionen für die Backup-to-Object-Richtlinie in NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Mit NetApp Backup and Recovery können Sie Sicherungsrichtlinien mit einer Vielzahl von Einstellungen für Ihre lokalen ONTAP und Cloud Volumes ONTAP Systeme erstellen.
+
+
+NOTE: Diese Richtlinieneinstellungen sind nur für die Sicherung auf Objektspeicher relevant.  Keine dieser Einstellungen wirkt sich auf Ihre Snapshot- oder Replikationsrichtlinien aus.
+
+[]
+====
+*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup und Recovery-Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup- und Recovery-Workloads"] .
+
+====
+
+
+== Optionen für den Sicherungszeitplan
+
+Mit NetApp Backup and Recovery können Sie mehrere Sicherungsrichtlinien mit individuellen Zeitplänen für jedes System (Cluster) erstellen.  Sie können Volumes mit unterschiedlichen Recovery Point Objectives (RPO) unterschiedliche Sicherungsrichtlinien zuweisen.
+
+Jede Sicherungsrichtlinie enthält einen Abschnitt für _Labels und Aufbewahrung_, den Sie auf Ihre Sicherungsdateien anwenden können.  Beachten Sie, dass die auf das Volume angewendete Snapshot-Richtlinie eine der von NetApp Backup and Recovery erkannten Richtlinien sein muss, da sonst keine Sicherungsdateien erstellt werden.
+
+Der Zeitplan besteht aus zwei Teilen: dem Label und dem Aufbewahrungswert:
+
+* Das *Label* definiert, wie oft eine Sicherungsdatei vom Volume erstellt (oder aktualisiert) wird.  Sie können zwischen folgenden Etikettentypen wählen:
++
+** Sie können einen oder eine Kombination aus *stündlichen*, *täglichen*, *wöchentlichen*, *monatlichen* und *jährlichen* Zeitrahmen auswählen.
+** Sie können eine der systemdefinierten Richtlinien auswählen, die eine Sicherung und Aufbewahrung für 3 Monate, 1 Jahr oder 7 Jahre ermöglichen.
+** Wenn Sie mit ONTAP System Manager oder der ONTAP CLI benutzerdefinierte Richtlinien zum Sicherungsschutz auf dem Cluster erstellt haben, können Sie eine dieser Richtlinien auswählen.
+
+
+* Der *Aufbewahrungswert* definiert, wie viele Sicherungsdateien für jedes Label (Zeitraum) aufbewahrt werden.  Sobald die maximale Anzahl an Backups in einer Kategorie oder einem Intervall erreicht ist, werden ältere Backups entfernt, sodass Sie immer über die aktuellsten Backups verfügen.  Dadurch sparen Sie auch Speicherkosten, da veraltete Backups keinen weiteren Speicherplatz in der Cloud belegen.
+
+
+Angenommen, Sie erstellen eine Sicherungsrichtlinie, die 7 *wöchentliche* und 12 *monatliche* Sicherungen erstellt:
+
+* jede Woche und jeden Monat wird eine Sicherungsdatei für das Volume erstellt
+* In der 8. Woche wird das erste wöchentliche Backup entfernt und das neue wöchentliche Backup für die 8. Woche hinzugefügt (maximal 7 wöchentliche Backups bleiben erhalten).
+* Im 13. Monat wird das erste monatliche Backup entfernt und das neue monatliche Backup für den 13. Monat hinzugefügt (maximal 12 monatliche Backups bleiben erhalten).
+
+
+Jährliche Backups werden nach der Übertragung in den Objektspeicher automatisch aus dem Quellsystem gelöscht.  Dieses Standardverhalten kann auf der Seite „Erweiterte Einstellungen“ für das System geändert werden.
+
+
+
+== DataLock- und Ransomware-Schutzoptionen
+
+NetApp Backup and Recovery bietet Unterstützung für DataLock- und Ransomware-Schutz für Ihre Volume-Backups.  Mit diesen Funktionen können Sie Ihre Sicherungsdateien sperren und scannen, um mögliche Ransomware in den Sicherungsdateien zu erkennen.  Dies ist eine optionale Einstellung, die Sie in Ihren Sicherungsrichtlinien definieren können, wenn Sie zusätzlichen Schutz für Ihre Volume-Sicherungen für einen Cluster wünschen.
+
+Beide Funktionen schützen Ihre Sicherungsdateien, sodass Sie im Falle eines Ransomware-Angriffs auf Ihre Sicherungen immer über eine gültige Sicherungsdatei verfügen, aus der Sie Daten wiederherstellen können.  Es ist auch hilfreich, bestimmte gesetzliche Anforderungen zu erfüllen, wenn Backups gesperrt und für einen bestimmten Zeitraum aufbewahrt werden müssen.  Wenn die Option „DataLock und Ransomware-Schutz“ aktiviert ist, sind für den Cloud-Bucket, der im Rahmen der Aktivierung von NetApp Backup and Recovery bereitgestellt wird, die Objektsperre und die Objektversionierung aktiviert.
+
+https://bluexp.netapp.com/blog/cbs-blg-the-bluexp-feature-that-protects-backups-from-ransomware["Weitere Einzelheiten finden Sie im Blog zum DataLock- und Ransomware-Schutz"^] .
+
+Diese Funktion bietet keinen Schutz für Ihre Quellvolumes, sondern nur für die Sicherungen dieser Quellvolumes.  Verwenden Sie einige der https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html["Anti-Ransomware-Schutz von ONTAP"^] um Ihre Quellvolumes zu schützen.
+
+[CAUTION]
+====
+* Wenn Sie DataLock und Ransomware-Schutz verwenden möchten, können Sie diese aktivieren, wenn Sie Ihre erste Sicherungsrichtlinie erstellen und NetApp Backup and Recovery für diesen Cluster aktivieren.  Sie können das Scannen auf Ransomware später mithilfe der erweiterten Einstellungen für NetApp Backup and Recovery aktivieren oder deaktivieren.
+* Wenn die Konsole beim Wiederherstellen von Volumedaten eine Sicherungsdatei auf Ransomware scannt, entstehen Ihnen bei Ihrem Cloud-Anbieter zusätzliche Kosten für den Zugriff auf den Inhalt der Sicherungsdatei.
+
+
+====
+
+
+=== Was ist DataLock
+
+Mit dieser Funktion können Sie die über SnapMirror in der Cloud replizierten Cloud-Snapshots sperren und die Funktion außerdem aktivieren, um einen Ransomware-Angriff zu erkennen und eine konsistente Kopie des Snapshots im Objektspeicher wiederherzustellen.  Diese Funktion wird auf AWS, Azure und StorageGRID unterstützt.
+
+DataLock schützt Ihre Sicherungsdateien für einen bestimmten Zeitraum vor Änderungen oder Löschungen – auch als _unveränderlicher Speicher_ bezeichnet.  Diese Funktion nutzt die Technologie des Objektspeicheranbieters zur „Objektsperre“.
+
+Cloud-Anbieter verwenden ein Retention Until Date (RUD), das auf Grundlage der Snapshot-Aufbewahrungsdauer berechnet wird.  Der Aufbewahrungszeitraum für Snapshots wird anhand der Bezeichnung und der in der Sicherungsrichtlinie definierten Aufbewahrungsanzahl berechnet.
+
+Die Mindestaufbewahrungsdauer für Snapshots beträgt 30 Tage.  Sehen wir uns einige Beispiele an, wie das funktioniert:
+
+* Wenn Sie die Bezeichnung *Täglich* mit der Aufbewahrungsanzahl 20 wählen, beträgt die Aufbewahrungsdauer des Snapshots 20 Tage, standardmäßig also mindestens 30 Tage.
+* Wenn Sie die Bezeichnung *Wöchentlich* mit der Aufbewahrungsanzahl 4 wählen, beträgt die Aufbewahrungsdauer des Snapshots 28 Tage, standardmäßig ist das Minimum 30 Tage.
+* Wenn Sie die Bezeichnung *Monatlich* mit der Aufbewahrungsanzahl 3 wählen, beträgt die Aufbewahrungsdauer des Snapshots 90 Tage.
+* Wenn Sie die Bezeichnung *Jährlich* mit der Aufbewahrungsanzahl 1 wählen, beträgt die Aufbewahrungsdauer des Snapshots 365 Tage.
+
+
+
+
+=== Was ist das Retention Until Date (RUD) und wie wird es berechnet?
+
+Das Aufbewahrungsdatum (RUD) wird basierend auf der Snapshot-Aufbewahrungsdauer bestimmt.  Das Aufbewahrungsdatum wird durch die Summe der Snapshot-Aufbewahrungsdauer und eines Puffers berechnet.
+
+* Der Puffer ist der Puffer für die Übertragungszeit (3 Tage) + Puffer für die Kostenoptimierung (28 Tage), was insgesamt 31 Tage ergibt.
+* Das Mindestaufbewahrungsdatum beträgt 30 Tage + 31 Tage Puffer = 61 Tage.
+
+
+Hier sind einige Beispiele:
+
+* Wenn Sie einen monatlichen Sicherungszeitplan mit 12 Aufbewahrungszeiten erstellen, werden Ihre Sicherungen 12 Monate (plus 31 Tage) gesperrt, bevor sie gelöscht (durch die nächste Sicherungsdatei ersetzt) werden.
+* Wenn Sie eine Sicherungsrichtlinie erstellen, die 30 tägliche, 7 wöchentliche und 12 monatliche Sicherungen erstellt, gibt es drei gesperrte Aufbewahrungszeiträume:
++
+** Die „30 täglichen“ Backups werden 61 Tage lang aufbewahrt (30 Tage plus 31 Tage Puffer),
+** Die "7 wöchentlichen" Backups werden 11 Wochen (7 Wochen plus 31 Tage) aufbewahrt und
+** Die „12 monatlichen“ Backups werden 12 Monate (plus 31 Tage) aufbewahrt.
+
+
+* Wenn Sie einen stündlichen Sicherungsplan mit 24 Aufbewahrungszeiten erstellen, denken Sie möglicherweise, dass die Sicherungen 24 Stunden lang gesperrt sind.  Da dies jedoch weniger als das Minimum von 30 Tagen ist, wird jede Sicherung gesperrt und 61 Tage lang aufbewahrt (30 Tage plus 31 Tage Puffer).
+
+
+
+CAUTION: Alte Sicherungen werden nach Ablauf der DataLock-Aufbewahrungsfrist gelöscht, nicht nach Ablauf der Aufbewahrungsfrist der Sicherungsrichtlinie.
+
+Die DataLock-Aufbewahrungseinstellung überschreibt die Richtlinienaufbewahrungseinstellung Ihrer Sicherungsrichtlinie.  Dies kann sich auf Ihre Speicherkosten auswirken, da Ihre Sicherungsdateien für einen längeren Zeitraum im Objektspeicher gespeichert werden.
+
+
+
+=== Aktivieren Sie DataLock und Ransomware-Schutz
+
+Sie können DataLock und Ransomware-Schutz aktivieren, wenn Sie eine Richtlinie erstellen.  Sie können dies nach der Erstellung der Richtlinie nicht mehr aktivieren, ändern oder deaktivieren.
+
+. Erweitern Sie beim Erstellen einer Richtlinie den Abschnitt *DataLock- und Ransomware-Schutz*.
+. Wählen Sie eine der folgenden Optionen:
++
+** *Keine*: DataLock-Schutz und Ransomware-Resilienz sind deaktiviert.
+** *Entsperrt*: DataLock-Schutz und Ransomware-Resilienz sind aktiviert.  Benutzer mit bestimmten Berechtigungen können geschützte Sicherungsdateien während der Aufbewahrungsfrist überschreiben oder löschen.
+** *Gesperrt*: DataLock-Schutz und Ransomware-Resilienz sind aktiviert.  Während der Aufbewahrungsfrist können keine Benutzer geschützte Sicherungsdateien überschreiben oder löschen.  Damit wird die Einhaltung aller gesetzlichen Vorschriften gewährleistet.
+
+
+
+
+Weitere Informationen finden Sie unter link:prev-ontap-policy-object-advanced-settings.html["So aktualisieren Sie die Ransomware-Schutzoptionen auf der Seite „Erweiterte Einstellungen“"] .
+
+
+
+=== Was ist Ransomware-Schutz?
+
+Der Ransomware-Schutz durchsucht Ihre Sicherungsdateien nach Hinweisen auf einen Ransomware-Angriff. Die Erkennung von Ransomware-Angriffen erfolgt über einen Prüfsummenvergleich. Wenn in einer neuen Sicherungsdatei im Vergleich zur vorherigen Sicherungsdatei potenzielle Ransomware identifiziert wird, wird diese neuere Sicherungsdatei durch die neueste Sicherungsdatei ersetzt, die keine Anzeichen eines Ransomware-Angriffs aufweist. (Die Datei, bei der ein Ransomware-Angriff festgestellt wurde, wird 1 Tag nach ihrer Ersetzung gelöscht.)
+
+Scans werden in folgenden Situationen durchgeführt:
+
+* Scans von Cloud-Backup-Objekten werden kurz nach der Übertragung in den Cloud-Objektspeicher eingeleitet.  Der Scan wird nicht beim ersten Schreiben der Sicherungsdatei in den Cloud-Speicher durchgeführt, sondern beim Schreiben der nächsten Sicherungsdatei.
+* Ransomware-Scans können gestartet werden, wenn das Backup für den Wiederherstellungsprozess ausgewählt wird.
+* Scans können jederzeit auf Anfrage durchgeführt werden.
+
+
+*Wie funktioniert der Wiederherstellungsprozess?*
+
+Wenn ein Ransomware-Angriff erkannt wird, verwendet der Dienst die Integrity Checker REST-API des Active Data Console-Agenten, um den Wiederherstellungsprozess zu starten.  Die älteste Version der Datenobjekte ist die Quelle der Wahrheit und wird im Rahmen des Wiederherstellungsprozesses zur aktuellen Version gemacht.
+
+Sehen wir uns an, wie das funktioniert:
+
+* Im Falle eines Ransomware-Angriffs versucht der Dienst, das Objekt im Bucket zu überschreiben oder zu löschen.
+* Da der Cloud-Speicher versionierungsfähig ist, erstellt er automatisch eine neue Version des Sicherungsobjekts.  Wenn ein Objekt bei aktivierter Versionierung gelöscht wird, wird es als gelöscht markiert, kann aber weiterhin abgerufen werden.  Beim Überschreiben eines Objekts werden vorherige Versionen gespeichert und gekennzeichnet.
+* Beim Start eines Ransomware-Scans werden die Prüfsummen beider Objektversionen validiert und verglichen.  Wenn die Prüfsummen inkonsistent sind, wurde potenzielle Ransomware erkannt.
+* Der Wiederherstellungsprozess umfasst die Rückkehr zur letzten bekannten fehlerfreien Kopie.
+
+
+
+
+=== Unterstützte Systeme und Objektspeicheranbieter
+
+Sie können DataLock- und Ransomware-Schutz auf ONTAP -Volumes der folgenden Systeme aktivieren, wenn Sie Objektspeicher bei den folgenden öffentlichen und privaten Cloud-Anbietern verwenden.  In zukünftigen Versionen werden weitere Cloud-Anbieter hinzugefügt.
+
+[cols="55,45"]
+|===
+| Quellsystem | Ziel der Sicherungsdatei ifdef::aws[] 
+
+
+| Cloud Volumes ONTAP in AWS | Amazon S3 endif::aws[] ifdef::azure[] 
+
+
+| Cloud Volumes ONTAP in Azure | Azure Blob endif::azure[] ifdef::gcp[] endif::gcp[] 
+
+
+| On-Premises- ONTAP -System | ifdef::aws[] Amazon S3 endif::aws[] ifdef::azure[] Azure Blob endif::azure[] ifdef::gcp[] endif::gcp[] NetApp StorageGRID 
+|===
+
+
+=== Anforderungen
+
+ifdef::aws[]
+
+* Für AWS:
++
+** Ihre Cluster müssen ONTAP 9.11.1 oder höher ausführen
+** Der Konsolenagent kann in der Cloud oder vor Ort eingesetzt werden
+** Die folgenden S3-Berechtigungen müssen Teil der IAM-Rolle sein, die dem Konsolenagenten Berechtigungen erteilt.  Sie befinden sich im Abschnitt „backupS3Policy“ für die Ressource „arn:aws:s3:::netapp-backup-*“:
++
+.AWS S3-Berechtigungen
+[%collapsible]
+====
+*** s3:GetObjectVersionTagging
+*** s3:GetBucketObjectLockConfiguration
+*** s3:GetObjectVersionAcl
+*** s3:PutObjectTagging
+*** s3:Objekt löschen
+*** s3:DeleteObjectTagging
+*** s3:GetObjectRetention
+*** s3:DeleteObjectVersionTagging
+*** s3:PutObject
+*** s3:GetObject
+*** s3:PutBucketObjectLockConfiguration
+*** s3:GetLifecycleConfiguration
+*** s3:GetBucketTagging
+*** s3:DeleteObjectVersion
+*** s3:ListBucketVersions
+*** s3:ListBucket
+*** s3:PutBucketTagging
+*** s3:GetObjectTagging
+*** s3:PutBucketVersioning
+*** s3:PutObjectVersionTagging
+*** s3:GetBucketVersioning
+*** s3:GetBucketAcl
+*** s3:BypassGovernanceRetention
+*** s3:PutObjectRetention
+*** s3:GetBucketLocation
+*** s3:GetObjectVersion
+
+
+====
++
+https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["Zeigen Sie das vollständige JSON-Format für die Richtlinie an, in dem Sie die erforderlichen Berechtigungen kopieren und einfügen können."^] .
+
+
+
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* Für Azure:
++
+** Ihre Cluster müssen ONTAP 9.12.1 oder höher ausführen
+** Der Konsolenagent kann in der Cloud oder vor Ort eingesetzt werden
+
+
+
+
+endif::azure[]
+
+* Für StorageGRID:
++
+** Ihre Cluster müssen ONTAP 9.11.1 oder höher ausführen
+** Auf Ihren StorageGRID -Systemen muss die Version 11.6.0.3 oder höher ausgeführt werden.
+** Der Konsolenagent muss bei Ihnen vor Ort bereitgestellt werden (er kann an einem Standort mit oder ohne Internetzugang installiert werden).
+** Die folgenden S3-Berechtigungen müssen Teil der IAM-Rolle sein, die dem Konsolenagenten Berechtigungen erteilt:
++
+.StorageGRID S3-Berechtigungen
+[%collapsible]
+====
+*** s3:GetObjectVersionTagging
+*** s3:GetBucketObjectLockConfiguration
+*** s3:GetObjectVersionAcl
+*** s3:PutObjectTagging
+*** s3:Objekt löschen
+*** s3:DeleteObjectTagging
+*** s3:GetObjectRetention
+*** s3:DeleteObjectVersionTagging
+*** s3:PutObject
+*** s3:GetObject
+*** s3:PutBucketObjectLockConfiguration
+*** s3:GetLifecycleConfiguration
+*** s3:GetBucketTagging
+*** s3:DeleteObjectVersion
+*** s3:ListBucketVersions
+*** s3:ListBucket
+*** s3:PutBucketTagging
+*** s3:GetObjectTagging
+*** s3:PutBucketVersioning
+*** s3:PutObjectVersionTagging
+*** s3:GetBucketVersioning
+*** s3:GetBucketAcl
+*** s3:PutObjectRetention
+*** s3:GetBucketLocation
+*** s3:GetObjectVersion
+
+
+====
+
+
+
+
+
+
+=== Einschränkungen
+
+* Die DataLock- und Ransomware-Schutzfunktion ist nicht verfügbar, wenn Sie in der Sicherungsrichtlinie Archivspeicher konfiguriert haben.
+* Die DataLock-Option, die Sie beim Aktivieren von NetApp Backup and Recovery auswählen, muss für alle Sicherungsrichtlinien für diesen Cluster verwendet werden.
+* Sie können nicht mehrere DataLock-Modi auf einem einzelnen Cluster verwenden.
+* Wenn Sie DataLock aktivieren, werden alle Volume-Backups gesperrt.  Sie können gesperrte und nicht gesperrte Volume-Backups für einen einzelnen Cluster nicht mischen.
+* DataLock- und Ransomware-Schutz ist für neue Volume-Backups anwendbar, bei denen eine Backup-Richtlinie mit aktiviertem DataLock- und Ransomware-Schutz verwendet wird. Sie können diese Funktionen später mithilfe der Option „Erweiterte Einstellungen“ aktivieren oder deaktivieren.
+* FlexGroup -Volumes können DataLock- und Ransomware-Schutz nur verwenden, wenn ONTAP 9.13.1 oder höher verwendet wird.
+
+
+
+
+=== Tipps zur Minimierung der DataLock-Kosten
+
+Sie können die Ransomware-Scan-Funktion aktivieren oder deaktivieren, während die DataLock-Funktion aktiv bleibt.  Um zusätzliche Kosten zu vermeiden, können Sie geplante Ransomware-Scans deaktivieren.  So können Sie Ihre Sicherheitseinstellungen individuell anpassen und Kosten beim Cloud-Anbieter vermeiden.
+
+Auch wenn geplante Ransomware-Scans deaktiviert sind, können Sie bei Bedarf weiterhin On-Demand-Scans durchführen.
+
+Sie können zwischen verschiedenen Schutzstufen wählen:
+
+* *DataLock _ohne_ Ransomware-Scans*: Bietet Schutz für Sicherungsdaten im Zielspeicher, der sich entweder im Governance- oder Compliance-Modus befinden kann.
++
+** *Governance-Modus*: Bietet Administratoren die Flexibilität, geschützte Daten zu überschreiben oder zu löschen.
+** *Compliance-Modus*: Bietet vollständige Unlöschbarkeit bis zum Ablauf der Aufbewahrungsfrist.  Dies trägt dazu bei, die strengsten Datensicherheitsanforderungen in stark regulierten Umgebungen zu erfüllen.  Die Daten können während ihres Lebenszyklus weder überschrieben noch geändert werden, was den größtmöglichen Schutz für Ihre Sicherungskopien bietet.
++
+
+NOTE: Microsoft Azure verwendet stattdessen einen Sperr- und Entsperrmodus.
+
+
+
+* *DataLock _mit_ Ransomware-Scans*: Bietet eine zusätzliche Sicherheitsebene für Ihre Daten.  Diese Funktion hilft dabei, alle Versuche zu erkennen, Sicherungskopien zu ändern.  Bei einem Versuch wird diskret eine neue Version der Daten erstellt.  Die Scanhäufigkeit kann auf 1, 2, 3, 4, 5, 6 oder 7 Tage geändert werden.  Wenn die Scans auf alle 7 Tage eingestellt werden, verringern sich die Kosten erheblich.
+
+
+Weitere Tipps zur Reduzierung der DataLock-Kosten finden Sie unterhttps://community.netapp.com/t5/Tech-ONTAP-Blogs/Understanding-NetApp-Backup-and-Recovery-DataLock-and-Ransomware-Feature-TCO/ba-p/453475[]
+
+Darüber hinaus können Sie Schätzungen für die mit DataLock verbundenen Kosten erhalten, indem Sie die https://bluexp.netapp.com/cloud-backup-service-tco-calculator["Rechner für die Gesamtbetriebskosten (TCO) von NetApp Backup and Recovery"] .
+
+
+
+== Archivspeicheroptionen
+
+Wenn Sie AWS-, Azure- oder Google-Cloud-Speicher verwenden, können Sie ältere Sicherungsdateien nach einer bestimmten Anzahl von Tagen in eine weniger teure Archivspeicherklasse oder Zugriffsebene verschieben.  Sie können Ihre Sicherungsdateien auch sofort in den Archivspeicher senden, ohne sie in den Standard-Cloud-Speicher zu schreiben.  Geben Sie einfach *0* als „Archiv nach Tagen“ ein, um Ihre Sicherungsdatei direkt in den Archivspeicher zu senden.  Dies kann besonders für Benutzer hilfreich sein, die selten auf Daten aus Cloud-Backups zugreifen müssen, oder für Benutzer, die eine Backup-to-Tape-Lösung ersetzen.
+
+Auf Daten in Archivebenen kann bei Bedarf nicht sofort zugegriffen werden und der Abruf ist mit höheren Kosten verbunden. Sie müssen daher überlegen, wie oft Sie Daten aus Sicherungsdateien wiederherstellen müssen, bevor Sie sich für die Archivierung Ihrer Sicherungsdateien entscheiden.
+
+[NOTE]
+====
+* Auch wenn Sie „0“ auswählen, um alle Datenblöcke an den Archiv-Cloud-Speicher zu senden, werden Metadatenblöcke immer in den Standard-Cloud-Speicher geschrieben.
+* Wenn Sie DataLock aktiviert haben, kann der Archivspeicher nicht verwendet werden.
+* Sie können die Archivierungsrichtlinie nicht mehr ändern, nachdem Sie *0* Tage ausgewählt haben (sofort archivieren).
+
+
+====
+Jede Sicherungsrichtlinie enthält einen Abschnitt für _Archivierungsrichtlinien_, den Sie auf Ihre Sicherungsdateien anwenden können.
+
+ifdef::aws[]
+
+* In AWS beginnen Backups in der Speicherklasse _Standard_ und wechseln nach 30 Tagen zur Speicherklasse _Standard – seltener Zugriff_.
++
+Wenn Ihr Cluster ONTAP 9.10.1 oder höher verwendet, können Sie ältere Backups entweder in den Speicher _S3 Glacier_ oder _S3 Glacier Deep Archive_ verschieben. link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über AWS-Archivspeicher"] .
+
++
+** Wenn Sie bei der Aktivierung von NetApp Backup and Recovery in Ihrer ersten Sicherungsrichtlinie keine Archivebene auswählen, ist _S3 Glacier_ Ihre einzige Archivierungsoption für zukünftige Richtlinien.
+** Wenn Sie in Ihrer ersten Sicherungsrichtlinie _S3 Glacier_ auswählen, können Sie für zukünftige Sicherungsrichtlinien für diesen Cluster zur Ebene _S3 Glacier Deep Archive_ wechseln.
+** Wenn Sie in Ihrer ersten Sicherungsrichtlinie _S3 Glacier Deep Archive_ auswählen, ist diese Ebene die einzige Archivebene, die für zukünftige Sicherungsrichtlinien für diesen Cluster verfügbar ist.
+
+
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* In Azure sind Sicherungen mit der Zugriffsebene „Cool“ verknüpft.
++
+Wenn Ihr Cluster ONTAP 9.10.1 oder höher verwendet, können Sie ältere Sicherungen in den Azure Archive-Speicher verschieben. link:prev-reference-azure-archive-storage-tiers.html["Erfahren Sie mehr über Azure-Archivspeicher"] .
+
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+* In GCP sind Backups mit der Speicherklasse _Standard_ verknüpft.
++
+Wenn Ihr Cluster vor Ort ONTAP 9.12.1 oder höher verwendet, können Sie zur weiteren Kostenoptimierung ältere Backups nach einer bestimmten Anzahl von Tagen in der NetApp Backup and Recovery-Benutzeroberfläche in den Archivspeicher verschieben. link:prev-reference-gcp-archive-storage-tiers.html["Erfahren Sie mehr über den Archivspeicher von Google"] .
+
+
+
+endif::gcp[]
+
+* In StorageGRID sind Backups mit der Speicherklasse _Standard_ verknüpft.
++
+Wenn Ihr On-Prem-Cluster ONTAP 9.12.1 oder höher verwendet und Ihr StorageGRID System 11.4 oder höher verwendet, können Sie ältere Sicherungsdateien im öffentlichen Cloud-Archivspeicher archivieren.
+
+
+
+ifdef::aws[]
+
++ ** Für AWS können Sie Backups auf AWS _S3 Glacier_ oder _S3 Glacier Deep Archive_-Speicher stufen. link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über AWS-Archivspeicher"^] .
+
+endif::aws[]
+
+ifdef::azure[]
+
++ ** Für Azure können Sie ältere Sicherungen in den _Azure Archive_-Speicher verschieben. link:prev-reference-azure-archive-storage-tiers.html["Erfahren Sie mehr über Azure-Archivspeicher"^] .
+
+endif::azure[]

@@ -1,0 +1,51 @@
+= Leistungsstarke Indizierung
+:allow-uri-read: 
+
+
+
+
+=== Leistungsstarke Indizierung
+
+NetApp Backup and Recovery führt eine aktualisierte Indizierungsfunktion ein, die die Indizierung von Daten auf dem Quellsystem effizienter macht.  Die neue Indexierungsfunktion umfasst Aktualisierungen der Benutzeroberfläche, eine verbesserte Leistung der Such- und Wiederherstellungsmethode zum Wiederherstellen von Daten, Upgrades der globalen Suchfunktionen und eine bessere Skalierbarkeit.
+
+Hier ist eine Aufschlüsselung der Verbesserungen:
+
+* *Ordnerkonsolidierung*: Die aktualisierte Version gruppiert Ordner anhand von Namen, die bestimmte Kennungen enthalten, wodurch der Indizierungsprozess reibungsloser verläuft.
+* *Parquet-Dateikomprimierung*: Die aktualisierte Version reduziert die Anzahl der Dateien, die zum Indizieren jedes Volumes verwendet werden, vereinfacht den Prozess und macht eine zusätzliche Datenbank überflüssig.
+* *Skalierung mit mehr Sitzungen*: Die neue Version fügt mehr Sitzungen hinzu, um Indizierungsaufgaben zu bewältigen und so den Prozess zu beschleunigen.
+* *Unterstützung für mehrere Indexcontainer*: Die neue Version verwendet mehrere Container, um Indizierungsaufgaben besser zu verwalten und zu verteilen.
+* *Geteilter Index-Workflow*: Die neue Version teilt den Indexierungsprozess in zwei Teile und steigert so die Effizienz.
+* *Verbesserte Parallelität*: Die neue Version ermöglicht das gleichzeitige Löschen oder Verschieben von Verzeichnissen, wodurch der Indizierungsprozess beschleunigt wird.
+
+
+.Wer profitiert von dieser Funktion?
+Die neue Indexierungsfunktion steht allen Neukunden zur Verfügung.
+
+.Wie aktivieren Sie die Indizierung?
+Bevor Sie die Methode „Suchen und Wiederherstellen“ zum Wiederherstellen von Daten verwenden können, müssen Sie die „Indizierung“ auf jedem Quellsystem aktivieren, von dem Sie Volumes oder Dateien wiederherstellen möchten.  Dadurch kann der indizierte Katalog jedes Volume und jede Sicherungsdatei verfolgen, sodass Ihre Suchvorgänge schnell und effizient erfolgen.
+
+Aktivieren Sie die Indizierung in der Quellarbeitsumgebung, indem Sie beim Durchführen einer Suche und Wiederherstellung die Option „Indizierung aktivieren“ auswählen.
+
+Weitere Informationen finden Sie in der Dokumentation https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-restore.html["So stellen Sie ONTAP -Daten mit Search  Restore wieder her"] .
+
+.Unterstützte Skala
+Die neue Indizierungsfunktion unterstützt Folgendes:
+
+* Globale Sucheffizienz in weniger als 3 Minuten
+* Bis zu 5 Milliarden Dateien
+* Bis zu 5000 Volumes pro Cluster
+* Bis zu 100.000 Snapshots pro Volume
+* Die maximale Zeit für die Basisindexierung beträgt weniger als 7 Tage.  Die tatsächliche Zeit hängt von Ihrer Umgebung ab.
+
+
+
+
+=== Leistungsverbesserungen bei der globalen Suche
+
+Diese Version enthält auch Verbesserungen der globalen Suchleistung.  Sie sehen jetzt Fortschrittsanzeigen und detailliertere Suchergebnisse, einschließlich der Anzahl der Dateien und der für die Suche benötigten Zeit.  Spezielle Container für Suche und Indizierung stellen sicher, dass globale Suchvorgänge in weniger als fünf Minuten abgeschlossen sind.
+
+Beachten Sie die folgenden Überlegungen zur globalen Suche:
+
+* Der neue Index wird nicht für Snapshots ausgeführt, die als stündlich gekennzeichnet sind.
+* Die neue Indizierungsfunktion funktioniert nur bei Snapshots auf FlexVols und nicht bei Snapshots auf FlexGroups.
+

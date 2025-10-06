@@ -1,0 +1,65 @@
+---
+sidebar: sidebar 
+permalink: br-start-discover-kubernetes.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Kubernetes 
+summary: NetApp Backup and Recovery muss zunächst Workloads erkennen, damit Sie den Dienst nutzen können. 
+---
+= Entdecken Sie Kubernetes-Workloads in NetApp Backup und Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Backup and Recovery muss zuerst Kubernetes-Workloads erkennen, damit Sie den Dienst nutzen können.
+
+*Erforderliche NetApp -Konsolenrolle* Superadministrator für Backup und Wiederherstellung. Erfahren Sie mehr überlink:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+
+
+
+== Entdecken Sie Kubernetes-Workloads
+
+Im Backup- und Recovery-Inventar können Sie Kubernetes-Workloads erkennen, die in Ihrer Umgebung ausgeführt werden. Durch die Erkennung einer Workload wird ein Kubernetes-Cluster zu NetApp Backup and Recovery hinzugefügt. So können Sie dem Cluster anschließend Anwendungen hinzufügen und die vom Cluster gehosteten Ressourcen schützen.
+
+.Schritte
+. Führen Sie einen der folgenden Schritte aus:
++
+** Wenn Sie Kubernetes-Workloads zum ersten Mal erkennen, wählen Sie in NetApp Backup and Recovery unter dem Kubernetes-Workload-Typ „Erkennen und verwalten“ aus.
+** Wenn Sie Kubernetes-Workloads bereits erkannt haben, wählen Sie in NetApp Backup and Recovery *Inventar* > *Workloads* und dann *Ressourcen erkennen*.
+
+
+. Wählen Sie den Workloadtyp *Kubernetes* aus.
+. Geben Sie einen Clusternamen ein und wählen Sie einen Connector zur Verwendung mit dem Cluster aus.
+. Befolgen Sie die angezeigten Befehlszeilenanweisungen:
++
+** Erstellen Sie einen Trident Schutznamespace
+** Erstellen eines Kubernetes-Geheimnisses
+** Hinzufügen eines Helm-Repositorys
+** Installieren Sie Trident Protect und den Trident Protect-Anschluss
++
+Diese Schritte stellen sicher, dass NetApp Backup and Recovery mit dem Cluster interagieren kann.
+
+
+
+. Nachdem Sie die Schritte abgeschlossen haben, wählen Sie *Entdecken*.
++
+Der Cluster wird zum Inventar hinzugefügt.
+
+. Wählen Sie in der zugehörigen Kubernetes-Workload „Anzeigen“ aus, um die Liste der Anwendungen, Cluster und Namespaces für diese Workload anzuzeigen.
+
+
+
+
+== Weiter zum NetApp Backup and Recovery Dashboard
+
+Führen Sie die folgenden Schritte aus, um das NetApp Backup and Recovery Dashboard anzuzeigen.
+
+. Wählen Sie im oberen Menü *Dashboard* aus.
+. Überprüfen Sie den Zustand des Datenschutzes.  Die Anzahl der gefährdeten oder geschützten Workloads steigt basierend auf den neu entdeckten, geschützten und gesicherten Workloads.
++
+link:br-use-dashboard.html["Erfahren Sie, was Ihnen das Dashboard anzeigt"] .
+
+

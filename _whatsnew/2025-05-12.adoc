@@ -1,0 +1,42 @@
+= SnapMirror to Cloud Resync für Volumemigrationen
+:allow-uri-read: 
+
+
+
+
+=== SnapMirror to Cloud Resync für Volumemigrationen
+
+Die SnapMirror to Cloud Resync-Funktion optimiert den Datenschutz und die Kontinuität während Volumemigrationen in NetApp -Umgebungen.  Wenn ein Volume mithilfe von SnapMirror Logical Replication (LRSE) von einer lokalen NetApp Bereitstellung zu einer anderen oder zu einer Cloud-basierten Lösung wie Cloud Volumes ONTAP oder Cloud Volumes Service migriert wird, stellt SnapMirror to Cloud Resync sicher, dass vorhandene Cloud-Backups intakt und betriebsbereit bleiben.
+
+Durch diese Funktion entfällt die Notwendigkeit einer zeit- und ressourcenintensiven Neufestlegung der Basislinie, sodass die Sicherungsvorgänge nach der Migration fortgesetzt werden können.  Diese Funktion ist in Workload-Migrationsszenarien wertvoll, unterstützt sowohl FlexVols als auch FlexGroups und ist ab ONTAP Version 9.16.1 verfügbar.
+
+Durch die Aufrechterhaltung der Backup-Kontinuität in allen Umgebungen steigert SnapMirror to Cloud Resync die Betriebseffizienz und reduziert die Komplexität der Hybrid- und Multi-Cloud-Datenverwaltung.
+
+Einzelheiten zur Durchführung des Resynchronisierungsvorgangs finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-migrate-resync.html["Migrieren Sie Volumes mit SnapMirror zu Cloud Resync"] .
+
+
+
+=== Unterstützung für MinIO-Objektspeicher von Drittanbietern (Vorschau)
+
+NetApp Backup and Recovery erweitert jetzt seine Unterstützung auf Objektspeicher von Drittanbietern mit einem Schwerpunkt auf MinIO.  Mit dieser neuen Vorschaufunktion können Sie jeden S3-kompatiblen Objektspeicher für Ihre Sicherungs- und Wiederherstellungsanforderungen nutzen.
+
+Mit dieser Vorschauversion hoffen wir, eine robuste Integration mit Objektspeichern von Drittanbietern sicherzustellen, bevor die vollständige Funktionalität eingeführt wird.  Wir möchten Sie ermutigen, diese neue Funktion zu erkunden und Feedback zu geben, um zur Verbesserung des Dienstes beizutragen.
+
+
+IMPORTANT: Diese Funktion sollte nicht in der Produktion verwendet werden.
+
+*Einschränkungen des Vorschaumodus*
+
+Obwohl sich diese Funktion in der Vorschauphase befindet, gelten bestimmte Einschränkungen:
+
+* Das Mitbringen eigener Eimer (BYOB) wird nicht unterstützt.
+* Das Aktivieren von DataLock in der Richtlinie wird nicht unterstützt.
+* Das Aktivieren des Archivierungsmodus in der Richtlinie wird nicht unterstützt.
+* Es werden nur lokale ONTAP Umgebungen unterstützt.
+* MetroCluster wird nicht unterstützt.
+* Optionen zum Aktivieren der Verschlüsselung auf Bucket-Ebene werden nicht unterstützt.
+
+
+*Erste Schritte*
+
+Um diese Vorschaufunktion zu verwenden, müssen Sie ein Flag auf dem Konsolenagenten aktivieren.  Sie können dann die Verbindungsdetails Ihres MinIO-Objektspeichers von Drittanbietern in den Schutz-Workflow eingeben, indem Sie im Abschnitt „Backup“ die Option „*Drittanbieterkompatibler* Objektspeicher“ auswählen.

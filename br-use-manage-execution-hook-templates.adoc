@@ -1,0 +1,121 @@
+---
+sidebar: sidebar 
+permalink: br-use-manage-execution-hook-templates.html 
+keywords: hooks, execution hooks, exec hooks, hook, execution, script, postscript, prescript, post, pre, run, backup, snapshot, freeze 
+summary: Mit NetApp Backup and Recovery können Sie Ausführungs-Hooks verwalten, um vor oder nach Anwendungsschutzvorgängen Maßnahmen zu ergreifen. 
+---
+= Verwalten Sie NetApp Backup and Recovery-Ausführungs-Hook-Vorlagen für Kubernetes-Workloads
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Ein Ausführungs-Hook ist eine benutzerdefinierte Aktion, die Sie so konfigurieren können, dass sie in Verbindung mit einem Datenschutzvorgang einer verwalteten Kubernetes-Anwendung ausgeführt wird.  Wenn Sie beispielsweise über eine Datenbank-App verfügen, können Sie mithilfe eines Ausführungs-Hooks alle Datenbanktransaktionen vor einem Snapshot anhalten und die Transaktionen nach Abschluss des Snapshots fortsetzen.  Dadurch werden anwendungskonsistente Snapshots gewährleistet.  Wenn Sie eine Vorlage für einen Ausführungs-Hook erstellen, können Sie den Hook-Typ, das auszuführende Skript und alle Filter angeben, die bestimmen, auf welche Container der Hook angewendet wird.  Anschließend können Sie die Vorlage verwenden, um Ausführungs-Hooks mit Ihren Anwendungen zu verknüpfen.
+
+[NOTE]
+====
+Standardmäßig friert NetApp Backup and Recovery Dateisysteme für bestimmte Anwendungen wie KubeVirt während Datenschutzvorgängen automatisch ein und gibt sie wieder frei. Sie können dieses Verhalten optional global oder für bestimmte Anwendungen deaktivieren, indem Sie die Anweisungen in der Trident Protect-Dokumentation befolgen:
+
+* Um dieses Verhalten für alle Anwendungen zu deaktivieren, lesen Sie https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-requirements.html#protecting-data-with-kubevirt-vms["Datenschutz mit KubeVirt-VMs"] .
+* Informationen zum Deaktivieren dieses Verhaltens für eine bestimmte Anwendung finden Sie unter https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-manage-applications.html#define-an-application["Definieren einer Anwendung"] .
+
+
+====
+.Erforderliche NetApp Konsolenrolle
+Organisationsadministrator oder SnapCenter Administrator. link:reference-roles.html["Erfahren Sie mehr über die Zugriffsrollen für NetApp Backup und Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+
+
+
+== Arten von Ausführungs-Hooks
+
+NetApp Backup and Recovery unterstützt die folgenden Typen von Ausführungs-Hooks, je nachdem, wann sie ausgeführt werden können:
+
+* Vorab-Schnappschuss
+* Nach dem Snapshot
+* Vorsicherung
+* Nach der Sicherung
+* Nach der Wiederherstellung
+
+
+
+
+=== Reihenfolge der Ausführung
+
+Wenn ein Datenschutzvorgang ausgeführt wird, finden Ausführungs-Hook-Ereignisse in der folgenden Reihenfolge statt:
+
+. Alle anwendbaren benutzerdefinierten Ausführungs-Hooks vor der Operation werden auf den entsprechenden Containern ausgeführt.  Sie können so viele benutzerdefinierte Hooks vor der Operation erstellen und ausführen, wie Sie benötigen, aber die Reihenfolge der Ausführung dieser Hooks vor der Operation ist weder garantiert noch konfigurierbar.
+. Gegebenenfalls kommt es zum Einfrieren des Dateisystems.
+. Der Datenschutzvorgang wird durchgeführt.
+. Eingefrorene Dateisysteme werden gegebenenfalls wieder freigegeben.
+. Alle anwendbaren benutzerdefinierten Ausführungs-Hooks nach der Operation werden auf den entsprechenden Containern ausgeführt.  Sie können so viele benutzerdefinierte Post-Operation-Hooks erstellen und ausführen, wie Sie benötigen, aber die Reihenfolge der Ausführung dieser Hooks nach der Operation ist weder garantiert noch konfigurierbar.
+
+
+Wenn Sie mehrere Ausführungs-Hooks desselben Typs erstellen (z. B. Pre-Snapshot), ist die Ausführungsreihenfolge dieser Hooks nicht garantiert.  Die Reihenfolge der Ausführung von Hooks unterschiedlichen Typs ist jedoch gewährleistet.  Im Folgenden sehen Sie beispielsweise die Ausführungsreihenfolge einer Konfiguration, die alle verschiedenen Hook-Typen enthält:
+
+. Vor dem Snapshot ausgeführte Hooks
+. Nach dem Snapshot ausgeführte Hooks
+. Vor der Sicherung ausgeführte Hooks
+. Nach der Sicherung ausgeführte Hooks
+
+
+
+NOTE: Sie sollten Ihre Ausführungs-Hook-Skripte immer testen, bevor Sie sie in einer Produktionsumgebung aktivieren.  Mit dem Befehl „kubectl exec“ können Sie die Skripte bequem testen.  Nachdem Sie die Ausführungs-Hooks in einer Produktionsumgebung aktiviert haben, testen Sie die resultierenden Snapshots und Backups, um sicherzustellen, dass sie konsistent sind.  Sie können dies tun, indem Sie die App in einen temporären Namespace klonen, den Snapshot oder das Backup wiederherstellen und dann die App testen.
+
+
+NOTE: Wenn ein Pre-Snapshot-Ausführungs-Hook Kubernetes-Ressourcen hinzufügt, ändert oder entfernt, werden diese Änderungen in den Snapshot oder die Sicherung und in alle nachfolgenden Wiederherstellungsvorgänge einbezogen.
+
+
+
+== Wichtige Hinweise zu benutzerdefinierten Ausführungs-Hooks
+
+Berücksichtigen Sie Folgendes, wenn Sie Ausführungs-Hooks für Ihre Apps planen.
+
+* Ein Ausführungs-Hook muss ein Skript verwenden, um Aktionen auszuführen.  Viele Ausführungs-Hooks können auf dasselbe Skript verweisen.
+* Ausführungs-Hooks müssen im Format ausführbarer Shell-Skripte geschrieben werden.
+* Die Skriptgröße ist auf 96 KB begrenzt.
+* Anhand der Ausführungs-Hook-Einstellungen und aller Übereinstimmungskriterien wird ermittelt, welche Hooks für einen Snapshot-, Sicherungs- oder Wiederherstellungsvorgang anwendbar sind.
+
+
+
+NOTE: Da Ausführungs-Hooks häufig die Funktionalität der Anwendung, für die sie ausgeführt werden, einschränken oder vollständig deaktivieren, sollten Sie immer versuchen, die Ausführungszeit Ihrer benutzerdefinierten Ausführungs-Hooks zu minimieren.  Wenn Sie einen Sicherungs- oder Snapshot-Vorgang mit zugehörigen Ausführungs-Hooks starten, ihn dann aber abbrechen, können die Hooks weiterhin ausgeführt werden, wenn der Sicherungs- oder Snapshot-Vorgang bereits begonnen hat.  Dies bedeutet, dass die in einem Ausführungs-Hook nach der Sicherung verwendete Logik nicht davon ausgehen kann, dass die Sicherung abgeschlossen wurde.
+
+
+
+== Ausführungs-Hook-Filter
+
+Wenn Sie einen Ausführungs-Hook für eine Anwendung hinzufügen oder bearbeiten, können Sie dem Ausführungs-Hook Filter hinzufügen, um zu verwalten, mit welchen Containern der Hook übereinstimmt.  Filter sind nützlich für Anwendungen, die auf allen Containern dasselbe Container-Image verwenden, aber jedes Image möglicherweise für einen anderen Zweck verwenden (z. B. Elasticsearch).  Mithilfe von Filtern können Sie Szenarien erstellen, in denen Ausführungs-Hooks auf einigen, aber nicht unbedingt allen identischen Containern ausgeführt werden.  Wenn Sie mehrere Filter für einen einzelnen Ausführungs-Hook erstellen, werden diese mit einem logischen UND-Operator kombiniert.  Sie können bis zu 10 aktive Filter pro Ausführungs-Hook haben.
+
+Jeder Filter, den Sie einem Ausführungs-Hook hinzufügen, verwendet einen regulären Ausdruck, um Container in Ihrem Cluster abzugleichen.  Wenn ein Hook mit einem Container übereinstimmt, führt der Hook das zugehörige Skript auf diesem Container aus.  Reguläre Ausdrücke für Filter verwenden die Syntax „Regulärer Ausdruck 2“ (RE2), die das Erstellen eines Filters, der Container aus der Liste der Übereinstimmungen ausschließt, nicht unterstützt.  Informationen zur Syntax, die NetApp Backup and Recovery für reguläre Ausdrücke in Ausführungs-Hook-Filtern unterstützt, finden Sie unter https://github.com/google/re2/wiki/Syntax["Unterstützung der Syntax „Regulärer Ausdruck 2“ (RE2)"^] .
+
+
+NOTE: Wenn Sie einem Ausführungs-Hook, der nach einem Wiederherstellungs- oder Klonvorgang ausgeführt wird, einen Namespace-Filter hinzufügen und sich die Wiederherstellungs- oder Klonquelle und das Ziel in unterschiedlichen Namespaces befinden, wird der Namespace-Filter nur auf den Ziel-Namespace angewendet.
+
+
+
+== Beispiele für Ausführungs-Hooks
+
+Besuchen Sie die https://github.com/NetApp/Verda["NetApp Verda GitHub-Projekt"] um echte Ausführungs-Hooks für beliebte Apps wie Apache Cassandra und Elasticsearch herunterzuladen.  Sie können sich auch Beispiele ansehen und Ideen für die Strukturierung Ihrer eigenen benutzerdefinierten Ausführungs-Hooks holen.
+
+
+
+== Erstellen einer Ausführungs-Hook-Vorlage
+
+Sie können eine benutzerdefinierte Ausführungs-Hook-Vorlage erstellen, mit der Sie Aktionen vor oder nach einem Datenschutzvorgang für eine Anwendung ausführen können.
+
+.Schritte
+. Gehen Sie in der Konsole zu *Schutz* > *Sicherung und Wiederherstellung*.
+. Wählen Sie die Registerkarte *Einstellungen*.
+. Erweitern Sie den Abschnitt *Ausführungs-Hook-Vorlage*.
+. Wählen Sie *Ausführungs-Hook-Vorlage erstellen*.
+. Geben Sie einen Namen für den Ausführungs-Hook ein.
+. Wählen Sie optional einen Hook-Typ aus. Beispielsweise wird ein Post-Restore-Hook ausgeführt, nachdem der Wiederherstellungsvorgang abgeschlossen ist.
+. Geben Sie im Textfeld *Skript* das ausführbare Shell-Skript ein, das Sie als Teil der Ausführungs-Hook-Vorlage ausführen möchten.  Optional können Sie *Skript hochladen* auswählen, um stattdessen eine Skriptdatei hochzuladen.
+. Wählen Sie *Erstellen*.
++
+Die Vorlage wird erstellt und erscheint in der Vorlagenliste im Abschnitt *Execution Hook Template*.
+
+

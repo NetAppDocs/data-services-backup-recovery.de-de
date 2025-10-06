@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: br-limitations-vmware.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, vmware, vcenter 
+summary: Der NetApp Backup and Recovery-Dienst muss zunächst Daten erkennen, damit Sie den Dienst nutzen können.  Während der Erkennung analysiert NetApp Backup and Recovery alle Volumes und Dateien in Systemen innerhalb Ihres Unternehmens. 
+---
+= Bekannte Einschränkungen bei NetApp Backup and Recovery für VMware-Workloads
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Bekannte Einschränkungen kennzeichnen Plattformen, Geräte oder Funktionen, die von dieser Produktversion nicht unterstützt werden oder nicht ordnungsgemäß mit ihr zusammenarbeiten. Lesen Sie diese Einschränkungen sorgfältig durch.
+
+Die folgenden Aktionen werden in der Vorschauversion von VMware-Workloads in NetApp Backup and Recovery nicht unterstützt:
+
+* Montieren
+* Aushängen
+* An einem anderen Speicherort wiederherstellen
+* VMDK wiederherstellen
+* VMDK anhängen
+* VMDK trennen
+* vVol-Unterstützung
+* NVMe-Unterstützung
+* E-Mail-Integration
+* Richtlinie bearbeiten
+* Schutzgruppe bearbeiten
+* Unterstützung der rollenbasierten Zugriffskontrolle (RBAC)
+

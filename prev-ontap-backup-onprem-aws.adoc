@@ -1,0 +1,572 @@
+---
+sidebar: sidebar 
+permalink: prev-ontap-backup-onprem-aws.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Schützen Sie Ihre VMware-Workloads mit NetApp NetApp Backup and Recovery. 
+---
+= Sichern Sie lokale ONTAP -Daten mit NetApp Backup and Recovery auf Amazon S3
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Führen Sie einige Schritte in NetApp Backup and Recovery aus, um mit der Sicherung von Volume-Daten von Ihren lokalen ONTAP -Systemen auf einem sekundären Speichersystem und im Amazon S3-Cloud-Speicher zu beginnen.
+
+
+NOTE: Zu den „On-Premises ONTAP -Systemen“ zählen FAS, AFF und ONTAP Select Systeme.
+
+[]
+====
+*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup und Recovery-Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup- und Recovery-Workloads"] .
+
+====
+
+
+== Identifizieren Sie die Verbindungsmethode
+
+Wählen Sie aus, welche der beiden Verbindungsmethoden Sie beim Konfigurieren von Backups von lokalen ONTAP -Systemen zu AWS S3 verwenden möchten.
+
+* *Öffentliche Verbindung* – Verbinden Sie das ONTAP -System über einen öffentlichen S3-Endpunkt direkt mit AWS S3.
+* *Private Verbindung* – Verwenden Sie ein VPN oder AWS Direct Connect und leiten Sie den Datenverkehr über eine VPC-Endpunktschnittstelle, die eine private IP-Adresse verwendet.
+
+
+Optional können Sie auch über die öffentliche oder private Verbindung eine Verbindung zu einem sekundären ONTAP System für replizierte Volumes herstellen.
+
+Das folgende Diagramm zeigt die Methode *öffentliche Verbindung* und die Verbindungen, die Sie zwischen den Komponenten vorbereiten müssen. Sie können einen Konsolenagenten verwenden, den Sie vor Ort installiert haben, oder einen Konsolenagenten, den Sie im AWS VPC bereitgestellt haben.
+
+image:diagram_cloud_backup_onprem_aws_public.png["Ein Diagramm, das zeigt, wie NetApp Backup and Recovery über eine öffentliche Verbindung mit den Volumes im Cluster und dem AWS S3-Speicher kommuniziert, auf dem sich die Sicherungsdateien befinden."]
+
+Das folgende Diagramm zeigt die Methode *private Verbindung* und die Verbindungen, die Sie zwischen den Komponenten vorbereiten müssen. Sie können einen Konsolenagenten verwenden, den Sie vor Ort installiert haben, oder einen Konsolenagenten, den Sie im AWS VPC bereitgestellt haben.
+
+image:diagram_cloud_backup_onprem_aws_private.png["Ein Diagramm, das zeigt, wie NetApp Backup and Recovery über eine private Verbindung mit den Volumes im Cluster und dem AWS S3-Speicher kommuniziert, auf dem sich die Sicherungsdateien befinden."]
+
+
+
+== Vorbereiten Ihres Konsolenagenten
+
+Der Konsolenagent ist die Hauptsoftware für die NetApp Konsolenfunktionalität.  Zum Sichern und Wiederherstellen Ihrer ONTAP Daten ist ein Konsolenagent erforderlich.
+
+
+
+=== Erstellen oder Wechseln von Konsolenagenten
+
+Wenn Sie bereits einen Konsolenagenten in Ihrem AWS VPC oder vor Ort bereitgestellt haben, sind Sie startklar.
+
+Wenn nicht, müssen Sie an einem dieser Standorte einen Konsolenagenten erstellen, um ONTAP Daten im AWS S3-Speicher zu sichern.  Sie können keinen Konsolenagenten verwenden, der bei einem anderen Cloud-Anbieter bereitgestellt wird.
+
+* https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["Erfahren Sie mehr über Konsolenagenten"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-aws.html["Installieren Sie einen Konsolenagenten in AWS"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-on-prem.html["Installieren Sie einen Konsolenagenten in Ihren Räumlichkeiten"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-install-restricted-mode.html["Installieren Sie einen Konsolenagenten in einer AWS GovCloud-Region"^]
++
+NetApp Backup and Recovery wird in GovCloud-Regionen unterstützt, wenn der Konsolenagent in der Cloud bereitgestellt wird – nicht, wenn er in Ihren Räumlichkeiten installiert ist.  Darüber hinaus müssen Sie den Konsolenagenten vom AWS Marketplace bereitstellen.  Sie können den Konsolenagenten nicht von der NetApp Console SaaS-Website in einer Regierungsregion bereitstellen.
+
+
+
+
+
+=== Netzwerkanforderungen für den Konsolenagenten vorbereiten
+
+Stellen Sie sicher, dass die folgenden Netzwerkanforderungen erfüllt sind:
+
+* Stellen Sie sicher, dass das Netzwerk, in dem der Konsolenagent installiert ist, die folgenden Verbindungen ermöglicht:
++
+** Eine HTTPS-Verbindung über Port 443 zu NetApp Backup and Recovery und zu Ihrem S3-Objektspeicher(https://docs.netapp.com/us-en/console-setup-admin/task-set-up-networking-aws.html#endpoints-contacted-for-day-to-day-operations["siehe die Liste der Endpunkte"^] )
+** Eine HTTPS-Verbindung über Port 443 zu Ihrem ONTAP Cluster-Management-LIF
+** Für AWS- und AWS GovCloud-Bereitstellungen sind zusätzliche Sicherheitsgruppenregeln für eingehenden und ausgehenden Datenverkehr erforderlich. Sehen https://docs.netapp.com/us-en/console-setup-admin/reference-ports-aws.html["Regeln für den Konsolenagenten in AWS"^] für Details.
+
+
+* Wenn Sie über eine Direct Connect- oder VPN-Verbindung von Ihrem ONTAP Cluster zum VPC verfügen und die Kommunikation zwischen dem Konsolenagenten und S3 in Ihrem internen AWS-Netzwerk bleiben soll (eine *private* Verbindung), müssen Sie eine VPC-Endpunktschnittstelle zu S3 aktivieren. <<Konfigurieren Sie Ihr System für eine private Verbindung mithilfe einer VPC-Endpunktschnittstelle>> .
+
+
+
+
+== Überprüfen der Lizenzanforderungen
+
+Sie müssen die Lizenzanforderungen sowohl für AWS als auch für die NetApp Konsole überprüfen:
+
+* Bevor Sie NetApp Backup and Recovery für Ihren Cluster aktivieren können, müssen Sie entweder ein Pay-as-you-go (PAYGO) NetApp Console Marketplace-Angebot von AWS abonnieren oder eine NetApp Backup and Recovery BYOL-Lizenz von NetApp erwerben und aktivieren.  Diese Lizenzen gelten für Ihr Konto und können systemübergreifend verwendet werden.
++
+** Für die NetApp Backup and Recovery PAYGO-Lizenzierung benötigen Sie ein Abonnement für die https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["NetApp Console-Angebot vom AWS Marketplace"^] .  Die Abrechnung für NetApp Backup and Recovery erfolgt über dieses Abonnement.
+** Für die NetApp Backup and Recovery BYOL-Lizenzierung benötigen Sie die Seriennummer von NetApp , die Ihnen die Nutzung des Dienstes für die Dauer und Kapazität der Lizenz ermöglicht.
+
+
+* Sie benötigen ein AWS-Abonnement für den Objektspeicherplatz, in dem Ihre Backups gespeichert werden.
+
+
+*Unterstützte Regionen*
+
+Sie können in allen Regionen, einschließlich der AWS GovCloud-Regionen, Backups von lokalen Systemen auf Amazon S3 erstellen.  Sie geben die Region an, in der die Sicherungen gespeichert werden, wenn Sie den Dienst einrichten.
+
+
+
+== Bereiten Sie Ihre ONTAP -Cluster vor
+
+Sie müssen Ihr lokales ONTAP Quellsystem und alle sekundären lokalen ONTAP oder Cloud Volumes ONTAP Systeme vorbereiten.
+
+Die Vorbereitung Ihrer ONTAP Cluster umfasst die folgenden Schritte:
+
+* Entdecken Sie Ihre ONTAP -Systeme in der NetApp Konsole
+* Überprüfen der ONTAP Systemanforderungen
+* Überprüfen Sie die ONTAP Netzwerkanforderungen für die Datensicherung im Objektspeicher
+* Überprüfen Sie die ONTAP Netzwerkanforderungen für die Replikation von Volumes
+
+
+
+
+=== Entdecken Sie Ihre ONTAP -Systeme in der NetApp Konsole
+
+Sowohl Ihr lokales ONTAP Quellsystem als auch alle sekundären lokalen ONTAP oder Cloud Volumes ONTAP -Systeme müssen auf der Seite *Systeme* der NetApp Konsole verfügbar sein.
+
+Sie müssen die IP-Adresse der Clusterverwaltung und das Kennwort für das Administratorbenutzerkonto kennen, um den Cluster hinzuzufügen. https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-ontap.html["Erfahren Sie, wie Sie einen Cluster erkennen"^] .
+
+
+
+=== Überprüfen der ONTAP Systemanforderungen
+
+Stellen Sie sicher, dass die folgenden ONTAP Anforderungen erfüllt sind:
+
+* Mindestens ONTAP 9.8; ONTAP 9.8P13 und höher wird empfohlen.
+* Eine SnapMirror -Lizenz (im Premium-Paket oder Datenschutz-Paket enthalten).
++
+*Hinweis:* Das „Hybrid Cloud Bundle“ ist bei der Verwendung von NetApp Backup and Recovery nicht erforderlich.
+
++
+Erfahren Sie, wie Sie https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["Verwalten Sie Ihre Cluster-Lizenzen"^] .
+
+* Uhrzeit und Zeitzone sind richtig eingestellt.  Erfahren Sie, wie Sie https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["Konfigurieren Sie Ihre Clusterzeit"^] .
+* Wenn Sie Daten replizieren möchten, sollten Sie vor der Datenreplikation sicherstellen, dass auf den Quell- und Zielsystemen kompatible ONTAP Versionen ausgeführt werden.
++
+https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["Kompatible ONTAP -Versionen für SnapMirror -Beziehungen anzeigen"^] .
+
+
+
+
+
+=== Überprüfen Sie die ONTAP Netzwerkanforderungen für die Datensicherung im Objektspeicher
+
+Sie müssen die folgenden Anforderungen auf dem System konfigurieren, das eine Verbindung zum Objektspeicher herstellt.
+
+* Konfigurieren Sie für eine Fan-Out-Backup-Architektur die folgenden Einstellungen auf dem _primären_ System.
+* Konfigurieren Sie für eine kaskadierte Sicherungsarchitektur die folgenden Einstellungen auf dem _sekundären_ System.
+
+
+Die folgenden ONTAP Cluster-Netzwerkanforderungen sind erforderlich:
+
+* Der Cluster erfordert eine eingehende HTTPS-Verbindung vom Konsolenagenten zum Clusterverwaltungs-LIF.
+* Auf jedem ONTAP Knoten, der die zu sichernden Volumes hostet, ist ein Intercluster-LIF erforderlich. Diese Cluster-übergreifenden LIFs müssen auf den Objektspeicher zugreifen können.
++
+Der Cluster initiiert eine ausgehende HTTPS-Verbindung über Port 443 von den LIFs zwischen den Clustern zum Amazon S3-Speicher für Sicherungs- und Wiederherstellungsvorgänge. ONTAP liest und schreibt Daten in den und aus dem Objektspeicher – der Objektspeicher wird nie initiiert, er antwortet nur.
+
+* Die Intercluster-LIFs müssen mit dem _IPspace_ verknüpft sein, den ONTAP für die Verbindung mit dem Objektspeicher verwenden soll. https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html["Erfahren Sie mehr über IPspaces"^] .
++
+Wenn Sie NetApp Backup and Recovery einrichten, werden Sie nach dem zu verwendenden IPspace gefragt. Sie sollten den IPspace auswählen, mit dem diese LIFs verknüpft sind. Dies kann der „Standard“-IP-Bereich oder ein benutzerdefinierter IP-Bereich sein, den Sie erstellt haben.
+
++
+Wenn Sie einen anderen IP-Bereich als „Standard“ verwenden, müssen Sie möglicherweise eine statische Route erstellen, um Zugriff auf den Objektspeicher zu erhalten.
+
++
+Alle Intercluster-LIFs innerhalb des IPspace müssen Zugriff auf den Objektspeicher haben. Wenn Sie dies für den aktuellen IPspace nicht konfigurieren können, müssen Sie einen dedizierten IPspace erstellen, in dem alle LIFs zwischen Clustern Zugriff auf den Objektspeicher haben.
+
+* Für die Speicher-VM, auf der sich die Volumes befinden, müssen DNS-Server konfiguriert worden sein.  Erfahren Sie, wie Sie https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html["Konfigurieren Sie DNS-Dienste für die SVM"^] .
+* Aktualisieren Sie bei Bedarf die Firewall-Regeln, um NetApp Backup and Recovery-Verbindungen von ONTAP zum Objektspeicher über Port 443 und Namensauflösungsdatenverkehr von der Speicher-VM zum DNS-Server über Port 53 (TCP/UDP) zuzulassen.
+* Wenn Sie für die S3-Verbindung einen privaten VPC-Schnittstellenendpunkt in AWS verwenden, müssen Sie das S3-Endpunktzertifikat in den ONTAP Cluster laden, damit HTTPS/443 verwendet werden kann. <<Konfigurieren Sie Ihr System für eine private Verbindung mithilfe einer VPC-Endpunktschnittstelle>> .  *[Stellen Sie sicher, dass Ihr ONTAP Cluster über die Berechtigung zum Zugriff auf den S3-Bucket verfügt.
+
+
+
+
+=== Überprüfen Sie die ONTAP Netzwerkanforderungen für die Replikation von Volumes
+
+Wenn Sie mit NetApp Backup and Recovery replizierte Volumes auf einem sekundären ONTAP System erstellen möchten, stellen Sie sicher, dass die Quell- und Zielsysteme die folgenden Netzwerkanforderungen erfüllen.
+
+
+
+==== On-Premises ONTAP Netzwerkanforderungen
+
+* Wenn sich der Cluster in Ihren Räumlichkeiten befindet, sollten Sie über eine Verbindung von Ihrem Unternehmensnetzwerk zu Ihrem virtuellen Netzwerk beim Cloud-Anbieter verfügen.  Dies ist normalerweise eine VPN-Verbindung.
+* ONTAP -Cluster müssen zusätzliche Subnetz-, Port-, Firewall- und Clusteranforderungen erfüllen.
++
+Da Sie auf Cloud Volumes ONTAP oder lokale Systeme replizieren können, überprüfen Sie die Peering-Anforderungen für lokale ONTAP -Systeme. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Voraussetzungen für Cluster-Peering in der ONTAP Dokumentation anzeigen"^] .
+
+
+
+
+
+==== Netzwerkanforderungen für Cloud Volumes ONTAP
+
+* Die Sicherheitsgruppe der Instanz muss die erforderlichen eingehenden und ausgehenden Regeln enthalten: insbesondere Regeln für ICMP und die Ports 11104 und 11105.  Diese Regeln sind in der vordefinierten Sicherheitsgruppe enthalten.
+
+
+
+
+== Bereiten Sie Amazon S3 als Ihr Sicherungsziel vor
+
+Die Vorbereitung von Amazon S3 als Sicherungsziel umfasst die folgenden Schritte:
+
+* Richten Sie S3-Berechtigungen ein.
+* (Optional) Erstellen Sie Ihre eigenen S3-Buckets.  (Der Dienst erstellt auf Wunsch Buckets für Sie.)
+* (Optional) Richten Sie vom Kunden verwaltete AWS-Schlüssel für die Datenverschlüsselung ein.
+* (Optional) Konfigurieren Sie Ihr System für eine private Verbindung mithilfe einer VPC-Endpunktschnittstelle.
+
+
+
+
+=== S3-Berechtigungen einrichten
+
+Sie müssen zwei Berechtigungssätze konfigurieren:
+
+* Berechtigungen für den Konsolenagenten zum Erstellen und Verwalten des S3-Buckets.
+* Berechtigungen für den lokalen ONTAP Cluster, damit dieser Daten aus dem S3-Bucket lesen und schreiben kann.
+
+
+.Schritte
+. Stellen Sie sicher, dass der Konsolenagent über die erforderlichen Berechtigungen verfügt. Weitere Einzelheiten finden Sie unter https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["Richtlinienberechtigungen für die NetApp Konsole"^] .
++
+
+NOTE: Wenn Sie Backups in AWS China-Regionen erstellen, müssen Sie den AWS-Ressourcennamen „arn“ unter allen _Resource_-Abschnitten in den IAM-Richtlinien von „aws“ in „aws-cn“ ändern. Beispiel: `arn:aws-cn:s3:::netapp-backup-*` .
+
+. Wenn Sie den Dienst aktivieren, werden Sie vom Backup-Assistenten aufgefordert, einen Zugriffsschlüssel und einen geheimen Schlüssel einzugeben.  Diese Anmeldeinformationen werden an den ONTAP Cluster weitergegeben, damit ONTAP Daten im S3-Bucket sichern und wiederherstellen kann.  Dazu müssen Sie einen IAM-Benutzer mit den folgenden Berechtigungen erstellen.
++
+Weitere Informationen finden Sie im https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html["AWS-Dokumentation: Erstellen einer Rolle zum Delegieren von Berechtigungen an einen IAM-Benutzer"^] .
+
++
+[%collapsible]
+====
+[source, json]
+----
+{
+    "Version": "2012-10-17",
+     "Statement": [
+        {
+           "Action": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:DeleteObject",
+                "s3:ListBucket",
+                "s3:ListAllMyBuckets",
+                "s3:GetBucketLocation",
+                "s3:PutEncryptionConfiguration"
+            ],
+            "Resource": "arn:aws:s3:::netapp-backup-*",
+            "Effect": "Allow",
+            "Sid": "backupPolicy"
+        },
+        {
+            "Action": [
+                "s3:ListBucket",
+                "s3:GetBucketLocation"
+            ],
+            "Resource": "arn:aws:s3:::netapp-backup*",
+            "Effect": "Allow"
+        },
+        {
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:DeleteObject",
+                "s3:ListAllMyBuckets",
+                "s3:PutObjectTagging",
+                "s3:GetObjectTagging",
+                "s3:RestoreObject",
+                "s3:GetBucketObjectLockConfiguration",
+                "s3:GetObjectRetention",
+                "s3:PutBucketObjectLockConfiguration",
+                "s3:PutObjectRetention"
+            ],
+            "Resource": "arn:aws:s3:::netapp-backup*/*",
+            "Effect": "Allow"
+        }
+    ]
+}
+----
+====
+
+
+
+
+=== Erstellen Sie Ihre eigenen Eimer
+
+Standardmäßig erstellt der Dienst Buckets für Sie.  Wenn Sie Ihre eigenen Buckets verwenden möchten, können Sie diese auch erstellen, bevor Sie den Backup-Aktivierungsassistenten starten, und diese Buckets dann im Assistenten auswählen.
+
+link:prev-ontap-protect-journey.html["Erfahren Sie mehr über das Erstellen eigener Buckets"^] .
+
+Wenn Sie Ihre eigenen Buckets erstellen, sollten Sie den Bucket-Namen „netapp-backup“ verwenden.  Wenn Sie einen benutzerdefinierten Namen verwenden möchten, bearbeiten Sie die `ontapcloud-instance-policy-netapp-backup` IAMRole für die vorhandenen CVOs und fügen Sie die folgende Liste zu den S3-Berechtigungen hinzu.  Sie müssen Folgendes einschließen: `"Resource": "arn:aws:s3:::*"` und weisen Sie alle erforderlichen Berechtigungen zu, die mit dem Bucket verknüpft werden müssen.
+
+[%collapsible]
+====
+"Aktion": [ "S3:ListBucket" "S3:GetBucketLocation" ] "Ressource": "arn:aws:s3:::*", "Effekt": "Zulassen" }, { "Aktion": [ "S3:GetObject", "S3:PutObject", "S3:DeleteObject", "S3:ListAllMyBuckets", "S3:PutObjectTagging", "S3:GetObjectTagging", "S3:RestoreObject", "S3:GetBucketObjectLockConfiguration", "S3:GetObjectRetention", "S3:PutBucketObjectLockConfiguration", "S3:PutObjectRetention" ] "Ressource": "arn:aws:s3:::*",
+
+====
+
+
+=== Einrichten von kundenverwalteten AWS-Schlüsseln zur Datenverschlüsselung
+
+Wenn Sie die standardmäßigen Amazon S3-Verschlüsselungsschlüssel zum Verschlüsseln der zwischen Ihrem lokalen Cluster und dem S3-Bucket übertragenen Daten verwenden möchten, sind Sie bestens gerüstet, da die Standardinstallation diese Art der Verschlüsselung verwendet.
+
+Wenn Sie stattdessen Ihre eigenen, vom Kunden verwalteten Schlüssel zur Datenverschlüsselung verwenden möchten, anstatt die Standardschlüssel zu verwenden, müssen Sie die verwalteten Verschlüsselungsschlüssel bereits eingerichtet haben, bevor Sie den NetApp Backup and Recovery-Assistenten starten.
+
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-setting-up-kms.html["Informieren Sie sich, wie Sie Ihre eigenen Amazon-Verschlüsselungsschlüssel mit Cloud Volumes ONTAP verwenden."^] .
+
+https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-aws-bluexp.html#configure-encryption-settings["Informieren Sie sich darüber, wie Sie Ihre eigenen Amazon-Verschlüsselungsschlüssel mit NetApp Backup and Recovery verwenden."^] .
+
+
+
+=== Konfigurieren Sie Ihr System für eine private Verbindung mithilfe einer VPC-Endpunktschnittstelle
+
+Wenn Sie eine standardmäßige öffentliche Internetverbindung verwenden möchten, werden alle Berechtigungen vom Konsolenagenten festgelegt und Sie müssen nichts weiter tun.
+
+Wenn Sie eine sicherere Verbindung über das Internet von Ihrem lokalen Rechenzentrum zum VPC wünschen, können Sie im Backup-Aktivierungsassistenten eine AWS PrivateLink-Verbindung auswählen. Dies ist erforderlich, wenn Sie ein VPN oder AWS Direct Connect verwenden möchten, um Ihr lokales System über eine VPC-Endpunktschnittstelle zu verbinden, die eine private IP-Adresse verwendet.
+
+.Schritte
+. Erstellen Sie mithilfe der Amazon VPC-Konsole oder der Befehlszeile eine Schnittstellenendpunktkonfiguration. https://docs.aws.amazon.com/AmazonS3/latest/userguide/privatelink-interface-endpoints.html["Weitere Informationen zur Verwendung von AWS PrivateLink für Amazon S3 finden Sie hier."^] .
+. Ändern Sie die Sicherheitsgruppenkonfiguration, die dem Konsolenagenten zugeordnet ist. Sie müssen die Richtlinie von "Vollzugriff" auf "Benutzerdefiniert" ändern und<<S3-Berechtigungen einrichten,Fügen Sie die S3-Berechtigungen aus der Sicherungsrichtlinie hinzu>> wie bereits gezeigt.
++
+Wenn Sie Port 80 (HTTP) für die Kommunikation mit dem privaten Endpunkt verwenden, sind Sie fertig. Sie können NetApp Backup and Recovery jetzt auf dem Cluster aktivieren.
+
++
+Wenn Sie Port 443 (HTTPS) für die Kommunikation mit dem privaten Endpunkt verwenden, müssen Sie das Zertifikat vom VPC S3-Endpunkt kopieren und es Ihrem ONTAP Cluster hinzufügen, wie in den nächsten 4 Schritten gezeigt.
+
+. Rufen Sie den DNS-Namen des Endpunkts von der AWS-Konsole ab.
+. Besorgen Sie sich das Zertifikat vom VPC S3-Endpunkt. Sie tun dies, indem Sie https://docs.netapp.com/us-en/console-setup-admin/task-maintain-connectors.html#connect-to-the-linux-vm["Anmelden bei der VM, die den Konsolenagenten hostet"^] und führen Sie den folgenden Befehl aus. Wenn Sie den DNS-Namen des Endpunkts eingeben, fügen Sie am Anfang „bucket“ hinzu und ersetzen Sie das „*“:
++
+[source, text]
+----
+[ec2-user@ip-10-160-4-68 ~]$ openssl s_client -connect bucket.vpce-0ff5c15df7e00fbab-yxs7lt8v.s3.us-west-2.vpce.amazonaws.com:443 -showcerts
+----
+. Kopieren Sie aus der Ausgabe dieses Befehls die Daten für das S3-Zertifikat (alle Daten zwischen und einschließlich der Tags BEGIN / END CERTIFICATE):
++
+[source, text]
+----
+Certificate chain
+0 s:/CN=s3.us-west-2.amazonaws.com`
+   i:/C=US/O=Amazon/OU=Server CA 1B/CN=Amazon
+-----BEGIN CERTIFICATE-----
+MIIM6zCCC9OgAwIBAgIQA7MGJ4FaDBR8uL0KR3oltTANBgkqhkiG9w0BAQsFADBG
+…
+…
+GqvbOz/oO2NWLLFCqI+xmkLcMiPrZy+/6Af+HH2mLCM4EsI2b+IpBmPkriWnnxo=
+-----END CERTIFICATE-----
+----
+. Melden Sie sich bei der CLI des ONTAP Clusters an und wenden Sie das kopierte Zertifikat mit dem folgenden Befehl an (ersetzen Sie den Namen Ihrer eigenen Speicher-VM):
++
+[source, text]
+----
+cluster1::> security certificate install -vserver cluster1 -type server-ca
+Please enter Certificate: Press <Enter> when done
+----
+
+
+
+
+== Aktivieren Sie Backups auf Ihren ONTAP -Volumes
+
+Aktivieren Sie Backups jederzeit direkt von Ihrem lokalen System aus.
+
+Ein Assistent führt Sie durch die folgenden Hauptschritte:
+
+* <<Wählen Sie die Volumes aus, die Sie sichern möchten>>
+* <<Definieren Sie die Sicherungsstrategie>>
+* <<Überprüfen Sie Ihre Auswahl>>
+
+
+Sie können auch<<API-Befehle anzeigen>> im Überprüfungsschritt, damit Sie den Code kopieren können, um die Sicherungsaktivierung für zukünftige Systeme zu automatisieren.
+
+
+
+=== Starten des Assistenten
+
+.Schritte
+. Greifen Sie auf eine der folgenden Arten auf den Assistenten „Sicherung und Wiederherstellung aktivieren“ zu:
++
+** Wählen Sie auf der Konsolenseite *Systeme* das System aus und wählen Sie im rechten Bereich neben „Sicherung und Wiederherstellung“ die Option „Aktivieren > Sicherungsvolumes“ aus.
++
+Wenn das Amazon S3-Ziel für Ihre Backups als System auf der Konsolenseite *Systeme* vorhanden ist, können Sie den ONTAP Cluster auf den Amazon S3-Objektspeicher ziehen.
+
+** Wählen Sie in der Leiste „Sichern und Wiederherstellen“ *Volumes* aus.  Wählen Sie auf der Registerkarte „Volumes“ die Option „Aktionen“ aus.image:icon-action.png["Symbol „Aktionen“"] und wählen Sie *Sicherung aktivieren* für ein einzelnes Volume (für das die Replikation oder Sicherung in den Objektspeicher noch nicht aktiviert ist).
+
+
++
+Auf der Einführungsseite des Assistenten werden die Schutzoptionen angezeigt, darunter lokale Snapshots, Replikation und Backups.  Wenn Sie in diesem Schritt die zweite Option gewählt haben, wird die Seite „Sicherungsstrategie definieren“ mit einem ausgewählten Volume angezeigt.
+
+. Fahren Sie mit den folgenden Optionen fort:
++
+** Wenn Sie bereits über einen Konsolenagenten verfügen, sind Sie startklar.  Wählen Sie einfach *Weiter*.
+** Wenn Sie noch keinen Konsolenagenten haben, wird die Option *Konsolenagenten hinzufügen* angezeigt. Weitere Informationen finden Sie unter <<Vorbereiten Ihres Konsolenagenten>> .
+
+
+
+
+
+
+=== Wählen Sie die Volumes aus, die Sie sichern möchten
+
+Wählen Sie die Volumes aus, die Sie schützen möchten.  Ein geschütztes Volume verfügt über eine oder mehrere der folgenden Optionen: Snapshot-Richtlinie, Replikationsrichtlinie, Backup-to-Object-Richtlinie.
+
+Sie können FlexVol oder FlexGroup -Volumes schützen. Sie können jedoch keine Mischung dieser Volumes auswählen, wenn Sie die Sicherung für ein System aktivieren.  Erfahren Sie, wie Sielink:prev-ontap-backup-manage.html["Aktivieren Sie die Sicherung für zusätzliche Volumes im System"] (FlexVol oder FlexGroup), nachdem Sie die Sicherung für die ersten Volumes konfiguriert haben.
+
+[NOTE]
+====
+* Sie können eine Sicherung jeweils nur auf einem einzigen FlexGroup -Volume aktivieren.
+* Die von Ihnen ausgewählten Volumes müssen über dieselbe SnapLock Einstellung verfügen.  Auf allen Volumes muss SnapLock Enterprise aktiviert oder SnapLock sein.
+
+
+====
+.Schritte
+Wenn auf die von Ihnen ausgewählten Volumes bereits Snapshot- oder Replikationsrichtlinien angewendet wurden, werden diese vorhandenen Richtlinien durch die später ausgewählten Richtlinien überschrieben.
+
+. Wählen Sie auf der Seite „Volumes auswählen“ das oder die Volumes aus, die Sie schützen möchten.
++
+** Filtern Sie die Zeilen optional, um nur Bände mit bestimmten Bandtypen, Stilen usw. anzuzeigen und so die Auswahl zu erleichtern.
+** Nachdem Sie das erste Volume ausgewählt haben, können Sie alle FlexVol Volumes auswählen (FlexGroup Volumes können jeweils nur einzeln ausgewählt werden).  Um alle vorhandenen FlexVol Volumes zu sichern, markieren Sie zuerst ein Volume und aktivieren Sie dann das Kontrollkästchen in der Titelzeile.
+** Um einzelne Volumes zu sichern, aktivieren Sie das Kontrollkästchen für jedes Volume.
+
+
+. Wählen Sie *Weiter*.
+
+
+
+
+=== Definieren Sie die Sicherungsstrategie
+
+Zum Definieren der Sicherungsstrategie müssen die folgenden Optionen festgelegt werden:
+
+* Ob Sie eine oder alle der Backup-Optionen wünschen: lokale Snapshots, Replikation und Backup auf Objektspeicher
+* Architektur
+* Lokale Snapshot-Richtlinie
+* Replikationsziel und -richtlinie
++
+
+NOTE: Wenn die von Ihnen ausgewählten Volumes andere Snapshot- und Replikationsrichtlinien haben als die Richtlinien, die Sie in diesem Schritt auswählen, werden die vorhandenen Richtlinien überschrieben.
+
+* Informationen zur Sicherung in Objektspeichern (Anbieter, Verschlüsselung, Netzwerk, Sicherungsrichtlinie und Exportoptionen).
+
+
+.Schritte
+. Wählen Sie auf der Seite „Sicherungsstrategie definieren“ eine oder alle der folgenden Optionen aus.  Alle drei sind standardmäßig ausgewählt:
++
+** *Lokale Snapshots*: Wenn Sie eine Replikation oder Sicherung im Objektspeicher durchführen, müssen lokale Snapshots erstellt werden.
+** *Replikation*: Erstellt replizierte Volumes auf einem anderen ONTAP Speichersystem.
+** *Backup*: Sichert Volumes im Objektspeicher.
+
+
+. *Architektur*: Wenn Sie Replikation und Sicherung gewählt haben, wählen Sie einen der folgenden Informationsflüsse:
++
+** *Kaskadierung*: Informationen fließen vom primären zum sekundären zum Objektspeicher und vom sekundären zum Objektspeicher.
+** *Fan-out*: Informationen fließen vom primären zum sekundären _und_ vom primären zum Objektspeicher.
++
+Weitere Informationen zu diesen Architekturen finden Sie unterlink:prev-ontap-protect-journey.html["Planen Sie Ihren Schutzweg"] .
+
+
+
+. *Lokaler Snapshot*: Wählen Sie eine vorhandene Snapshot-Richtlinie oder erstellen Sie eine Richtlinie.
++
+
+TIP: Informationen zum Erstellen einer benutzerdefinierten Richtlinie vor der Aktivierung des Snapshots finden Sie unterlink:br-use-policies-create.html["Erstellen einer Richtlinie"] .
+
+. Um eine Richtlinie zu erstellen, wählen Sie *Neue Richtlinie erstellen* und gehen Sie wie folgt vor:
++
+** Geben Sie den Namen der Richtlinie ein.
+** Wählen Sie bis zu fünf Zeitpläne aus, normalerweise mit unterschiedlicher Häufigkeit.
++
+*** Legen Sie für Backup-to-Object-Richtlinien die Einstellungen für DataLock und Ransomware-Schutz fest.  Weitere Informationen zu DataLock und Ransomware-Schutz finden Sie unterlink:prev-ontap-policy-object-options.html["Einstellungen der Backup-to-Object-Richtlinie"] .
+
+
+** Wählen Sie *Erstellen*.
+
+
+. *Replikation*: Legen Sie die folgenden Optionen fest:
++
+** *Replikationsziel*: Wählen Sie das Zielsystem und die SVM aus.  Wählen Sie optional das oder die Zielaggregate sowie das Präfix oder Suffix aus, das dem Namen des replizierten Volumes hinzugefügt wird.
+** *Replikationsrichtlinie*: Wählen Sie eine vorhandene Replikationsrichtlinie aus oder erstellen Sie eine Richtlinie.
++
+
+TIP: Informationen zum Erstellen einer benutzerdefinierten Richtlinie vor der Aktivierung der Replikation finden Sie unterlink:br-use-policies-create.html["Erstellen einer Richtlinie"] .
+
++
+Um eine Richtlinie zu erstellen, wählen Sie *Neue Richtlinie erstellen* und gehen Sie wie folgt vor:
+
++
+*** Geben Sie den Namen der Richtlinie ein.
+*** Wählen Sie bis zu fünf Zeitpläne aus, normalerweise mit unterschiedlicher Häufigkeit.
+*** Wählen Sie *Erstellen*.
+
+
+
+
+. *Sichern auf Objekt*: Wenn Sie *Sichern* ausgewählt haben, legen Sie die folgenden Optionen fest:
++
+** *Anbieter*: Wählen Sie *Amazon Web Services*.
+** *Anbietereinstellungen*: Geben Sie die Anbieterdetails und die AWS-Region ein, in der die Backups gespeichert werden.
++
+Der Zugriffsschlüssel und der geheime Schlüssel sind für den IAM-Benutzer, den Sie erstellt haben, um dem ONTAP Cluster Zugriff auf den S3-Bucket zu gewähren.
+
+** *Bucket*: Wählen Sie entweder einen vorhandenen S3-Bucket aus oder erstellen Sie einen neuen. Siehe https://docs.netapp.com/us-en/storage-management-s3-storage/task-add-s3-bucket.html["S3-Buckets hinzufügen"^] .
+** *Verschlüsselungsschlüssel*: Wenn Sie einen neuen S3-Bucket erstellt haben, geben Sie die Informationen zum Verschlüsselungsschlüssel ein, die Sie vom Anbieter erhalten haben.  Wählen Sie, ob Sie die standardmäßigen Amazon S3-Verschlüsselungsschlüssel verwenden oder Ihre eigenen, vom Kunden verwalteten Schlüssel aus Ihrem AWS-Konto auswählen möchten, um die Verschlüsselung Ihrer Daten zu verwalten.
+
+
++
+
+NOTE: Wenn Sie einen vorhandenen Bucket ausgewählt haben, sind die Verschlüsselungsinformationen bereits verfügbar, sodass Sie sie jetzt nicht eingeben müssen.
+
++
+** *Netzwerk*: Wählen Sie den IP-Bereich und geben Sie an, ob Sie einen privaten Endpunkt verwenden möchten.  Privater Endpunkt ist standardmäßig deaktiviert.
++
+... Der IP-Bereich im ONTAP -Cluster, in dem sich die Volumes befinden, die Sie sichern möchten.  Die Intercluster-LIFs für diesen IPspace müssen über ausgehenden Internetzugang verfügen.
+... Wählen Sie optional aus, ob Sie einen zuvor konfigurierten AWS PrivateLink verwenden möchten. https://docs.aws.amazon.com/AmazonS3/latest/userguide/privatelink-interface-endpoints.html["Details zur Verwendung von AWS PrivateLink für Amazon S3 anzeigen"^] .
+
+
+** *Sicherungsrichtlinie*: Wählen Sie eine vorhandene Sicherungsrichtlinie aus oder erstellen Sie eine Richtlinie.
++
+
+TIP: Informationen zum Erstellen einer benutzerdefinierten Richtlinie vor der Aktivierung der Sicherung finden Sie unterlink:br-use-policies-create.html["Erstellen einer Richtlinie"] .
+
++
+Um eine Richtlinie zu erstellen, wählen Sie *Neue Richtlinie erstellen* und gehen Sie wie folgt vor:
+
++
+*** Geben Sie den Namen der Richtlinie ein.
+*** Wählen Sie bis zu fünf Zeitpläne aus, normalerweise mit unterschiedlicher Häufigkeit.
+*** Wählen Sie *Erstellen*.
+
+
+** *Exportieren Sie vorhandene Snapshot-Kopien als Sicherungskopien in den Objektspeicher*: Wenn es lokale Snapshot-Kopien für Volumes in diesem System gibt, die mit der Bezeichnung des Sicherungszeitplans übereinstimmen, die Sie gerade für dieses System ausgewählt haben (z. B. täglich, wöchentlich usw.), wird diese zusätzliche Eingabeaufforderung angezeigt.  Aktivieren Sie dieses Kontrollkästchen, um alle historischen Snapshots als Sicherungsdateien in den Objektspeicher zu kopieren und so den umfassendsten Schutz für Ihre Volumes zu gewährleisten.
+
+
+. Wählen Sie *Weiter*.
+
+
+
+
+=== Überprüfen Sie Ihre Auswahl
+
+Dies ist die Gelegenheit, Ihre Auswahl zu überprüfen und gegebenenfalls Anpassungen vorzunehmen.
+
+.Schritte
+. Überprüfen Sie Ihre Auswahl auf der Überprüfungsseite.
+. Aktivieren Sie optional das Kontrollkästchen, um *die Snapshot-Richtlinienbezeichnungen automatisch mit den Replikations- und Sicherungsrichtlinienbezeichnungen zu synchronisieren*.  Dadurch werden Snapshots mit einer Bezeichnung erstellt, die mit den Bezeichnungen in den Replikations- und Sicherungsrichtlinien übereinstimmt.
+. Wählen Sie *Sicherung aktivieren*.
+
+
+.Ergebnis
+NetApp Backup and Recovery beginnt mit der Durchführung der ersten Sicherungen Ihrer Volumes.  Die Basisübertragung des replizierten Volumes und der Sicherungsdatei umfasst eine vollständige Kopie der Daten des primären Speichersystems.  Nachfolgende Übertragungen enthalten differenzielle Kopien der in Snapshot-Kopien enthaltenen Primärdaten.
+
+Im Zielcluster wird ein repliziertes Volume erstellt, das mit dem primären Speichervolume synchronisiert wird.
+
+Der S3-Bucket wird in dem Dienstkonto erstellt, das durch den von Ihnen eingegebenen S3-Zugriffsschlüssel und geheimen Schlüssel angegeben ist, und die Sicherungsdateien werden dort gespeichert.  Das Volume-Backup-Dashboard wird angezeigt, damit Sie den Status der Backups überwachen können.
+
+Sie können den Status von Sicherungs- und Wiederherstellungsaufträgen auch mithilfe derlink:br-use-monitor-tasks.html["Seite „Jobüberwachung“"^] .
+
+
+
+=== API-Befehle anzeigen
+
+Möglicherweise möchten Sie die im Assistenten „Sicherung und Wiederherstellung aktivieren“ verwendeten API-Befehle anzeigen und optional kopieren.  Möglicherweise möchten Sie dies tun, um die Sicherungsaktivierung in zukünftigen Systemen zu automatisieren.
+
+.Schritte
+. Wählen Sie im Assistenten „Sicherung und Wiederherstellung aktivieren“ die Option „API-Anforderung anzeigen“ aus.
+. Um die Befehle in die Zwischenablage zu kopieren, wählen Sie das Symbol *Kopieren*.
+

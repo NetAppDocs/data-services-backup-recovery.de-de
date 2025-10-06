@@ -1,0 +1,37 @@
+---
+sidebar: sidebar 
+permalink: br-use-oracle-protect-overview.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: Sie können virtuelle Oracle-Maschinen von lokalen ONTAP -Systemen bis hin zu Amazon Web Services, Microsoft Azure, Google Cloud Platform und StorageGRID schützen und so sicherstellen, dass Ihre Daten geschützt sind. 
+---
+= Übersicht über den Schutz von Oracle Database-Workloads
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Schützen Sie Ihre Oracle-Datenbanken und -Protokolle mit NetApp Backup and Recovery.  NetApp Backup and Recovery bietet schnelle, platzsparende, absturz- und datenbankkonsistente Sicherungs- und Wiederherstellungsvorgänge.  Sie können Oracle-Workloads auf Amazon Web Services S3, NetApp StorageGRID, Microsoft Azure Blob Storage oder ONTAP S3 sichern und auf einem lokalen Oracle-Host wiederherstellen.
+
+image:../media/diagram-backup-recovery-general.png["Architekturdiagramm für Backup und Wiederherstellung im Allgemeinen"]
+
+Verwenden Sie NetApp Backup and Recovery, um eine 3-2-1-Schutzstrategie zu implementieren, bei der Sie 3 Kopien Ihrer Quelldaten auf 2 verschiedenen Speichersystemen sowie 1 Kopie in der Cloud haben. Zu den Vorteilen des 3-2-1-Ansatzes gehören:
+
+* Mehrere Datenkopien bieten mehrschichtigen Schutz vor internen (Insider-) und externen Cybersicherheitsbedrohungen.
+* Mehrere Medientypen gewährleisten die Failover-Funktionalität im Falle eines physischen oder logischen Ausfalls eines Medientyps.
+* Die Vor-Ort-Kopie ermöglicht eine schnelle Wiederherstellung, wobei die Offsite-Kopien für den Fall verfügbar sind, dass die Vor-Ort-Kopie kompromittiert wird.
+
+
+
+NOTE: Informationen zum Wechseln zwischen NetApp Backup- und Recovery-UI-Versionen finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zur vorherigen NetApp Backup and Recovery-Benutzeroberfläche"] .
+
+Mit NetApp Backup and Recovery können Sie die folgenden Aufgaben im Zusammenhang mit Oracle-Workloads ausführen:
+
+* link:br-start-discover-oracle.html["Entdecken Sie Oracle-Workloads"]
+* link:br-use-oracle-protection-groups.html["Erstellen und Verwalten von Schutzgruppen für Oracle-Workloads"]
+* link:br-use-oracle-backup.html["Sichern Sie Oracle-Workloads"]
+* link:br-use-oracle-restore.html["Wiederherstellen von Oracle-Workloads"]
+

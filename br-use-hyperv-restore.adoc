@@ -1,0 +1,133 @@
+---
+sidebar: sidebar 
+permalink: br-use-hyperv-restore.html 
+keywords: restore, vm, kvm, virtual machine, snapshots, object storage, cloud storage, backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Schützen Sie Ihre Hyper-V-Workloads mit NetApp Backup und Recovery. 
+---
+= Wiederherstellen von Hyper-V-Workloads mit NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Stellen Sie Hyper-V-Workloads aus Snapshot-Kopien, aus einem auf einen sekundären Speicher replizierten Workload-Backup oder aus im Objektspeicher gespeicherten Backups mit NetApp Backup and Recovery wieder her.
+
+.Von diesen Speicherorten wiederherstellen
+Sie können Workloads von verschiedenen Startorten wiederherstellen:
+
+* Wiederherstellung von einem primären Standort (lokaler Snapshot)
+* Wiederherstellen von einer replizierten Ressource auf einem sekundären Speicher
+* Wiederherstellung aus einer Objektspeichersicherung
+
+
+.Stellen Sie diese Punkte wieder her
+Sie können Daten am ursprünglichen Speicherort wiederherstellen. Die Wiederherstellung an einem anderen Speicherort ist in dieser privaten Vorschauversion nicht verfügbar.
+
+.Überlegungen zur Wiederherstellung aus dem Objektspeicher
+Wenn Sie eine Sicherungsdatei im Objektspeicher auswählen und für diese Sicherung der Ransomware-Schutz aktiv ist (wenn Sie DataLock und Ransomware-Schutz in der Sicherungsrichtlinie aktiviert haben), werden Sie aufgefordert, vor der Wiederherstellung der Daten eine zusätzliche Integritätsprüfung der Sicherungsdatei durchzuführen.  Wir empfehlen Ihnen, den Scan durchzuführen.
+
+
+TIP: Für den Zugriff auf den Inhalt der Sicherungsdatei fallen bei Ihrem Cloud-Anbieter zusätzliche Kosten für den Datenverkehr an.
+
+
+
+== So funktioniert die Wiederherstellung von Workloads
+
+Beim Wiederherstellen von Workloads geschieht Folgendes:
+
+* Wenn Sie eine Workload aus einer lokalen Sicherungsdatei wiederherstellen, erstellt NetApp Backup and Recovery mithilfe der Daten aus der Sicherung eine _neue_ Ressource.
+* Wenn Sie eine Wiederherstellung aus einem replizierten Workload durchführen, können Sie den Workload auf dem ursprünglichen System oder auf einem lokalen ONTAP System wiederherstellen.
+
+
+Auf der Seite „Wiederherstellen“ (auch als „Suchen und Wiederherstellen“ bezeichnet)* können Sie eine Ressource wiederherstellen, auch wenn Sie sich nicht an den genauen Namen, den Speicherort oder das Datum erinnern, an dem sie zuletzt in gutem Zustand war. Sie können mithilfe von Filtern nach dem Schnappschuss suchen.
+
+
+
+== Wiederherstellen von Workload-Daten über die Option „Wiederherstellen“ (Suchen und Wiederherstellen)
+
+Stellen Sie Hyper-V-Workloads mit der Option „Wiederherstellen“ wieder her. Sie können nach dem Snapshot anhand seines Namens oder mithilfe von Filtern suchen.
+
+*Erforderliche Konsolenrolle* Organisationsadministrator, Ordner- oder Projektadministrator, Superadministrator für Backup und Wiederherstellung, Administratorrolle für Backup- und Wiederherstellungswiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery-Menü *Wiederherstellen* aus.
+. Wählen Sie aus der Dropdown-Liste rechts neben dem Namenssuchfeld *Hyper-V* aus.
+. Geben Sie den Namen der Ressource ein, die Sie wiederherstellen möchten, oder filtern Sie nach dem VM-Namen, VM-Host oder Speicherpool, in dem sich die wiederherzustellende Ressource befindet.
++
+Es wird eine Liste mit Snapshots angezeigt, die Ihren Suchkriterien entsprechen.
+
+. Wählen Sie die Schaltfläche *Wiederherstellen* für den Snapshot, den Sie wiederherstellen möchten.
++
+Es wird eine Liste möglicher Wiederherstellungspunkte angezeigt.
+
+. Wählen Sie den Wiederherstellungspunkt aus, den Sie verwenden möchten.
+. Wählen Sie einen Quellspeicherort für den Snapshot aus.
+. Wählen Sie *Fertig* oder *Weiter*, um zur Seite „Zieleinstellungen wiederherstellen“ zu gelangen.
++
+Als Nächstes können Sie die Zieleinstellungen sowie die Optionen vor und nach der Wiederherstellung auswählen.
+
+
+
+[discrete]
+===== Zielauswahl
+
+. Wählen Sie die Zieleinstellungen und die Optionen vor und nach der Wiederherstellung.
+
+
+[role="tabbed-block"]
+====
+.Am ursprünglichen Speicherort wiederherstellen
+--
+. *Schnelle Wiederherstellung aktivieren*: Wählen Sie diese Option, um eine schnelle Wiederherstellung durchzuführen. Wiederhergestellte Volumes und Daten stehen sofort zur Verfügung. Verwenden Sie dies nicht auf Volumes, die eine hohe Leistung erfordern, da der Zugriff auf die Daten während des schnellen Wiederherstellungsprozesses langsamer als gewöhnlich sein kann.
+. *Optionen vor der Wiederherstellung*: Geben Sie den vollständigen Pfad für ein Skript ein, das vor dem Wiederherstellungsvorgang ausgeführt werden soll, sowie alle Argumente, die das Skript verwendet.
+. *Optionen nach der Wiederherstellung*:
++
+** *VM neu starten*: Wählen Sie diese Option aus, um die VM nach Abschluss des Wiederherstellungsvorgangs und nach Anwendung des Post-Restore-Skripts neu zu starten.
+** *Postscript*: Geben Sie den vollständigen Pfad für ein Skript ein, das nach dem Wiederherstellungsvorgang ausgeführt werden soll, sowie alle Argumente, die das Skript verwendet.
+
+
+. Abschnitt *Benachrichtigung*:
++
+** *E-Mail-Benachrichtigungen aktivieren*: Wählen Sie diese Option aus, um E-Mail-Benachrichtigungen über den Wiederherstellungsvorgang zu erhalten, und geben Sie an, welche Art von Benachrichtigungen Sie erhalten möchten.
+
+
+. Wählen Sie *Wiederherstellen*.
+
+
+--
+.An einem anderen Speicherort wiederherstellen
+--
+Nicht verfügbar für die private Vorschau von Hyper-V.
+
+. Wählen Sie *Wiederherstellen*.
+
+
+--
+====
+ifdef::aws[]
+
+endif::aws[]
+
+ifdef::azure[]
+
+endif::azure[]
+
+ifdef::gcp[]
+
+endif::gcp[]
+
+ifdef::aws[]
+
+endif::aws[]
+
+ifdef::azure[]
+
+endif::azure[]
+
+ifdef::gcp[]
+
+endif::gcp[]

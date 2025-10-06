@@ -1,0 +1,98 @@
+---
+sidebar: sidebar 
+permalink: br-use-protect-kubernetes-applications.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, snapcenter 
+summary: Mit NetApp Backup and Recovery können Sie Ihre Workload-Host-Informationen, Datenbankinformationen und Instanzinformationen verwalten.  Sie können Schutzeinstellungen für Ihr Inventar anzeigen, bearbeiten und löschen. 
+---
+= Kubernetes-Anwendungen hinzufügen und schützen
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Mit NetApp Backup and Recovery können Sie Ihre Kubernetes-Cluster einfach erkennen, ohne Kubeconfig-Dateien generieren und hochladen zu müssen.  Sie können Kubernetes-Cluster verbinden und die erforderliche Software mithilfe einfacher Befehle installieren, die Sie aus der Benutzeroberfläche der NetApp Konsole kopiert haben.
+
+.Erforderliche NetApp Konsolenrolle
+Organisationsadministrator oder SnapCenter Administrator. link:reference-roles.html["Erfahren Sie mehr über die Zugriffsrollen für NetApp Backup und Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+
+
+
+== Hinzufügen und Schützen einer neuen Kubernetes-Anwendung
+
+Der erste Schritt zum Schutz von Kubernetes-Anwendungen besteht darin, eine Anwendung innerhalb von NetApp Backup and Recovery zu erstellen.  Wenn Sie eine Anwendung erstellen, machen Sie die Konsole auf die laufende Anwendung im Kubernetes-Cluster aufmerksam.
+
+.Bevor Sie beginnen
+Bevor Sie eine Kubernetes-Anwendung hinzufügen und schützen können, müssen Sie link:br-start-discover.html["Kubernetes-Workloads entdecken"] .
+
+.Schritte
+. Wählen Sie in NetApp Backup and Recovery *Inventar* aus.
+. Wählen Sie eine Kubernetes-Instanz und wählen Sie *Anzeigen*, um die mit dieser Instanz verknüpften Ressourcen anzuzeigen.
+. Wählen Sie die Registerkarte *Anwendungen*.
+. Wählen Sie *Anwendung erstellen*.
+. Geben Sie einen Namen für die Anwendung ein.
+. Wählen Sie optional eines der folgenden Felder aus, um nach den Ressourcen zu suchen, die Sie schützen möchten:
++
+** Zugehöriger Cluster
+** Zugehörige Namespaces
+** Ressourcentypen
+** Beschriftungsselektoren
+
+
+. Wählen Sie optional *Cluster Scoped Resources* aus, um Ressourcen auszuwählen, die auf Clusterebene liegen. Wenn Sie diese einschließen, werden sie der Anwendung beim Erstellen hinzugefügt.
+. Wählen Sie optional *Suchen* aus, um die Ressourcen basierend auf Ihren Suchkriterien zu finden.
++
+
+NOTE: Die Konsole speichert die Suchparameter oder Ergebnisse nicht. Die Parameter werden verwendet, um im ausgewählten Kubernetes-Cluster nach Ressourcen zu suchen, die in die Anwendung integriert werden können.
+
+. Die Konsole zeigt eine Liste der Ressourcen an, die Ihren Suchkriterien entsprechen.
+. Wenn die Liste die Ressourcen enthält, die Sie schützen möchten, wählen Sie *Weiter*.
+. Wählen Sie im Bereich *Richtlinie* optional eine vorhandene Schutzrichtlinie zum Schutz der Anwendung aus oder erstellen Sie eine neue Richtlinie. Wenn Sie keine Richtlinie auswählen, wird die Anwendung ohne Schutzrichtlinie erstellt. Du kannstlink:br-use-policies-create.html#create-a-policy["Fügen Sie eine Schutzrichtlinie hinzu"] später.
+. Aktivieren und konfigurieren Sie im Bereich *Prescripts und Postscripts* alle Prescript- oder Postscript-Ausführungs-Hooks, die Sie vor oder nach Sicherungsvorgängen ausführen möchten.  Um Präskripte oder Postskripte zu aktivieren, müssen Sie bereits mindestens einlink:br-use-manage-execution-hook-templates.html["Ausführungs-Hook-Vorlage"] .
+. Wählen Sie *Erstellen*.
+
+
+.Ergebnis
+Die Anwendung wird erstellt und in der Liste der Anwendungen auf der Registerkarte *Anwendungen* des Kubernetes-Inventars angezeigt.  Die NetApp Konsole ermöglicht den Schutz der Anwendung basierend auf Ihren Einstellungen und Sie können den Fortschritt im Bereich *Überwachung* der Sicherung und Wiederherstellung überwachen.
+
+
+
+== Schützen einer vorhandenen Kubernetes-Anwendung
+
+Aktivieren Sie eine Schutzrichtlinie für eine Kubernetes-Anwendung, die Sie bereits hinzugefügt haben.
+
+.Schritte
+. Wählen Sie in NetApp Backup and Recovery *Inventar* aus.
+. Wählen Sie eine Kubernetes-Instanz und wählen Sie *Anzeigen*, um die mit dieser Instanz verknüpften Ressourcen anzuzeigen.
+. Wählen Sie die Registerkarte *Anwendungen*.
+. Wählen Sie in der Anwendungsliste eine Anwendung aus, die Sie schützen möchten, und wählen Sie das zugehörige Aktionsmenü.
+. Wählen Sie *Schützen*.
+. Wählen Sie im Bereich *Richtlinie* eine vorhandene Schutzrichtlinie zum Schutz der Anwendung aus oder erstellen Sie eine neue Richtlinie. Siehelink:br-use-policies-create.html#create-a-policy["Erstellen einer Richtlinie"] Weitere Informationen zum Erstellen von Schutzrichtlinien finden Sie unter.
+. Aktivieren und konfigurieren Sie im Bereich *Prescripts und Postscripts* alle Prescript- oder Postscript-Ausführungs-Hooks, die Sie vor oder nach Sicherungsvorgängen ausführen möchten.  Sie können den Typ des Ausführungs-Hooks, die verwendete Vorlage, Argumente und Label-Selektoren konfigurieren.
+. Wählen Sie *Fertig*.
+
+
+.Ergebnis
+Die Konsole ermöglicht den Schutz der Anwendung basierend auf Ihren Einstellungen und Sie können den Fortschritt im Bereich *Überwachung* der Sicherung und Wiederherstellung überwachen.  Sobald Sie den Schutz für eine Anwendung aktivieren, erstellt die Konsole eine vollständige Sicherung der Anwendung. Alle zukünftigen inkrementellen Backups werden basierend auf dem Zeitplan erstellt, den Sie in der zugehörigen Schutzrichtlinie festgelegt haben.
+
+
+
+== Sichern Sie jetzt eine Kubernetes-Anwendung
+
+Erstellen Sie manuell ein Backup einer Kubernetes-Anwendung, um eine Basis für zukünftige Backups und Snapshots zu schaffen oder um sicherzustellen, dass die aktuellsten Daten geschützt sind.
+
+.Schritte
+. Wählen Sie in NetApp Backup and Recovery *Inventar* aus.
+. Wählen Sie eine Kubernetes-Instanz und wählen Sie *Anzeigen*, um die mit dieser Instanz verknüpften Ressourcen anzuzeigen.
+. Wählen Sie die Registerkarte *Anwendungen*.
+. Wählen Sie in der Anwendungsliste eine Anwendung aus, die Sie sichern möchten, und wählen Sie das zugehörige Aktionsmenü.
+. Wählen Sie *Jetzt sichern*.
+. Stellen Sie sicher, dass der richtige Anwendungsname ausgewählt ist.
+. Wählen Sie *Sichern*.
+
+
+.Ergebnis
+Die Konsole erstellt eine Sicherungskopie der Anwendung und zeigt den Fortschritt im Bereich *Überwachung* von Sicherung und Wiederherstellung an. Das Backup wird basierend auf der mit der Anwendung verknüpften Schutzrichtlinie erstellt.

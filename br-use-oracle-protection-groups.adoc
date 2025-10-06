@@ -1,0 +1,67 @@
+---
+sidebar: sidebar 
+permalink: br-use-oracle-protection-groups.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle, database, workloads, volumes, snapshots 
+summary: Erstellen und verwalten Sie Schutzgruppen für Oracle-Workloads in NetApp Backup and Recovery. 
+---
+= Erstellen und verwalten Sie Schutzgruppen für Oracle-Workloads mit NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Erstellen Sie Schutzgruppen, um die Sicherungsvorgänge für eine Reihe von Oracle Database-Ressourcen zu verwalten.  Eine Schutzgruppe ist eine logische Gruppierung von Ressourcen wie Datenbanken, die Sie gemeinsam schützen möchten.  Sie müssen eine Schutzgruppe erstellen, um Oracle-Datenbanken zu sichern.
+
+Sie können die folgenden Aufgaben im Zusammenhang mit Schutzgruppen ausführen:
+
+* Erstellen Sie eine Schutzgruppe.
+* Schutzdetails anzeigen.
+* Sichern Sie jetzt eine Schutzgruppe. Sehen link:br-use-kvm-backup.html["Sichern Sie jetzt Oracle-Workloads"] .
+* Löschen Sie eine Schutzgruppe.
+
+
+
+
+== Erstellen einer Schutzgruppe
+
+Gruppieren Sie VMs und Speicherpools, die Sie gemeinsam schützen möchten, in einer Schutzgruppe.
+
+*Erforderliche Konsolenrolle* Organisationsadministrator, Ordner- oder Projektadministrator, Superadministrator für Backup und Wiederherstellung oder Backup-Administratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery-Menü *Inventar* aus.
+. Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.
+. Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*.
+. Wählen Sie die Registerkarte *Schutzgruppen*.
+. Wählen Sie *Schutzgruppe erstellen*.
+. Geben Sie einen Namen für die Schutzgruppe ein.
+. Wählen Sie die VMs oder Speicherpools aus, die Sie in die Schutzgruppe aufnehmen möchten.
+. Wählen Sie *Weiter*.
+. Wählen Sie die *Sicherungsrichtlinie* aus, die Sie auf die Schutzgruppe anwenden möchten.
++
+Wenn Sie eine Richtlinie erstellen möchten, wählen Sie *Neue Richtlinie erstellen* und folgen Sie den Anweisungen zum Erstellen einer Richtlinie. Sehen link:br-use-policies-create.html["Erstellen von Richtlinien"] für weitere Informationen.
+
+. Wählen Sie *Weiter*.
+. Überprüfen Sie die Konfiguration.
+. Wählen Sie *Erstellen* aus, um die Schutzgruppe zu erstellen.
+
+
+
+
+== Löschen einer Schutzgruppe
+
+Durch das Löschen einer Schutzgruppe werden diese und alle zugehörigen Sicherungszeitpläne entfernt. Möglicherweise möchten Sie eine Schutzgruppe löschen, wenn sie nicht mehr benötigt wird.
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery-Menü *Inventar* aus.
+. Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.
+. Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*.
+. Wählen Sie die Registerkarte *Schutzgruppen*.
+. Wählen Sie die Schutzgruppe aus, die Sie löschen möchten.
+. Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Schutz entfernen*.
+. Überprüfen Sie die Bestätigungsmeldung zum Löschen der zugehörigen Sicherungen und bestätigen Sie den Löschvorgang.
+

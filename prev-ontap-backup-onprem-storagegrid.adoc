@@ -1,0 +1,490 @@
+---
+sidebar: sidebar 
+permalink: prev-ontap-backup-onprem-storagegrid.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Führen Sie einige Schritte in NetApp Backup and Recovery aus, um mit der Sicherung von Volume-Daten von Ihren lokalen primären ONTAP Systemen auf ein sekundäres Speichersystem und auf Objektspeicher in Ihren NetApp StorageGRID Systemen zu beginnen. 
+---
+= Sichern Sie lokale ONTAP Daten mit NetApp Backup and Recovery auf StorageGRID
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Führen Sie einige Schritte in NetApp Backup and Recovery aus, um mit der Sicherung von Volume-Daten von Ihren lokalen primären ONTAP Systemen auf ein sekundäres Speichersystem und auf Objektspeicher in Ihren NetApp StorageGRID Systemen zu beginnen.
+
+
+NOTE: Zu den „On-Premises ONTAP -Systemen“ zählen FAS, AFF und ONTAP Select Systeme.
+
+[]
+====
+*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup und Recovery-Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup- und Recovery-Workloads"] .
+
+====
+
+
+== Identifizieren Sie die Verbindungsmethode
+
+Das folgende Bild zeigt jede Komponente beim Sichern eines lokalen ONTAP Systems auf StorageGRID und die Verbindungen, die Sie zwischen ihnen vorbereiten müssen.
+
+Optional können Sie eine Verbindung zu einem sekundären ONTAP -System am selben Standort vor Ort herstellen, um Volumes zu replizieren.
+
+image:diagram_cloud_backup_onprem_storagegrid.png["Ein Diagramm, das zeigt, wie NetApp Backup and Recovery mit den Volumes auf den Quellsystemen und dem Zielspeicher kommuniziert, auf dem sich die Sicherungsdateien befinden."]
+
+Wenn der Konsolenagent und das lokale ONTAP -System an einem lokalen Standort ohne Internetzugang (einem „Dark Site“) installiert sind, muss sich das StorageGRID -System im selben lokalen Rechenzentrum befinden.  Die Archivierung älterer Sicherungsdateien in der öffentlichen Cloud wird in Dark-Site-Konfigurationen nicht unterstützt.
+
+
+
+== Vorbereiten Ihres Konsolenagenten
+
+Der Konsolenagent ist die Hauptsoftware für die Konsolenfunktionalität.  Zum Sichern und Wiederherstellen Ihrer ONTAP Daten ist ein Konsolenagent erforderlich.
+
+
+
+=== Erstellen oder Wechseln von Konsolenagenten
+
+Wenn Sie Daten in StorageGRID sichern, muss bei Ihnen vor Ort ein Konsolenagent verfügbar sein.  Sie müssen entweder einen neuen Konsolen-Agenten installieren oder sicherstellen, dass der aktuell ausgewählte Konsolen-Agent vor Ort vorhanden ist.  Der Konsolenagent kann an einem Standort mit oder ohne Internetzugang installiert werden.
+
+* https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["Erfahren Sie mehr über Konsolenagenten"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-on-prem.html["Installieren des Konsolenagenten auf einem Linux-Host mit Internetzugang"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-private-mode.html["Installieren des Konsolenagenten auf einem Linux-Host ohne Internetzugang"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-manage-multiple-connectors.html#switch-between-connectors["Wechseln zwischen Konsolenagenten"^]
+
+
+
+
+=== Netzwerkanforderungen für den Konsolenagenten vorbereiten
+
+Stellen Sie sicher, dass das Netzwerk, in dem der Konsolenagent installiert ist, die folgenden Verbindungen ermöglicht:
+
+* Eine HTTPS-Verbindung über Port 443 zum StorageGRID Gateway Node
+* Eine HTTPS-Verbindung über Port 443 zu Ihrem ONTAP Cluster-Management-LIF
+* Eine ausgehende Internetverbindung über Port 443 zu NetApp Backup and Recovery (nicht erforderlich, wenn der Konsolenagent an einem „dunklen“ Standort installiert ist)
+
+
+
+
+==== Überlegungen zum privaten Modus (Dark Site)
+
+* Die NetApp Backup- und Recovery-Funktionalität ist in den Konsolenagenten integriert.  Wenn es im privaten Modus installiert ist, müssen Sie die Konsolenagent-Software regelmäßig aktualisieren, um Zugriff auf neue Funktionen zu erhalten.  Überprüfen Sie dielink:whats-new.html["NetApp Backup and Recovery – Neuigkeiten"] um die neuen Funktionen in jeder Version von NetApp Backup and Recovery anzuzeigen.  Wenn Sie die neuen Funktionen nutzen möchten, folgen Sie den Schritten zum https://docs.netapp.com/us-en/console-setup-admin/task-upgrade-connector.html["Aktualisieren Sie die Konsolenagentsoftware"^] .
++
+Die neue Version von NetApp Backup and Recovery, die neben der Erstellung von Backups im Objektspeicher auch die Möglichkeit zum Planen und Erstellen von Snapshot-Kopien und replizierten Volumes umfasst, erfordert die Verwendung von Version 3.9.31 oder höher des Konsolenagenten.  Es wird daher empfohlen, dass Sie sich diese neueste Version besorgen, um alle Ihre Backups zu verwalten.
+
+* Wenn Sie NetApp Backup and Recovery in einer SaaS-Umgebung verwenden, werden die NetApp Backup and Recovery-Konfigurationsdaten in der Cloud gesichert.  Wenn Sie NetApp Backup and Recovery an einem Standort ohne Internetzugang verwenden, werden die Konfigurationsdaten von NetApp Backup and Recovery im StorageGRID Bucket gesichert, in dem Ihre Backups gespeichert werden.
+
+
+
+
+== Überprüfen der Lizenzanforderungen
+
+Bevor Sie NetApp Backup and Recovery für Ihren Cluster aktivieren können, müssen Sie eine NetApp Backup and Recovery BYOL-Lizenz von NetApp erwerben und aktivieren.  Diese Lizenz gilt für das Konto und kann systemübergreifend verwendet werden.
+
+Sie benötigen die Seriennummer von NetApp , die Ihnen die Nutzung des Dienstes für die Dauer und Kapazität der Lizenz ermöglicht. link:br-start-licensing.html["Erfahren Sie, wie Sie Ihre BYOL-Lizenzen verwalten"] .
+
+
+TIP: Die PAYGO-Lizenzierung wird beim Sichern von Dateien auf StorageGRID nicht unterstützt.
+
+
+
+== Bereiten Sie Ihre ONTAP -Cluster vor
+
+Sie müssen Ihr lokales ONTAP Quellsystem und alle sekundären lokalen ONTAP oder Cloud Volumes ONTAP Systeme vorbereiten.
+
+Die Vorbereitung Ihrer ONTAP Cluster umfasst die folgenden Schritte:
+
+* Entdecken Sie Ihre ONTAP -Systeme in der NetApp Konsole
+* Überprüfen der ONTAP Systemanforderungen
+* Überprüfen Sie die ONTAP Netzwerkanforderungen für die Datensicherung im Objektspeicher
+* Überprüfen Sie die ONTAP Netzwerkanforderungen für die Replikation von Volumes
+
+
+
+
+=== Entdecken Sie Ihre ONTAP -Systeme in der NetApp Konsole
+
+Sowohl Ihr lokales ONTAP Quellsystem als auch alle sekundären lokalen ONTAP oder Cloud Volumes ONTAP -Systeme müssen auf der Seite *Systeme* der NetApp Konsole verfügbar sein.
+
+Sie müssen die IP-Adresse der Clusterverwaltung und das Kennwort für das Administratorbenutzerkonto kennen, um den Cluster hinzuzufügen. https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-ontap.html["Erfahren Sie, wie Sie einen Cluster erkennen"^] .
+
+
+
+=== Überprüfen der ONTAP Systemanforderungen
+
+Stellen Sie sicher, dass die folgenden ONTAP Anforderungen erfüllt sind:
+
+* Mindestens ONTAP 9.8; ONTAP 9.8P13 und höher wird empfohlen.
+* Eine SnapMirror -Lizenz (im Premium-Paket oder Datenschutz-Paket enthalten).
++
+*Hinweis:* Das „Hybrid Cloud Bundle“ ist bei der Verwendung von NetApp Backup and Recovery nicht erforderlich.
+
++
+Erfahren Sie, wie Sie https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["Verwalten Sie Ihre Cluster-Lizenzen"^] .
+
+* Uhrzeit und Zeitzone sind richtig eingestellt.  Erfahren Sie, wie Sie https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["Konfigurieren Sie Ihre Clusterzeit"^] .
+* Wenn Sie Daten replizieren möchten, sollten Sie vor der Datenreplikation sicherstellen, dass auf den Quell- und Zielsystemen kompatible ONTAP Versionen ausgeführt werden.
++
+https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["Kompatible ONTAP -Versionen für SnapMirror -Beziehungen anzeigen"^] .
+
+
+
+
+
+=== Überprüfen Sie die ONTAP Netzwerkanforderungen für die Datensicherung im Objektspeicher
+
+Sie müssen die folgenden Anforderungen auf dem System konfigurieren, das eine Verbindung zum Objektspeicher herstellt.
+
+* Wenn Sie eine Fan-Out-Backup-Architektur verwenden, müssen die folgenden Einstellungen auf dem _primären_ Speichersystem konfiguriert werden.
+* Wenn Sie eine kaskadierte Sicherungsarchitektur verwenden, müssen die folgenden Einstellungen auf dem _sekundären_ Speichersystem konfiguriert werden.
+
+
+Die folgenden ONTAP Cluster-Netzwerkanforderungen sind erforderlich:
+
+* Der ONTAP Cluster initiiert für Sicherungs- und Wiederherstellungsvorgänge eine HTTPS-Verbindung über einen benutzerdefinierten Port vom Intercluster-LIF zum StorageGRID -Gateway-Knoten.  Der Port kann während der Sicherungseinrichtung konfiguriert werden.
++
+ONTAP liest und schreibt Daten in den und aus dem Objektspeicher. Der Objektspeicher wird nie initiiert, er reagiert nur.
+
+* ONTAP erfordert eine eingehende Verbindung vom Konsolenagenten zum Cluster-Management-LIF.  Der Konsolenagent muss sich in Ihren Räumlichkeiten befinden.
+* Auf jedem ONTAP Knoten, der die zu sichernden Volumes hostet, ist ein Intercluster-LIF erforderlich.  Das LIF muss mit dem _IPspace_ verknüpft sein, den ONTAP für die Verbindung mit dem Objektspeicher verwenden soll. https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html["Erfahren Sie mehr über IPspaces"^] .
++
+Wenn Sie NetApp Backup and Recovery einrichten, werden Sie nach dem zu verwendenden IPspace gefragt. Sie sollten den IPspace auswählen, mit dem jedes LIF verknüpft ist. Dies kann der „Standard“-IP-Bereich oder ein benutzerdefinierter IP-Bereich sein, den Sie erstellt haben.
+
+* Die Intercluster-LIFs der Knoten können auf den Objektspeicher zugreifen (nicht erforderlich, wenn der Konsolenagent an einem „dunklen“ Standort installiert ist).
+* Für die Speicher-VM, auf der sich die Volumes befinden, wurden DNS-Server konfiguriert.  Erfahren Sie, wie Sie https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html["Konfigurieren Sie DNS-Dienste für die SVM"^] .
+* Wenn Sie einen anderen IP-Bereich als den Standard verwenden, müssen Sie möglicherweise eine statische Route erstellen, um Zugriff auf den Objektspeicher zu erhalten.
+* Aktualisieren Sie bei Bedarf die Firewall-Regeln, um Verbindungen des NetApp Backup and Recovery-Dienstes von ONTAP zum Objektspeicher über den von Ihnen angegebenen Port (normalerweise Port 443) und Namensauflösungsdatenverkehr von der Speicher-VM zum DNS-Server über Port 53 (TCP/UDP) zuzulassen.
+
+
+
+
+=== Überprüfen Sie die ONTAP Netzwerkanforderungen für die Replikation von Volumes
+
+Wenn Sie mit NetApp Backup and Recovery replizierte Volumes auf einem sekundären ONTAP System erstellen möchten, stellen Sie sicher, dass die Quell- und Zielsysteme die folgenden Netzwerkanforderungen erfüllen.
+
+
+
+==== On-Premises ONTAP Netzwerkanforderungen
+
+* Wenn sich der Cluster in Ihren Räumlichkeiten befindet, sollten Sie über eine Verbindung von Ihrem Unternehmensnetzwerk zu Ihrem virtuellen Netzwerk beim Cloud-Anbieter verfügen.  Dies ist normalerweise eine VPN-Verbindung.
+* ONTAP -Cluster müssen zusätzliche Subnetz-, Port-, Firewall- und Clusteranforderungen erfüllen.
++
+Da Sie auf Cloud Volumes ONTAP oder lokale Systeme replizieren können, überprüfen Sie die Peering-Anforderungen für lokale ONTAP -Systeme. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Voraussetzungen für Cluster-Peering in der ONTAP Dokumentation anzeigen"^] .
+
+
+
+
+
+==== Netzwerkanforderungen für Cloud Volumes ONTAP
+
+* Die Sicherheitsgruppe der Instanz muss die erforderlichen eingehenden und ausgehenden Regeln enthalten: insbesondere Regeln für ICMP und die Ports 11104 und 11105.  Diese Regeln sind in der vordefinierten Sicherheitsgruppe enthalten.
+
+
+
+
+== Bereiten Sie StorageGRID als Ihr Sicherungsziel vor
+
+StorageGRID muss die folgenden Anforderungen erfüllen. Siehe die https://docs.netapp.com/us-en/storagegrid-117/["StorageGRID -Dokumentation"^] für weitere Informationen.
+
+Weitere Informationen zu den DataLock- und Ransomware-Schutzanforderungen für StorageGRID finden Sie unterlink:prev-ontap-policy-object-options.html["Optionen für die Backup-to-Object-Richtlinie"] .
+
+Unterstützte StorageGRID Versionen:: StorageGRID 10.3 und höher wird unterstützt.
++
+--
+Um DataLock & Ransomware Protection für Ihre Backups zu verwenden, müssen Ihre StorageGRID -Systeme über die Version 11.6.0.3 oder höher verfügen.
+
+Um ältere Backups in den Cloud-Archivspeicher zu verschieben, müssen Ihre StorageGRID -Systeme mit Version 11.3 oder höher laufen.  Darüber hinaus müssen Ihre StorageGRID -Systeme auf der Konsolenseite *Systeme* erkannt werden.
+
+Zur Nutzung des Archivspeichers ist ein IP-Zugriff auf den Admin-Knoten erforderlich.
+
+Gateway-IP-Zugriff ist immer erforderlich.
+
+--
+S3-Anmeldeinformationen:: Sie müssen ein S3-Mandantenkonto erstellt haben, um den Zugriff auf Ihren StorageGRID Speicher zu steuern. https://docs.netapp.com/us-en/storagegrid-117/admin/creating-tenant-account.html["Weitere Informationen finden Sie in der StorageGRID -Dokumentation."^] .
++
+--
+Wenn Sie die Sicherung auf StorageGRID einrichten, fordert Sie der Sicherungsassistent zur Eingabe eines S3-Zugriffsschlüssels und eines geheimen Schlüssels für ein Mandantenkonto auf.  Das Mandantenkonto ermöglicht NetApp Backup and Recovery die Authentifizierung und den Zugriff auf die StorageGRID -Buckets, die zum Speichern von Backups verwendet werden.  Die Schlüssel werden benötigt, damit StorageGRID weiß, wer die Anfrage stellt.
+
+Diese Zugriffsschlüssel müssen einem Benutzer zugeordnet sein, der über die folgenden Berechtigungen verfügt:
+
+[source, json]
+----
+"s3:ListAllMyBuckets",
+"s3:ListBucket",
+"s3:GetObject",
+"s3:PutObject",
+"s3:DeleteObject",
+"s3:CreateBucket"
+----
+--
+Objektversionierung:: Sie dürfen die StorageGRID Objektversionierung im Objektspeicher-Bucket nicht manuell aktivieren.
+
+
+
+
+=== Bereiten Sie die Archivierung älterer Sicherungsdateien im öffentlichen Cloud-Speicher vor
+
+Durch die Auslagerung älterer Sicherungsdateien in einen Archivspeicher sparen Sie Geld, da für Sicherungen, die Sie möglicherweise nicht benötigen, eine weniger teure Speicherklasse verwendet wird.  StorageGRID ist eine lokale (private Cloud-)Lösung, die keinen Archivspeicher bietet, Sie können jedoch ältere Sicherungsdateien in den öffentlichen Cloud-Archivspeicher verschieben.  Bei dieser Verwendung werden Daten, die in den Cloud-Speicher verschoben oder aus dem Cloud-Speicher wiederhergestellt werden, zwischen StorageGRID und dem Cloud-Speicher übertragen – die Konsole ist an dieser Datenübertragung nicht beteiligt.
+
+Mit der aktuellen Unterstützung können Sie Sicherungen im AWS-Speicher _S3 Glacier_/_S3 Glacier Deep Archive_ oder _Azure Archive_ archivieren.
+
+* ONTAP Anforderungen*
+
+* Ihr Cluster muss ONTAP 9.12.1 oder höher verwenden.
+
+
+* StorageGRID Anforderungen*
+
+* Ihr StorageGRID muss 11.4 oder höher verwenden.
+* Ihr StorageGRID muss https://docs.netapp.com/us-en/storage-management-storagegrid/task-discover-storagegrid.html["in der Konsole erkannt und verfügbar"^] .
+
+
+*Anforderungen für Amazon S3*
+
+* Sie müssen sich für ein Amazon S3-Konto für den Speicherplatz anmelden, auf dem Ihre archivierten Backups gespeichert werden.
+* Sie können wählen, ob Sie Backups auf AWS S3 Glacier oder S3 Glacier Deep Archive-Speicher stufen möchten. link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über AWS-Archivierungsebenen"] .
+* StorageGRID sollte vollen Zugriff auf den Bucket haben(`s3:*` ); wenn dies jedoch nicht möglich ist, muss die Bucket-Richtlinie StorageGRID die folgenden S3-Berechtigungen erteilen:
++
+** `s3:AbortMultipartUpload`
+** `s3:DeleteObject`
+** `s3:GetObject`
+** `s3:ListBucket`
+** `s3:ListBucketMultipartUploads`
+** `s3:ListMultipartUploadParts`
+** `s3:PutObject`
+** `s3:RestoreObject`
+
+
+
+
+*Azure Blob-Anforderungen*
+
+* Sie müssen sich für ein Azure-Abonnement für den Speicherplatz anmelden, auf dem Ihre archivierten Sicherungen gespeichert werden.
+* Mit dem Aktivierungsassistenten können Sie eine vorhandene Ressourcengruppe zum Verwalten des Blob-Containers verwenden, in dem die Sicherungen gespeichert werden, oder Sie können eine neue Ressourcengruppe erstellen.
+
+
+Wenn Sie die Archivierungseinstellungen für die Sicherungsrichtlinie für Ihren Cluster definieren, geben Sie die Anmeldeinformationen Ihres Cloud-Anbieters ein und wählen die Speicherklasse aus, die Sie verwenden möchten.  NetApp Backup and Recovery erstellt den Cloud-Bucket, wenn Sie die Sicherung für den Cluster aktivieren.  Die für die Archivspeicherung in AWS und Azure erforderlichen Informationen werden unten angezeigt.
+
+image:screenshot_sg_archive_to_cloud.png["Ein Screenshot der Informationen, die Sie zum Archivieren von Sicherungsdateien von StorageGRID in AWS S3 oder Azure Blob benötigen."]
+
+Die von Ihnen ausgewählten Archivierungsrichtlinieneinstellungen generieren eine Richtlinie für das Information Lifecycle Management (ILM) in StorageGRID und fügen die Einstellungen als „Regeln“ hinzu.
+
+* Wenn bereits eine aktive ILM-Richtlinie vorhanden ist, werden der ILM-Richtlinie neue Regeln hinzugefügt, um die Daten in die Archivebene zu verschieben.
+* Wenn eine vorhandene ILM-Richtlinie den Status „Vorgeschlagen“ aufweist, ist die Erstellung und Aktivierung einer neuen ILM-Richtlinie nicht möglich. https://docs.netapp.com/us-en/storagegrid-117/ilm/index.html["Erfahren Sie mehr über die ILM-Richtlinien und -Regeln von StorageGRID"^] .
+
+
+
+
+== Aktivieren Sie Backups auf Ihren ONTAP -Volumes
+
+Aktivieren Sie Backups jederzeit direkt von Ihrem lokalen System aus.
+
+Ein Assistent führt Sie durch die folgenden Hauptschritte:
+
+* <<Wählen Sie die Volumes aus, die Sie sichern möchten>>
+* <<Definieren Sie die Sicherungsstrategie>>
+* <<Überprüfen Sie Ihre Auswahl>>
+
+
+Sie können auch<<API-Befehle anzeigen>> im Überprüfungsschritt, damit Sie den Code kopieren können, um die Sicherungsaktivierung für zukünftige Systeme zu automatisieren.
+
+
+
+=== Starten des Assistenten
+
+.Schritte
+. Greifen Sie auf eine der folgenden Arten auf den Assistenten „Sicherung und Wiederherstellung aktivieren“ zu:
++
+** Wählen Sie auf der Konsolenseite *Systeme* das System aus und wählen Sie im rechten Bereich neben „Sicherung und Wiederherstellung“ die Option „Aktivieren > Sicherungsvolumes“ aus.
++
+Wenn das Ziel für Ihre Backups als System auf der Konsolenseite *Systeme* vorhanden ist, können Sie den ONTAP Cluster auf den Objektspeicher ziehen.
+
+** Wählen Sie in der Leiste „Sichern und Wiederherstellen“ *Volumes* aus.  Wählen Sie auf der Registerkarte „Volumes“ die Option *Aktionen (...)* und wählen Sie *Sicherung aktivieren* für ein einzelnes Volume (für das die Replikation oder Sicherung in den Objektspeicher noch nicht aktiviert ist).
+
+
++
+Auf der Einführungsseite des Assistenten werden die Schutzoptionen angezeigt, darunter lokale Snapshots, Replikation und Backups.  Wenn Sie in diesem Schritt die zweite Option gewählt haben, wird die Seite „Sicherungsstrategie definieren“ mit einem ausgewählten Volume angezeigt.
+
+. Fahren Sie mit den folgenden Optionen fort:
++
+** Wenn Sie bereits über einen Konsolenagenten verfügen, sind Sie startklar.  Wählen Sie einfach *Weiter*.
+** Wenn Sie noch keinen Konsolenagenten haben, wird die Option *Konsolenagenten hinzufügen* angezeigt. Weitere Informationen finden Sie unter <<Vorbereiten Ihres Konsolenagenten>> .
+
+
+
+
+
+
+=== Wählen Sie die Volumes aus, die Sie sichern möchten
+
+Wählen Sie die Volumes aus, die Sie schützen möchten.  Ein geschütztes Volume verfügt über eine oder mehrere der folgenden Optionen: Snapshot-Richtlinie, Replikationsrichtlinie, Backup-to-Object-Richtlinie.
+
+Sie können FlexVol oder FlexGroup -Volumes schützen. Sie können jedoch keine Mischung dieser Volumes auswählen, wenn Sie die Sicherung für ein System aktivieren.  Erfahren Sie, wie Sielink:prev-ontap-backup-manage.html["Aktivieren Sie die Sicherung für zusätzliche Volumes im System"] (FlexVol oder FlexGroup), nachdem Sie die Sicherung für die ersten Volumes konfiguriert haben.
+
+[NOTE]
+====
+* Sie können eine Sicherung jeweils nur auf einem einzigen FlexGroup -Volume aktivieren.
+* Die von Ihnen ausgewählten Volumes müssen über dieselbe SnapLock Einstellung verfügen.  Auf allen Volumes muss SnapLock Enterprise aktiviert oder SnapLock sein.
+
+
+====
+.Schritte
+Wenn auf die von Ihnen ausgewählten Volumes bereits Snapshot- oder Replikationsrichtlinien angewendet wurden, werden diese vorhandenen Richtlinien durch die später ausgewählten Richtlinien überschrieben.
+
+. Wählen Sie auf der Seite „Volumes auswählen“ das oder die Volumes aus, die Sie schützen möchten.
++
+** Filtern Sie die Zeilen optional, um nur Bände mit bestimmten Bandtypen, Stilen usw. anzuzeigen und so die Auswahl zu erleichtern.
+** Nachdem Sie das erste Volume ausgewählt haben, können Sie alle FlexVol Volumes auswählen (FlexGroup Volumes können jeweils nur einzeln ausgewählt werden).  Um alle vorhandenen FlexVol Volumes zu sichern, markieren Sie zuerst ein Volume und aktivieren Sie dann das Kontrollkästchen in der Titelzeile.
+** Um einzelne Volumes zu sichern, aktivieren Sie das Kontrollkästchen für jedes Volume.
+
+
+. Wählen Sie *Weiter*.
+
+
+
+
+=== Definieren Sie die Sicherungsstrategie
+
+Zum Definieren der Sicherungsstrategie müssen die folgenden Optionen festgelegt werden:
+
+* Ob Sie eine oder alle der Backup-Optionen wünschen: lokale Snapshots, Replikation und Backup auf Objektspeicher
+* Architektur
+* Lokale Snapshot-Richtlinie
+* Replikationsziel und -richtlinie
++
+
+NOTE: Wenn die von Ihnen ausgewählten Volumes andere Snapshot- und Replikationsrichtlinien haben als die Richtlinien, die Sie in diesem Schritt auswählen, werden die vorhandenen Richtlinien überschrieben.
+
+* Informationen zur Sicherung in Objektspeichern (Anbieter, Verschlüsselung, Netzwerk, Sicherungsrichtlinie und Exportoptionen).
+
+
+.Schritte
+. Wählen Sie auf der Seite „Sicherungsstrategie definieren“ eine oder alle der folgenden Optionen aus.  Alle drei sind standardmäßig ausgewählt:
++
+** *Lokale Snapshots*: Wenn Sie eine Replikation oder Sicherung im Objektspeicher durchführen, müssen lokale Snapshots erstellt werden.
+** *Replikation*: Erstellt replizierte Volumes auf einem anderen ONTAP Speichersystem.
+** *Backup*: Sichert Volumes im Objektspeicher.
+
+
+. *Architektur*: Wenn Sie sowohl Replikation als auch Sicherung gewählt haben, wählen Sie einen der folgenden Informationsflüsse:
++
+** *Kaskadierung*: Informationen fließen vom primären zum sekundären und dann vom sekundären zum Objektspeicher.
+** *Fan-out*: Informationen fließen vom primären zum sekundären _und_ vom primären zum Objektspeicher.
++
+Weitere Informationen zu diesen Architekturen finden Sie unterlink:prev-ontap-protect-journey.html["Planen Sie Ihren Schutzweg"] .
+
+
+
+. *Lokaler Snapshot*: Wählen Sie eine vorhandene Snapshot-Richtlinie oder erstellen Sie eine neue.
++
+
+TIP: Informationen zum Erstellen einer benutzerdefinierten Richtlinie finden Sie unterlink:br-use-policies-create.html["Erstellen einer Richtlinie"] .
+
++
+Um eine Richtlinie zu erstellen, wählen Sie *Neue Richtlinie erstellen* und gehen Sie wie folgt vor:
+
++
+** Geben Sie den Namen der Richtlinie ein.
+** Wählen Sie bis zu fünf Zeitpläne aus, normalerweise mit unterschiedlicher Häufigkeit.
+** Wählen Sie *Erstellen*.
+
+
+. *Replikation*: Legen Sie die folgenden Optionen fest:
++
+** *Replikationsziel*: Wählen Sie das Zielsystem und die SVM aus.  Wählen Sie optional das oder die Zielaggregate sowie das Präfix oder Suffix aus, das dem Namen des replizierten Volumes hinzugefügt wird.
+** *Replikationsrichtlinie*: Wählen Sie eine vorhandene Replikationsrichtlinie aus oder erstellen Sie eine.
++
+
+TIP: Informationen zum Erstellen einer benutzerdefinierten Richtlinie finden Sie unterlink:br-use-policies-create.html["Erstellen einer Richtlinie"] .
+
++
+Um eine Richtlinie zu erstellen, wählen Sie *Neue Richtlinie erstellen* und gehen Sie wie folgt vor:
+
++
+*** Geben Sie den Namen der Richtlinie ein.
+*** Wählen Sie bis zu fünf Zeitpläne aus, normalerweise mit unterschiedlicher Häufigkeit.
+*** Wählen Sie *Erstellen*.
+
+
+
+
+. *Sichern auf Objekt*: Wenn Sie *Sichern* ausgewählt haben, legen Sie die folgenden Optionen fest:
++
+** *Anbieter*: Wählen Sie * StorageGRID*.
+** *Anbietereinstellungen*: Geben Sie die FQDN-Details, den Port, den Zugriffsschlüssel und den geheimen Schlüssel des Anbieter-Gateway-Knotens ein.
++
+Der Zugriffsschlüssel und der geheime Schlüssel sind für den IAM-Benutzer, den Sie erstellt haben, um dem ONTAP Cluster Zugriff auf den Bucket zu gewähren.
+
+** *Netzwerk*: Wählen Sie den IP-Bereich im ONTAP -Cluster, in dem sich die Volumes befinden, die Sie sichern möchten.  Die Intercluster-LIFs für diesen IPspace müssen über ausgehenden Internetzugang verfügen (nicht erforderlich, wenn der Konsolenagent an einem „dunklen“ Standort installiert ist).
++
+
+TIP: Durch die Auswahl des richtigen IPspace wird sichergestellt, dass NetApp Backup and Recovery eine Verbindung von ONTAP zu Ihrem StorageGRID Objektspeicher herstellen kann.
+
+** *Sicherungsrichtlinie*: Wählen Sie eine vorhandene Richtlinie zum Sichern in einem Objektspeicher aus oder erstellen Sie eine.
++
+
+TIP: Informationen zum Erstellen einer benutzerdefinierten Richtlinie finden Sie unterlink:br-use-policies-create.html["Erstellen einer Richtlinie"] .
+
++
+Um eine Richtlinie zu erstellen, wählen Sie *Neue Richtlinie erstellen* und gehen Sie wie folgt vor:
+
++
+*** Geben Sie den Namen der Richtlinie ein.
+*** Wählen Sie bis zu fünf Zeitpläne aus, normalerweise mit unterschiedlicher Häufigkeit.
+*** Legen Sie für Backup-to-Object-Richtlinien die Einstellungen für DataLock und Ransomware-Schutz fest.  Weitere Informationen zu DataLock und Ransomware-Schutz finden Sie unterlink:prev-ontap-policy-object-options.html["Einstellungen der Backup-to-Object-Richtlinie"] .
++
+Wenn Ihr Cluster ONTAP 9.11.1 oder höher verwendet, können Sie Ihre Backups vor Löschung und Ransomware-Angriffen schützen, indem Sie _DataLock und Ransomware-Schutz_ konfigurieren.  _DataLock_ schützt Ihre Sicherungsdateien vor Änderungen oder Löschungen und _Ransomware Protection_ durchsucht Ihre Sicherungsdateien nach Hinweisen auf einen Ransomware-Angriff.
+
+*** Wählen Sie *Erstellen*.
+
+
+
+
++
+Wenn Ihr Cluster ONTAP 9.12.1 oder höher verwendet und Ihr StorageGRID System Version 11.4 oder höher verwendet, können Sie ältere Backups nach einer bestimmten Anzahl von Tagen in öffentliche Cloud-Archivebenen verschieben.  Derzeit wird die Speicherebene AWS S3 Glacier/S3 Glacier Deep Archive oder Azure Archive unterstützt. <<Bereiten Sie die Archivierung älterer Sicherungsdateien im öffentlichen Cloud-Speicher vor,Erfahren Sie, wie Sie Ihre Systeme für diese Funktionalität konfigurieren.>> .
+
++
+** *Tier-Backup in die öffentliche Cloud*: Wählen Sie den Cloud-Anbieter aus, zu dem Sie Backups tieren möchten, und geben Sie die Anbieterdetails ein.
++
+Wählen oder erstellen Sie einen neuen StorageGRID Cluster.  Weitere Informationen zum Erstellen eines StorageGRID -Clusters, damit die Konsole ihn erkennen kann, finden Sie unter https://docs.netapp.com/us-en/storagegrid-117/["StorageGRID -Dokumentation"^] .
+
+** *Exportieren Sie vorhandene Snapshot-Kopien als Sicherungskopien in den Objektspeicher*: Wenn es lokale Snapshot-Kopien für Volumes in diesem System gibt, die mit der Bezeichnung des Sicherungszeitplans übereinstimmen, die Sie gerade für dieses System ausgewählt haben (z. B. täglich, wöchentlich usw.), wird diese zusätzliche Eingabeaufforderung angezeigt.  Aktivieren Sie dieses Kontrollkästchen, um alle historischen Snapshots als Sicherungsdateien in den Objektspeicher zu kopieren und so den umfassendsten Schutz für Ihre Volumes zu gewährleisten.
+
+
+. Wählen Sie *Weiter*.
+
+
+
+
+=== Überprüfen Sie Ihre Auswahl
+
+Dies ist die Gelegenheit, Ihre Auswahl zu überprüfen und gegebenenfalls Anpassungen vorzunehmen.
+
+.Schritte
+. Überprüfen Sie Ihre Auswahl auf der Überprüfungsseite.
+. Aktivieren Sie optional das Kontrollkästchen, um *die Snapshot-Richtlinienbezeichnungen automatisch mit den Replikations- und Sicherungsrichtlinienbezeichnungen zu synchronisieren*.  Dadurch werden Snapshots mit einer Bezeichnung erstellt, die mit den Bezeichnungen in den Replikations- und Sicherungsrichtlinien übereinstimmt.
+. Wählen Sie *Sicherung aktivieren*.
+
+
+.Ergebnis
+NetApp Backup and Recovery beginnt mit der Durchführung der ersten Sicherungen Ihrer Volumes.  Die Basisübertragung des replizierten Volumes und der Sicherungsdatei umfasst eine vollständige Kopie der Quelldaten.  Nachfolgende Übertragungen enthalten differenzielle Kopien der in Snapshot-Kopien enthaltenen primären Speicherdaten.
+
+Im Zielcluster wird ein repliziertes Volume erstellt, das mit dem primären Speichervolume synchronisiert wird.
+
+Im durch den von Ihnen eingegebenen S3-Zugriffsschlüssel und geheimen Schlüssel angegebenen Dienstkonto wird ein S3-Bucket erstellt und die Sicherungsdateien werden dort gespeichert.
+
+Das Volume-Backup-Dashboard wird angezeigt, damit Sie den Status der Backups überwachen können.
+
+Sie können den Status von Sicherungs- und Wiederherstellungsaufträgen auch mithilfe derlink:br-use-monitor-tasks.html["Seite „Jobüberwachung“"^] .
+
+
+
+=== API-Befehle anzeigen
+
+Möglicherweise möchten Sie die im Assistenten „Sicherung und Wiederherstellung aktivieren“ verwendeten API-Befehle anzeigen und optional kopieren.  Möglicherweise möchten Sie dies tun, um die Sicherungsaktivierung in zukünftigen Systemen zu automatisieren.
+
+.Schritte
+. Wählen Sie im Assistenten „Sicherung und Wiederherstellung aktivieren“ die Option „API-Anforderung anzeigen“ aus.
+. Um die Befehle in die Zwischenablage zu kopieren, wählen Sie das Symbol *Kopieren*.
+

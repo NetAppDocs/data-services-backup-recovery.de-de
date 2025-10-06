@@ -1,0 +1,92 @@
+---
+sidebar: sidebar 
+permalink: prev-reference-aws-archive-storage-tiers.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: NetApp Backup and Recovery unterstützt zwei S3-Archivspeicherklassen und die meisten Regionen. 
+---
+= Unterstützte AWS-Archivspeicherebenen mit NetApp Backup und Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Backup and Recovery unterstützt zwei S3-Archivspeicherklassen und die meisten Regionen.
+
+[]
+====
+*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup und Recovery UI-Versionen finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zur vorherigen NetApp Backup and Recovery-Benutzeroberfläche"] .
+
+====
+
+
+== Unterstützte S3-Archivspeicherklassen für NetApp Backup und Recovery
+
+Wenn Sicherungsdateien zunächst erstellt werden, werden sie im S3-Standardspeicher gespeichert.  Diese Ebene ist für die Speicherung selten abgerufener Daten optimiert, ermöglicht Ihnen aber auch den sofortigen Zugriff darauf.  Nach 30 Tagen werden die Backups aus Kostengründen in die Speicherklasse S3 _Standard-Infrequent Access_ verschoben.
+
+Wenn auf Ihren Quellclustern ONTAP 9.10.1 oder höher ausgeführt wird, können Sie zur weiteren Kostenoptimierung Backups nach einer bestimmten Anzahl von Tagen (normalerweise mehr als 30 Tage) entweder auf _S3 Glacier_- oder _S3 Glacier Deep Archive_-Speicher verschieben.  Sie können dies auf „0“ oder auf 1–999 Tage einstellen.  Wenn Sie es auf „0“ Tage einstellen, können Sie es später nicht mehr auf 1–999 Tage ändern.
+
+Auf die Daten in diesen Ebenen kann bei Bedarf nicht sofort zugegriffen werden und der Abruf ist mit höheren Kosten verbunden. Sie müssen daher berücksichtigen, wie oft Sie Daten aus diesen archivierten Sicherungsdateien wiederherstellen müssen.  Weitere Informationen zum Wiederherstellen von Daten aus dem Archivspeicher finden Sie im Abschnitt auf dieser Seite.
+
+* Wenn Sie bei der Aktivierung von NetApp Backup and Recovery in Ihrer ersten Sicherungsrichtlinie keine Archivebene auswählen, ist _S3 Glacier_ Ihre einzige Archivierungsoption für zukünftige Richtlinien.
+* Wenn Sie in Ihrer ersten Sicherungsrichtlinie _S3 Glacier_ auswählen, können Sie für zukünftige Sicherungsrichtlinien für diesen Cluster zur Ebene _S3 Glacier Deep Archive_ wechseln.
+* Wenn Sie in Ihrer ersten Sicherungsrichtlinie _S3 Glacier Deep Archive_ auswählen, ist diese Ebene die einzige Archivebene, die für zukünftige Sicherungsrichtlinien für diesen Cluster verfügbar ist.
+
+
+Beachten Sie, dass Sie beim Konfigurieren von NetApp Backup and Recovery mit dieser Art von Lebenszyklusregel beim Einrichten des Buckets in Ihrem AWS-Konto keine Lebenszyklusregeln konfigurieren dürfen.
+
+https://aws.amazon.com/s3/storage-classes/["Erfahren Sie mehr über S3-Speicherklassen"^] .
+
+
+
+== Daten aus dem Archivspeicher wiederherstellen
+
+Während die Speicherung älterer Sicherungsdateien im Archivspeicher wesentlich weniger kostspielig ist als die Speicherung im Standard- oder Standard-IA-Speicher, dauert der Zugriff auf Daten aus einer Sicherungsdatei im Archivspeicher für Wiederherstellungsvorgänge länger und ist teurer.
+
+Wie viel kostet die Wiederherstellung von Daten aus Amazon S3 Glacier und Amazon S3 Glacier Deep Archive?:: Beim Abrufen von Daten aus Amazon S3 Glacier können Sie zwischen 3 Wiederherstellungsprioritäten und beim Abrufen von Daten aus Amazon S3 Glacier Deep Archive zwischen 2 Wiederherstellungsprioritäten wählen.  S3 Glacier Deep Archive kostet weniger als S3 Glacier:
++
+--
+[cols="25,25,25,25"]
+|===
+| Archivebene 3+| Wiederherstellungspriorität und -kosten 
+
+
+|  | *Hoch* | *Standard* | *Niedrig* 
+
+
+| *S3 Gletscher* | Schnellster Abruf, höchste Kosten | Langsamere Abfrage, geringere Kosten | Langsamster Abruf, niedrigste Kosten 
+
+
+| *S3 Glacier Deep-Archiv* |  | Schnellere Abfrage, höhere Kosten | Langsamerer Abruf, niedrigste Kosten 
+|===
+Für jede Methode fallen unterschiedliche Abruf- und Anforderungsgebühren pro GB an.  Detaillierte S3 Glacier-Preise nach AWS-Region finden Sie auf der https://aws.amazon.com/s3/pricing/["Amazon S3-Preisseite"^] .
+
+--
+Wie lange dauert die Wiederherstellung meiner in Amazon S3 Glacier archivierten Objekte?:: Die gesamte Wiederherstellungszeit besteht aus zwei Teilen:
++
+--
+* *Abrufzeit*: Die Zeit, die zum Abrufen der Sicherungsdatei aus dem Archiv und zum Platzieren im Standardspeicher benötigt wird.  Dies wird manchmal als „Rehydratationszeit“ bezeichnet.  Die Abrufzeit ist je nach gewählter Wiederherstellungspriorität unterschiedlich.
++
+[cols="25,20,20,20"]
+|===
+| Archivebene 3+| Wiederherstellungspriorität und Abrufzeit 
+
+
+|  | *Hoch* | *Standard* | *Niedrig* 
+
+
+| *S3 Gletscher* | 3-5 Minuten | 3-5 Stunden | 5-12 Stunden 
+
+
+| *S3 Glacier Deep-Archiv* |  | 12 Stunden | 48 Stunden 
+|===
+* *Wiederherstellungszeit*: Die Zeit, die zum Wiederherstellen der Daten aus der Sicherungsdatei im Standardspeicher benötigt wird.  Diese Zeit unterscheidet sich nicht von der typischen Wiederherstellungsoperation direkt vom Standardspeicher – wenn keine Archivierungsebene verwendet wird.
+
+
+Weitere Informationen zu den Abrufoptionen von Amazon S3 Glacier und S3 Glacier Deep Archive finden Sie unter https://aws.amazon.com/s3/faqs/#Amazon_S3_Glacier["die Amazon FAQ zu diesen Lagerklassen"^] .
+
+--
+

@@ -1,0 +1,61 @@
+---
+sidebar: sidebar 
+permalink: br-start-trial.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Starten oder beenden Sie eine kostenlose Testversion von NetApp Backup and Recovery.  Die kostenlose Testversion ist 30 Tage lang verfügbar, nachdem Sie sich im Marktplatz Ihres Cloud-Anbieters für ein Pay-as-you-go-Abonnement für NetApp Intelligent Services angemeldet haben. 
+---
+= Starten Sie eine kostenlose Testversion von NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Eine kostenlose 30-Tage-Testversion von NetApp Backup and Recovery ist verfügbar, wenn Sie sich im Marktplatz Ihres Cloud-Anbieters für ein Pay-as-you-go-Abonnement für * NetApp Intelligent Services* anmelden.  Die kostenlose Testversion beginnt mit der Anmeldung zum Marktplatzeintrag.  Beachten Sie: Wenn Sie beim Bereitstellen eines Cloud Volumes ONTAP -Systems für das Marktplatzabonnement bezahlen und dann 10 Tage später Ihre kostenlose Testversion von NetApp Backup and Recovery starten, haben Sie noch 20 Tage Zeit, die kostenlose Testversion zu nutzen.
+
+Nach Ablauf der kostenlosen Testphase erfolgt die Umstellung automatisch und ohne Unterbrechung auf das PAYGO-Abo.  Wenn Sie NetApp Backup and Recovery nicht weiter verwenden möchten, beenden Sie einfach die kostenlose Testversion.
+
+Sie können die kostenlose Testversion von NetApp Backup and Recovery starten, nachdem Sie sich bei der Konsole angemeldet haben.
+
+.Schritte
+. Wählen Sie in der linken Navigation der Konsole *Schutz* > *Sicherung und Wiederherstellung*.
+. Wenn Sie sich zum ersten Mal bei diesem Dienst anmelden und bereits über ein System in der NetApp Konsole verfügen, die kostenlose Testversion jedoch noch nicht gestartet haben, wird die Zielseite „Willkommen beim neuen NetApp Backup and Recovery“ mit der Option „Kostenlose Testversion starten“ angezeigt.
++
+image:screen-br-landing-unified-start-trial.png["Screenshot der Zielseite für NetApp Backup and Recovery ohne kostenlose Testversion"]
+
+
+
+
+
+== Wie geht es weiter?
+
+Nachdem Sie die kostenlose Testversion gestartet haben, können Sie Workloads ermitteln und Richtlinien zum Sichern Ihrer Workloads erstellen.
+
+Wenn Sie sich zum ersten Mal bei diesem Dienst anmelden, bereits über ein System in der NetApp Konsole verfügen und die kostenlose Testversion gestartet haben, aber noch keine Ressourcen entdeckt haben, wird die Zielseite „Willkommen beim neuen NetApp Backup and Recovery“ angezeigt und bietet die Option „Ressourcen entdecken“.
+
+Weitere Informationen zum Ermitteln von Workloads finden Sie unterlink:br-start-discover.html["Workloads ermitteln"] .
+
+image:screen-br-landing-unified.png["Screenshot der Zielseite für NetApp Backup and Recovery"]
+
+
+
+== Kostenlose Testversion beenden
+
+Sie können die kostenlose Testversion jederzeit beenden.  Wenn Sie die kostenlose Testversion beenden, wird Ihnen der Dienst nicht in Rechnung gestellt.
+
+.Schritte
+. Wählen Sie in der linken Navigation der Konsole *Schutz* > *Sicherung und Wiederherstellung*.
++
+image:screen-br-landing-unified.png["Screenshot der Zielseite für NetApp Backup and Recovery"]
+
+. Wählen Sie auf der Zielseite „Willkommen beim neuen NetApp Backup and Recovery“ die Option „Details anzeigen – kostenlose Testversion“ oder in der oberen rechten Ecke der Seite die Option „Kostenlose Testversion“ aus.
++
+image:screen-br-landing-unified-end-trial.png["Screenshot der Zielseite für die kostenlose Testversion von NetApp Backup and Recovery"]
+
+. Wählen Sie *Kostenlose Testversion beenden*.
+. Geben Sie im Bestätigungsdialogfeld „Kostenlose Testversion beenden“ *Testversion beenden* ein.
+. Wählen Sie *Ende*.
+

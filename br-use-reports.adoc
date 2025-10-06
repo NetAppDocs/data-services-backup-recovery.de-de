@@ -1,0 +1,38 @@
+---
+sidebar: sidebar 
+permalink: br-use-reports.html 
+keywords: backing up, back up, backup, backup on-prem ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
+summary: Erstellen Sie in NetApp Backup and Recovery Berichte, um den Status Ihrer Backups anzuzeigen, einschließlich der Anzahl der Backups, der Anzahl der erfolgreichen Backups und der Anzahl der fehlgeschlagenen Backups.  Sie können auch die Details jeder Sicherung anzeigen, einschließlich des Sicherungstyps, des für die Sicherung verwendeten Speichersystems und der Sicherungszeit. 
+---
+= Erstellen Sie Berichte für Microsoft SQL Server-Workloads in NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Erstellen Sie in NetApp Backup and Recovery Berichte für Microsoft SQL Server-Workloads, um den Status Ihrer Backups anzuzeigen, einschließlich der Anzahl der Backups, der Anzahl der erfolgreichen Backups und der Anzahl der fehlgeschlagenen Backups.  Sie können auch die Details jeder Sicherung anzeigen, einschließlich des Sicherungstyps, des für die Sicherung verwendeten Speichersystems und der Sicherungszeit.
+
+
+
+== Erstellen eines Berichts
+
+*Erforderliche NetApp Konsolenrolle* Speicherbetrachter, Superadministrator für Backup und Wiederherstellung, Backup-Administrator für Backup und Wiederherstellung, Wiederherstellungsadministrator für Backup und Wiederherstellung, Klonadministrator für Backup und Wiederherstellung. Erfahren Sie mehr überlink:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+
+. Wählen Sie im NetApp Backup and Recovery-Menü die Option *Berichte*.
+. Wählen Sie *Bericht erstellen*.
+. Geben Sie Details zum Berichtsumfang ein:
++
+** *Berichtsname*: Geben Sie einen eindeutigen Namen für den Bericht ein.
+** *Berichtstyp*: Wählen Sie, ob Sie einen Bericht nach Konto oder nach Arbeitslast (Microsoft SQL Server) wünschen.
+** *Host auswählen*: Wenn Sie nach Arbeitslast ausgewählt haben, wählen Sie den Host aus, für den Sie den Bericht erstellen möchten.
+** *Inhalt auswählen*: Wählen Sie, ob der Bericht eine Zusammenfassung aller Sicherungen oder Details zu jeder Sicherung enthalten soll.  (Wenn Sie „Nach Konto“ gewählt haben)
+
+
+. Geben Sie den Berichtszeitraum ein: Wählen Sie, ob der Bericht Daten vom letzten Tag, den letzten 7 Tagen, den letzten 30 Tagen, dem letzten Quartal oder dem letzten Jahr enthalten soll.
+. Geben Sie die Details zur Berichtszustellung ein: Wenn Sie den Bericht per E-Mail zugestellt bekommen möchten, aktivieren Sie *Bericht per E-Mail senden*.  Geben Sie die E-Mail-Adressen ein, an die der Bericht gesendet werden soll.
++
+Konfigurieren Sie E-Mail-Benachrichtigungen auf der Seite „Einstellungen“.  Einzelheiten zum Konfigurieren von E-Mail-Benachrichtigungen finden Sie unterlink:br-use-settings-advanced.html["Konfigurieren der Einstellungen"] .
+
+

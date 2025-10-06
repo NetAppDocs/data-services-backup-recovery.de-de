@@ -1,0 +1,86 @@
+---
+sidebar: sidebar 
+permalink: br-use-restore-kubernetes-applications.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: Mit NetApp Backup and Recovery können Sie Anwendungen wiederherstellen, die Sie mit einer Schutzrichtlinie geschützt haben. 
+---
+= Wiederherstellen von Kubernetes-Anwendungen
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Mit NetApp Backup and Recovery können Sie Anwendungen wiederherstellen, die Sie mit einer Schutzrichtlinie geschützt haben. Zur Wiederherstellung einer Anwendung muss mindestens ein Wiederherstellungspunkt verfügbar sein. Ein Wiederherstellungspunkt besteht entweder aus dem lokalen Snapshot oder der Sicherung im Objektspeicher (oder beidem). Sie können eine Anwendung mithilfe des lokalen, sekundären oder Objektspeicherarchivs wiederherstellen.
+
+.Erforderliche NetApp Konsolenrolle
+Organisationsadministrator oder SnapCenter Administrator. link:reference-roles.html["Erfahren Sie mehr über die Zugriffsrollen für NetApp Backup und Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+
+.Schritte
+. Wählen Sie in NetApp Backup and Recovery *Inventar* aus.
+. Wählen Sie eine Kubernetes-Instanz und wählen Sie *Anzeigen*, um die mit dieser Instanz verknüpften Ressourcen anzuzeigen.
+. Wählen Sie die Registerkarte *Anwendungen*.
+. Wählen Sie in der Anwendungsliste eine Anwendung aus, die Sie wiederherstellen möchten, und wählen Sie das zugehörige Aktionsmenü.
+. Wählen Sie *Anzeigen und wiederherstellen*.
++
+Die Liste der Wiederherstellungspunkte wird angezeigt.
+
+. Öffnen Sie das Aktionsmenü für den Wiederherstellungspunkt, den Sie verwenden möchten, und wählen Sie *Wiederherstellen*.
+
+
+[discrete]
+===== Allgemeine Einstellungen
+
+. Wählen Sie die Quelle für die Wiederherstellung (lokaler oder Objektspeicher).
+. Wählen Sie den Zielcluster aus der Liste *Cluster* aus.
+. Wählen Sie den Namespace für das Wiederherstellungsziel.
++
+Sie können den ursprünglichen Namespace oder einen neuen Namespace wiederherstellen.
+
+. Wählen Sie *Weiter*.
+
+
+[discrete]
+===== Ressourcenauswahl
+
+. Wählen Sie aus, ob Sie alle mit der Anwendung verknüpften Ressourcen wiederherstellen möchten, oder verwenden Sie einen Filter, um bestimmte wiederherzustellende Ressourcen auszuwählen:
+
+
+[role="tabbed-block"]
+====
+.Alle Ressourcen wiederherstellen
+--
+. Wählen Sie *Alle Ressourcen wiederherstellen*.
+. Wählen Sie *Weiter*.
+
+
+--
+.Wiederherstellen bestimmter Ressourcen
+--
+. Wählen Sie *Selektive Ressourcen* aus.
+. Wählen Sie das Verhalten des Ressourcenfilters.  Wenn Sie *Einschließen* wählen, werden die von Ihnen ausgewählten Ressourcen wiederhergestellt.  Wenn Sie *Ausschließen* wählen, werden die ausgewählten Ressourcen nicht wiederhergestellt.
+. Wählen Sie *Regeln hinzufügen* aus, um Regeln hinzuzufügen, die Filter für die Auswahl von Ressourcen definieren.  Sie benötigen mindestens eine Regel zum Filtern von Ressourcen.
++
+Jede Regel kann nach Kriterien wie Ressourcennamespace, Bezeichnungen, Gruppe, Version und Art filtern.
+
+. Wählen Sie *Speichern*, um jede Regel zu speichern.
+. Wenn Sie alle benötigten Regeln hinzugefügt haben, wählen Sie *Suchen*, um die im Sicherungsarchiv verfügbaren Ressourcen anzuzeigen, die Ihren Filterkriterien entsprechen.
++
+
+NOTE: Bei den angezeigten Ressourcen handelt es sich um die Ressourcen, die derzeit im Cluster vorhanden sind.
+
+. Wenn Sie mit den Ergebnissen zufrieden sind, wählen Sie *Weiter*.
+
+
+--
+====
+[discrete]
+===== Zieleinstellungen
+
+. Wählen Sie die Wiederherstellung entweder in der Standardspeicherklasse oder in einer anderen Speicherklasse.
+. Wenn Sie die Wiederherstellung in einer anderen Speicherklasse durchführen möchten, wählen Sie optional eine Zielspeicherklasse aus, die jeder Quellspeicherklasse entspricht.
+. Wählen Sie *Wiederherstellen*.
+

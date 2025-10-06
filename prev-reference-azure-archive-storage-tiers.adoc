@@ -1,0 +1,72 @@
+---
+sidebar: sidebar 
+permalink: prev-reference-azure-archive-storage-tiers.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: NetApp Backup and Recovery unterstützt eine Azure-Archivzugriffsebene und die meisten Regionen. 
+---
+= Unterstützte Azure-Archivzugriffsebenen mit NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Backup and Recovery unterstützt eine Azure-Archivzugriffsebene und die meisten Regionen.
+
+[]
+====
+*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup und Recovery UI-Versionen finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zur vorherigen NetApp Backup and Recovery-Benutzeroberfläche"] .
+
+====
+
+
+== Unterstützte Azure Blob-Zugriffsebenen für NetApp Backup und Recovery
+
+Wenn Sicherungsdateien zunächst erstellt werden, werden sie in der Zugriffsebene _Cool_ gespeichert.  Diese Ebene ist für die Speicherung von Daten optimiert, auf die selten zugegriffen wird, auf die bei Bedarf jedoch sofort zugegriffen werden kann.
+
+Wenn auf Ihren Quellclustern ONTAP 9.10.1 oder höher ausgeführt wird, können Sie zur weiteren Kostenoptimierung Backups nach einer bestimmten Anzahl von Tagen (normalerweise mehr als 30 Tage) vom _Cool_- in den _Azure Archive_-Speicher verschieben.  Auf Daten dieser Ebene kann bei Bedarf nicht sofort zugegriffen werden und der Abruf ist mit höheren Kosten verbunden. Sie müssen daher berücksichtigen, wie oft Sie Daten aus diesen archivierten Sicherungsdateien wiederherstellen müssen.  Weitere Informationen zum Wiederherstellen von Daten aus dem Archivspeicher finden Sie im Abschnitt auf dieser Seite.
+
+Beachten Sie, dass Sie beim Konfigurieren von NetApp Backup and Recovery mit dieser Art von Lebenszyklusregel beim Einrichten des Containers in Ihrem Azure-Konto keine Lebenszyklusregeln konfigurieren dürfen.
+
+https://docs.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview["Informationen zu Azure Blob-Zugriffsebenen"^] .
+
+
+
+== Daten aus dem Archivspeicher wiederherstellen
+
+Während das Speichern älterer Sicherungsdateien im Archivspeicher wesentlich weniger kostspielig ist als die Speicherung im Cool-Speicher, dauert der Zugriff auf Daten aus einer Sicherungsdatei im Azure-Archiv für Wiederherstellungsvorgänge länger und ist teurer.
+
+Wie viel kostet die Wiederherstellung von Daten aus Azure Archive?:: Beim Abrufen von Daten aus dem Azure-Archiv können Sie zwischen zwei Wiederherstellungsprioritäten wählen:
++
+--
+* *Hoch*: Schnellster Abruf, höhere Kosten
+* *Standard*: Langsamerer Abruf, geringere Kosten
+
+
+Für jede Methode fallen unterschiedliche Abruf- und Anforderungsgebühren pro GB an.  Detaillierte Azure Archive-Preise nach Azure-Region finden Sie auf der https://azure.microsoft.com/en-us/pricing/details/storage/blobs/["Azure-Preisseite"^] .
+
+--
+
+
+
+NOTE: Die hohe Priorität wird beim Wiederherstellen von Daten von Azure auf StorageGRID -Systemen nicht unterstützt.
+
+Wie lange dauert die Wiederherstellung meiner im Azure-Archiv archivierten Daten?:: Die Wiederherstellungszeit besteht aus zwei Teilen:
++
+--
+* *Abrufzeit*: Die Zeit, die zum Abrufen der archivierten Sicherungsdatei aus dem Azure-Archiv und zum Platzieren im Cool-Speicher benötigt wird.  Dies wird manchmal als „Rehydratationszeit“ bezeichnet.  Die Abrufzeit ist je nach gewählter Wiederherstellungspriorität unterschiedlich:
++
+** *Hoch*: < 1 Stunde
+** *Standard*: < 15 Stunden
+
+
+* *Wiederherstellungszeit*: Die Zeit zum Wiederherstellen der Daten aus der Sicherungsdatei im Cool-Speicher.  Diese Zeit unterscheidet sich nicht von der typischen Wiederherstellungsoperation direkt aus dem Cool-Speicher – wenn keine Archivierungsebene verwendet wird.
+
+
+Weitere Informationen zu den Abrufoptionen für Azure-Archive finden Sie unter https://azure.microsoft.com/en-us/pricing/details/storage/blobs/#faq["diese Azure-FAQ"^] .
+
+--
+

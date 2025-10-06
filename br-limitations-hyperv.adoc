@@ -1,0 +1,26 @@
+---
+sidebar: sidebar 
+permalink: br-limitations-hyperv.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Hyper-V, SAP HANA database, virtual machine, vm 
+summary: NetApp Backup and Recovery muss zunächst Daten erkennen, damit Sie den Dienst nutzen können.  Während der Erkennung analysiert NetApp Backup and Recovery alle Volumes und Dateien in Systemen innerhalb Ihres Unternehmens. 
+---
+= Bekannte Einschränkungen bei NetApp Backup und Recovery für Hyper-V-Workloads
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Bekannte Einschränkungen kennzeichnen Plattformen, Geräte oder Funktionen, die von dieser Produktversion nicht unterstützt werden oder nicht ordnungsgemäß mit ihr zusammenarbeiten. Lesen Sie diese Einschränkungen sorgfältig durch.
+
+Die folgenden Aktionen werden in der privaten Vorschauversion von Hyper-V-Workloads in NetApp Backup and Recovery nicht unterstützt:
+
+* Erstellen von Ressourcengruppen
+* Spanning-Disks (über mehrere CIFS-Freigaben hinweg)
+* Schützen Sie VMs über SAN
+* Wiederherstellen aus dem Objektspeicher
+* Schützen Sie Hyper-V-Hosts, die mit System Center Virtual Machine Manager (SCVMM) geclustert sind.
+

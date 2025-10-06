@@ -1,0 +1,66 @@
+---
+sidebar: sidebar 
+permalink: br-start-discover-hyperv.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Hyper-V, workloads, protect 
+summary: NetApp Backup and Recovery muss zunächst Workloads erkennen, damit Sie diese schützen können. 
+---
+= Entdecken Sie Hyper-V-Workloads in NetApp Backup und Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Backup and Recovery muss zunächst virtuelle Hyper-V-Maschinen erkennen, damit Sie sie schützen können.
+
+*Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung. Erfahren Sie mehr überlink:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+
+
+
+== Hinzufügen eines Hyper-V-Hosts und Ermitteln von Ressourcen
+
+Fügen Sie Hyper-V-Hostinformationen hinzu und lassen Sie NetApp Backup and Recovery virtuelle Maschinen erkennen.  Wählen Sie in jedem Konsolenagenten die Systeme aus, auf denen Sie die Ressourcen ermitteln möchten.
+
+
+NOTE: Wenn Sie Hyper-V-Hosts hinzufügen und Ressourcen ermitteln, installiert NetApp Backup and Recovery das NetApp Hyper-V-Plug-in und das NetApp SnapCenter Windows FileSystem-Plug-in auf dem Hyper-V-Host, um die Verwaltung und den Schutz virtueller Maschinen zu unterstützen.
+
+.Schritte
+. Wählen Sie im NetApp -Konsolenmenü *Schutz* > *Sicherung und Wiederherstellung*.
++
+Wenn Sie sich zum ersten Mal bei NetApp Backup and Recovery anmelden und bereits ein System in der Konsole haben, aber noch keine Ressourcen entdeckt haben, wird die Zielseite „Willkommen beim neuen NetApp Backup and Recovery“ angezeigt und bietet die Option „Ressourcen entdecken“.
+
+. Wählen Sie *Ressourcen entdecken*.
+. Geben Sie die folgenden Informationen ein:
++
+.. *Workload-Typ*: Wählen Sie *Hyper-V*.
+.. Wenn Sie für diesen Hyper-V-Host noch keine Anmeldeinformationen gespeichert haben, wählen Sie *Anmeldeinformationen hinzufügen*.
++
+... Wählen Sie den Konsolenagenten aus, der mit diesem Host verwendet werden soll.
+... Geben Sie einen Namen für diese Anmeldeinformationen ein.
+... Geben Sie den Benutzernamen und das Kennwort für das Konto ein.
+... Wählen Sie *Fertig*.
+
+
+.. *Hostregistrierung*: Fügen Sie einen neuen Hyper-V-Host hinzu.  Geben Sie den FQDN oder die IP-Adresse, die Anmeldeinformationen, den Konsolenagenten und die Portnummer des Hosts ein.
+
+
+. Wählen Sie *Entdecken*.
++
+
+TIP: Dieser Vorgang kann einige Minuten dauern.
+
+
+
+.Ergebnis
+Nachdem NetApp Backup and Recovery Ressourcen erkannt hat, wird die Hyper-V-Arbeitslast in der Liste der Arbeitslasten auf der Seite „Inventar“ angezeigt.
+
+
+
+== Weiter zum NetApp Backup and Recovery Dashboard
+
+. Um das NetApp Backup and Recovery Dashboard anzuzeigen, wählen Sie im NetApp -Konsolenmenü *Dashboard*.
+. Überprüfen Sie den Zustand des Datenschutzes.  Die Anzahl der gefährdeten oder geschützten Workloads steigt basierend auf den neu entdeckten, geschützten und gesicherten Workloads.
+

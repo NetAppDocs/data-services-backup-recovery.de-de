@@ -1,0 +1,90 @@
+= NetApp Backup and Recovery heißt jetzt NetApp Backup and Recovery
+:allow-uri-read: 
+
+
+
+
+=== NetApp Backup and Recovery heißt jetzt NetApp Backup and Recovery
+
+NetApp Backup and Recovery wurde in NetApp Backup and Recovery umbenannt.
+
+
+
+=== BlueXP heißt jetzt NetApp Console
+
+Die NetApp Console basiert auf der verbesserten und neu strukturierten BlueXP -Grundlage und ermöglicht die zentrale Verwaltung von NetApp Storage und NetApp Data Services in On-Premises- und Cloud-Umgebungen auf Unternehmensniveau. Sie liefert Einblicke in Echtzeit, schnellere Workflows und eine vereinfachte Administration mit hoher Sicherheit und Konformität.
+
+Einzelheiten zu den Änderungen finden Sie imlink:https://docs.netapp.com/us-en/console-relnotes/index.html["Versionshinweise zur NetApp Konsole."]
+
+
+
+=== Hyper-V-Workload-Unterstützung als private Vorschau
+
+Diese Version von NetApp Backup and Recovery bietet Unterstützung für die Erkennung und Verwaltung von Hyper-V-Workloads:
+
+* Sichern und Wiederherstellen von VMs auf eigenständigen Instanzen sowie Failover-Cluster-Instanzen (FCI)
+* Schützen Sie auf SMB3-Freigaben gespeicherte VMs
+* Massenschutz auf virtueller Maschinenebene
+* VM- und absturzkonsistente Backups
+* Stellen Sie VMs aus dem primären, sekundären und Objektspeicher wieder her
+* Suchen und Wiederherstellen von VM-Backups
+
+
+Weitere Informationen zum Schutz von Hyper-V-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Übersicht zum Schützen von Hyper-V-Workloads"] .
+
+
+
+=== KVM-Workload-Unterstützung als private Vorschau
+
+Diese Version von NetApp Backup and Recovery bietet Unterstützung für die Erkennung und Verwaltung von KVM-Workloads:
+
+* Sichern und Wiederherstellen von auf NFS-Freigaben gespeicherten qcow2-VM-Images
+* Sichern von Speicherpools
+* Massenschutz von VMs und Speicherpools mithilfe von Schutzgruppen
+* VM-konsistente und absturzkonsistente VM-Backups
+* Suchen und Wiederherstellen von VM-Backups
+* Geführter Prozess zum Sichern und Wiederherstellen von KVM-basierten VMs und VM-Daten
+
+
+Weitere Informationen zum Schutz von KVM-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Übersicht über den Schutz von KVM-Workloads"] .
+
+
+
+=== Verbesserungen in der Kubernetes-Vorschau
+
+Die Vorschauversion der Kubernetes-Workloads führt die folgenden Verbesserungen ein:
+
+* Unterstützung der 3-2-1 Fan-Out-Backup-Architektur
+* Unterstützung für ONTAP S3 als Backup-Ziel
+* Neues Kubernetes-Dashboard für einfachere Verwaltung
+* Die erweiterte rollenbasierte Zugriffssteuerungskonfiguration (RBAC) umfasst Unterstützung für die folgenden Rollen:
++
+** Superadministrator für Backup und Wiederherstellung
+** Backup- und Wiederherstellungs-Backup-Administrator
+** Administrator für die Wiederherstellung von Backup und Wiederherstellung
+** Backup- und Wiederherstellungs-Viewer
+
+
+* Unterstützung für die SUSE Rancher Kubernetes-Distribution
+* Multi-Bucket-Unterstützung: Sie können jetzt die Volumes innerhalb eines Systems mit mehreren Buckets pro System über verschiedene Cloud-Anbieter hinweg schützen
+
+
+Weitere Informationen zum Schutz von Kubernetes-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Übersicht zum Schützen von Kubernetes-Workloads"] .
+
+
+
+=== Oracle Database-Workload-Unterstützung als private Vorschau
+
+Diese Version von NetApp Backup and Recovery bietet Unterstützung für die Erkennung und Verwaltung von Oracle Database-Workloads:
+
+* Entdecken Sie eigenständige Oracle-Datenbanken
+* Erstellen Sie Schutzrichtlinien nur für Daten oder Daten- und Protokollsicherungen
+* Schützen Sie Oracle-Datenbanken mit einem 3-2-1-Backup-Schema
+* Konfigurieren der Sicherungsaufbewahrung
+* Mounten und Unmounten von ARCHIVELOG-Backups
+* Virtualisierte Datenbanken
+* Suchen und Wiederherstellen von Datenbanksicherungen
+* Oracle-Dashboard-Unterstützung
+
+
+Weitere Informationen zum Schutz von Oracle Database-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Übersicht zum Schützen von Oracle-Workloads"] .

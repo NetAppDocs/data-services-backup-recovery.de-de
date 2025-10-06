@@ -1,0 +1,158 @@
+---
+sidebar: sidebar 
+permalink: br-use-mssql-backup.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: Sichern Sie Microsoft SQL Server-Anwendungsdaten von lokalen ONTAP -Systemen auf Amazon Web Services, Microsoft Azure, Google Cloud Platform und StorageGRID , um sicherzustellen, dass Ihre Daten geschützt sind. Backups werden automatisch erstellt und in einem Objektspeicher in Ihrem öffentlichen oder privaten Cloud-Konto gespeichert.  Sie können eine 3-2-1-Strategie implementieren, bei der Sie 3 Kopien Ihrer Quelldaten auf 2 verschiedenen Speichersystemen und 1 Kopie in der Cloud haben. 
+---
+= Sichern Sie Microsoft SQL Server-Workloads mit NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sichern Sie Microsoft SQL Server-Anwendungsdaten von lokalen ONTAP -Systemen auf Amazon Web Services, Microsoft Azure und StorageGRID, um sicherzustellen, dass Ihre Daten geschützt sind. Backups werden automatisch erstellt und in einem Objektspeicher in Ihrem öffentlichen oder privaten Cloud-Konto gespeichert.
+
+* Um Workloads nach einem Zeitplan zu sichern, erstellen Sie Richtlinien, die die Sicherungs- und Wiederherstellungsvorgänge steuern. Sehenlink:br-use-policies-create.html["Erstellen von Richtlinien"] Anweisungen hierzu finden Sie unter.
+* Konfigurieren Sie das Protokollverzeichnis für erkannte Hosts, bevor Sie eine Sicherung starten.
+* Sichern Sie jetzt Workloads (erstellen Sie jetzt ein On-Demand-Backup).
+
+
+
+
+== Status des Workload-Schutzes anzeigen
+
+Bevor Sie eine Sicherung starten, sehen Sie sich den Schutzstatus Ihrer Workloads an.
+
+*Erforderliche NetApp Konsolenrolle* Speicherbetrachter, Superadministrator für Backup und Recovery, Backupadministrator für Backup und Recovery, Wiederherstellungsadministrator für Backup und Recovery, Klonadministrator für Backup und Recovery oder Betrachterrolle für Backup und Recovery. Erfahren Sie mehr überlink:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery-Menü *Inventar* aus.
+. Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.
+. Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*.
+. Überprüfen Sie die Details auf den Registerkarten „Hosts“, „Schutzgruppen“, „Verfügbarkeitsgruppen“, „Instanzen“ und „Datenbanken“.
+
+
+
+
+== Konfigurieren des Protokollverzeichnisses für erkannte Hosts
+
+Bevor Sie Ihre Workloads sichern, legen Sie den Pfad für die Aktivitätsprotokolle der erkannten Hosts fest.  Dies hilft Ihnen, den Status von Vorgängen zu verfolgen.
+
+*Erforderliche NetApp Konsolenrolle* Speicherbetrachter, Superadministrator für Backup und Wiederherstellung, Backup-Administrator für Backup und Wiederherstellung oder Administratorrolle für Backup und Wiederherstellung zur Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery-Menü *Inventar* aus.
+. Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.
+. Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*.
+. Wählen Sie einen Host aus.
+. Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Protokollverzeichnis konfigurieren*.
+. Geben Sie den Hostpfad an oder durchsuchen Sie eine Liste von Hosts oder Knotenhosts auf dem Host, um herauszufinden, wo das Hostprotokoll gespeichert werden soll.
+. Wählen Sie diejenigen aus, auf denen Sie die Protokolle speichern möchten.
++
+
+NOTE: Die angezeigten Felder unterscheiden sich je nach ausgewähltem Bereitstellungsmodell, z. B. Failoverclusterinstanz oder Standalone.
+
+. Wählen Sie *Speichern*.
+
+
+
+
+== Erstellen einer Schutzgruppe
+
+Sie können eine Schutzgruppe erstellen, um die Sicherungs- und Wiederherstellungsvorgänge für eine Reihe von Workloads zu verwalten.  Eine Schutzgruppe ist eine logische Gruppierung von Workloads, die Sie gemeinsam schützen möchten.
+
+*Erforderliche NetApp -Konsolenrolle* Speicherbetrachter, Superadministrator für Backup und Wiederherstellung oder Backup-Administratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery-Menü *Inventar* aus.
+. Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.
+. Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*.
+. Wählen Sie die Registerkarte *Schutzgruppen*.
+. Wählen Sie *Schutzgruppe erstellen*.
+. Geben Sie einen Namen für die Schutzgruppe ein.
+. Wählen Sie die Instanzen oder Datenbanken aus, die Sie in die Schutzgruppe aufnehmen möchten.
+. Wählen Sie *Weiter*.
+. Wählen Sie die *Sicherungsrichtlinie* aus, die Sie auf die Schutzgruppe anwenden möchten.
++
+Wenn Sie eine Richtlinie erstellen möchten, wählen Sie *Neue Richtlinie erstellen* und folgen Sie den Anweisungen zum Erstellen einer Richtlinie. Sehen link:br-use-policies-create.html["Erstellen von Richtlinien"] für weitere Informationen.
+
+. Wählen Sie *Weiter*.
+. Überprüfen Sie die Konfiguration.
+. Wählen Sie *Erstellen* aus, um die Schutzgruppe zu erstellen.
+
+
+
+
+== Sichern Sie Workloads jetzt mit einem On-Demand-Backup
+
+Erstellen Sie sofort ein On-Demand-Backup.  Möglicherweise möchten Sie eine On-Demand-Sicherung ausführen, wenn Sie Änderungen an Ihrem System vornehmen und sicherstellen möchten, dass Sie vor dem Start über eine Sicherung verfügen.
+
+*Erforderliche NetApp -Konsolenrolle* Speicherbetrachter, Superadministrator für Backup und Wiederherstellung oder Backup-Administratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+
+.Schritte
+. Wählen Sie im Menü *Inventar* aus.
+. Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.
+. Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*.
+. Wählen Sie die Registerkarte *Schutzgruppe*, *Instanzen* oder *Datenbanken*.
+. Wählen Sie die Instanz oder Datenbank aus, die Sie sichern möchten.
+. Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Jetzt sichern*.
+. Wählen Sie die Richtlinie aus, die Sie auf die Sicherung anwenden möchten.
+. Wählen Sie die Zeitplanstufe aus.
+. Wählen Sie *Jetzt sichern*.
+
+
+
+
+== Aussetzen des Sicherungszeitplans
+
+Durch das Aussetzen des Zeitplans wird vorübergehend verhindert, dass die Sicherung zum geplanten Zeitpunkt ausgeführt wird.  Dies ist möglicherweise sinnvoll, wenn Sie Wartungsarbeiten am System durchführen oder wenn Probleme mit der Sicherung auftreten.
+
+*Erforderliche NetApp -Konsolenrolle* Speicherbetrachter, Superadministrator für Backup und Wiederherstellung oder Backup-Administratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery-Menü *Inventar* aus.
+. Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.
+. Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*.
+. Wählen Sie die Registerkarte *Schutzgruppe*, *Instanzen* oder *Datenbanken*.
+. Wählen Sie die Schutzgruppe, Instanz oder Datenbank aus, die Sie anhalten möchten.
+. Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Aussetzen*.
+
+
+
+
+== Löschen einer Schutzgruppe
+
+Sie können eine Schutzgruppe erstellen, um die Sicherungs- und Wiederherstellungsvorgänge für eine Reihe von Workloads zu verwalten.  Eine Schutzgruppe ist eine logische Gruppierung von Workloads, die Sie gemeinsam schützen möchten.
+
+*Erforderliche NetApp -Konsolenrolle* Speicherbetrachter, Superadministrator für Backup und Wiederherstellung oder Backup-Administratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery-Menü *Inventar* aus.
+. Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.
+. Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*.
+. Wählen Sie die Registerkarte *Schutzgruppen*.
+. Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Schutzgruppe löschen*.
+
+
+
+
+== Entfernen des Schutzes von einer Arbeitslast
+
+Sie können den Schutz eines Workloads entfernen, wenn Sie ihn nicht mehr sichern möchten oder die Verwaltung in NetApp Backup and Recovery beenden möchten.
+
+*Erforderliche NetApp -Konsolenrolle* Speicherbetrachter, Superadministrator für Backup und Wiederherstellung oder Backup-Administratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery-Menü *Inventar* aus.
+. Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.
+. Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*.
+. Wählen Sie die Registerkarte *Schutzgruppe*, *Instanzen* oder *Datenbanken*.
+. Wählen Sie die Schutzgruppe, Instanz oder Datenbank aus.
+. Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Schutz entfernen*.
+. Wählen Sie im Dialogfeld „Schutz entfernen“ aus, ob Sie Sicherungen und Metadaten behalten oder löschen möchten.
+. Wählen Sie *Entfernen*, um die Aktion zu bestätigen.
+
