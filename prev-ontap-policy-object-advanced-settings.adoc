@@ -116,7 +116,7 @@ image:screenshot_backup_edit_yearly_snap_delete.png["Ein Screenshot des Eintrags
 
 Ransomware-Schutzscans sind standardmäßig aktiviert.  Die Standardeinstellung für die Scanhäufigkeit beträgt 7 Tage.  Der Scan erfolgt nur auf der neuesten Snapshot-Kopie.  Sie können Ransomware-Scans für die neueste Snapshot-Kopie aktivieren oder deaktivieren, indem Sie die Option auf der Seite „Erweiterte Einstellungen“ verwenden.  Wenn Sie es aktivieren, werden standardmäßig alle 7 Tage Scans durchgeführt.
 
-Weitere Informationen zu den Optionen DataLock und Ransomware-Schutz finden Sie unterlink:prev-ontap-policy-object-options.html["DataLock- und Ransomware-Schutzoptionen"] .
+Weitere Informationen zu den Optionen DataLock und Ransomware Resilience finden Sie unterlink:prev-ontap-policy-object-options.html["DataLock- und Ransomware-Resilienzoptionen"] .
 
 Sie können diesen Zeitplan auf Tage oder Wochen ändern oder ihn deaktivieren, um Kosten zu sparen.
 

@@ -474,7 +474,7 @@ Um eine Richtlinie zu erstellen, wählen Sie *Neue Richtlinie erstellen* und geh
 +
 *** Geben Sie den Namen der Richtlinie ein.
 *** Wählen Sie bis zu fünf Zeitpläne aus, normalerweise mit unterschiedlicher Häufigkeit.
-*** Legen Sie für Backup-to-Object-Richtlinien die Einstellungen für DataLock und Ransomware-Schutz fest.  Weitere Informationen zu DataLock und Ransomware-Schutz finden Sie unterlink:prev-ontap-policy-object-options.html["Einstellungen der Backup-to-Object-Richtlinie"] .
+*** Legen Sie für Backup-to-Object-Richtlinien die Einstellungen „DataLock“ und „Ransomware Resilience“ fest.  Weitere Informationen zu DataLock und Ransomware Resilience finden Sie unterlink:prev-ontap-policy-object-options.html["Einstellungen der Backup-to-Object-Richtlinie"] .
 *** Wählen Sie *Erstellen*.
 
 

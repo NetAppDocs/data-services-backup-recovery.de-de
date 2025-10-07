@@ -69,7 +69,7 @@ NOTE: Die erstmalige Erstellung eines replizierten Volumes oder einer Sicherungs
 
 Die folgende Tabelle zeigt einen allgemeinen Vergleich der drei Sicherungsmethoden.  Obwohl Objektspeicherplatz in der Regel günstiger ist als Ihr lokaler Festplattenspeicher, können die Austrittsgebühren der Cloud-Anbieter Ihre Einsparungen teilweise schmälern, wenn Sie davon ausgehen, dass Sie Daten häufig aus der Cloud wiederherstellen.  Sie müssen ermitteln, wie oft Sie Daten aus den Sicherungsdateien in der Cloud wiederherstellen müssen.
 
-Zusätzlich zu diesen Kriterien bietet der Cloud-Speicher zusätzliche Sicherheitsoptionen, wenn Sie die Funktionen DataLock und Ransomware Protection verwenden, und zusätzliche Kosteneinsparungen durch die Auswahl von Archivspeicherklassen für ältere Sicherungsdateien. link:prev-ontap-policy-object-options.html["Erfahren Sie mehr über DataLock und Ransomware-Schutz sowie Archivspeichereinstellungen"] .
+Zusätzlich zu diesen Kriterien bietet der Cloud-Speicher zusätzliche Sicherheitsoptionen, wenn Sie die Funktionen DataLock und Ransomware Resilience verwenden, und zusätzliche Kosteneinsparungen durch die Auswahl von Archivspeicherklassen für ältere Sicherungsdateien. link:prev-ontap-policy-object-options.html["Erfahren Sie mehr über DataLock und Ransomware-Schutz sowie Archivspeichereinstellungen"] .
 
 [cols="18,18,22,18,22"]
 |===

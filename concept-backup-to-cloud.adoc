@@ -161,7 +161,7 @@ ifdef::gcp[]
 * Bei Google wird ein neuer Bucket bereitgestellt und der https://cloud.google.com/bigquery["Google Cloud BigQuery-Dienste"^] werden auf Konto-/Projektebene bereitgestellt. endif::gcp[]
 +
 ** Wenn Sie Volumedaten aus einer Sicherungsdatei wiederherstellen möchten, die in einen Archivobjektspeicher verschoben wurde, fällt beim Cloud-Anbieter eine zusätzliche Abrufgebühr pro GiB und pro Anforderung an.
-** Wenn Sie während der Wiederherstellung von Volumedaten eine Sicherungsdatei auf Ransomware scannen möchten (sofern Sie DataLock und Ransomware-Schutz für Ihre Cloud-Sicherungen aktiviert haben), entstehen Ihnen auch bei Ihrem Cloud-Anbieter zusätzliche Kosten für den Datenverkehr.
+** Wenn Sie während der Wiederherstellung von Volumedaten eine Sicherungsdatei auf Ransomware scannen möchten (wenn Sie DataLock und Ransomware Resilience für Ihre Cloud-Sicherungen aktiviert haben), entstehen Ihnen auch bei Ihrem Cloud-Anbieter zusätzliche Kosten für den ausgehenden Datenverkehr.
 
 
 

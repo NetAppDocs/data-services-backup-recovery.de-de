@@ -218,7 +218,7 @@ ifdef::gcp[]
 endif::gcp[]
 
 * Wenn Sie Volumedaten aus einer Sicherungsdatei wiederherstellen möchten, die in einen Archivobjektspeicher verschoben wurde, fällt beim Cloud-Anbieter eine zusätzliche Abrufgebühr pro GiB und pro Anforderung an.
-* Wenn Sie während der Wiederherstellung von Volumedaten eine Sicherungsdatei auf Ransomware scannen möchten (sofern Sie DataLock und Ransomware-Schutz für Ihre Cloud-Sicherungen aktiviert haben), entstehen Ihnen auch bei Ihrem Cloud-Anbieter zusätzliche Kosten für den Datenverkehr.
+* Wenn Sie während der Wiederherstellung von Volumedaten eine Sicherungsdatei auf Ransomware scannen möchten (sofern Sie DataLock und Ransomware Resilience für Ihre Cloud-Sicherungen aktiviert haben), entstehen Ihnen auch bei Ihrem Cloud-Anbieter zusätzliche Kosten für den Datenverkehr.
 
 
 *Servicegebühren*
@@ -362,7 +362,7 @@ TIP: Die Aufbewahrungsdauer für Sicherungen von Datensicherungsvolumes ist dies
 
 === Einstellungen für den Sicherungsdateischutz
 
-Wenn Ihr Cluster ONTAP 9.11.1 oder höher verwendet, können Sie Ihre Backups im Objektspeicher vor Löschung und Ransomware-Angriffen schützen.  Jede Sicherungsrichtlinie enthält einen Abschnitt für _DataLock- und Ransomware-Schutz_, der für einen bestimmten Zeitraum – den _Aufbewahrungszeitraum_ – auf Ihre Sicherungsdateien angewendet werden kann.
+Wenn Ihr Cluster ONTAP 9.11.1 oder höher verwendet, können Sie Ihre Backups im Objektspeicher vor Löschung und Ransomware-Angriffen schützen. Jede Sicherungsrichtlinie enthält einen Abschnitt für _DataLock und Ransomware-Resilienz_, der für einen bestimmten Zeitraum – den _Aufbewahrungszeitraum_ – auf Ihre Sicherungsdateien angewendet werden kann.
 
 * _DataLock_ schützt Ihre Sicherungsdateien vor Änderungen oder Löschungen.
 * Der Ransomware-Schutz durchsucht Ihre Sicherungsdateien nach Hinweisen auf einen Ransomware-Angriff, wenn eine Sicherungsdatei erstellt wird und wenn Daten aus einer Sicherungsdatei wiederhergestellt werden.

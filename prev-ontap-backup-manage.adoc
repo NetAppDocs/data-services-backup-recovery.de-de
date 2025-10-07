@@ -69,7 +69,7 @@ Sie können die Sicherungsrichtlinien ändern, die Ihren vorhandenen Volumes mit
 . Identifizieren Sie auf der Registerkarte *Volumes* das Volume, für das Sie Richtlinienänderungen vornehmen möchten, und wählen Sie das Menü Aktionenimage:icon-action.png["Symbol „Aktionen“"] am Ende der Zeile und wählen Sie *Sicherungsstrategie bearbeiten*.
 . Nehmen Sie auf der Seite „Sicherungsstrategie bearbeiten“ Änderungen an den vorhandenen Sicherungsrichtlinien für lokale Snapshot-Kopien, replizierte Volumes und Sicherungsdateien vor und wählen Sie *Weiter*.
 +
-Wenn Sie beim Aktivieren von NetApp Backup and Recovery für diesen Cluster in der anfänglichen Sicherungsrichtlinie _DataLock und Ransomware-Schutz_ für Cloud-Sicherungen aktiviert haben, werden Ihnen nur andere Richtlinien angezeigt, die mit DataLock konfiguriert wurden.  Und wenn Sie beim Aktivieren von NetApp Backup and Recovery _DataLock und Ransomware-Schutz_ nicht aktiviert haben, werden Ihnen nur andere Cloud-Backup-Richtlinien angezeigt, für die DataLock nicht konfiguriert ist.
+Wenn Sie beim Aktivieren von NetApp Backup and Recovery für diesen Cluster in der anfänglichen Sicherungsrichtlinie _DataLock und Ransomware Resilience_ für Cloud-Sicherungen aktiviert haben, werden Ihnen nur andere Richtlinien angezeigt, die mit DataLock konfiguriert wurden.  Und wenn Sie beim Aktivieren von NetApp Backup and Recovery „DataLock und Ransomware Resilience“ nicht aktiviert haben, werden Ihnen nur andere Cloud-Backup-Richtlinien angezeigt, für die „DataLock“ nicht konfiguriert ist.
 
 . Überprüfen Sie die Sicherungseinstellungen für dieses Volume und wählen Sie dann *Sicherung aktivieren*.
 
@@ -112,7 +112,7 @@ Wenn mehr als fünf Volumes für die Sicherung aktiviert sind, initialisiert Net
 |===
 . Nehmen Sie auf der angezeigten Sicherungsseite Änderungen an den vorhandenen Sicherungsrichtlinien für lokale Snapshot-Kopien, replizierte Volumes oder Sicherungsdateien vor und wählen Sie *Speichern*.
 +
-Wenn Sie beim Aktivieren von NetApp Backup and Recovery für diesen Cluster in der anfänglichen Sicherungsrichtlinie _DataLock und Ransomware-Schutz_ für Cloud-Sicherungen aktiviert haben, werden Ihnen nur andere Richtlinien angezeigt, die mit DataLock konfiguriert wurden.  Und wenn Sie beim Aktivieren von NetApp Backup and Recovery _DataLock und Ransomware-Schutz_ nicht aktiviert haben, werden Ihnen nur andere Cloud-Backup-Richtlinien angezeigt, für die DataLock nicht konfiguriert ist.
+Wenn Sie beim Aktivieren von NetApp Backup and Recovery für diesen Cluster in der anfänglichen Sicherungsrichtlinie _DataLock und Ransomware Resilience_ für Cloud-Sicherungen aktiviert haben, werden Ihnen nur andere Richtlinien angezeigt, die mit DataLock konfiguriert wurden.  Und wenn Sie beim Aktivieren von NetApp Backup and Recovery „DataLock und Ransomware Resilience“ nicht aktiviert haben, werden Ihnen nur andere Cloud-Backup-Richtlinien angezeigt, für die „DataLock“ nicht konfiguriert ist.
 
 
 
@@ -126,7 +126,7 @@ Sie können eine Ad-hoc-Snapshot-Kopie oder ein Backup auf ein Objekt eines Volu
 
 Der Sicherungsname enthält den Zeitstempel, sodass Sie Ihre On-Demand-Sicherung von anderen geplanten Sicherungen unterscheiden können.
 
-Wenn Sie beim Aktivieren von NetApp Backup and Recovery für diesen Cluster _DataLock und Ransomware-Schutz_ aktiviert haben, wird das On-Demand-Backup auch mit DataLock konfiguriert und die Aufbewahrungsdauer beträgt 30 Tage.  Ransomware-Scans werden für Ad-hoc-Backups nicht unterstützt. link:prev-ontap-policy-object-options.html["Erfahren Sie mehr über DataLock und Ransomware-Schutz"^] .
+Wenn Sie beim Aktivieren von NetApp Backup and Recovery für diesen Cluster _DataLock und Ransomware Resilience_ aktiviert haben, wird das On-Demand-Backup auch mit DataLock konfiguriert und die Aufbewahrungsdauer beträgt 30 Tage. Ransomware-Scans werden für Ad-hoc-Backups nicht unterstützt. link:prev-ontap-policy-object-options.html["Erfahren Sie mehr über DataLock und Ransomware-Schutz"^] .
 
 Wenn Sie ein Ad-hoc-Backup erstellen, wird auf dem Quellvolume ein Snapshot erstellt.  Da dieser Snapshot nicht Teil eines normalen Snapshot-Zeitplans ist, wird er nicht deaktiviert.  Möglicherweise möchten Sie diesen Snapshot manuell vom Quellvolume löschen, sobald die Sicherung abgeschlossen ist.  Dadurch können Blöcke freigegeben werden, die mit diesem Snapshot in Zusammenhang stehen.  Der Name des Snapshots beginnt mit `cbs-snapshot-adhoc-` . https://docs.netapp.com/us-en/ontap/san-admin/delete-all-existing-snapshot-copies-volume-task.html["Erfahren Sie, wie Sie einen Snapshot mit der ONTAP CLI löschen"^] .
 
@@ -159,7 +159,7 @@ Die Details zum Volume und die Liste der Snapshot-Kopien werden angezeigt.
 
 NetApp Backup and Recovery durchsucht Ihre Sicherungsdateien nach Hinweisen auf einen Ransomware-Angriff, wenn eine Sicherung in einer Objektdatei erstellt wird und wenn Daten aus einer Sicherungsdatei wiederhergestellt werden.  Sie können auch jederzeit einen On-Demand-Scan ausführen, um die Verwendbarkeit einer bestimmten Sicherungsdatei im Objektspeicher zu überprüfen.  Dies kann nützlich sein, wenn auf einem bestimmten Volume ein Ransomware-Problem aufgetreten ist und Sie überprüfen möchten, ob die Sicherungen für dieses Volume betroffen sind.
 
-Diese Funktion ist nur verfügbar, wenn das Volume-Backup von einem System mit ONTAP 9.11.1 oder höher erstellt wurde und Sie in der Backup-to-Object-Richtlinie _DataLock und Ransomware-Schutz_ aktiviert haben.
+Diese Funktion ist nur verfügbar, wenn die Volume-Sicherung von einem System mit ONTAP 9.11.1 oder höher erstellt wurde und Sie in der Backup-to-Object-Richtlinie „DataLock und Ransomware Resilience“ aktiviert haben.
 
 .Schritte
 . Wählen Sie auf der Registerkarte *Volumes*image:icon-actions-horizontal.gif["Symbol „Aktionen“"] für das Quellvolume und wählen Sie *Volumedetails anzeigen*.
@@ -169,7 +169,7 @@ Die Details zum Volumen werden angezeigt.
 . Wählen Sie *Backup* aus, um die Liste der Sicherungsdateien im Objektspeicher anzuzeigen.
 . Wählenimage:icon-actions-horizontal.gif["Symbol „Aktionen“"] für die Volume-Sicherungsdatei, die Sie auf Ransomware scannen möchten, und klicken Sie auf *Nach Ransomware scannen*.
 +
-In der Spalte „Ransomware-Schutz“ wird angezeigt, dass der Scan läuft.
+Die Spalte „Ransomware-Resilienz“ zeigt, dass der Scan läuft.
 
 
 
@@ -224,7 +224,7 @@ Sie können die Attribute für eine Sicherungsrichtlinie ändern, die derzeit au
 
 [NOTE]
 ====
-* Wenn Sie beim Aktivieren von NetApp Backup and Recovery für diesen Cluster in der ursprünglichen Richtlinie „DataLock und Ransomware-Schutz“ aktiviert haben, müssen alle von Ihnen bearbeiteten Richtlinien mit derselben DataLock-Einstellung (Governance oder Compliance) konfiguriert werden.  Und wenn Sie beim Aktivieren von NetApp Backup and Recovery _DataLock und Ransomware-Schutz_ nicht aktiviert haben, können Sie DataLock jetzt nicht aktivieren.
+* Wenn Sie beim Aktivieren von NetApp Backup and Recovery für diesen Cluster in der ursprünglichen Richtlinie „DataLock und Ransomware Resilience“ aktiviert haben, müssen alle von Ihnen bearbeiteten Richtlinien mit derselben DataLock-Einstellung (Governance oder Compliance) konfiguriert werden.  Und wenn Sie beim Aktivieren von NetApp Backup and Recovery _DataLock und Ransomware Resilience_ nicht aktiviert haben, können Sie DataLock jetzt nicht aktivieren.
 * Wenn Sie beim Erstellen von Backups auf AWS bei der Aktivierung von NetApp Backup and Recovery in Ihrer ersten Backup-Richtlinie _S3 Glacier_ oder _S3 Glacier Deep Archive_ ausgewählt haben, ist diese Ebene die einzige verfügbare Archivebene beim Bearbeiten von Backup-Richtlinien.  Und wenn Sie in Ihrer ersten Sicherungsrichtlinie keine Archivebene ausgewählt haben, ist _S3 Glacier_ Ihre einzige Archivierungsoption beim Bearbeiten einer Richtlinie.
 
 
@@ -270,7 +270,7 @@ Wenn Sie eine neue Sicherungsrichtlinie auf bestimmte Volumes in einem System an
 
 [NOTE]
 ====
-* Wenn Sie beim Aktivieren von NetApp Backup and Recovery für diesen Cluster in der ursprünglichen Richtlinie „DataLock und Ransomware-Schutz“ aktiviert haben, müssen alle weiteren Richtlinien, die Sie erstellen, mit derselben DataLock-Einstellung (Governance oder Compliance) konfiguriert werden.  Und wenn Sie beim Aktivieren von NetApp Backup and Recovery _DataLock und Ransomware-Schutz_ nicht aktiviert haben, können Sie keine neuen Richtlinien erstellen, die DataLock verwenden.
+* Wenn Sie beim Aktivieren von NetApp Backup and Recovery für diesen Cluster in der anfänglichen Richtlinie „DataLock und Ransomware Resilience“ aktiviert haben, müssen alle weiteren Richtlinien, die Sie erstellen, mit derselben DataLock-Einstellung (Governance oder Compliance) konfiguriert werden.  Und wenn Sie beim Aktivieren von NetApp Backup and Recovery _DataLock und Ransomware Resilience_ nicht aktiviert haben, können Sie keine neuen Richtlinien erstellen, die DataLock verwenden.
 * Wenn Sie beim Erstellen von Backups auf AWS bei der Aktivierung von NetApp Backup and Recovery in Ihrer ersten Backup-Richtlinie _S3 Glacier_ oder _S3 Glacier Deep Archive_ ausgewählt haben, ist diese Ebene die einzige verfügbare Archivebene für zukünftige Backup-Richtlinien für diesen Cluster.  Und wenn Sie in Ihrer ersten Sicherungsrichtlinie keine Archivebene ausgewählt haben, ist _S3 Glacier_ Ihre einzige Archivierungsoption für zukünftige Richtlinien.
 
 

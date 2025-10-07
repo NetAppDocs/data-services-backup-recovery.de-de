@@ -31,7 +31,7 @@ Sie können Daten bis zu diesen Punkten wiederherstellen:
 
 
 .Überlegungen zur Wiederherstellung aus dem Objektspeicher
-Wenn Sie eine Sicherungsdatei im Objektspeicher auswählen und für diese Sicherung der Ransomware-Schutz aktiv ist (wenn Sie DataLock und Ransomware-Schutz in der Sicherungsrichtlinie aktiviert haben), werden Sie aufgefordert, vor der Wiederherstellung der Daten eine zusätzliche Integritätsprüfung der Sicherungsdatei durchzuführen.  Wir empfehlen Ihnen, den Scan durchzuführen.
+Wenn Sie eine Sicherungsdatei im Objektspeicher auswählen und für diese Sicherung der Ransomware-Schutz aktiv ist (wenn Sie DataLock und Ransomware Resilience in der Sicherungsrichtlinie aktiviert haben), werden Sie aufgefordert, vor der Wiederherstellung der Daten eine zusätzliche Integritätsprüfung der Sicherungsdatei durchzuführen. Wir empfehlen Ihnen, den Scan durchzuführen.
 
 
 TIP: Für den Zugriff auf den Inhalt der Sicherungsdatei fallen bei Ihrem Cloud-Anbieter zusätzliche Kosten für den Datenverkehr an.

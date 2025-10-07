@@ -59,7 +59,7 @@ Jährliche Backups werden nach der Übertragung in den Objektspeicher automatisc
 
 NetApp Backup and Recovery bietet Unterstützung für DataLock- und Ransomware-Schutz für Ihre Volume-Backups.  Mit diesen Funktionen können Sie Ihre Sicherungsdateien sperren und scannen, um mögliche Ransomware in den Sicherungsdateien zu erkennen.  Dies ist eine optionale Einstellung, die Sie in Ihren Sicherungsrichtlinien definieren können, wenn Sie zusätzlichen Schutz für Ihre Volume-Sicherungen für einen Cluster wünschen.
 
-Beide Funktionen schützen Ihre Sicherungsdateien, sodass Sie im Falle eines Ransomware-Angriffs auf Ihre Sicherungen immer über eine gültige Sicherungsdatei verfügen, aus der Sie Daten wiederherstellen können.  Es ist auch hilfreich, bestimmte gesetzliche Anforderungen zu erfüllen, wenn Backups gesperrt und für einen bestimmten Zeitraum aufbewahrt werden müssen.  Wenn die Option „DataLock und Ransomware-Schutz“ aktiviert ist, sind für den Cloud-Bucket, der im Rahmen der Aktivierung von NetApp Backup and Recovery bereitgestellt wird, die Objektsperre und die Objektversionierung aktiviert.
+Beide Funktionen schützen Ihre Sicherungsdateien, sodass Sie im Falle eines Ransomware-Angriffs auf Ihre Sicherungen immer über eine gültige Sicherungsdatei verfügen, aus der Sie Daten wiederherstellen können. Es ist auch hilfreich, bestimmte gesetzliche Anforderungen zu erfüllen, wenn Backups gesperrt und für einen bestimmten Zeitraum aufbewahrt werden müssen. Wenn die Option „DataLock und Ransomware-Resilienz“ aktiviert ist, sind für den Cloud-Bucket, der im Rahmen der Aktivierung von NetApp Backup and Recovery bereitgestellt wird, die Objektsperre und die Objektversionierung aktiviert.
 
 https://bluexp.netapp.com/blog/cbs-blg-the-bluexp-feature-that-protects-backups-from-ransomware["Weitere Einzelheiten finden Sie im Blog zum DataLock- und Ransomware-Schutz"^] .
 
@@ -124,7 +124,7 @@ Die DataLock-Aufbewahrungseinstellung überschreibt die Richtlinienaufbewahrungs
 
 Sie können DataLock und Ransomware-Schutz aktivieren, wenn Sie eine Richtlinie erstellen.  Sie können dies nach der Erstellung der Richtlinie nicht mehr aktivieren, ändern oder deaktivieren.
 
-. Erweitern Sie beim Erstellen einer Richtlinie den Abschnitt *DataLock- und Ransomware-Schutz*.
+. Erweitern Sie beim Erstellen einer Richtlinie den Abschnitt *DataLock and Ransomware Resilience*.
 . Wählen Sie eine der folgenden Optionen:
 +
 ** *Keine*: DataLock-Schutz und Ransomware-Resilienz sind deaktiviert.
@@ -165,7 +165,7 @@ Sehen wir uns an, wie das funktioniert:
 
 === Unterstützte Systeme und Objektspeicheranbieter
 
-Sie können DataLock- und Ransomware-Schutz auf ONTAP -Volumes der folgenden Systeme aktivieren, wenn Sie Objektspeicher bei den folgenden öffentlichen und privaten Cloud-Anbietern verwenden.  In zukünftigen Versionen werden weitere Cloud-Anbieter hinzugefügt.
+Sie können DataLock- und Ransomware-Schutz auf ONTAP -Volumes der folgenden Systeme aktivieren, wenn Sie Objektspeicher bei den folgenden öffentlichen und privaten Cloud-Anbietern verwenden.
 
 [cols="55,45"]
 |===
@@ -175,10 +175,13 @@ Sie können DataLock- und Ransomware-Schutz auf ONTAP -Volumes der folgenden Sys
 | Cloud Volumes ONTAP in AWS | Amazon S3 endif::aws[] ifdef::azure[] 
 
 
-| Cloud Volumes ONTAP in Azure | Azure Blob endif::azure[] ifdef::gcp[] endif::gcp[] 
+| Cloud Volumes ONTAP in Azure | Azure Blob endif::azure[] ifdef::gcp[] 
 
 
-| On-Premises- ONTAP -System | ifdef::aws[] Amazon S3 endif::aws[] ifdef::azure[] Azure Blob endif::azure[] ifdef::gcp[] endif::gcp[] NetApp StorageGRID 
+| Cloud Volumes ONTAP in Google Cloud | Google Cloud endif::gcp[] 
+
+
+| On-Premises- ONTAP -System | ifdef::aws[] Amazon S3 endif::aws[] ifdef::azure[] Azure Blob endif::azure[] ifdef::gcp[] Google Cloud endif::gcp[] NetApp StorageGRID 
 |===
 
 
@@ -244,6 +247,18 @@ ifdef::azure[]
 
 
 endif::azure[]
+
+ifdef::gcp[]
+
+* Für Google Cloud:
++
+** Ihre Cluster müssen ONTAP 9.17.1 oder höher ausführen
+** Der Konsolenagent kann in der Cloud oder vor Ort eingesetzt werden
+
+
+
+
+endif::gcp[]
 
 * Für StorageGRID:
 +

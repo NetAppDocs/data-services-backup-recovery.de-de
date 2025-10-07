@@ -230,7 +230,7 @@ Die Spalte *Speicherort* zeigt an, ob die Sicherungsdatei (Snapshot) *lokal* (ei
 
 . Wählen Sie *Weiter*.
 +
-Beachten Sie: Wenn Sie eine Sicherungsdatei im Objektspeicher auswählen und Ransomware Resilience für diese Sicherung aktiv ist (wenn Sie DataLock und Ransomware Protection in der Sicherungsrichtlinie aktiviert haben), werden Sie aufgefordert, vor der Wiederherstellung der Daten einen zusätzlichen Ransomware-Scan für die Sicherungsdatei auszuführen.  Wir empfehlen Ihnen, die Sicherungsdatei auf Ransomware zu scannen.  (Für den Zugriff auf den Inhalt der Sicherungsdatei fallen bei Ihrem Cloud-Anbieter zusätzliche Kosten für den Datenverkehr an.)
+Beachten Sie: Wenn Sie eine Sicherungsdatei im Objektspeicher auswählen und Ransomware Resilience für diese Sicherung aktiv ist (wenn Sie DataLock und Ransomware Resilience in der Sicherungsrichtlinie aktiviert haben), werden Sie aufgefordert, vor der Wiederherstellung der Daten einen zusätzlichen Ransomware-Scan für die Sicherungsdatei auszuführen. Wir empfehlen Ihnen, die Sicherungsdatei auf Ransomware zu scannen. (Für den Zugriff auf den Inhalt der Sicherungsdatei fallen bei Ihrem Cloud-Anbieter zusätzliche Kosten für den Datenverkehr an.)
 
 . Wählen Sie auf der Seite „Ziel auswählen“ das *System* aus, auf dem Sie das Volume wiederherstellen möchten.
 . Wenn Sie beim Wiederherstellen einer Sicherungsdatei aus dem Objektspeicher ein lokales ONTAP -System auswählen und die Clusterverbindung zum Objektspeicher noch nicht konfiguriert haben, werden Sie zur Eingabe zusätzlicher Informationen aufgefordert:
@@ -376,7 +376,7 @@ Wenn Sie Ordner oder Dateien aus einer Sicherungsdatei wiederherstellen, die sic
 link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über die Wiederherstellung aus dem AWS-Archivspeicher"] . link:prev-reference-azure-archive-storage-tiers.html["Weitere Informationen zur Wiederherstellung aus dem Azure-Archivspeicher"] . link:prev-reference-gcp-archive-storage-tiers.html["Erfahren Sie mehr über die Wiederherstellung aus dem Google-Archivspeicher"] . Sicherungsdateien in der Speicherebene des Google-Archivs werden fast sofort wiederhergestellt und erfordern keine Wiederherstellungspriorität.
 
 +
-Und wenn Ransomware Resilience für die Sicherungsdatei aktiv ist (wenn Sie DataLock und Ransomware Protection in der Sicherungsrichtlinie aktiviert haben), werden Sie aufgefordert, vor der Wiederherstellung der Daten einen zusätzlichen Ransomware-Scan für die Sicherungsdatei auszuführen.  Wir empfehlen Ihnen, die Sicherungsdatei auf Ransomware zu scannen.  (Für den Zugriff auf den Inhalt der Sicherungsdatei fallen bei Ihrem Cloud-Anbieter zusätzliche Kosten für den Datenverkehr an.)
+Und wenn Ransomware Resilience für die Sicherungsdatei aktiv ist (wenn Sie DataLock und Ransomware Resilience in der Sicherungsrichtlinie aktiviert haben), werden Sie aufgefordert, vor der Wiederherstellung der Daten einen zusätzlichen Ransomware-Scan für die Sicherungsdatei auszuführen. Wir empfehlen Ihnen, die Sicherungsdatei auf Ransomware zu scannen. (Für den Zugriff auf den Inhalt der Sicherungsdatei fallen bei Ihrem Cloud-Anbieter zusätzliche Kosten für den Datenverkehr an.)
 
 . Wählen Sie auf der Seite „Elemente auswählen“ den Ordner oder die Datei(en) aus, die Sie wiederherstellen möchten, und wählen Sie „Weiter“ aus.  So können Sie den Artikel leichter finden:
 +
