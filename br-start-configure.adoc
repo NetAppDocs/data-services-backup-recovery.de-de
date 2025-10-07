@@ -14,7 +14,7 @@ summary: Führen Sie einige Schritte aus, um NetApp Backup and Recovery zu konfi
 
 
 [role="lead"]
-Nachdem Sie die NetApp Konsole eingerichtet haben, konfigurieren Sie die Sicherungs- und Wiederherstellungseinstellungen. Dazu gehören das Hinzufügen von Anmeldeinformationen für Hostressourcen, das Importieren von SnapCenter -Ressourcen, das Konfigurieren von Protokollverzeichnissen und das Konfigurieren der VMware vCenter-Einstellungen.  Sie sollten dies tun, bevor Sie aktiv mit der Sicherung und Wiederherstellung Ihrer Daten beginnen.
+Nachdem Sie die NetApp Konsole eingerichtet haben, konfigurieren Sie die Sicherungs- und Wiederherstellungseinstellungen.  Fügen Sie Anmeldeinformationen für Hostressourcen hinzu, importieren Sie SnapCenter -Ressourcen, konfigurieren Sie Protokollverzeichnisse und legen Sie VMware vCenter-Einstellungen fest.  Führen Sie diese Schritte aus, bevor Sie Daten sichern oder wiederherstellen.
 
 * <<Anmeldeinformationen für Hostressourcen hinzufügen>>für die Windows- und SQL Server-Hosts, die Sie aus SnapCenter importiert haben, und fügen Sie Anmeldeinformationen hinzu.  (Nur Microsoft SQL Server-Workloads)
 * <<Verwalten der VMware vCenter-Einstellungen>> .
@@ -28,9 +28,9 @@ Nachdem Sie die NetApp Konsole eingerichtet haben, konfigurieren Sie die Sicheru
 
 == Anmeldeinformationen für Hostressourcen hinzufügen
 
-Fügen Sie Anmeldeinformationen für die Hostressourcen hinzu, die Sie aus SnapCenter importieren möchten.  Host-Anmeldeinformationen werden verwendet, um neue Workloads zu erkennen und Sicherungsrichtlinien anzuwenden.
+Fügen Sie Anmeldeinformationen für Hostressourcen hinzu, die aus SnapCenter importiert werden sollen.  NetApp Backup and Recovery verwendet diese Anmeldeinformationen, um Workloads zu erkennen und Sicherungsrichtlinien anzuwenden.
 
-Wenn Sie noch keine Anmeldeinformationen haben, können Sie diese erstellen.  Diese Anmeldeinformationen müssen über die erforderlichen Berechtigungen verfügen, um auf die Host-Workloads zuzugreifen und sie zu verwalten.
+Wenn Sie keine Anmeldeinformationen haben, erstellen Sie diese mit Berechtigungen für den Zugriff auf und die Verwaltung von Host-Workloads.
 
 Sie müssen die folgenden Arten von Anmeldeinformationen konfigurieren:
 
@@ -89,7 +89,7 @@ Sie können das Kennwort für die Hostressourcen, die Sie aus SnapCenter importi
 
 == Verwalten der VMware vCenter-Einstellungen
 
-Geben Sie die VMware vCenter-Anmeldeinformationen ein, um die VMware vCenter Server-Workloads zu ermitteln, die Sie sichern möchten.  Wenn Sie keine vorhandenen Anmeldeinformationen haben, können Sie diese mit den erforderlichen Berechtigungen für den Zugriff auf und die Verwaltung der VMware vCenter Server-Workloads erstellen.
+Geben Sie VMware vCenter-Anmeldeinformationen ein, um Workloads für die Sicherung zu ermitteln.  Wenn Sie keine Anmeldeinformationen haben, erstellen Sie diese mit Berechtigungen für den Zugriff auf und die Verwaltung der VMware vCenter Server-Workloads.
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery-Menü *Einstellungen* aus.
@@ -110,7 +110,7 @@ Geben Sie die VMware vCenter-Anmeldeinformationen ein, um die VMware vCenter Ser
 
 == Importieren und Verwalten von SnapCenter -Hostressourcen
 
-Wenn Sie zuvor SnapCenter zum Sichern Ihrer Ressourcen verwendet haben, können Sie diese Ressourcen in NetApp Backup and Recovery importieren und verwalten.  Mit dieser Option können Sie SnapCenter -Serverinformationen importieren, um mehrere Snapcenter-Server zu registrieren und die Datenbank-Workloads zu ermitteln.
+Wenn Sie zuvor SnapCenter zum Sichern Ihrer Ressourcen verwendet haben, können Sie diese Ressourcen in NetApp Backup and Recovery importieren und verwalten. Mit dieser Option können Sie SnapCenter -Serverinformationen importieren, um mehrere Snapcenter-Server zu registrieren und Datenbank-Workloads zu ermitteln.
 
 Dies ist ein zweiteiliger Prozess:
 

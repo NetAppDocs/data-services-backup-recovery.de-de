@@ -51,7 +51,7 @@ Auf der Seite „Wiederherstellen“ (auch als „Suchen und Wiederherstellen“
 
 Stellen Sie Hyper-V-Workloads mit der Option „Wiederherstellen“ wieder her. Sie können nach dem Snapshot anhand seines Namens oder mithilfe von Filtern suchen.
 
-*Erforderliche Konsolenrolle* Organisationsadministrator, Ordner- oder Projektadministrator, Superadministrator für Backup und Wiederherstellung, Administratorrolle für Backup- und Wiederherstellungswiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+*Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung oder Administratorrolle für Backup und Wiederherstellung zur Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery-Menü *Wiederherstellen* aus.

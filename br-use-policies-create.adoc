@@ -281,7 +281,7 @@ Wenn Sie eine Richtlinie bearbeiten, die eine Sicherung im Objektspeicher vornim
 Wenn Sie Ressourcen aus SnapCenter importiert haben, stoßen Sie möglicherweise auf einige Unterschiede zwischen den in SnapCenter und NetApp Backup and Recovery verwendeten Richtlinien. Sehen link:reference-policy-differences-snapcenter.html["Richtlinienunterschiede zwischen SnapCenter und NetApp Backup and Recovery"] .
 
 .Erforderliche NetApp Konsolenrolle
-Organisationsadministrator oder Ordner- oder Projektadministrator. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+Superadministrator für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
 
 .Schritte
 . Gehen Sie in der NetApp Konsole zu *Schutz* > *Sicherung und Wiederherstellung*.

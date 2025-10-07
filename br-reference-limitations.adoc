@@ -14,7 +14,7 @@ summary: Bekannte Einschränkungen kennzeichnen Funktionen, die von dieser Produ
 
 
 [role="lead"]
-Bekannte Einschränkungen kennzeichnen Funktionen, die von dieser Version von NetApp Backup and Recovery nicht unterstützt werden oder nicht ordnungsgemäß damit zusammenarbeiten. Lesen Sie diese Einschränkungen sorgfältig durch.
+Plattformen, Geräte oder Funktionen, die mit dieser Version nicht oder nicht gut funktionieren, sind hier aufgelistet.  Lesen Sie diese Einschränkungen sorgfältig durch.
 
 * NetApp Backup and Recovery kann Cloud Volumes ONTAP in einem Objektspeicher in den AWS-Regionen China (einschließlich Peking und Ningxia) sichern. Möglicherweise müssen Sie jedoch zunächst die Identitäts- und Zugriffsrichtlinien manuell ändern.
 +

@@ -30,7 +30,7 @@ NOTE: Um Schutzgruppen oder einzelne Datenbanken nach einem Zeitplan zu sichern,
 
 Sie können sofort eine On-Demand-Sicherung ausführen.  Dies ist hilfreich, wenn Sie Änderungen an Ihrem System vornehmen und sicherstellen möchten, dass Sie vor dem Start über eine Sicherungskopie verfügen.
 
-*Erforderliche Konsolenrolle* Organisationsadministrator, Ordner- oder Projektadministrator, Superadministrator für Backup und Wiederherstellung oder Backup-Administratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+*Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung oder Backupadministratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
 
 .Schritte
 . Wählen Sie im NetApp -Konsolenmenü *Schutz > Sicherung und Wiederherstellung*.
@@ -55,7 +55,7 @@ NOTE: Die auf die Sicherung angewendete Richtlinie ist dieselbe Richtlinie, die 
 
 Sie können bei Bedarf eine Sicherung einer einzelnen Datenbank ausführen.
 
-*Erforderliche Konsolenrolle* Organisationsadministrator, Ordner- oder Projektadministrator, Superadministrator für Backup und Wiederherstellung oder Backup-Administratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+*Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung oder Backupadministratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
 
 .Schritte
 . Wählen Sie im NetApp -Konsolenmenü *Schutz > Sicherung und Wiederherstellung*.

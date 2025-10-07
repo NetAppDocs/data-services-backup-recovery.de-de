@@ -49,7 +49,7 @@ Auf der Seite „Wiederherstellen“ (auch als „Suchen und Wiederherstellen“
 
 Stellen Sie je nach Bedarf eine Oracle-Datenbank zu einem bestimmten Zeitpunkt, zu einer bestimmten Systemänderungsnummer (SCN) oder zum letzten fehlerfreien Zustand wieder her.  Sie können die Datenbank auch einfach aus Snapshots wiederherstellen und den automatisierten Wiederherstellungsprozess überspringen.  Wenn Sie die Wiederherstellung manuell durchführen möchten, können Sie den automatisierten Wiederherstellungsprozess überspringen.  Sie können die Datenbank anhand ihres Namens oder mit bestimmten Filtern suchen.
 
-*Erforderliche Konsolenrolle* Organisationsadministrator, Ordner- oder Projektadministrator, Superadministrator für Backup und Wiederherstellung, Administratorrolle für Backup- und Wiederherstellungswiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+*Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung oder Administratorrolle für Backup und Wiederherstellung zur Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
 
 .Schritte
 . Wählen Sie im NetApp -Konsolenmenü *Schutz > Sicherung und Wiederherstellung*.

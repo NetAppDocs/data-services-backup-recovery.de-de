@@ -194,7 +194,13 @@ Stellen Sie sicher, dass Ihre Hyper-V-Instanz bestimmte Anforderungen zum Erkenn
 +
 ** Microsoft Hyper-V 2019, 2022 und 2025 Editionen
 ** ASP.NET Core Runtime 8.0.12 Hosting Bundle (und alle nachfolgenden 8.0.x-Patches)
-** PowerShell 7.4.2
+** PowerShell 7.4.2 oder höher
+** Stellen Sie sicher, dass in den Windows-Firewall-Einstellungen bidirektionaler HTTPS-Verkehr für die folgenden Ports zugelassen ist:
++
+*** 8144 (NetApp -Plugin für Hyper-V)
+*** 8145 (NetApp -Plugin für Windows)
+
+
 
 
 * Hardwareanforderungen für den Hyper-V-Host:
@@ -210,7 +216,7 @@ NOTE: Stellen Sie sicher, dass Sie auf dem Hyper-V-Host genügend Speicherplatz 
 
 * NetApp ONTAP Konfigurationsanforderungen:
 +
-** Ein primäres ONTAP System (ONTAP 9.15.1 oder höher)
+** Ein primäres ONTAP System (ONTAP 9.14.1 oder höher)
 ** Stellen Sie bei Hyper-V-Bereitstellungen, die CIFS-Freigaben zum Speichern von Daten virtueller Maschinen verwenden, sicher, dass die Eigenschaft „Continuous Availability Share“ auf dem ONTAP System aktiviert ist.  Weitere Informationen finden Sie im https://docs.netapp.com/us-en/ontap/smb-hyper-v-sql/configure-shares-continuous-availability-task.html["ONTAP-Dokumentation"^] Anweisungen hierzu finden Sie unter.
 
 

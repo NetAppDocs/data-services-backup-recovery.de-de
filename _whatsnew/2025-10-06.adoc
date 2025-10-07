@@ -42,7 +42,7 @@ Diese Version von NetApp Backup and Recovery bietet Unterstützung für die Erke
 * Sichern von Speicherpools
 * Massenschutz von VMs und Speicherpools mithilfe von Schutzgruppen
 * VM-konsistente und absturzkonsistente VM-Backups
-* Suchen und Wiederherstellen von VM-Backups
+* Suchen und Wiederherstellen von VM-Backups aus Primär-, Sekundär- und Objektspeicher
 * Geführter Prozess zum Sichern und Wiederherstellen von KVM-basierten VMs und VM-Daten
 
 

@@ -22,7 +22,7 @@ Einzelheiten zu den Aktionen, die jede Rolle ausführen kann, finden Sie unterli
 
 Um sich bei der NetApp Konsole anzumelden, können Sie Ihre Anmeldeinformationen für die NetApp -Support-Site verwenden oder sich mit Ihrer E-Mail-Adresse und einem Kennwort für die Anmeldung bei der NetApp -Konsole anmelden. https://docs.netapp.com/us-en/console-setup-admin/task-logging-in.html["Erfahren Sie mehr über die Anmeldung"^] .
 
-*Erforderliche NetApp Konsolenrolle* Organisationsadministrator, Ordner- oder Projektadministrator, Superadministrator für Backup und Wiederherstellung, Administratorrolle für Backup- und Wiederherstellungswiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+*Erforderliche NetApp -Konsolenrolle* Superadministrator für Backup und Wiederherstellung oder Administratorrolle für Backup und Wiederherstellung zur Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
 
 Um einen Konsolenagenten hinzuzufügen, müssen Sie über die Rolle des Organisationsadministrators oder des Superadministrators für Backup und Wiederherstellung verfügen.
 

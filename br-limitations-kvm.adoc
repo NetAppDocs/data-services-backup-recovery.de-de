@@ -14,7 +14,7 @@ summary: Diese Version von NetApp Backup and Recovery weist die folgenden bekann
 
 
 [role="lead"]
-Bekannte Einschränkungen kennzeichnen Plattformen, Geräte oder Funktionen, die von dieser Produktversion nicht unterstützt werden oder nicht ordnungsgemäß mit ihr zusammenarbeiten. Lesen Sie diese Einschränkungen sorgfältig durch.
+Plattformen, Geräte oder Funktionen, die mit dieser Version nicht oder nicht gut funktionieren, sind hier aufgelistet.  Lesen Sie diese Einschränkungen sorgfältig durch.
 
 Die folgenden Aktionen und Konfigurationen werden in der privaten Vorschauversion von KVM-Workloads in NetApp Backup and Recovery nicht unterstützt:
 
