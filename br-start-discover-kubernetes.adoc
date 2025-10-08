@@ -14,7 +14,7 @@ summary: NetApp Backup and Recovery muss zunächst Workloads erkennen, damit Sie
 
 
 [role="lead"]
-NetApp Backup and Recovery muss zuerst Kubernetes-Workloads erkennen, damit Sie den Dienst nutzen können.
+NetApp Backup and Recovery muss Kubernetes-Workloads erkennen, bevor sie geschützt werden können.
 
 *Erforderliche NetApp -Konsolenrolle* Superadministrator für Backup und Wiederherstellung. Erfahren Sie mehr überlink:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
 
@@ -22,7 +22,7 @@ NetApp Backup and Recovery muss zuerst Kubernetes-Workloads erkennen, damit Sie 
 
 == Entdecken Sie Kubernetes-Workloads
 
-Im Backup- und Recovery-Inventar können Sie Kubernetes-Workloads erkennen, die in Ihrer Umgebung ausgeführt werden. Durch die Erkennung einer Workload wird ein Kubernetes-Cluster zu NetApp Backup and Recovery hinzugefügt. So können Sie dem Cluster anschließend Anwendungen hinzufügen und die vom Cluster gehosteten Ressourcen schützen.
+Ermitteln Sie im Sicherungs- und Wiederherstellungsinventar die Kubernetes-Workloads in Ihrer Umgebung.  Durch das Hinzufügen einer Workload wird NetApp Backup and Recovery ein Kubernetes-Cluster hinzugefügt.  Anschließend können Sie Anwendungen hinzufügen und Clusterressourcen schützen.
 
 .Schritte
 . Führen Sie einen der folgenden Schritte aus:

@@ -322,7 +322,7 @@ TIP: Wenn Sie vor der Aktivierung des Snapshots eine benutzerdefinierte Richtlin
 
 +
 
-TIP: Informationen zum Erstellen einer benutzerdefinierten Richtlinie mithilfe dieses Dienstes finden Sie unterlink:br-use-policies-create.html["Erstellen einer Richtlinie"] .
+TIP: Informationen zum Erstellen einer benutzerdefinierten Richtlinie mithilfe von Backup und Recovery finden Sie unterlink:br-use-policies-create.html["Erstellen einer Richtlinie"] .
 
 +
 Um eine Richtlinie zu erstellen, wählen Sie *Neue Richtlinie erstellen* und gehen Sie wie folgt vor:
@@ -367,7 +367,7 @@ TIP: Sie können eine Richtlinie mit System Manager oder der ONTAP CLI erstellen
 
 +
 
-TIP: Informationen zum Erstellen einer benutzerdefinierten Richtlinie mithilfe dieses Dienstes finden Sie unterlink:br-use-policies-create.html["Erstellen einer Richtlinie"] .
+TIP: Informationen zum Erstellen einer benutzerdefinierten Richtlinie mithilfe von Backup und Recovery finden Sie unterlink:br-use-policies-create.html["Erstellen einer Richtlinie"] .
 
 +
 Um eine Richtlinie zu erstellen, wählen Sie *Neue Richtlinie erstellen* und gehen Sie wie folgt vor:

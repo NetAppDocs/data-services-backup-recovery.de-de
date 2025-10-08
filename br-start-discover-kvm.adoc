@@ -14,7 +14,7 @@ summary: NetApp Backup and Recovery muss zunächst Workloads erkennen, damit Sie
 
 
 [role="lead"]
-NetApp Backup and Recovery muss zunächst KVM-Hosts und virtuelle Maschinen erkennen, damit Sie sie schützen können.
+NetApp Backup and Recovery muss KVM-Hosts und virtuelle Maschinen erkennen, bevor sie geschützt werden können.
 
 *Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung. Erfahren Sie mehr überlink:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
 
@@ -28,7 +28,7 @@ Fügen Sie KVM-Hostinformationen hinzu und lassen Sie NetApp Backup and Recovery
 . Wählen Sie im NetApp -Konsolenmenü *Schutz > Sicherung und Wiederherstellung*.
 . Wählen Sie in der KVM-Kachel *Erkennen und verwalten* aus.
 +
-Wenn Sie sich zum ersten Mal bei diesem Dienst anmelden und bereits ein System in der Konsole haben, aber noch keine Ressourcen entdeckt haben, wird die Zielseite „Willkommen beim neuen NetApp Backup and Recovery“ angezeigt und bietet die Option „Ressourcen entdecken“.
+Wenn Sie sich zum ersten Mal bei Backup and Recovery anmelden und bereits ein System in der Konsole haben, aber noch keine Ressourcen entdeckt haben, wird die Zielseite „Willkommen beim neuen NetApp Backup and Recovery“ angezeigt und bietet die Option „Ressourcen entdecken“.
 
 . Wählen Sie *Ressourcen entdecken*.
 . Geben Sie die folgenden Informationen ein:
@@ -60,6 +60,7 @@ Die KVM-Arbeitslast wird in der Liste der Arbeitslasten auf der Inventarseite an
 
 == Weiter zum NetApp Backup and Recovery Dashboard
 
+.Schritte
 . Um das NetApp Backup and Recovery Dashboard anzuzeigen, wählen Sie im oberen Menü *Dashboard*.
 . Überprüfen Sie den Zustand des Datenschutzes.  Die Anzahl der gefährdeten oder geschützten Workloads steigt basierend auf den neu entdeckten, geschützten und gesicherten Workloads.
 

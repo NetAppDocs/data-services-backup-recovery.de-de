@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-start-discover-hyperv.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Hyper-V, workloads, protect 
-summary: NetApp Backup and Recovery muss zunächst Workloads erkennen, damit Sie diese schützen können. 
+summary: NetApp Backup and Recovery muss virtuelle Hyper-V-Maschinen erkennen, bevor Sie sie schützen können. 
 ---
 = Entdecken Sie Hyper-V-Workloads in NetApp Backup und Recovery
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: NetApp Backup and Recovery muss zunächst Workloads erkennen, damit Sie
 
 
 [role="lead"]
-NetApp Backup and Recovery muss zunächst virtuelle Hyper-V-Maschinen erkennen, damit Sie sie schützen können.
+NetApp Backup and Recovery muss virtuelle Hyper-V-Maschinen erkennen, bevor Sie sie schützen können.
 
 *Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung. Erfahren Sie mehr überlink:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
 
@@ -55,12 +55,13 @@ TIP: Dieser Vorgang kann einige Minuten dauern.
 
 
 .Ergebnis
-Nachdem NetApp Backup and Recovery Ressourcen erkannt hat, wird die Hyper-V-Arbeitslast in der Liste der Arbeitslasten auf der Seite „Inventar“ angezeigt.
+Nachdem NetApp Backup and Recovery Ressourcen erkannt hat, wird auf der Seite „Inventar“ die Hyper-V-Arbeitslast in der Liste der Arbeitslasten angezeigt.
 
 
 
 == Weiter zum NetApp Backup and Recovery Dashboard
 
+.Schritte
 . Um das NetApp Backup and Recovery Dashboard anzuzeigen, wählen Sie im NetApp -Konsolenmenü *Dashboard*.
 . Überprüfen Sie den Zustand des Datenschutzes.  Die Anzahl der gefährdeten oder geschützten Workloads steigt basierend auf den neu entdeckten, geschützten und gesicherten Workloads.
 

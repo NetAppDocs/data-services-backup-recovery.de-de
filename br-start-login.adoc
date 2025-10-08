@@ -16,7 +16,7 @@ summary: Sie verwenden die NetApp -Konsole, um sich beim NetApp Backup and Recov
 [role="lead"]
 Sie verwenden die NetApp -Konsole, um sich bei NetApp Backup and Recovery anzumelden.
 
-NetApp Backup and Recovery verwendet Identitäts- und Zugriffsmanagement, um den Zugriff jedes Benutzers auf bestimmte Aktionen zu regeln.
+NetApp Backup and Recovery verwendet Identitäts- und Zugriffsverwaltung, um zu steuern, was jeder Benutzer tun kann.
 
 Einzelheiten zu den Aktionen, die jede Rolle ausführen kann, finden Sie unterlink:reference-roles.html["NetApp Backup and Recovery-Benutzerrollen"] .
 
@@ -24,7 +24,7 @@ Um sich bei der NetApp Konsole anzumelden, können Sie Ihre Anmeldeinformationen
 
 *Erforderliche NetApp -Konsolenrolle* Superadministrator für Backup und Wiederherstellung oder Administratorrolle für Backup und Wiederherstellung zur Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
 
-Um einen Konsolenagenten hinzuzufügen, müssen Sie über die Rolle des Organisationsadministrators oder des Superadministrators für Backup und Wiederherstellung verfügen.
+Um einen Konsolenagenten hinzuzufügen, müssen Sie über die Superadministratorrolle „Backup und Wiederherstellung“ verfügen.
 
 .Schritte
 . Öffnen Sie einen Webbrowser und gehen Sie zu https://console.netapp.com/["NetApp Konsole"^] .
@@ -34,25 +34,18 @@ Die Anmeldeseite der NetApp -Konsole wird angezeigt.
 . Melden Sie sich bei der Konsole an.
 . Wählen Sie in der linken Navigation der Konsole *Schutz* > *Sicherung und Wiederherstellung*.
 +
-** Wenn Sie sich zum ersten Mal bei diesem Dienst anmelden und der Seite *Systeme* noch kein System hinzugefügt haben, wird die Zielseite „Willkommen beim neuen NetApp Backup and Recovery“ mit einer Option zum Hinzufügen eines Systems angezeigt.  Weitere Informationen zum Hinzufügen eines Systems zur Seite *Systeme* finden Sie unter https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-standard-mode.html["Erste Schritte mit dem Standardmodus der NetApp Konsole"^] .
-** Wenn Sie sich zum ersten Mal bei diesem Dienst anmelden und der Seite *Systeme* bereits ein System hinzugefügt, aber noch keine Ressourcen entdeckt haben, wird die Zielseite „Willkommen beim neuen NetApp Backup and Recovery“ mit der Option „Ressourcen entdecken“ angezeigt.
+** Wenn Sie sich zum ersten Mal bei Backup and Recovery anmelden und der Seite *Systeme* noch kein System hinzugefügt haben, zeigt Backup and Recovery die Zielseite „Willkommen beim neuen NetApp Backup and Recovery“ an und bietet die Möglichkeit, ein System hinzuzufügen. Weitere Informationen zum Hinzufügen eines Systems zur Seite *Systeme* finden Sie unter https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-standard-mode.html["Erste Schritte mit dem Standardmodus der NetApp Konsole"^] .
+** Wenn Sie sich zum ersten Mal bei Backup and Recovery anmelden und der Seite *Systeme* bereits ein System hinzugefügt, aber noch keine Ressourcen entdeckt haben, wird die Zielseite „Willkommen beim neuen NetApp Backup and Recovery“ mit der Option „Ressourcen entdecken“ angezeigt.
 
 
-. Falls Sie dies noch nicht getan haben, wählen Sie die Option *Erkennen und verwalten*.  <<<<<<< KOPF
+. Falls Sie dies noch nicht getan haben, wählen Sie die Option *Erkennen und verwalten*.
 +
 ** Informationen zu Microsoft SQL Server-Workloads finden Sie unterlink:br-start-discover.html["Entdecken Sie Microsoft SQL Server-Workloads"] .
 ** Informationen zu VMware-Workloads finden Sie unterlink:br-use-vmware-discovery.html["Entdecken Sie VMware-Workloads"] .
 ** Informationen zu KVM-Workloads finden Sie unterlink:br-start-discover-kvm.html["Entdecken Sie KVM-Workloads"] .
+** Informationen zu Oracle-Workloads finden Sie unterlink:br-start-discover-oracle.html["Entdecken Sie Oracle-Workloads"] .
 ** Informationen zu Hyper-V-Workloads finden Sie unterlink:br-start-discover-hyperv.html["Entdecken Sie Hyper-V-Workloads"] .
 ** Informationen zu Kubernetes-Workloads finden Sie unterlink:br-start-discover-kubernetes.html["Entdecken Sie Kubernetes-Workloads"] .
 
 
 
-
-[]
-====
-+ * Informationen zu Microsoft SQL Server-Workloads finden Sie unterlink:br-start-discover.html["Entdecken Sie Microsoft SQL Server-Workloads"] .  * Informationen zu VMware-Workloads finden Sie unterlink:br-use-vmware-discovery.html["Entdecken Sie VMware-Workloads"] .  * Informationen zu KVM-Workloads finden Sie unterlink:br-start-discover-kvm.html["Entdecken Sie KVM-Workloads"] .  * Informationen zu Oracle-Workloads finden Sie unterlink:br-start-discover-oracle.html["Entdecken Sie Oracle-Workloads"] .  * Informationen zu Kubernetes-Workloads finden Sie unterlink:br-start-discover-kubernetes.html["Entdecken Sie Kubernetes-Workloads"] .
-
->>>>>>> 6b2aaa82d1d2ec0ac72303b380f289e4a01ba4c6
-
-====

@@ -46,3 +46,23 @@ Die folgenden Konfigurationen werden nicht unterstützt:
 * RAW-Festplattenformat
 * Andere Speicherpooltypen als NetFS (nur NetFS wird unterstützt)
 
+
+
+
+== Nicht unterstützte ältere NetApp Console Konsolenkonten
+
+Ältere NetApp Console unterstützen nicht die Funktionen, die zum Schutz von KVM-Workloads erforderlich sind.  Überprüfen Sie, ob Sie in der Web-Benutzeroberfläche der Konsole ein Legacy-Konto verwenden.  Wenn Sie über ein älteres Konsolenkonto verfügen, erstellen Sie ein neues Konto, bevor Sie KVM-Workloads schützen.
+
+.Schritte
+. Wählen Sie im NetApp Console *Administration > Identität und Zugriff*.
+. Prüfen Sie unter *Organisation*, ob neben der Organisations-ID eine *Konto-ID* angezeigt wird.
++
+Wenn eine *Konto-ID* angezeigt wird, verwenden Sie ein Legacy-Konto.
+
+. Wenn Sie ein Legacy-Konto verwenden, gehen Sie wie folgt vor:
++
+.. Melden Sie sich von der Konsole ab und navigieren Sie dann zum https://console.netapp.com/["Anmeldeseite der Konsole"^] .
+.. Wählen Sie *Registrieren*, um ein neues Konto zu erstellen.
+
+
+

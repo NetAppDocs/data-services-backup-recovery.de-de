@@ -140,7 +140,7 @@ Dies ist optional, wenn Sie eine VMware-Umgebung haben.
 .Schritte
 . Wählen Sie in der linken Navigation der Konsole *Schutz* > *Sicherung und Wiederherstellung*.
 +
-Wenn Sie sich zum ersten Mal bei diesem Dienst anmelden und bereits ein System in der Konsole haben, aber noch keine Ressourcen entdeckt haben, wird die Zielseite „Willkommen beim neuen NetApp Backup and Recovery“ angezeigt und bietet die Option „Ressourcen entdecken“.
+Wenn Sie sich zum ersten Mal bei Backup and Recovery anmelden und bereits ein System in der Konsole haben, aber noch keine Ressourcen entdeckt haben, wird die Zielseite „Willkommen beim neuen NetApp Backup and Recovery“ angezeigt und bietet die Option „Ressourcen entdecken“.
 
 . Wählen Sie *Ressourcen entdecken*.
 . Geben Sie die folgenden Informationen ein:

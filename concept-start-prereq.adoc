@@ -253,7 +253,7 @@ Rezension https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-chec
 
 === Erstellen eines Konsolenagenten
 
-Sie sollten sich an Ihr NetApp -Produktteam wenden, um diesen Service auszuprobieren.  Wenn Sie dann den Konsolenagenten verwenden, enthält dieser die entsprechenden Funktionen für den Dienst.
+Sie sollten sich an Ihr NetApp -Produktteam wenden, um Backup und Recovery auszuprobieren. Wenn Sie dann den Konsolenagenten verwenden, enthält dieser die entsprechenden Funktionen für den Dienst.
 
 Informationen zum Erstellen eines Konsolenagenten in der NetApp -Konsole vor der Verwendung des Dienstes finden Sie in der Konsolendokumentation. Dort wird beschrieben, https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["So erstellen Sie einen Konsolenagenten"^] .
 

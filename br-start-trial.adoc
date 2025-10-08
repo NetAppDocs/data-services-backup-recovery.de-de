@@ -22,7 +22,7 @@ Sie können die kostenlose Testversion von NetApp Backup and Recovery starten, n
 
 .Schritte
 . Wählen Sie in der linken Navigation der Konsole *Schutz* > *Sicherung und Wiederherstellung*.
-. Wenn Sie sich zum ersten Mal bei diesem Dienst anmelden und bereits über ein System in der NetApp Konsole verfügen, die kostenlose Testversion jedoch noch nicht gestartet haben, wird die Zielseite „Willkommen beim neuen NetApp Backup and Recovery“ mit der Option „Kostenlose Testversion starten“ angezeigt.
+. Wenn Sie sich zum ersten Mal bei Backup and Recovery anmelden und bereits über ein System in der NetApp Console verfügen, die kostenlose Testversion jedoch noch nicht gestartet haben, wird die Zielseite „Willkommen beim neuen NetApp Backup and Recovery“ mit der Option „Kostenlose Testversion starten“ angezeigt.
 +
 image:screen-br-landing-unified-start-trial.png["Screenshot der Zielseite für NetApp Backup and Recovery ohne kostenlose Testversion"]
 
@@ -34,7 +34,7 @@ image:screen-br-landing-unified-start-trial.png["Screenshot der Zielseite für N
 
 Nachdem Sie die kostenlose Testversion gestartet haben, können Sie Workloads ermitteln und Richtlinien zum Sichern Ihrer Workloads erstellen.
 
-Wenn Sie sich zum ersten Mal bei diesem Dienst anmelden, bereits über ein System in der NetApp Konsole verfügen und die kostenlose Testversion gestartet haben, aber noch keine Ressourcen entdeckt haben, wird die Zielseite „Willkommen beim neuen NetApp Backup and Recovery“ angezeigt und bietet die Option „Ressourcen entdecken“.
+Wenn Sie sich zum ersten Mal bei Backup and Recovery anmelden, bereits über ein System in der NetApp Console verfügen und die kostenlose Testversion gestartet haben, aber noch keine Ressourcen entdeckt haben, wird die Zielseite „Willkommen beim neuen NetApp Backup and Recovery“ angezeigt und bietet die Option „Ressourcen entdecken“.
 
 Weitere Informationen zum Ermitteln von Workloads finden Sie unterlink:br-start-discover.html["Workloads ermitteln"] .
 

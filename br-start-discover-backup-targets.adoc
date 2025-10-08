@@ -20,14 +20,14 @@ Führen Sie einige Schritte aus, um externe Sicherungsziele in NetApp Backup and
 
 == Ermitteln eines Sicherungsziels
 
-Bevor Sie NetApp Backup and Recovery verwenden, sollten Sie Ihre Sicherungsziele Amazon Web Services (AWS) S3, Microsoft Azure Blob Storage, Google Cloud Storage oder StorageGRID konfigurieren.
+Konfigurieren Sie Ihre Sicherungsziele (Amazon Web Services (AWS) S3, Microsoft Azure Blob Storage, Google Cloud Storage oder StorageGRID), bevor Sie NetApp Backup and Recovery verwenden.
 
 Sie können diese Ziele automatisch ermitteln oder manuell hinzufügen.
 
-Geben Sie die erforderlichen Anmeldeinformationen für den Zugriff auf das Speicherkontosystem ein.  Diese Anmeldeinformationen werden verwendet, um die Workloads zu ermitteln, die Sie sichern möchten.
+Geben Sie Anmeldeinformationen für den Zugriff auf das Speicherkonto ein.  NetApp Backup and Recovery verwendet diese Anmeldeinformationen, um die Workloads zu ermitteln, die Sie sichern möchten.
 
 .Bevor Sie beginnen
-Um ein externes Sicherungsziel hinzuzufügen, muss mindestens eine Arbeitslast erkannt werden.
+Sie müssen mindestens eine Arbeitslast ermitteln, bevor Sie ein externes Sicherungsziel hinzufügen können.
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery-Menü *Inventar* aus.
