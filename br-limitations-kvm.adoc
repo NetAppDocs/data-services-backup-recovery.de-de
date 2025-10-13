@@ -28,7 +28,6 @@ Die folgenden Aktionen werden in der privaten Vorschauversion nicht unterstützt
 * Wiederherstellen von VMs an einem anderen Standort
 * Schützen Sie im SAN gespeicherte VMs
 * Anwendungen schützen
-* Sichern oder Wiederherstellen aus Objektspeichern
 * Schutzgruppen bearbeiten
 * Erstellen Sie Schutzgruppen mithilfe von VMs von mehreren KVM-Hosts
 * Erstellen Sie benutzerdefinierte Backups (es werden nur Backups unterstützt, die von der NetApp Konsole aus initiiert werden).

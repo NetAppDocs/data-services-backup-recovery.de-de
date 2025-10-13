@@ -25,7 +25,7 @@ Die folgenden Aktionen werden in der privaten Vorschauversion von Hyper-V-Worklo
 * Erstellen von Ressourcengruppen
 * Spanning-Disks (über mehrere CIFS-Freigaben hinweg)
 * Schützen Sie VMs über SAN
-* Wiederherstellen aus dem Objektspeicher
+* Schutzgruppen bearbeiten
 * Schützen Sie Hyper-V-Hosts, die mit System Center Virtual Machine Manager (SCVMM) geclustert sind.
 
 

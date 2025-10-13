@@ -50,9 +50,9 @@ Weitere Informationen zum Schutz von KVM-Workloads finden Sie unter https://docs
 
 
 
-=== Verbesserungen in der Kubernetes-Vorschau
+=== Verbesserungen der Kubernetes-Vorschau
 
-Die Vorschauversion der Kubernetes-Workloads führt die folgenden Verbesserungen ein:
+Die Vorschauversion der Kubernetes-Workloads führt die folgenden erweiterten Funktionen ein:
 
 * Unterstützung der 3-2-1 Fan-Out-Backup-Architektur
 * Unterstützung für ONTAP S3 als Backup-Ziel
@@ -70,6 +70,24 @@ Die Vorschauversion der Kubernetes-Workloads führt die folgenden Verbesserungen
 
 
 Weitere Informationen zum Schutz von Kubernetes-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Übersicht zum Schützen von Kubernetes-Workloads"] .
+
+
+
+=== Verbesserungen der VMware-Vorschau
+
+Die Vorschauversion von VMware-Workloads führt die folgenden erweiterten Funktionen ein:
+
+* Unterstützung für die Wiederherstellung aus dem Objektspeicher
+* Das Dashboard der NetApp Console zeigt jetzt Informationen zum VMware-Workload-Status an
+* Demo-Modus-Unterstützung: Entdecken Sie die Funktionen von VMware-Workloads, ohne eine VMware vCenter Server-Umgebung hinzuzufügen
+* Unterstützung der rollenbasierten Zugriffskontrolle (RBAC)
+* E-Mail-Warnung und Benachrichtigungsunterstützung für Jobereignisse
+* Unterstützung für die Sicherung und Wiederherstellung auf NVMe-basiertem Speicher
+* Schutzgruppen bearbeiten
+* Schutzrichtlinien bearbeiten
+
+
+Weitere Informationen zum Schutz von VMware-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["Übersicht zum Schützen von VMware-Workloads"] .
 
 
 

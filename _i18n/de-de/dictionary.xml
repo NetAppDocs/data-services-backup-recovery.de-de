@@ -273,8 +273,6 @@
   <block id="01edc88c05b373b3f7ebaedf025e6c66" category="list-text">Geführter Prozess zum Sichern und Wiederherstellen von KVM-basierten VMs und VM-Daten</block>
   <block id="4cfb069ae88ce34afb281a4bbf65ac6e" category="inline-link">Übersicht über den Schutz von KVM-Workloads</block>
   <block id="79fcd951f792f60f767e44b5011c7851" category="paragraph">Weitere Informationen zum Schutz von KVM-Workloads finden Sie unter<block ref="e92217b78da768e08fd669e597378b8f" category="inline-link-rx"></block> .</block>
-  <block id="7f72a27277a7289e66ee8f5e8c51ffe5" category="section-title">Verbesserungen in der Kubernetes-Vorschau</block>
-  <block id="0de024d994558b5d82bfea2474dcdb5a" category="paragraph">Die Vorschauversion der Kubernetes-Workloads führt die folgenden Verbesserungen ein:</block>
   <block id="7f6a04aadde1854e173d7668132da89b" category="list-text">Unterstützung der 3-2-1 Fan-Out-Backup-Architektur</block>
   <block id="b3b9066f003af6e4047de0ee6690e863" category="list-text">Unterstützung für ONTAP S3 als Backup-Ziel</block>
   <block id="e35ded7c45cf2f4d4c707e6aeb803b42" category="list-text">Neues Kubernetes-Dashboard für einfachere Verwaltung</block>
@@ -324,7 +322,6 @@
   <block id="020a36deb114af1bb518c70d5975e940" category="list-text">Erstellen von Ressourcengruppen</block>
   <block id="5ae6a8a06c30125d00a57910609856cf" category="list-text">Spanning-Disks (über mehrere CIFS-Freigaben hinweg)</block>
   <block id="5cb642b37b3102019402cbd3b93a5693" category="list-text">Schützen Sie VMs über SAN</block>
-  <block id="9450dff5efb3139ece9422b6c372527d" category="list-text">Wiederherstellen aus dem Objektspeicher</block>
   <block id="0fffe3f2fb1497b9e344ba8dceac922b" category="list-text">Schützen Sie Hyper-V-Hosts, die mit System Center Virtual Machine Manager (SCVMM) geclustert sind.</block>
   <block id="4a03732927298c2d8d1492b3d08bb831" category="summary">Diese Version von NetApp Backup and Recovery weist die folgenden bekannten Einschränkungen auf.</block>
   <block id="5050c99de0a6e1bcf02e7ce66edabd97" category="doc">Bekannte Einschränkungen bei NetApp Backup and Recovery für KVM-Workloads</block>
@@ -335,7 +332,6 @@
   <block id="e2b26238e3aec34978fbb465dfd6baff" category="list-text">Wiederherstellen von VMs an einem anderen Standort</block>
   <block id="fe8e9fc813c1e8a639c0cadb6115589f" category="list-text">Schützen Sie im SAN gespeicherte VMs</block>
   <block id="ca73b42f56baa81e1c83e31ee5c53d42" category="list-text">Anwendungen schützen</block>
-  <block id="58bfd5253f13fe06cafc37225664e506" category="list-text">Sichern oder Wiederherstellen aus Objektspeichern</block>
   <block id="41bfa1316b52f6772c1921990bc34f69" category="list-text">Schutzgruppen bearbeiten</block>
   <block id="d5598f128bb28f962fcd8574013f2a43" category="list-text">Erstellen Sie Schutzgruppen mithilfe von VMs von mehreren KVM-Hosts</block>
   <block id="2fbb28a0f1560254b88f56b3632cf88b" category="list-text">Erstellen Sie benutzerdefinierte Backups (es werden nur Backups unterstützt, die von der NetApp Konsole aus initiiert werden).</block>
@@ -5000,4 +4996,15 @@
   <block id="ee885caa95dc922f4f4ba9860f7342f6" category="admonition">Informationen zum Erstellen einer benutzerdefinierten Richtlinie mithilfe von Backup und Recovery finden Sie unter<block ref="d9904d3bd7927987056edc09c02007e9" category="inline-link-macro-rx"></block> .</block>
   <block id="854bc156a37cbbf040c040fbef53bdec" category="paragraph">Mit NetApp Backup and Recovery können Sie zum Schutz Ihrer Daten bis zu drei Kopien Ihrer Quellvolumes erstellen. Beim Aktivieren der Sicherung und Wiederherstellung auf Ihren Volumes können Sie aus zahlreichen Optionen auswählen. Überprüfen Sie daher Ihre Auswahl, damit Sie vorbereitet sind.</block>
   <block id="460a4c33ada7a6581872d15b96a4344b" category="sidebar">Schutz von VMware-Workloads (Vorschau)</block>
+  <block id="c95af44ddc098359d1a302a271aa883b" category="section-title">Verbesserungen der Kubernetes-Vorschau</block>
+  <block id="a9db09b7be48f8631739b57e73f48cd3" category="paragraph">Die Vorschauversion der Kubernetes-Workloads führt die folgenden erweiterten Funktionen ein:</block>
+  <block id="80aadfb002c0fe2115f71c7aeb012ab4" category="section-title">Verbesserungen der VMware-Vorschau</block>
+  <block id="307d24114a1eea93601b6d95cac55bcb" category="paragraph">Die Vorschauversion von VMware-Workloads führt die folgenden erweiterten Funktionen ein:</block>
+  <block id="52c7fc54a0416d5bc7625cf3e154f5ee" category="list-text">Unterstützung für die Wiederherstellung aus dem Objektspeicher</block>
+  <block id="729609f8890f70080c4290c1a64f6901" category="list-text">Das Dashboard der NetApp Console zeigt jetzt Informationen zum VMware-Workload-Status an</block>
+  <block id="e0aea66343c11d9c167af3537c61eac6" category="list-text">Demo-Modus-Unterstützung: Entdecken Sie die Funktionen von VMware-Workloads, ohne eine VMware vCenter Server-Umgebung hinzuzufügen</block>
+  <block id="48286fbde233324a7f7880389e103924" category="list-text">E-Mail-Warnung und Benachrichtigungsunterstützung für Jobereignisse</block>
+  <block id="7c0ae68b454f9ff601ed1bdd5dcc3c30" category="list-text">Unterstützung für die Sicherung und Wiederherstellung auf NVMe-basiertem Speicher</block>
+  <block id="dfa4b5c6b997823449e673db12ef526d" category="list-text">Schutzrichtlinien bearbeiten</block>
+  <block id="c54d53d5c9b9527bb4d1e1020b2a04ec" category="paragraph">Weitere Informationen zum Schutz von VMware-Workloads finden Sie unter<block ref="81bdea79654f29d88dbffb87457fe1f5" category="inline-link-rx"></block> .</block>
 </blocks>
