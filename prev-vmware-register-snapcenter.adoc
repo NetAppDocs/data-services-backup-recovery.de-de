@@ -18,11 +18,11 @@ Sie sollten das SnapCenter Plug-in for VMware vSphere Host in NetApp Backup and 
 
 []
 ====
-*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup und Recovery-Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup- und Recovery-Workloads"] .
+*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
 
 ====
 .Schritte
-. Wählen Sie in der NetApp -Konsolen-Benutzeroberfläche *Schutz* > *Sicherung und Wiederherstellung* > *Virtuelle Maschinen*.
+. Wählen Sie in der NetApp Console -Benutzeroberfläche *Schutz* > *Sicherung und Wiederherstellung* > *Virtuelle Maschinen*.
 . Wählen Sie im Dropdown-Menü *Einstellungen* die Option * SnapCenter Plug-in for VMware vSphere* aus.
 . Wählen Sie * SnapCenter Plug-in for VMware vSphere registrieren*.
 . Geben Sie die folgenden Details an:

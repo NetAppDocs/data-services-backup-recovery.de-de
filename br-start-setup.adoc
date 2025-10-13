@@ -29,7 +29,7 @@ Siehe https://docs.netapp.com/us-en/storage-management-storagegrid/task-discover
 +
 Siehe https://docs.netapp.com/us-en/storagegrid/index.html["StorageGRID -Dokumentation"^] für Details zu StorageGRID.
 
-* Amazon Web Services. Siehe https://docs.netapp.com/us-en/storage-management-s3-storage/index.html["Amazon S3-Dokumentation"^] .
+* Amazon Web Services.  Siehe https://docs.netapp.com/us-en/storage-management-s3-storage/index.html["Amazon S3-Dokumentation"^] .
 +
 Gehen Sie wie folgt vor, um AWS als Sicherungsziel vorzubereiten:
 
@@ -64,7 +64,7 @@ Sie müssen zwei Sätze von AWS S3-Berechtigungen konfigurieren:
 
 
 .Schritte
-. Stellen Sie sicher, dass der Konsolenagent über die erforderlichen Berechtigungen verfügt. Weitere Einzelheiten finden Sie unter https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["Richtlinienberechtigungen für die NetApp Konsole"] .
+. Stellen Sie sicher, dass der Konsolenagent über die erforderlichen Berechtigungen verfügt.  Weitere Einzelheiten finden Sie unter https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["Richtlinienberechtigungen für die NetApp Console"] .
 +
 
 NOTE: Wenn Sie Backups in AWS China-Regionen erstellen, müssen Sie den AWS-Ressourcennamen „arn“ unter allen _Resource_-Abschnitten in den IAM-Richtlinien von „aws“ in „aws-cn“ ändern. Beispiel: `arn:aws-cn:s3:::netapp-backup-*` .

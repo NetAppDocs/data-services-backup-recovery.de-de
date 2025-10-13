@@ -30,7 +30,7 @@ Die folgenden Aktionen werden in der privaten Vorschauversion nicht unterstützt
 * Anwendungen schützen
 * Schutzgruppen bearbeiten
 * Erstellen Sie Schutzgruppen mithilfe von VMs von mehreren KVM-Hosts
-* Erstellen Sie benutzerdefinierte Backups (es werden nur Backups unterstützt, die von der NetApp Konsole aus initiiert werden).
+* Erstellen Sie benutzerdefinierte Backups (es werden nur Backups unterstützt, die von der NetApp Console aus initiiert werden).
 
 
 

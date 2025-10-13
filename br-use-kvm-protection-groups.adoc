@@ -20,7 +20,7 @@ Sie können die folgenden Aufgaben im Zusammenhang mit Schutzgruppen ausführen:
 
 * Erstellen Sie eine Schutzgruppe.
 * Schutzdetails anzeigen.
-* Sichern Sie jetzt eine Schutzgruppe. Sehen link:br-use-kvm-backup.html["Sichern Sie jetzt KVM-Workloads"] .
+* Sichern Sie jetzt eine Schutzgruppe. Sehenlink:br-use-kvm-backup.html["Sichern Sie jetzt KVM-Workloads"] .
 * Löschen Sie eine Schutzgruppe.
 
 
@@ -30,10 +30,10 @@ Sie können die folgenden Aufgaben im Zusammenhang mit Schutzgruppen ausführen:
 
 Gruppieren Sie VMs und Speicherpools, die Sie gemeinsam schützen möchten, in einer Schutzgruppe.
 
-*Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung oder Backupadministratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+*Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung oder Backupadministratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
 .Schritte
-. Wählen Sie im NetApp Backup and Recovery-Menü *Inventar* aus.
+. Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
 . Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.
 . Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*.
 . Wählen Sie die Registerkarte *Schutzgruppen*.
@@ -57,7 +57,7 @@ Weitere Informationen zum Erstellen einer Sicherungsrichtlinie finden Sie unterl
 Durch das Löschen einer Schutzgruppe werden diese und alle zugehörigen Sicherungszeitpläne entfernt. Möglicherweise möchten Sie eine Schutzgruppe löschen, wenn sie nicht mehr benötigt wird.
 
 .Schritte
-. Wählen Sie im NetApp Backup and Recovery-Menü *Inventar* aus.
+. Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
 . Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.
 . Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*.
 . Wählen Sie die Registerkarte *Schutzgruppen*.

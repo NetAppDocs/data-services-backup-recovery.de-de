@@ -31,11 +31,11 @@ NetApp Backup and Recovery erweitert jetzt seine Unterstützung auf Objektspeich
 
 ==== Erste Schritte mit Wasabi
 
-Um Drittanbieterspeicher als Objektspeicher zu verwenden, müssen Sie im Konsolenagenten ein Flag aktivieren.  Anschließend können Sie die Verbindungsdetails für Ihren Objektspeicher eines Drittanbieters eingeben und ihn in Ihre Sicherungs- und Wiederherstellungs-Workflows integrieren.
+Um Speicher von Drittanbietern als Objektspeicher zu verwenden, müssen Sie im Konsolenagenten ein Flag aktivieren.  Anschließend können Sie die Verbindungsdetails für Ihren Objektspeicher eines Drittanbieters eingeben und ihn in Ihre Sicherungs- und Wiederherstellungs-Workflows integrieren.
 
 .Schritte
 . Melden Sie sich per SSH bei Ihrem Connector an.
-. Gehen Sie in den CBS-Servercontainer von NetApp Backup and Recovery:
+. Gehen Sie in den NetApp Backup and Recovery CBS-Servercontainer:
 +
 [listing]
 ----
@@ -54,7 +54,7 @@ vi default.json
 
 
 .Ergebnis
-Nachdem der Container wieder eingeschaltet ist, öffnen Sie die NetApp Backup and Recovery-Benutzeroberfläche.  Wenn Sie eine Sicherung initiieren oder eine Sicherungsstrategie bearbeiten, wird der neue Anbieter „S3-kompatibel“ zusammen mit anderen Sicherungsanbietern von AWS, Microsoft Azure, Google Cloud, StorageGRID und ONTAP S3 aufgeführt.
+Nachdem der Container wieder eingeschaltet ist, öffnen Sie die NetApp Backup and Recovery -Benutzeroberfläche.  Wenn Sie eine Sicherung initiieren oder eine Sicherungsstrategie bearbeiten, wird der neue Anbieter „S3-kompatibel“ zusammen mit anderen Sicherungsanbietern von AWS, Microsoft Azure, Google Cloud, StorageGRID und ONTAP S3 aufgeführt.
 
 
 
@@ -62,7 +62,7 @@ Nachdem der Container wieder eingeschaltet ist, öffnen Sie die NetApp Backup an
 
 Während sich diese Funktion in der Vorschauphase befindet, beachten Sie bitte die folgenden Einschränkungen:
 
-* Das Mitbringen eigener Eimer (BYOB) wird nicht unterstützt.
+* Bring Your Own Bucket (BYOB) wird nicht unterstützt.
 * Das Aktivieren von DataLock in einer Richtlinie wird nicht unterstützt.
 * Das Aktivieren des Archivierungsmodus in einer Richtlinie wird nicht unterstützt.
 * Es werden nur lokale ONTAP Umgebungen unterstützt.

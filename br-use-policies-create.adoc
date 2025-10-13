@@ -17,7 +17,7 @@ Erstellen Sie in NetApp Backup and Recovery Ihre eigenen Richtlinien, die die Si
 
 NOTE: Einige dieser Optionen und Konfigurationsabschnitte sind nicht für alle Workloads verfügbar.
 
-Wenn Sie Ressourcen aus SnapCenter importieren, können Sie auf Unterschiede zwischen den in SnapCenter und den in NetApp Backup and Recovery verwendeten Richtlinien stoßen. Sehen link:reference-policy-differences-snapcenter.html["Richtlinienunterschiede zwischen SnapCenter und NetApp Backup and Recovery"] .
+Wenn Sie Ressourcen aus SnapCenter importieren, können Sie auf Unterschiede zwischen den in SnapCenter und den in NetApp Backup and Recovery verwendeten Richtlinien stoßen.  Sehenlink:reference-policy-differences-snapcenter.html["Richtlinienunterschiede zwischen SnapCenter und NetApp Backup and Recovery"] .
 
 Sie können die folgenden Ziele im Zusammenhang mit Richtlinien erreichen:
 
@@ -33,7 +33,7 @@ Sie können die folgenden Ziele im Zusammenhang mit Richtlinien erreichen:
 
 == Richtlinien anzeigen
 
-. Wählen Sie im NetApp Backup and Recovery-Menü *Richtlinien* aus.
+. Wählen Sie im NetApp Backup and Recovery -Menü *Richtlinien* aus.
 . Überprüfen Sie diese Richtliniendetails.
 +
 ** *Workload*: Beispiele sind Microsoft SQL Server, Volumes, VMware, KVM, Hyper-V oder Kubernetes.
@@ -51,7 +51,7 @@ Sie können die folgenden Ziele im Zusammenhang mit Richtlinien erreichen:
 
 Sie können Richtlinien erstellen, die Ihre lokalen Snapshots, Replikationen auf sekundären Speicher und Backups auf Objektspeicher regeln.  Ein Teil Ihrer 3-2-1-Strategie besteht darin, eine Snapshot-Kopie der Instanzen, Datenbanken, Anwendungen oder VMs auf dem *primären* Speichersystem zu erstellen.
 
-*Erforderliche NetApp -Konsolenrolle* Speicherbetrachter, Superadministrator für Backup und Wiederherstellung, Backupadministrator für Backup und Wiederherstellung. Erfahren Sie mehr überlink:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+*Erforderliche NetApp Console * Speicherbetrachter, Superadministrator für Backup und Wiederherstellung, Backupadministrator für Backup und Wiederherstellung.  Erfahren Sie mehr überlink:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
 .Bevor Sie beginnen
 Wenn Sie eine Replikation auf einen sekundären Speicher planen und die Snapshot-Sperre auf lokalen Snapshots oder auf einem Remote ONTAP Sekundärspeicher verwenden möchten, müssen Sie zunächst die ONTAP Compliance-Uhr auf Clusterebene initialisieren.  Dies ist eine Voraussetzung zum Aktivieren der Snapshot-Sperre in der Richtlinie.
@@ -61,13 +61,13 @@ Anweisungen hierzu finden Sie unter https://docs.netapp.com/us-en/ontap/snaplock
 Allgemeine Informationen zum Sperren von Snapshots finden Sie unter https://docs.netapp.com/us-en/ontap/snaplock/snapshot-lock-concept.html["Snapshot-Sperre in ONTAP"^] .
 
 .Schritte
-. Wählen Sie im NetApp Backup and Recovery-Menü *Richtlinien* aus.
+. Wählen Sie im NetApp Backup and Recovery -Menü *Richtlinien* aus.
 . Wählen Sie auf der Seite „Richtlinien“ die Option „Neue Richtlinie erstellen“ aus.
 . Geben Sie auf der Seite „Richtlinien“ die folgenden Informationen ein.
 +
 ** Abschnitt *Details*:
 +
-*** Arbeitslasttyp: Wählen Sie die Arbeitslast aus, die die Richtlinie verwenden soll.
+*** Workload-Typ: Wählen Sie den Workload aus, der die Richtlinie verwenden soll.
 *** Geben Sie einen Richtliniennamen ein.
 +
 
@@ -129,7 +129,7 @@ Geben Sie Informationen zum lokalen Snapshot an.
 * Wählen Sie die Option *Zeitplan hinzufügen*, um den oder die Snapshot-Zeitpläne auszuwählen.  Sie können maximal 5 Zeitpläne haben.
 * *Schnappschusshäufigkeit*: Wählen Sie die Häufigkeit stündlich, täglich, wöchentlich, monatlich oder jährlich.  Die jährliche Häufigkeit ist für Kubernetes-Workloads nicht verfügbar.
 * *Aufbewahrung von Snapshots*: Geben Sie die Anzahl der aufzubewahrenden Snapshots ein.
-* *Protokollsicherung aktivieren*: (Gilt nur für Microsoft SQL Server-Workloads und Oracle Database-Workloads.)  Aktivieren Sie diese Option, um Protokolle zu sichern und die Häufigkeit und Aufbewahrung der Protokollsicherungen festzulegen. Dazu müssen Sie bereits eine Protokollsicherung konfiguriert haben. Sehen link:br-start-configure.html["Konfigurieren von Protokollverzeichnissen"] .
+* *Protokollsicherung aktivieren*: (Gilt nur für Microsoft SQL Server-Workloads und Oracle Database-Workloads.)  Aktivieren Sie diese Option, um Protokolle zu sichern und die Häufigkeit und Aufbewahrung der Protokollsicherungen festzulegen. Dazu müssen Sie bereits eine Protokollsicherung konfiguriert haben.  Sehenlink:br-start-configure.html["Konfigurieren von Protokollverzeichnissen"] .
 +
 ** *Archivprotokolle nach der Sicherung bereinigen*: (Nur Oracle-Datenbank-Workloads) Wenn Protokollsicherungen aktiviert sind, können Sie diese Funktion optional aktivieren, um zu begrenzen, wie lange Backup and Recovery Oracle-Archivprotokolle aufbewahrt.  Sie können den Aufbewahrungszeitraum sowie den Ort auswählen, an dem Backup and Recovery die Archivprotokolle löschen soll.
 
@@ -225,7 +225,7 @@ Geben Sie Informationen in die folgenden Felder ein:
 Optional können Sie erweiterte Einstellungen in der Richtlinie konfigurieren.  Diese Einstellungen sind für alle Backup-Architekturen verfügbar, einschließlich lokaler Snapshots, Replikation auf sekundären Speicher und Backups auf Objektspeicher. Diese Einstellungen sind für Kubernetes-Workloads nicht verfügbar.  Die verfügbaren erweiterten Einstellungen unterscheiden sich je nach der oben auf der Seite ausgewählten Arbeitslast. Daher gelten die hier beschriebenen erweiterten Einstellungen möglicherweise nicht für alle Arbeitslasten.  Beim Konfigurieren einer Richtlinie für Kubernetes-Workloads sind erweiterte Einstellungen nicht verfügbar.
 
 .Schritte
-. Wählen Sie im NetApp Backup and Recovery-Menü *Richtlinien* aus.
+. Wählen Sie im NetApp Backup and Recovery -Menü *Richtlinien* aus.
 . Wählen Sie auf der Seite „Richtlinien“ die Option „Neue Richtlinie erstellen“ aus.
 . Wählen Sie im Abschnitt „Richtlinie > Erweitert*-Einstellungen“ das Menü „Erweiterte Aktion auswählen*, um aus einer Liste erweiterter Einstellungen auszuwählen.
 . Aktivieren Sie alle Einstellungen, die Sie anzeigen oder ändern möchten, und wählen Sie dann *Akzeptieren*.
@@ -234,7 +234,7 @@ Optional können Sie erweiterte Einstellungen in der Richtlinie konfigurieren.  
 ** *Nur Kopie-Backup*: (Gilt nur für Microsoft SQL Server-Workloads) Wählen Sie „Nur Kopie-Backup“ (eine Art Microsoft SQL Server-Backup), wenn Sie Ihre Ressourcen mithilfe einer anderen Backup-Anwendung sichern müssen.
 ** *Einstellungen der Verfügbarkeitsgruppe*: (Gilt nur für Microsoft SQL Server-Workloads) Wählen Sie bevorzugte Sicherungsreplikate aus oder geben Sie ein bestimmtes Replikat an.  Diese Einstellung ist nützlich, wenn Sie über eine SQL Server-Verfügbarkeitsgruppe verfügen und steuern möchten, welches Replikat für Sicherungen verwendet wird.
 ** *Maximale Übertragungsrate*: Um keine Begrenzung der Bandbreitennutzung festzulegen, wählen Sie *Unbegrenzt*.  Wenn Sie die Übertragungsrate begrenzen möchten, wählen Sie *Begrenzt* und wählen Sie die Netzwerkbandbreite zwischen 1 und 1.000 Mbit/s aus, die zum Hochladen von Backups in den Objektspeicher zugewiesen ist.  Standardmäßig kann ONTAP eine unbegrenzte Bandbreite nutzen, um die Sicherungsdaten von Volumes im System in den Objektspeicher zu übertragen.  Wenn Sie feststellen, dass der Sicherungsverkehr die normale Arbeitslast der Benutzer beeinträchtigt, sollten Sie die während der Übertragung verwendete Netzwerkbandbreite verringern.
-** *Wiederholungen der Sicherung*: (Gilt nicht für VMware-Workloads) Um den Job im Falle eines Fehlers oder einer Unterbrechung zu wiederholen, wählen Sie *Jobwiederholungen bei Fehler aktivieren*. Geben Sie die maximale Anzahl der Wiederholungsversuche für Snapshot- und Sicherungsaufträge sowie das Wiederholungszeitintervall ein. Die Nachzählung muss weniger als 10 ergeben. Diese Einstellung ist nützlich, wenn Sie sicherstellen möchten, dass der Sicherungsauftrag im Falle eines Fehlers oder einer Unterbrechung wiederholt wird.
+** *Sicherungswiederholungen*: (Gilt nicht für VMware-Workloads) Um den Job im Falle eines Fehlers oder einer Unterbrechung zu wiederholen, wählen Sie *Jobwiederholungen bei Fehler aktivieren*. Geben Sie die maximale Anzahl der Wiederholungsversuche für Snapshot- und Sicherungsaufträge sowie das Wiederholungszeitintervall ein. Die Nachzählung muss weniger als 10 ergeben. Diese Einstellung ist nützlich, wenn Sie sicherstellen möchten, dass der Sicherungsauftrag im Falle eines Fehlers oder einer Unterbrechung wiederholt wird.
 +
 
 TIP: Wenn die Snapshot-Frequenz auf 1 Stunde eingestellt ist, sollte die maximale Verzögerung zusammen mit der Anzahl der Wiederholungsversuche 45 Minuten nicht überschreiten.
@@ -278,13 +278,13 @@ Sie können beim Bearbeiten einer Richtlinie eine weitere Schutzebene hinzufüge
 
 Wenn Sie eine Richtlinie bearbeiten, die eine Sicherung im Objektspeicher vornimmt, können Sie die Archivierung aktivieren.
 
-Wenn Sie Ressourcen aus SnapCenter importiert haben, stoßen Sie möglicherweise auf einige Unterschiede zwischen den in SnapCenter und NetApp Backup and Recovery verwendeten Richtlinien. Sehen link:reference-policy-differences-snapcenter.html["Richtlinienunterschiede zwischen SnapCenter und NetApp Backup and Recovery"] .
+Wenn Sie Ressourcen aus SnapCenter importiert haben, stoßen Sie möglicherweise auf einige Unterschiede zwischen den in SnapCenter und NetApp Backup and Recovery verwendeten Richtlinien.  Sehenlink:reference-policy-differences-snapcenter.html["Richtlinienunterschiede zwischen SnapCenter und NetApp Backup and Recovery"] .
 
-.Erforderliche NetApp Konsolenrolle
-Superadministrator für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+.Erforderliche NetApp Console
+Superadministrator für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
 .Schritte
-. Gehen Sie in der NetApp Konsole zu *Schutz* > *Sicherung und Wiederherstellung*.
+. Gehen Sie in der NetApp Console zu *Schutz* > *Sicherung und Wiederherstellung*.
 . Wählen Sie die Option *Richtlinien*.
 . Wählen Sie die Richtlinie aus, die Sie bearbeiten möchten.
 . Wählen Sie die *Aktionen*image:icon-action.png["Symbol „Aktionen“"] Symbol und wählen Sie *Bearbeiten*.

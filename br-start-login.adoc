@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-start-login.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Sie verwenden die NetApp -Konsole, um sich beim NetApp Backup and Recovery-Dienst anzumelden. 
+summary: Sie verwenden die NetApp Console , um sich beim NetApp Backup and Recovery -Dienst anzumelden. 
 ---
 = Melden Sie sich bei NetApp Backup and Recovery an
 :hardbreaks:
@@ -14,31 +14,31 @@ summary: Sie verwenden die NetApp -Konsole, um sich beim NetApp Backup and Recov
 
 
 [role="lead"]
-Sie verwenden die NetApp -Konsole, um sich bei NetApp Backup and Recovery anzumelden.
+Sie verwenden die NetApp Console , um sich bei NetApp Backup and Recovery anzumelden.
 
 NetApp Backup and Recovery verwendet Identitäts- und Zugriffsverwaltung, um zu steuern, was jeder Benutzer tun kann.
 
-Einzelheiten zu den Aktionen, die jede Rolle ausführen kann, finden Sie unterlink:reference-roles.html["NetApp Backup and Recovery-Benutzerrollen"] .
+Einzelheiten zu den Aktionen, die jede Rolle ausführen kann, finden Sie unterlink:reference-roles.html["NetApp Backup and Recovery -Benutzerrollen"] .
 
-Um sich bei der NetApp Konsole anzumelden, können Sie Ihre Anmeldeinformationen für die NetApp -Support-Site verwenden oder sich mit Ihrer E-Mail-Adresse und einem Kennwort für die Anmeldung bei der NetApp -Konsole anmelden. https://docs.netapp.com/us-en/console-setup-admin/task-logging-in.html["Erfahren Sie mehr über die Anmeldung"^] .
+Um sich bei der NetApp Console anzumelden, können Sie Ihre Anmeldeinformationen für die NetApp -Support-Site verwenden oder sich mit Ihrer E-Mail-Adresse und einem Kennwort für die Anmeldung bei der NetApp Console registrieren. https://docs.netapp.com/us-en/console-setup-admin/task-logging-in.html["Erfahren Sie mehr über die Anmeldung"^] .
 
-*Erforderliche NetApp -Konsolenrolle* Superadministrator für Backup und Wiederherstellung oder Administratorrolle für Backup und Wiederherstellung zur Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+*Erforderliche NetApp Console * Superadministrator für Backup und Wiederherstellung oder Administratorrolle für Backup und Wiederherstellung zur Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
 Um einen Konsolenagenten hinzuzufügen, müssen Sie über die Superadministratorrolle „Backup und Wiederherstellung“ verfügen.
 
 .Schritte
-. Öffnen Sie einen Webbrowser und gehen Sie zu https://console.netapp.com/["NetApp Konsole"^] .
+. Öffnen Sie einen Webbrowser und gehen Sie zu https://console.netapp.com/["NetApp Console"^] .
 +
-Die Anmeldeseite der NetApp -Konsole wird angezeigt.
+Die Anmeldeseite der NetApp Console wird angezeigt.
 
 . Melden Sie sich bei der Konsole an.
 . Wählen Sie in der linken Navigation der Konsole *Schutz* > *Sicherung und Wiederherstellung*.
 +
-** Wenn Sie sich zum ersten Mal bei Backup and Recovery anmelden und der Seite *Systeme* noch kein System hinzugefügt haben, zeigt Backup and Recovery die Zielseite „Willkommen beim neuen NetApp Backup and Recovery“ an und bietet die Möglichkeit, ein System hinzuzufügen. Weitere Informationen zum Hinzufügen eines Systems zur Seite *Systeme* finden Sie unter https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-standard-mode.html["Erste Schritte mit dem Standardmodus der NetApp Konsole"^] .
+** Wenn Sie sich zum ersten Mal bei Backup and Recovery anmelden und der Seite *Systeme* noch kein System hinzugefügt haben, zeigt Backup and Recovery die Zielseite „Willkommen beim neuen NetApp Backup and Recovery“ an und bietet die Möglichkeit, ein System hinzuzufügen.  Weitere Informationen zum Hinzufügen eines Systems zur Seite *Systeme* finden Sie unter https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-standard-mode.html["Erste Schritte mit dem Standardmodus der NetApp Console"^] .
 ** Wenn Sie sich zum ersten Mal bei Backup and Recovery anmelden und der Seite *Systeme* bereits ein System hinzugefügt, aber noch keine Ressourcen entdeckt haben, wird die Zielseite „Willkommen beim neuen NetApp Backup and Recovery“ mit der Option „Ressourcen entdecken“ angezeigt.
 
 
-. Falls Sie dies noch nicht getan haben, wählen Sie die Option *Erkennen und verwalten*.
+. Falls noch nicht geschehen, wählen Sie die Option *Erkennen und verwalten*.
 +
 ** Informationen zu Microsoft SQL Server-Workloads finden Sie unterlink:br-start-discover.html["Entdecken Sie Microsoft SQL Server-Workloads"] .
 ** Informationen zu VMware-Workloads finden Sie unterlink:br-use-vmware-discovery.html["Entdecken Sie VMware-Workloads"] .

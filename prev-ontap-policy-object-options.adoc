@@ -21,7 +21,7 @@ NOTE: Diese Richtlinieneinstellungen sind nur für die Sicherung auf Objektspeic
 
 []
 ====
-*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup und Recovery-Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup- und Recovery-Workloads"] .
+*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
 
 ====
 
@@ -57,11 +57,11 @@ Jährliche Backups werden nach der Übertragung in den Objektspeicher automatisc
 
 == DataLock- und Ransomware-Schutzoptionen
 
-NetApp Backup and Recovery bietet Unterstützung für DataLock- und Ransomware-Schutz für Ihre Volume-Backups.  Mit diesen Funktionen können Sie Ihre Sicherungsdateien sperren und scannen, um mögliche Ransomware in den Sicherungsdateien zu erkennen.  Dies ist eine optionale Einstellung, die Sie in Ihren Sicherungsrichtlinien definieren können, wenn Sie zusätzlichen Schutz für Ihre Volume-Sicherungen für einen Cluster wünschen.
+NetApp Backup and Recovery bietet Unterstützung für DataLock- und Ransomware-Schutz für Ihre Volume-Backups.  Mit diesen Funktionen können Sie Ihre Sicherungsdateien sperren und scannen, um mögliche Ransomware in den Sicherungsdateien zu erkennen.  Dies ist eine optionale Einstellung, die Sie in Ihren Sicherungsrichtlinien definieren können, wenn Sie zusätzlichen Schutz für Ihre Volumesicherungen für einen Cluster wünschen.
 
-Beide Funktionen schützen Ihre Sicherungsdateien, sodass Sie im Falle eines Ransomware-Angriffs auf Ihre Sicherungen immer über eine gültige Sicherungsdatei verfügen, aus der Sie Daten wiederherstellen können. Es ist auch hilfreich, bestimmte gesetzliche Anforderungen zu erfüllen, wenn Backups gesperrt und für einen bestimmten Zeitraum aufbewahrt werden müssen. Wenn die Option „DataLock und Ransomware-Resilienz“ aktiviert ist, sind für den Cloud-Bucket, der im Rahmen der Aktivierung von NetApp Backup and Recovery bereitgestellt wird, die Objektsperre und die Objektversionierung aktiviert.
+Beide Funktionen schützen Ihre Sicherungsdateien, sodass Sie im Falle eines Ransomware-Angriffs auf Ihre Sicherungen immer über eine gültige Sicherungsdatei verfügen, aus der Sie Daten wiederherstellen können.  Es ist auch hilfreich, bestimmte gesetzliche Anforderungen zu erfüllen, wenn Backups gesperrt und für einen bestimmten Zeitraum aufbewahrt werden müssen.  Wenn die Option „DataLock und Ransomware-Resilienz“ aktiviert ist, sind für den Cloud-Bucket, der im Rahmen der Aktivierung von NetApp Backup and Recovery bereitgestellt wird, die Objektsperre und die Objektversionierung aktiviert.
 
-https://bluexp.netapp.com/blog/cbs-blg-the-bluexp-feature-that-protects-backups-from-ransomware["Weitere Einzelheiten finden Sie im Blog zum DataLock- und Ransomware-Schutz"^] .
+https://bluexp.netapp.com/blog/cbs-blg-the-bluexp-feature-that-protects-backups-from-ransomware["Weitere Einzelheiten finden Sie im Blog zum DataLock- und Ransomware-Schutz"^].
 
 Diese Funktion bietet keinen Schutz für Ihre Quellvolumes, sondern nur für die Sicherungen dieser Quellvolumes.  Verwenden Sie einige der https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html["Anti-Ransomware-Schutz von ONTAP"^] um Ihre Quellvolumes zu schützen.
 
@@ -134,7 +134,7 @@ Sie können DataLock und Ransomware-Schutz aktivieren, wenn Sie eine Richtlinie 
 
 
 
-Weitere Informationen finden Sie unter link:prev-ontap-policy-object-advanced-settings.html["So aktualisieren Sie die Ransomware-Schutzoptionen auf der Seite „Erweiterte Einstellungen“"] .
+Siehelink:prev-ontap-policy-object-advanced-settings.html["So aktualisieren Sie die Ransomware-Schutzoptionen auf der Seite „Erweiterte Einstellungen“"] .
 
 
 
@@ -157,8 +157,8 @@ Sehen wir uns an, wie das funktioniert:
 
 * Im Falle eines Ransomware-Angriffs versucht der Dienst, das Objekt im Bucket zu überschreiben oder zu löschen.
 * Da der Cloud-Speicher versionierungsfähig ist, erstellt er automatisch eine neue Version des Sicherungsobjekts.  Wenn ein Objekt bei aktivierter Versionierung gelöscht wird, wird es als gelöscht markiert, kann aber weiterhin abgerufen werden.  Beim Überschreiben eines Objekts werden vorherige Versionen gespeichert und gekennzeichnet.
-* Beim Start eines Ransomware-Scans werden die Prüfsummen beider Objektversionen validiert und verglichen.  Wenn die Prüfsummen inkonsistent sind, wurde potenzielle Ransomware erkannt.
-* Der Wiederherstellungsprozess umfasst die Rückkehr zur letzten bekannten fehlerfreien Kopie.
+* Wenn ein Ransomware-Scan gestartet wird, werden die Prüfsummen für beide Objektversionen validiert und verglichen.  Wenn die Prüfsummen inkonsistent sind, wurde potenzielle Ransomware erkannt.
+* Der Wiederherstellungsprozess umfasst die Rückkehr zur letzten bekannten funktionierenden Kopie.
 
 
 
@@ -228,7 +228,7 @@ ifdef::aws[]
 
 ====
 +
-https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["Zeigen Sie das vollständige JSON-Format für die Richtlinie an, in dem Sie die erforderlichen Berechtigungen kopieren und einfügen können."^] .
+https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["Zeigen Sie das vollständige JSON-Format für die Richtlinie an, in dem Sie erforderliche Berechtigungen kopieren und einfügen können."^].
 
 
 
@@ -363,7 +363,7 @@ ifdef::aws[]
 
 * In AWS beginnen Backups in der Speicherklasse _Standard_ und wechseln nach 30 Tagen zur Speicherklasse _Standard – seltener Zugriff_.
 +
-Wenn Ihr Cluster ONTAP 9.10.1 oder höher verwendet, können Sie ältere Backups entweder in den Speicher _S3 Glacier_ oder _S3 Glacier Deep Archive_ verschieben. link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über AWS-Archivspeicher"] .
+Wenn Ihr Cluster ONTAP 9.10.1 oder höher verwendet, können Sie ältere Backups entweder in den Speicher _S3 Glacier_ oder _S3 Glacier Deep Archive_ verschieben. link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über AWS-Archivspeicher"].
 
 +
 ** Wenn Sie bei der Aktivierung von NetApp Backup and Recovery in Ihrer ersten Sicherungsrichtlinie keine Archivebene auswählen, ist _S3 Glacier_ Ihre einzige Archivierungsoption für zukünftige Richtlinien.
@@ -379,7 +379,7 @@ ifdef::azure[]
 
 * In Azure sind Sicherungen mit der Zugriffsebene „Cool“ verknüpft.
 +
-Wenn Ihr Cluster ONTAP 9.10.1 oder höher verwendet, können Sie ältere Sicherungen in den Azure Archive-Speicher verschieben. link:prev-reference-azure-archive-storage-tiers.html["Erfahren Sie mehr über Azure-Archivspeicher"] .
+Wenn Ihr Cluster ONTAP 9.10.1 oder höher verwendet, können Sie ältere Sicherungen in den Azure Archive-Speicher verschieben. link:prev-reference-azure-archive-storage-tiers.html["Erfahren Sie mehr über Azure-Archivspeicher"].
 
 
 
@@ -389,7 +389,7 @@ ifdef::gcp[]
 
 * In GCP sind Backups mit der Speicherklasse _Standard_ verknüpft.
 +
-Wenn Ihr Cluster vor Ort ONTAP 9.12.1 oder höher verwendet, können Sie zur weiteren Kostenoptimierung ältere Backups nach einer bestimmten Anzahl von Tagen in der NetApp Backup and Recovery-Benutzeroberfläche in den Archivspeicher verschieben. link:prev-reference-gcp-archive-storage-tiers.html["Erfahren Sie mehr über den Archivspeicher von Google"] .
+Wenn Ihr Cluster vor Ort ONTAP 9.12.1 oder höher verwendet, können Sie zur weiteren Kostenoptimierung ältere Backups nach einer bestimmten Anzahl von Tagen in der NetApp Backup and Recovery -Benutzeroberfläche in den Archivspeicher verschieben. link:prev-reference-gcp-archive-storage-tiers.html["Erfahren Sie mehr über den Archivspeicher von Google"].
 
 
 
@@ -397,18 +397,18 @@ endif::gcp[]
 
 * In StorageGRID sind Backups mit der Speicherklasse _Standard_ verknüpft.
 +
-Wenn Ihr On-Prem-Cluster ONTAP 9.12.1 oder höher verwendet und Ihr StorageGRID System 11.4 oder höher verwendet, können Sie ältere Sicherungsdateien im öffentlichen Cloud-Archivspeicher archivieren.
+Wenn Ihr lokaler Cluster ONTAP 9.12.1 oder höher verwendet und Ihr StorageGRID System 11.4 oder höher verwendet, können Sie ältere Sicherungsdateien im öffentlichen Cloud-Archivspeicher archivieren.
 
 
 
 ifdef::aws[]
 
-+ ** Für AWS können Sie Backups auf AWS _S3 Glacier_ oder _S3 Glacier Deep Archive_-Speicher stufen. link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über AWS-Archivspeicher"^] .
++ ** Für AWS können Sie Backups auf AWS _S3 Glacier_ oder _S3 Glacier Deep Archive_-Speicher stufen. link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über AWS-Archivspeicher"^].
 
 endif::aws[]
 
 ifdef::azure[]
 
-+ ** Für Azure können Sie ältere Sicherungen in den _Azure Archive_-Speicher verschieben. link:prev-reference-azure-archive-storage-tiers.html["Erfahren Sie mehr über Azure-Archivspeicher"^] .
++ ** Für Azure können Sie ältere Sicherungen in den _Azure Archive_-Speicher verschieben. link:prev-reference-azure-archive-storage-tiers.html["Erfahren Sie mehr über Azure-Archivspeicher"^].
 
 endif::azure[]

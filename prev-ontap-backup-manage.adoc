@@ -21,7 +21,7 @@ CAUTION: Verwalten oder ändern Sie Sicherungsdateien nicht direkt auf Ihren Spe
 
 []
 ====
-*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup und Recovery-Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup- und Recovery-Workloads"] .
+*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
 
 ====
 
@@ -69,7 +69,7 @@ Sie können die Sicherungsrichtlinien ändern, die Ihren vorhandenen Volumes mit
 . Identifizieren Sie auf der Registerkarte *Volumes* das Volume, für das Sie Richtlinienänderungen vornehmen möchten, und wählen Sie das Menü Aktionenimage:icon-action.png["Symbol „Aktionen“"] am Ende der Zeile und wählen Sie *Sicherungsstrategie bearbeiten*.
 . Nehmen Sie auf der Seite „Sicherungsstrategie bearbeiten“ Änderungen an den vorhandenen Sicherungsrichtlinien für lokale Snapshot-Kopien, replizierte Volumes und Sicherungsdateien vor und wählen Sie *Weiter*.
 +
-Wenn Sie beim Aktivieren von NetApp Backup and Recovery für diesen Cluster in der anfänglichen Sicherungsrichtlinie _DataLock und Ransomware Resilience_ für Cloud-Sicherungen aktiviert haben, werden Ihnen nur andere Richtlinien angezeigt, die mit DataLock konfiguriert wurden.  Und wenn Sie beim Aktivieren von NetApp Backup and Recovery „DataLock und Ransomware Resilience“ nicht aktiviert haben, werden Ihnen nur andere Cloud-Backup-Richtlinien angezeigt, für die „DataLock“ nicht konfiguriert ist.
+Wenn Sie beim Aktivieren von NetApp Backup and Recovery für diesen Cluster in der anfänglichen Sicherungsrichtlinie _DataLock und Ransomware Resilience_ für Cloud-Sicherungen aktiviert haben, werden Ihnen nur andere Richtlinien angezeigt, die mit DataLock konfiguriert wurden.  Und wenn Sie beim Aktivieren von NetApp Backup and Recovery_DataLock und Ransomware Resilience_ nicht aktiviert haben, werden Ihnen nur andere Cloud-Backup-Richtlinien angezeigt, für die DataLock nicht konfiguriert ist.
 
 . Überprüfen Sie die Sicherungseinstellungen für dieses Volume und wählen Sie dann *Sicherung aktivieren*.
 
@@ -112,7 +112,7 @@ Wenn mehr als fünf Volumes für die Sicherung aktiviert sind, initialisiert Net
 |===
 . Nehmen Sie auf der angezeigten Sicherungsseite Änderungen an den vorhandenen Sicherungsrichtlinien für lokale Snapshot-Kopien, replizierte Volumes oder Sicherungsdateien vor und wählen Sie *Speichern*.
 +
-Wenn Sie beim Aktivieren von NetApp Backup and Recovery für diesen Cluster in der anfänglichen Sicherungsrichtlinie _DataLock und Ransomware Resilience_ für Cloud-Sicherungen aktiviert haben, werden Ihnen nur andere Richtlinien angezeigt, die mit DataLock konfiguriert wurden.  Und wenn Sie beim Aktivieren von NetApp Backup and Recovery „DataLock und Ransomware Resilience“ nicht aktiviert haben, werden Ihnen nur andere Cloud-Backup-Richtlinien angezeigt, für die „DataLock“ nicht konfiguriert ist.
+Wenn Sie beim Aktivieren von NetApp Backup and Recovery für diesen Cluster in der anfänglichen Sicherungsrichtlinie _DataLock und Ransomware Resilience_ für Cloud-Sicherungen aktiviert haben, werden Ihnen nur andere Richtlinien angezeigt, die mit DataLock konfiguriert wurden.  Und wenn Sie beim Aktivieren von NetApp Backup and Recovery_DataLock und Ransomware Resilience_ nicht aktiviert haben, werden Ihnen nur andere Cloud-Backup-Richtlinien angezeigt, für die DataLock nicht konfiguriert ist.
 
 
 
@@ -126,7 +126,7 @@ Sie können eine Ad-hoc-Snapshot-Kopie oder ein Backup auf ein Objekt eines Volu
 
 Der Sicherungsname enthält den Zeitstempel, sodass Sie Ihre On-Demand-Sicherung von anderen geplanten Sicherungen unterscheiden können.
 
-Wenn Sie beim Aktivieren von NetApp Backup and Recovery für diesen Cluster _DataLock und Ransomware Resilience_ aktiviert haben, wird das On-Demand-Backup auch mit DataLock konfiguriert und die Aufbewahrungsdauer beträgt 30 Tage. Ransomware-Scans werden für Ad-hoc-Backups nicht unterstützt. link:prev-ontap-policy-object-options.html["Erfahren Sie mehr über DataLock und Ransomware-Schutz"^] .
+Wenn Sie beim Aktivieren von NetApp Backup and Recovery für diesen Cluster _DataLock und Ransomware Resilience_ aktiviert haben, wird das On-Demand-Backup auch mit DataLock konfiguriert und die Aufbewahrungsdauer beträgt 30 Tage.  Ransomware-Scans werden für Ad-hoc-Backups nicht unterstützt. link:prev-ontap-policy-object-options.html["Erfahren Sie mehr über DataLock und Ransomware-Schutz"^].
 
 Wenn Sie ein Ad-hoc-Backup erstellen, wird auf dem Quellvolume ein Snapshot erstellt.  Da dieser Snapshot nicht Teil eines normalen Snapshot-Zeitplans ist, wird er nicht deaktiviert.  Möglicherweise möchten Sie diesen Snapshot manuell vom Quellvolume löschen, sobald die Sicherung abgeschlossen ist.  Dadurch können Blöcke freigegeben werden, die mit diesem Snapshot in Zusammenhang stehen.  Der Name des Snapshots beginnt mit `cbs-snapshot-adhoc-` . https://docs.netapp.com/us-en/ontap/san-admin/delete-all-existing-snapshot-copies-volume-task.html["Erfahren Sie, wie Sie einen Snapshot mit der ONTAP CLI löschen"^] .
 
@@ -159,7 +159,7 @@ Die Details zum Volume und die Liste der Snapshot-Kopien werden angezeigt.
 
 NetApp Backup and Recovery durchsucht Ihre Sicherungsdateien nach Hinweisen auf einen Ransomware-Angriff, wenn eine Sicherung in einer Objektdatei erstellt wird und wenn Daten aus einer Sicherungsdatei wiederhergestellt werden.  Sie können auch jederzeit einen On-Demand-Scan ausführen, um die Verwendbarkeit einer bestimmten Sicherungsdatei im Objektspeicher zu überprüfen.  Dies kann nützlich sein, wenn auf einem bestimmten Volume ein Ransomware-Problem aufgetreten ist und Sie überprüfen möchten, ob die Sicherungen für dieses Volume betroffen sind.
 
-Diese Funktion ist nur verfügbar, wenn die Volume-Sicherung von einem System mit ONTAP 9.11.1 oder höher erstellt wurde und Sie in der Backup-to-Object-Richtlinie „DataLock und Ransomware Resilience“ aktiviert haben.
+Diese Funktion ist nur verfügbar, wenn das Volume-Backup von einem System mit ONTAP 9.11.1 oder höher erstellt wurde und Sie in der Backup-to-Object-Richtlinie „DataLock und Ransomware Resilience“ aktiviert haben.
 
 .Schritte
 . Wählen Sie auf der Registerkarte *Volumes*image:icon-actions-horizontal.gif["Symbol „Aktionen“"] für das Quellvolume und wählen Sie *Volumedetails anzeigen*.
@@ -206,10 +206,10 @@ In der folgenden Tabelle werden die verfügbaren Aktionen beschrieben:
 | Replikation abbrechen | Deaktiviert Sicherungen dieses Volumes auf dem Zielsystem und deaktiviert auch die Möglichkeit, ein Volume wiederherzustellen.  Eventuell vorhandene Backups werden nicht gelöscht.  Dadurch wird die Datenschutzbeziehung zwischen Quell- und Zielvolume nicht gelöscht. 
 
 
-| Umgekehrte Neusynchronisierung | Vertauscht die Rollen der Quell- und Zielvolumes.  Inhalte des ursprünglichen Quellvolumes werden durch Inhalte des Zielvolumes überschrieben.  Dies ist hilfreich, wenn Sie ein Quellvolume reaktivieren möchten, das offline gegangen ist.  Alle Daten, die zwischen der letzten Datenreplikation und der Deaktivierung des Quellvolumes auf das ursprüngliche Quellvolume geschrieben wurden, bleiben nicht erhalten. 
+| Umgekehrte Neusynchronisierung | Vertauscht die Rollen der Quell- und Zielvolumes. Inhalte des ursprünglichen Quellvolumes werden durch Inhalte des Zielvolumes überschrieben. Dies ist hilfreich, wenn Sie ein Quellvolume reaktivieren möchten, das offline gegangen ist. Alle Daten, die zwischen der letzten Datenreplikation und der Deaktivierung des Quellvolumes auf das ursprüngliche Quellvolume geschrieben wurden, bleiben nicht erhalten. 
 
 
-| Beziehung löschen | Löscht die Datenschutzbeziehung zwischen Quell- und Zielvolumes, was bedeutet, dass keine Datenreplikation mehr zwischen den Volumes stattfindet.  Durch diese Aktion wird das Zielvolume nicht für den Datenzugriff aktiviert, d. h., es wird kein Lese-/Schreibzugriff darauf ermöglicht.  Diese Aktion löscht auch die Cluster-Peer-Beziehung und die Storage-VM (SVM)-Peer-Beziehung, wenn keine anderen Datenschutzbeziehungen zwischen den Systemen bestehen. 
+| Beziehung löschen | Löscht die Datenschutzbeziehung zwischen Quell- und Zielvolumes, was bedeutet, dass keine Datenreplikation mehr zwischen den Volumes stattfindet. Durch diese Aktion wird das Zielvolume nicht für den Datenzugriff aktiviert, d. h., es wird kein Lese-/Schreibzugriff darauf ermöglicht.  Diese Aktion löscht auch die Cluster-Peer-Beziehung und die Storage-VM (SVM)-Peer-Beziehung, wenn keine anderen Datenschutzbeziehungen zwischen den Systemen bestehen. 
 |===
 
 
@@ -224,7 +224,7 @@ Sie können die Attribute für eine Sicherungsrichtlinie ändern, die derzeit au
 
 [NOTE]
 ====
-* Wenn Sie beim Aktivieren von NetApp Backup and Recovery für diesen Cluster in der ursprünglichen Richtlinie „DataLock und Ransomware Resilience“ aktiviert haben, müssen alle von Ihnen bearbeiteten Richtlinien mit derselben DataLock-Einstellung (Governance oder Compliance) konfiguriert werden.  Und wenn Sie beim Aktivieren von NetApp Backup and Recovery _DataLock und Ransomware Resilience_ nicht aktiviert haben, können Sie DataLock jetzt nicht aktivieren.
+* Wenn Sie beim Aktivieren von NetApp Backup and Recovery für diesen Cluster in der ursprünglichen Richtlinie „DataLock und Ransomware Resilience“ aktiviert haben, müssen alle von Ihnen bearbeiteten Richtlinien mit derselben DataLock-Einstellung (Governance oder Compliance) konfiguriert werden.  Und wenn Sie beim Aktivieren von NetApp Backup and Recovery_DataLock und Ransomware Resilience_ nicht aktiviert haben, können Sie DataLock jetzt nicht aktivieren.
 * Wenn Sie beim Erstellen von Backups auf AWS bei der Aktivierung von NetApp Backup and Recovery in Ihrer ersten Backup-Richtlinie _S3 Glacier_ oder _S3 Glacier Deep Archive_ ausgewählt haben, ist diese Ebene die einzige verfügbare Archivebene beim Bearbeiten von Backup-Richtlinien.  Und wenn Sie in Ihrer ersten Sicherungsrichtlinie keine Archivebene ausgewählt haben, ist _S3 Glacier_ Ihre einzige Archivierungsoption beim Bearbeiten einer Richtlinie.
 
 
@@ -242,23 +242,23 @@ ifdef::aws[]
 
 
 
-link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über die Verwendung von AWS-Archivspeicher"] .
+link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über die Verwendung von AWS-Archivspeicher"].
 
 endif::aws[]
 
 ifdef::azure[]
 
-link:prev-reference-azure-archive-storage-tiers.html["Weitere Informationen zur Verwendung des Azure-Archivspeichers"] .
+link:prev-reference-azure-archive-storage-tiers.html["Weitere Informationen zur Verwendung des Azure-Archivspeichers"].
 
 endif::azure[]
 
 ifdef::gcp[]
 
-link:prev-reference-gcp-archive-storage-tiers.html["Erfahren Sie mehr über die Verwendung des Google-Archivspeichers"] . (Erfordert ONTAP 9.12.1.)
+link:prev-reference-gcp-archive-storage-tiers.html["Erfahren Sie mehr über die Verwendung des Google-Archivspeichers"]. (Erfordert ONTAP 9.12.1.)
 
 endif::gcp[]
 
-+ Beachten Sie, dass alle Sicherungsdateien, die in den Archivspeicher verschoben wurden, in dieser Schicht verbleiben, wenn Sie die Verschiebung der Sicherungen in den Archivspeicher beenden. Sie werden nicht automatisch zurück in die Standardschicht verschoben.  Nur neue Volume-Backups werden in der Standardebene gespeichert.
++ Beachten Sie, dass alle Sicherungsdateien, die in den Archivspeicher verschoben wurden, in dieser Schicht verbleiben, wenn Sie die Verschiebung der Sicherungen ins Archiv beenden. Sie werden nicht automatisch zurück in die Standardschicht verschoben.  Nur neue Volume-Backups werden in der Standardebene gespeichert.
 
 
 
@@ -270,8 +270,8 @@ Wenn Sie eine neue Sicherungsrichtlinie auf bestimmte Volumes in einem System an
 
 [NOTE]
 ====
-* Wenn Sie beim Aktivieren von NetApp Backup and Recovery für diesen Cluster in der anfänglichen Richtlinie „DataLock und Ransomware Resilience“ aktiviert haben, müssen alle weiteren Richtlinien, die Sie erstellen, mit derselben DataLock-Einstellung (Governance oder Compliance) konfiguriert werden.  Und wenn Sie beim Aktivieren von NetApp Backup and Recovery _DataLock und Ransomware Resilience_ nicht aktiviert haben, können Sie keine neuen Richtlinien erstellen, die DataLock verwenden.
-* Wenn Sie beim Erstellen von Backups auf AWS bei der Aktivierung von NetApp Backup and Recovery in Ihrer ersten Backup-Richtlinie _S3 Glacier_ oder _S3 Glacier Deep Archive_ ausgewählt haben, ist diese Ebene die einzige verfügbare Archivebene für zukünftige Backup-Richtlinien für diesen Cluster.  Und wenn Sie in Ihrer ersten Sicherungsrichtlinie keine Archivebene ausgewählt haben, ist _S3 Glacier_ Ihre einzige Archivierungsoption für zukünftige Richtlinien.
+* Wenn Sie beim Aktivieren von NetApp Backup and Recovery für diesen Cluster in der anfänglichen Richtlinie „DataLock und Ransomware Resilience“ aktiviert haben, müssen alle weiteren Richtlinien, die Sie erstellen, mit derselben DataLock-Einstellung (Governance oder Compliance) konfiguriert werden.  Und wenn Sie beim Aktivieren von NetApp Backup and Recovery_DataLock und Ransomware Resilience_ nicht aktiviert haben, können Sie keine neuen Richtlinien erstellen, die DataLock verwenden.
+* Wenn Sie beim Erstellen von Backups auf AWS bei der Aktivierung von NetApp Backup and Recovery in Ihrer ersten Backup-Richtlinie _S3 Glacier_ oder _S3 Glacier Deep Archive_ ausgewählt haben, ist diese Ebene die einzige Archivebene, die für zukünftige Backup-Richtlinien für diesen Cluster verfügbar ist.  Und wenn Sie in Ihrer ersten Sicherungsrichtlinie keine Archivierungsebene ausgewählt haben, ist _S3 Glacier_ Ihre einzige Archivierungsoption für zukünftige Richtlinien.
 
 
 ====
@@ -288,19 +288,19 @@ ifdef::aws[]
 
 
 
-link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über die Verwendung von AWS-Archivspeicher"] .
+link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über die Verwendung von AWS-Archivspeicher"].
 
 endif::aws[]
 
 ifdef::azure[]
 
-link:prev-reference-azure-archive-storage-tiers.html["Weitere Informationen zur Verwendung des Azure-Archivspeichers"] .
+link:prev-reference-azure-archive-storage-tiers.html["Weitere Informationen zur Verwendung des Azure-Archivspeichers"].
 
 endif::azure[]
 
 ifdef::gcp[]
 
-link:prev-reference-gcp-archive-storage-tiers.html["Erfahren Sie mehr über die Verwendung des Google-Archivspeichers"] . (Erfordert ONTAP 9.12.1.)
+link:prev-reference-gcp-archive-storage-tiers.html["Erfahren Sie mehr über die Verwendung des Google-Archivspeichers"]. (Erfordert ONTAP 9.12.1.)
 
 endif::gcp[]
 
@@ -392,7 +392,7 @@ Sie müssen das Quellvolume nicht unbedingt löschen.  Sie können die Sicherung
 
 Diese Funktion ist nur verfügbar, wenn auf Ihrem System ONTAP 9.12.1 oder höher ausgeführt wird.
 
-Sie können das Quellvolume nicht aus der Benutzeroberfläche von NetApp Backup and Recovery löschen.  Sie können jedoch die Seite „Volume-Details“ auf der Seite „Systeme“ der Konsole öffnen und https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-volumes.html#manage-volumes["Löschen Sie das Volume von dort"] .
+Sie können das Quellvolume nicht aus der Benutzeroberfläche von NetApp Backup and Recovery löschen.  Sie können jedoch die Seite „Volume-Details“ auf der Seite „Konsole *Systeme*“ öffnen und https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-volumes.html#manage-volumes["Löschen Sie das Volume von dort"] .
 
 
 NOTE: Sie können einzelne Volume-Sicherungsdateien nicht löschen, nachdem die Beziehung gelöscht wurde.  Sie können jedoch alle Sicherungen für das Volume löschen.
@@ -407,7 +407,7 @@ NOTE: Sie können einzelne Volume-Sicherungsdateien nicht löschen, nachdem die 
 
 Durch die Deaktivierung von NetApp Backup and Recovery für ein System werden die Sicherungen aller Volumes auf dem System deaktiviert und auch die Möglichkeit zur Wiederherstellung eines Volumes wird deaktiviert.  Eventuell vorhandene Backups werden nicht gelöscht.  Dadurch wird der Sicherungsdienst nicht von diesem System abgemeldet. Im Grunde können Sie damit alle Sicherungs- und Wiederherstellungsaktivitäten für einen bestimmten Zeitraum anhalten.
 
-Beachten Sie, dass Ihnen Ihr Cloud-Anbieter weiterhin die Kosten für die Objektspeicherung für die Kapazität in Rechnung stellt, die Ihre Backups nutzen, es sei denn, Sie<<Backups löschen,Löschen Sie die Backups>> .
+Beachten Sie, dass Ihnen Ihr Cloud-Anbieter weiterhin die Kosten für die Objektspeicherung für die Kapazität berechnet, die Ihre Backups nutzen, es sei denn, Sie<<Backups löschen,Löschen Sie die Backups>> .
 
 .Schritte
 . Wählen Sie auf der Registerkarte *Volumes* die Option *Backup-Einstellungen* aus.

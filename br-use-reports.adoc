@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-reports.html 
 keywords: backing up, back up, backup, backup on-prem ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
-summary: Erstellen Sie in NetApp Backup and Recovery Berichte, um den Status Ihrer Backups anzuzeigen, einschließlich der Anzahl der Backups, der Anzahl der erfolgreichen Backups und der Anzahl der fehlgeschlagenen Backups.  Sie können auch die Details jeder Sicherung anzeigen, einschließlich des Sicherungstyps, des für die Sicherung verwendeten Speichersystems und der Sicherungszeit. 
+summary: Erstellen Sie in NetApp Backup and Recovery Berichte, um den Status Ihrer Sicherungen anzuzeigen, einschließlich der Anzahl der Sicherungen, der Anzahl der erfolgreichen Sicherungen und der Anzahl der fehlgeschlagenen Sicherungen.  Sie können auch die Details jeder Sicherung anzeigen, einschließlich des Sicherungstyps, des für die Sicherung verwendeten Speichersystems und der Sicherungszeit. 
 ---
 = Erstellen Sie Berichte für Microsoft SQL Server-Workloads in NetApp Backup and Recovery
 :hardbreaks:
@@ -18,9 +18,9 @@ Erstellen Sie in NetApp Backup and Recovery Berichte für Microsoft SQL Server-W
 
 == Erstellen eines Berichts
 
-*Erforderliche NetApp Konsolenrolle* Speicherbetrachter, Superadministrator für Backup und Wiederherstellung, Backup-Administrator für Backup und Wiederherstellung, Wiederherstellungsadministrator für Backup und Wiederherstellung, Klonadministrator für Backup und Wiederherstellung. Erfahren Sie mehr überlink:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+*Erforderliche NetApp Console * Speicherbetrachter, Superadministrator für Backup und Wiederherstellung, Backup-Administrator für Backup und Wiederherstellung, Wiederherstellungsadministrator für Backup und Wiederherstellung, Klonadministrator für Backup und Wiederherstellung.  Erfahren Sie mehr überlink:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
-. Wählen Sie im NetApp Backup and Recovery-Menü die Option *Berichte*.
+. Wählen Sie im NetApp Backup and Recovery -Menü die Option *Berichte*.
 . Wählen Sie *Bericht erstellen*.
 . Geben Sie Details zum Berichtsumfang ein:
 +

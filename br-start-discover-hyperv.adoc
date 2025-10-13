@@ -4,7 +4,7 @@ permalink: br-start-discover-hyperv.html
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Hyper-V, workloads, protect 
 summary: NetApp Backup and Recovery muss virtuelle Hyper-V-Maschinen erkennen, bevor Sie sie schützen können. 
 ---
-= Entdecken Sie Hyper-V-Workloads in NetApp Backup und Recovery
+= Entdecken Sie Hyper-V-Workloads in NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -16,7 +16,7 @@ summary: NetApp Backup and Recovery muss virtuelle Hyper-V-Maschinen erkennen, b
 [role="lead"]
 NetApp Backup and Recovery muss virtuelle Hyper-V-Maschinen erkennen, bevor Sie sie schützen können.
 
-*Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung. Erfahren Sie mehr überlink:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+*Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung.  Erfahren Sie mehr überlink:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
 
 
@@ -28,7 +28,7 @@ Fügen Sie Hyper-V-Hostinformationen hinzu und lassen Sie NetApp Backup and Reco
 NOTE: Wenn Sie Hyper-V-Hosts hinzufügen und Ressourcen ermitteln, installiert NetApp Backup and Recovery das NetApp Hyper-V-Plug-in und das NetApp SnapCenter Windows FileSystem-Plug-in auf dem Hyper-V-Host, um die Verwaltung und den Schutz virtueller Maschinen zu unterstützen.
 
 .Schritte
-. Wählen Sie im NetApp -Konsolenmenü *Schutz* > *Sicherung und Wiederherstellung*.
+. Wählen Sie im NetApp Console *Schutz* > *Sicherung und Wiederherstellung*.
 +
 Wenn Sie sich zum ersten Mal bei NetApp Backup and Recovery anmelden und bereits ein System in der Konsole haben, aber noch keine Ressourcen entdeckt haben, wird die Zielseite „Willkommen beim neuen NetApp Backup and Recovery“ angezeigt und bietet die Option „Ressourcen entdecken“.
 
@@ -62,6 +62,6 @@ Nachdem NetApp Backup and Recovery Ressourcen erkannt hat, wird auf der Seite �
 == Weiter zum NetApp Backup and Recovery Dashboard
 
 .Schritte
-. Um das NetApp Backup and Recovery Dashboard anzuzeigen, wählen Sie im NetApp -Konsolenmenü *Dashboard*.
+. Um das NetApp Backup and Recovery Dashboard anzuzeigen, wählen Sie im NetApp Console *Dashboard*.
 . Überprüfen Sie den Zustand des Datenschutzes.  Die Anzahl der gefährdeten oder geschützten Workloads steigt basierend auf den neu entdeckten, geschützten und gesicherten Workloads.
 

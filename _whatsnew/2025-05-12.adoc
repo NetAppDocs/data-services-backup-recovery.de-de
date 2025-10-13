@@ -29,7 +29,7 @@ IMPORTANT: Diese Funktion sollte nicht in der Produktion verwendet werden.
 
 Obwohl sich diese Funktion in der Vorschauphase befindet, gelten bestimmte Einschränkungen:
 
-* Das Mitbringen eigener Eimer (BYOB) wird nicht unterstützt.
+* Bring Your Own Bucket (BYOB) wird nicht unterstützt.
 * Das Aktivieren von DataLock in der Richtlinie wird nicht unterstützt.
 * Das Aktivieren des Archivierungsmodus in der Richtlinie wird nicht unterstützt.
 * Es werden nur lokale ONTAP Umgebungen unterstützt.

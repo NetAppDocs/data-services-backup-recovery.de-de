@@ -16,8 +16,8 @@ summary: Schützen Sie Ihre VMware-Workloads mit NetApp NetApp Backup and Recove
 [role="lead"]
 Sichern Sie VMware-VMs und Datenspeicher von lokalen ONTAP -Systemen auf Amazon Web Services, Azure NetApp Files oder StorageGRID , um sicherzustellen, dass Ihre Daten geschützt sind. Backups werden automatisch erstellt und in einem Objektspeicher in Ihrem öffentlichen oder privaten Cloud-Konto gespeichert.
 
-* Um Workloads nach einem Zeitplan zu sichern, erstellen Sie Richtlinien, die die Sicherungs- und Wiederherstellungsvorgänge steuern. Sehenlink:br-use-policies-create.html["Erstellen von Richtlinien"] Anweisungen hierzu finden Sie unter.
-* Erstellen Sie Schutzgruppen, um die Sicherungs- und Wiederherstellungsvorgänge für eine Reihe von Ressourcen zu verwalten. Sehen link:br-use-vmware-protection-groups.html["Erstellen und verwalten Sie Schutzgruppen für VMware-Workloads mit NetApp Backup and Recovery"] für weitere Informationen.
+* Um Workloads nach einem Zeitplan zu sichern, erstellen Sie Richtlinien, die die Sicherungs- und Wiederherstellungsvorgänge steuern.  Sehenlink:br-use-policies-create.html["Erstellen von Richtlinien"] Anweisungen hierzu finden Sie unter.
+* Erstellen Sie Schutzgruppen, um die Sicherungs- und Wiederherstellungsvorgänge für eine Reihe von Ressourcen zu verwalten. Sehenlink:br-use-vmware-protection-groups.html["Erstellen und verwalten Sie Schutzgruppen für VMware-Workloads mit NetApp Backup and Recovery"] für weitere Informationen.
 * Sichern Sie jetzt Workloads (erstellen Sie jetzt ein On-Demand-Backup).
 
 
@@ -27,7 +27,7 @@ Sichern Sie VMware-VMs und Datenspeicher von lokalen ONTAP -Systemen auf Amazon 
 
 Erstellen Sie sofort ein On-Demand-Backup.  Möglicherweise möchten Sie eine On-Demand-Sicherung ausführen, wenn Sie Änderungen an Ihrem System vornehmen und sicherstellen möchten, dass Sie vor dem Start über eine Sicherung verfügen.
 
-*Erforderliche NetApp -Konsolenrolle* Speicherbetrachter, Superadministrator für Backup und Wiederherstellung oder Backup-Administratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+*Erforderliche NetApp Console * Speicherbetrachter, Superadministrator für Backup und Wiederherstellung oder Backup-Administratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
 .Schritte
 . Wählen Sie im Menü „Sicherung und Wiederherstellung“ die Option „Inventar“ aus.

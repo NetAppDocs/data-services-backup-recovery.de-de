@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: br-api-backup-restore.html 
 keywords: api, apis, rest, restful, authorization, getting started, body, header, token, reference, expired token, expires, expired, token expired, list apis 
-summary: Die über die Web-Benutzeroberfläche verfügbaren NetApp -Backup- und -Recovery-Funktionen sind auch über RESTful-APIs verfügbar. 
+summary: Die über die Web-Benutzeroberfläche verfügbaren NetApp Backup and Recovery Funktionen sind auch über RESTful-APIs verfügbar. 
 ---
-= Automatisieren Sie mit NetApp Backup und Recovery REST APIs
+= Automatisieren Sie mit NetApp Backup and Recovery REST APIs
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -34,21 +34,21 @@ In NetApp Backup and Recovery sind zehn Endpunktkategorien definiert:
 
 == API-Referenz
 
-Dokumentation für jede NetApp Backup- und Recovery-API ist verfügbar unter https://docs.netapp.com/us-en/console-automation/cbs/overview.html["NetApp Console-Automatisierung für NetApp Backup und Recovery"^] .
+Dokumentation für jede NetApp Backup and Recovery -API ist verfügbar unter https://docs.netapp.com/us-en/console-automation/cbs/overview.html["NetApp Console Automatisierung für NetApp Backup and Recovery"^] .
 
 
 
 == Erste Schritte
 
-Um mit den NetApp Backup- und Recovery-APIs zu beginnen, benötigen Sie ein Benutzertoken, Ihre NetApp Konsolenkonto-ID und die Konsolenagent-ID.
+Um mit den NetApp Backup and Recovery -APIs zu beginnen, benötigen Sie ein Benutzertoken, Ihre NetApp Console -ID und die Konsolenagent-ID.
 
-Wenn Sie API-Aufrufe tätigen, fügen Sie das Benutzertoken im Autorisierungsheader und die Konsolenagent-ID im x-agent-id-Header hinzu.  Sie sollten die NetApp Konsolenkonto-ID in den APIs verwenden.
+Wenn Sie API-Aufrufe tätigen, fügen Sie das Benutzertoken im Autorisierungsheader und die Konsolenagent-ID im x-agent-id-Header hinzu.  Sie sollten die NetApp Console -ID in den APIs verwenden.
 
 
 NOTE: Wenn Sie ein Dienstkonto verwenden, sollten Sie anstelle eines Benutzertokens das Dienstzugriffstoken verwenden. Der Wert für „client_id“ („Mu0V1ywgYteI6w1MbD15fKfVIUrNXGWC“) ist ein fester Wert und kann nicht geändert werden. Befolgen Sie in diesem Fall die Anweisungen hier: https://docs.netapp.com/us-en/console-automation/platform/create_service_token.html["Erstellen eines Dienstzugriffstokens"^] .
 
 .Schritte
-. Besorgen Sie sich ein Benutzertoken von der NetApp - Konsolen-Website.
+. Besorgen Sie sich ein Benutzertoken von der NetApp NetApp Console -Website.
 +
 Stellen Sie sicher, dass Sie das Aktualisierungstoken über den folgenden Link generieren: https://services.cloud.netapp.com/refresh-token/.  Das Aktualisierungstoken ist eine alphanumerische Zeichenfolge, die Sie zum Generieren eines Benutzertokens verwenden.
 
@@ -65,9 +65,9 @@ curl --location --request POST 'https://netapp-cloud-account.auth0.com/oauth/tok
 ----
 +
 
-NOTE: Das Benutzertoken von der NetApp -Konsolenwebsite hat ein Ablaufdatum.  Die API-Antwort enthält ein Feld „expires_in“, das angibt, wann das Token abläuft.  Um das Token zu aktualisieren, müssen Sie diese API erneut aufrufen.
+NOTE: Das Benutzertoken von der NetApp Console hat ein Ablaufdatum. Die API-Antwort enthält ein Feld „expires_in“, das angibt, wann das Token abläuft.  Um das Token zu aktualisieren, müssen Sie diese API erneut aufrufen.
 
-. Besorgen Sie sich Ihre NetApp Konsolen-Konto-ID.
+. Besorgen Sie sich Ihre NetApp Console Konto-ID.
 +
 [source, console]
 ----
@@ -117,7 +117,7 @@ Sie können die Agenten-ID aus der Antwort abrufen, indem Sie die Ausgabe von *o
 Das folgende Beispiel zeigt einen API-Aufruf zum Aktivieren von NetApp Backup and Recovery auf einem System mit einer neuen Richtlinie, in der tägliche, stündliche und wöchentliche Beschriftungen festgelegt sind und die Archivierung nach 180 Tagen in der Region „East-US-2“ in der Azure-Cloud erfolgt.  Beachten Sie, dass hierdurch nur die Sicherung auf dem System aktiviert wird, jedoch keine Volumes gesichert werden.
 
 .API-Anforderung
-Sie werden sehen, dass wir die NetApp Console-Konto-ID verwenden `account-DpTFcxN3` , Konsolenagent-ID `iZwFFeVCZjWnzGlw8RgD0QQNANZvpP7Iclients` und Benutzertoken `Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5rSXlPVFUzUWpZek1E…y6nyhBjwkeMwHc4ValobjUmju2x0xUH48g` in diesem Befehl.
+Sie werden sehen, dass wir die NetApp Console Konto-ID verwenden `account-DpTFcxN3` , Konsolenagent-ID `iZwFFeVCZjWnzGlw8RgD0QQNANZvpP7Iclients` und Benutzertoken `Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5rSXlPVFUzUWpZek1E…y6nyhBjwkeMwHc4ValobjUmju2x0xUH48g` in diesem Befehl.
 
 [source, console]
 ----

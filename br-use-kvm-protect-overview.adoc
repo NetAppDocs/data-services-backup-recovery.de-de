@@ -20,7 +20,7 @@ Sie können KVM-Workloads auf Amazon Web Services S3, Azure NetApp Files oder St
 
 image:../media/diagram-backup-recovery-general.png["Architekturdiagramm für Backup und Wiederherstellung im Allgemeinen"]
 
-Verwenden Sie NetApp Backup and Recovery, um eine 3-2-1-Schutzstrategie zu implementieren, bei der Sie 3 Kopien Ihrer Quelldaten auf 2 verschiedenen Speichersystemen sowie 1 Kopie in der Cloud haben. Zu den Vorteilen des 3-2-1-Ansatzes gehören:
+Verwenden Sie NetApp Backup and Recovery , um eine 3-2-1-Schutzstrategie zu implementieren, bei der Sie 3 Kopien Ihrer Quelldaten auf 2 verschiedenen Speichersystemen sowie 1 Kopie in der Cloud haben. Zu den Vorteilen des 3-2-1-Ansatzes gehören:
 
 * Mehrere Datenkopien bieten mehrschichtigen Schutz vor internen (Insider-) und externen Cybersicherheitsbedrohungen.
 * Mehrere Medientypen gewährleisten die Failover-Funktionalität im Falle eines physischen oder logischen Ausfalls eines Medientyps.
@@ -28,7 +28,7 @@ Verwenden Sie NetApp Backup and Recovery, um eine 3-2-1-Schutzstrategie zu imple
 
 
 
-NOTE: Informationen zum Wechseln zwischen NetApp Backup- und Recovery-UI-Versionen finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zur vorherigen NetApp Backup and Recovery-Benutzeroberfläche"] .
+NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -UI-Versionen finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zur vorherigen NetApp Backup and Recovery -Benutzeroberfläche"] .
 
 Mit NetApp Backup and Recovery können Sie die folgenden Aufgaben im Zusammenhang mit KVM-Workloads ausführen:
 

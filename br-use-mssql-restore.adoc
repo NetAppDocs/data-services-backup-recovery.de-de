@@ -44,12 +44,12 @@ TIP: Für den Zugriff auf den Inhalt der Sicherungsdatei fallen bei Ihrem Cloud-
 
 Beim Wiederherstellen von Workloads geschieht Folgendes:
 
-* Wenn Sie eine Workload aus einer Sicherungsdatei wiederherstellen, erstellt NetApp Backup and Recovery mithilfe der Daten aus der Sicherung eine _neue_ Ressource.
+* Wenn Sie eine Arbeitslast aus einer Sicherungsdatei wiederherstellen, erstellt NetApp Backup and Recovery mithilfe der Daten aus der Sicherung eine _neue_ Ressource.
 * Wenn Sie eine Wiederherstellung aus einem replizierten Workload durchführen, können Sie den Workload auf dem ursprünglichen System oder auf einem lokalen ONTAP System wiederherstellen.
 +
 image:diagram_browse_restore_volume-unified.png["Ein Diagramm, das den Ablauf zum Wiederherstellen einer Ressource zeigt"]
 
-* Wenn Sie ein Backup aus dem Objektspeicher wiederherstellen, können Sie die Daten auf dem ursprünglichen System oder auf einem lokalen ONTAP -System wiederherstellen.
+* Wenn Sie eine Sicherung aus dem Objektspeicher wiederherstellen, können Sie die Daten auf dem ursprünglichen System oder auf einem lokalen ONTAP -System wiederherstellen.
 
 
 
@@ -62,7 +62,7 @@ Sie können Workloads mit einer der folgenden Methoden wiederherstellen.  Wähle
 * *Von der Inventarseite*: Verwenden Sie dies, wenn Sie eine bestimmte Ressource aus der letzten Woche oder dem letzten Monat wiederherstellen müssen – und Sie den Namen und Standort der Ressource sowie das Datum kennen, an dem sie zuletzt in gutem Zustand war.  Sie durchsuchen eine Liste von Ressourcen, um die Ressource zu finden, die Sie wiederherstellen möchten.
 
 
-*Erforderliche NetApp -Konsolenrolle* Speicherbetrachter, Superadministrator für Backup und Wiederherstellung oder Backup-Administratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+*Erforderliche NetApp Console * Speicherbetrachter, Superadministrator für Backup und Wiederherstellung oder Backup-Administratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
 
 
@@ -71,7 +71,7 @@ Sie können Workloads mit einer der folgenden Methoden wiederherstellen.  Wähle
 Stellen Sie Datenbank-Workloads mithilfe der Option „Wiederherstellen“ wieder her.
 
 .Schritte
-. Wählen Sie im NetApp Backup and Recovery-Menü *Wiederherstellen* aus.
+. Wählen Sie im NetApp Backup and Recovery -Menü *Wiederherstellen* aus.
 . Wählen Sie die Datenbank aus, die Sie wiederherstellen möchten.  Verwenden Sie die Filter zur Suche.
 . Wählen Sie die Wiederherstellungsoption:
 +
@@ -125,7 +125,7 @@ Als Nächstes werden die Zieloptionen angezeigt.
 
 NetApp Backup and Recovery verwendet Protokolle und die aktuellsten Snapshots, um eine zeitpunktbezogene Wiederherstellung Ihrer Daten zu erstellen.
 
-. Fahren Sie auf der Seite „Wiederherstellungsoptionen“ fort und wählen Sie „Zu einem bestimmten Zeitpunkt wiederherstellen“ aus.
+. Wählen Sie auf der Seite „Wiederherstellungsoptionen“ die Option „Zu einem bestimmten Zeitpunkt wiederherstellen“ aus.
 . Wählen Sie *Weiter*.
 . Geben Sie auf der Seite „Zu einem bestimmten Zeitpunkt wiederherstellen“ die folgenden Informationen ein:
 +
@@ -202,7 +202,7 @@ NetApp Backup and Recovery zeigt Ihnen die Snapshots, die für den Wiederherstel
 Stellen Sie Datenbank-Workloads von der Inventarseite aus wieder her.  Mit der Inventaroption können Sie nur Datenbanken, keine Instanzen wiederherstellen.
 
 .Schritte
-. Wählen Sie im NetApp Backup and Recovery-Menü *Inventar* aus.
+. Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
 . Wählen Sie den Host aus, auf dem sich die Ressource befindet, die Sie wiederherstellen möchten.
 . Wählen Sie die *Aktionen*image:icon-action.png["Symbol „Aktionen“"] Symbol und wählen Sie *Details anzeigen*.
 . Wählen Sie auf der Microsoft SQL Server-Seite die Registerkarte *Datenbanken* aus.

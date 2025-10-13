@@ -4,7 +4,7 @@ permalink: br-use-manage-execution-hook-templates.html
 keywords: hooks, execution hooks, exec hooks, hook, execution, script, postscript, prescript, post, pre, run, backup, snapshot, freeze 
 summary: Mit NetApp Backup and Recovery können Sie Ausführungs-Hooks verwalten, um vor oder nach Anwendungsschutzvorgängen Maßnahmen zu ergreifen. 
 ---
-= Verwalten Sie NetApp Backup and Recovery-Ausführungs-Hook-Vorlagen für Kubernetes-Workloads
+= Verwalten Sie NetApp Backup and Recovery -Ausführungs-Hook-Vorlagen für Kubernetes-Workloads
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -25,8 +25,8 @@ Standardmäßig friert NetApp Backup and Recovery Dateisysteme für bestimmte An
 
 
 ====
-.Erforderliche NetApp Konsolenrolle
-Organisationsadministrator oder SnapCenter Administrator. link:reference-roles.html["Erfahren Sie mehr über die Zugriffsrollen für NetApp Backup und Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+.Erforderliche NetApp Console
+Organisationsadministrator oder SnapCenter Administrator. link:reference-roles.html["Erfahren Sie mehr über die Zugriffsrollen für NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
 
 

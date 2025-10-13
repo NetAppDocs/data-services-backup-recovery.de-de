@@ -6,7 +6,7 @@
 
 === Microsoft SQL Server-Workload wird in der allgemeinen Verfügbarkeit (GA) unterstützt
 
-Die Unterstützung für Microsoft SQL Server-Workloads ist jetzt in NetApp Backup and Recovery allgemein verfügbar (GA). Organisationen, die eine MSSQL-Umgebung auf ONTAP, Cloud Volumes ONTAP und Amazon FSx for NetApp ONTAP -Speicher verwenden, können jetzt diesen neuen Backup- und Wiederherstellungsdienst zum Schutz ihrer Daten nutzen.
+Die Workload-Unterstützung für Microsoft SQL Server ist jetzt in NetApp Backup and Recovery allgemein verfügbar (GA). Organisationen, die eine MSSQL-Umgebung auf ONTAP, Cloud Volumes ONTAP und Amazon FSx for NetApp ONTAP -Speicher verwenden, können jetzt diesen neuen Backup- und Wiederherstellungsdienst zum Schutz ihrer Daten nutzen.
 
 Diese Version enthält die folgenden Verbesserungen der Microsoft SQL Server-Workload-Unterstützung gegenüber der vorherigen Vorschauversion:
 
@@ -18,13 +18,13 @@ Siehe https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-policie
 image:../media/screen-br-sql-protection-details.png["Seite mit Schutzdetails für die Microsoft SQL Server-Workload"]
 
 * *Multi-Bucket-Unterstützung*: Sie können jetzt die Volumes innerhalb einer Arbeitsumgebung mit bis zu 6 Buckets pro Arbeitsumgebung über verschiedene Cloud-Anbieter hinweg schützen.
-* *Lizenzierung und kostenlose Testupdates* für SQL Server-Workloads: Sie können jetzt das vorhandene NetApp Backup and Recovery-Lizenzmodell zum Schutz von SQL Server-Workloads verwenden. Für SQL Server-Workloads besteht keine separate Lizenzanforderung.
+* *Lizenzierung und kostenlose Testupdates* für SQL Server-Workloads: Sie können jetzt das vorhandene NetApp Backup and Recovery -Lizenzmodell zum Schutz von SQL Server-Workloads verwenden. Für SQL Server-Workloads besteht keine separate Lizenzanforderung.
 +
 Weitere Einzelheiten finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-start-licensing.html["Einrichten der Lizenzierung für NetApp Backup and Recovery"] .
 
 * *Benutzerdefinierter Snapshot-Name*: Sie können jetzt Ihren eigenen Snapshot-Namen in einer Richtlinie verwenden, die die Sicherungen für Microsoft SQL Server-Workloads regelt. Geben Sie diese Informationen im Abschnitt *Erweiterte Einstellungen* der Richtlinienseite ein.
 +
-image:../media/screen-br-sql-policy-create-advanced-snapmirror.png["Screenshot der SnapMirror und Snapshot-Formateinstellungen für NetApp Backup- und Recovery-Richtlinien"]
+image:../media/screen-br-sql-policy-create-advanced-snapmirror.png["Screenshot der SnapMirror und Snapshot-Formateinstellungen für NetApp Backup and Recovery -Richtlinien"]
 
 +
 Siehe https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-policies-create.html["Verwenden Sie Richtlinien zum Schutz Ihrer Workloads"] .
@@ -32,13 +32,13 @@ Siehe https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-policie
 * *Präfix und Suffix des sekundären Volumes*: Sie können im Abschnitt *Erweiterte Einstellungen* der Richtlinienseite ein benutzerdefiniertes Präfix und Suffix eingeben.
 * *Identität und Zugriff*: Sie können jetzt den Zugriff der Benutzer auf Funktionen steuern.
 +
-Siehe https://docs.netapp.com/us-en/data-services-backup-recovery/br-start-login.html["Melden Sie sich bei NetApp Backup and Recovery an"] Und https://docs.netapp.com/us-en/data-services-backup-recovery/reference-roles.html["Zugriff auf NetApp Backup und Recovery-Funktionen"] .
+Siehe https://docs.netapp.com/us-en/data-services-backup-recovery/br-start-login.html["Melden Sie sich bei NetApp Backup and Recovery an"] Und https://docs.netapp.com/us-en/data-services-backup-recovery/reference-roles.html["Zugriff auf NetApp Backup and Recovery -Funktionen"] .
 
 * *Wiederherstellung vom Objektspeicher auf einem alternativen Host*: Sie können jetzt vom Objektspeicher auf einem alternativen Host wiederherstellen, selbst wenn der primäre Speicher ausgefallen ist.
 * *Protokollsicherungsdaten*: Auf der Seite mit den Datenbankschutzdetails werden jetzt Protokollsicherungen angezeigt. In der Spalte „Sicherungstyp“ wird angezeigt, ob es sich bei der Sicherung um eine vollständige Sicherung oder eine Protokollsicherung handelt.
 * *Verbessertes Dashboard*: Das Dashboard zeigt jetzt Speicher- und Klon-Einsparungen an.
 +
-image:../media/screen-br-dashboard3.png["NetApp Backup- und Recovery-Dashboard"]
+image:../media/screen-br-dashboard3.png["NetApp Backup and Recovery -Dashboard"]
 
 
 

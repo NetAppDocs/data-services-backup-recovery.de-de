@@ -11,7 +11,7 @@ Diese Version fügt Vorschauunterstützung zum Schutz von VMware-Workloads hinzu
 
 NOTE: Dokumentation zum Schutz von VMware-Workloads wird als Technologievorschau bereitgestellt. Bei diesem Vorschauangebot behält sich NetApp das Recht vor, Angebotsdetails, Inhalte und Zeitplan vor der allgemeinen Verfügbarkeit zu ändern.
 
-link:br-use-vmware-protect-overview.html["Erfahren Sie mehr über den Schutz von VMware-Workloads mit NetApp Backup and Recovery"] .
+link:br-use-vmware-protect-overview.html["Erfahren Sie mehr über den Schutz von VMware-Workloads mit NetApp Backup and Recovery"].
 
 
 

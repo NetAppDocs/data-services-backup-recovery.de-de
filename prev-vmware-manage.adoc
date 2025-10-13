@@ -14,11 +14,11 @@ summary: Schützen Sie Ihre VMware-Workloads mit NetApp NetApp Backup and Recove
 
 
 [role="lead"]
-Sie können Richtlinien, Datenspeicher und virtuelle Maschinen anzeigen, bevor Sie Daten mit NetApp Backup and Recovery sichern und wiederherstellen.  Abhängig von den Änderungen in der Datenbank, den Richtlinien oder den Ressourcengruppen können Sie die Aktualisierungen über die Benutzeroberfläche der NetApp Konsole anzeigen.
+Sie können Richtlinien, Datenspeicher und virtuelle Maschinen anzeigen, bevor Sie Daten mit NetApp Backup and Recovery sichern und wiederherstellen.  Abhängig von den Änderungen in der Datenbank, den Richtlinien oder den Ressourcengruppen können Sie die Aktualisierungen über die Benutzeroberfläche der NetApp Console anzeigen.
 
 []
 ====
-*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup und Recovery-Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup- und Recovery-Workloads"] .
+*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
 
 ====
 
@@ -105,7 +105,7 @@ Alle mit dem SnapCenter Plug-in for VMware vSphere Host verbundenen Datenspeiche
 
 == Jobs überwachen
 
-Für alle NetApp -Sicherungs- und Wiederherstellungsvorgänge werden Jobs erstellt.  Sie können alle Jobs und alle Unteraufgaben überwachen, die im Rahmen jeder Aufgabe ausgeführt werden.
+Für alle NetApp Backup and Recovery und Wiederherstellungsvorgänge werden Jobs erstellt.  Sie können alle Jobs und alle Unteraufgaben überwachen, die im Rahmen jeder Aufgabe ausgeführt werden.
 
 . Wählen Sie *Sicherung und Wiederherstellung* > *Auftragsüberwachung*.
 +

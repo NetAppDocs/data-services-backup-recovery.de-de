@@ -18,7 +18,7 @@ Verwenden Sie mit NetApp Backup and Recovery die von NetApp bereitgestellten Sta
 
 []
 ====
-*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup und Recovery-Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup- und Recovery-Workloads"] .
+*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
 
 ====
 Wenn Sie den Aktivierungsassistenten verwenden, um den Sicherungs- und Wiederherstellungsdienst für Ihre Volumes zu aktivieren, können Sie aus den Standardrichtlinien und allen anderen Richtlinien auswählen, die bereits im System vorhanden sind (Cloud Volumes ONTAP oder lokales ONTAP System).  Wenn Sie eine andere Richtlinie als die vorhandenen Richtlinien verwenden möchten, können Sie die Richtlinie vor oder während der Verwendung des Aktivierungsassistenten erstellen.
@@ -39,7 +39,7 @@ NetApp Backup and Recovery bietet drei Arten von Backups von ONTAP -Daten: Snaps
 |===
 Erstellen Sie Sicherungsrichtlinien mit den folgenden Tools, abhängig von Ihrer Umgebung, Ihren Präferenzen und dem Schutztyp:
 
-* NetApp Konsolen-Benutzeroberfläche
+* NetApp Console -UI
 * System Manager-Benutzeroberfläche
 * ONTAP CLI
 
@@ -151,14 +151,14 @@ Diese Speicherrichtlinie befindet sich je nach Sicherungsarchitektur an verschie
 . Geben Sie die Einstellungen an, einschließlich des Übertragungszeitplans und des Zeitpunkts, zu dem die Sicherungen archiviert werden sollen.
 . (Optional) Um ältere Sicherungsdateien nach einer bestimmten Anzahl von Tagen in eine weniger teure Speicherklasse oder Zugriffsebene zu verschieben, wählen Sie die Option *Archivieren* und geben Sie die Anzahl der Tage an, die vergehen sollen, bevor die Daten archiviert werden.  Geben Sie *0* als „Archiv nach Tagen“ ein, um Ihre Sicherungsdatei direkt an den Archivspeicher zu senden.
 +
-link:prev-ontap-policy-object-options.html["Weitere Informationen zu den Einstellungen für die Archivspeicherung"] .
+link:prev-ontap-policy-object-options.html["Weitere Informationen zu den Einstellungen für die Archivspeicherung"].
 
 . (Optional) Um Ihre Backups vor Änderungen oder Löschungen zu schützen, wählen Sie die Option *DataLock & Ransomware-Schutz*.
 +
 Wenn Ihr Cluster ONTAP 9.11.1 oder höher verwendet, können Sie Ihre Backups vor dem Löschen schützen, indem Sie _DataLock_ und _Ransomware-Schutz_ konfigurieren.
 
 +
-link:prev-ontap-policy-object-options.html["Erfahren Sie mehr über die verfügbaren DataLock-Einstellungen"] .
+link:prev-ontap-policy-object-options.html["Erfahren Sie mehr über die verfügbaren DataLock-Einstellungen"].
 
 . Wählen Sie *Erstellen*.
 

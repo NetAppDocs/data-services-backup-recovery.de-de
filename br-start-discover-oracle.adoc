@@ -4,7 +4,7 @@ permalink: br-start-discover-oracle.html
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, workloads, protect, Oracle 
 summary: NetApp Backup and Recovery muss zunächst Workloads erkennen, damit Sie diese schützen können. 
 ---
-= Entdecken Sie Oracle-Workloads in NetApp Backup und Recovery
+= Entdecken Sie Oracle-Workloads in NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -16,16 +16,16 @@ summary: NetApp Backup and Recovery muss zunächst Workloads erkennen, damit Sie
 [role="lead"]
 NetApp Backup and Recovery muss zuerst Ihre Oracle-Datenbanken erkennen, damit Sie sie schützen können.
 
-*Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung. Erfahren Sie mehr überlink:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+*Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung.  Erfahren Sie mehr überlink:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
 
 
 == Hinzufügen eines Oracle-Hosts und Ermitteln von Ressourcen
 
-Fügen Sie Oracle-Hostinformationen hinzu und lassen Sie NetApp Backup and Recovery die Workloads erkennen.  Wählen Sie in jedem Konsolenagenten die Systeme aus, auf denen Sie Workloads ermitteln möchten.
+Fügen Sie Oracle-Hostinformationen hinzu und lassen Sie NetApp Backup and Recovery die Workloads erkennen. Wählen Sie in jedem Konsolenagenten die Systeme aus, auf denen Sie Workloads ermitteln möchten.
 
 .Schritte
-. Wählen Sie im NetApp -Konsolenmenü *Schutz > Sicherung und Wiederherstellung*.
+. Wählen Sie im NetApp Console *Schutz > Sicherung und Wiederherstellung*.
 . Wählen Sie in der Oracle-Kachel *Erkennen und verwalten* aus.
 +
 Wenn Sie sich zum ersten Mal bei Backup and Recovery anmelden und bereits ein System in der Konsole haben, aber noch keine Ressourcen entdeckt haben, wird die Zielseite „Willkommen beim neuen NetApp Backup and Recovery“ angezeigt und bietet die Option „Ressourcen entdecken“.
@@ -53,7 +53,7 @@ TIP: Dieser Vorgang kann einige Minuten dauern.
 
 
 .Ergebnis
-Die Oracle-Workload wird in der Liste der Workloads auf der Inventarseite angezeigt.
+Die Oracle-Workload wird in der Workload-Liste auf der Inventarseite angezeigt.
 
 
 

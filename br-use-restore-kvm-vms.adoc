@@ -16,11 +16,11 @@ summary: Mit NetApp Backup and Recovery können Sie Anwendungen wiederherstellen
 [role="lead"]
 Mit NetApp Backup and Recovery können Sie Anwendungen wiederherstellen, die Sie mit einer Schutzrichtlinie geschützt haben. Zur Wiederherstellung einer Anwendung muss mindestens ein Wiederherstellungspunkt verfügbar sein. Ein Wiederherstellungspunkt besteht entweder aus dem lokalen Snapshot oder der Sicherung im Objektspeicher (oder beidem). Sie können eine Anwendung mithilfe des lokalen, sekundären oder Objektspeicherarchivs wiederherstellen.
 
-.Erforderliche NetApp Konsolenrolle
-Organisationsadministrator oder SnapCenter Administrator. link:reference-roles.html["Erfahren Sie mehr über die Zugriffsrollen für NetApp Backup und Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+.Erforderliche NetApp Console
+Organisationsadministrator oder SnapCenter Administrator. link:reference-roles.html["Erfahren Sie mehr über die Zugriffsrollen für NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
 .Schritte
-. Wählen Sie in NetApp Backup and Recovery *Inventar* aus.
+. Wählen Sie in NetApp Backup and Recovery*Inventar* aus.
 . Wählen Sie eine Kubernetes-Instanz und wählen Sie *Anzeigen*, um die mit dieser Instanz verknüpften Ressourcen anzuzeigen.
 . Wählen Sie die Registerkarte *Anwendungen*.
 . Wählen Sie in der Anwendungsliste eine Anwendung aus, die Sie wiederherstellen möchten, und wählen Sie das zugehörige Aktionsmenü.

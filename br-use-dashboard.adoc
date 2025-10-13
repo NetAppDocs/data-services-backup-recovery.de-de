@@ -16,10 +16,10 @@ summary: Durch die Überwachung des Zustands Ihrer Workloads wird sichergestellt
 [role="lead"]
 Durch die Überwachung des Zustands Ihrer Workloads wird sichergestellt, dass Sie über Probleme beim Workload-Schutz informiert sind und Schritte zu deren Lösung unternehmen können.  Zeigen Sie den Status Ihrer Backups und Wiederherstellungen im NetApp Backup and Recovery Dashboard an.  Sie können die Systemübersicht, die Schutzübersicht, die Jobübersicht, die Wiederherstellungsübersicht und mehr überprüfen.
 
-*Erforderliche NetApp Konsolenrolle* Speicherbetrachter, Superadministrator für Backup und Recovery, Backupadministrator für Backup und Recovery, Wiederherstellungsadministrator für Backup und Recovery, Klonadministrator für Backup und Recovery oder Betrachterrolle für Backup und Recovery. Erfahren Sie mehr überlink:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+*Erforderliche NetApp Console * Speicherbetrachter, Superadministrator für Backup und Recovery, Backupadministrator für Backup und Recovery, Wiederherstellungsadministrator für Backup und Recovery, Klonadministrator für Backup und Recovery oder Betrachterrolle für Backup und Recovery.  Erfahren Sie mehr überlink:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
 .Schritte
-. Wählen Sie im NetApp Backup and Recovery-Menü *Dashboard* aus.
+. Wählen Sie im NetApp Backup and Recovery -Menü *Dashboard* aus.
 +
 ** Anzahl der erkannten Hosts oder VMs
 ** Anzahl der erkannten Kubernetes-Cluster

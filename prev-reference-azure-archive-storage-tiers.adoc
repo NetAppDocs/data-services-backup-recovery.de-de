@@ -18,12 +18,12 @@ NetApp Backup and Recovery unterstützt eine Azure-Archivzugriffsebene und die m
 
 []
 ====
-*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup und Recovery UI-Versionen finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zur vorherigen NetApp Backup and Recovery-Benutzeroberfläche"] .
+*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup and Recovery UI-Versionen finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zur vorherigen NetApp Backup and Recovery -Benutzeroberfläche"] .
 
 ====
 
 
-== Unterstützte Azure Blob-Zugriffsebenen für NetApp Backup und Recovery
+== Unterstützte Azure Blob-Zugriffsebenen für NetApp Backup and Recovery
 
 Wenn Sicherungsdateien zunächst erstellt werden, werden sie in der Zugriffsebene _Cool_ gespeichert.  Diese Ebene ist für die Speicherung von Daten optimiert, auf die selten zugegriffen wird, auf die bei Bedarf jedoch sofort zugegriffen werden kann.
 
@@ -31,7 +31,7 @@ Wenn auf Ihren Quellclustern ONTAP 9.10.1 oder höher ausgeführt wird, können 
 
 Beachten Sie, dass Sie beim Konfigurieren von NetApp Backup and Recovery mit dieser Art von Lebenszyklusregel beim Einrichten des Containers in Ihrem Azure-Konto keine Lebenszyklusregeln konfigurieren dürfen.
 
-https://docs.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview["Informationen zu Azure Blob-Zugriffsebenen"^] .
+https://docs.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview["Informationen zu Azure Blob-Zugriffsebenen"^].
 
 
 

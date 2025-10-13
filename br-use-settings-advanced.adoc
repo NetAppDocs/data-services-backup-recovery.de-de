@@ -35,7 +35,7 @@ Konfigurieren Sie die erweiterten Einstellungen für NetApp Backup and Recovery 
 
 Sie können Backups löschen, um Speicherplatz in Ihrem Speicher freizugeben.
 
-. Wählen Sie in der NetApp Backup and Recovery-Konsole **Einstellungen** aus.
+. Wählen Sie in der NetApp Backup and Recovery -Konsole **Einstellungen** aus.
 . Wählen Sie **Erweiterte Einstellungen**.
 . Wählen Sie **Backups löschen**.
 . Wählen Sie die Sicherung aus, die Sie löschen möchten.
@@ -48,7 +48,7 @@ Sie können Backups löschen, um Speicherplatz in Ihrem Speicher freizugeben.
 
 Sie können die Registrierung von Backups, Datenbanken, Instanzen oder Anwendungshosts aufheben, um sie aus dem Inventar zu entfernen.
 
-. Wählen Sie in der NetApp Backup and Recovery-Konsole **Einstellungen** aus.
+. Wählen Sie in der NetApp Backup and Recovery -Konsole **Einstellungen** aus.
 . Wählen Sie **Erweiterte Einstellungen**.
 . Wählen Sie **Ressourcenregistrierung aufheben**.
 . Wählen Sie die Ressource aus, deren Registrierung Sie aufheben möchten.
@@ -61,7 +61,7 @@ Sie können die Registrierung von Backups, Datenbanken, Instanzen oder Anwendung
 
 Sie können Beziehungen löschen, um sie aus dem Inventar zu entfernen.
 
-. Wählen Sie in der NetApp Backup and Recovery-Konsole **Einstellungen** aus.
+. Wählen Sie in der NetApp Backup and Recovery -Konsole **Einstellungen** aus.
 . Wählen Sie **Erweiterte Einstellungen**.
 . Wählen Sie **Beziehungen löschen** aus.
 . Wählen Sie die Beziehung aus, die Sie löschen möchten.
@@ -70,11 +70,11 @@ Sie können Beziehungen löschen, um sie aus dem Inventar zu entfernen.
 
 
 
-== Aufheben des Schutzes von Datenbanken, Instanzen, Anwendungshosts und Arbeitsumgebungen
+== Schutz von Datenbanken, Instanzen, Anwendungshosts und Arbeitsumgebungen aufheben
 
 Sie können den Schutz von Datenbanken, Instanzen, Anwendungshosts und Arbeitsumgebungen aufheben, um Servicegebühren zu vermeiden.
 
-. Wählen Sie in der NetApp Backup and Recovery-Konsole **Einstellungen** aus.
+. Wählen Sie in der NetApp Backup and Recovery -Konsole **Einstellungen** aus.
 . Wählen Sie **Erweiterte Einstellungen**.
 . Wählen Sie **Ressourcenschutz aufheben**.
 
@@ -85,7 +85,7 @@ Sie können den Schutz von Datenbanken, Instanzen, Anwendungshosts und Arbeitsum
 
 Sie können die maximale Übertragungsrate für die SnapMirror -Beziehung festlegen, um die Bandbreitennutzung zu verwalten und sicherzustellen, dass SnapMirror Vorgänge andere Netzwerkaktivitäten nicht beeinträchtigen.
 
-. Wählen Sie in der NetApp Backup and Recovery-Konsole **Einstellungen** aus.
+. Wählen Sie in der NetApp Backup and Recovery -Konsole **Einstellungen** aus.
 . Wählen Sie **Erweiterte Einstellungen**.
 . Wählen Sie **Maximale Übertragungsrate für die SnapMirror -Beziehung festlegen**.
 . Geben Sie die maximale Übertragungsrate ein.
@@ -98,7 +98,7 @@ Sie können die maximale Übertragungsrate für die SnapMirror -Beziehung festle
 
 Sie können Snapshot-Kopien in einen Objektspeicher exportieren, um Sicherungen in der Cloud zu initialisieren, indem Sie ältere Snapshot-Kopien in die Basissicherungskopie verschieben.
 
-. Wählen Sie in der NetApp Backup and Recovery-Konsole **Einstellungen** aus.
+. Wählen Sie in der NetApp Backup and Recovery -Konsole **Einstellungen** aus.
 . Wählen Sie **Erweiterte Einstellungen**.
 . Wählen Sie **Snapshot-Kopien in einen Objektspeicher exportieren** aus.
 . Wählen Sie die Snapshot-Kopie aus, die Sie exportieren möchten.
@@ -111,7 +111,7 @@ Sie können Snapshot-Kopien in einen Objektspeicher exportieren, um Sicherungen 
 
 Sie können die automatische jährliche Löschung von Snapshots aktivieren, um Snapshots zu löschen, die älter als ein Jahr sind.
 
-. Wählen Sie in der NetApp Backup and Recovery-Konsole **Einstellungen** aus.
+. Wählen Sie in der NetApp Backup and Recovery -Konsole **Einstellungen** aus.
 . Wählen Sie **Erweiterte Einstellungen**.
 . Wählen Sie **Automatisches jährliches Löschen von Snapshots aktivieren**.
 . Wählen Sie **Aktivieren**.
@@ -123,7 +123,7 @@ Sie können die automatische jährliche Löschung von Snapshots aktivieren, um S
 
 Sie können den Wartungsmodus aktivieren, damit Updates oder Wartungsaufgaben durchgeführt werden können.
 
-. Wählen Sie in der NetApp Backup and Recovery-Konsole **Einstellungen** aus.
+. Wählen Sie in der NetApp Backup and Recovery -Konsole **Einstellungen** aus.
 . Wählen Sie **Erweiterte Einstellungen**.
 . Wählen Sie **Wartungsmodus aktivieren**.
 . Wählen Sie **Aktivieren**.
@@ -135,7 +135,7 @@ Sie können den Wartungsmodus aktivieren, damit Updates oder Wartungsaufgaben du
 
 Sie können das Anwendungs-Plugin aktualisieren, um sicherzustellen, dass die neuesten Funktionen verfügbar sind.
 
-. Wählen Sie in der NetApp Backup and Recovery-Konsole **Einstellungen** aus.
+. Wählen Sie in der NetApp Backup and Recovery -Konsole **Einstellungen** aus.
 . Wählen Sie **Erweiterte Einstellungen**.
 . Wählen Sie **Anwendungs-Plugin aktualisieren**.
 . Wählen Sie **Aktualisieren**.

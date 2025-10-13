@@ -16,7 +16,7 @@ summary: NetApp Backup and Recovery muss zunächst Workloads erkennen, damit Sie
 [role="lead"]
 NetApp Backup and Recovery muss zunächst Microsoft SQL Server-Workloads erkennen, damit Sie den Dienst nutzen können.  Sie können optional Sicherungsdaten und Richtlinien aus SnapCenter importieren, wenn Sie SnapCenter bereits installiert haben.
 
-*Erforderliche NetApp -Konsolenrolle* Superadministrator für Backup und Wiederherstellung. Erfahren Sie mehr überlink:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+*Erforderliche NetApp Console * Superadministrator für Backup und Wiederherstellung.  Erfahren Sie mehr überlink:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
 
 
@@ -28,10 +28,10 @@ NetApp Backup and Recovery bewertet Microsoft SQL Server-Anwendungen.  Der Diens
 
 Die Ermittlung erfolgt auf folgende Weise:
 
-* Wenn Sie bereits über SnapCenter verfügen, importieren Sie SnapCenter -Ressourcen mithilfe der NetApp Backup and Recovery-Benutzeroberfläche in NetApp Backup and Recovery.
+* Wenn Sie bereits über SnapCenter verfügen, importieren Sie SnapCenter -Ressourcen mithilfe der NetApp Backup and Recovery -Benutzeroberfläche in NetApp Backup and Recovery .
 +
 
-NOTE: Wenn Sie bereits über SnapCenter verfügen, überprüfen Sie zunächst, ob Sie die Voraussetzungen erfüllt haben, bevor Sie aus SnapCenter importieren.  Beispielsweise sollten Sie lokale SnapCenter -Cluster-Speichersysteme zuerst zur NetApp Konsole hinzufügen, bevor Sie sie aus SnapCenter importieren. Sehen link:concept-start-prereq-snapcenter-import.html["Voraussetzungen für den Import von Ressourcen aus SnapCenter"] .
+NOTE: Wenn Sie bereits über SnapCenter verfügen, überprüfen Sie zunächst, ob Sie die Voraussetzungen erfüllt haben, bevor Sie aus SnapCenter importieren.  Beispielsweise sollten Sie lokale SnapCenter -Cluster-Speichersysteme zuerst zur NetApp Console hinzufügen, bevor Sie sie aus SnapCenter importieren.  Sehenlink:concept-start-prereq-snapcenter-import.html["Voraussetzungen für den Import von Ressourcen aus SnapCenter"] .
 
 * Wenn Sie noch kein SnapCenter haben, können Sie Workloads trotzdem ermitteln, indem Sie manuell ein vCenter hinzufügen und die Erkennung durchführen.
 
@@ -40,13 +40,13 @@ NOTE: Wenn Sie bereits über SnapCenter verfügen, überprüfen Sie zunächst, o
 
 === Wenn SnapCenter bereits installiert ist, importieren Sie SnapCenter -Ressourcen in NetApp Backup and Recovery
 
-Wenn Sie SnapCenter bereits installiert haben, importieren Sie SnapCenter -Ressourcen mit diesen Schritten in NetApp Backup and Recovery.  NetApp Console erkennt Ressourcen, Hosts, Anmeldeinformationen und Zeitpläne von SnapCenter; Sie müssen diese Informationen nicht alle neu erstellen.
+Wenn Sie SnapCenter bereits installiert haben, importieren Sie SnapCenter -Ressourcen mit diesen Schritten in NetApp Backup and Recovery .  NetApp Console erkennt Ressourcen, Hosts, Anmeldeinformationen und Zeitpläne von SnapCenter; Sie müssen diese Informationen nicht alle neu erstellen.
 
 Sie können dies auf folgende Weise tun:
 
 * Wählen Sie während der Erkennung eine Option zum Importieren von Ressourcen aus SnapCenter aus.
 * Wählen Sie nach der Erkennung auf der Inventarseite eine Option zum Importieren von SnapCenter -Ressourcen aus.
-* Wählen Sie nach der Erkennung im Menü „Einstellungen“ eine Option zum Importieren von SnapCenter -Ressourcen aus. Weitere Informationen finden Sie unter link:br-start-configure.html["Konfigurieren von NetApp Backup und Recovery"] .
+* Wählen Sie nach der Erkennung im Menü „Einstellungen“ eine Option zum Importieren von SnapCenter -Ressourcen aus.  Weitere Einzelheiten finden Sie unterlink:br-start-configure.html["Konfigurieren von NetApp Backup and Recovery"] .
 
 
 Dies ist ein zweiteiliger Prozess:
@@ -65,7 +65,7 @@ Dieser erste Schritt importiert Hostressourcen aus SnapCenter und zeigt diese Re
 TIP: Nachdem Sie SnapCenter -Hostressourcen importiert haben, übernimmt NetApp Backup and Recovery die Schutzverwaltung nicht automatisch.  Dazu müssen Sie explizit auswählen, dass die importierten Ressourcen in NetApp Backup and Recovery verwaltet werden sollen.  Dadurch wird sichergestellt, dass Sie bereit sind, diese Ressourcen durch NetApp Backup and Recovery sichern zu lassen.
 
 .Schritte
-. Wählen Sie in der linken Navigation der NetApp Konsole *Schutz* > *Sicherung und Wiederherstellung*.
+. Wählen Sie in der linken Navigation der NetApp Console *Schutz* > *Sicherung und Wiederherstellung*.
 . Wählen Sie *Inventar*.
 . Wählen Sie *Ressourcen entdecken*.
 . Wählen Sie auf der Seite „Workload-Ressourcen von NetApp Backup and Recovery ermitteln“ die Option „Aus SnapCenter importieren“ aus.
@@ -133,7 +133,7 @@ Wenn Sie bereits Ressourcen entdeckt haben, können Sie SnapCenter -Ressourcen v
 
 === Wenn Sie SnapCenter nicht installiert haben, fügen Sie ein vCenter hinzu und ermitteln Sie Ressourcen
 
-Wenn Sie SnapCenter noch nicht installiert haben, können Sie vCenter-Informationen hinzufügen und die Workloads von NetApp Backup and Recovery ermitteln lassen.  Wählen Sie in jedem Konsolenagenten die Systeme aus, auf denen Sie Workloads ermitteln möchten.
+Wenn Sie SnapCenter noch nicht installiert haben, können Sie vCenter-Informationen hinzufügen und die Workloads von NetApp Backup and Recovery ermitteln lassen. Wählen Sie in jedem Konsolenagenten die Systeme aus, auf denen Sie Workloads ermitteln möchten.
 
 Dies ist optional, wenn Sie eine VMware-Umgebung haben.
 
@@ -197,6 +197,6 @@ Mit den erweiterten Einstellungen können Sie den Plugin-Agenten manuell auf all
 . Um das NetApp Backup and Recovery Dashboard anzuzeigen, wählen Sie im Backup and Recovery-Menü *Dashboard*.
 . Überprüfen Sie den Zustand des Datenschutzes.  Die Anzahl der gefährdeten oder geschützten Workloads steigt basierend auf den neu entdeckten, geschützten und gesicherten Workloads.
 +
-link:br-use-dashboard.html["Erfahren Sie, was Ihnen das Dashboard anzeigt"] .
+link:br-use-dashboard.html["Erfahren Sie, was Ihnen das Dashboard anzeigt"].
 
 

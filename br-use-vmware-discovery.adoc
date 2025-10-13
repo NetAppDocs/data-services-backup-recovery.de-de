@@ -4,7 +4,7 @@ permalink: br-use-vmware-discovery.html
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
 summary: Schützen Sie Ihre VMware-Workloads mit NetApp NetApp Backup and Recovery. 
 ---
-= Entdecken Sie VMware-Workloads mit NetApp Backup und Recovery
+= Entdecken Sie VMware-Workloads mit NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,9 +14,9 @@ summary: Schützen Sie Ihre VMware-Workloads mit NetApp NetApp Backup and Recove
 
 
 [role="lead"]
-Damit Sie den Dienst nutzen können, muss der NetApp Backup and Recovery-Dienst zunächst VMware-Datenspeicher und VMs erkennen, die auf ONTAP -Systemen ausgeführt werden. Sie können optional Sicherungsdaten und Richtlinien aus dem SnapCenter Plug-in for VMware vSphere importieren, wenn Sie es bereits installiert haben.
+Damit Sie den Dienst nutzen können, muss der NetApp Backup and Recovery -Dienst zunächst VMware-Datenspeicher und VMs erkennen, die auf ONTAP -Systemen ausgeführt werden. Sie können optional Sicherungsdaten und Richtlinien aus dem SnapCenter Plug-in for VMware vSphere importieren, wenn Sie es bereits installiert haben.
 
-*Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung. Erfahren Sie mehr überlink:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+*Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung.  Erfahren Sie mehr überlink:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
 
 
@@ -24,7 +24,7 @@ Damit Sie den Dienst nutzen können, muss der NetApp Backup and Recovery-Dienst 
 
 Während der Erkennung analysiert NetApp Backup and Recovery VMware-Workloads in Ihrem Unternehmen und bewertet und importiert vorhandene Schutzrichtlinien, Snapshot-Kopien sowie Sicherungs- und Wiederherstellungsoptionen.
 
-Sie können VMware NFS- und VMFS-Datenspeicher und VMs von ihrem lokalen SnapCenter Plug-in for VMware vSphere in das NetApp Backup and Recovery-Inventar importieren.
+Sie können VMware NFS- und VMFS-Datenspeicher und VMs von ihrem lokalen SnapCenter Plug-in for VMware vSphere in das NetApp Backup and Recovery Inventar importieren.
 
 
 NOTE: Diese Version von NetApp Backup and Recovery unterstützt nur VMware vCenter und erkennt keine vVols oder VMs auf vVols.
@@ -33,7 +33,7 @@ Während des Importvorgangs führt NetApp Backup and Recovery die folgenden Aufg
 
 * Ermöglicht sicheren SSH-Zugriff auf den vCenter-Server.
 * Aktiviert den Wartungsmodus für alle Ressourcengruppen im vCenter-Server.
-* Bereitet die Metadaten des vCenters vor und markiert es in der NetApp Konsole als nicht verwaltet.
+* Bereitet die Metadaten des vCenters vor und markiert es in der NetApp Console als nicht verwaltet.
 * Konfiguriert den Datenbankzugriff.
 * Erkennt VMware vCenter, Datenspeicher und VMs.
 * Importiert vorhandene Schutzrichtlinien, Snapshot-Kopien sowie Sicherungs- und Wiederherstellungsoptionen aus dem SnapCenter Plug-in for VMware vSphere.
@@ -42,10 +42,10 @@ Während des Importvorgangs führt NetApp Backup and Recovery die folgenden Aufg
 
 Die Ermittlung erfolgt auf folgende Weise:
 
-* Wenn Sie bereits über das SnapCenter Plug-in for VMware vSphere verfügen, importieren Sie SnapCenter Ressourcen mithilfe der NetApp Backup and Recovery-Benutzeroberfläche in NetApp Backup and Recovery.
+* Wenn Sie bereits über das SnapCenter Plug-in for VMware vSphere verfügen, importieren Sie SnapCenter Ressourcen mithilfe der NetApp Backup and Recovery -Benutzeroberfläche in NetApp Backup and Recovery and Recovery.
 +
 
-NOTE: Wenn Sie bereits über das SnapCenter -Plug-in verfügen, stellen Sie sicher, dass Sie die Voraussetzungen erfüllt haben, bevor Sie aus SnapCenter importieren. Beispielsweise sollten Sie zunächst in der NetApp Konsole Systeme für den gesamten lokalen SnapCenter -Clusterspeicher erstellen, bevor Sie aus SnapCenter importieren. Sehen link:concept-start-prereq-snapcenter-import.html["Voraussetzungen für den Import von Ressourcen aus SnapCenter"] .
+NOTE: Wenn Sie bereits über das SnapCenter -Plug-in verfügen, stellen Sie sicher, dass Sie die Voraussetzungen erfüllt haben, bevor Sie aus SnapCenter importieren. Beispielsweise sollten Sie zunächst in der NetApp Console Systeme für den gesamten lokalen SnapCenter -Clusterspeicher erstellen, bevor Sie aus SnapCenter importieren.  Sehenlink:concept-start-prereq-snapcenter-import.html["Voraussetzungen für den Import von Ressourcen aus SnapCenter"] .
 
 * Wenn Sie das SnapCenter -Plug-in noch nicht haben, können Sie Workloads in Ihren Systemen trotzdem ermitteln, indem Sie manuell ein vCenter hinzufügen und die Erkennung durchführen.
 
@@ -54,10 +54,10 @@ NOTE: Wenn Sie bereits über das SnapCenter -Plug-in verfügen, stellen Sie sich
 
 === Wenn das SnapCenter Plug-in noch nicht installiert ist, fügen Sie ein vCenter hinzu und ermitteln Sie Ressourcen
 
-Wenn Sie das SnapCenter Plug-in für VMware noch nicht installiert haben, fügen Sie vCenter-Informationen hinzu und lassen Sie NetApp Backup and Recovery die Workloads erkennen.  Wählen Sie in jedem Konsolenagenten die Systeme aus, auf denen Sie Workloads ermitteln möchten.
+Wenn Sie das SnapCenter Plug-in für VMware noch nicht installiert haben, fügen Sie vCenter-Informationen hinzu und lassen Sie NetApp Backup and Recovery die Workloads erkennen. Wählen Sie in jedem Konsolenagenten die Systeme aus, auf denen Sie Workloads ermitteln möchten.
 
 .Schritte
-. Wählen Sie in der linken Navigation der NetApp Konsole *Schutz* > *Sicherung und Wiederherstellung*.
+. Wählen Sie in der linken Navigation der NetApp Console *Schutz* > *Sicherung und Wiederherstellung*.
 +
 Wenn Sie sich zum ersten Mal bei Backup and Recovery anmelden und bereits ein System in der Konsole haben, aber noch keine Ressourcen entdeckt haben, wird die Zielseite „Willkommen beim neuen NetApp Backup and Recovery“ angezeigt und bietet die Option „Ressourcen entdecken“.
 
@@ -85,13 +85,13 @@ TIP: Dieser Vorgang kann einige Minuten dauern.
 
 === Wenn das SnapCenter -Plugin bereits installiert ist, importieren Sie das SnapCenter -Plugin für VMware-Ressourcen in NetApp Backup and Recovery
 
-Wenn Sie das SnapCenter Plug-in für VMware bereits installiert haben, importieren Sie die SnapCenter Plug-in-Ressourcen mit diesen Schritten in NetApp Backup and Recovery.  Die Konsole erkennt ESXi-Hosts, Datenspeicher und VMs in vCentern und plant sie vom Plug-in aus. Sie müssen diese Informationen nicht alle neu erstellen.
+Wenn Sie das SnapCenter Plug-in für VMware bereits installiert haben, importieren Sie die SnapCenter Plug-in-Ressourcen mit diesen Schritten in NetApp Backup and Recovery .  Die Konsole erkennt ESXi-Hosts, Datenspeicher und VMs in vCentern und plant sie vom Plug-in aus. Sie müssen diese Informationen nicht alle neu erstellen.
 
 Sie können dies auf folgende Weise tun:
 
 * Wählen Sie während der Erkennung eine Option zum Importieren von Ressourcen aus dem SnapCenter -Plug-in aus.
 * Wählen Sie nach der Erkennung auf der Inventarseite eine Option zum Importieren von SnapCenter -Plug-in-Ressourcen aus.
-* Wählen Sie nach der Erkennung im Menü „Einstellungen“ eine Option zum Importieren von SnapCenter -Plug-in-Ressourcen aus. Weitere Informationen finden Sie unter link:br-start-configure.html["Konfigurieren von NetApp Backup und Recovery"] . Dies wird für VMware nicht unterstützt.
+* Wählen Sie nach der Erkennung im Menü „Einstellungen“ eine Option zum Importieren von SnapCenter -Plug-in-Ressourcen aus. Weitere Einzelheiten finden Sie unterlink:br-start-configure.html["Konfigurieren von NetApp Backup and Recovery"] . Dies wird für VMware nicht unterstützt.
 
 
 Dies ist ein zweiteiliger Prozess, der in diesem Abschnitt beschrieben wird:

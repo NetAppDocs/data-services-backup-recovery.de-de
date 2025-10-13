@@ -21,7 +21,7 @@ NOTE: Sie können keine virtuellen Maschinen wiederherstellen, die sich über me
 
 []
 ====
-*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup und Recovery-Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup- und Recovery-Workloads"] .
+*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
 
 ====
 .Bevor Sie beginnen
@@ -29,7 +29,7 @@ NOTE: Sie können keine virtuellen Maschinen wiederherstellen, die sich über me
 * Wenn Sie an einem anderen Speicherort wiederherstellen:
 +
 ** Stellen Sie sicher, dass sich die Quell- und Ziel-vCenter im verknüpften Modus befinden.
-** Stellen Sie sicher, dass die Quell- und Zielclusterdetails auf der Seite *Systeme* der NetApp Konsole und in vCentern im verknüpften Modus in beiden SnapCenter Plug-in for VMware vSphere Hosts hinzugefügt werden.
+** Stellen Sie sicher, dass die Quell- und Zielclusterdetails auf der Seite *Systeme* der NetApp Console und in vCentern im verknüpften Modus in beiden SnapCenter Plug-in for VMware vSphere Hosts hinzugefügt werden.
 ** Stellen Sie sicher, dass das System entsprechend dem alternativen Speicherort auf der Konsolenseite *Systeme* hinzugefügt wird.
 
 

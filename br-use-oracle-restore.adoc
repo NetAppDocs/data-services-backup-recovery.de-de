@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-oracle-restore.html 
 keywords: restore, vm, oracle, databases, snapshots, object storage, cloud storage, backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Schützen Sie Ihre Oracle-Workloads mit NetApp Backup und Recovery. 
+summary: Schützen Sie Ihre Oracle-Workloads mit NetApp Backup and Recovery. 
 ---
 = Stellen Sie Oracle-Datenbanken mit NetApp Backup and Recovery wieder her
 :hardbreaks:
@@ -49,11 +49,11 @@ Auf der Seite „Wiederherstellen“ (auch als „Suchen und Wiederherstellen“
 
 Stellen Sie je nach Bedarf eine Oracle-Datenbank zu einem bestimmten Zeitpunkt, zu einer bestimmten Systemänderungsnummer (SCN) oder zum letzten fehlerfreien Zustand wieder her.  Sie können die Datenbank auch einfach aus Snapshots wiederherstellen und den automatisierten Wiederherstellungsprozess überspringen.  Wenn Sie die Wiederherstellung manuell durchführen möchten, können Sie den automatisierten Wiederherstellungsprozess überspringen.  Sie können die Datenbank anhand ihres Namens oder mit bestimmten Filtern suchen.
 
-*Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung oder Administratorrolle für Backup und Wiederherstellung zur Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+*Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung oder Administratorrolle für Backup und Wiederherstellung zur Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
 .Schritte
-. Wählen Sie im NetApp -Konsolenmenü *Schutz > Sicherung und Wiederherstellung*.
-. Wählen Sie im NetApp Backup and Recovery-Menü *Wiederherstellen* aus.
+. Wählen Sie im NetApp Console *Schutz > Sicherung und Wiederherstellung*.
+. Wählen Sie im NetApp Backup and Recovery -Menü *Wiederherstellen* aus.
 . Wählen Sie aus der Dropdown-Liste rechts neben dem Namenssuchfeld *Oracle* aus.
 . Geben Sie den Namen der Datenbank ein, die Sie wiederherstellen möchten, oder filtern Sie nach dem Datenbankhost, auf dem sich die wiederherzustellende Datenbank befindet.
 +

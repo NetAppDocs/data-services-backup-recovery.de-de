@@ -30,7 +30,7 @@ Geben Sie Anmeldeinformationen für den Zugriff auf das Speicherkonto ein.  NetA
 Sie müssen mindestens eine Arbeitslast ermitteln, bevor Sie ein externes Sicherungsziel hinzufügen können.
 
 .Schritte
-. Wählen Sie im NetApp Backup and Recovery-Menü *Inventar* aus.
+. Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
 . Wählen Sie die Registerkarte *Offsite-Sicherungsziele*.
 . Wählen Sie *Sicherungsziel ermitteln*.
 . Wählen Sie einen der Sicherungszieltypen: *Amazon Web Services (AWS) S3*, *Microsoft Azure Blob Storage*, * StorageGRID* oder * ONTAP S3*.
@@ -83,7 +83,7 @@ Sie müssen mindestens eine Arbeitslast ermitteln, bevor Sie ein externes Sicher
 Anstatt Buckets automatisch von NetApp Backup and Recovery erkennen zu lassen, können Sie einem externen Sicherungsziel manuell einen Bucket hinzufügen.
 
 .Schritte
-. Wählen Sie im NetApp Backup and Recovery-Menü *Inventar* aus.
+. Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
 . Wählen Sie *Offsite-Sicherungsziele*.
 . Wählen Sie das Ziel aus und wählen Sie rechts die *Aktionen*image:icon-action.png["Symbol „Aktionen“"] Symbol und wählen Sie *Bucket hinzufügen*.
 . Geben Sie die Bucket-Informationen ein.  Die Informationen unterscheiden sich je nach Art des ausgewählten Sicherungsziels.
@@ -149,7 +149,7 @@ Anstatt Buckets automatisch von NetApp Backup and Recovery erkennen zu lassen, k
 Geben Sie die für den Zugriff auf das Sicherungsziel erforderlichen Anmeldeinformationen ein.
 
 .Schritte
-. Wählen Sie im NetApp Backup and Recovery-Menü *Inventar* aus.
+. Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
 . Wählen Sie *Offsite-Sicherungsziele*.
 . Wählen Sie das Ziel aus und wählen Sie rechts die *Aktionen*image:icon-action.png["Symbol „Aktionen“"] Symbol und wählen Sie *Anmeldeinformationen ändern*.
 . Geben Sie die neuen Anmeldeinformationen für das Sicherungsziel ein.  Die Informationen unterscheiden sich je nach Art des ausgewählten Sicherungsziels.

@@ -23,7 +23,7 @@ SnapCenter verwendet die folgenden Zeitplanebenen:
 * *Stündlich*: Mehrere Stunden und Minuten mit beliebigen Stunden (0-23) und beliebigen Minuten (0-60).
 * *Täglich*: Enthält eine Option zur Wiederholung alle paar Tage, zum Beispiel alle 3 Tage.
 * *Wöchentlich*: Sonntag bis Montag, mit der Option, am ersten Tag der Woche oder an mehreren Tagen der Woche einen Snapshot durchzuführen.
-* *Monatlich*: Monate Januar bis Dezember, mit der Option, an bestimmten Tagen im Monat aufzutreten, beispielsweise am 7. jedes Monats und sogar an mehreren Tagen im Monat.
+* *Monatlich*: Monate Januar bis Dezember, mit der Option, an bestimmten Tagen im Monat aufzutreten, zum Beispiel am 7. jedes Monats und sogar an mehreren Tagen im Monat.
 
 
 NetApp Backup and Recovery verwendet die folgenden Zeitplanebenen, die sich leicht unterscheiden:
@@ -67,7 +67,7 @@ Stündliche SnapCenter -Richtlinien mit Wiederholungsintervallen von mehr als ei
 
 Bei jeder stündlichen Richtlinie mit Wiederholungsintervallen, die kein Faktor von 24 sind (z. B. 5, 7 usw.), werden einige Snapshots an einem Tag übersprungen.
 
-*Beispiel*: Wenn Sie über eine stündliche SnapCenter -Richtlinie mit einem Wiederholungsintervall alle 5 Stunden ab 1:00 Uhr verfügen, legt NetApp Backup and Recovery (nach der Migration) den Zeitplan auf täglich mit 5-Stunden-Intervallen um 1:00 Uhr, 6:00 Uhr, 11:00 Uhr, 16:00 Uhr und 21:00 Uhr fest.  Einige Stunden werden übersprungen. Nach 21:00 Uhr sollte es 2:00 Uhr sein, um die Wiederholung alle 5 Stunden durchzuführen, aber es wird immer 1:00 Uhr sein.
+*Beispiel*: Wenn Sie über eine stündliche SnapCenter -Richtlinie mit einem Wiederholungsintervall alle 5 Stunden ab 1:00 Uhr verfügen, legt NetApp Backup and Recovery (nach der Migration) den Zeitplan auf täglich mit 5-Stunden-Intervallen um 1:00 Uhr, 6:00 Uhr, 11:00 Uhr, 16:00 Uhr und 21:00 Uhr fest.  Einige Stunden werden übersprungen. Nach 21:00 Uhr sollte es 2:00 Uhr sein, um es alle 5 Stunden zu wiederholen, aber es wird immer 1:00 Uhr sein.
 
 
 

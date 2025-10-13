@@ -18,8 +18,8 @@ Die Verwaltung der Ressourcen in NetApp Backup and Recovery ist unerlässlich, u
 
 Sie können die folgenden Aufgaben im Zusammenhang mit der Verwaltung Ihrer Ressourcen ausführen:
 
-* link:br-use-manage-inventory.html["Inventar verwalten"] .
-* link:br-use-manage-snapshots.html["Verwalten von Snapshots"] .
-* link:br-use-manage-kubernetes-clusters.html["Verwalten von Kubernetes-Clustern"] .
-* link:br-use-manage-kubernetes-applications.html["Verwalten von Kubernetes-Anwendungen"] .
+* link:br-use-manage-inventory.html["Inventar verwalten"].
+* link:br-use-manage-snapshots.html["Verwalten von Snapshots"].
+* link:br-use-manage-kubernetes-clusters.html["Verwalten von Kubernetes-Clustern"].
+* link:br-use-manage-kubernetes-applications.html["Verwalten von Kubernetes-Anwendungen"].
 

@@ -23,7 +23,7 @@ settings:
   langs: de-de,us-en,es-es,fr-fr,it-it,pt-br,ja-jp,ko-kr,zh-cn,zh-tw
 sidebar:
   entries:
-  - title: NetApp Backup- und Recovery-Dokumente
+  - title: NetApp Backup and Recovery -Dokumente
     url: "/index.html"
   - title: Versionshinweise
     entries:
@@ -43,9 +43,9 @@ sidebar:
       url: "/br-limitations-oracle.html"
   - title: Erste Schritte
     entries:
-    - title: Erfahren Sie mehr über NetApp Backup und Recovery
+    - title: Erfahren Sie mehr über NetApp Backup and Recovery
       url: "/concept-backup-to-cloud.html"
-    - title: Voraussetzungen für NetApp Backup und Recovery
+    - title: Voraussetzungen für NetApp Backup and Recovery
       url: "/concept-start-prereq.html"
     - title: Einrichten der Lizenzierung für NetApp Backup and Recovery
       url: "/br-start-licensing.html"
@@ -58,11 +58,11 @@ sidebar:
       url: "/br-start-login.html"
     - title: Ermitteln von Sicherungszielen
       url: "/br-start-discover-backup-targets.html"
-    - title: Wechseln Sie zu anderen NetApp Backup- und Recovery-Workloads
+    - title: Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads
       url: "/br-start-switch-ui.html"
-    - title: Konfigurieren der allgemeinen Einstellungen für NetApp Backup und Recovery
+    - title: Konfigurieren der allgemeinen Einstellungen für NetApp Backup and Recovery
       url: "/br-start-configure.html"
-  - title: Verwenden Sie NetApp Backup und Recovery
+  - title: Verwenden Sie NetApp Backup and Recovery
     entries:
     - title: Anzeigen des Schutzstatus im Dashboard
       url: "/br-use-dashboard.html"
@@ -90,7 +90,7 @@ sidebar:
         url: "/prev-ontap-backup-onprem-aws.html"
       - title: Sichern Sie lokales ONTAP in Azure Blob
         url: "/prev-ontap-backup-onprem-azure.html"
-      - title: Sichern Sie lokales ONTAP in der Google Cloud
+      - title: Sichern Sie Ihr lokales ONTAP in der Google Cloud
         url: "/prev-ontap-backup-onprem-gcp.html"
       - title: Sichern Sie lokales ONTAP auf ONTAP S3
         url: "/prev-ontap-backup-onprem-ontaps3.html"
@@ -225,7 +225,7 @@ sidebar:
       url: "/reference-policy-differences-snapcenter.html"
     - title: Rollen und Berechtigungen für NetApp Backup and Recovery
       url: "/reference-roles.html"
-    - title: Wiederherstellen von NetApp Backup- und Recovery-Daten an einem Dark
+    - title: Wiederherstellen von NetApp Backup and Recovery -Daten an einem Dark
         Site
       url: "/reference-backup-cbs-db-in-dark-site.html"
     - title: Unterstützte AWS-Archivspeicherebenen

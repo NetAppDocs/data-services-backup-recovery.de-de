@@ -4,7 +4,7 @@ permalink: br-start-discover-kubernetes.html
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Kubernetes 
 summary: NetApp Backup and Recovery muss zunächst Workloads erkennen, damit Sie den Dienst nutzen können. 
 ---
-= Entdecken Sie Kubernetes-Workloads in NetApp Backup und Recovery
+= Entdecken Sie Kubernetes-Workloads in NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -16,7 +16,7 @@ summary: NetApp Backup and Recovery muss zunächst Workloads erkennen, damit Sie
 [role="lead"]
 NetApp Backup and Recovery muss Kubernetes-Workloads erkennen, bevor sie geschützt werden können.
 
-*Erforderliche NetApp -Konsolenrolle* Superadministrator für Backup und Wiederherstellung. Erfahren Sie mehr überlink:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+*Erforderliche NetApp Console * Superadministrator für Backup und Wiederherstellung.  Erfahren Sie mehr überlink:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
 
 
@@ -28,7 +28,7 @@ Ermitteln Sie im Sicherungs- und Wiederherstellungsinventar die Kubernetes-Workl
 . Führen Sie einen der folgenden Schritte aus:
 +
 ** Wenn Sie Kubernetes-Workloads zum ersten Mal erkennen, wählen Sie in NetApp Backup and Recovery unter dem Kubernetes-Workload-Typ „Erkennen und verwalten“ aus.
-** Wenn Sie Kubernetes-Workloads bereits erkannt haben, wählen Sie in NetApp Backup and Recovery *Inventar* > *Workloads* und dann *Ressourcen erkennen*.
+** Wenn Sie Kubernetes-Workloads bereits erkannt haben, wählen Sie in NetApp Backup and Recovery*Inventar* > *Workloads* und dann *Ressourcen erkennen*.
 
 
 . Wählen Sie den Workloadtyp *Kubernetes* aus.
@@ -60,6 +60,6 @@ Führen Sie die folgenden Schritte aus, um das NetApp Backup and Recovery Dashbo
 . Wählen Sie im oberen Menü *Dashboard* aus.
 . Überprüfen Sie den Zustand des Datenschutzes.  Die Anzahl der gefährdeten oder geschützten Workloads steigt basierend auf den neu entdeckten, geschützten und gesicherten Workloads.
 +
-link:br-use-dashboard.html["Erfahren Sie, was Ihnen das Dashboard anzeigt"] .
+link:br-use-dashboard.html["Erfahren Sie, was Ihnen das Dashboard anzeigt"].
 
 

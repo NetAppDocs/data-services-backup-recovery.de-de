@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-restore.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Mit NetApp Backup and Recovery können Sie ein komplettes ONTAP Volume aus einer Sicherungsdatei wiederherstellen. Wenn Sie nur wenige Dateien wiederherstellen müssen, können Sie einen Ordner oder einzelne Dateien wiederherstellen. 
+summary: Mit NetApp Backup and Recovery können Sie ein komplettes ONTAP Volume aus einer Sicherungsdatei wiederherstellen. Wenn Sie nur einige Dateien wiederherstellen müssen, können Sie einen Ordner oder einzelne Dateien wiederherstellen. 
 ---
 = Stellen Sie ONTAP -Daten aus Sicherungsdateien mit NetApp Backup and Recovery wieder her
 :hardbreaks:
@@ -14,11 +14,11 @@ summary: Mit NetApp Backup and Recovery können Sie ein komplettes ONTAP Volume 
 
 
 [role="lead"]
-Backups Ihrer ONTAP -Volume-Daten sind an den Orten verfügbar, an denen Sie Backups erstellt haben: Snapshot-Kopien, replizierte Volumes und im Objektspeicher gespeicherte Backups.  Sie können Daten von einem bestimmten Zeitpunkt aus jedem dieser Sicherungsspeicherorte wiederherstellen.  Mit NetApp Backup and Recovery können Sie ein komplettes ONTAP Volume aus einer Sicherungsdatei wiederherstellen. Wenn Sie nur wenige Dateien wiederherstellen müssen, können Sie einen Ordner oder einzelne Dateien wiederherstellen.
+Backups Ihrer ONTAP -Volume-Daten sind an den Orten verfügbar, an denen Sie Backups erstellt haben: Snapshot-Kopien, replizierte Volumes und im Objektspeicher gespeicherte Backups.  Sie können Daten von einem bestimmten Zeitpunkt aus jedem dieser Sicherungsspeicherorte wiederherstellen.  Mit NetApp Backup and Recovery können Sie ein komplettes ONTAP Volume aus einer Sicherungsdatei wiederherstellen. Wenn Sie nur einige Dateien wiederherstellen müssen, können Sie einen Ordner oder einzelne Dateien wiederherstellen.
 
 []
 ====
-*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup und Recovery-Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup- und Recovery-Workloads"] .
+*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
 
 ====
 * Sie können ein *Volume* (als neues Volume) auf dem ursprünglichen System, auf einem anderen System, das dasselbe Cloud-Konto verwendet, oder auf einem lokalen ONTAP -System wiederherstellen.
@@ -26,7 +26,7 @@ Backups Ihrer ONTAP -Volume-Daten sind an den Orten verfügbar, an denen Sie Bac
 * Sie können *Dateien* auf einem Volume im ursprünglichen System, auf einem Volume in einem anderen System, das dasselbe Cloud-Konto verwendet, oder auf einem Volume auf einem lokalen ONTAP System wiederherstellen.
 
 
-Zum Wiederherstellen von Daten aus Sicherungsdateien auf einem Produktionssystem ist eine gültige NetApp Backup and Recovery-Lizenz erforderlich.
+Zum Wiederherstellen von Daten aus Sicherungsdateien auf einem Produktionssystem ist eine gültige NetApp Backup and Recovery -Lizenz erforderlich.
 
 Zusammenfassend sind dies die gültigen Flows, die Sie zum Wiederherstellen von Volume-Daten auf einem ONTAP System verwenden können:
 
@@ -116,19 +116,19 @@ Bevor Sie mit der Wiederherstellung eines Volumes, Ordners oder einer Datei begi
 
 ifdef::aws[]
 
-link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über die Wiederherstellung aus dem AWS-Archivspeicher"] .
+link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über die Wiederherstellung aus dem AWS-Archivspeicher"].
 
 endif::aws[]
 
 ifdef::azure[]
 
-link:prev-reference-azure-archive-storage-tiers.html["Weitere Informationen zur Wiederherstellung aus dem Azure-Archivspeicher"] .
+link:prev-reference-azure-archive-storage-tiers.html["Weitere Informationen zur Wiederherstellung aus dem Azure-Archivspeicher"].
 
 endif::azure[]
 
 ifdef::gcp[]
 
-link:prev-reference-gcp-archive-storage-tiers.html["Erfahren Sie mehr über die Wiederherstellung aus dem Google-Archivspeicher"] .
+link:prev-reference-gcp-archive-storage-tiers.html["Erfahren Sie mehr über die Wiederherstellung aus dem Google-Archivspeicher"].
 
 endif::gcp[]
 
@@ -230,7 +230,7 @@ Die Spalte *Speicherort* zeigt an, ob die Sicherungsdatei (Snapshot) *lokal* (ei
 
 . Wählen Sie *Weiter*.
 +
-Beachten Sie: Wenn Sie eine Sicherungsdatei im Objektspeicher auswählen und Ransomware Resilience für diese Sicherung aktiv ist (wenn Sie DataLock und Ransomware Resilience in der Sicherungsrichtlinie aktiviert haben), werden Sie aufgefordert, vor der Wiederherstellung der Daten einen zusätzlichen Ransomware-Scan für die Sicherungsdatei auszuführen. Wir empfehlen Ihnen, die Sicherungsdatei auf Ransomware zu scannen. (Für den Zugriff auf den Inhalt der Sicherungsdatei fallen bei Ihrem Cloud-Anbieter zusätzliche Kosten für den Datenverkehr an.)
+Beachten Sie: Wenn Sie eine Sicherungsdatei im Objektspeicher auswählen und Ransomware Resilience für diese Sicherung aktiv ist (wenn Sie DataLock und Ransomware Resilience in der Sicherungsrichtlinie aktiviert haben), werden Sie aufgefordert, vor der Wiederherstellung der Daten einen zusätzlichen Ransomware-Scan für die Sicherungsdatei auszuführen.  Wir empfehlen Ihnen, die Sicherungsdatei auf Ransomware zu scannen.  (Für den Zugriff auf den Inhalt der Sicherungsdatei fallen bei Ihrem Cloud-Anbieter zusätzliche Kosten für den Datenverkehr an.)
 
 . Wählen Sie auf der Seite „Ziel auswählen“ das *System* aus, auf dem Sie das Volume wiederherstellen möchten.
 . Wenn Sie beim Wiederherstellen einer Sicherungsdatei aus dem Objektspeicher ein lokales ONTAP -System auswählen und die Clusterverbindung zum Objektspeicher noch nicht konfiguriert haben, werden Sie zur Eingabe zusätzlicher Informationen aufgefordert:
@@ -276,19 +276,19 @@ ifdef::aws[]
 
 
 
-link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über die Wiederherstellung aus dem AWS-Archivspeicher"] .
+link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über die Wiederherstellung aus dem AWS-Archivspeicher"].
 
 endif::aws[]
 
 ifdef::azure[]
 
-link:prev-reference-azure-archive-storage-tiers.html["Weitere Informationen zur Wiederherstellung aus dem Azure-Archivspeicher"] .
+link:prev-reference-azure-archive-storage-tiers.html["Weitere Informationen zur Wiederherstellung aus dem Azure-Archivspeicher"].
 
 endif::azure[]
 
 ifdef::gcp[]
 
-link:prev-reference-gcp-archive-storage-tiers.html["Erfahren Sie mehr über die Wiederherstellung aus dem Google-Archivspeicher"] . Sicherungsdateien in der Speicherebene des Google-Archivs werden fast sofort wiederhergestellt und erfordern keine Wiederherstellungspriorität.
+link:prev-reference-gcp-archive-storage-tiers.html["Erfahren Sie mehr über die Wiederherstellung aus dem Google-Archivspeicher"]. Sicherungsdateien in der Speicherebene des Google-Archivs werden fast sofort wiederhergestellt und erfordern keine Wiederherstellungspriorität.
 
 endif::gcp[]
 
@@ -325,7 +325,7 @@ Wenn Sie ONTAP 9.13.0 oder höher verwenden, können Sie einen Ordner zusammen m
 * Wenn sich die Sicherungsdatei im Archivspeicher befindet, wird die Wiederherstellung auf Ordnerebene nur unterstützt, wenn die ONTAP Version 9.13.1 oder höher ist.  Wenn Sie eine frühere Version von ONTAP verwenden, können Sie den Ordner aus einer neueren, nicht archivierten Sicherungsdatei wiederherstellen oder das gesamte Volume aus der archivierten Sicherung wiederherstellen und dann auf den benötigten Ordner und die benötigten Dateien zugreifen.
 * Mit ONTAP 9.15.1 können Sie FlexGroup -Ordner mit der Option „Durchsuchen und wiederherstellen“ wiederherstellen.  Diese Funktion befindet sich im Technologievorschaumodus.
 +
-Sie können es mit einem speziellen Flag testen, das im https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-July-2024-Release/ba-p/453993#toc-hId-1830672444["Blog zur NetApp Backup and Recovery-Version vom Juli 2024"^] .
+Sie können es mit einem speziellen Flag testen, das im https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-July-2024-Release/ba-p/453993#toc-hId-1830672444["Blog zur NetApp Backup and Recovery Version vom Juli 2024"^] .
 
 
 
@@ -373,10 +373,10 @@ Befolgen Sie diese Schritte, um Ordner oder Dateien aus einer ONTAP Volume-Siche
 Wenn Sie Ordner oder Dateien aus einer Sicherungsdatei wiederherstellen, die sich in einer Archivspeicherebene befindet, können Sie die Wiederherstellungspriorität auswählen.
 
 +
-link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über die Wiederherstellung aus dem AWS-Archivspeicher"] . link:prev-reference-azure-archive-storage-tiers.html["Weitere Informationen zur Wiederherstellung aus dem Azure-Archivspeicher"] . link:prev-reference-gcp-archive-storage-tiers.html["Erfahren Sie mehr über die Wiederherstellung aus dem Google-Archivspeicher"] . Sicherungsdateien in der Speicherebene des Google-Archivs werden fast sofort wiederhergestellt und erfordern keine Wiederherstellungspriorität.
+link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über die Wiederherstellung aus dem AWS-Archivspeicher"]. link:prev-reference-azure-archive-storage-tiers.html["Weitere Informationen zur Wiederherstellung aus dem Azure-Archivspeicher"]. link:prev-reference-gcp-archive-storage-tiers.html["Erfahren Sie mehr über die Wiederherstellung aus dem Google-Archivspeicher"]. Sicherungsdateien in der Speicherebene des Google-Archivs werden fast sofort wiederhergestellt und erfordern keine Wiederherstellungspriorität.
 
 +
-Und wenn Ransomware Resilience für die Sicherungsdatei aktiv ist (wenn Sie DataLock und Ransomware Resilience in der Sicherungsrichtlinie aktiviert haben), werden Sie aufgefordert, vor der Wiederherstellung der Daten einen zusätzlichen Ransomware-Scan für die Sicherungsdatei auszuführen. Wir empfehlen Ihnen, die Sicherungsdatei auf Ransomware zu scannen. (Für den Zugriff auf den Inhalt der Sicherungsdatei fallen bei Ihrem Cloud-Anbieter zusätzliche Kosten für den Datenverkehr an.)
+Und wenn Ransomware Resilience für die Sicherungsdatei aktiv ist (wenn Sie DataLock und Ransomware Resilience in der Sicherungsrichtlinie aktiviert haben), werden Sie aufgefordert, vor der Wiederherstellung der Daten einen zusätzlichen Ransomware-Scan für die Sicherungsdatei auszuführen.  Wir empfehlen Ihnen, die Sicherungsdatei auf Ransomware zu scannen.  (Für den Zugriff auf den Inhalt der Sicherungsdatei fallen bei Ihrem Cloud-Anbieter zusätzliche Kosten für den Datenverkehr an.)
 
 . Wählen Sie auf der Seite „Elemente auswählen“ den Ordner oder die Datei(en) aus, die Sie wiederherstellen möchten, und wählen Sie „Weiter“ aus.  So können Sie den Artikel leichter finden:
 +
@@ -396,7 +396,7 @@ Wenn Sie einen lokalen Cluster auswählen und die Clusterverbindung zum Objektsp
 ifdef::aws[]
 
 +
-** Geben Sie beim Wiederherstellen von Amazon S3 den IP-Bereich im ONTAP Cluster ein, in dem sich das Zielvolume befindet, sowie den AWS-Zugriffsschlüssel und den geheimen Schlüssel, die für den Zugriff auf den Objektspeicher erforderlich sind.  Sie können auch eine Private Link-Konfiguration für die Verbindung zum Cluster auswählen.
+** Geben Sie beim Wiederherstellen von Amazon S3 den IPspace im ONTAP Cluster ein, in dem sich das Zielvolume befindet, sowie den AWS-Zugriffsschlüssel und den geheimen Schlüssel, die für den Zugriff auf den Objektspeicher erforderlich sind.  Sie können auch eine Private Link-Konfiguration für die Verbindung zum Cluster auswählen.
 
 
 
@@ -456,19 +456,19 @@ Wenn sich die Sicherungsdatei für das Volume, das Sie wiederherstellen möchten
 
 ifdef::aws[]
 
-link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über die Wiederherstellung aus dem AWS-Archivspeicher"] .
+link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über die Wiederherstellung aus dem AWS-Archivspeicher"].
 
 endif::aws[]
 
 ifdef::azure[]
 
-link:prev-reference-azure-archive-storage-tiers.html["Weitere Informationen zur Wiederherstellung aus dem Azure-Archivspeicher"] .
+link:prev-reference-azure-archive-storage-tiers.html["Weitere Informationen zur Wiederherstellung aus dem Azure-Archivspeicher"].
 
 endif::azure[]
 
 ifdef::gcp[]
 
-link:prev-reference-gcp-archive-storage-tiers.html["Erfahren Sie mehr über die Wiederherstellung aus dem Google-Archivspeicher"] .
+link:prev-reference-gcp-archive-storage-tiers.html["Erfahren Sie mehr über die Wiederherstellung aus dem Google-Archivspeicher"].
 
 endif::gcp[]
 
@@ -560,7 +560,7 @@ ifdef::aws[]
 
 * AWS-Anforderungen:
 +
-** Der Benutzerrolle, die der Konsole Berechtigungen erteilt, müssen bestimmte Amazon Athena-, AWS Glue- und AWS S3-Berechtigungen hinzugefügt werden. link:prev-ontap-backup-onprem-aws.html["Stellen Sie sicher, dass alle Berechtigungen richtig konfiguriert sind"] .
+** Der Benutzerrolle, die der Konsole Berechtigungen erteilt, müssen bestimmte Amazon Athena-, AWS Glue- und AWS S3-Berechtigungen hinzugefügt werden. link:prev-ontap-backup-onprem-aws.html["Stellen Sie sicher, dass alle Berechtigungen richtig konfiguriert sind"].
 +
 Beachten Sie: Wenn Sie NetApp Backup and Recovery bereits mit einem zuvor konfigurierten Konsolenagenten verwendet haben, müssen Sie der Konsolenbenutzerrolle jetzt die Athena- und Glue-Berechtigungen hinzufügen.  Sie werden für Search & Restore benötigt.
 
@@ -575,7 +575,7 @@ ifdef::azure[]
 * Azure-Anforderungen:
 +
 ** Sie müssen den Azure Synapse Analytics-Ressourcenanbieter (genannt „Microsoft.Synapse“) mit Ihrem Abonnement registrieren. https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["Erfahren Sie, wie Sie diesen Ressourcenanbieter für Ihr Abonnement registrieren."^] .  Sie müssen der *Eigentümer* oder *Mitwirkende* des Abonnements sein, um den Ressourcenanbieter zu registrieren.
-** Der Benutzerrolle, die der Konsole Berechtigungen erteilt, müssen bestimmte Berechtigungen für den Azure Synapse-Arbeitsbereich und das Data Lake-Speicherkonto hinzugefügt werden. link:prev-ontap-backup-onprem-azure.html["Stellen Sie sicher, dass alle Berechtigungen richtig konfiguriert sind"] .
+** Der Benutzerrolle, die der Konsole Berechtigungen erteilt, müssen bestimmte Berechtigungen für den Azure Synapse-Arbeitsbereich und das Data Lake Storage-Konto hinzugefügt werden. link:prev-ontap-backup-onprem-azure.html["Stellen Sie sicher, dass alle Berechtigungen richtig konfiguriert sind"].
 +
 Beachten Sie: Wenn Sie NetApp Backup and Recovery bereits mit einem zuvor konfigurierten Konsolenagenten verwendet haben, müssen Sie der Konsolenbenutzerrolle jetzt die Berechtigungen für den Azure Synapse-Arbeitsbereich und das Data Lake Storage-Konto hinzufügen.  Sie werden für Search & Restore benötigt.
 
@@ -590,7 +590,7 @@ ifdef::gcp[]
 
 * Google Cloud-Anforderungen:
 +
-** Der Benutzerrolle, die der NetApp Konsole Berechtigungen erteilt, müssen bestimmte Google BigQuery-Berechtigungen hinzugefügt werden. link:prev-ontap-backup-onprem-gcp.html["Stellen Sie sicher, dass alle Berechtigungen richtig konfiguriert sind"] .
+** Der Benutzerrolle, die der NetApp Console Berechtigungen erteilt, müssen bestimmte Google BigQuery-Berechtigungen hinzugefügt werden. link:prev-ontap-backup-onprem-gcp.html["Stellen Sie sicher, dass alle Berechtigungen richtig konfiguriert sind"].
 +
 Wenn Sie NetApp Backup and Recovery bereits mit einem zuvor konfigurierten Konsolenagenten verwendet haben, müssen Sie jetzt der Konsolenbenutzerrolle die BigQuery-Berechtigungen hinzufügen.  Sie werden für Search & Restore benötigt.
 
@@ -612,7 +612,7 @@ Informationen zum indizierten Katalog v2 finden Sie im folgenden Abschnitt zum A
 ** Wenn Sie einen Konsolenagenten auf einer privaten (dunklen) Site verwenden, werden die indizierten Kataloginformationen auf dem Konsolenagenten gespeichert (erfordert Konsolenagentenversion 3.9.25 oder höher).
 ** Wenn Sie https://docs.netapp.com/us-en/console-setup-admin/concept-accounts-aws.html["AWS -Anmeldeinformationen"^] oder https://docs.netapp.com/us-en/console-setup-admin/concept-accounts-azure.html["Azure-Anmeldeinformationen"^] im Konto, dann wird der indizierte Katalog beim Cloud-Anbieter gespeichert, genau wie bei einem in der Cloud bereitgestellten Konsolenagenten.  (Wenn Sie über beide Anmeldeinformationen verfügen, ist AWS standardmäßig ausgewählt.)
 +
-Auch wenn Sie einen lokalen Konsolen-Agenten verwenden, müssen die Anforderungen des Cloud-Anbieters sowohl für die Berechtigungen des Konsolen-Agenten als auch für die Ressourcen des Cloud-Anbieters erfüllt sein.  Beachten Sie bei der Verwendung dieser Implementierung die oben aufgeführten AWS- und Azure-Anforderungen.
+Auch wenn Sie einen lokalen Konsolen-Agenten verwenden, müssen die Anforderungen des Cloud-Anbieters sowohl für die Berechtigungen des Konsolen-Agenten als auch für die Ressourcen des Cloud-Anbieters erfüllt sein.  Beachten Sie bei Verwendung dieser Implementierung die oben aufgeführten AWS- und Azure-Anforderungen.
 
 
 
@@ -719,7 +719,7 @@ Nachdem Sie<<enable-the-indexed-catalog-for-each-working-environment,Aktivierte 
 . Suchen Sie die Ressource mit den Daten, die Sie wiederherstellen möchten, und wählen Sie *Alle Sicherungen anzeigen* aus, um alle Sicherungsdateien anzuzeigen, die das entsprechende Volume, den entsprechenden Ordner oder die entsprechende Datei enthalten.
 . Suchen Sie die Sicherungsdatei, die Sie zum Wiederherstellen der Daten verwenden möchten, und wählen Sie *Wiederherstellen*.
 +
-Beachten Sie, dass die Ergebnisse Snapshot-Kopien des lokalen Volumes und replizierte Remote-Volumes identifizieren, die die von Ihnen gesuchte Datei enthalten.  Sie können die Wiederherstellung aus der Cloud-Sicherungsdatei, aus der Snapshot-Kopie oder aus dem replizierten Volume durchführen.
+Beachten Sie, dass die Ergebnisse lokale Snapshot-Kopien von Volumes und replizierte Remote-Volumes identifizieren, die die von Ihnen gesuchte Datei enthalten.  Sie können die Wiederherstellung aus der Cloud-Sicherungsdatei, aus der Snapshot-Kopie oder aus dem replizierten Volume durchführen.
 
 . Wählen Sie den Zielspeicherort aus, an dem das Volume, der Ordner oder die Datei(en) wiederhergestellt werden sollen, und wählen Sie *Wiederherstellen*.
 +
@@ -733,7 +733,7 @@ Wenn Sie ein lokales ONTAP -System auswählen und die Clusterverbindung zum Obje
 ifdef::aws[]
 
 +
-*** Wählen Sie beim Wiederherstellen von Amazon S3 den IPspace im ONTAP Cluster aus, in dem sich das Zielvolume befinden soll, geben Sie den Zugriffsschlüssel und den geheimen Schlüssel für den Benutzer ein, den Sie erstellt haben, um dem ONTAP Cluster Zugriff auf den S3-Bucket zu gewähren, und wählen Sie optional einen privaten VPC-Endpunkt für die sichere Datenübertragung. link:prev-ontap-backup-onprem-aws.html["Details zu diesen Anforderungen anzeigen"] .
+*** Wählen Sie beim Wiederherstellen von Amazon S3 den IPspace im ONTAP Cluster aus, in dem sich das Zielvolume befinden soll, geben Sie den Zugriffsschlüssel und den geheimen Schlüssel für den Benutzer ein, den Sie erstellt haben, um dem ONTAP Cluster Zugriff auf den S3-Bucket zu gewähren, und wählen Sie optional einen privaten VPC-Endpunkt für die sichere Datenübertragung. link:prev-ontap-backup-onprem-aws.html["Details zu diesen Anforderungen anzeigen"].
 
 
 
@@ -744,21 +744,21 @@ endif::aws[]
 
 ifdef::azure[]
 
-* Wählen Sie beim Wiederherstellen aus Azure Blob den IPspace im ONTAP Cluster aus, in dem sich das Zielvolume befinden soll, und wählen Sie optional einen privaten Endpunkt für die sichere Datenübertragung, indem Sie das VNet und das Subnetz auswählen. link:prev-ontap-backup-onprem-azure.html["Details zu diesen Anforderungen anzeigen"] .
+* Wählen Sie beim Wiederherstellen aus Azure Blob den IPspace im ONTAP Cluster aus, in dem sich das Zielvolume befinden soll, und wählen Sie optional einen privaten Endpunkt für die sichere Datenübertragung, indem Sie das VNet und das Subnetz auswählen. link:prev-ontap-backup-onprem-azure.html["Details zu diesen Anforderungen anzeigen"].
 
 
 endif::azure[]
 
 ifdef::gcp[]
 
-* Wählen Sie beim Wiederherstellen aus Google Cloud Storage den IPspace im ONTAP Cluster aus, in dem sich das Zielvolume befinden wird, sowie den Zugriffsschlüssel und den geheimen Schlüssel für den Zugriff auf den Objektspeicher. link:prev-ontap-backup-onprem-gcp.html["Details zu diesen Anforderungen anzeigen"] .
+* Wählen Sie beim Wiederherstellen aus Google Cloud Storage den IPspace im ONTAP Cluster aus, in dem sich das Zielvolume befinden wird, sowie den Zugriffsschlüssel und den geheimen Schlüssel für den Zugriff auf den Objektspeicher. link:prev-ontap-backup-onprem-gcp.html["Details zu diesen Anforderungen anzeigen"].
 
 
 endif::gcp[]
 
-* Geben Sie beim Wiederherstellen von StorageGRID den FQDN des StorageGRID -Servers und den Port ein, den ONTAP für die HTTPS-Kommunikation mit StorageGRID verwenden soll, geben Sie den für den Zugriff auf den Objektspeicher erforderlichen Zugriffsschlüssel und Geheimschlüssel sowie den IP-Bereich im ONTAP -Cluster ein, in dem sich das Zielvolume befindet. link:prev-ontap-backup-onprem-storagegrid.html["Details zu diesen Anforderungen anzeigen"] .
-* Geben Sie beim Wiederherstellen von ONTAP S3 den FQDN des ONTAP S3-Servers und den Port ein, den ONTAP für die HTTPS-Kommunikation mit ONTAP S3 verwenden soll, wählen Sie den für den Zugriff auf den Objektspeicher erforderlichen Zugriffsschlüssel und Geheimschlüssel sowie den IP-Bereich im ONTAP Cluster aus, in dem sich das Zielvolume befinden wird. link:prev-ontap-backup-onprem-ontaps3.html["Details zu diesen Anforderungen anzeigen"] .
+* Geben Sie beim Wiederherstellen von StorageGRID den FQDN des StorageGRID -Servers und den Port ein, den ONTAP für die HTTPS-Kommunikation mit StorageGRID verwenden soll, geben Sie den für den Zugriff auf den Objektspeicher erforderlichen Zugriffsschlüssel und Geheimschlüssel sowie den IP-Bereich im ONTAP -Cluster ein, in dem sich das Zielvolume befindet. link:prev-ontap-backup-onprem-storagegrid.html["Details zu diesen Anforderungen anzeigen"].
+* Geben Sie beim Wiederherstellen von ONTAP S3 den FQDN des ONTAP S3-Servers und den Port ein, den ONTAP für die HTTPS-Kommunikation mit ONTAP S3 verwenden soll, wählen Sie den für den Zugriff auf den Objektspeicher erforderlichen Zugriffsschlüssel und Geheimschlüssel sowie den IP-Bereich im ONTAP Cluster aus, in dem sich das Zielvolume befinden wird. link:prev-ontap-backup-onprem-ontaps3.html["Details zu diesen Anforderungen anzeigen"].
 
 
 .Ergebnisse
-Das Volume, der Ordner oder die Datei(en) werden wiederhergestellt und Sie werden zum Wiederherstellungs-Dashboard zurückgeleitet, damit Sie den Fortschritt des Wiederherstellungsvorgangs überprüfen können.  Sie können auch die Registerkarte *Jobüberwachung* auswählen, um den Wiederherstellungsfortschritt anzuzeigen. Sehen link:br-use-monitor-tasks.html["Job-Monitor-Seite"] .
+Das Volume, der Ordner oder die Datei(en) werden wiederhergestellt und Sie werden zum Wiederherstellungs-Dashboard zurückgeleitet, damit Sie den Fortschritt des Wiederherstellungsvorgangs überprüfen können.  Sie können auch die Registerkarte *Jobüberwachung* auswählen, um den Wiederherstellungsfortschritt anzuzeigen.  Sehenlink:br-use-monitor-tasks.html["Job-Monitor-Seite"] .

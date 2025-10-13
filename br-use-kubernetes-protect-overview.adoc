@@ -32,9 +32,9 @@ NOTE: Diese Dokumentation wird als Technologievorschau bereitgestellt.  Während
 
 Sie können die folgenden Aufgaben im Zusammenhang mit der Verwaltung von Kubernetes-Workloads ausführen:
 
-* link:br-start-discover-kubernetes.html["Entdecken Sie Kubernetes-Workloads"] .
-* link:br-use-manage-kubernetes-clusters.html["Verwalten von Kubernetes-Clustern"] .
-* link:br-use-protect-kubernetes-applications.html["Kubernetes-Anwendungen hinzufügen und schützen"] .
-* link:br-use-manage-kubernetes-applications.html["Verwalten von Kubernetes-Anwendungen"] .
-* link:br-use-restore-kubernetes-applications.html["Wiederherstellen von Kubernetes-Anwendungen"] .
+* link:br-start-discover-kubernetes.html["Entdecken Sie Kubernetes-Workloads"].
+* link:br-use-manage-kubernetes-clusters.html["Verwalten von Kubernetes-Clustern"].
+* link:br-use-protect-kubernetes-applications.html["Kubernetes-Anwendungen hinzufügen und schützen"].
+* link:br-use-manage-kubernetes-applications.html["Verwalten von Kubernetes-Anwendungen"].
+* link:br-use-restore-kubernetes-applications.html["Wiederherstellen von Kubernetes-Anwendungen"].
 

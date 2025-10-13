@@ -21,7 +21,7 @@ Plattformen, Geräte oder Funktionen, die mit dieser Version nicht oder nicht gu
 Weitere Informationen zum Erstellen eines Konsolenagenten in AWS finden Sie unter https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-aws-bluexp.html["Installieren eines Konsolenagenten in AWS"^] .
 
 +
-Weitere Einzelheiten finden Sie im Blogbeitrag https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-Feature-Blog-May-23-Updates/ba-p/444052["NetApp Backup- und Recovery-Feature-Blog Mai 2023"^] .
+Weitere Einzelheiten finden Sie im Blogbeitrag https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-Feature-Blog-May-23-Updates/ba-p/444052["NetApp Backup and Recovery Feature-Blog Mai 2023"^] .
 
 * NetApp Backup and Recovery unterstützt keine Microsoft Azure China-Regionen.
 +
@@ -38,7 +38,7 @@ Weitere Informationen zum Erstellen eines Konsolen-Agenten in Azure finden Sie u
 +
 Für FlexVol -Volumes gibt es keine Einschränkung – Sie können alle FlexVol Volumes in Ihrem System auswählen und dieselben Sicherungsrichtlinien zuweisen.
 
-* Die folgenden Funktionen werden unterstützt in https://docs.netapp.com/us-en/data-services-replication/index.html["NetApp Replikation"] , jedoch nicht bei Verwendung der Replikationsfunktion von NetApp Backup and Recovery:
+* Die folgenden Funktionen werden unterstützt in https://docs.netapp.com/us-en/data-services-replication/index.html["NetApp Replication"] , jedoch nicht bei Verwendung der Replikationsfunktion von NetApp Backup and Recovery:
 +
 ** Eine Kaskadenkonfiguration, bei der die Replikation von Volume A zu Volume B und von Volume B zu Volume C erfolgt, wird nicht unterstützt. Die Replikation von Volume A zu Volume B wird unterstützt.
 ** Es gibt keine Unterstützung für die Replikation von Daten zu und von FSx für ONTAP -Systeme.
@@ -91,10 +91,10 @@ Eine Erklärung zu diesen Verschlüsselungsarten finden Sie unterhttps://docs.ne
 ** Sicherungen von FlexGroup -Volumes werden derzeit nicht unterstützt.
 
 
-* Die Ad-hoc-Volume-Sicherung mit der Schaltfläche *Jetzt sichern* wird auf Datensicherungsvolumes nicht unterstützt.
+* Die Ad-hoc-Volume-Sicherung mit der Schaltfläche „Jetzt sichern“ wird auf Datensicherungsvolumes nicht unterstützt.
 * SM-BC-Konfigurationen werden nicht unterstützt.
-* ONTAP unterstützt kein Fan-Out von SnapMirror -Beziehungen von einem einzelnen Volume zu mehreren Objektspeichern. Daher wird diese Konfiguration von NetApp Backup and Recovery nicht unterstützt.
-* Der WORM/Compliance-Modus in einem Objektspeicher wird derzeit auf Amazon S3, Azure und StorageGRID unterstützt.  Dies wird als DataLock-Funktion bezeichnet und muss mithilfe der NetApp Backup- und Recovery-Einstellungen verwaltet werden, nicht über die Cloud-Provider-Schnittstelle.
+* ONTAP unterstützt kein Fan-Out von SnapMirror -Beziehungen von einem einzelnen Volume auf mehrere Objektspeicher. Daher wird diese Konfiguration von NetApp Backup and Recovery nicht unterstützt.
+* Der WORM/Compliance-Modus in einem Objektspeicher wird derzeit auf Amazon S3, Azure und StorageGRID unterstützt.  Dies wird als DataLock-Funktion bezeichnet und muss mithilfe der NetApp Backup and Recovery -Einstellungen verwaltet werden, nicht über die Cloud-Provider-Schnittstelle.
 
 
 

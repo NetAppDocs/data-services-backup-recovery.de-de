@@ -21,7 +21,7 @@ NOTE: Diese Einstellungen sind nur für die Sicherung im Objektspeicher verfügb
 
 []
 ====
-*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup und Recovery-Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup- und Recovery-Workloads"] .
+*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
 
 ====
 Auf der Seite „Erweiterte Einstellungen“ können Sie die folgenden Optionen ändern:
@@ -54,7 +54,7 @@ Auf der Seite „Erweiterte Einstellungen“ werden die aktuellen Einstellungen 
 
 Alle Sicherungsvorgänge nach der Änderung verwenden die neuen Werte.
 
-Beachten Sie, dass einige Optionen je nach ONTAP -Version auf dem Quellcluster und je nach Ziel des Cloud-Anbieters, in dem sich die Sicherungen befinden, nicht verfügbar sind.
+Beachten Sie, dass einige Optionen je nach ONTAP -Version auf dem Quellcluster und je nach Ziel des Cloud-Anbieters, wo sich die Sicherungen befinden, nicht verfügbar sind.
 
 
 
@@ -102,7 +102,7 @@ Wenn Sie für eine Sicherungsrichtlinie für eines Ihrer Volumes die Sicherungsb
 .Schritte
 . Wählen Sie auf der Registerkarte *Volumes* die Option *Backup-Einstellungen* aus.
 . Klicken Sie auf der Seite „Backup-Einstellungen“ aufimage:icon-actions-horizontal.gif["Symbol „Mehr“"] für das System und wählen Sie *Erweiterte Einstellungen*.
-. Erweitern Sie auf der Seite „Erweiterte Einstellungen“ den Abschnitt „Jährliche Löschung von Snapshots“*.
+. Erweitern Sie auf der Seite „Erweiterte Einstellungen“ den Abschnitt „Jährliche Snapshot-Löschung“*.
 +
 image:screenshot_backup_edit_yearly_snap_delete.png["Ein Screenshot des Eintrags „Jährliche Snapshots“ auf der Seite „Erweiterte Einstellungen“."]
 

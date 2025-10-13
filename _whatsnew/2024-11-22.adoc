@@ -8,7 +8,7 @@
 
 NetApp Backup and Recovery kann jetzt sowohl FlexVol als auch FlexGroup -Volumes vor Ort sichern, die entweder mit den Schutzmodi SnapLock Compliance oder SnapLock Enterprise konfiguriert sind. Für diese Unterstützung müssen Ihre Cluster ONTAP 9.14 oder höher ausführen. Das Sichern von FlexVol -Volumes im SnapLock Enterprise Modus wird seit ONTAP Version 9.11.1 unterstützt. Frühere ONTAP Versionen bieten keine Unterstützung für die Sicherung von SnapLock Schutzvolumes.
 
-Die vollständige Liste der unterstützten Volumes finden Sie im https://docs.netapp.com/us-en/data-services-backup-recovery/concept-backup-to-cloud.html["Erfahren Sie mehr über NetApp Backup und Recovery"] .
+Die vollständige Liste der unterstützten Volumes finden Sie im https://docs.netapp.com/us-en/data-services-backup-recovery/concept-backup-to-cloud.html["Erfahren Sie mehr über NetApp Backup and Recovery"] .
 
 
 

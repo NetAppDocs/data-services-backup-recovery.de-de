@@ -4,7 +4,7 @@ permalink: concept-backup-to-cloud.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
 summary: NetApp Backup and Recovery ist ein Datenservice, der effizienten, sicheren und kostengünstigen Datenschutz für alle Ihre ONTAP Workloads bietet, einschließlich Volumes, Datenbanken, virtuellen Maschinen und Kubernetes-Workloads. 
 ---
-= Erfahren Sie mehr über NetApp Backup und Recovery
+= Erfahren Sie mehr über NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -23,7 +23,7 @@ NOTE: Dokumentation zum Schutz von VMware-, KVM-, Hyper-V- und Kubernetes-Worklo
 
 
 
-== Was Sie mit NetApp Backup und Recovery tun können
+== Was Sie mit NetApp Backup and Recovery tun können
 
 Verwenden Sie NetApp Backup and Recovery, um die folgenden Ziele zu erreichen:
 
@@ -32,7 +32,7 @@ Verwenden Sie NetApp Backup and Recovery, um die folgenden Ziele zu erreichen:
 ** Erstellen Sie lokale Snapshots, replizieren Sie auf sekundären Speicher und sichern Sie ONTAP -Volumes von lokalen ONTAP oder Cloud Volumes ONTAP Systemen auf Objektspeicher in Ihrem öffentlichen oder privaten Cloud-Konto.
 ** Erstellen Sie inkrementelle Backups auf Blockebene, die dauerhaft auf einem anderen ONTAP Cluster und im Objektspeicher in der Cloud gespeichert werden.
 ** Verwenden Sie NetApp Backup and Recovery zusammen mit SnapCenter.
-** Weitere Informationen finden Sie unter link:prev-ontap-protect-overview.html["Schützen Sie ONTAP Volumes"] .
+** Siehelink:prev-ontap-protect-overview.html["Schützen Sie ONTAP Volumes"] .
 
 
 * *Microsoft SQL Server-Arbeitslasten*:
@@ -40,8 +40,8 @@ Verwenden Sie NetApp Backup and Recovery, um die folgenden Ziele zu erreichen:
 ** Sichern Sie Microsoft SQL Server-Instanzen und -Datenbanken von On-Premises ONTAP, Cloud Volumes ONTAP oder Amazon FSx for NetApp ONTAP.
 ** Stellen Sie Microsoft SQL Server-Datenbanken wieder her.
 ** Klonen Sie Microsoft SQL Server-Datenbanken.
-** Verwenden Sie NetApp Backup und Recovery ohne SnapCenter.
-** Weitere Informationen finden Sie unter link:br-use-mssql-protect-overview.html["Schützen Sie Microsoft SQL Server-Workloads"] .
+** Verwenden Sie NetApp Backup and Recovery ohne SnapCenter.
+** Siehelink:br-use-mssql-protect-overview.html["Schützen Sie Microsoft SQL Server-Workloads"] .
 
 
 * *VMware-Workloads (Vorschau mit neuer Benutzeroberfläche ohne SnapCenter Plug-in for VMware vSphere)*:
@@ -50,15 +50,15 @@ Verwenden Sie NetApp Backup and Recovery, um die folgenden Ziele zu erreichen:
 ** Sichern Sie VMware-Workloads auf Amazon Web Services S3 oder StorageGRID (für die Vorschau).
 ** Stellen Sie VMware-Daten aus der Cloud wieder im lokalen vCenter wieder her.
 ** Verwenden Sie NetApp Backup and Recovery ohne SnapCenter Plug-in for VMware vSphere.
-** Weitere Informationen finden Sie unter link:br-use-vmware-protect-overview.html["Schutz von VMware-Workloads"] .
+** Siehelink:br-use-vmware-protect-overview.html["Schutz von VMware-Workloads"] .
 
 
 * *VMware-Workloads (mit SnapCenter Plug-in for VMware vSphere)*:
 +
 ** Sichern Sie VMs und Datenspeicher auf Amazon Web Services S3, Microsoft Azure Blob, Google Cloud Platform und StorageGRID und stellen Sie VMs auf dem lokalen SnapCenter Plug-in for VMware vSphere Host wieder her.
-** Stellen Sie VM-Daten mit NetApp Backup and Recovery aus der Cloud zurück in das lokale vCenter wieder her. Sie können die VM an genau demselben Speicherort wiederherstellen, von dem die Sicherung erstellt wurde, oder an einem anderen Speicherort.
+** Stellen Sie mit NetApp Backup and Recovery VM-Daten aus der Cloud zurück in das lokale vCenter wieder her. Sie können die VM an genau demselben Speicherort wiederherstellen, von dem die Sicherung erstellt wurde, oder an einem anderen Speicherort.
 ** Verwenden Sie NetApp Backup and Recovery zusammen mit dem SnapCenter Plug-in for VMware vSphere.
-** Weitere Informationen finden Sie unter link:prev-vmware-protect-overview.html["Schutz von VMware-Workloads"] .
+** Siehelink:prev-vmware-protect-overview.html["Schutz von VMware-Workloads"] .
 
 
 * *KVM-Workloads (Vorschau)*:
@@ -66,14 +66,14 @@ Verwenden Sie NetApp Backup and Recovery, um die folgenden Ziele zu erreichen:
 ** Sichern und Wiederherstellen virtueller Maschinen
 ** KVM-Speicherpools sichern
 ** Verwenden Sie Schutzgruppen, um Sicherungsaufgaben zu verwalten
-** Weitere Informationen finden Sie unter link:br-use-kvm-protect-overview.html["Schützen Sie KVM -Workloads"] .
+** Siehelink:br-use-kvm-protect-overview.html["Schützen Sie KVM -Workloads"] .
 
 
 * *Hyper-V-Workloads (Vorschau)*:
 +
 ** Sichern und Wiederherstellen virtueller Maschinen
 ** Verwenden Sie Schutzgruppen, um Sicherungsaufgaben zu verwalten
-** Weitere Informationen finden Sie unter link:br-use-hyperv-protect-overview.html["Schützen Sie Hyper-V-Workloads"] .
+** Siehelink:br-use-hyperv-protect-overview.html["Schützen Sie Hyper-V-Workloads"] .
 
 
 * *Oracle-Workloads (Vorschau)*:
@@ -84,7 +84,7 @@ Verwenden Sie NetApp Backup and Recovery, um die folgenden Ziele zu erreichen:
 ** Schutz einer Datenbank mit einer 3-2-1-Backup-Architektur
 ** Konfigurieren der Sicherungsaufbewahrung
 ** Mounten und Unmounten von ARCHIVELOG-Backups
-** Weitere Informationen finden Sie unter link:br-use-oracle-protect-overview.html["Schützen Sie Oracle-Workloads"] .
+** Siehelink:br-use-oracle-protect-overview.html["Schützen Sie Oracle-Workloads"] .
 
 
 * *Kubernetes-Workloads (Vorschau)*:
@@ -92,15 +92,15 @@ Verwenden Sie NetApp Backup and Recovery, um die folgenden Ziele zu erreichen:
 ** Verwalten und schützen Sie Ihre Kubernetes-Anwendungen und -Ressourcen an einem Ort.
 ** Verwenden Sie Schutzrichtlinien, um Ihre inkrementellen Backups zu strukturieren.
 ** Stellen Sie Anwendungen und Ressourcen in denselben oder in anderen Clustern und Namespaces wieder her.
-** Verwenden Sie NetApp Backup und Recovery ohne SnapCenter.
-** Weitere Informationen finden Sie unter link:br-use-kubernetes-protect-overview.html["Schützen Sie Kubernetes-Workloads"] .
+** Verwenden Sie NetApp Backup and Recovery ohne SnapCenter.
+** Siehelink:br-use-kubernetes-protect-overview.html["Schützen Sie Kubernetes-Workloads"] .
 
 
 
 
 
 
-== Vorteile der Verwendung von NetApp Backup und Recovery
+== Vorteile der Verwendung von NetApp Backup and Recovery
 
 NetApp Backup and Recovery bietet die folgenden Vorteile:
 
@@ -199,9 +199,9 @@ Eine Backup-Lizenz ist nur für die Sicherung und Wiederherstellung aus dem Obje
 
 BYOL ist laufzeitbasiert (1, 2 oder 3 Jahre) und kapazitätsbasiert in 1-TiB-Schritten.  Sie zahlen NetApp für die Nutzung des Dienstes für einen bestimmten Zeitraum, beispielsweise 1 Jahr, und für eine maximale Kapazität, beispielsweise 10 TiB.
 
-Sie erhalten eine Seriennummer, die Sie in der NetApp Konsole eingeben, um den Dienst zu aktivieren.  Wenn eines der Limits erreicht ist, müssen Sie die Lizenz erneuern.  Die Backup-BYOL-Lizenz gilt für alle Quellsysteme, die mit Ihrer NetApp Console-Organisation oder Ihrem NetApp Console-Konto verknüpft sind.
+Sie erhalten eine Seriennummer, die Sie in der NetApp Console eingeben, um den Dienst zu aktivieren.  Wenn eines der Limits erreicht ist, müssen Sie die Lizenz erneuern.  Die Backup-BYOL-Lizenz gilt für alle Quellsysteme, die mit Ihrer NetApp Console -Organisation oder Ihrem NetApp Console-Konto verknüpft sind.
 
-link:br-start-licensing.html["Erfahren Sie, wie Sie Lizenzen einrichten"] .
+link:br-start-licensing.html["Erfahren Sie, wie Sie Lizenzen einrichten"].
 
 *Pay-as-you-go-Abonnement*
 
@@ -216,7 +216,7 @@ ifdef::aws[]
 Wenn Sie AWS verwenden, stehen Ihnen zwei Jahresverträge für 1, 2 oder 3 Jahre zur Verfügung:
 
 * Ein „Cloud Backup“-Plan, mit dem Sie Cloud Volumes ONTAP -Daten und lokale ONTAP -Daten sichern können.
-* Ein „CVO Professional“-Plan, mit dem Sie Cloud Volumes ONTAP und NetApp Backup and Recovery bündeln können.  Dies umfasst unbegrenzte Backups für Cloud Volumes ONTAP Volumes, die dieser Lizenz in Rechnung gestellt werden (Backup-Kapazität wird nicht auf die Lizenz angerechnet). endif::aws[]
+* Ein „CVO Professional“-Plan, der es Ihnen ermöglicht, Cloud Volumes ONTAP und NetApp Backup and Recovery zu bündeln.  Dies umfasst unbegrenzte Backups für Cloud Volumes ONTAP Volumes, die dieser Lizenz in Rechnung gestellt werden (Backup-Kapazität wird nicht auf die Lizenz angerechnet). endif::aws[]
 
 
 ifdef::azure[]
@@ -224,7 +224,7 @@ ifdef::azure[]
 Bei der Nutzung von Azure stehen Ihnen zwei Jahresverträge für 1, 2 oder 3 Jahre zur Verfügung:
 
 * Ein „Cloud Backup“-Plan, mit dem Sie Cloud Volumes ONTAP -Daten und lokale ONTAP -Daten sichern können.
-* Ein „CVO Professional“-Plan, mit dem Sie Cloud Volumes ONTAP und NetApp Backup and Recovery bündeln können.  Dies umfasst unbegrenzte Backups für Cloud Volumes ONTAP Volumes, die dieser Lizenz belastet werden (Backup-Kapazität wird nicht auf die Lizenz angerechnet). endif::azure[]
+* Ein „CVO Professional“-Plan, der es Ihnen ermöglicht, Cloud Volumes ONTAP und NetApp Backup and Recovery zu bündeln.  Dies umfasst unbegrenzte Backups für Cloud Volumes ONTAP Volumes, die dieser Lizenz belastet werden (Backup-Kapazität wird nicht auf die Lizenz angerechnet). endif::azure[]
 
 
 ifdef::gcp[]
@@ -264,7 +264,7 @@ NetApp Backup and Recovery schützt die folgenden Workloads:
 
 
 
-== So funktioniert NetApp Backup und Recovery
+== So funktioniert NetApp Backup and Recovery
 
 Wenn Sie NetApp Backup and Recovery aktivieren, führt der Dienst eine vollständige Sicherung Ihrer Daten durch.  Nach der ersten Sicherung sind alle weiteren Sicherungen inkrementell.  Dadurch wird der Netzwerkverkehr auf ein Minimum reduziert.
 
@@ -279,7 +279,7 @@ NOTE: Auch die Übertragung vom Primär- zum Objektspeicher wird unterstützt, n
 
 === Wo sich Backups in Objektspeicherorten befinden
 
-Sicherungskopien werden in einem Objektspeicher gespeichert, den die NetApp Konsole in Ihrem Cloud-Konto erstellt.  Es gibt einen Objektspeicher pro Cluster oder System und die Konsole benennt den Objektspeicher wie folgt: `netapp-backup-clusteruuid` .  Denken Sie daran, diesen Objektspeicher nicht zu löschen.
+Sicherungskopien werden in einem Objektspeicher gespeichert, den die NetApp Console in Ihrem Cloud-Konto erstellt.  Es gibt einen Objektspeicher pro Cluster oder System und die Konsole benennt den Objektspeicher wie folgt: `netapp-backup-clusteruuid` .  Denken Sie daran, diesen Objektspeicher nicht zu löschen.
 
 ifdef::aws[]
 
@@ -288,7 +288,7 @@ ifdef::aws[]
 
 ifdef::azure[]
 
-* In Azure verwendet die NetApp -Konsole eine neue oder vorhandene Ressourcengruppe mit einem Speicherkonto für den Blob-Container. Die Konsole https://docs.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-prevent["blockiert den öffentlichen Zugriff auf Ihre Blob-Daten"] standardmäßig. endif::azure[]
+* In Azure verwendet die NetApp Console eine neue oder vorhandene Ressourcengruppe mit einem Speicherkonto für den Blob-Container. Die Konsole https://docs.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-prevent["blockiert den öffentlichen Zugriff auf Ihre Blob-Daten"] standardmäßig. endif::azure[]
 
 
 ifdef::gcp[]
@@ -301,15 +301,15 @@ endif::gcp[]
 
 
 
-=== Sicherungskopien sind mit Ihrer NetApp Konsolenorganisation verknüpft
+=== Sicherungskopien sind mit Ihrer NetApp Console verknüpft
 
-Sicherungskopien sind mit der NetApp -Konsolenorganisation verknüpft, in der sich der Konsolenagent befindet. https://docs.netapp.com/us-en/console-setup-admin/concept-identity-and-access-management.html["Erfahren Sie mehr über Identität und Zugriff auf die NetApp -Konsole"^] .
+Sicherungskopien sind mit der NetApp Console verknüpft, in der sich der Konsolenagent befindet. https://docs.netapp.com/us-en/console-setup-admin/concept-identity-and-access-management.html["Erfahren Sie mehr über Identität und Zugriff auf die NetApp Console"^] .
 
-Wenn Sie mehrere Konsolenagenten in derselben NetApp Konsolenorganisation haben, zeigt jeder Konsolenagent dieselbe Liste mit Sicherungen an.
+Wenn Sie mehrere Konsolenagenten in derselben NetApp Console haben, zeigt jeder Konsolenagent dieselbe Liste mit Sicherungen an.
 
 
 
-== Begriffe, die Ihnen bei NetApp Backup und Recovery helfen könnten
+== Begriffe, die Ihnen bei NetApp Backup and Recovery helfen könnten
 
 Es kann für Sie von Vorteil sein, einige Begriffe im Zusammenhang mit dem Schutz zu verstehen.
 

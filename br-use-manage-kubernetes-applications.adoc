@@ -16,8 +16,8 @@ summary: Mit NetApp Backup and Recovery können Sie den Schutz Ihrer Kubernetes-
 [role="lead"]
 Mit NetApp Backup and Recovery können Sie den Schutz Ihrer Kubernetes-Anwendungen und der zugehörigen Ressourcen aufheben und diese löschen.
 
-.Erforderliche NetApp Konsolenrolle
-Organisationsadministrator oder SnapCenter Administrator. link:reference-roles.html["Erfahren Sie mehr über die Zugriffsrollen für NetApp Backup und Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+.Erforderliche NetApp Console
+Organisationsadministrator oder SnapCenter Administrator. link:reference-roles.html["Erfahren Sie mehr über die Zugriffsrollen für NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
 
 
@@ -26,7 +26,7 @@ Organisationsadministrator oder SnapCenter Administrator. link:reference-roles.h
 Sie können den Schutz einer Anwendung aufheben, wenn Sie sie nicht mehr schützen möchten. Wenn Sie den Schutz einer Anwendung aufheben, beendet NetApp Backup and Recovery den Schutz der Anwendung, behält jedoch alle zugehörigen Backups und Snapshots bei.
 
 .Schritte
-. Wählen Sie in NetApp Backup and Recovery *Inventar* aus.
+. Wählen Sie in NetApp Backup and Recovery*Inventar* aus.
 . Wählen Sie eine Kubernetes-Instanz und wählen Sie *Anzeigen*, um die mit dieser Instanz verknüpften Ressourcen anzuzeigen.
 . Wählen Sie die Registerkarte *Anwendungen*.
 . Wählen Sie in der Anwendungsliste eine Anwendung aus, deren Schutz Sie aufheben möchten, und wählen Sie das zugehörige Aktionsmenü.
@@ -41,7 +41,7 @@ Sie können den Schutz einer Anwendung aufheben, wenn Sie sie nicht mehr schütz
 Sie können eine Anwendung löschen, wenn Sie sie nicht mehr benötigen. Wenn Sie eine Anwendung löschen, beendet NetApp Backup and Recovery den Schutz der Anwendung und löscht alle zugehörigen Backups und Snapshots.
 
 .Schritte
-. Wählen Sie in NetApp Backup and Recovery *Inventar* aus.
+. Wählen Sie in NetApp Backup and Recovery*Inventar* aus.
 . Wählen Sie eine Kubernetes-Instanz und wählen Sie *Anzeigen*, um die mit dieser Instanz verknüpften Ressourcen anzuzeigen.
 . Wählen Sie die Registerkarte *Anwendungen*.
 . Wählen Sie in der Anwendungsliste eine Anwendung aus, die Sie löschen möchten, und wählen Sie das zugehörige Aktionsmenü.

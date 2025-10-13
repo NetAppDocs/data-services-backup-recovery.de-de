@@ -4,7 +4,7 @@ permalink: br-start-configure.html
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
 summary: Führen Sie einige Schritte aus, um NetApp Backup and Recovery zu konfigurieren. 
 ---
-= Konfigurieren der NetApp Backup- und Recovery-Einstellungen
+= Konfigurieren der NetApp Backup and Recovery -Einstellungen
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,15 +14,15 @@ summary: Führen Sie einige Schritte aus, um NetApp Backup and Recovery zu konfi
 
 
 [role="lead"]
-Nachdem Sie die NetApp Konsole eingerichtet haben, konfigurieren Sie die Sicherungs- und Wiederherstellungseinstellungen.  Fügen Sie Anmeldeinformationen für Hostressourcen hinzu, importieren Sie SnapCenter -Ressourcen, konfigurieren Sie Protokollverzeichnisse und legen Sie VMware vCenter-Einstellungen fest.  Führen Sie diese Schritte aus, bevor Sie Daten sichern oder wiederherstellen.
+Nachdem Sie die NetApp Console eingerichtet haben, konfigurieren Sie die Sicherungs- und Wiederherstellungseinstellungen.  Fügen Sie Anmeldeinformationen für Hostressourcen hinzu, importieren Sie SnapCenter -Ressourcen, konfigurieren Sie Protokollverzeichnisse und legen Sie VMware vCenter-Einstellungen fest.  Führen Sie diese Schritte aus, bevor Sie Daten sichern oder wiederherstellen.
 
 * <<Anmeldeinformationen für Hostressourcen hinzufügen>>für die Windows- und SQL Server-Hosts, die Sie aus SnapCenter importiert haben, und fügen Sie Anmeldeinformationen hinzu.  (Nur Microsoft SQL Server-Workloads)
-* <<Verwalten der VMware vCenter-Einstellungen>> .
-* <<Importieren und Verwalten von SnapCenter -Hostressourcen>> . (Nur Microsoft SQL Server-Workloads)
-* <<Konfigurieren von Protokollverzeichnissen in Snapshots für Windows-Hosts>> .
+* <<Verwalten der VMware vCenter-Einstellungen>>.
+* <<Importieren und Verwalten von SnapCenter -Hostressourcen>>. (Nur Microsoft SQL Server-Workloads)
+* <<Konfigurieren von Protokollverzeichnissen in Snapshots für Windows-Hosts>>.
 
 
-*Erforderliche NetApp Konsolenrolle* Superadministrator für Backup und Wiederherstellung, Backup-Administrator für Backup und Wiederherstellung, Wiederherstellungsadministrator für Backup und Wiederherstellung. Erfahren Sie mehr überlink:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+*Erforderliche NetApp Console * Superadministrator für Backup und Wiederherstellung, Backup-Administrator für Backup und Wiederherstellung, Wiederherstellungsadministrator für Backup und Wiederherstellung.  Erfahren Sie mehr überlink:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
 
 
@@ -39,7 +39,7 @@ Sie müssen die folgenden Arten von Anmeldeinformationen konfigurieren:
 
 
 .Schritte
-. Wählen Sie im NetApp Backup and Recovery-Menü *Einstellungen* aus.
+. Wählen Sie im NetApp Backup and Recovery -Menü *Einstellungen* aus.
 . Wählen Sie den Abwärtspfeil für *Anmeldeinformationen*.
 . Wählen Sie *Neue Anmeldeinformationen hinzufügen*.
 . Geben Sie Informationen für die Anmeldeinformationen ein.  Je nach ausgewähltem Authentifizierungsmodus werden unterschiedliche Felder angezeigt.  Wählen Sie die Informationen *i* aus, um weitere Informationen zu den Feldern zu erhalten.
@@ -75,7 +75,7 @@ TIP: Sie müssen Anmeldeinformationen sowohl für Windows als auch für Microsof
 Sie können das Kennwort für die Hostressourcen, die Sie aus SnapCenter importiert haben, später bearbeiten.
 
 .Schritte
-. Wählen Sie im NetApp Backup and Recovery-Menü *Einstellungen* aus.
+. Wählen Sie im NetApp Backup and Recovery -Menü *Einstellungen* aus.
 . Wählen Sie den Abwärtspfeil aus, um den Abschnitt *Anmeldeinformationen* zu erweitern.
 . Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Anmeldeinformationen bearbeiten*.
 +
@@ -92,7 +92,7 @@ Sie können das Kennwort für die Hostressourcen, die Sie aus SnapCenter importi
 Geben Sie VMware vCenter-Anmeldeinformationen ein, um Workloads für die Sicherung zu ermitteln.  Wenn Sie keine Anmeldeinformationen haben, erstellen Sie diese mit Berechtigungen für den Zugriff auf und die Verwaltung der VMware vCenter Server-Workloads.
 
 .Schritte
-. Wählen Sie im NetApp Backup and Recovery-Menü *Einstellungen* aus.
+. Wählen Sie im NetApp Backup and Recovery -Menü *Einstellungen* aus.
 . Wählen Sie den Abwärtspfeil aus, um den Abschnitt *VMware vCenter* zu erweitern.
 . Wählen Sie *vCenter hinzufügen*.
 . Geben Sie die VMware vCenter Server-Informationen ein.
@@ -110,7 +110,7 @@ Geben Sie VMware vCenter-Anmeldeinformationen ein, um Workloads für die Sicheru
 
 == Importieren und Verwalten von SnapCenter -Hostressourcen
 
-Wenn Sie zuvor SnapCenter zum Sichern Ihrer Ressourcen verwendet haben, können Sie diese Ressourcen in NetApp Backup and Recovery importieren und verwalten. Mit dieser Option können Sie SnapCenter -Serverinformationen importieren, um mehrere Snapcenter-Server zu registrieren und Datenbank-Workloads zu ermitteln.
+Wenn Sie zuvor SnapCenter zum Sichern Ihrer Ressourcen verwendet haben, können Sie diese Ressourcen in NetApp Backup and Recovery importieren und verwalten.  Mit dieser Option können Sie SnapCenter -Serverinformationen importieren, um mehrere Snapcenter-Server zu registrieren und Datenbank-Workloads zu ermitteln.
 
 Dies ist ein zweiteiliger Prozess:
 
@@ -128,7 +128,7 @@ Dieser erste Schritt importiert Hostressourcen aus SnapCenter und zeigt diese Re
 TIP: Nachdem Sie SnapCenter -Hostressourcen importiert haben, übernimmt NetApp Backup and Recovery nicht die Schutzverwaltung.  Dazu müssen Sie die Verwaltung dieser Ressourcen in NetApp Backup and Recovery ausdrücklich auswählen.
 
 .Schritte
-. Wählen Sie im NetApp Backup and Recovery-Menü *Einstellungen* aus.
+. Wählen Sie im NetApp Backup and Recovery -Menü *Einstellungen* aus.
 . Wählen Sie den Abwärtspfeil aus, um den Abschnitt *Aus SnapCenter importieren* zu erweitern.
 . Wählen Sie *Aus SnapCenter importieren*, um die SnapCenter -Ressourcen zu importieren.
 . Geben Sie * Anmeldeinformationen für die SnapCenter -Anwendung* ein:
@@ -164,9 +164,9 @@ Nachdem Sie die SnapCenter -Ressourcen importiert haben, verwalten Sie diese Hos
 .Schritte
 . Nachdem Sie die SnapCenter -Ressourcen importiert haben, wählen Sie auf der angezeigten Inventarseite die importierten SnapCenter -Ressourcen aus, die von nun an von NetApp Backup and Recovery verwaltet werden sollen.
 . Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Verwalten*, um die Ressourcen zu verwalten.
-. Wählen Sie *In NetApp Konsole verwalten*.
+. Wählen Sie *In NetApp Console verwalten*.
 +
-Auf der Inventarseite wird unter dem Hostnamen „*Verwaltet*“ angezeigt, um anzuzeigen, dass die ausgewählten Hostressourcen jetzt von NetApp Backup and Recovery verwaltet werden.
+Auf der Inventarseite wird unter dem Hostnamen *Verwaltet* angezeigt, um anzuzeigen, dass die ausgewählten Hostressourcen jetzt von NetApp Backup and Recovery verwaltet werden.
 
 
 
@@ -179,7 +179,7 @@ Sie können SnapCenter -Ressourcen später erneut importieren oder die importier
 Sie können nur die Port- und Kennwortdetails für den SnapCenter -Server ändern.
 
 .Schritte
-. Wählen Sie im NetApp Backup and Recovery-Menü *Einstellungen* aus.
+. Wählen Sie im NetApp Backup and Recovery -Menü *Einstellungen* aus.
 . Wählen Sie den Abwärtspfeil für *Aus SnapCenter importieren*.
 +
 Auf der Seite „Aus SnapCenter importieren“ werden alle vorherigen Importe angezeigt.
@@ -196,7 +196,7 @@ Auf der Seite „Aus SnapCenter importieren“ werden alle vorherigen Importe an
 Bevor Sie Richtlinien für Windows-Hosts erstellen, sollten Sie Protokollverzeichnisse in Snapshots für Windows-Hosts konfigurieren.  Protokollverzeichnisse werden zum Speichern der Protokolle verwendet, die während des Sicherungsvorgangs generiert werden.
 
 .Schritte
-. Wählen Sie im NetApp Backup and Recovery-Menü *Inventar* aus.
+. Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
 . Wählen Sie auf der Inventarseite eine Arbeitslast aus und wählen Sie dann das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*, um die Arbeitslastdetails anzuzeigen.
 . Wählen Sie auf der Seite mit den Inventardetails, auf der Microsoft SQL Server angezeigt wird, die Registerkarte „Hosts“ aus.
 . Wählen Sie auf der Seite „Inventardetails“ einen Host aus und wählen Sie das Symbol „Aktionen“image:../media/icon-action.png["Aktionsoption"] > *Protokollverzeichnis konfigurieren*.

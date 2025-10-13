@@ -14,11 +14,11 @@ summary: Schützen Sie Ihre VMware-Workloads mit NetApp NetApp Backup and Recove
 
 
 [role="lead"]
-Mit NetApp Backup and Recovery können Sie zum Schutz Ihrer Daten bis zu drei Kopien Ihrer Quellvolumes erstellen. Beim Aktivieren der Sicherung und Wiederherstellung auf Ihren Volumes können Sie aus zahlreichen Optionen auswählen. Überprüfen Sie daher Ihre Auswahl, damit Sie vorbereitet sind.
+Mit NetApp Backup and Recovery können Sie zum Schutz Ihrer Daten bis zu drei Kopien Ihrer Quellvolumes erstellen.  Beim Aktivieren der Sicherung und Wiederherstellung auf Ihren Volumes stehen Ihnen zahlreiche Optionen zur Auswahl. Überprüfen Sie daher Ihre Auswahl, damit Sie vorbereitet sind.
 
 []
 ====
-*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup und Recovery-Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup- und Recovery-Workloads"] .
+*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
 
 ====
 Wir gehen die folgenden Optionen durch:
@@ -44,7 +44,7 @@ Bevor Sie die Funktionen auswählen, die Sie verwenden möchten, finden Sie hier
 | Schnappschuss | Erstellt ein schreibgeschütztes Point-in-Time-Image eines Volumes innerhalb des Quellvolumes als Snapshot-Kopie.  Sie können die Snapshot-Kopie verwenden, um einzelne Dateien oder den gesamten Inhalt eines Volumes wiederherzustellen. 
 
 
-| Replikation | Erstellt eine sekundäre Kopie Ihrer Daten auf einem anderen ONTAP Speichersystem und aktualisiert die sekundären Daten kontinuierlich.  Ihre Daten bleiben stets aktuell und stehen Ihnen jederzeit zur Verfügung. 
+| Replikation | Erstellt eine sekundäre Kopie Ihrer Daten auf einem anderen ONTAP Speichersystem und aktualisiert die sekundären Daten kontinuierlich.  Ihre Daten bleiben aktuell und stehen Ihnen jederzeit zur Verfügung. 
 
 
 | Cloud-Backup | Erstellt zum Schutz und zur langfristigen Archivierung Backups Ihrer Daten in der Cloud.  Bei Bedarf können Sie ein Volume, einen Ordner oder einzelne Dateien aus der Sicherung auf demselben oder einem anderen System wiederherstellen. 
@@ -53,7 +53,7 @@ Snapshots sind die Grundlage aller Sicherungsmethoden und werden für die Verwen
 
 image:diagram-321-overview.png["Ein Diagramm, das zeigt, wie Sicherungsdateien auf dem Quellsystem als Snapshot-Kopien, als replizierte Volumes auf dem sekundären Speichersystem und als Sicherungsdateien im Objektspeicher vorhanden sind."]
 
-Sie können sowohl replizierte Volumes auf einem anderen ONTAP Speichersystem als auch Sicherungsdateien in der Cloud erstellen.  Oder Sie können sich dafür entscheiden, nur replizierte Volumes oder Sicherungsdateien zu erstellen – Sie haben die Wahl.
+Sie können sowohl replizierte Volumes auf einem anderen ONTAP Speichersystem erstellen als auch Dateien in der Cloud sichern.  Oder Sie können sich dafür entscheiden, nur replizierte Volumes oder Sicherungsdateien zu erstellen – Sie haben die Wahl.
 
 Zusammenfassend sind dies die gültigen Schutzflüsse, die Sie für Volumes in Ihrem ONTAP System erstellen können:
 
@@ -67,9 +67,9 @@ NOTE: Die erstmalige Erstellung eines replizierten Volumes oder einer Sicherungs
 
 *Vergleich der verschiedenen Backup-Methoden*
 
-Die folgende Tabelle zeigt einen allgemeinen Vergleich der drei Sicherungsmethoden.  Obwohl Objektspeicherplatz in der Regel günstiger ist als Ihr lokaler Festplattenspeicher, können die Austrittsgebühren der Cloud-Anbieter Ihre Einsparungen teilweise schmälern, wenn Sie davon ausgehen, dass Sie Daten häufig aus der Cloud wiederherstellen.  Sie müssen ermitteln, wie oft Sie Daten aus den Sicherungsdateien in der Cloud wiederherstellen müssen.
+Die folgende Tabelle zeigt einen allgemeinen Vergleich der drei Sicherungsmethoden.  Obwohl Objektspeicherplatz in der Regel günstiger ist als Ihr lokaler Festplattenspeicher, können die Austrittsgebühren der Cloud-Anbieter Ihre Ersparnisse teilweise schmälern, wenn Sie davon ausgehen, dass Sie Daten häufig aus der Cloud wiederherstellen.  Sie müssen ermitteln, wie oft Sie Daten aus den Sicherungsdateien in der Cloud wiederherstellen müssen.
 
-Zusätzlich zu diesen Kriterien bietet der Cloud-Speicher zusätzliche Sicherheitsoptionen, wenn Sie die Funktionen DataLock und Ransomware Resilience verwenden, und zusätzliche Kosteneinsparungen durch die Auswahl von Archivspeicherklassen für ältere Sicherungsdateien. link:prev-ontap-policy-object-options.html["Erfahren Sie mehr über DataLock und Ransomware-Schutz sowie Archivspeichereinstellungen"] .
+Zusätzlich zu diesen Kriterien bietet der Cloud-Speicher zusätzliche Sicherheitsoptionen, wenn Sie die Funktionen DataLock und Ransomware Resilience verwenden, und zusätzliche Kosteneinsparungen durch die Auswahl von Archivspeicherklassen für ältere Sicherungsdateien. link:prev-ontap-policy-object-options.html["Erfahren Sie mehr über DataLock und Ransomware-Schutz sowie Archivspeichereinstellungen"].
 
 [cols="18,18,22,18,22"]
 |===
@@ -107,10 +107,10 @@ Diese Tabelle bietet einen Vergleich der Fan-Out- und Kaskadenarchitekturen.
 | Fan-Out | Kaskade 
 
 
-| Geringe Auswirkungen auf die Leistung des Quellsystems, da Snapshot-Kopien an zwei verschiedene Systeme gesendet werden | Geringere Auswirkungen auf die Leistung des Quellspeichersystems, da die Snapshot-Kopie nur einmal gesendet wird 
+| Geringe Leistungseinbußen beim Quellsystem, da Snapshot-Kopien an zwei verschiedene Systeme gesendet werden | Geringere Auswirkungen auf die Leistung des Quellspeichersystems, da die Snapshot-Kopie nur einmal gesendet wird 
 
 
-| Einfachere Einrichtung, da alle Richtlinien, Netzwerk- und ONTAP -Konfigurationen auf dem Quellsystem vorgenommen werden | Erfordert einige Netzwerk- und ONTAP -Konfigurationen, die auch vom sekundären System aus durchgeführt werden müssen. 
+| Einfachere Einrichtung, da alle Richtlinien, Netzwerke und ONTAP -Konfigurationen auf dem Quellsystem vorgenommen werden | Erfordert einige Netzwerk- und ONTAP -Konfigurationen, die auch vom sekundären System aus durchgeführt werden müssen. 
 |===
 
 
@@ -125,7 +125,7 @@ Sie können zum Erstellen Ihrer Backups die von NetApp bereitgestellten Standard
 
 Wenn Sie benutzerdefinierte Richtlinien für die Replikation oder Sicherung erstellen, müssen die Richtlinienbezeichnungen (z. B. „täglich“ oder „wöchentlich“) mit den Bezeichnungen in Ihren Snapshot-Richtlinien übereinstimmen. Andernfalls werden keine replizierten Volumes und Sicherungsdateien erstellt.
 
-Sie können Snapshot-, Replikations- und Backup-to-Object-Storage-Richtlinien in der NetApp Backup and Recovery-Benutzeroberfläche erstellen.  Weitere Informationen finden Sie im Abschnittlink:prev-ontap-backup-manage.html["Hinzufügen einer neuen Sicherungsrichtlinie"] für Details.
+Sie können Snapshot-, Replikations- und Backup-to-Object-Storage-Richtlinien in der NetApp Backup and Recovery Benutzeroberfläche erstellen.  Weitere Informationen finden Sie im Abschnittlink:prev-ontap-backup-manage.html["Hinzufügen einer neuen Sicherungsrichtlinie"] für Details.
 
 Zusätzlich zur Verwendung von NetApp Backup and Recovery zum Erstellen benutzerdefinierter Richtlinien können Sie System Manager oder die ONTAP Befehlszeilenschnittstelle (CLI) verwenden:
 
@@ -211,7 +211,7 @@ Wenn Sie ein anderes Bucket-Präfix als „netapp-backup-xxxxxx“ verwenden mö
 
 Wenn Sie ältere Sicherungsdateien in einen Archivspeicher verschieben oder DataLock und Ransomware-Schutz aktivieren möchten, um Ihre Sicherungsdateien zu sperren und auf mögliche Ransomware zu scannen, müssen Sie den Container mit bestimmten Konfigurationseinstellungen erstellen:
 
-* Archivspeicherung in Ihren eigenen Buckets wird derzeit im AWS S3-Speicher unterstützt, wenn Sie auf Ihren Clustern die Software ONTAP 9.10.1 oder höher verwenden.  Standardmäßig beginnen Sicherungen in der S3-Speicherklasse „Standard“.  Stellen Sie sicher, dass Sie den Bucket mit den entsprechenden Lebenszyklusregeln erstellen:
+* Archivspeicherung in Ihren eigenen Buckets wird derzeit im AWS S3-Speicher unterstützt, wenn Sie auf Ihren Clustern die Software ONTAP 9.10.1 oder höher verwenden.  Standardmäßig beginnen Sicherungen in der Speicherklasse S3 _Standard_.  Stellen Sie sicher, dass Sie den Bucket mit den entsprechenden Lebenszyklusregeln erstellen:
 +
 ** Verschieben Sie die Objekte im gesamten Umfang des Buckets nach 30 Tagen nach S3 _Standard-IA_.
 ** Verschieben Sie die Objekte mit dem Tag "smc_push_to_archive: true" nach _Glacier Flexible Retrieval_ (früher S3 Glacier).
@@ -231,15 +231,15 @@ Wenn Sie ältere Sicherungsdateien in einen Archivspeicher verschieben oder Data
 
 Wenn Sie die Konsole bereits zur Verwaltung Ihres Speichers verwenden, wurde bereits ein Konsolenagent installiert.  Wenn Sie denselben Konsolenagenten mit NetApp Backup and Recovery verwenden möchten, sind Sie startklar.  Wenn Sie einen anderen Konsolenagenten verwenden müssen, müssen Sie ihn installieren, bevor Sie mit der Implementierung Ihrer Sicherung und Wiederherstellung beginnen.
 
-Die NetApp Konsole bietet mehrere Bereitstellungsmodi, mit denen Sie die Konsole so verwenden können, dass sie Ihren Geschäfts- und Sicherheitsanforderungen entspricht.  Der _Standardmodus_ nutzt die SaaS-Ebene der Konsole, um die volle Funktionalität bereitzustellen, während der _eingeschränkte Modus_ und der _private Modus_ für Organisationen mit Verbindungsbeschränkungen verfügbar sind.
+Die NetApp Console bietet mehrere Bereitstellungsmodi, mit denen Sie die Konsole so verwenden können, dass sie Ihren Geschäfts- und Sicherheitsanforderungen entspricht.  Der _Standardmodus_ nutzt die SaaS-Ebene der Konsole, um die volle Funktionalität bereitzustellen, während der _eingeschränkte Modus_ und der _private Modus_ für Organisationen mit Verbindungsbeschränkungen verfügbar sind.
 
-https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Erfahren Sie mehr über die Bereitstellungsmodi der NetApp Konsole"^] .
+https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Erfahren Sie mehr über die Bereitstellungsmodi der NetApp Console"^].
 
 
 
 === Unterstützung für Sites mit vollständiger Internetkonnektivität
 
-Wenn NetApp Backup and Recovery an einem Standort mit vollständiger Internetkonnektivität (auch als _Standardmodus_ oder _SaaS-Modus_ bezeichnet) verwendet wird, können Sie replizierte Volumes auf allen lokalen ONTAP oder Cloud Volumes ONTAP Systemen erstellen, die von der Konsole verwaltet werden, und Sie können Sicherungsdateien auf Objektspeichern bei jedem der unterstützten Cloud-Anbieter erstellen. link:concept-backup-to-cloud.html["Vollständige Liste der unterstützten Sicherungsziele anzeigen"] .
+Wenn NetApp Backup and Recovery an einem Standort mit vollständiger Internetkonnektivität (auch als _Standardmodus_ oder _SaaS-Modus_ bezeichnet) verwendet wird, können Sie replizierte Volumes auf allen lokalen ONTAP oder Cloud Volumes ONTAP Systemen erstellen, die von der Konsole verwaltet werden, und Sie können Sicherungsdateien auf Objektspeichern bei jedem der unterstützten Cloud-Anbieter erstellen. link:concept-backup-to-cloud.html["Vollständige Liste der unterstützten Sicherungsziele anzeigen"].
 
 Eine Liste der gültigen Konsolenagent-Speicherorte finden Sie in einem der folgenden Sicherungsverfahren für den Cloud-Anbieter, bei dem Sie Sicherungsdateien erstellen möchten.  Es gibt einige Einschränkungen, bei denen der Konsolenagent manuell auf einem Linux-Computer installiert oder bei einem bestimmten Cloud-Anbieter bereitgestellt werden muss.
 
@@ -261,14 +261,14 @@ NetApp Backup and Recovery kann an einem Standort mit eingeschränkter Internetv
 
 ifdef::aws[]
 
-* Sie können Daten von lokalen ONTAP -Systemen oder Cloud Volumes ONTAP -Systemen, die in kommerziellen AWS-Regionen installiert sind, auf Amazon S3 sichern. link:prev-ontap-backup-cvo-aws.html["Sichern Sie Cloud Volumes ONTAP Daten auf Amazon S3"] .
+* Sie können Daten von lokalen ONTAP -Systemen oder Cloud Volumes ONTAP -Systemen, die in kommerziellen AWS-Regionen installiert sind, auf Amazon S3 sichern. link:prev-ontap-backup-cvo-aws.html["Sichern Sie Cloud Volumes ONTAP Daten auf Amazon S3"].
 
 
 endif::aws[]
 
 ifdef::azure[]
 
-* Sie können Daten von lokalen ONTAP -Systemen oder Cloud Volumes ONTAP -Systemen, die in kommerziellen Azure-Regionen installiert sind, in Azure Blob sichern. link:prev-ontap-backup-cvo-azure.html["Sichern Sie Cloud Volumes ONTAP Daten in Azure Blob"] .
+* Sie können Daten von lokalen ONTAP -Systemen oder Cloud Volumes ONTAP -Systemen, die in kommerziellen Azure-Regionen installiert sind, in Azure Blob sichern. link:prev-ontap-backup-cvo-azure.html["Sichern Sie Cloud Volumes ONTAP Daten in Azure Blob"].
 
 
 endif::azure[]
@@ -282,8 +282,8 @@ NetApp Backup and Recovery kann an einem Standort ohne Internetverbindung (auch 
 
 NOTE: Der private BlueXP Modus (alte BlueXP -Schnittstelle) wird normalerweise in lokalen Umgebungen ohne Internetverbindung und mit sicheren Cloud-Regionen verwendet, darunter AWS Secret Cloud, AWS Top Secret Cloud und Azure IL6. NetApp unterstützt diese Umgebungen weiterhin mit der alten BlueXP Schnittstelle. Die Dokumentation zum privaten Modus in der alten BlueXP Schnittstelle finden Sie im https://docs.netapp.com/us-en/console-setup-admin/media/BlueXP-Private-Mode-legacy-interface.pdf["PDF-Dokumentation für den privaten Modus von BlueXP"] .
 
-* Sie können Daten von lokalen ONTAP -Systemen vor Ort auf lokalen NetApp StorageGRID -Systemen sichern. link:prev-ontap-backup-onprem-storagegrid.html["Sichern Sie lokale ONTAP Daten auf StorageGRID"] .
-* Sie können Daten von lokalen ONTAP -Systemen vor Ort auf lokalen ONTAP Systemen vor Ort oder auf für die S3-Objektspeicherung konfigurierten Cloud Volumes ONTAP -Systemen sichern. link:prev-ontap-backup-onprem-ontaps3.html["Sichern Sie lokale ONTAP -Daten auf ONTAP S3"] .ifdef::aws[]
+* Sie können Daten von lokalen ONTAP -Systemen vor Ort auf lokalen NetApp StorageGRID -Systemen sichern. link:prev-ontap-backup-onprem-storagegrid.html["Sichern Sie lokale ONTAP Daten auf StorageGRID"].
+* Sie können Daten von lokalen ONTAP -Systemen vor Ort auf lokalen ONTAP Systemen vor Ort oder auf für S3-Objektspeicher konfigurierten Cloud Volumes ONTAP -Systemen sichern. link:prev-ontap-backup-onprem-ontaps3.html["Sichern Sie lokale ONTAP -Daten auf ONTAP S3"] .ifdef::aws[]
 
 
 endif::aws[]

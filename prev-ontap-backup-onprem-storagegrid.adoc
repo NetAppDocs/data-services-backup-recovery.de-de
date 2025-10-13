@@ -17,11 +17,11 @@ summary: Führen Sie einige Schritte in NetApp Backup and Recovery aus, um mit d
 Führen Sie einige Schritte in NetApp Backup and Recovery aus, um mit der Sicherung von Volume-Daten von Ihren lokalen primären ONTAP Systemen auf ein sekundäres Speichersystem und auf Objektspeicher in Ihren NetApp StorageGRID Systemen zu beginnen.
 
 
-NOTE: Zu den „On-Premises ONTAP -Systemen“ zählen FAS, AFF und ONTAP Select Systeme.
+NOTE: Zu den „On-Premises ONTAP -Systemen“ gehören FAS, AFF und ONTAP Select Systeme.
 
 []
 ====
-*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup und Recovery-Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup- und Recovery-Workloads"] .
+*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
 
 ====
 
@@ -69,11 +69,11 @@ Stellen Sie sicher, dass das Netzwerk, in dem der Konsolenagent installiert ist,
 
 ==== Überlegungen zum privaten Modus (Dark Site)
 
-* Die NetApp Backup- und Recovery-Funktionalität ist in den Konsolenagenten integriert.  Wenn es im privaten Modus installiert ist, müssen Sie die Konsolenagent-Software regelmäßig aktualisieren, um Zugriff auf neue Funktionen zu erhalten.  Überprüfen Sie dielink:whats-new.html["NetApp Backup and Recovery – Neuigkeiten"] um die neuen Funktionen in jeder Version von NetApp Backup and Recovery anzuzeigen.  Wenn Sie die neuen Funktionen nutzen möchten, folgen Sie den Schritten zum https://docs.netapp.com/us-en/console-setup-admin/task-upgrade-connector.html["Aktualisieren Sie die Konsolenagentsoftware"^] .
+* Die NetApp Backup and Recovery Funktionalität ist in den Konsolenagenten integriert.  Wenn es im privaten Modus installiert ist, müssen Sie die Konsolenagent-Software regelmäßig aktualisieren, um Zugriff auf neue Funktionen zu erhalten.  Überprüfen Sie dielink:whats-new.html["NetApp Backup and Recovery – Neuigkeiten"] um die neuen Funktionen in jeder Version von NetApp Backup and Recovery anzuzeigen.  Wenn Sie die neuen Funktionen nutzen möchten, folgen Sie den Schritten zum https://docs.netapp.com/us-en/console-setup-admin/task-upgrade-connector.html["Aktualisieren Sie die Konsolenagentsoftware"^] .
 +
-Die neue Version von NetApp Backup and Recovery, die neben der Erstellung von Backups im Objektspeicher auch die Möglichkeit zum Planen und Erstellen von Snapshot-Kopien und replizierten Volumes umfasst, erfordert die Verwendung von Version 3.9.31 oder höher des Konsolenagenten.  Es wird daher empfohlen, dass Sie sich diese neueste Version besorgen, um alle Ihre Backups zu verwalten.
+Die neue Version von NetApp Backup and Recovery , die neben der Erstellung von Backups im Objektspeicher auch die Möglichkeit zum Planen und Erstellen von Snapshot-Kopien und replizierten Volumes umfasst, erfordert die Verwendung von Version 3.9.31 oder höher des Konsolenagenten.  Es wird daher empfohlen, dass Sie sich diese neueste Version besorgen, um alle Ihre Backups zu verwalten.
 
-* Wenn Sie NetApp Backup and Recovery in einer SaaS-Umgebung verwenden, werden die NetApp Backup and Recovery-Konfigurationsdaten in der Cloud gesichert.  Wenn Sie NetApp Backup and Recovery an einem Standort ohne Internetzugang verwenden, werden die Konfigurationsdaten von NetApp Backup and Recovery im StorageGRID Bucket gesichert, in dem Ihre Backups gespeichert werden.
+* Wenn Sie NetApp Backup and Recovery in einer SaaS-Umgebung verwenden, werden die NetApp Backup and Recovery -Konfigurationsdaten in der Cloud gesichert.  Wenn Sie NetApp Backup and Recovery an einem Standort ohne Internetzugang verwenden, werden die Konfigurationsdaten von NetApp Backup and Recovery im StorageGRID Bucket gesichert, in dem Ihre Backups gespeichert werden.
 
 
 
@@ -82,7 +82,7 @@ Die neue Version von NetApp Backup and Recovery, die neben der Erstellung von Ba
 
 Bevor Sie NetApp Backup and Recovery für Ihren Cluster aktivieren können, müssen Sie eine NetApp Backup and Recovery BYOL-Lizenz von NetApp erwerben und aktivieren.  Diese Lizenz gilt für das Konto und kann systemübergreifend verwendet werden.
 
-Sie benötigen die Seriennummer von NetApp , die Ihnen die Nutzung des Dienstes für die Dauer und Kapazität der Lizenz ermöglicht. link:br-start-licensing.html["Erfahren Sie, wie Sie Ihre BYOL-Lizenzen verwalten"] .
+Sie benötigen die Seriennummer von NetApp , die Ihnen die Nutzung des Dienstes für die Dauer und Kapazität der Lizenz ermöglicht. link:br-start-licensing.html["Erfahren Sie, wie Sie Ihre BYOL-Lizenzen verwalten"].
 
 
 TIP: Die PAYGO-Lizenzierung wird beim Sichern von Dateien auf StorageGRID nicht unterstützt.
@@ -91,11 +91,11 @@ TIP: Die PAYGO-Lizenzierung wird beim Sichern von Dateien auf StorageGRID nicht 
 
 == Bereiten Sie Ihre ONTAP -Cluster vor
 
-Sie müssen Ihr lokales ONTAP Quellsystem und alle sekundären lokalen ONTAP oder Cloud Volumes ONTAP Systeme vorbereiten.
+Sie müssen Ihr lokales ONTAP -Quellsystem und alle sekundären lokalen ONTAP oder Cloud Volumes ONTAP Systeme vorbereiten.
 
 Die Vorbereitung Ihrer ONTAP Cluster umfasst die folgenden Schritte:
 
-* Entdecken Sie Ihre ONTAP -Systeme in der NetApp Konsole
+* Entdecken Sie Ihre ONTAP -Systeme in der NetApp Console
 * Überprüfen der ONTAP Systemanforderungen
 * Überprüfen Sie die ONTAP Netzwerkanforderungen für die Datensicherung im Objektspeicher
 * Überprüfen Sie die ONTAP Netzwerkanforderungen für die Replikation von Volumes
@@ -103,11 +103,11 @@ Die Vorbereitung Ihrer ONTAP Cluster umfasst die folgenden Schritte:
 
 
 
-=== Entdecken Sie Ihre ONTAP -Systeme in der NetApp Konsole
+=== Entdecken Sie Ihre ONTAP -Systeme in der NetApp Console
 
-Sowohl Ihr lokales ONTAP Quellsystem als auch alle sekundären lokalen ONTAP oder Cloud Volumes ONTAP -Systeme müssen auf der Seite *Systeme* der NetApp Konsole verfügbar sein.
+Sowohl Ihr lokales ONTAP Quellsystem als auch alle sekundären lokalen ONTAP oder Cloud Volumes ONTAP -Systeme müssen auf der Seite *Systeme* der NetApp Console verfügbar sein.
 
-Sie müssen die IP-Adresse der Clusterverwaltung und das Kennwort für das Administratorbenutzerkonto kennen, um den Cluster hinzuzufügen. https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-ontap.html["Erfahren Sie, wie Sie einen Cluster erkennen"^] .
+Sie müssen die IP-Adresse der Clusterverwaltung und das Kennwort für das Administratorbenutzerkonto kennen, um den Cluster hinzuzufügen. https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-ontap.html["Erfahren Sie, wie Sie einen Cluster erkennen"^].
 
 
 
@@ -126,7 +126,7 @@ Erfahren Sie, wie Sie https://docs.netapp.com/us-en/ontap/system-admin/manage-li
 * Uhrzeit und Zeitzone sind richtig eingestellt.  Erfahren Sie, wie Sie https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["Konfigurieren Sie Ihre Clusterzeit"^] .
 * Wenn Sie Daten replizieren möchten, sollten Sie vor der Datenreplikation sicherstellen, dass auf den Quell- und Zielsystemen kompatible ONTAP Versionen ausgeführt werden.
 +
-https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["Kompatible ONTAP -Versionen für SnapMirror -Beziehungen anzeigen"^] .
+https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["Kompatible ONTAP -Versionen für SnapMirror -Beziehungen anzeigen"^].
 
 
 
@@ -154,7 +154,7 @@ Wenn Sie NetApp Backup and Recovery einrichten, werden Sie nach dem zu verwenden
 * Die Intercluster-LIFs der Knoten können auf den Objektspeicher zugreifen (nicht erforderlich, wenn der Konsolenagent an einem „dunklen“ Standort installiert ist).
 * Für die Speicher-VM, auf der sich die Volumes befinden, wurden DNS-Server konfiguriert.  Erfahren Sie, wie Sie https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html["Konfigurieren Sie DNS-Dienste für die SVM"^] .
 * Wenn Sie einen anderen IP-Bereich als den Standard verwenden, müssen Sie möglicherweise eine statische Route erstellen, um Zugriff auf den Objektspeicher zu erhalten.
-* Aktualisieren Sie bei Bedarf die Firewall-Regeln, um Verbindungen des NetApp Backup and Recovery-Dienstes von ONTAP zum Objektspeicher über den von Ihnen angegebenen Port (normalerweise Port 443) und Namensauflösungsdatenverkehr von der Speicher-VM zum DNS-Server über Port 53 (TCP/UDP) zuzulassen.
+* Aktualisieren Sie bei Bedarf die Firewall-Regeln, um Verbindungen des NetApp Backup and Recovery -Dienstes von ONTAP zum Objektspeicher über den von Ihnen angegebenen Port (normalerweise Port 443) und Namensauflösungsdatenverkehr von der Speicher-VM zum DNS-Server über Port 53 (TCP/UDP) zuzulassen.
 
 
 
@@ -167,7 +167,7 @@ Wenn Sie mit NetApp Backup and Recovery replizierte Volumes auf einem sekundäre
 
 ==== On-Premises ONTAP Netzwerkanforderungen
 
-* Wenn sich der Cluster in Ihren Räumlichkeiten befindet, sollten Sie über eine Verbindung von Ihrem Unternehmensnetzwerk zu Ihrem virtuellen Netzwerk beim Cloud-Anbieter verfügen.  Dies ist normalerweise eine VPN-Verbindung.
+* Wenn sich der Cluster in Ihren Räumlichkeiten befindet, sollten Sie über eine Verbindung von Ihrem Unternehmensnetzwerk zu Ihrem virtuellen Netzwerk beim Cloud-Anbieter verfügen. Dies ist normalerweise eine VPN-Verbindung.
 * ONTAP -Cluster müssen zusätzliche Subnetz-, Port-, Firewall- und Clusteranforderungen erfüllen.
 +
 Da Sie auf Cloud Volumes ONTAP oder lokale Systeme replizieren können, überprüfen Sie die Peering-Anforderungen für lokale ONTAP -Systeme. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Voraussetzungen für Cluster-Peering in der ONTAP Dokumentation anzeigen"^] .
@@ -178,7 +178,7 @@ Da Sie auf Cloud Volumes ONTAP oder lokale Systeme replizieren können, überpr�
 
 ==== Netzwerkanforderungen für Cloud Volumes ONTAP
 
-* Die Sicherheitsgruppe der Instanz muss die erforderlichen eingehenden und ausgehenden Regeln enthalten: insbesondere Regeln für ICMP und die Ports 11104 und 11105.  Diese Regeln sind in der vordefinierten Sicherheitsgruppe enthalten.
+* Die Sicherheitsgruppe der Instanz muss die erforderlichen Regeln für eingehenden und ausgehenden Datenverkehr enthalten, insbesondere Regeln für ICMP und die Ports 11104 und 11105. Diese Regeln sind in der vordefinierten Sicherheitsgruppe enthalten.
 
 
 
@@ -243,7 +243,7 @@ Mit der aktuellen Unterstützung können Sie Sicherungen im AWS-Speicher _S3 Gla
 *Anforderungen für Amazon S3*
 
 * Sie müssen sich für ein Amazon S3-Konto für den Speicherplatz anmelden, auf dem Ihre archivierten Backups gespeichert werden.
-* Sie können wählen, ob Sie Backups auf AWS S3 Glacier oder S3 Glacier Deep Archive-Speicher stufen möchten. link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über AWS-Archivierungsebenen"] .
+* Sie können wählen, ob Sie Backups auf AWS S3 Glacier oder S3 Glacier Deep Archive-Speicher stufen möchten. link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über AWS-Archivierungsebenen"].
 * StorageGRID sollte vollen Zugriff auf den Bucket haben(`s3:*` ); wenn dies jedoch nicht möglich ist, muss die Bucket-Richtlinie StorageGRID die folgenden S3-Berechtigungen erteilen:
 +
 ** `s3:AbortMultipartUpload`
@@ -309,7 +309,7 @@ Auf der Einführungsseite des Assistenten werden die Schutzoptionen angezeigt, d
 . Fahren Sie mit den folgenden Optionen fort:
 +
 ** Wenn Sie bereits über einen Konsolenagenten verfügen, sind Sie startklar.  Wählen Sie einfach *Weiter*.
-** Wenn Sie noch keinen Konsolenagenten haben, wird die Option *Konsolenagenten hinzufügen* angezeigt. Weitere Informationen finden Sie unter <<Vorbereiten Ihres Konsolenagenten>> .
+** Wenn Sie noch keinen Konsolenagenten haben, wird die Option *Konsolenagenten hinzufügen* angezeigt.  Siehe<<Vorbereiten Ihres Konsolenagenten>> .
 
 
 
@@ -334,7 +334,7 @@ Wenn auf die von Ihnen ausgewählten Volumes bereits Snapshot- oder Replikations
 
 . Wählen Sie auf der Seite „Volumes auswählen“ das oder die Volumes aus, die Sie schützen möchten.
 +
-** Filtern Sie die Zeilen optional, um nur Bände mit bestimmten Bandtypen, Stilen usw. anzuzeigen und so die Auswahl zu erleichtern.
+** Filtern Sie die Zeilen optional, um nur Datenträger mit bestimmten Datenträgertypen, Stilen usw. anzuzeigen und so die Auswahl zu vereinfachen.
 ** Nachdem Sie das erste Volume ausgewählt haben, können Sie alle FlexVol Volumes auswählen (FlexGroup Volumes können jeweils nur einzeln ausgewählt werden).  Um alle vorhandenen FlexVol Volumes zu sichern, markieren Sie zuerst ein Volume und aktivieren Sie dann das Kontrollkästchen in der Titelzeile.
 ** Um einzelne Volumes zu sichern, aktivieren Sie das Kontrollkästchen für jedes Volume.
 
@@ -348,7 +348,7 @@ Wenn auf die von Ihnen ausgewählten Volumes bereits Snapshot- oder Replikations
 
 Zum Definieren der Sicherungsstrategie müssen die folgenden Optionen festgelegt werden:
 
-* Ob Sie eine oder alle der Backup-Optionen wünschen: lokale Snapshots, Replikation und Backup auf Objektspeicher
+* Ob Sie eine oder alle Backup-Optionen wünschen: lokale Snapshots, Replikation und Backup auf Objektspeicher
 * Architektur
 * Lokale Snapshot-Richtlinie
 * Replikationsziel und -richtlinie
@@ -416,7 +416,7 @@ Um eine Richtlinie zu erstellen, wählen Sie *Neue Richtlinie erstellen* und geh
 +
 Der Zugriffsschlüssel und der geheime Schlüssel sind für den IAM-Benutzer, den Sie erstellt haben, um dem ONTAP Cluster Zugriff auf den Bucket zu gewähren.
 
-** *Netzwerk*: Wählen Sie den IP-Bereich im ONTAP -Cluster, in dem sich die Volumes befinden, die Sie sichern möchten.  Die Intercluster-LIFs für diesen IPspace müssen über ausgehenden Internetzugang verfügen (nicht erforderlich, wenn der Konsolenagent an einem „dunklen“ Standort installiert ist).
+** *Netzwerk*: Wählen Sie den IP-Bereich im ONTAP -Cluster aus, in dem sich die Volumes befinden, die Sie sichern möchten.  Die Intercluster-LIFs für diesen IPspace müssen über ausgehenden Internetzugang verfügen (nicht erforderlich, wenn der Konsolenagent an einem „dunklen“ Standort installiert ist).
 +
 
 TIP: Durch die Auswahl des richtigen IPspace wird sichergestellt, dass NetApp Backup and Recovery eine Verbindung von ONTAP zu Ihrem StorageGRID Objektspeicher herstellen kann.
@@ -442,7 +442,7 @@ Wenn Ihr Cluster ONTAP 9.11.1 oder höher verwendet, können Sie Ihre Backups vo
 
 
 +
-Wenn Ihr Cluster ONTAP 9.12.1 oder höher verwendet und Ihr StorageGRID System Version 11.4 oder höher verwendet, können Sie ältere Backups nach einer bestimmten Anzahl von Tagen in öffentliche Cloud-Archivebenen verschieben.  Derzeit wird die Speicherebene AWS S3 Glacier/S3 Glacier Deep Archive oder Azure Archive unterstützt. <<Bereiten Sie die Archivierung älterer Sicherungsdateien im öffentlichen Cloud-Speicher vor,Erfahren Sie, wie Sie Ihre Systeme für diese Funktionalität konfigurieren.>> .
+Wenn Ihr Cluster ONTAP 9.12.1 oder höher verwendet und Ihr StorageGRID System Version 11.4 oder höher verwendet, können Sie ältere Backups nach einer bestimmten Anzahl von Tagen in öffentliche Cloud-Archivebenen verschieben.  Derzeit wird die Speicherebene AWS S3 Glacier/S3 Glacier Deep Archive oder Azure Archive unterstützt. <<Bereiten Sie die Archivierung älterer Sicherungsdateien im öffentlichen Cloud-Speicher vor,Erfahren Sie, wie Sie Ihre Systeme für diese Funktionalität konfigurieren.>>.
 
 +
 ** *Tier-Backup in die öffentliche Cloud*: Wählen Sie den Cloud-Anbieter aus, zu dem Sie Backups tieren möchten, und geben Sie die Anbieterdetails ein.
@@ -464,7 +464,7 @@ Dies ist die Gelegenheit, Ihre Auswahl zu überprüfen und gegebenenfalls Anpass
 .Schritte
 . Überprüfen Sie Ihre Auswahl auf der Überprüfungsseite.
 . Aktivieren Sie optional das Kontrollkästchen, um *die Snapshot-Richtlinienbezeichnungen automatisch mit den Replikations- und Sicherungsrichtlinienbezeichnungen zu synchronisieren*.  Dadurch werden Snapshots mit einer Bezeichnung erstellt, die mit den Bezeichnungen in den Replikations- und Sicherungsrichtlinien übereinstimmt.
-. Wählen Sie *Sicherung aktivieren*.
+. Wählen Sie *Backup aktivieren*.
 
 
 .Ergebnis

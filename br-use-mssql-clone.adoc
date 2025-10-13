@@ -4,7 +4,7 @@ permalink: br-use-mssql-clone.html
 keywords: backing up, restoring, back up, backup, clone, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
 summary: Klonen Sie Microsoft SQL Server-Anwendungsdaten zu Entwicklungs-, Test- oder Schutzzwecken.  Sie können Klone aus sofortigen Snapshots oder vorhandenen Snapshots Ihrer Microsoft SQL Server-Workloads erstellen. 
 ---
-= Klonen Sie Microsoft SQL Server-Workloads mit NetApp Backup und Recovery
+= Klonen Sie Microsoft SQL Server-Workloads mit NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -30,7 +30,7 @@ Sie können die folgenden Schutzziele erreichen:
 * Löschen eines Klons
 
 
-*Erforderliche NetApp -Konsolenrolle* Speicherbetrachter, Superadministrator für Backup und Wiederherstellung oder Backup-Administratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+*Erforderliche NetApp Console * Speicherbetrachter, Superadministrator für Backup und Wiederherstellung oder Backup-Administratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
 
 
@@ -41,12 +41,12 @@ Sie können einen Klon Ihrer Microsoft SQL Server-Workloads erstellen.  Ein Klon
 Sie können einen Klon aus einem vorhandenen Snapshot oder aus einem sofortigen Snapshot erstellen.  Ein sofortiger Snapshot ist eine zeitpunktbezogene Kopie der Quelldaten, die aus einer Sicherung erstellt wird.  Sie können den Klon verwenden, um Ihre Workloads im Falle eines Datenverlusts oder einer Datenbeschädigung wiederherzustellen.
 
 .Schritte
-. Wählen Sie im NetApp Backup and Recovery-Menü *Klonen* aus.
+. Wählen Sie im NetApp Backup and Recovery -Menü *Klonen* aus.
 . Wählen Sie *Neuen Klon erstellen*.
 . Wählen Sie den Klontyp aus:
 +
 ** *Klonen und Datenbankaktualisierung aus vorhandenem Snapshot*: Wählen Sie den Snapshot für den Klon und konfigurieren Sie Optionen für den Klon.  Dies ist hilfreich, wenn Sie den Snapshot für den Klon auswählen und Optionen konfigurieren möchten.
-** *Sofortiger Snapshot und Klon*: Machen Sie jetzt einen Snapshot der Quelldaten und erstellen Sie aus diesem Snapshot einen Klon.  Diese Option ist nützlich, wenn Sie einen Klon aus den neuesten Daten im Quell-Workload erstellen möchten.
+** *Sofortiger Snapshot und Klon*: Machen Sie jetzt einen Snapshot der Quelldaten und erstellen Sie aus diesem Snapshot einen Klon.  Diese Option ist nützlich, wenn Sie einen Klon aus den neuesten Daten im Ursprungs-Workload erstellen möchten.
 
 
 . Füllen Sie den Abschnitt *Datenbankquelle* aus:
@@ -57,11 +57,11 @@ Sie können einen Klon aus einem vorhandenen Snapshot oder aus einem sofortigen 
 
 . Füllen Sie den Abschnitt *Datenbankziel* aus:
 +
-** *Zieldatenbankhost, -instanz und -name*: Wählen Sie den Zieldatenbankhost, die -instanz und den Namen für den Klon aus.  Die Zieldatenbank ist der Ort, an dem der Klon erstellt wird.
+** *Zieldatenbankhost, -instanz und -name*: Wählen Sie den Zieldatenbankhost, die -instanz und den Namen für den Klon aus.  Die Zieldatenbank ist der Speicherort, an dem der Klon erstellt wird.
 +
 Wählen Sie optional *Suffix* aus der Dropdown-Liste „Zielname“ aus und hängen Sie ein Suffix an den Namen der geklonten Datenbank an.  Wenn Sie kein Suffix angeben, ist der Name der geklonten Datenbank derselbe wie der Name der Quelldatenbank.
 
-** *QoS (maximaler Durchsatz)*: Wählen Sie den maximalen Quality of Service (QoS)-Durchsatz in MBps für den Klon.  Die QoS definiert die Leistungsmerkmale des Klons, beispielsweise den maximalen Durchsatz und die IOPS.
+** *QoS (maximaler Durchsatz)*: Wählen Sie den maximalen Quality of Service (QoS)-Durchsatz in MBps für den Klon.  Die QoS definiert die Leistungsmerkmale des Klons, wie beispielsweise den maximalen Durchsatz und IOPS.
 
 
 . Füllen Sie den Abschnitt *Mount* aus:
@@ -112,7 +112,7 @@ Sie können einen Klon Ihrer Microsoft SQL Server-Workloads aktualisieren.  Durc
 Sie haben die Möglichkeit, den Datenbanknamen zu ändern, den neuesten Sofort-Snapshot zu verwenden oder von einem vorhandenen Produktions-Snapshot zu aktualisieren.
 
 .Schritte
-. Wählen Sie im NetApp Backup and Recovery-Menü *Klonen* aus.
+. Wählen Sie im NetApp Backup and Recovery -Menü *Klonen* aus.
 . Wählen Sie den Klon aus, den Sie aktualisieren möchten.
 . Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Klon aktualisieren*.
 . Füllen Sie den Abschnitt *Erweiterte Einstellungen* aus:
@@ -140,7 +140,7 @@ Sie haben die Möglichkeit, den Datenbanknamen zu ändern, den neuesten Sofort-S
 Sie können die Aktualisierung eines Klons überspringen, wenn Sie den Klon nicht mit den neuesten Daten aus dem Ursprungs-Workload aktualisieren möchten.  Durch Überspringen einer Klonaktualisierung können Sie den Klon so belassen, wie er ist, ohne ihn zu aktualisieren.
 
 .Schritte
-. Wählen Sie im NetApp Backup and Recovery-Menü *Klonen* aus.
+. Wählen Sie im NetApp Backup and Recovery -Menü *Klonen* aus.
 . Wählen Sie den Klon aus, für den Sie die Aktualisierung überspringen möchten.
 . Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Aktualisierung überspringen*.
 . Führen Sie im Dialogfeld „Bestätigung für Aktualisierung überspringen“ die folgenden Schritte aus:
@@ -162,7 +162,7 @@ Sie können einen Klon in unabhängige oder langfristige Klone aufteilen.  Ein A
 Der Klonauftrag wird nicht entfernt und kann für andere Klone erneut verwendet werden.
 
 .Schritte
-. Wählen Sie im NetApp Backup and Recovery-Menü *Klonen* aus.
+. Wählen Sie im NetApp Backup and Recovery -Menü *Klonen* aus.
 . Wählen Sie einen Klon aus.
 . Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Geteilter Klon*.
 . Überprüfen Sie die Details zum geteilten Klon und wählen Sie *Teilen*.
@@ -178,7 +178,7 @@ Sie können einen Klon Ihrer Microsoft SQL Server-Workloads löschen.  Durch das
 Wenn der Klon durch eine Richtlinie geschützt ist, wird der Klon einschließlich des Auftrags gelöscht.
 
 .Schritte
-. Wählen Sie im NetApp Backup and Recovery-Menü *Klonen* aus.
+. Wählen Sie im NetApp Backup and Recovery -Menü *Klonen* aus.
 . Wählen Sie einen Klon aus.
 . Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Klon löschen*.
 . Überprüfen Sie im Bestätigungsdialogfeld zum Löschen des Klons die Löschdetails.

@@ -18,7 +18,7 @@ Führen Sie einige Schritte in NetApp Backup and Recovery aus, um mit der Sicher
 
 []
 ====
-*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup und Recovery-Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup- und Recovery-Workloads"] .
+*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
 
 ====
 
@@ -33,7 +33,7 @@ Optional können Sie auch über die öffentliche oder private Verbindung eine Ve
 
 image:diagram_cloud_backup_cvo_google.png["Ein Diagramm, das zeigt, wie NetApp Backup and Recovery mit den Volumes auf dem Quellsystem und dem Zielspeicher kommuniziert, auf dem sich die Sicherungsdateien befinden."]
 
-Unterstützte ONTAP -Versionen:: Mindestens ONTAP 9.8; ONTAP 9.8P13 und höher wird empfohlen.
+Unterstützte ONTAP-Versionen:: Mindestens ONTAP 9.8; ONTAP 9.8P13 und höher wird empfohlen.
 Unterstützte GCP-Regionen:: NetApp Backup and Recovery wird in allen GCP-Regionen unterstützt.
 GCP-Dienstkonto:: Sie benötigen in Ihrem Google Cloud-Projekt ein Dienstkonto mit der benutzerdefinierten Rolle. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-creating-gcp-service-account.html["Erfahren Sie, wie Sie ein Dienstkonto erstellen"^] .
 
@@ -47,7 +47,7 @@ NOTE: Die Rolle „Storage Admin“ ist für das Dienstkonto, das NetApp Backup 
 
 Für die NetApp Backup and Recovery PAYGO-Lizenzierung ist im Google Marketplace ein Konsolenabonnement verfügbar, das die Bereitstellung von Cloud Volumes ONTAP und NetApp Backup and Recovery ermöglicht.  Sie müssen https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["dieses Konsolenabonnement abonnieren"^] bevor Sie NetApp Backup and Recovery aktivieren.  Die Abrechnung für NetApp Backup and Recovery erfolgt über dieses Abonnement. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-gcp.html["Sie können sich über die Seite „Details und Anmeldeinformationen“ des Systemassistenten anmelden."^] .
 
-Für die NetApp Backup and Recovery BYOL-Lizenzierung benötigen Sie die Seriennummer von NetApp , die Ihnen die Nutzung des Dienstes für die Dauer und Kapazität der Lizenz ermöglicht. link:br-start-licensing.html["Erfahren Sie, wie Sie Ihre BYOL-Lizenzen verwalten"] .
+Für die NetApp Backup and Recovery BYOL-Lizenzierung benötigen Sie die Seriennummer von NetApp , die Ihnen die Nutzung des Dienstes für die Dauer und Kapazität der Lizenz ermöglicht. link:br-start-licensing.html["Erfahren Sie, wie Sie Ihre BYOL-Lizenzen verwalten"].
 
 Und Sie benötigen ein Google-Abonnement für den Speicherplatz, auf dem Ihre Backups gespeichert werden.
 
@@ -129,7 +129,7 @@ cloudkms.keyRings.setIamPolicy
 
 Standardmäßig erstellt der Dienst Buckets für Sie.  Wenn Sie Ihre eigenen Buckets verwenden möchten, können Sie diese vor dem Starten des Backup-Aktivierungsassistenten erstellen und diese Buckets dann im Assistenten auswählen.
 
-link:prev-ontap-protect-journey.html["Erfahren Sie mehr über das Erstellen eigener Buckets"] .
+link:prev-ontap-protect-journey.html["Erfahren Sie mehr über das Erstellen eigener Buckets"].
 
 
 
@@ -141,7 +141,7 @@ Wenn Sie mit NetApp Backup and Recovery replizierte Volumes auf einem sekundäre
 
 ==== On-Premises ONTAP Netzwerkanforderungen
 
-* Wenn sich der Cluster in Ihren Räumlichkeiten befindet, sollten Sie über eine Verbindung von Ihrem Unternehmensnetzwerk zu Ihrem virtuellen Netzwerk beim Cloud-Anbieter verfügen.  Dies ist normalerweise eine VPN-Verbindung.
+* Wenn sich der Cluster in Ihren Räumlichkeiten befindet, sollten Sie über eine Verbindung von Ihrem Unternehmensnetzwerk zu Ihrem virtuellen Netzwerk beim Cloud-Anbieter verfügen. Dies ist normalerweise eine VPN-Verbindung.
 * ONTAP -Cluster müssen zusätzliche Subnetz-, Port-, Firewall- und Clusteranforderungen erfüllen.
 +
 Da Sie auf Cloud Volumes ONTAP oder lokale Systeme replizieren können, überprüfen Sie die Peering-Anforderungen für lokale ONTAP -Systeme. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Voraussetzungen für Cluster-Peering in der ONTAP Dokumentation anzeigen"^] .
@@ -152,7 +152,7 @@ Da Sie auf Cloud Volumes ONTAP oder lokale Systeme replizieren können, überpr�
 
 ==== Netzwerkanforderungen für Cloud Volumes ONTAP
 
-* Die Sicherheitsgruppe der Instanz muss die erforderlichen eingehenden und ausgehenden Regeln enthalten: insbesondere Regeln für ICMP und die Ports 11104 und 11105.  Diese Regeln sind in der vordefinierten Sicherheitsgruppe enthalten.
+* Die Sicherheitsgruppe der Instanz muss die erforderlichen Regeln für eingehenden und ausgehenden Datenverkehr enthalten, insbesondere Regeln für ICMP und die Ports 11104 und 11105. Diese Regeln sind in der vordefinierten Sicherheitsgruppe enthalten.
 
 
 * Um Daten zwischen zwei Cloud Volumes ONTAP Systemen in unterschiedlichen Subnetzen zu replizieren, müssen die Subnetze zusammen geroutet werden (dies ist die Standardeinstellung).
@@ -160,9 +160,9 @@ Da Sie auf Cloud Volumes ONTAP oder lokale Systeme replizieren können, überpr�
 
 
 
-== Aktivieren Sie NetApp Backup und Recovery auf Cloud Volumes ONTAP
+== Aktivieren Sie NetApp Backup and Recovery auf Cloud Volumes ONTAP
 
-Die Schritte zum Aktivieren von NetApp Backup und Recovery unterscheiden sich geringfügig, je nachdem, ob Sie über ein vorhandenes oder ein neues Cloud Volumes ONTAP -System verfügen.
+Die Schritte zum Aktivieren von NetApp Backup and Recovery unterscheiden sich geringfügig, je nachdem, ob Sie über ein vorhandenes oder ein neues Cloud Volumes ONTAP -System verfügen.
 
 * NetApp Backup and Recovery auf einem neuen System aktivieren*
 
@@ -194,7 +194,7 @@ Stellen Sie sicher, dass ein GCP Marketplace-Abonnement vorhanden ist.
 .Ergebnis
 NetApp Backup and Recovery ist auf dem System aktiviert.  Nachdem Sie Volumes auf diesen Cloud Volumes ONTAP -Systemen erstellt haben, starten Sie NetApp Backup and Recovery undlink:prev-ontap-backup-manage.html["Aktivieren Sie die Sicherung auf jedem Volume, das Sie schützen möchten"] .
 
-*Aktivieren Sie NetApp Backup und Recovery auf einem vorhandenen System*
+* NetApp Backup and Recovery auf einem bestehenden System aktivieren*
 
 Sie können NetApp Backup and Recovery jederzeit direkt vom System aus aktivieren.
 
@@ -267,7 +267,7 @@ Sie müssen die Schlüssel später in NetApp Backup and Recovery eingeben, wenn 
 
 Standardmäßig erstellt der Dienst Buckets für Sie.  Wenn Sie Ihre eigenen Buckets verwenden möchten, können Sie diese auch erstellen, bevor Sie den Backup-Aktivierungsassistenten starten, und diese Buckets dann im Assistenten auswählen.
 
-link:prev-ontap-protect-journey.html["Erfahren Sie mehr über das Erstellen eigener Buckets"] .
+link:prev-ontap-protect-journey.html["Erfahren Sie mehr über das Erstellen eigener Buckets"].
 
 
 
@@ -338,7 +338,7 @@ Auf der Einführungsseite des Assistenten werden die Schutzoptionen angezeigt, d
 . Fahren Sie mit den folgenden Optionen fort:
 +
 ** Wenn Sie bereits über einen Konsolenagenten verfügen, sind Sie startklar.  Wählen Sie einfach *Weiter*.
-** Wenn Sie noch keinen Konsolenagenten haben, wird die Option *Konsolenagenten hinzufügen* angezeigt. Weitere Informationen finden Sie unter <<Vorbereiten Ihres Konsolenagenten>> .
+** Wenn Sie noch keinen Konsolenagenten haben, wird die Option *Konsolenagenten hinzufügen* angezeigt.  Siehe<<Vorbereiten Ihres Konsolenagenten>> .
 
 
 
@@ -363,7 +363,7 @@ Beachten Sie: Wenn auf die von Ihnen ausgewählten Volumes bereits Snapshot- ode
 
 . Wählen Sie auf der Seite „Volumes auswählen“ das oder die Volumes aus, die Sie schützen möchten.
 +
-** Filtern Sie die Zeilen optional, um nur Bände mit bestimmten Bandtypen, Stilen usw. anzuzeigen und so die Auswahl zu erleichtern.
+** Filtern Sie die Zeilen optional, um nur Datenträger mit bestimmten Datenträgertypen, Stilen usw. anzuzeigen und so die Auswahl zu vereinfachen.
 ** Nachdem Sie das erste Volume ausgewählt haben, können Sie alle FlexVol Volumes auswählen (FlexGroup Volumes können jeweils nur einzeln ausgewählt werden).  Um alle vorhandenen FlexVol Volumes zu sichern, markieren Sie zuerst ein Volume und aktivieren Sie dann das Kontrollkästchen in der Titelzeile.
 ** Um einzelne Volumes zu sichern, aktivieren Sie das Kontrollkästchen für jedes Volume.
 
@@ -377,7 +377,7 @@ Beachten Sie: Wenn auf die von Ihnen ausgewählten Volumes bereits Snapshot- ode
 
 Zum Definieren der Sicherungsstrategie müssen die folgenden Optionen festgelegt werden:
 
-* Ob Sie eine oder alle der Backup-Optionen wünschen: lokale Snapshots, Replikation und Backup auf Objektspeicher
+* Ob Sie eine oder alle Backup-Optionen wünschen: lokale Snapshots, Replikation und Backup auf Objektspeicher
 * Architektur
 * Lokale Snapshot-Richtlinie
 * Replikationsziel und -richtlinie
@@ -486,7 +486,7 @@ Dies ist die Gelegenheit, Ihre Auswahl zu überprüfen und gegebenenfalls Anpass
 .Schritte
 . Überprüfen Sie Ihre Auswahl auf der Überprüfungsseite.
 . Aktivieren Sie optional das Kontrollkästchen, um *die Snapshot-Richtlinienbezeichnungen automatisch mit den Replikations- und Sicherungsrichtlinienbezeichnungen zu synchronisieren*.  Dadurch werden Snapshots mit einer Bezeichnung erstellt, die mit den Bezeichnungen in den Replikations- und Sicherungsrichtlinien übereinstimmt.
-. Wählen Sie *Sicherung aktivieren*.
+. Wählen Sie *Backup aktivieren*.
 
 
 .Ergebnis
@@ -496,7 +496,7 @@ Im Zielcluster wird ein repliziertes Volume erstellt, das mit dem Volume des pri
 
 Ein Google Cloud Storage-Bucket wird im Dienstkonto erstellt, das durch den von Ihnen eingegebenen Google-Zugriffsschlüssel und geheimen Schlüssel angegeben ist, und die Sicherungsdateien werden dort gespeichert.
 
-Sicherungen werden standardmäßig der Speicherklasse _Standard_ zugeordnet.  Sie können die kostengünstigeren Speicherklassen _Nearline_, _Coldline_ oder _Archive_ verwenden.  Sie konfigurieren die Speicherklasse jedoch über Google und nicht über die NetApp Backup and Recovery-Benutzeroberfläche.  Siehe das Google-Thema https://cloud.google.com/storage/docs/changing-default-storage-class["Ändern der Standardspeicherklasse eines Buckets"^] für Details.
+Sicherungen werden standardmäßig der Speicherklasse _Standard_ zugeordnet.  Sie können die kostengünstigeren Speicherklassen _Nearline_, _Coldline_ oder _Archive_ verwenden.  Sie konfigurieren die Speicherklasse jedoch über Google und nicht über die NetApp Backup and Recovery -Benutzeroberfläche.  Siehe das Google-Thema https://cloud.google.com/storage/docs/changing-default-storage-class["Ändern der Standardspeicherklasse eines Buckets"^] für Details.
 
 Das Volume-Backup-Dashboard wird angezeigt, damit Sie den Status der Backups überwachen können.
 
@@ -517,7 +517,7 @@ Möglicherweise möchten Sie die im Assistenten „Sicherung und Wiederherstellu
 
 == Wie geht es weiter?
 
-* Sie können link:prev-ontap-backup-manage.html["Verwalten Sie Ihre Sicherungsdateien und Sicherungsrichtlinien"] . Dazu gehören das Starten und Stoppen von Sicherungen, das Löschen von Sicherungen, das Hinzufügen und Ändern des Sicherungszeitplans und mehr.
-* Sie können link:prev-ontap-policy-object-advanced-settings.html["Verwalten von Backup-Einstellungen auf Clusterebene"] . Dazu gehört das Ändern der Speicherschlüssel, die ONTAP für den Zugriff auf den Cloud-Speicher verwendet, das Ändern der verfügbaren Netzwerkbandbreite zum Hochladen von Backups in den Objektspeicher, das Ändern der automatischen Backup-Einstellung für zukünftige Volumes und mehr.
+* Du kannstlink:prev-ontap-backup-manage.html["Verwalten Sie Ihre Sicherungsdateien und Sicherungsrichtlinien"] .  Dazu gehören das Starten und Stoppen von Sicherungen, das Löschen von Sicherungen, das Hinzufügen und Ändern des Sicherungszeitplans und mehr.
+* Du kannstlink:prev-ontap-policy-object-advanced-settings.html["Verwalten von Backup-Einstellungen auf Clusterebene"] .  Dazu gehört das Ändern der Speicherschlüssel, die ONTAP für den Zugriff auf den Cloud-Speicher verwendet, das Ändern der verfügbaren Netzwerkbandbreite zum Hochladen von Backups in den Objektspeicher, das Ändern der automatischen Backup-Einstellung für zukünftige Volumes und mehr.
 * Sie können auchlink:prev-ontap-restore.html["Wiederherstellen von Volumes, Ordnern oder einzelnen Dateien aus einer Sicherungsdatei"] zu einem Cloud Volumes ONTAP -System in AWS oder zu einem lokalen ONTAP System.
 

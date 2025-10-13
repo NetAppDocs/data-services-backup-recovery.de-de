@@ -14,12 +14,12 @@ summary: Schützen Sie Ihre Oracle-Workloads mit NetApp Backup und Recovery.
 
 
 [role="lead"]
-Sichern Sie Oracle Database-Schutzgruppen oder Datenbanken von lokalen ONTAP -Systemen auf Amazon Web Services S3, NetApp StorageGRID, Microsoft Azure Blob Storage oder ONTAP S3, um sicherzustellen, dass Ihre Daten geschützt sind.  Wenn Sie eine Schutzgruppe sichern, sichert die NetApp Konsole die in der Schutzgruppe enthaltenen Datenbanken und Protokolldaten.
+Sichern Sie Oracle Database-Schutzgruppen oder Datenbanken von lokalen ONTAP -Systemen auf Amazon Web Services S3, NetApp StorageGRID, Microsoft Azure Blob Storage oder ONTAP S3, um sicherzustellen, dass Ihre Daten geschützt sind.  Wenn Sie eine Schutzgruppe sichern, sichert die NetApp Console die in der Schutzgruppe enthaltenen Datenbanken und Protokolldaten.
 
 
-NOTE: Um Schutzgruppen oder einzelne Datenbanken nach einem Zeitplan zu sichern, erstellen Sie Richtlinien, die die Sicherungs- und Wiederherstellungsvorgänge steuern. Sehenlink:br-use-policies-create.html["Erstellen von Richtlinien"] Anweisungen hierzu finden Sie unter.
+NOTE: Um Schutzgruppen oder einzelne Datenbanken nach einem Zeitplan zu sichern, erstellen Sie Richtlinien, die die Sicherungs- und Wiederherstellungsvorgänge steuern.  Sehenlink:br-use-policies-create.html["Erstellen von Richtlinien"] Anweisungen hierzu finden Sie unter.
 
-* Erstellen Sie Schutzgruppen, um die Sicherungs- und Wiederherstellungsvorgänge für eine Reihe von Ressourcen zu verwalten. Sehen link:br-use-kvm-protection-groups.html["Erstellen und verwalten Sie Schutzgruppen für Oracle-Workloads mit NetApp Backup and Recovery"] für weitere Informationen.
+* Erstellen Sie Schutzgruppen, um die Sicherungs- und Wiederherstellungsvorgänge für eine Reihe von Ressourcen zu verwalten. Sehenlink:br-use-kvm-protection-groups.html["Erstellen und verwalten Sie Schutzgruppen für Oracle-Workloads mit NetApp Backup and Recovery"] für weitere Informationen.
 * Sichern Sie jetzt eine Schutzgruppe (erstellen Sie jetzt ein On-Demand-Backup).
 * Sichern Sie jetzt eine Datenbank.
 
@@ -30,10 +30,10 @@ NOTE: Um Schutzgruppen oder einzelne Datenbanken nach einem Zeitplan zu sichern,
 
 Sie können sofort eine On-Demand-Sicherung ausführen.  Dies ist hilfreich, wenn Sie Änderungen an Ihrem System vornehmen und sicherstellen möchten, dass Sie vor dem Start über eine Sicherungskopie verfügen.
 
-*Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung oder Backupadministratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+*Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung oder Backupadministratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
 .Schritte
-. Wählen Sie im NetApp -Konsolenmenü *Schutz > Sicherung und Wiederherstellung*.
+. Wählen Sie im NetApp Console *Schutz > Sicherung und Wiederherstellung*.
 . Wählen Sie in der Oracle-Kachel *Erkennen und verwalten* aus.
 . Wählen Sie *Inventar*.
 . Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.
@@ -55,10 +55,10 @@ NOTE: Die auf die Sicherung angewendete Richtlinie ist dieselbe Richtlinie, die 
 
 Sie können bei Bedarf eine Sicherung einer einzelnen Datenbank ausführen.
 
-*Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung oder Backupadministratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+*Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung oder Backupadministratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
 .Schritte
-. Wählen Sie im NetApp -Konsolenmenü *Schutz > Sicherung und Wiederherstellung*.
+. Wählen Sie im NetApp Console *Schutz > Sicherung und Wiederherstellung*.
 . Wählen Sie in der Oracle-Kachel *Erkennen und verwalten* aus.
 . Wählen Sie *Inventar*.
 . Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.

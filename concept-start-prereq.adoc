@@ -4,7 +4,7 @@ permalink: concept-start-prereq.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, backup and recovery 
 summary: Beginnen Sie mit NetApp Backup and Recovery, indem Sie die Bereitschaft Ihrer Betriebsumgebung, Ihres Konsolenagenten und Ihres Konsolenkontos überprüfen.  Um NetApp Backup and Recovery verwenden zu können, benötigen Sie diese Voraussetzungen. 
 ---
-= Voraussetzungen für NetApp Backup und Recovery
+= Voraussetzungen für NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Beginnen Sie mit NetApp Backup and Recovery, indem Sie die Bereitschaft
 
 
 [role="lead"]
-Beginnen Sie mit NetApp Backup and Recovery, indem Sie die Bereitschaft Ihrer Betriebsumgebung, NetApp Console-Agenten und NetApp Console-Kontos überprüfen.  Um NetApp Backup and Recovery verwenden zu können, benötigen Sie diese Voraussetzungen.
+Beginnen Sie mit NetApp Backup and Recovery, indem Sie die Bereitschaft Ihrer Betriebsumgebung, NetApp Console Agenten und NetApp Console -Kontos überprüfen.  Um NetApp Backup and Recovery verwenden zu können, benötigen Sie diese Voraussetzungen.
 
 
 
@@ -56,7 +56,7 @@ Version 2012 und höher werden für VMware Virtual Machine File System (VMFS) un
 Wenn Sie Ihre vorhandenen Daten aus SnapCenter in NetApp Backup and Recovery importieren möchten, ist SnapCenter Server Version 5.0 oder höher erforderlich.
 
 
-NOTE: Wenn Sie bereits über SnapCenter verfügen, überprüfen Sie zunächst, ob Sie die Voraussetzungen erfüllt haben, bevor Sie aus SnapCenter importieren. Sehen link:concept-start-prereq-snapcenter-import.html["Voraussetzungen für den Import von Ressourcen aus SnapCenter"] .
+NOTE: Wenn Sie bereits über SnapCenter verfügen, überprüfen Sie zunächst, ob Sie die Voraussetzungen erfüllt haben, bevor Sie aus SnapCenter importieren.  Sehenlink:concept-start-prereq-snapcenter-import.html["Voraussetzungen für den Import von Ressourcen aus SnapCenter"] .
 
 
 
@@ -163,7 +163,7 @@ Stellen Sie sicher, dass Ihre Umgebung bestimmte Anforderungen zum Erkennen und 
 
 Sie benötigen spezifische Anforderungen, um Kubernetes-Ressourcen zu erkennen und Ihre Kubernetes-Anwendungen zu schützen.
 
-Informationen zu den NetApp Konsolenanforderungen finden Sie unter<<In der NetApp Konsole>> .
+Informationen zu den NetApp Console finden Sie unter<<In der NetApp Console>> .
 
 * Ein primäres ONTAP System (ONTAP 9.16.1 oder höher)
 * Ein Kubernetes-Cluster – Zu den unterstützten Kubernetes-Distributionen und -Versionen gehören:
@@ -224,16 +224,16 @@ NOTE: Stellen Sie sicher, dass Sie auf dem Hyper-V-Host genügend Speicherplatz 
 
 
 
-== In der NetApp Konsole
+== In der NetApp Console
 
-Stellen Sie sicher, dass die NetApp Konsole die folgenden Anforderungen erfüllt.
+Stellen Sie sicher, dass die NetApp Console die folgenden Anforderungen erfüllt.
 
-* Ein Konsolenbenutzer sollte über die erforderliche Rolle und die erforderlichen Berechtigungen verfügen, um Vorgänge an Microsoft SQL Server- und Kubernetes-Workloads auszuführen.  Um die Ressourcen zu erkennen, müssen Sie über die NetApp Backup and Recovery-Rolle des Superadministrators verfügen.  Sehenlink:reference-roles.html["Rollenbasierter Zugriff auf Funktionen von NetApp Backup and Recovery"] Weitere Informationen zu den Rollen und Berechtigungen, die zum Ausführen von Vorgängen in NetApp Backup and Recovery erforderlich sind.
+* Ein Konsolenbenutzer sollte über die erforderliche Rolle und die erforderlichen Berechtigungen verfügen, um Vorgänge an Microsoft SQL Server- und Kubernetes-Workloads auszuführen.  Um die Ressourcen zu erkennen, müssen Sie über die NetApp Backup and Recovery -Rolle des Superadministrators verfügen.  Sehenlink:reference-roles.html["Rollenbasierter Zugriff auf Funktionen von NetApp Backup and Recovery"] Weitere Informationen zu den Rollen und Berechtigungen, die zum Ausführen von Vorgängen in NetApp Backup and Recovery erforderlich sind.
 * Eine Konsolenorganisation mit mindestens einem aktiven Konsolenagenten, der eine Verbindung zu lokalen ONTAP Clustern oder Cloud Volumes ONTAP.
 * Mindestens ein Konsolensystem mit einem lokalen NetApp ONTAP oder Cloud Volumes ONTAP Cluster.
 * Ein Konsolenagent
 +
-Siehe https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["Erfahren Sie, wie Sie einen Konsolenagenten konfigurieren"] Und https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-checklist-cm.html["Standardanforderungen für die NetApp -Konsole"^] .
+Siehe https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["Erfahren Sie, wie Sie einen Konsolenagenten konfigurieren"] Und https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-checklist-cm.html["Standardanforderungen für die NetApp Console"^] .
 
 +
 ** Die Vorschauversion erfordert das Betriebssystem Ubuntu 22.04 LTS für den Konsolenagenten.
@@ -243,19 +243,19 @@ Siehe https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html[
 
 
 
-=== Einrichten der NetApp -Konsole
+=== Einrichten der NetApp Console
 
 Der nächste Schritt besteht darin, die Konsole und NetApp Backup and Recovery einzurichten.
 
-Rezension https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-checklist-cm.html["Standardanforderungen für die NetApp -Konsole"^] .
+Rezension https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-checklist-cm.html["Standardanforderungen für die NetApp Console"^] .
 
 
 
 === Erstellen eines Konsolenagenten
 
-Sie sollten sich an Ihr NetApp -Produktteam wenden, um Backup und Recovery auszuprobieren. Wenn Sie dann den Konsolenagenten verwenden, enthält dieser die entsprechenden Funktionen für den Dienst.
+Sie sollten sich an Ihr NetApp -Produktteam wenden, um Backup und Recovery auszuprobieren.  Wenn Sie dann den Konsolenagenten verwenden, enthält dieser die entsprechenden Funktionen für den Dienst.
 
-Informationen zum Erstellen eines Konsolenagenten in der NetApp -Konsole vor der Verwendung des Dienstes finden Sie in der Konsolendokumentation. Dort wird beschrieben, https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["So erstellen Sie einen Konsolenagenten"^] .
+Informationen zum Erstellen eines Konsolenagenten in der NetApp Console vor der Verwendung des Dienstes finden Sie in der Konsolendokumentation. Dort wird beschrieben, https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["So erstellen Sie einen Konsolenagenten"^] .
 
 .Wo soll der Konsolenagent installiert werden?
 Um einen Wiederherstellungsvorgang abzuschließen, kann der Konsolenagent an den folgenden Speicherorten installiert werden:

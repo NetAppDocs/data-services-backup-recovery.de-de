@@ -30,16 +30,16 @@ Dies gilt fürlink:prev-ontap-backup-cvo-aws.html["Sichern von Cloud Volumes ONT
 
 endif::aws[]
 
-Siehe https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-July-2024-Release/ba-p/453993["Blog zur NetApp Backup and Recovery-Version vom Juli 2024"] .
+Siehe https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-July-2024-Release/ba-p/453993["Blog zur NetApp Backup and Recovery Version vom Juli 2024"] .
 
 
 
 === Wiederherstellung von FlexGroup -Ordnern oder -Verzeichnissen jetzt verfügbar
 
-Bisher konnten FlexVol -Volumes wiederhergestellt werden, FlexGroup Ordner oder -Verzeichnisse konnten jedoch nicht wiederhergestellt werden.  Mit ONTAP 9.15.1 p2 können Sie FlexGroup -Ordner mit der Option „Durchsuchen und wiederherstellen“ wiederherstellen.
+Bisher konnten FlexVol Volumes wiederhergestellt werden, FlexGroup Ordner oder -Verzeichnisse konnten jedoch nicht wiederhergestellt werden.  Mit ONTAP 9.15.1 p2 können Sie FlexGroup -Ordner mit der Option „Durchsuchen und wiederherstellen“ wiederherstellen.
 
 Mit dieser Version ist die Unterstützung für die Wiederherstellung von FlexGroup -Ordnern eine Technologievorschau.
 
 Weitere Einzelheiten finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-restore.html["Stellen Sie Ordner und Dateien mit „Durchsuchen und Wiederherstellen“ wieder her"] .
 
-Einzelheiten zur manuellen Aktivierung finden Sie unter https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-July-2024-Release/ba-p/453993["Blog zur NetApp Backup and Recovery-Version vom Juli 2024"] .
+Einzelheiten zur manuellen Aktivierung finden Sie unter https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-July-2024-Release/ba-p/453993["Blog zur NetApp Backup and Recovery Version vom Juli 2024"] .

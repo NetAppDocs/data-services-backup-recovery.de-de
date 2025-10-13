@@ -39,7 +39,7 @@ Sie können die folgenden Schutzziele erreichen:
 * link:br-use-manage-snapshots.html["Verwalten von Snapshots"]
 
 
-Zum Sichern von Workloads erstellen Sie normalerweise Richtlinien, die die Sicherungs- und Wiederherstellungsvorgänge steuern. Sehen link:br-use-policies-create.html["Erstellen von Richtlinien"] für weitere Informationen.
+Zum Sichern von Workloads erstellen Sie normalerweise Richtlinien, die die Sicherungs- und Wiederherstellungsvorgänge steuern.  Sehenlink:br-use-policies-create.html["Erstellen von Richtlinien"] für weitere Informationen.
 
 .Unterstützte Sicherungsziele
 Mit NetApp Backup and Recovery können Sie Microsoft SQL Server-Instanzen und -Datenbanken von den folgenden Quellsystemen auf die folgenden Sekundärsysteme und Objektspeicher bei öffentlichen und privaten Cloud-Anbietern sichern.  Snapshot-Kopien befinden sich auf dem Quellsystem.

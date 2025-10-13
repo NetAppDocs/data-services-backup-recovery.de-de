@@ -4,7 +4,7 @@ permalink: prev-reference-aws-archive-storage-tiers.html
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
 summary: NetApp Backup and Recovery unterstützt zwei S3-Archivspeicherklassen und die meisten Regionen. 
 ---
-= Unterstützte AWS-Archivspeicherebenen mit NetApp Backup und Recovery
+= Unterstützte AWS-Archivspeicherebenen mit NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -18,16 +18,16 @@ NetApp Backup and Recovery unterstützt zwei S3-Archivspeicherklassen und die me
 
 []
 ====
-*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup und Recovery UI-Versionen finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zur vorherigen NetApp Backup and Recovery-Benutzeroberfläche"] .
+*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup and Recovery UI-Versionen finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zur vorherigen NetApp Backup and Recovery -Benutzeroberfläche"] .
 
 ====
 
 
-== Unterstützte S3-Archivspeicherklassen für NetApp Backup und Recovery
+== Unterstützte S3-Archivspeicherklassen für NetApp Backup and Recovery
 
 Wenn Sicherungsdateien zunächst erstellt werden, werden sie im S3-Standardspeicher gespeichert.  Diese Ebene ist für die Speicherung selten abgerufener Daten optimiert, ermöglicht Ihnen aber auch den sofortigen Zugriff darauf.  Nach 30 Tagen werden die Backups aus Kostengründen in die Speicherklasse S3 _Standard-Infrequent Access_ verschoben.
 
-Wenn auf Ihren Quellclustern ONTAP 9.10.1 oder höher ausgeführt wird, können Sie zur weiteren Kostenoptimierung Backups nach einer bestimmten Anzahl von Tagen (normalerweise mehr als 30 Tage) entweder auf _S3 Glacier_- oder _S3 Glacier Deep Archive_-Speicher verschieben.  Sie können dies auf „0“ oder auf 1–999 Tage einstellen.  Wenn Sie es auf „0“ Tage einstellen, können Sie es später nicht mehr auf 1–999 Tage ändern.
+Wenn auf Ihren Quellclustern ONTAP 9.10.1 oder höher ausgeführt wird, können Sie zur weiteren Kostenoptimierung Backups nach einer bestimmten Anzahl von Tagen (normalerweise mehr als 30 Tage) entweder auf _S3 Glacier_- oder _S3 Glacier Deep Archive_-Speicher verschieben.  Sie können dies auf „0“ oder auf 1–999 Tage einstellen.  Wenn Sie es auf „0“ Tage einstellen, können Sie es später nicht auf 1–999 Tage ändern.
 
 Auf die Daten in diesen Ebenen kann bei Bedarf nicht sofort zugegriffen werden und der Abruf ist mit höheren Kosten verbunden. Sie müssen daher berücksichtigen, wie oft Sie Daten aus diesen archivierten Sicherungsdateien wiederherstellen müssen.  Weitere Informationen zum Wiederherstellen von Daten aus dem Archivspeicher finden Sie im Abschnitt auf dieser Seite.
 
@@ -38,7 +38,7 @@ Auf die Daten in diesen Ebenen kann bei Bedarf nicht sofort zugegriffen werden u
 
 Beachten Sie, dass Sie beim Konfigurieren von NetApp Backup and Recovery mit dieser Art von Lebenszyklusregel beim Einrichten des Buckets in Ihrem AWS-Konto keine Lebenszyklusregeln konfigurieren dürfen.
 
-https://aws.amazon.com/s3/storage-classes/["Erfahren Sie mehr über S3-Speicherklassen"^] .
+https://aws.amazon.com/s3/storage-classes/["Erfahren Sie mehr über S3-Speicherklassen"^].
 
 
 

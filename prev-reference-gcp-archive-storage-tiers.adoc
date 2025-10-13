@@ -4,7 +4,7 @@ permalink: prev-reference-gcp-archive-storage-tiers.html
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
 summary: NetApp Backup and Recovery unterstützt eine Archivspeicherklasse von Google und die meisten Regionen. 
 ---
-= Unterstützte Google-Archivspeicherebenen mit NetApp Backup und Recovery
+= Unterstützte Google-Archivspeicherebenen mit NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -18,20 +18,20 @@ NetApp Backup and Recovery unterstützt eine Archivspeicherklasse von Google und
 
 []
 ====
-*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup und Recovery UI-Versionen finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zur vorherigen NetApp Backup and Recovery-Benutzeroberfläche"] .
+*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup and Recovery UI-Versionen finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zur vorherigen NetApp Backup and Recovery -Benutzeroberfläche"] .
 
 ====
 
 
-== Unterstützte Google-Archivspeicherklassen für NetApp Backup und Recovery
+== Unterstützte Google-Archivspeicherklassen für NetApp Backup and Recovery
 
 Wenn Sicherungsdateien zunächst erstellt werden, werden sie im _Standard_-Speicher gespeichert.  Diese Ebene ist für die Speicherung selten abgerufener Daten optimiert, ermöglicht Ihnen aber auch den sofortigen Zugriff darauf.
 
-Wenn Ihr Cluster vor Ort ONTAP 9.12.1 oder höher verwendet, können Sie zur weiteren Kostenoptimierung in der NetApp Backup and Recovery-Benutzeroberfläche ältere Backups nach einer bestimmten Anzahl von Tagen (normalerweise mehr als 30 Tage) in den Archivspeicher verschieben.  Für die Datenabfrage in dieser Ebene fallen höhere Kosten an. Sie müssen daher berücksichtigen, wie oft Sie Daten aus diesen archivierten Sicherungsdateien wiederherstellen müssen.  Weitere Informationen zum Wiederherstellen von Daten aus dem Archivspeicher finden Sie im Abschnitt auf dieser Seite.
+Wenn Ihr Cluster vor Ort ONTAP 9.12.1 oder höher verwendet, können Sie zur weiteren Kostenoptimierung in der NetApp Backup and Recovery Benutzeroberfläche ältere Backups nach einer bestimmten Anzahl von Tagen (normalerweise mehr als 30 Tage) in den Archivspeicher verschieben.  Für die Datenabfrage in dieser Ebene fallen höhere Kosten an. Sie müssen daher berücksichtigen, wie oft Sie Daten aus diesen archivierten Sicherungsdateien wiederherstellen müssen.  Weitere Informationen zum Wiederherstellen von Daten aus dem Archivspeicher finden Sie im Abschnitt auf dieser Seite.
 
 Beachten Sie, dass Sie beim Konfigurieren von NetApp Backup and Recovery mit dieser Art von Lebenszyklusregel beim Einrichten des Buckets in Ihrem Google-Konto keine Lebenszyklusregeln konfigurieren dürfen.
 
-https://cloud.google.com/storage/docs/storage-classes["Informationen zu Google-Speicherklassen"^] .
+https://cloud.google.com/storage/docs/storage-classes["Informationen zu Google-Speicherklassen"^].
 
 
 

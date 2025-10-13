@@ -4,7 +4,7 @@ permalink: prev-ontap-protect-overview.html
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
 summary: Schützen Sie Ihre VMware-Workloads mit NetApp NetApp Backup and Recovery. 
 ---
-= Schützen Sie Ihre ONTAP Volume-Daten mit NetApp Backup und Recovery
+= Schützen Sie Ihre ONTAP Volume-Daten mit NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -18,7 +18,7 @@ NetApp Backup and Recovery bietet Sicherungs- und Wiederherstellungsfunktionen z
 
 []
 ====
-*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup und Recovery-Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup- und Recovery-Workloads"] .
+*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
 
 ====
 Nach der Aktivierung erstellt Backup und Recovery inkrementelle Backups auf Blockebene, die dauerhaft auf einem anderen ONTAP Cluster und im Objektspeicher in der Cloud gespeichert werden.  Zusätzlich zu Ihrem Quellvolumen verfügen Sie über:
@@ -52,7 +52,7 @@ Bei Bedarf können Sie ein ganzes _Volume_, einen _Ordner_ oder eine oder mehrer
 * Native ONTAP -In-Flight-Verschlüsselung über Pre-Shared Key (PSK) zwischen den beiden Systemen eingerichtet.
 * Kopierte Daten sind unveränderlich, bis Sie sie beschreibbar und einsatzbereit machen.
 * Bei einem Übertragungsfehler ist die Replikation selbstheilend.
-* Im Vergleich zu https://docs.netapp.com/us-en/data-services-replication/index.html["NetApp Replikation"^] Die Replikation in NetApp Backup and Recovery umfasst die folgenden Funktionen:
+* Im Vergleich zu https://docs.netapp.com/us-en/data-services-replication/index.html["NetApp Replication"^] Die Replikation in NetApp Backup and Recovery umfasst die folgenden Funktionen:
 +
 ** Replizieren Sie mehrere FlexVol -Volumes gleichzeitig auf ein sekundäres System.
 ** Stellen Sie ein repliziertes Volume mithilfe der Benutzeroberfläche auf dem Quellsystem oder einem anderen System wieder her.
@@ -212,7 +212,7 @@ endif::azure[]
 
 ifdef::gcp[]
 
-* In Google wird ein neuer Bucket bereitgestellt und der https://cloud.google.com/bigquery["Google Cloud BigQuery-Dienste"^] werden auf Konto-/Projektebene bereitgestellt.
+* Bei Google wird ein neuer Bucket bereitgestellt und der https://cloud.google.com/bigquery["Google Cloud BigQuery-Dienste"^] werden auf Konto-/Projektebene bereitgestellt.
 
 
 endif::gcp[]
@@ -246,9 +246,9 @@ Eine Backup-Lizenz ist nur für die Sicherung und Wiederherstellung aus dem Obje
 
 BYOL ist laufzeitbasiert (1, 2 oder 3 Jahre) und kapazitätsbasiert in 1-TiB-Schritten.  Sie zahlen NetApp für die Nutzung des Dienstes für einen bestimmten Zeitraum, beispielsweise 1 Jahr, und für eine maximale Kapazität, beispielsweise 10 TiB.
 
-Sie erhalten eine Seriennummer, die Sie in der NetApp Konsole eingeben, um den Dienst zu aktivieren.  Wenn eines der Limits erreicht ist, müssen Sie die Lizenz erneuern.  Die Backup-BYOL-Lizenz gilt für alle Quellsysteme, die mit Ihrer NetApp Console-Organisation oder Ihrem NetApp Console-Konto verknüpft sind.
+Sie erhalten eine Seriennummer, die Sie in der NetApp Console eingeben, um den Dienst zu aktivieren.  Wenn eines der Limits erreicht ist, müssen Sie die Lizenz erneuern.  Die Backup-BYOL-Lizenz gilt für alle Quellsysteme, die mit Ihrer NetApp Console -Organisation oder Ihrem NetApp Console-Konto verknüpft sind.
 
-link:br-start-licensing.html["Erfahren Sie, wie Sie Ihre BYOL-Lizenzen verwalten"] .
+link:br-start-licensing.html["Erfahren Sie, wie Sie Ihre BYOL-Lizenzen verwalten"].
 
 
 
@@ -256,7 +256,7 @@ link:br-start-licensing.html["Erfahren Sie, wie Sie Ihre BYOL-Lizenzen verwalten
 
 NetApp Backup and Recovery bietet verbrauchsbasierte Lizenzierung in einem Pay-as-you-go-Modell.  Nachdem Sie das Abonnement über den Marktplatz Ihres Cloud-Anbieters abgeschlossen haben, zahlen Sie pro GiB für die gesicherten Daten – es ist keine Vorauszahlung erforderlich. Die Abrechnung erfolgt durch Ihren Cloud-Anbieter über Ihre monatliche Rechnung.
 
-link:br-start-licensing.html["Erfahren Sie, wie Sie ein Pay-as-you-go-Abonnement einrichten"] .
+link:br-start-licensing.html["Erfahren Sie, wie Sie ein Pay-as-you-go-Abonnement einrichten"].
 
 Beachten Sie, dass bei der ersten Anmeldung mit einem PAYGO-Abonnement eine 30-tägige kostenlose Testversion verfügbar ist.
 
@@ -269,7 +269,7 @@ ifdef::aws[]
 Wenn Sie AWS verwenden, stehen Ihnen zwei Jahresverträge mit einer Laufzeit von 1, 2 oder 3 Jahren zur Verfügung:
 
 * Ein „Cloud Backup“-Plan, mit dem Sie Cloud Volumes ONTAP -Daten und lokale ONTAP -Daten sichern können.
-* Ein „CVO Professional“-Plan, mit dem Sie Cloud Volumes ONTAP und NetApp Backup and Recovery bündeln können.  Dies umfasst unbegrenzte Backups für Cloud Volumes ONTAP Volumes, die dieser Lizenz in Rechnung gestellt werden (die Backup-Kapazität wird nicht auf die Lizenz angerechnet).
+* Ein „CVO Professional“-Plan, der es Ihnen ermöglicht, Cloud Volumes ONTAP und NetApp Backup and Recovery zu bündeln.  Dies umfasst unbegrenzte Backups für Cloud Volumes ONTAP Volumes, die dieser Lizenz in Rechnung gestellt werden (die Backup-Kapazität wird nicht auf die Lizenz angerechnet).
 
 
 endif::aws[]
@@ -279,7 +279,7 @@ ifdef::azure[]
 Wenn Sie Azure verwenden, stehen Ihnen zwei Jahresverträge mit einer Laufzeit von 1, 2 oder 3 Jahren zur Verfügung:
 
 * Ein „Cloud Backup“-Plan, mit dem Sie Cloud Volumes ONTAP -Daten und lokale ONTAP -Daten sichern können.
-* Ein „CVO Professional“-Plan, mit dem Sie Cloud Volumes ONTAP und NetApp Backup and Recovery bündeln können.  Dies umfasst unbegrenzte Backups für Cloud Volumes ONTAP Volumes, die dieser Lizenz in Rechnung gestellt werden (die Backup-Kapazität wird nicht auf die Lizenz angerechnet).
+* Ein „CVO Professional“-Plan, der es Ihnen ermöglicht, Cloud Volumes ONTAP und NetApp Backup and Recovery zu bündeln.  Dies umfasst unbegrenzte Backups für Cloud Volumes ONTAP Volumes, die dieser Lizenz in Rechnung gestellt werden (die Backup-Kapazität wird nicht auf die Lizenz angerechnet).
 
 
 endif::azure[]
@@ -290,11 +290,11 @@ Wenn Sie GCP verwenden, können Sie ein privates Angebot von NetApp anfordern un
 
 endif::gcp[]
 
-link:br-start-licensing.html["Erfahren Sie, wie Sie Jahresverträge abschließen"] .
+link:br-start-licensing.html["Erfahren Sie, wie Sie Jahresverträge abschließen"].
 
 
 
-== So funktioniert NetApp Backup und Recovery
+== So funktioniert NetApp Backup and Recovery
 
 Wenn Sie NetApp Backup and Recovery auf einem Cloud Volumes ONTAP oder On-Premises ONTAP -System aktivieren, führt der Dienst eine vollständige Sicherung Ihrer Daten durch.  Nach der ersten Sicherung sind alle weiteren Sicherungen inkrementell, d. h. es werden nur geänderte und neue Blöcke gesichert.  Dadurch wird der Netzwerkverkehr auf ein Minimum reduziert.  Die Sicherung auf Objektspeicher basiert auf https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["NetApp SnapMirror Cloud-Technologie"^] .
 
@@ -362,7 +362,7 @@ TIP: Die Aufbewahrungsdauer für Sicherungen von Datensicherungsvolumes ist dies
 
 === Einstellungen für den Sicherungsdateischutz
 
-Wenn Ihr Cluster ONTAP 9.11.1 oder höher verwendet, können Sie Ihre Backups im Objektspeicher vor Löschung und Ransomware-Angriffen schützen. Jede Sicherungsrichtlinie enthält einen Abschnitt für _DataLock und Ransomware-Resilienz_, der für einen bestimmten Zeitraum – den _Aufbewahrungszeitraum_ – auf Ihre Sicherungsdateien angewendet werden kann.
+Wenn Ihr Cluster ONTAP 9.11.1 oder höher verwendet, können Sie Ihre Backups im Objektspeicher vor Löschung und Ransomware-Angriffen schützen.  Jede Sicherungsrichtlinie enthält einen Abschnitt für _DataLock und Ransomware-Resilienz_, der für einen bestimmten Zeitraum – den _Aufbewahrungszeitraum_ – auf Ihre Sicherungsdateien angewendet werden kann.
 
 * _DataLock_ schützt Ihre Sicherungsdateien vor Änderungen oder Löschungen.
 * Der Ransomware-Schutz durchsucht Ihre Sicherungsdateien nach Hinweisen auf einen Ransomware-Angriff, wenn eine Sicherungsdatei erstellt wird und wenn Daten aus einer Sicherungsdatei wiederhergestellt werden.
@@ -376,8 +376,8 @@ Support ist derzeit verfügbar, wenn Ihr Sicherungsziel Amazon S3, Azure Blob od
 
 Weitere Einzelheiten finden Sie in diesen Informationen:
 
-* link:prev-ontap-policy-object-options.html["So funktionieren DataLock und Ransomware-Schutz"] .
-* link:prev-ontap-policy-object-advanced-settings.html["So aktualisieren Sie die Ransomware-Schutzoptionen auf der Seite „Erweiterte Einstellungen“"] .
+* link:prev-ontap-policy-object-options.html["So funktionieren DataLock und Ransomware-Schutz"].
+* link:prev-ontap-policy-object-advanced-settings.html["So aktualisieren Sie die Ransomware-Schutzoptionen auf der Seite „Erweiterte Einstellungen“"].
 
 
 
@@ -393,7 +393,7 @@ ifdef::aws[]
 
 * In AWS beginnen Backups in der Speicherklasse _Standard_ und wechseln nach 30 Tagen zur Speicherklasse _Standard – seltener Zugriff_.
 +
-Wenn Ihr Cluster ONTAP 9.10.1 oder höher verwendet, können Sie zur weiteren Kostenoptimierung ältere Backups nach einer bestimmten Anzahl von Tagen in der NetApp Backup and Recovery-Benutzeroberfläche entweder auf _S3 Glacier_- oder _S3 Glacier Deep Archive_-Speicher verschieben. link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über AWS-Archivspeicher"] .
+Wenn Ihr Cluster ONTAP 9.10.1 oder höher verwendet, können Sie zur weiteren Kostenoptimierung ältere Backups nach einer bestimmten Anzahl von Tagen in der NetApp Backup and Recovery Benutzeroberfläche entweder auf _S3 Glacier_- oder _S3 Glacier Deep Archive_-Speicher verschieben. link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über AWS-Archivspeicher"].
 
 
 
@@ -403,7 +403,7 @@ ifdef::azure[]
 
 * In Azure sind Sicherungen mit der Zugriffsebene „Cool“ verknüpft.
 +
-Wenn Ihr Cluster ONTAP 9.10.1 oder höher verwendet, können Sie zur weiteren Kostenoptimierung ältere Backups nach einer bestimmten Anzahl von Tagen in der NetApp Backup and Recovery-Benutzeroberfläche in den Azure Archive-Speicher verschieben. link:prev-reference-azure-archive-storage-tiers.html["Erfahren Sie mehr über Azure-Archivspeicher"] .
+Wenn Ihr Cluster ONTAP 9.10.1 oder höher verwendet, können Sie zur weiteren Kostenoptimierung ältere Backups nach einer bestimmten Anzahl von Tagen in der NetApp Backup and Recovery Benutzeroberfläche in den Azure Archive-Speicher verschieben. link:prev-reference-azure-archive-storage-tiers.html["Erfahren Sie mehr über Azure-Archivspeicher"].
 
 
 
@@ -413,7 +413,7 @@ ifdef::gcp[]
 
 * In GCP sind Backups mit der Speicherklasse _Standard_ verknüpft.
 +
-Wenn Ihr Cluster ONTAP 9.12.1 oder höher verwendet, können Sie zur weiteren Kostenoptimierung ältere Backups nach einer bestimmten Anzahl von Tagen in der NetApp Backup and Recovery-Benutzeroberfläche in den Archivspeicher verschieben. link:prev-reference-gcp-archive-storage-tiers.html["Erfahren Sie mehr über den Archivspeicher von Google"] .
+Wenn Ihr Cluster ONTAP 9.12.1 oder höher verwendet, können Sie zur weiteren Kostenoptimierung ältere Backups nach einer bestimmten Anzahl von Tagen in der NetApp Backup and Recovery Benutzeroberfläche in den Archivspeicher verschieben. link:prev-reference-gcp-archive-storage-tiers.html["Erfahren Sie mehr über den Archivspeicher von Google"].
 
 
 
@@ -421,7 +421,7 @@ endif::gcp[]
 
 * In StorageGRID sind Backups mit der Speicherklasse _Standard_ verknüpft.
 +
-Wenn Ihr On-Prem-Cluster ONTAP 9.12.1 oder höher verwendet und Ihr StorageGRID System 11.4 oder höher verwendet, können Sie ältere Sicherungsdateien nach einer bestimmten Anzahl von Tagen im öffentlichen Cloud-Archivspeicher archivieren.  Derzeit wird die Speicherebene AWS S3 Glacier/S3 Glacier Deep Archive oder Azure Archive unterstützt. link:prev-ontap-backup-onprem-storagegrid.html["Erfahren Sie mehr über das Archivieren von Backup-Dateien von StorageGRID"] .
+Wenn Ihr On-Prem-Cluster ONTAP 9.12.1 oder höher verwendet und Ihr StorageGRID System 11.4 oder höher verwendet, können Sie ältere Sicherungsdateien nach einer bestimmten Anzahl von Tagen im öffentlichen Cloud-Archivspeicher archivieren.  Derzeit wird die Speicherebene AWS S3 Glacier/S3 Glacier Deep Archive oder Azure Archive unterstützt. link:prev-ontap-backup-onprem-storagegrid.html["Erfahren Sie mehr über das Archivieren von Backup-Dateien von StorageGRID"].
 
 
 
@@ -442,5 +442,5 @@ Dieser Vorgang kann zu einer einmaligen Kostenerhöhung beim Lesen der Daten von
 ** Wenn die Tiering-Richtlinie dem Volume bei seiner Ersterstellung zugewiesen wird, tritt dieses Problem nicht auf.
 
 
-* Berücksichtigen Sie die Auswirkungen von Backups, bevor Sie die `all` Tiering-Richtlinie für Volumes.  Da die Daten sofort in Tiers aufgeteilt werden, liest NetApp Backup and Recovery die Daten aus der Cloud-Tier-Ebene und nicht aus der lokalen Ebene.  Da gleichzeitige Sicherungsvorgänge die Netzwerkverbindung zum Cloud-Objektspeicher gemeinsam nutzen, kann es zu Leistungseinbußen kommen, wenn die Netzwerkressourcen überlastet sind.  In diesem Fall möchten Sie möglicherweise proaktiv mehrere Netzwerkschnittstellen (LIFs) konfigurieren, um diese Art der Netzwerksättigung zu verringern.
+* Berücksichtigen Sie die Auswirkungen von Backups, bevor Sie die `all` Tiering-Richtlinie für Volumes.  Da die Daten sofort in Tiers aufgeteilt werden, liest NetApp Backup and Recovery die Daten aus der Cloud-Tier-Ebene und nicht aus der lokalen Ebene.  Da bei gleichzeitigen Sicherungsvorgängen die Netzwerkverbindung zum Cloud-Objektspeicher gemeinsam genutzt wird, kann es zu Leistungseinbußen kommen, wenn die Netzwerkressourcen überlastet sind.  In diesem Fall möchten Sie möglicherweise proaktiv mehrere Netzwerkschnittstellen (LIFs) konfigurieren, um diese Art der Netzwerksättigung zu verringern.
 

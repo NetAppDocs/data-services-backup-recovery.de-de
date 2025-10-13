@@ -4,7 +4,7 @@ permalink: br-start-faq.html
 keywords: backup and recovery faq, NetApp Backup and Recovery frequently asked questions 
 summary: Diese FAQ können hilfreich sein, wenn Sie nur schnell eine Antwort auf eine Frage suchen. 
 ---
-= Häufig gestellte Fragen zu NetApp Backup und Recovery
+= Häufig gestellte Fragen zu NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -25,25 +25,25 @@ Sie können die folgenden Lizenztypen verwenden:
 * Melden Sie sich für eine 30-tägige kostenlose Testversion an.
 
 
-*Wie aktivieren Sie NetApp Backup und Recovery?*  Für NetApp Backup and Recovery ist keine Aktivierung erforderlich.  Die Option zum Sichern und Wiederherstellen wird in der linken Navigation der Konsole automatisch aktiviert.
+*Wie aktivieren Sie NetApp Backup and Recovery?*  Für NetApp Backup and Recovery ist keine Aktivierung erforderlich.  Die Option zum Sichern und Wiederherstellen wird in der linken Navigation der Konsole automatisch aktiviert.
 
-Um loszulegen, müssen Sie sich anmelden oder sich an Ihren NetApp Vertriebsmitarbeiter wenden, um Backup und Recovery auszuprobieren. Wenn Sie dann den Konsolenagenten verwenden, enthält dieser die entsprechenden Funktionen für den Dienst.
+Um loszulegen, müssen Sie sich anmelden oder sich an Ihren NetApp Vertriebsmitarbeiter wenden, um Backup und Recovery auszuprobieren.  Wenn Sie dann den Konsolenagenten verwenden, enthält dieser die entsprechenden Funktionen für den Dienst.
 
 Um mit NetApp Backup and Recovery zu beginnen, wählen Sie auf der Startseite „Workloads ermitteln“ aus.
 
-*Ist NetApp Backup and Recovery im Standard-, eingeschränkten und privaten Modus verfügbar?*  Derzeit ist NetApp Backup and Recovery nur im Standardmodus verfügbar.  Bleiben Sie dran für mehr.
+*Ist NetApp Backup and Recovery im Standard-, eingeschränkten und privaten Modus verfügbar?*  Derzeit ist NetApp Backup and Recovery nur im Standardmodus verfügbar. Bleiben Sie dran für mehr.
 
-Eine Erläuterung dieser Modi für alle NetApp -Datendienste finden Sie unter https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Bereitstellungsmodi der NetApp Konsole"^] .
+Eine Erläuterung dieser Modi für alle NetApp -Datendienste finden Sie unter https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Bereitstellungsmodi der NetApp Console"^] .
 
 
 
 == Zugang
 
-*Wie lautet die URL für NetApp Backup und Recovery?* Geben Sie als URL in einem Browser Folgendes ein: https://console.netapp.com/["https://console.netapp.com/backup-and-recovery"^] um auf die NetApp Konsole zuzugreifen.
+*Wie lautet die URL für NetApp Backup and Recovery ?*  Geben Sie als URL in einem Browser Folgendes ein: https://console.netapp.com/["https://console.netapp.com/backup-and-recovery"^] um auf die NetApp Console zuzugreifen.
 
-*Wie werden Zugriffsberechtigungen gehandhabt?*  Nur Organisationsadministratoren können den Dienst initiieren und Arbeitslasten ermitteln (da dies die Verpflichtung zur Nutzung einer Ressource beinhaltet).  Nachfolgende Interaktionen können von jeder Rolle durchgeführt werden.
+*Wie werden Zugriffsberechtigungen gehandhabt?* Nur Organisationsadministratoren können den Dienst initiieren und Arbeitslasten ermitteln (da dies die Verpflichtung zur Nutzung einer Ressource beinhaltet).  Nachfolgende Interaktionen können von jeder Rolle durchgeführt werden.
 
-*Welche Geräteauflösung ist am besten?*  Die empfohlene Geräteauflösung für NetApp Backup and Recovery beträgt 1920 x 1080 oder besser.
+*Welche Geräteauflösung ist am besten?* Die empfohlene Geräteauflösung für NetApp Backup and Recovery beträgt 1920 x 1080 oder besser.
 
 *Welchen Browser sollte ich verwenden?* Jeder moderne Browser funktioniert.
 
@@ -53,21 +53,21 @@ Eine Erläuterung dieser Modi für alle NetApp -Datendienste finden Sie unter ht
 
 *Ist NetApp Backup and Recovery über die in NetApp ONTAP vorgenommenen Schutzeinstellungen informiert?*  Ja, NetApp Backup and Recovery erkennt in ONTAP festgelegte Snapshot-Zeitpläne.
 
-*Wenn Sie eine Richtlinie mit NetApp Backup and Recovery festlegen, müssen Sie zukünftige Änderungen nur in Backup and Recovery vornehmen?* Wir empfehlen Ihnen, Richtlinienänderungen von NetApp Backup and Recovery vorzunehmen.
+*Wenn Sie eine Richtlinie mit NetApp Backup and Recovery festlegen, müssen Sie zukünftige Änderungen nur in Backup and Recovery vornehmen?*  Wir empfehlen Ihnen, Richtlinienänderungen von NetApp Backup and Recovery vorzunehmen.
 
 
 
 == Arbeitslasten
 
-*Was macht eine Arbeitsbelastung aus?*  Eine Workload ist eine Anwendung für die Version Preview 2025.  Eine Arbeitslast umfasst alle Volumes, die von einer einzelnen Anwendungsinstanz verwendet werden.  Beispielsweise kann eine auf mssql3.host.com bereitgestellte Microsoft SQL Server-DB-Instanz für ihre Daten bzw. Protokolle über vol1 und vol2 verfügen.  Diese Volumes bilden zusammen die Arbeitslast für diese bestimmte Instanz der DB-Instance.
+*Was macht eine Arbeitsbelastung aus?* Eine Workload ist eine Anwendung für die Version Preview 2025. Eine Arbeitslast umfasst alle Volumes, die von einer einzelnen Anwendungsinstanz verwendet werden.  Beispielsweise kann eine auf mssql3.host.com bereitgestellte Microsoft SQL Server-DB-Instanz für ihre Daten bzw. Protokolle über vol1 und vol2 verfügen.  Diese Volumes bilden zusammen die Arbeitslast für diese bestimmte Instanz der DB-Instance.
 
 *Welche Workloads werden von NetApp Backup and Recovery unterstützt?*
 
 Für die Version Preview 2025 kann NetApp Backup and Recovery die folgenden Workloads identifizieren: Microsoft SQL Server-Anwendungen.
 
-*Was ist eine „geschützte“ Arbeitslast?*  In NetApp Backup and Recovery zeigt ein Workload den Status „geschützt“ an, wenn eine primäre Erkennungsrichtlinie aktiviert ist.
+*Was ist eine „geschützte“ Arbeitslast?* In NetApp Backup and Recovery zeigt ein Workload den Status „geschützt“ an, wenn eine primäre Erkennungsrichtlinie aktiviert ist.
 
-*Was ist eine „gefährdete“ Arbeitsbelastung?*  Wenn für einen Workload keine primäre Erkennungsrichtlinie aktiviert ist, ist er „gefährdet“, auch wenn für ihn eine Sicherungs- und Snapshot-Richtlinie aktiviert ist.
+*Was ist eine „gefährdete“ Arbeitsbelastung?* Wenn für einen Workload keine primäre Erkennungsrichtlinie aktiviert ist, ist er „gefährdet“, auch wenn für ihn eine Sicherungs- und Snapshot-Richtlinie aktiviert ist.
 
 *Neue Arbeitslast hinzugefügt, wird aber noch nicht angezeigt* Wenn Sie Ihrer Umgebung eine neue Arbeitslast hinzugefügt haben, starten Sie die Erkennung erneut und wenden Sie Schutzrichtlinien an, um diese neue Ressource zu schützen.
 
@@ -77,7 +77,7 @@ Für die Version Preview 2025 kann NetApp Backup and Recovery die folgenden Work
 
 *Ist NetApp Backup and Recovery über die in NetApp ONTAP vorgenommenen Schutzeinstellungen informiert?*
 
-Ja, NetApp Backup and Recovery erkennt in ONTAP festgelegte Snapshot-Zeitpläne und stellt fest, ob ARP und FPolicy in einem erkannten Workload aktiviert sind.  Die Informationen, die Sie zunächst im Dashboard sehen, werden aus anderen NetApp -Lösungen und -Produkten aggregiert.
+Ja, NetApp Backup and Recovery erkennt in ONTAP festgelegte Snapshot-Zeitpläne und stellt fest, ob ARP und FPolicy in einem erkannten Workload aktiviert sind. Die Informationen, die Sie zunächst im Dashboard sehen, werden aus anderen NetApp -Lösungen und -Produkten aggregiert.
 
 *Ist NetApp Backup and Recovery über die bereits in SnapCenter erstellten Richtlinien informiert?*
 

@@ -18,7 +18,7 @@ Wenn Sie Ressourcen aus dem SnapCenter Plug-in-Dienst für Microsoft SQL Server 
 
 
 
-== Erstellen Sie zuerst Systeme in der NetApp Konsole
+== Erstellen Sie zuerst Systeme in der NetApp Console
 
 Wenn Sie Ressourcen aus SnapCenter importieren möchten, sollten Sie vor dem Importieren aus SnapCenter zunächst den gesamten lokalen SnapCenter -Clusterspeicher zur Konsolenseite *Systeme* hinzufügen.  Dadurch wird sichergestellt, dass Hostressourcen korrekt erkannt und importiert werden können.
 
@@ -28,7 +28,7 @@ Wenn Sie Ressourcen aus SnapCenter importieren möchten, sollten Sie vor dem Imp
 
 Um Ressourcen aus dem SnapCenter -Plug-in für Microsoft SQL Server zu importieren, stellen Sie sicher, dass die Hostanforderungen für die Installation des SnapCenter -Plug-ins für Microsoft SQL Server erfüllt sind.
 
-Informieren Sie sich insbesondere über die SnapCenter -Anforderungen inlink:concept-start-prereq.html["Voraussetzungen für NetApp Backup und Recovery"] .
+Informieren Sie sich insbesondere über die SnapCenter -Anforderungen inlink:concept-start-prereq.html["Voraussetzungen für NetApp Backup and Recovery"] .
 
 
 
@@ -92,7 +92,7 @@ Dies ist eine der Methoden, mit denen Sie die Benutzerkontensteuerung deaktivier
 
 . Die folgenden Werte werden unterstützt.  Setzen Sie für dieses Szenario den Wert auf `1` :
 +
-** `0`(Standard): UAC-Remotebeschränkungen sind aktiviert.  Lokale Konten verfügen beim Remote-Zugriff über gefilterte Token.
+** `0`(Standard): UAC-Remotebeschränkungen sind aktiviert.  Lokale Konten verfügen beim Remotezugriff über gefilterte Token.
 ** `1`: UAC-Remotebeschränkungen sind deaktiviert.  Lokale Konten umgehen die Token-Filterung und verfügen beim Remote-Zugriff über vollständige Administratorrechte.
 
 
@@ -146,7 +146,7 @@ Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies
 ----
 +
 ** Wenn der Wert 1 ist, sind UAC-Remotebeschränkungen deaktiviert.
-** Wenn der Wert 0 ist, sind UAC-Remote-Einschränkungen aktiviert.
+** Wenn der Wert 0 ist, sind UAC-Remotebeschränkungen aktiviert.
 
 
 . Starten Sie Ihren Computer neu, um die Änderungen zu übernehmen.

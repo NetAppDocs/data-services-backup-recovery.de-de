@@ -16,11 +16,11 @@ summary: Mit NetApp Backup and Recovery können Sie Ihre Kubernetes-Cluster erke
 [role="lead"]
 Mit NetApp Backup and Recovery können Sie Ihre Kubernetes-Cluster erkennen und verwalten, sodass Sie die von den Clustern gehosteten Ressourcen schützen können.
 
-.Erforderliche NetApp Konsolenrolle
-Organisationsadministrator oder SnapCenter Administrator. link:reference-roles.html["Erfahren Sie mehr über die Zugriffsrollen für NetApp Backup und Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp -Konsole für alle Dienste"^] .
+.Erforderliche NetApp Console
+Organisationsadministrator oder SnapCenter Administrator. link:reference-roles.html["Erfahren Sie mehr über die Zugriffsrollen für NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
 
-NOTE: Informationen zum Erkennen von Kubernetes-Clustern finden Sie unter link:br-start-discover.html["Entdecken Sie Kubernetes-Workloads"] .
+NOTE: Informationen zum Erkennen von Kubernetes-Clustern finden Sie unterlink:br-start-discover.html["Entdecken Sie Kubernetes-Workloads"] .
 
 
 
@@ -29,7 +29,7 @@ NOTE: Informationen zum Erkennen von Kubernetes-Clustern finden Sie unter link:b
 Sie können einen Cluster bearbeiten, wenn Sie seinen Namen ändern müssen.
 
 .Schritte
-. Wählen Sie in NetApp Backup and Recovery *Inventar* > *Cluster*.
+. Wählen Sie in NetApp Backup and Recovery*Inventar* > *Cluster*.
 . Wählen Sie in der Liste der Cluster einen Cluster aus, den Sie bearbeiten möchten, und wählen Sie das zugehörige Aktionsmenü aus.
 . Wählen Sie *Cluster bearbeiten*.
 . Nehmen Sie alle erforderlichen Änderungen am Clusternamen vor. Der Clustername muss mit dem Namen übereinstimmen, den Sie während des Erkennungsprozesses mit dem Helm-Befehl verwendet haben.
@@ -40,10 +40,10 @@ Sie können einen Cluster bearbeiten, wenn Sie seinen Namen ändern müssen.
 
 == Entfernen eines Kubernetes-Clusters
 
-Wenn Sie die von einem Kubernetes-Cluster gehosteten Ressourcen nicht mehr schützen müssen, können Sie sie aus NetApp Backup and Recovery entfernen.  Durch das Entfernen eines Clusters werden weder der Cluster noch seine Ressourcen gelöscht. Der Cluster wird lediglich aus dem Inventar der NetApp Konsole entfernt.  Bevor Sie einen Cluster entfernen können, müssen Sie den Schutz deaktivieren und die zugehörigen Anwendungen aus NetApp Backup and Recovery löschen.
+Wenn Sie die von einem Kubernetes-Cluster gehosteten Ressourcen nicht mehr schützen müssen, können Sie sie aus NetApp Backup and Recovery entfernen.  Durch das Entfernen eines Clusters werden weder der Cluster noch seine Ressourcen gelöscht. Der Cluster wird lediglich aus dem Inventar der NetApp Console entfernt.  Bevor Sie einen Cluster entfernen können, müssen Sie den Schutz deaktivieren und die zugehörigen Anwendungen aus NetApp Backup and Recovery löschen.
 
 .Schritte
-. Wählen Sie in NetApp Backup and Recovery *Inventar* > *Cluster*.
+. Wählen Sie in NetApp Backup and Recovery*Inventar* > *Cluster*.
 . Wählen Sie in der Liste der Cluster einen Cluster aus, den Sie bearbeiten möchten, und wählen Sie das zugehörige Aktionsmenü aus.
 . Wählen Sie *Cluster entfernen*.
 . Überprüfen Sie die Informationen im Bestätigungsdialogfeld und wählen Sie *Entfernen*.

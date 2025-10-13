@@ -22,7 +22,7 @@ Bevor Sie mit dem Schutz Ihrer virtuellen Maschinen-Workloads mit NetApp Backup 
 
 
 * ONTAP 9.8 oder höher
-* NetApp Konsole
+* NetApp Console
 * NFS- und VMFS-Datenspeicher werden unterstützt. vVols werden nicht unterstützt.
 * Für die VMFS-Unterstützung sollte das SnapCenter Plug-in for VMware vSphere Host unter 4.9 oder höher ausgeführt werden.  Stellen Sie sicher, dass Sie eine Sicherungskopie des VMFS-Datenspeichers erstellen, wenn das SnapCenter Plug-in for VMware vSphere Host von einer früheren Version auf die Version 4.9 aktualisiert wurde.
 * Mindestens eine Sicherung sollte im SnapCenter Plug-in for VMware vSphere 4.6P1 erstellt worden sein.

@@ -25,7 +25,7 @@ Durch die Aufrechterhaltung der Backup-Kontinuität in allen Umgebungen steigert
 
 []
 ====
-*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup und Recovery-Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup- und Recovery-Workloads"] .
+*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
 
 ====
 .Bevor Sie beginnen
@@ -69,11 +69,11 @@ So funktioniert die Neusynchronisierung:
 * Aufgrund dieses gemeinsamen Snapshots muss das System nur die inkrementellen Änderungen zwischen S2 und S3 übertragen.
 
 
-Dies bedeutet, dass nur die neuen Daten, die nach S2 hinzugefügt wurden, an den Objektspeicher gesendet werden, nicht das gesamte Volume.
+Dies bedeutet, dass nur die nach S2 hinzugefügten neuen Daten an den Objektspeicher gesendet werden, nicht das gesamte Volume.
 
 Dieser Prozess vermeidet das erneute Senden bereits gesicherter Daten, spart Bandbreite und stellt sicher, dass Ihre Sicherungskette nach der Migration reibungslos fortgesetzt wird.
 
-image:diagram-snapmirror-cloud-resync-migration.png["NetApp Backup und Recovery SnapMirror zur Cloud-Resynchronisierung"]
+image:diagram-snapmirror-cloud-resync-migration.png["NetApp Backup and Recovery SnapMirror zur Cloud-Resynchronisierung"]
 
 
 
@@ -130,7 +130,7 @@ NOTE: Es sollte die UUID der Volume-Instanz verwendet werden, nicht die Volume-I
 
 === Führen Sie eine SnapMirror zu-Cloud-Neusynchronisierung durch
 
-Nach der Migration führt ein NetApp Tech Refresh-Team einen SnapMirror to-Cloud-Resync-Vorgang durch, um die Cloud-Backups von den neu migrierten Volumes fortzusetzen.
+Nach der Migration führt ein NetApp Tech Refresh-Team einen SnapMirror -zu-Cloud-Resync-Vorgang durch, um die Cloud-Backups von den neu migrierten Volumes fortzusetzen.
 
 . Fügen Sie den neuen ONTAP Cluster als System auf der Konsolenseite *Systeme* hinzu.
 . Sehen Sie sich die Seite „NetApp Backup and Recovery Volumes“ an, um sicherzustellen, dass die Details des alten Quellsystems verfügbar sind.
@@ -153,7 +153,7 @@ Nach der Migration führt ein NetApp Tech Refresh-Team einen SnapMirror to-Cloud
 ** Die SnapMirror -Richtlinie, die auf die neue Beziehung angewendet werden soll.
 
 
-. Wählen Sie unter „Volume-Mapping-Details hochladen“ die Option „Hochladen“, um das ausgefüllte CSV-Blatt in die NetApp Backup and Recovery-Benutzeroberfläche hochzuladen.
+. Wählen Sie unter „Volume-Mapping-Details hochladen“ die Option „Hochladen“, um das ausgefüllte CSV-Blatt in die NetApp Backup and Recovery Benutzeroberfläche hochzuladen.
 +
 
 NOTE: Es sollte die UUID der Volume-Instanz verwendet werden, nicht die Volume-ID. Die UUID der Volume-Instanz ist eine eindeutige Kennung, die bei Migrationen konsistent bleibt, während sich die Volume-ID nach der Migration ändern kann.

@@ -18,7 +18,7 @@ Sie können eine Richtlinie erstellen oder eine der folgenden vordefinierten Ric
 
 []
 ====
-*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup und Recovery-Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup- und Recovery-Workloads"] .
+*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
 
 ====
 .Bevor Sie beginnen
@@ -28,7 +28,7 @@ Sie können eine Richtlinie erstellen oder eine der folgenden vordefinierten Ric
 
 
 .Informationen zu diesem Vorgang
-Die folgenden vordefinierten Richtlinien sind in der NetApp Konsole verfügbar:
+Die folgenden vordefinierten Richtlinien sind in der NetApp Console verfügbar:
 
 |===
 | Richtlinienname | Etikett | Retentionswert 
