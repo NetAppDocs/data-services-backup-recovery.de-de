@@ -14,23 +14,21 @@ summary: Schützen Sie Ihre VMware-Workloads mit NetApp NetApp Backup and Recove
 
 
 [role="lead"]
-Mit NetApp Backup and Recovery können Sie Daten virtueller Maschinen aus der Cloud zurück in das lokale vCenter wiederherstellen.  Sie können die virtuelle Maschine an genau demselben Speicherort wiederherstellen, von dem die Sicherung erstellt wurde, oder an einem anderen Speicherort.  Wenn die virtuelle Maschine mithilfe einer Archivierungsrichtlinie gesichert wurde, können Sie die Priorität für die Archivwiederherstellung festlegen.
+Mit NetApp Backup and Recovery können Sie Daten virtueller Maschinen aus der Cloud auf dem lokalen vCenter Server wiederherstellen. Sie können die virtuelle Maschine an genau demselben Speicherort wiederherstellen, von dem die Sicherung erstellt wurde, oder an einem anderen Speicherort. Wenn die virtuelle Maschine mithilfe einer Archivierungsrichtlinie gesichert wurde, können Sie die Priorität für die Archivwiederherstellung festlegen.
 
 
 NOTE: Sie können keine virtuellen Maschinen wiederherstellen, die sich über mehrere Datenspeicher erstrecken.
 
-[]
-====
-*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
 
-====
+NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
+
 .Bevor Sie beginnen
 * Stellen Sie sicher, dass Sie allelink:prev-vmware-prereqs.html["Anforderungen für den Schutz virtueller Maschinen"] bevor Sie Datenspeicher in der Cloud sichern.
 * Wenn Sie an einem anderen Speicherort wiederherstellen:
 +
 ** Stellen Sie sicher, dass sich die Quell- und Ziel-vCenter im verknüpften Modus befinden.
 ** Stellen Sie sicher, dass die Quell- und Zielclusterdetails auf der Seite *Systeme* der NetApp Console und in vCentern im verknüpften Modus in beiden SnapCenter Plug-in for VMware vSphere Hosts hinzugefügt werden.
-** Stellen Sie sicher, dass das System entsprechend dem alternativen Speicherort auf der Konsolenseite *Systeme* hinzugefügt wird.
+** Stellen Sie sicher, dass das System für den anderen Standort auf der Konsolenseite *Systeme* hinzugefügt wird.
 
 
 
@@ -40,7 +38,7 @@ NOTE: Sie können keine virtuellen Maschinen wiederherstellen, die sich über me
 
 
 
-NOTE: Wenn die virtuelle Quellmaschine an einen anderen Speicherort verschoben wird (vMotion) und der Benutzer eine Wiederherstellung dieser virtuellen Maschine über die Konsole auslöst, wird die virtuelle Maschine am Quellspeicherort wiederhergestellt, von dem die Sicherung erstellt wurde.
+NOTE: Wenn Sie eine virtuelle Maschine mit VMware vSphere vMotion verschieben und sie von der Konsole aus wiederherstellen, stellt Backup and Recovery sie am ursprünglichen Sicherungsspeicherort wieder her.
 
 . Sie können die virtuelle Maschine am ursprünglichen Speicherort oder an einem alternativen Speicherort aus dem Datenspeicher oder von virtuellen Maschinen wiederherstellen:
 
@@ -58,7 +56,7 @@ vom Datenspeicher zum ursprünglichen Speicherort
 . Stellen Sie sicher, dass *Original* ausgewählt ist, und wählen Sie *Weiter*.
 . Wenn die virtuelle Maschine mithilfe einer Richtlinie geschützt ist, in der Archivierungseinstellungen konfiguriert sind, wählen Sie die *Archivierungswiederherstellungspriorität* und dann *Weiter*.
 +
-Die unterstützten Prioritäten für die Archivwiederherstellung für Amazon Web Services sind „Hoch“, „Standard“ und „Niedrig“, und die unterstützten Prioritäten für die Archivwiederherstellung für Microsoft Azure sind „Hoch“ und „Standard“.
+Die unterstützten Prioritäten für die Archivwiederherstellung sind „Hoch“, „Standard“ und „Niedrig“ für Amazon Web Services und „Hoch“ und „Standard“ für Microsoft Azure.
 
 . Überprüfen Sie die Details und wählen Sie *Wiederherstellen*.
 
@@ -76,7 +74,7 @@ an einen anderen Speicherort vom Datenspeicher
 . Geben Sie der VM nach der Wiederherstellung einen Namen und wählen Sie *Weiter*.
 . Wenn die virtuelle Maschine mithilfe einer Richtlinie geschützt ist, in der Archivierungseinstellungen konfiguriert sind, wählen Sie die *Archivierungswiederherstellungspriorität* und dann *Weiter*.
 +
-Die unterstützten Prioritäten für die Archivwiederherstellung für Amazon Web Services sind „Hoch“, „Standard“ und „Niedrig“, und die unterstützten Prioritäten für die Archivwiederherstellung für Microsoft Azure sind „Hoch“ und „Standard“.
+Die unterstützten Prioritäten für die Archivwiederherstellung sind „Hoch“, „Standard“ und „Niedrig“ für Amazon Web Services und „Hoch“ und „Standard“ für Microsoft Azure.
 
 . Überprüfen Sie die Details und wählen Sie *Wiederherstellen*.
 
@@ -91,7 +89,7 @@ von virtuellen Maschinen zum ursprünglichen Speicherort
 . Stellen Sie sicher, dass *Original* ausgewählt ist, und wählen Sie *Weiter*.
 . Wenn die virtuelle Maschine mithilfe einer Richtlinie geschützt ist, in der Archivierungseinstellungen konfiguriert sind, wählen Sie die *Archivierungswiederherstellungspriorität* und dann *Weiter*.
 +
-Die unterstützten Prioritäten für die Archivwiederherstellung für Amazon Web Services sind „Hoch“, „Standard“ und „Niedrig“, und die unterstützten Prioritäten für die Archivwiederherstellung für Microsoft Azure sind „Hoch“ und „Standard“.
+Die unterstützten Prioritäten für die Archivwiederherstellung sind „Hoch“, „Standard“ und „Niedrig“ für Amazon Web Services und „Hoch“ und „Standard“ für Microsoft Azure.
 
 . Überprüfen Sie die Details und wählen Sie *Wiederherstellen*.
 
@@ -108,11 +106,11 @@ von virtuellen Maschinen an einen anderen Standort
 . Geben Sie der VM nach der Wiederherstellung einen Namen und wählen Sie *Weiter*.
 . Wenn die virtuelle Maschine mithilfe einer Richtlinie geschützt ist, in der Archivierungseinstellungen konfiguriert sind, wählen Sie die *Archivierungswiederherstellungspriorität* und dann *Weiter*.
 +
-Die unterstützten Prioritäten für die Archivwiederherstellung für Amazon Web Services sind „Hoch“, „Standard“ und „Niedrig“, und die unterstützten Prioritäten für die Archivwiederherstellung für Microsoft Azure sind „Hoch“ und „Standard“.
+Die unterstützten Prioritäten für die Archivwiederherstellung sind „Hoch“, „Standard“ und „Niedrig“ für Amazon Web Services und „Hoch“ und „Standard“ für Microsoft Azure.
 
 . Überprüfen Sie die Details und wählen Sie *Wiederherstellen*.
 
 
 |===
 
-NOTE: Wenn der Wiederherstellungsvorgang nicht abgeschlossen werden kann, versuchen Sie den Wiederherstellungsvorgang erst dann erneut, wenn der Job Monitor anzeigt, dass der Wiederherstellungsvorgang fehlgeschlagen ist.  Wenn Sie den Wiederherstellungsvorgang erneut versuchen, bevor der Job Monitor anzeigt, dass der Wiederherstellungsvorgang fehlgeschlagen ist, schlägt der Wiederherstellungsvorgang erneut fehl.  Wenn der Job Monitor-Status „Fehlgeschlagen“ lautet, können Sie den Wiederherstellungsvorgang erneut versuchen.
+NOTE: Wenn der Wiederherstellungsvorgang nicht abgeschlossen werden kann, warten Sie, bis der Job Monitor „Fehlgeschlagen“ anzeigt, bevor Sie den Wiederherstellungsvorgang wiederholen.

@@ -63,7 +63,7 @@ Sie können Hostinformationen verwalten, um sicherzustellen, dass die richtigen 
 Sie können die in Ihrem System erkannten Hosts verwalten.  Sie können sie einzeln oder als Gruppe verwalten.
 
 
-TIP: Sie können nur die Hosts verwalten, die in der Spalte „Hosts“ den Status „Nicht verwaltet“ anzeigen.  Wenn der Status „Managed“ lautet, bedeutet dies, dass der Host bereits von NetApp Backup and Recovery verwaltet wird.
+TIP: Sie können Hosts mit dem Status „Nicht verwaltet“ in der Spalte „Hosts“ verwalten.  NetApp Backup and Recovery verwaltet bereits Hosts mit dem Status „Managed“.
 
 Nachdem Sie die Hosts in NetApp Backup and Recovery verwaltet haben, verwaltet SnapCenter die Ressourcen auf diesen Hosts nicht mehr.
 
@@ -90,7 +90,7 @@ Nachdem Sie die Hosts in NetApp Backup and Recovery verwaltet haben, verwaltet S
 
 === Zeitpläne aussetzen
 
-Sie können Zeitpläne aussetzen, um die Sicherungs- und Wiederherstellungsvorgänge für einen Host zu stoppen.  Dies ist möglicherweise sinnvoll, wenn Sie Wartungsarbeiten am Host durchführen müssen.
+Unterbrechen Sie Zeitpläne, um Sicherungs- und Wiederherstellungsvorgänge während der Hostwartung zu stoppen.
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
@@ -130,7 +130,7 @@ Sie können die Host-Informationen löschen, um die Servicegebühren zu stoppen.
 
 == Verwalten von Instanzinformationen
 
-Sie können Instanzinformationen verwalten, um sicherzustellen, dass Ressourcen über die entsprechenden Anmeldeinformationen für den Schutz verfügen, und Sie können Ressourcen auf folgende Weise sichern:
+Sie können Instanzinformationen verwalten, um die entsprechenden Anmeldeinformationen für den Ressourcenschutz zuzuweisen und Ressourcen auf folgende Weise zu sichern:
 
 * Schützen von Instanzen
 * Anmeldeinformationen zuordnen
@@ -210,7 +210,7 @@ Einzelheiten zum Erstellen einer Richtlinie finden Sie unterlink:br-use-policies
 
 === Jetzt sichern
 
-Sie können Ihre Daten jetzt sichern, um sicherzustellen, dass Ihre Daten sofort geschützt sind.
+Sichern Sie Ihre Daten jetzt, um sie sofort zu schützen.
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
@@ -260,7 +260,7 @@ Einzelheiten zum Erstellen einer Richtlinie finden Sie unterlink:br-use-policies
 
 === Datenbanken wiederherstellen
 
-Sie können eine Datenbank wiederherstellen, um sicherzustellen, dass Ihre Daten geschützt sind.
+Stellen Sie eine Datenbank wieder her, um Ihre Daten zu schützen.
 
 *Erforderliche NetApp Console * Speicherbetrachter, Superadministrator für Backup und Wiederherstellung, Backup-Administratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
@@ -295,7 +295,7 @@ Einzelheiten zum Erstellen einer Richtlinie finden Sie unterlink:br-use-policies
 
 === Jetzt sichern
 
-Sie können jetzt Ihre Microsoft SQL Server-Instanzen und -Datenbanken sichern, um sicherzustellen, dass Ihre Daten sofort geschützt sind.
+Sie können Ihre Microsoft SQL Server-Instanzen und -Datenbanken jetzt sichern, um Ihre Daten sofort zu schützen.
 
 *Erforderliche NetApp Console * Speicherbetrachter, Superadministrator für Backup und Wiederherstellung, Backup-Administratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 

@@ -31,10 +31,10 @@ Sie können Daten bis zu diesen Punkten wiederherstellen:
 
 
 .Überlegungen zur Wiederherstellung aus dem Objektspeicher
-Wenn Sie eine Sicherungsdatei im Objektspeicher auswählen und für diese Sicherung der Ransomware-Schutz aktiv ist (wenn Sie DataLock und Ransomware Resilience in der Sicherungsrichtlinie aktiviert haben), werden Sie aufgefordert, vor der Wiederherstellung der Daten eine zusätzliche Integritätsprüfung der Sicherungsdatei durchzuführen.  Wir empfehlen Ihnen, den Scan durchzuführen.
+Wenn Ransomware Resilience für eine Sicherungsdatei im Objektspeicher aktiviert ist, werden Sie aufgefordert, vor der Wiederherstellung eine zusätzliche Prüfung durchzuführen.  Wir empfehlen, den Scan durchzuführen.
 
 
-TIP: Für den Zugriff auf den Inhalt der Sicherungsdatei fallen bei Ihrem Cloud-Anbieter zusätzliche Kosten für den Datenverkehr an.
+TIP: Möglicherweise zahlen Sie Ihrem Cloud-Anbieter zusätzliche Gebühren für den Zugriff auf die Sicherungsdatei.
 
 
 
@@ -50,7 +50,7 @@ image:diagram_browse_restore_volume-unified.png["Ein Diagramm, das den Ablauf zu
 * Wenn Sie eine Sicherung aus dem Objektspeicher wiederherstellen, können Sie die Daten auf dem ursprünglichen System oder auf einem lokalen ONTAP -System wiederherstellen.
 
 
-Auf der Seite „Wiederherstellen“ (auch als „Suchen und Wiederherstellen“ bezeichnet) können Sie eine Ressource wiederherstellen, auch wenn Sie sich nicht an den genauen Namen, den Speicherort oder das Datum erinnern, an dem sie zuletzt in gutem Zustand war. Sie können mithilfe von Filtern nach dem Schnappschuss suchen.
+Auf der Seite „Wiederherstellen“ (Suchen und Wiederherstellen) können Sie eine Ressource wiederherstellen, indem Sie mithilfe von Filtern nach dem Snapshot suchen, auch wenn Sie sich nicht an den genauen Namen, den Speicherort oder das letzte bekannte Datum erinnern.
 
 
 
@@ -76,7 +76,7 @@ Es wird eine Liste mit Optionen für den Wiederherstellungsort angezeigt.
 ** Lokal: Stellt den Snapshot am ursprünglichen Speicherort wieder her.
 ** Sekundärspeicher: Stellt den Snapshot an einem sekundären Speicherort wieder her.
 +
-Wenn Sie sekundären Speicher wählen, geben Sie die Quell- und Zielstandortinformationen sowie den Quell- und sekundären Standort für die Protokolle ein.
+Wenn Sie sekundären Speicher wählen, geben Sie die Quell- und Zielspeicherorte für Daten und Protokolle ein.
 
 ** Objektspeicher: Stellt den Snapshot an einem Objektspeicherort wieder her.
 +
@@ -86,7 +86,7 @@ Wenn Sie sich für Objektspeicher entscheiden, prüfen Sie, ob Sie den Snapshot 
 
 . Wählen Sie *Fertig* oder *Weiter*, um zur Seite „Zieleinstellungen wiederherstellen“ zu gelangen.
 +
-Als Nächstes können Sie die Zieleinstellungen sowie die Optionen vor und nach der Wiederherstellung auswählen.
+Wählen Sie als Nächstes die Zieleinstellungen sowie die Optionen vor und nach der Wiederherstellung.
 
 
 
@@ -102,7 +102,7 @@ Als Nächstes können Sie die Zieleinstellungen sowie die Optionen vor und nach 
 --
 Geben Sie auf der Seite „Details zum Wiederherstellungsziel“ die folgenden Informationen ein:
 
-. *Schnelle Wiederherstellung aktivieren*: Wählen Sie diese Option, um eine schnelle Wiederherstellung durchzuführen. Wiederhergestellte Volumes und Daten stehen sofort zur Verfügung. Verwenden Sie dies nicht auf Volumes, die eine hohe Leistung erfordern, da der Zugriff auf die Daten während des schnellen Wiederherstellungsprozesses langsamer als gewöhnlich sein kann.
+. *Schnelle Wiederherstellung aktivieren*: Wählen Sie diese Option, um eine schnelle Wiederherstellung durchzuführen. Sie können die wiederhergestellten Volumes und Daten sofort verwenden. Verwenden Sie dies nicht auf Volumes, die eine hohe Leistung erfordern, da der Zugriff auf die Daten während des schnellen Wiederherstellungsprozesses langsamer als gewöhnlich sein kann.
 . *Optionen vor der Wiederherstellung*: Geben Sie den vollständigen Pfad für ein Skript ein, das vor dem Wiederherstellungsvorgang ausgeführt werden soll, sowie alle Argumente, die das Skript verwendet.
 . *Optionen nach der Wiederherstellung*:
 +
@@ -112,7 +112,7 @@ Geben Sie auf der Seite „Details zum Wiederherstellungsziel“ die folgenden I
 
 . Abschnitt *Benachrichtigung*:
 +
-** *E-Mail-Benachrichtigungen aktivieren*: Wählen Sie diese Option aus, um E-Mail-Benachrichtigungen über den Wiederherstellungsvorgang zu erhalten, und geben Sie an, welche Art von Benachrichtigungen Sie erhalten möchten.
+** *E-Mail-Benachrichtigungen aktivieren*: Wählen Sie diese Option aus, um E-Mail-Benachrichtigungen über den Wiederherstellungsvorgang zu erhalten, und wählen Sie die gewünschten Benachrichtigungstypen aus.
 
 
 . Wählen Sie *Wiederherstellen*.
@@ -122,9 +122,6 @@ Geben Sie auf der Seite „Details zum Wiederherstellungsziel“ die folgenden I
 .An einem anderen Speicherort wiederherstellen
 --
 Nicht für die VMware-Vorschau verfügbar.
-
-. Wählen Sie *Wiederherstellen*.
-
 
 --
 ====

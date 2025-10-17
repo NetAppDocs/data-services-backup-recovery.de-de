@@ -16,7 +16,7 @@ summary: Es kann Situationen geben, in denen Sie NetApp Backup and Recovery neu 
 [role="lead"]
 Es kann Situationen geben, in denen Sie NetApp Backup and Recovery neu starten müssen.
 
-Die NetApp Backup and Recovery Funktionalität ist in den Konsolenagenten integriert.
+Der Konsolenagent umfasst die NetApp Backup and Recovery .
 
 .Schritte
 . Stellen Sie eine Verbindung zum Linux-System her, auf dem der Konsolenagent ausgeführt wird.

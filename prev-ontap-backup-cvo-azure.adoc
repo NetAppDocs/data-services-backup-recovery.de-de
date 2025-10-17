@@ -168,7 +168,7 @@ Wenn Sie mit NetApp Backup and Recovery replizierte Volumes auf einem sekundäre
 
 ==== On-Premises ONTAP Netzwerkanforderungen
 
-* Wenn sich der Cluster in Ihren Räumlichkeiten befindet, sollten Sie über eine Verbindung von Ihrem Unternehmensnetzwerk zu Ihrem virtuellen Netzwerk beim Cloud-Anbieter verfügen. Dies ist normalerweise eine VPN-Verbindung.
+* Wenn sich der Cluster vor Ort befindet, sollten Sie über eine Verbindung von Ihrem Unternehmensnetzwerk zu Ihrem virtuellen Netzwerk beim Cloud-Anbieter verfügen. Dies ist normalerweise eine VPN-Verbindung.
 * ONTAP -Cluster müssen zusätzliche Subnetz-, Port-, Firewall- und Clusteranforderungen erfüllen.
 +
 Da Sie auf Cloud Volumes ONTAP oder lokale Systeme replizieren können, überprüfen Sie die Peering-Anforderungen für lokale ONTAP -Systeme. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Voraussetzungen für Cluster-Peering in der ONTAP Dokumentation anzeigen"^] .

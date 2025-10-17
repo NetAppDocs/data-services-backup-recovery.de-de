@@ -19,7 +19,7 @@ Wenn Sie NetApp Backup and Recovery an einem Standort ohne Internetzugang verwen
 
 NOTE: Dieses Verfahren gilt nur für ONTAP Volume-Daten.
 
-Wenn Sie NetApp Backup and Recovery in einer SaaS-Umgebung verwenden, in der der Konsolenagent bei Ihrem Cloud-Anbieter oder auf Ihrem eigenen Hostsystem mit Internetzugang bereitgestellt wird, werden alle wichtigen Konfigurationsdaten von NetApp Backup and Recovery in der Cloud gesichert und geschützt.  Wenn Sie ein Problem mit dem Konsolenagenten haben, erstellen Sie einfach einen neuen Konsolenagenten und fügen Sie Ihre Systeme hinzu. Die Sicherungsdetails werden dann automatisch wiederhergestellt.
+Wenn Sie NetApp Backup and Recovery in einer SaaS-Umgebung verwenden und der Konsolenagent bei Ihrem Cloud-Anbieter oder auf Ihrem eigenen mit dem Internet verbundenen Host bereitgestellt wird, sichert und schützt das System alle wichtigen Konfigurationsdaten in der Cloud.  Wenn Sie ein Problem mit dem Konsolenagenten haben, erstellen Sie einen neuen Konsolenagenten und fügen Sie Ihre Systeme hinzu.  Die Sicherungsdetails werden automatisch wiederhergestellt.
 
 Es werden zwei Arten von Daten gesichert:
 
@@ -27,7 +27,7 @@ Es werden zwei Arten von Daten gesichert:
 * Indizierte Katalogdateien – enthalten detaillierte Indizes, die für die Such- und Wiederherstellungsfunktion verwendet werden und Ihre Suche nach Volumedaten, die Sie wiederherstellen möchten, sehr schnell und effizient machen.
 
 
-Diese Daten werden einmal täglich um Mitternacht gesichert und es werden maximal 7 Kopien jeder Datei aufbewahrt. Wenn der Konsolenagent mehrere lokale ONTAP -Systeme verwaltet, befinden sich die NetApp Backup and Recovery im Bucket des Systems, das zuerst aktiviert wurde.
+Diese Daten werden einmal täglich um Mitternacht gesichert und es werden maximal 7 Kopien jeder Datei aufbewahrt. Wenn der Konsolenagent mehrere lokale ONTAP -Systeme verwaltet, werden die NetApp Backup and Recovery im Bucket des zuerst aktivierten Systems gespeichert.
 
 
 TIP: In der NetApp Backup and Recovery -Datenbank oder in den indizierten Katalogdateien sind niemals Volumedaten enthalten.
@@ -36,7 +36,7 @@ TIP: In der NetApp Backup and Recovery -Datenbank oder in den indizierten Katalo
 
 == Wiederherstellen von NetApp Backup and Recovery -Daten auf einem neuen Konsolenagenten
 
-Wenn bei Ihrem lokalen Konsolenagenten ein schwerwiegender Fehler auftritt, müssen Sie einen neuen Konsolenagenten installieren und anschließend die NetApp Backup and Recovery -Daten auf dem neuen Konsolenagenten wiederherstellen.
+Wenn Ihr lokaler Konsolenagent nicht mehr funktioniert, müssen Sie einen neuen Konsolenagenten installieren und dann die NetApp Backup and Recovery -Daten auf dem neuen Konsolenagenten wiederherstellen.
 
 Sie müssen die folgenden Aufgaben ausführen, um Ihr NetApp Backup and Recovery -System wieder in einen funktionsfähigen Zustand zu versetzen:
 
@@ -46,7 +46,7 @@ Sie müssen die folgenden Aufgaben ausführen, um Ihr NetApp Backup and Recovery
 * Erkennen Sie alle Ihre On-Premise ONTAP -Systeme und StorageGRID Systeme erneut in der NetApp Console Benutzeroberfläche.
 
 
-Sobald Sie überprüft haben, dass Ihr System wieder funktionsfähig ist, empfehlen wir Ihnen, neue Sicherungsdateien zu erstellen.
+Nachdem Sie überprüft haben, ob Ihr System funktioniert, erstellen Sie neue Sicherungsdateien.
 
 .Was du brauchst
 Sie müssen auf die aktuellsten Datenbank- und Indexsicherungen aus dem StorageGRID oder ONTAP S3-Bucket zugreifen, in dem Ihre Sicherungsdateien gespeichert sind:
@@ -65,7 +65,7 @@ Diese Datei befindet sich am folgenden Speicherort im Bucket `netapp-backup-<GUI
 
 === Installieren Sie einen neuen Konsolen-Agenten auf einem neuen lokalen Linux-Host
 
-Achten Sie beim Installieren eines neuen Konsolen-Agenten darauf, dass Sie dieselbe Softwareversion herunterladen, die Sie auf dem ursprünglichen Konsolen-Agenten installiert haben.  Regelmäßige Änderungen an der Datenbankstruktur von NetApp Backup and Recovery können dazu führen, dass neuere Softwareversionen nicht mehr mit den ursprünglichen Datenbanksicherungen kompatibel sind.  Du kannst https://docs.netapp.com/us-en/console-setup-admin/task-upgrade-connector.html["Aktualisieren Sie die Konsolen-Agent-Software auf die neueste Version, nachdem Sie die Backup-Datenbank wiederhergestellt haben."^] .
+Laden Sie beim Installieren eines neuen Konsolenagenten dieselbe Softwareversion herunter wie beim ursprünglichen Agenten.  Änderungen an der NetApp Backup and Recovery -Datenbank können dazu führen, dass neuere Softwareversionen nicht mit alten Datenbanksicherungen funktionieren. Du kannst https://docs.netapp.com/us-en/console-setup-admin/task-upgrade-connector.html["Aktualisieren Sie die Konsolen-Agent-Software auf die neueste Version, nachdem Sie die Backup-Datenbank wiederhergestellt haben."^] .
 
 . https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-private-mode.html["Installieren Sie den Konsolen-Agenten auf einem neuen lokalen Linux-Host"^]
 . Melden Sie sich mit den soeben erstellten Administrator-Benutzeranmeldeinformationen bei der Konsole an.
@@ -203,7 +203,7 @@ curl -X POST 'http://10.193.192.202/account/account-DARKSITE1/providers/cloudman
 
 . Wählen Sie jedes ONTAP -System aus und klicken Sie im rechten Bereich neben dem Sicherungs- und Wiederherstellungsdienst auf *Sicherungen anzeigen*.
 +
-Sie sollten alle Sicherungen sehen können, die für Ihre Volumes erstellt wurden.
+Sie sollten alle für Ihre Volumes erstellten Backups sehen.
 
 . Klicken Sie im Wiederherstellungs-Dashboard im Abschnitt „Suchen und Wiederherstellen“ auf *Indizierungseinstellungen*.
 +

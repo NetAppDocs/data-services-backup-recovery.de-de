@@ -131,7 +131,7 @@ Sie können in allen Regionen Backups von lokalen Systemen in Google Cloud Stora
 
 == Bereiten Sie Ihre ONTAP -Cluster vor
 
-Sie müssen Ihr lokales ONTAP -Quellsystem und alle sekundären lokalen ONTAP oder Cloud Volumes ONTAP Systeme vorbereiten.
+Bereiten Sie Ihr lokales ONTAP -Quellsystem und alle sekundären lokalen ONTAP oder Cloud Volumes ONTAP Systeme vor.
 
 Die Vorbereitung Ihrer ONTAP Cluster umfasst die folgenden Schritte:
 
@@ -153,7 +153,7 @@ Sie müssen die IP-Adresse der Clusterverwaltung und das Kennwort für das Admin
 
 === Überprüfen der ONTAP Systemanforderungen
 
-Stellen Sie sicher, dass die folgenden ONTAP Anforderungen erfüllt sind:
+Stellen Sie sicher, dass Ihr ONTAP -System die folgenden Anforderungen erfüllt:
 
 * Mindestens ONTAP 9.8; ONTAP 9.8P13 und höher wird empfohlen.
 * Eine SnapMirror -Lizenz (im Premium-Paket oder Datenschutz-Paket enthalten).
@@ -164,7 +164,7 @@ Stellen Sie sicher, dass die folgenden ONTAP Anforderungen erfüllt sind:
 Erfahren Sie, wie Sie https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["Verwalten Sie Ihre Cluster-Lizenzen"^] .
 
 * Uhrzeit und Zeitzone sind richtig eingestellt.  Erfahren Sie, wie Sie https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["Konfigurieren Sie Ihre Clusterzeit"^] .
-* Wenn Sie Daten replizieren möchten, sollten Sie vor der Datenreplikation sicherstellen, dass auf den Quell- und Zielsystemen kompatible ONTAP Versionen ausgeführt werden.
+* Wenn Sie Daten replizieren, überprüfen Sie, ob auf den Quell- und Zielsystemen kompatible ONTAP Versionen ausgeführt werden.
 +
 https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["Kompatible ONTAP -Versionen für SnapMirror -Beziehungen anzeigen"^].
 
@@ -210,7 +210,7 @@ Wenn Sie mit NetApp Backup and Recovery replizierte Volumes auf einem sekundäre
 
 ==== On-Premises ONTAP Netzwerkanforderungen
 
-* Wenn sich der Cluster in Ihren Räumlichkeiten befindet, sollten Sie über eine Verbindung von Ihrem Unternehmensnetzwerk zu Ihrem virtuellen Netzwerk beim Cloud-Anbieter verfügen. Dies ist normalerweise eine VPN-Verbindung.
+* Wenn sich der Cluster vor Ort befindet, sollten Sie über eine Verbindung von Ihrem Unternehmensnetzwerk zu Ihrem virtuellen Netzwerk beim Cloud-Anbieter verfügen. Dies ist normalerweise eine VPN-Verbindung.
 * ONTAP -Cluster müssen zusätzliche Subnetz-, Port-, Firewall- und Clusteranforderungen erfüllen.
 +
 Da Sie auf Cloud Volumes ONTAP oder lokale Systeme replizieren können, überprüfen Sie die Peering-Anforderungen für lokale ONTAP -Systeme. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Voraussetzungen für Cluster-Peering in der ONTAP Dokumentation anzeigen"^] .

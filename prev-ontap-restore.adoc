@@ -36,7 +36,7 @@ Zusammenfassend sind dies die gültigen Flows, die Sie zum Wiederherstellen von 
 
 
 
-NOTE: Wenn der Wiederherstellungsvorgang nicht abgeschlossen werden kann, versuchen Sie den Wiederherstellungsvorgang erst dann erneut, wenn der Job Monitor anzeigt, dass der Wiederherstellungsvorgang fehlgeschlagen ist.  Wenn Sie den Wiederherstellungsvorgang erneut versuchen, bevor der Job Monitor anzeigt, dass der Wiederherstellungsvorgang fehlgeschlagen ist, schlägt der Wiederherstellungsvorgang erneut fehl.  Wenn der Job Monitor-Status „Fehlgeschlagen“ lautet, können Sie den Wiederherstellungsvorgang erneut versuchen.
+NOTE: Wenn der Wiederherstellungsvorgang nicht abgeschlossen werden kann, warten Sie, bis der Job Monitor „Fehlgeschlagen“ anzeigt, bevor Sie den Wiederherstellungsvorgang wiederholen.
 
 
 NOTE: Informationen zu Einschränkungen im Zusammenhang mit der Wiederherstellung von ONTAP -Daten finden Sie unterlink:br-reference-limitations.html["Einschränkungen bei der Sicherung und Wiederherstellung von ONTAP -Volumes"] .
