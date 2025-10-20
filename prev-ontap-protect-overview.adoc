@@ -34,9 +34,9 @@ NetApp Backup and Recovery nutzt die SnapMirror Datenreplikationstechnologie von
 
 Zu den Vorteilen des 3-2-1-Ansatzes gehören:
 
-* Mehrere Datenkopien bieten mehrschichtigen Schutz vor internen (Insider-) und externen Cybersicherheitsbedrohungen.
-* Mehrere Medientypen gewährleisten die Failover-Funktionalität im Falle eines physischen oder logischen Ausfalls eines Medientyps.
-* Die Vor-Ort-Kopie ermöglicht eine schnelle Wiederherstellung, wobei die Offsite-Kopien für den Fall bereitstehen, dass die Vor-Ort-Kopie kompromittiert wird.
+* Mehrere Datenkopien schützen vor internen und externen Cybersicherheitsbedrohungen.
+* Die Verwendung unterschiedlicher Medientypen erleichtert Ihnen die Wiederherstellung, wenn ein Typ ausfällt.
+* Sie können die Wiederherstellung schnell von der Vor-Ort-Kopie durchführen und die Offsite-Kopien verwenden, wenn die Vor-Ort-Kopie kompromittiert ist.
 
 
 Bei Bedarf können Sie ein ganzes _Volume_, einen _Ordner_ oder eine oder mehrere _Dateien_ aus einer der Sicherungskopien auf demselben oder einem anderen System wiederherstellen.

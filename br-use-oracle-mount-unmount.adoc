@@ -20,7 +20,7 @@ Möglicherweise möchten Sie einen Wiederherstellungspunkt für die Oracle-Daten
 
 == Mounten eines Oracle-Datenbank-Wiederherstellungspunkts
 
-Wenn Sie die Schutzrichtlinie für eine Datenbank so konfigurieren, dass Archivprotokolle aufbewahrt werden, können Sie die Wiederherstellungspunkte für die Datenbank bereitstellen, um den Verlauf aller an der Datenbank vorgenommenen Änderungen anzuzeigen.
+Wenn Sie die Schutzrichtlinie für eine Datenbank so konfigurieren, dass Archivprotokolle aufbewahrt werden, können Sie Wiederherstellungspunkte bereitstellen, um den Änderungsverlauf der Datenbank anzuzeigen.
 
 .Schritte
 . Wählen Sie im NetApp Console *Schutz > Sicherung und Wiederherstellung*.

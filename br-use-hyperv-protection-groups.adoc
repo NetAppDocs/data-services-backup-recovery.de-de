@@ -28,7 +28,7 @@ Sie können die folgenden Aufgaben im Zusammenhang mit Schutzgruppen ausführen:
 
 == Erstellen einer Schutzgruppe
 
-Gruppieren Sie Workloads, die Sie gemeinsam schützen möchten, in einer Schutzgruppe. Sie können eine Schutzgruppe für eine Reihe von Workloads erstellen, die Sie gemeinsam sichern und wiederherstellen möchten.
+Gruppieren Sie Workloads, die Sie gemeinsam schützen möchten, in einer Schutzgruppe. Erstellen Sie eine Schutzgruppe, um Workloads gemeinsam zu sichern und wiederherzustellen.
 
 *Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung oder Backupadministratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 

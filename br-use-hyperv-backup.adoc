@@ -25,7 +25,7 @@ Sichern Sie Hyper-V-VMs von lokalen ONTAP Systemen auf Amazon Web Services, Azur
 
 == Sichern Sie Workloads jetzt mit einem On-Demand-Backup
 
-Sie können sofort eine On-Demand-Sicherung ausführen.  Dies ist hilfreich, wenn Sie Änderungen an Ihrem System vornehmen und sicherstellen möchten, dass Sie vor dem Start über eine Sicherungskopie verfügen.
+Verwenden Sie On-Demand-Backups, damit Ihre Daten geschützt sind, bevor Sie Systemänderungen vornehmen.
 
 *Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung oder Backupadministratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
@@ -38,7 +38,7 @@ Sie können sofort eine On-Demand-Sicherung ausführen.  Dies ist hilfreich, wen
 . Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Jetzt sichern*.
 +
 
-NOTE: Die auf die Sicherung angewendete Richtlinie ist dieselbe Richtlinie, die der Schutzgruppe oder virtuellen Maschine zugewiesen ist.
+NOTE: Für die Sicherung wird dieselbe Richtlinie verwendet, die Sie der Schutzgruppe oder virtuellen Maschine zugewiesen haben.
 
 . Wählen Sie die Zeitplanstufe aus.
 . Wählen Sie *Sichern*.

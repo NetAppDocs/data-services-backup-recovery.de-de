@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-mssql-backup.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
-summary: Sichern Sie Microsoft SQL Server-Anwendungsdaten von lokalen ONTAP -Systemen auf Amazon Web Services, Microsoft Azure, Google Cloud Platform und StorageGRID , um sicherzustellen, dass Ihre Daten geschützt sind. Backups werden automatisch erstellt und in einem Objektspeicher in Ihrem öffentlichen oder privaten Cloud-Konto gespeichert.  Sie können eine 3-2-1-Strategie implementieren, bei der Sie 3 Kopien Ihrer Quelldaten auf 2 verschiedenen Speichersystemen und 1 Kopie in der Cloud haben. 
+summary: Sichern Sie Microsoft SQL Server-Anwendungsdaten von lokalen ONTAP -Systemen auf Amazon Web Services, Microsoft Azure und StorageGRID, um sicherzustellen, dass Ihre Daten geschützt sind. 
 ---
 = Sichern Sie Microsoft SQL Server-Workloads mit NetApp Backup and Recovery
 :hardbreaks:
@@ -14,9 +14,9 @@ summary: Sichern Sie Microsoft SQL Server-Anwendungsdaten von lokalen ONTAP -Sys
 
 
 [role="lead"]
-Sichern Sie Microsoft SQL Server-Anwendungsdaten von lokalen ONTAP -Systemen auf Amazon Web Services, Microsoft Azure und StorageGRID, um sicherzustellen, dass Ihre Daten geschützt sind. Backups werden automatisch erstellt und in einem Objektspeicher in Ihrem öffentlichen oder privaten Cloud-Konto gespeichert.
+Sichern Sie Microsoft SQL Server-Anwendungsdaten von lokalen ONTAP -Systemen auf Amazon Web Services, Microsoft Azure oder StorageGRID.  Das System erstellt automatisch Backups und speichert diese zum Schutz Ihrer Daten in einem Objektspeicher in Ihrem Cloud-Konto.
 
-* Um Workloads nach einem Zeitplan zu sichern, erstellen Sie Richtlinien, die die Sicherungs- und Wiederherstellungsvorgänge steuern.  Sehenlink:br-use-policies-create.html["Erstellen von Richtlinien"] Anweisungen hierzu finden Sie unter.
+* Um Workloads nach einem Zeitplan zu sichern, erstellen Sie Richtlinien, die Sicherungs- und Wiederherstellungsvorgänge verwalten. Sehenlink:br-use-policies-create.html["Erstellen von Richtlinien"] Anweisungen hierzu finden Sie unter.
 * Konfigurieren Sie das Protokollverzeichnis für erkannte Hosts, bevor Sie eine Sicherung starten.
 * Sichern Sie jetzt Workloads (erstellen Sie jetzt ein On-Demand-Backup).
 
@@ -40,7 +40,7 @@ Bevor Sie eine Sicherung starten, sehen Sie sich den Schutzstatus Ihrer Workload
 
 == Konfigurieren des Protokollverzeichnisses für erkannte Hosts
 
-Bevor Sie Ihre Workloads sichern, legen Sie den Pfad für die Aktivitätsprotokolle der erkannten Hosts fest.  Dies hilft Ihnen, den Status von Vorgängen zu verfolgen.
+Legen Sie den Aktivitätsprotokollpfad für erkannte Hosts fest, um den Betriebsstatus vor dem Sichern von Workloads zu verfolgen.
 
 *Erforderliche NetApp Console * Speicherbetrachter, Superadministrator für Backup und Wiederherstellung, Backup-Administrator für Backup und Wiederherstellung oder Administratorrolle für Backup und Wiederherstellung zur Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
@@ -50,7 +50,7 @@ Bevor Sie Ihre Workloads sichern, legen Sie den Pfad für die Aktivitätsprotoko
 . Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*.
 . Wählen Sie einen Host aus.
 . Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Protokollverzeichnis konfigurieren*.
-. Geben Sie den Hostpfad an oder durchsuchen Sie eine Liste von Hosts oder Knotenhosts auf dem Host, um den Speicherort des Hostprotokolls zu ermitteln.
+. Geben Sie den Hostpfad ein oder durchsuchen Sie eine Liste von Hosts oder Knoten, um herauszufinden, wo Sie das Hostprotokoll speichern möchten.
 . Wählen Sie diejenigen aus, auf denen Sie die Protokolle speichern möchten.
 +
 
@@ -63,7 +63,7 @@ NOTE: Die angezeigten Felder unterscheiden sich je nach ausgewähltem Bereitstel
 
 == Erstellen einer Schutzgruppe
 
-Sie können eine Schutzgruppe erstellen, um die Sicherungs- und Wiederherstellungsvorgänge für eine Reihe von Workloads zu verwalten.  Eine Schutzgruppe ist eine logische Gruppierung von Workloads, die Sie gemeinsam schützen möchten.
+Erstellen Sie eine Schutzgruppe, um Sicherungs- und Wiederherstellungsvorgänge für mehrere Workloads zu verwalten.  Eine Schutzgruppe ist eine logische Gruppierung von Workloads.
 
 *Erforderliche NetApp Console * Speicherbetrachter, Superadministrator für Backup und Wiederherstellung oder Backup-Administratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
@@ -89,7 +89,7 @@ Wenn Sie eine Richtlinie erstellen möchten, wählen Sie *Neue Richtlinie erstel
 
 == Sichern Sie Workloads jetzt mit einem On-Demand-Backup
 
-Erstellen Sie sofort ein On-Demand-Backup.  Möglicherweise möchten Sie eine On-Demand-Sicherung ausführen, wenn Sie Änderungen an Ihrem System vornehmen und sicherstellen möchten, dass Sie vor dem Start über eine Sicherung verfügen.
+Führen Sie vor der Durchführung von Änderungen an Ihrem System eine On-Demand-Sicherung durch, um sicherzustellen, dass Ihre Daten geschützt sind.
 
 *Erforderliche NetApp Console * Speicherbetrachter, Superadministrator für Backup und Wiederherstellung oder Backup-Administratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
@@ -109,7 +109,7 @@ Erstellen Sie sofort ein On-Demand-Backup.  Möglicherweise möchten Sie eine On
 
 == Aussetzen des Sicherungszeitplans
 
-Durch das Aussetzen des Zeitplans wird vorübergehend verhindert, dass die Sicherung zum geplanten Zeitpunkt ausgeführt wird.  Dies ist möglicherweise sinnvoll, wenn Sie Wartungsarbeiten am System durchführen oder wenn Probleme mit der Sicherung auftreten.
+Unterbrechen Sie den Zeitplan, um Sicherungen während der Wartung oder Fehlerbehebung vorübergehend zu stoppen.
 
 *Erforderliche NetApp Console * Speicherbetrachter, Superadministrator für Backup und Wiederherstellung oder Backup-Administratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
@@ -126,7 +126,7 @@ Durch das Aussetzen des Zeitplans wird vorübergehend verhindert, dass die Siche
 
 == Löschen einer Schutzgruppe
 
-Sie können eine Schutzgruppe erstellen, um die Sicherungs- und Wiederherstellungsvorgänge für eine Reihe von Workloads zu verwalten.  Eine Schutzgruppe ist eine logische Gruppierung von Workloads, die Sie gemeinsam schützen möchten.
+Durch das Löschen einer Schutzgruppe werden diese und alle zugehörigen Sicherungszeitpläne entfernt. Möglicherweise möchten Sie eine Schutzgruppe löschen, wenn sie nicht mehr benötigt wird.
 
 *Erforderliche NetApp Console * Speicherbetrachter, Superadministrator für Backup und Wiederherstellung oder Backup-Administratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 

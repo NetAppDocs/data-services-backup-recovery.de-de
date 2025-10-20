@@ -14,10 +14,10 @@ summary: Schützen Sie Ihre Oracle-Workloads mit NetApp Backup und Recovery.
 
 
 [role="lead"]
-Sichern Sie Oracle Database-Schutzgruppen oder Datenbanken von lokalen ONTAP -Systemen auf Amazon Web Services S3, NetApp StorageGRID, Microsoft Azure Blob Storage oder ONTAP S3, um sicherzustellen, dass Ihre Daten geschützt sind.  Wenn Sie eine Schutzgruppe sichern, sichert die NetApp Console die in der Schutzgruppe enthaltenen Datenbanken und Protokolldaten.
+Verwenden Sie NetApp Backup and Recovery , um Oracle Database-Schutzgruppen oder Datenbanken von lokalen ONTAP -Systemen in Cloud-Speicher zu sichern, einschließlich Amazon S3, NetApp StorageGRID, Microsoft Azure Blob Storage oder ONTAP S3.  NetApp Backup and Recovery sichert Datenbanken und Protokolldaten in jeder Schutzgruppe.
 
 
-NOTE: Um Schutzgruppen oder einzelne Datenbanken nach einem Zeitplan zu sichern, erstellen Sie Richtlinien, die die Sicherungs- und Wiederherstellungsvorgänge steuern.  Sehenlink:br-use-policies-create.html["Erstellen von Richtlinien"] Anweisungen hierzu finden Sie unter.
+NOTE: Um Schutzgruppen oder einzelne Datenbanken nach einem Zeitplan zu sichern, erstellen Sie Richtlinien, die Sicherungs- und Wiederherstellungsvorgänge verwalten. Sehenlink:br-use-policies-create.html["Erstellen von Richtlinien"] Anweisungen hierzu finden Sie unter.
 
 * Erstellen Sie Schutzgruppen, um die Sicherungs- und Wiederherstellungsvorgänge für eine Reihe von Ressourcen zu verwalten. Sehenlink:br-use-kvm-protection-groups.html["Erstellen und verwalten Sie Schutzgruppen für Oracle-Workloads mit NetApp Backup and Recovery"] für weitere Informationen.
 * Sichern Sie jetzt eine Schutzgruppe (erstellen Sie jetzt ein On-Demand-Backup).
@@ -28,7 +28,7 @@ NOTE: Um Schutzgruppen oder einzelne Datenbanken nach einem Zeitplan zu sichern,
 
 == Sichern Sie Schutzgruppen jetzt mit einem On-Demand-Backup
 
-Sie können sofort eine On-Demand-Sicherung ausführen.  Dies ist hilfreich, wenn Sie Änderungen an Ihrem System vornehmen und sicherstellen möchten, dass Sie vor dem Start über eine Sicherungskopie verfügen.
+Führen Sie vor Systemänderungen eine On-Demand-Sicherung durch, um sicherzustellen, dass Ihre Daten geschützt sind.
 
 *Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung oder Backupadministratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
@@ -43,7 +43,7 @@ Sie können sofort eine On-Demand-Sicherung ausführen.  Dies ist hilfreich, wen
 . Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Jetzt sichern*.
 +
 
-NOTE: Die auf die Sicherung angewendete Richtlinie ist dieselbe Richtlinie, die der Schutzgruppe zugewiesen ist.
+NOTE: NetApp Backup and Recovery verwendet für die Sicherungs- und die Schutzgruppe dieselbe Richtlinie.
 
 . Wählen Sie die Zeitplanstufe aus.
 . Wählen Sie *Sichern*.

@@ -330,7 +330,7 @@ Beachten Sie, dass diese Aktion keine Auswirkungen auf Snapshot-Kopien oder repl
 . Wählen Sie *Erweiterte Einstellungen*.
 . *Löschen von Backups erzwingen*: Geben Sie an, ob Sie das Löschen aller Backups erzwingen möchten oder nicht.
 +
-In einigen extremen Fällen möchten Sie möglicherweise, dass NetApp Backup and Recovery keinen Zugriff mehr auf Backups hat. Dies kann beispielsweise passieren, wenn der Dienst keinen Zugriff mehr auf den Backup-Bucket hat oder Backups durch DataLock geschützt sind, Sie diese aber nicht mehr möchten. Bisher konnten Sie diese nicht selbst löschen und mussten den NetApp -Support anrufen. Mit dieser Version können Sie die Option zum erzwungenen Löschen von Sicherungen (auf Volume- und Arbeitsumgebungsebene) verwenden.
+In einigen extremen Fällen möchten Sie möglicherweise, dass NetApp Backup and Recovery keinen Zugriff mehr auf Backups hat. Dies kann beispielsweise passieren, wenn der Dienst keinen Zugriff mehr auf den Backup-Bucket hat oder Backups durch DataLock geschützt sind, Sie diese aber nicht mehr möchten. Bisher konnten Sie diese nicht selbst löschen und mussten den NetApp -Support anrufen. Mit dieser Version können Sie die Option zum erzwungenen Löschen von Sicherungen (auf Volume- und Systemebene) verwenden.
 
 +
 
@@ -355,7 +355,7 @@ Die Liste aller Sicherungsdateien wird angezeigt.
 . Wählen Sie *Erweiterte Einstellungen*.
 . *Löschen von Backups erzwingen*: Geben Sie an, ob Sie das Löschen aller Backups erzwingen möchten oder nicht.
 +
-In einigen extremen Fällen möchten Sie möglicherweise, dass NetApp Backup and Recovery keinen Zugriff mehr auf Backups hat. Dies kann beispielsweise passieren, wenn der Dienst keinen Zugriff mehr auf den Backup-Bucket hat oder Backups durch DataLock geschützt sind, Sie diese aber nicht mehr möchten. Bisher konnten Sie diese nicht selbst löschen und mussten den NetApp -Support anrufen. Mit dieser Version können Sie die Option zum erzwungenen Löschen von Sicherungen (auf Volume- und Arbeitsumgebungsebene) verwenden.
+In einigen extremen Fällen möchten Sie möglicherweise, dass NetApp Backup and Recovery keinen Zugriff mehr auf Backups hat. Dies kann beispielsweise passieren, wenn der Dienst keinen Zugriff mehr auf den Backup-Bucket hat oder Backups durch DataLock geschützt sind, Sie diese aber nicht mehr möchten. Bisher konnten Sie diese nicht selbst löschen und mussten den NetApp -Support anrufen. Mit dieser Version können Sie die Option zum erzwungenen Löschen von Sicherungen (auf Volume- und Systemebene) verwenden.
 
 +
 

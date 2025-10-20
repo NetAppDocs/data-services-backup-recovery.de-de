@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: br-use-mssql-protect-overview.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
-summary: Sie können Microsoft SQL Server-Anwendungsdaten von lokalen ONTAP -Systemen auf Amazon Web Services, Microsoft Azure und StorageGRID sichern und so sicherstellen, dass Ihre Daten geschützt sind. Backups werden automatisch erstellt und in einem Objektspeicher in Ihrem öffentlichen oder privaten Cloud-Konto gespeichert.  Sie können eine 3-2-1-Strategie implementieren, bei der Sie 3 Kopien Ihrer Quelldaten auf 2 verschiedenen Speichersystemen und 1 Kopie in der Cloud haben. 
+summary: Schützen Sie Ihre Microsoft SQL Server-Anwendungsdaten von lokalen ONTAP -Systemen auf Amazon Web Services, Microsoft Azure oder StorageGRID mit NetApp Backup and Recovery. 
 ---
-= Überblick über den Schutz von Microsoft SQL-Workloads mit NetApp Backup and Recovery
+= Schützen Sie Microsoft SQL-Workloads mit NetApp Backup and Recovery – Übersicht
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,18 +14,18 @@ summary: Sie können Microsoft SQL Server-Anwendungsdaten von lokalen ONTAP -Sys
 
 
 [role="lead"]
-Schützen Sie Ihre Microsoft SQL Server-Anwendungsdaten von lokalen ONTAP -Systemen auf Amazon Web Services, Microsoft Azure oder StorageGRID mit NetApp Backup and Recovery. Backups werden automatisch generiert und basierend auf den von Ihnen erstellten Richtlinien in einem Objektspeicher in Ihrem öffentlichen oder privaten Cloud-Konto gespeichert.  Sie können eine 3-2-1-Strategie implementieren, bei der Sie 3 Kopien Ihrer Quelldaten auf 2 verschiedenen Speichersystemen und 1 Kopie in der Cloud haben.
+Sichern Sie Ihre Microsoft SQL Server-Anwendungsdaten von lokalen ONTAP -Systemen auf AWS, Azure oder StorageGRID mit NetApp Backup and Recovery.  Das System erstellt und speichert automatisch Backups in Ihrem Cloud-Konto und befolgt dabei Ihre Richtlinien.  Verwenden Sie eine 3-2-1-Strategie: Bewahren Sie drei Kopien Ihrer Daten auf zwei Speichersystemen und eine Kopie in der Cloud auf.
 
 Zu den Vorteilen des 3-2-1-Ansatzes gehören:
 
-* Mehrere Datenkopien bieten mehrschichtigen Schutz vor internen (Insider-) und externen Cybersicherheitsbedrohungen.
-* Mehrere Medientypen gewährleisten die Failover-Funktionalität im Falle eines physischen oder logischen Ausfalls eines Medientyps.
-* Die Vor-Ort-Kopie ermöglicht eine schnelle Wiederherstellung, wobei die Offsite-Kopien für den Fall verfügbar sind, dass die Vor-Ort-Kopie kompromittiert wird.
+* Mehrere Datenkopien schützen vor internen und externen Cybersicherheitsbedrohungen.
+* Die Verwendung unterschiedlicher Medientypen erleichtert Ihnen die Wiederherstellung, wenn ein Typ ausfällt.
+* Sie können die Wiederherstellung schnell von der Vor-Ort-Kopie durchführen und die Offsite-Kopien verwenden, wenn die Vor-Ort-Kopie kompromittiert ist.
 
 
-NetApp Backup and Recovery nutzt die Datenreplikationstechnologie NetApp SnapMirror , um sicherzustellen, dass alle Backups vollständig synchronisiert sind, indem Snapshot-Kopien erstellt und an die Backup-Speicherorte übertragen werden.
+NetApp Backup and Recovery verwendet NetApp SnapMirror zum Synchronisieren von Backups, indem Snapshot-Kopien erstellt und an die Backup-Speicherorte übertragen werden.
 
-Sie können die folgenden Schutzziele erreichen:
+Zum Schutz Ihrer Daten können Sie Folgendes tun:
 
 * link:concept-start-prereq-snapcenter-import.html["Konfigurieren Sie zusätzliche Elemente beim Importieren aus SnapCenter"]
 * link:br-start-discover.html["Entdecken Sie Microsoft SQL Server-Workloads und importieren Sie optional SnapCenter -Ressourcen"]
@@ -39,7 +39,7 @@ Sie können die folgenden Schutzziele erreichen:
 * link:br-use-manage-snapshots.html["Verwalten von Snapshots"]
 
 
-Zum Sichern von Workloads erstellen Sie normalerweise Richtlinien, die die Sicherungs- und Wiederherstellungsvorgänge steuern.  Sehenlink:br-use-policies-create.html["Erstellen von Richtlinien"] für weitere Informationen.
+Zum Sichern von Workloads erstellen Sie Richtlinien, die Sicherungs- und Wiederherstellungsvorgänge verwalten. Sehenlink:br-use-policies-create.html["Erstellen von Richtlinien"] für weitere Informationen.
 
 .Unterstützte Sicherungsziele
 Mit NetApp Backup and Recovery können Sie Microsoft SQL Server-Instanzen und -Datenbanken von den folgenden Quellsystemen auf die folgenden Sekundärsysteme und Objektspeicher bei öffentlichen und privaten Cloud-Anbietern sichern.  Snapshot-Kopien befinden sich auf dem Quellsystem.

@@ -21,16 +21,14 @@ NOTE: Diese Version von NetApp Backup and Recovery unterstützt nur VMware vCent
 
 Verwenden Sie NetApp Backup and Recovery , um eine 3-2-1-Strategie zu implementieren, bei der Sie 3 Kopien Ihrer Quelldaten auf 2 verschiedenen Speichersystemen sowie 1 Kopie in der Cloud haben. Zu den Vorteilen des 3-2-1-Ansatzes gehören:
 
-* Mehrere Datenkopien bieten mehrschichtigen Schutz vor internen (Insider-) und externen Cybersicherheitsbedrohungen.
-* Mehrere Medientypen gewährleisten die Failover-Funktionalität im Falle eines physischen oder logischen Ausfalls eines Medientyps.
-* Die Vor-Ort-Kopie ermöglicht eine schnelle Wiederherstellung, wobei die Offsite-Kopien für den Fall verfügbar sind, dass die Vor-Ort-Kopie kompromittiert wird.
+* Mehrere Datenkopien schützen vor internen und externen Cybersicherheitsbedrohungen.
+* Die Verwendung unterschiedlicher Medientypen erleichtert Ihnen die Wiederherstellung, wenn ein Typ ausfällt.
+* Sie können die Wiederherstellung schnell von der Vor-Ort-Kopie durchführen und die Offsite-Kopien verwenden, wenn die Vor-Ort-Kopie kompromittiert ist.
 
 
-[]
-====
-*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup and Recovery UI-Versionen finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zur vorherigen NetApp Backup and Recovery -Benutzeroberfläche"] .
 
-====
+NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -UI-Versionen finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zur vorherigen NetApp Backup and Recovery -Benutzeroberfläche"] .
+
 Mit NetApp Backup and Recovery können Sie die folgenden Aufgaben im Zusammenhang mit VMware-Workloads ausführen:
 
 * link:br-use-vmware-discovery.html["Entdecken Sie VMware-Workloads"]

@@ -29,7 +29,7 @@ Sie können die folgenden Aufgaben im Zusammenhang mit Schutzgruppen ausführen:
 
 == Erstellen einer Schutzgruppe
 
-Gruppieren Sie Workloads, die Sie gemeinsam schützen möchten, in einer Schutzgruppe. Sie können eine Schutzgruppe für eine Reihe von Workloads erstellen, die Sie gemeinsam sichern und wiederherstellen möchten.
+Gruppieren Sie Workloads, die Sie schützen möchten, in einer Schutzgruppe, um sie gemeinsam zu sichern und wiederherzustellen.
 
 *Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung oder Backupadministratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
@@ -55,7 +55,7 @@ Wenn Sie eine Richtlinie erstellen möchten, wählen Sie *Neue Richtlinie erstel
 
 == Aussetzen des Sicherungszeitplans einer Schutzgruppe
 
-Durch das Aussetzen einer Schutzgruppe werden die geplanten Sicherungen für die Schutzgruppe angehalten. Möglicherweise möchten Sie eine Schutzgruppe aussetzen, wenn Sie die Sicherungen für die Workloads in dieser Gruppe vorübergehend stoppen möchten.
+Setzen Sie eine Schutzgruppe aus, um ihre geplanten Sicherungen anzuhalten.
 
 Wenn Sie eine Schutzgruppe aussetzen, ändert sich der Schutzstatus in „In Wartung“. Sie können den Sicherungszeitplan jederzeit fortsetzen.
 
@@ -92,7 +92,7 @@ Das System validiert die Zeitpläne und ändert den Schutzstatus auf „Geschüt
 
 == Löschen einer Schutzgruppe
 
-Durch das Löschen einer Schutzgruppe werden diese und alle zugehörigen Sicherungszeitpläne entfernt. Möglicherweise möchten Sie eine Schutzgruppe löschen, wenn sie nicht mehr benötigt wird.
+Wenn Sie eine Schutzgruppe löschen, entfernen Sie diese und alle Sicherungszeitpläne für die Gruppe.  Löschen Sie eine Schutzgruppe, wenn Sie sie nicht mehr benötigen.
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.

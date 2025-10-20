@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-monitor-tasks.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, jobs 
-summary: Überwachen Sie mit NetApp Backup and Recovery den Status lokaler Snapshots, Replikationen und Backups auf Objektspeicherjobs, die Sie initiiert haben, sowie von Ihnen initiierte Wiederherstellungsjobs. 
+summary: Überwachen Sie mit NetApp Backup and Recovery lokale Snapshots, Replikationen und Sicherungsjobs, die Sie starten. 
 ---
 = Überwachen von Jobs in NetApp Backup and Recovery
 :hardbreaks:
@@ -14,9 +14,9 @@ summary: Überwachen Sie mit NetApp Backup and Recovery den Status lokaler Snaps
 
 
 [role="lead"]
-Überwachen Sie mit NetApp Backup and Recovery den Status lokaler Snapshots, Replikationen und Backups auf Objektspeicherjobs, die Sie initiiert haben, und stellen Sie die von Ihnen initiierten Jobs wieder her.  Sie können die abgeschlossenen, laufenden oder fehlgeschlagenen Jobs sehen, sodass Sie Probleme diagnostizieren und beheben können.  Mithilfe des Benachrichtigungscenters der NetApp Console können Sie das Senden von Benachrichtigungen per E-Mail aktivieren, sodass Sie über wichtige Systemaktivitäten informiert werden, auch wenn Sie nicht beim System angemeldet sind.  Mithilfe der Konsolenzeitleiste können Sie Details zu allen über die Benutzeroberfläche oder API initiierten Aktionen anzeigen.
+Überwachen Sie mit NetApp Backup and Recovery lokale Snapshots, Replikationen und Sicherungsjobs, die Sie starten.  Verfolgen Sie von Ihnen initiierte Wiederherstellungsaufträge.  Zeigen Sie abgeschlossene, laufende oder fehlgeschlagene Jobs an, um die Diagnose von Problemen zu erleichtern.  Aktivieren Sie E-Mail-Benachrichtigungen im Benachrichtigungscenter der NetApp Console, um auch dann über die Systemaktivität informiert zu bleiben, wenn Sie nicht angemeldet sind. Verwenden Sie die Konsolenzeitleiste, um Details zu allen Aktionen anzuzeigen, die über die Benutzeroberfläche oder API gestartet wurden.
 
-NetApp Backup and Recovery speichert Jobinformationen 15 Tage lang. Danach werden sie gelöscht und sind im Job Monitor nicht mehr sichtbar.
+NetApp Backup and Recovery speichert Jobinformationen 15 Tage lang, löscht sie dann und entfernt sie aus dem Job Monitor.
 
 *Erforderliche NetApp Console * Speicherbetrachter, Superadministrator für Backup und Recovery, Backupadministrator für Backup und Recovery, Wiederherstellungsadministrator für Backup und Recovery, Klonadministrator für Backup und Recovery oder Betrachterrolle für Backup und Recovery.  Erfahren Sie mehr überlink:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
@@ -38,7 +38,7 @@ Der Status kann sein:
 Snapshots, Replikationen, Backups auf Objektspeicher und Wiederherstellungsvorgänge, die Sie über die NetApp Backup and Recovery -Benutzeroberfläche und -API initiiert haben, sind auf der Registerkarte „Jobüberwachung“ verfügbar.
 
 
-NOTE: Wenn Sie Ihre ONTAP -Systeme auf 9.13.x aktualisiert haben und im Job Monitor keine laufenden geplanten Sicherungsvorgänge sehen, müssen Sie NetApp Backup and Recovery neu starten. link:reference-restart-backup.html["Erfahren Sie, wie Sie NetApp Backup and Recovery neu starten"].
+NOTE: Wenn Sie Ihre ONTAP -Systeme auf 9.13.x aktualisiert haben und im Job Monitor keine laufenden geplanten Sicherungsvorgänge sehen, starten Sie NetApp Backup and Recovery neu. link:reference-restart-backup.html["Erfahren Sie, wie Sie NetApp Backup and Recovery neu starten"].
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Überwachung* aus.
@@ -61,7 +61,7 @@ Standardmäßig werden auf der Seite „Jobüberwachung“ Schutz- und Wiederher
 Verwenden Sie dieses Feld, um eine Freitextsuche nach einer beliebigen Ressource einzugeben, beispielsweise „Band 1“ oder „Anwendung 3“.  Sie können die Jobliste auch nach den Elementen in den Dropdown-Menüs filtern.
 
 +
-Die meisten Filter sind selbsterklärend.  Mit dem Filter „Arbeitsbelastung“ können Sie sich Jobs in folgenden Kategorien anzeigen lassen:
+Die meisten Filter sind selbsterklärend. Mit dem Filter „Arbeitsbelastung“ können Sie sich Jobs in folgenden Kategorien anzeigen lassen:
 
 +
 ** ONTAP -Volumes (Cloud Volumes ONTAP und lokale ONTAP -Volumes)
@@ -102,7 +102,7 @@ Wiederherstellungsaufträge zeigen Details wie den Sicherungszielanbieter (Amazo
 
 === Ergebnisse der Jobüberwachung als Bericht herunterladen
 
-Sie können den Inhalt der Hauptseite zur Jobüberwachung nach der Verfeinerung als Bericht herunterladen.  NetApp Backup and Recovery generiert und lädt eine CSV-Datei herunter, die Sie überprüfen und bei Bedarf an andere Gruppen senden können. Die CSV-Datei enthält bis zu 10.000 Datenzeilen.
+Sie können den Inhalt der Hauptseite zur Jobüberwachung als Bericht herunterladen, nachdem Sie die Ergebnisse gefiltert oder sortiert haben. NetApp Backup and Recovery generiert und lädt eine CSV-Datei herunter, die Sie überprüfen und bei Bedarf an andere Gruppen senden können. Die CSV-Datei enthält bis zu 10.000 Datenzeilen.
 
 Aus den Informationen zu den Jobüberwachungsdetails können Sie eine JSON-Datei mit Details zu einem einzelnen Job herunterladen.
 
@@ -116,7 +116,7 @@ Aus den Informationen zu den Jobüberwachungsdetails können Sie eine JSON-Datei
 
 == Aufbewahrungsaufträge (Sicherungslebenszyklus) überprüfen
 
-Die Überwachung der Aufbewahrungsflüsse (oder des _Backup-Lebenszyklus_) hilft Ihnen bei der Vollständigkeit der Prüfung, der Verantwortlichkeit und der Backup-Sicherheit.  Um den Lebenszyklus der Sicherung besser verfolgen zu können, möchten Sie möglicherweise das Ablaufdatum aller Sicherungskopien ermitteln.
+Überwachen Sie Aufbewahrungsflüsse (_Backup-Lebenszyklus_), um Backups zu überprüfen, sie zu schützen und Audits zu unterstützen.  Ermitteln Sie, wann Sicherungskopien ablaufen, um den Lebenszyklus zu verfolgen.
 
 Ein Backup-Lebenszyklusjob verfolgt alle Snapshot-Kopien, die gelöscht wurden oder sich in der Warteschlange zum Löschen befinden.  Ab ONTAP 9.13 können Sie sich alle Jobtypen mit der Bezeichnung „Retention“ auf der Seite „Jobüberwachung“ ansehen.
 
@@ -134,7 +134,7 @@ Der Auftragstyp „Aufbewahrung“ erfasst alle Snapshot-Löschaufträge, die au
 
 Das Benachrichtigungscenter der NetApp Console verfolgt den Fortschritt der von Ihnen initiierten Sicherungs- und Wiederherstellungsaufträge, sodass Sie überprüfen können, ob der Vorgang erfolgreich war oder nicht.
 
-Zusätzlich zur Anzeige der Warnungen im Benachrichtigungscenter können Sie die Konsole so konfigurieren, dass bestimmte Arten von Benachrichtigungen per E-Mail als Warnungen gesendet werden, sodass Sie über wichtige Systemaktivitäten informiert werden, auch wenn Sie nicht beim System angemeldet sind. https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html["Erfahren Sie mehr über das Benachrichtigungscenter und wie Sie Warn-E-Mails für Sicherungs- und Wiederherstellungsaufträge senden"^] .
+Sie können Warnungen im Benachrichtigungscenter anzeigen und die Konsole so konfigurieren, dass bei wichtigen Systemaktivitäten E-Mail-Warnungen gesendet werden, auch wenn Sie nicht angemeldet sind. https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html["Erfahren Sie mehr über das Benachrichtigungscenter und wie Sie Warn-E-Mails für Sicherungs- und Wiederherstellungsaufträge senden"^] .
 
 Das Benachrichtigungscenter zeigt zahlreiche Snapshot-, Replikations-, Cloud-Backup- und Wiederherstellungsereignisse an, aber nur bestimmte Ereignisse lösen E-Mail-Benachrichtigungen aus:
 
@@ -175,7 +175,7 @@ Das Benachrichtigungscenter zeigt zahlreiche Snapshot-, Replikations-, Cloud-Bac
 
 NOTE: Ab ONTAP 9.13.0 werden alle Warnungen für Cloud Volumes ONTAP und lokale ONTAP -Systeme angezeigt.  Bei Systemen mit Cloud Volumes ONTAP 9.13.0 und lokalem ONTAP wird nur die Warnmeldung „Wiederherstellungsauftrag abgeschlossen, aber mit Warnungen“ angezeigt.
 
-Standardmäßig erhalten die Organisations- und Kontoadministratoren der NetApp Console E-Mails für alle Warnmeldungen vom Typ „Kritisch“ und „Empfehlung“.  Alle anderen Benutzer und Empfänger sind standardmäßig so eingerichtet, dass sie keine Benachrichtigungs-E-Mails erhalten.  E-Mails können an alle Konsolenbenutzer gesendet werden, die Teil Ihres NetApp Cloud-Kontos sind, oder an alle anderen Empfänger, die über Sicherungs- und Wiederherstellungsaktivitäten informiert werden müssen.
+Standardmäßig erhalten die Organisations- und Kontoadministratoren der NetApp Console E-Mails für alle Warnmeldungen vom Typ „Kritisch“ und „Empfehlung“. Standardmäßig richtet das System keine anderen Benutzer und Empfänger für den Empfang von Benachrichtigungs-E-Mails ein.  Konfigurieren Sie E-Mail-Benachrichtigungen für alle Konsolenbenutzer in Ihrem NetApp Cloud-Konto oder für andere Empfänger, die über Sicherungs- und Wiederherstellungsaktivitäten informiert werden müssen.
 
 Um E-Mail-Benachrichtigungen zu NetApp Backup and Recovery zu erhalten, müssen Sie auf der Einstellungsseite für Benachrichtigungen die Schweregrade „Kritisch“, „Warnung“ und „Fehler“ auswählen.
 

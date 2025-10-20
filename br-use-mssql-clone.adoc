@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-mssql-clone.html 
 keywords: backing up, restoring, back up, backup, clone, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
-summary: Klonen Sie Microsoft SQL Server-Anwendungsdaten zu Entwicklungs-, Test- oder Schutzzwecken.  Sie können Klone aus sofortigen Snapshots oder vorhandenen Snapshots Ihrer Microsoft SQL Server-Workloads erstellen. 
+summary: Klonen Sie Microsoft SQL Server-Anwendungsdaten zu Entwicklungs-, Test- oder Schutzzwecken. 
 ---
 = Klonen Sie Microsoft SQL Server-Workloads mit NetApp Backup and Recovery
 :hardbreaks:
@@ -14,11 +14,11 @@ summary: Klonen Sie Microsoft SQL Server-Anwendungsdaten zu Entwicklungs-, Test-
 
 
 [role="lead"]
-Klonen Sie Microsoft SQL Server-Anwendungsdaten zu Entwicklungs-, Test- oder Schutzzwecken mit NetApp Backup and Recovery auf dieselbe oder eine andere VM.  Sie können Klone aus sofortigen Snapshots oder vorhandenen Snapshots Ihrer Microsoft SQL Server-Workloads erstellen.
+Klonen Sie Microsoft SQL Server-Anwendungsdaten zur Entwicklung, zum Testen oder zum Schutz mit NetApp Backup and Recovery auf eine VM.  Erstellen Sie Klone aus sofortigen oder vorhandenen Snapshots Ihrer SQL Server-Workloads.
 
 Wählen Sie zwischen den folgenden Klontypen:
 
-* *Sofortiger Snapshot und Klon*: Sie können aus einem sofortigen Snapshot einen Klon Ihrer Microsoft SQL Server-Workloads erstellen.  Ein sofortiger Snapshot ist eine zeitpunktbezogene Kopie der Quelldaten, die aus einer Sicherung erstellt wird.  Der Klon wird in einem Objektspeicher in Ihrem öffentlichen oder privaten Cloud-Konto gespeichert.  Sie können den Klon verwenden, um Ihre Workloads im Falle eines Datenverlusts oder einer Datenbeschädigung wiederherzustellen.
+* *Sofortiger Snapshot und Klon*: Sie können einen Klon Ihrer Microsoft SQL Server-Workloads aus einem sofortigen Snapshot erstellen. Dabei handelt es sich um eine zeitpunktbezogene Kopie der Quelldaten, die aus einer Sicherung erstellt wird. Der Klon wird in einem Objektspeicher in Ihrem öffentlichen oder privaten Cloud-Konto gespeichert. Sie können den Klon verwenden, um Ihre Workloads im Falle eines Datenverlusts oder einer Datenbeschädigung wiederherzustellen.
 * *Klonen von einem vorhandenen Snapshot*: Sie können einen vorhandenen Snapshot aus einer Liste von Snapshots auswählen, die für die Arbeitslast verfügbar sind.  Diese Option ist nützlich, wenn Sie einen Klon von einem bestimmten Zeitpunkt erstellen möchten.  Klonen Sie entweder auf den primären oder sekundären Speicher.
 
 
@@ -45,7 +45,7 @@ Sie können einen Klon aus einem vorhandenen Snapshot oder aus einem sofortigen 
 . Wählen Sie *Neuen Klon erstellen*.
 . Wählen Sie den Klontyp aus:
 +
-** *Klonen und Datenbankaktualisierung aus vorhandenem Snapshot*: Wählen Sie den Snapshot für den Klon und konfigurieren Sie Optionen für den Klon.  Dies ist hilfreich, wenn Sie den Snapshot für den Klon auswählen und Optionen konfigurieren möchten.
+** *Klonen und Datenbankaktualisierung aus vorhandenem Snapshot*: Wählen Sie einen Snapshot und konfigurieren Sie die Klonoptionen.
 ** *Sofortiger Snapshot und Klon*: Machen Sie jetzt einen Snapshot der Quelldaten und erstellen Sie aus diesem Snapshot einen Klon.  Diese Option ist nützlich, wenn Sie einen Klon aus den neuesten Daten im Ursprungs-Workload erstellen möchten.
 
 
@@ -59,14 +59,14 @@ Sie können einen Klon aus einem vorhandenen Snapshot oder aus einem sofortigen 
 +
 ** *Zieldatenbankhost, -instanz und -name*: Wählen Sie den Zieldatenbankhost, die -instanz und den Namen für den Klon aus.  Die Zieldatenbank ist der Speicherort, an dem der Klon erstellt wird.
 +
-Wählen Sie optional *Suffix* aus der Dropdown-Liste „Zielname“ aus und hängen Sie ein Suffix an den Namen der geklonten Datenbank an.  Wenn Sie kein Suffix angeben, ist der Name der geklonten Datenbank derselbe wie der Name der Quelldatenbank.
+Wählen Sie optional *Suffix* aus der Dropdown-Liste „Zielname“ aus und fügen Sie dem Namen der geklonten Datenbank ein Suffix hinzu.  Wenn Sie kein Suffix hinzufügen, ist der Name der geklonten Datenbank derselbe wie der Name der Quelldatenbank.
 
 ** *QoS (maximaler Durchsatz)*: Wählen Sie den maximalen Quality of Service (QoS)-Durchsatz in MBps für den Klon.  Die QoS definiert die Leistungsmerkmale des Klons, wie beispielsweise den maximalen Durchsatz und IOPS.
 
 
 . Füllen Sie den Abschnitt *Mount* aus:
 +
-** *Einhängepunkt automatisch zuweisen*: Wählen Sie diese Option, um dem Klon automatisch einen Einhängepunkt zuzuweisen.  Der Einhängepunkt ist der Ort, an dem der Klon im Objektspeicher eingehängt wird.
+** *Mount-Punkt automatisch zuweisen*: Weisen Sie dem Klon im Objektspeicher automatisch einen Mount-Punkt zu.
 ** *Mountpoint-Pfad definieren*: Geben Sie einen Mountpoint für den Klon ein.  Der Einhängepunkt ist der Ort, an dem der Klon im Objektspeicher eingehängt wird.  Wählen Sie den Laufwerksbuchstaben aus, geben Sie den Datendateipfad ein und geben Sie den Protokolldateipfad ein.
 
 
@@ -94,9 +94,9 @@ Wählen Sie optional *Suffix* aus der Dropdown-Liste „Zielname“ aus und hän
 *** *Klon aktualisieren alle*: Wählen Sie aus, wie oft der Klon aktualisiert werden soll.  Sie können den Klon stündlich, täglich, wöchentlich, monatlich oder vierteljährlich aktualisieren.  Diese Option ist nützlich, wenn Sie den Klon auf dem neuesten Stand mit dem Quell-Workload halten möchten.
 
 
-** *Prescripts und Postscripts*: Geben Sie optional Pre- und Post-Clone-Skripte an, die vor und nach der Erstellung des Klons ausgeführt werden sollen.  Mit diesen Skripten können zusätzliche Aufgaben ausgeführt werden, beispielsweise das Konfigurieren des Klons oder das Senden von Benachrichtigungen.
+** *Prescripts und Postscripts*: Fügen Sie optional Skripte hinzu, die vor und nach der Erstellung des Klons ausgeführt werden sollen.  Diese Skripte können zusätzliche Aufgaben ausführen, beispielsweise das Einrichten des Klons oder das Senden von Benachrichtigungen.
 ** *Benachrichtigung*: Geben Sie optional E-Mail-Adressen an, um Benachrichtigungen über den Status der Klonerstellung zusammen mit dem Jobbericht zu erhalten.  Sie können auch eine Webhook-URL angeben, um Benachrichtigungen über den Status der Klonerstellung zu erhalten.  Sie können angeben, ob Sie Erfolgs- und Fehlerbenachrichtigungen oder nur die eine oder die andere erhalten möchten.
-** *Tags*: Wählen Sie ein oder mehrere Labels aus, die Ihnen später bei der Suche nach der Ressourcengruppe helfen, und wählen Sie *Übernehmen*.  Wenn Sie beispielsweise „HR“ als Tag zu mehreren Ressourcengruppen hinzufügen, können Sie später alle mit dem HR-Tag verknüpften Ressourcengruppen finden.
+** *Tags*: Wählen Sie Bezeichnungen aus, die Ihnen später bei der Suche nach Ressourcengruppen helfen, und wählen Sie *Übernehmen*.  Wenn Sie beispielsweise „HR“ als Tag zu mehreren Ressourcengruppen hinzufügen, können Sie später alle mit dem Tag „HR“ verknüpften Ressourcengruppen finden.
 
 
 . Wählen Sie *Erstellen*.
@@ -125,7 +125,7 @@ Sie haben die Möglichkeit, den Datenbanknamen zu ändern, den neuesten Sofort-S
 
 
 ** *iGroup-Einstellungen*: Wählen Sie die iGroup für den Klon aus.  Die Igroup ist eine logische Gruppierung von Initiatoren, die für den Zugriff auf den Klon verwendet werden.  Sie können eine vorhandene igroup auswählen oder eine neue erstellen.  Wählen Sie die igroup aus dem primären oder sekundären ONTAP Speichersystem aus.
-** *Prescripts und Postscripts*: Geben Sie optional Pre- und Post-Clone-Skripte an, die vor und nach der Erstellung des Klons ausgeführt werden sollen.  Mit diesen Skripten können zusätzliche Aufgaben ausgeführt werden, beispielsweise das Konfigurieren des Klons oder das Senden von Benachrichtigungen.
+** *Prescripts und Postscripts*: Fügen Sie optional Skripte hinzu, die vor und nach der Erstellung des Klons ausgeführt werden sollen.  Diese Skripte können zusätzliche Aufgaben ausführen, beispielsweise das Einrichten des Klons oder das Senden von Benachrichtigungen.
 ** *Benachrichtigung*: Geben Sie optional E-Mail-Adressen an, um Benachrichtigungen über den Status der Klonerstellung zusammen mit dem Jobbericht zu erhalten.  Sie können auch eine Webhook-URL angeben, um Benachrichtigungen über den Status der Klonerstellung zu erhalten.  Sie können angeben, ob Sie Erfolgs- und Fehlerbenachrichtigungen oder nur die eine oder die andere erhalten möchten.
 ** *Tags*: Geben Sie ein oder mehrere Labels ein, die Ihnen später bei der Suche nach der Ressourcengruppe helfen.  Wenn Sie beispielsweise „HR“ als Tag zu mehreren Ressourcengruppen hinzufügen, können Sie später alle mit dem HR-Tag verknüpften Ressourcengruppen finden.
 
@@ -137,7 +137,7 @@ Sie haben die Möglichkeit, den Datenbanknamen zu ändern, den neuesten Sofort-S
 
 == Überspringen einer Klonaktualisierung
 
-Sie können die Aktualisierung eines Klons überspringen, wenn Sie den Klon nicht mit den neuesten Daten aus dem Ursprungs-Workload aktualisieren möchten.  Durch Überspringen einer Klonaktualisierung können Sie den Klon so belassen, wie er ist, ohne ihn zu aktualisieren.
+Überspringen Sie eine Klonaktualisierung, um den Klon unverändert zu lassen.
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Klonen* aus.
@@ -175,7 +175,7 @@ Der Klonauftrag wird nicht entfernt und kann für andere Klone erneut verwendet 
 
 Sie können einen Klon Ihrer Microsoft SQL Server-Workloads löschen.  Durch das Löschen eines Klons wird der Klon aus dem Objektspeicher entfernt und Speicherplatz freigegeben.
 
-Wenn der Klon durch eine Richtlinie geschützt ist, wird der Klon einschließlich des Auftrags gelöscht.
+Wenn eine Richtlinie den Klon schützt, werden sowohl der Klon als auch sein Job gelöscht.
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Klonen* aus.

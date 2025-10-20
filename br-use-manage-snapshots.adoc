@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-manage-snapshots.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
-summary: Sie können Microsoft SQL Server-Anwendungsdaten von lokalen ONTAP -Systemen auf Amazon Web Services, Microsoft Azure, Google Cloud Platform und StorageGRID sichern und so sicherstellen, dass Ihre Daten geschützt sind. Backups werden automatisch erstellt und in einem Objektspeicher in Ihrem öffentlichen oder privaten Cloud-Konto gespeichert.  Sie können eine 3-2-1-Strategie implementieren, bei der Sie 3 Kopien Ihrer Quelldaten auf 2 verschiedenen Speichersystemen und 1 Kopie in der Cloud haben. 
+summary: Sie können Microsoft SQL Server-Snapshots verwalten, indem Sie sie aus NetApp Backup and Recovery löschen. 
 ---
 = Verwalten Sie Microsoft SQL Server-Snapshots mit NetApp Backup and Recovery
 :hardbreaks:
@@ -33,7 +33,7 @@ Sie können nur lokale Snapshots löschen.
 . Wählen Sie den lokalen Snapshot aus, den Sie löschen möchten.
 +
 
-TIP: Das lokale Snapshot-Symbol in der Spalte *Standort* dieser Zeile muss blau angezeigt werden.
+TIP: Stellen Sie sicher, dass das lokale Snapshot-Symbol in der Spalte *Standort* dieser Zeile blau angezeigt wird.
 
 . Wählen Sie die *Aktionen*image:icon-action.png["Symbol „Aktionen“"] Symbol und wählen Sie *Lokalen Snapshot löschen*.
 . Wählen Sie im Bestätigungsdialogfeld *Entfernen* aus.

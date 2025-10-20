@@ -22,9 +22,9 @@ image:../media/diagram-backup-recovery-general.png["Architekturdiagramm für Bac
 
 Verwenden Sie NetApp Backup and Recovery , um eine 3-2-1-Schutzstrategie zu implementieren, bei der Sie 3 Kopien Ihrer Quelldaten auf 2 verschiedenen Speichersystemen sowie 1 Kopie in der Cloud haben. Zu den Vorteilen des 3-2-1-Ansatzes gehören:
 
-* Mehrere Datenkopien bieten mehrschichtigen Schutz vor internen (Insider-) und externen Cybersicherheitsbedrohungen.
+* Mehrere Datenkopien schützen vor internen und externen Cybersicherheitsbedrohungen.
 * Mehrere Medientypen gewährleisten die Failover-Funktionalität im Falle eines physischen oder logischen Ausfalls eines Medientyps.
-* Die Vor-Ort-Kopie ermöglicht eine schnelle Wiederherstellung, wobei die Offsite-Kopien für den Fall verfügbar sind, dass die Vor-Ort-Kopie kompromittiert wird.
+* Mithilfe der Vor-Ort-Kopie können Sie Daten schnell wiederherstellen und Sie können die Offsite-Kopien verwenden, wenn die Vor-Ort-Kopie kompromittiert ist.
 
 
 Wenn Sie Hyper-V-Hosts hinzufügen und Ressourcen ermitteln, installiert NetApp Backup and Recovery das NetApp Hyper-V-Plug-in und das NetApp SnapCenter Windows FileSystem-Plug-in auf dem Hyper-V-Host, um die Verwaltung und den Schutz virtueller Maschinen zu unterstützen.

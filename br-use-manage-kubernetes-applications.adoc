@@ -38,7 +38,7 @@ Sie können den Schutz einer Anwendung aufheben, wenn Sie sie nicht mehr schütz
 
 == Löschen einer Kubernetes-Anwendung
 
-Sie können eine Anwendung löschen, wenn Sie sie nicht mehr benötigen. Wenn Sie eine Anwendung löschen, beendet NetApp Backup and Recovery den Schutz der Anwendung und löscht alle zugehörigen Backups und Snapshots.
+Löschen Sie eine Anwendung, die Sie nicht mehr benötigen.  NetApp Backup and Recovery beendet den Schutz und entfernt alle Backups und Snapshots für gelöschte Anwendungen.
 
 .Schritte
 . Wählen Sie in NetApp Backup and Recovery*Inventar* aus.
