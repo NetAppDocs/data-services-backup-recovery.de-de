@@ -271,9 +271,6 @@ Konfigurieren Sie zusätzlich die folgenden Optionen:
 
 Sie können die Sicherungsarchitektur, die Sicherungshäufigkeit, die Aufbewahrungsrichtlinie und andere Einstellungen für eine Richtlinie bearbeiten.
 
-
-NOTE: Diese Funktion ist für VMware Preview-Workloads nicht verfügbar.
-
 Sie können beim Bearbeiten einer Richtlinie eine weitere Schutzebene hinzufügen, aber keine Schutzebene entfernen.  Wenn die Richtlinie beispielsweise nur lokale Snapshots schützt, können Sie die Replikation zum sekundären Speicher oder die Backups zum Objektspeicher hinzufügen.  Wenn Sie über lokale Snapshots und Replikation verfügen, können Sie Objektspeicher hinzufügen.  Wenn Sie jedoch über lokale Snapshots, Replikation und Objektspeicher verfügen, können Sie keine dieser Ebenen entfernen.
 
 Wenn Sie eine Richtlinie bearbeiten, die eine Sicherung im Objektspeicher vornimmt, können Sie die Archivierung aktivieren.
