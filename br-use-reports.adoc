@@ -31,7 +31,7 @@ Erstellen Sie in NetApp Backup and Recovery Berichte für Microsoft SQL Server-W
 
 
 . Geben Sie den Berichtszeitraum ein: Wählen Sie, ob der Bericht Daten vom letzten Tag, den letzten 7 Tagen, den letzten 30 Tagen, dem letzten Quartal oder dem letzten Jahr enthalten soll.
-. Geben Sie die Details zur Berichtszustellung ein: Wenn Sie den Bericht per E-Mail zugestellt bekommen möchten, aktivieren Sie *Bericht per E-Mail senden*.  Geben Sie die E-Mail-Adressen ein, an die der Bericht gesendet werden soll.
+. Geben Sie die Details zur Berichtszustellung ein: Wenn Sie den Bericht per E-Mail zugestellt bekommen möchten, aktivieren Sie *Bericht per E-Mail senden*. Geben Sie die E-Mail-Adresse ein, an die der Bericht gesendet werden soll.
 +
 Konfigurieren Sie E-Mail-Benachrichtigungen auf der Seite „Einstellungen“.  Einzelheiten zum Konfigurieren von E-Mail-Benachrichtigungen finden Sie unterlink:br-use-settings-advanced.html["Konfigurieren der Einstellungen"] .
 

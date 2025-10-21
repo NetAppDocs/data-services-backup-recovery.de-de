@@ -110,7 +110,7 @@ Geben Sie VMware vCenter-Anmeldeinformationen ein, um Workloads für die Sicheru
 
 == Importieren und Verwalten von SnapCenter -Hostressourcen
 
-Wenn Sie zuvor SnapCenter zum Sichern Ihrer Ressourcen verwendet haben, können Sie diese Ressourcen in NetApp Backup and Recovery importieren und verwalten.  Mit dieser Option können Sie SnapCenter -Serverinformationen importieren, um mehrere Snapcenter-Server zu registrieren und Datenbank-Workloads zu ermitteln.
+Wenn Sie zuvor SnapCenter zum Sichern Ihrer Ressourcen verwendet haben, können Sie diese Ressourcen in NetApp Backup and Recovery importieren und verwalten. Mit dieser Option können Sie SnapCenter -Serverinformationen importieren, um mehrere SnapCenter -Server zu registrieren und Datenbank-Workloads zu ermitteln.
 
 Dies ist ein zweiteiliger Prozess:
 

@@ -99,7 +99,6 @@ Die Vorschauversion von VMware-Workloads führt die folgenden erweiterten Funkti
 
 * Unterstützung für die Wiederherstellung aus dem Objektspeicher
 * Das Dashboard der NetApp Console zeigt jetzt Informationen zum VMware-Workload-Status an
-* Demo-Modus-Unterstützung: Entdecken Sie die Funktionen von VMware-Workloads, ohne eine VMware vCenter Server-Umgebung hinzuzufügen
 * Unterstützung der rollenbasierten Zugriffskontrolle (RBAC)
 * E-Mail-Warnung und Benachrichtigungsunterstützung für Jobereignisse
 * Unterstützung für die Sicherung und Wiederherstellung auf NVMe-basiertem Speicher
