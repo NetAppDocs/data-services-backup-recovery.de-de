@@ -19,7 +19,12 @@ Durch die Überwachung des Zustands Ihrer Workloads wird sichergestellt, dass Si
 *Erforderliche NetApp Console * Speicherbetrachter, Superadministrator für Backup und Recovery, Backupadministrator für Backup und Recovery, Wiederherstellungsadministrator für Backup und Recovery, Klonadministrator für Backup und Recovery oder Betrachterrolle für Backup und Recovery.  Erfahren Sie mehr überlink:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
 .Schritte
-. Wählen Sie im NetApp Backup and Recovery -Menü *Dashboard* aus.
+. Wählen Sie im NetApp Console *Schutz* > *Sicherung und Wiederherstellung*.
+. Wählen Sie eine Workload-Kachel aus (z. B. Microsoft SQL Server).
+. Wählen Sie im Menü „Sichern und Wiederherstellen“ die Option „Dashboard“ aus.
++
+Sie können die folgenden Arten von Informationen überprüfen:
+
 +
 ** Anzahl der erkannten Hosts oder VMs
 ** Anzahl der erkannten Kubernetes-Cluster

@@ -62,6 +62,8 @@ Nachdem NetApp Backup and Recovery Ressourcen erkannt hat, wird auf der Seite �
 == Weiter zum NetApp Backup and Recovery Dashboard
 
 .Schritte
-. Um das NetApp Backup and Recovery Dashboard anzuzeigen, wählen Sie im NetApp Console *Dashboard*.
+. Wählen Sie im NetApp Console *Schutz* > *Sicherung und Wiederherstellung*.
+. Wählen Sie eine Workload-Kachel aus (z. B. Microsoft SQL Server).
+. Wählen Sie im Menü „Sichern und Wiederherstellen“ die Option „Dashboard“ aus.
 . Überprüfen Sie den Zustand des Datenschutzes.  Die Anzahl der gefährdeten oder geschützten Workloads steigt basierend auf den neu entdeckten, geschützten und gesicherten Workloads.
 
