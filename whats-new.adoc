@@ -128,6 +128,14 @@ Weitere Informationen zum Schutz von Oracle Database-Workloads finden Sie unter 
 
 
 
+=== Verbesserungen der ONTAP Volume-Workload
+
+Diese Version der ONTAP Volume-Workloads führt die folgenden erweiterten Funktionen ein:
+
+Ab ONTAP 9.17.1 und neuer wird DataLock jetzt mit der Google Cloud Platform unterstützt. Dies ergänzt die bestehende DataLock-Unterstützung mit Amazon AWS, Microsoft Azure und NetApp StorageGRID.
+
+
+
 == 25. August 2025
 
 Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.

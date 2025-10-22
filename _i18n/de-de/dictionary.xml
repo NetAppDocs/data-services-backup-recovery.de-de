@@ -4774,4 +4774,6 @@
   <block id="e666fdc6314d0f6cb22614788075b3bc" category="list-text">Wählen Sie eine Workload-Kachel aus (z. B. Microsoft SQL Server).</block>
   <block id="55398f7948e83c03d38dfb4b136d75ee" category="list-text">Wählen Sie im Menü „Sichern und Wiederherstellen“ die Option „Dashboard“ aus.</block>
   <block id="4837f0befea6b35d3b9827d282853ed9" category="paragraph">Sie können die folgenden Arten von Informationen überprüfen:</block>
+  <block id="70cc82710208295496c70c203368aaf9" category="paragraph">Diese Version der ONTAP Volume-Workloads führt die folgenden erweiterten Funktionen ein:</block>
+  <block id="bb13349ac4c9ef7d368732d3a4fdabed" category="paragraph">Ab ONTAP 9.17.1 und neuer wird DataLock jetzt mit der Google Cloud Platform unterstützt. Dies ergänzt die bestehende DataLock-Unterstützung mit Amazon AWS, Microsoft Azure und NetApp StorageGRID.</block>
 </blocks>
