@@ -4776,4 +4776,9 @@
   <block id="4837f0befea6b35d3b9827d282853ed9" category="paragraph">Sie können die folgenden Arten von Informationen überprüfen:</block>
   <block id="70cc82710208295496c70c203368aaf9" category="paragraph">Diese Version der ONTAP Volume-Workloads führt die folgenden erweiterten Funktionen ein:</block>
   <block id="bb13349ac4c9ef7d368732d3a4fdabed" category="paragraph">Ab ONTAP 9.17.1 und neuer wird DataLock jetzt mit der Google Cloud Platform unterstützt. Dies ergänzt die bestehende DataLock-Unterstützung mit Amazon AWS, Microsoft Azure und NetApp StorageGRID.</block>
+  <block id="a0fe305acb95f37513221f1fa15cc736" category="paragraph">Um den Schutz von KVM-VMs zu aktivieren, die von Benutzern ohne Root-Rechte verwaltet werden, führen Sie die folgenden Schritte aus:</block>
+  <block id="7038d2812762c5a3340bd687f860b041" category="list-text">Binden Sie das Volume als NFS3 ein, um die Verwendung von<block ref="6e854442cd2a940c9e95941dce4ad598" prefix=" " category="inline-code"></block> Benutzer und Gruppe.</block>
+  <block id="36d8cadfad50f92ea039929a8bfc7450" category="list-text">Verwenden Sie den folgenden Befehl, um einen Nicht-Root-Benutzer hinzuzufügen<block ref="5b015a9aa658c93e9ef31fbd0e83d2b9" prefix=" " category="inline-code"></block> Gruppen bilden und gleichzeitig ihre bestehenden Gruppen erhalten:</block>
+  <block id="aa1cd3801b770b27b2d088367602a652" category="list-text">Verwenden Sie den folgenden Befehl, um die Besitzrechte am Mount-Pfad zu übertragen.<block ref="5b015a9aa658c93e9ef31fbd0e83d2b9" prefix=" " category="inline-code"></block> Benutzer- und Gruppenberechtigungen für den Mount-Pfad ändern:</block>
+  <block id="fba88ec9b188c84767bd0e321c7662a9" category="list-text">Löschen Sie gegebenenfalls das vorhandene Verzeichnis NetApp_SnapCenter_Backups.</block>
 </blocks>

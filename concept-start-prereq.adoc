@@ -135,6 +135,27 @@ Sie benötigen bestimmte Anforderungen, um virtuelle KVM-Maschinen zu erkennen u
 * libvirt Version 10.5.0 oder höher
 
 
+[NOTE]
+====
+Um den Schutz von KVM-VMs zu aktivieren, die von Benutzern ohne Root-Rechte verwaltet werden, führen Sie die folgenden Schritte aus:
+
+. Binden Sie das Volume als NFS3 ein, um die Verwendung von `nobody` Benutzer und Gruppe.
+. Verwenden Sie den folgenden Befehl, um einen Nicht-Root-Benutzer hinzuzufügen `qemu` Gruppen bilden und gleichzeitig ihre bestehenden Gruppen erhalten:
++
+[source, console]
+----
+usermod -aG qemu <non-root-user>
+----
+. Verwenden Sie den folgenden Befehl, um die Besitzrechte am Mount-Pfad zu übertragen. `qemu` Benutzer- und Gruppenberechtigungen für den Mount-Pfad ändern:
++
+[source, console]
+----
+chown -R qemu:qemu <kvm_vm_mount_path> & chmod 771 <kvm_vm_mount_path>
+----
+. Löschen Sie gegebenenfalls das vorhandene Verzeichnis NetApp_SnapCenter_Backups.
+
+
+====
 
 
 == Anforderungen zum Schutz von Oracle-Workloads
