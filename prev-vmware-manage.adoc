@@ -16,11 +16,9 @@ summary: Schützen Sie Ihre VMware-Workloads mit NetApp NetApp Backup and Recove
 [role="lead"]
 Sie können Richtlinien, Datenspeicher und virtuelle Maschinen anzeigen, bevor Sie Daten mit NetApp Backup and Recovery sichern und wiederherstellen.  Abhängig von den Änderungen in der Datenbank, den Richtlinien oder den Ressourcengruppen können Sie die Aktualisierungen über die Benutzeroberfläche der NetApp Console anzeigen.
 
-[]
-====
-*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
 
-====
+NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
+
 
 
 == Richtlinien anzeigen

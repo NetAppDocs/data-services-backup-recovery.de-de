@@ -16,11 +16,9 @@ summary: Schützen Sie Ihre VMware-Workloads mit NetApp NetApp Backup and Recove
 [role="lead"]
 Führen Sie einige Schritte in NetApp Backup and Recovery aus, um mit der Sicherung von Volumedaten von Ihren Cloud Volumes ONTAP -Systemen in Azure Blob Storage zu beginnen.
 
-[]
-====
-*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
 
-====
+NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
+
 
 
 == Überprüfen der Unterstützung für Ihre Konfiguration
@@ -94,7 +92,7 @@ Um die Such- und Wiederherstellungsfunktion von NetApp Backup and Recovery verwe
 +
 [%collapsible]
 ====
-[source, json]
+[source, console]
 ----
 "Microsoft.Storage/storageAccounts/listkeys/action",
 "Microsoft.Storage/storageAccounts/read",

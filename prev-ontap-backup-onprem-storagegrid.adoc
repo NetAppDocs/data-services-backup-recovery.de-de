@@ -19,11 +19,9 @@ Führen Sie einige Schritte in NetApp Backup and Recovery aus, um mit der Sicher
 
 NOTE: Zu den „On-Premises ONTAP -Systemen“ gehören FAS, AFF und ONTAP Select Systeme.
 
-[]
-====
-*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
 
-====
+NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
+
 
 
 == Identifizieren Sie die Verbindungsmethode
@@ -208,7 +206,7 @@ Wenn Sie die Sicherung auf StorageGRID einrichten, fordert Sie der Sicherungsass
 
 Diese Zugriffsschlüssel müssen einem Benutzer zugeordnet sein, der über die folgenden Berechtigungen verfügt:
 
-[source, json]
+[source, console]
 ----
 "s3:ListAllMyBuckets",
 "s3:ListBucket",

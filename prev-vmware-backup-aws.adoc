@@ -18,11 +18,9 @@ Sie können einen oder mehrere Datenspeicher mit NetApp Backup and Recovery auf 
 
 Wenn der Datenspeicher mit einer Archivierungsrichtlinie verknüpft ist, haben Sie die Möglichkeit, die Archivierungsebene auszuwählen.  Die unterstützten Archivebenen sind Glacier und Glacier Deep.
 
-[]
-====
-*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
 
-====
+NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
+
 .Bevor Sie beginnen
 Stellen Sie sicher, dass Sie allelink:prev-vmware-prereqs.html["Anforderungen für den Schutz virtueller Maschinen"] bevor Sie Datenspeicher in der Cloud sichern.
 

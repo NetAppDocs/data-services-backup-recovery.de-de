@@ -18,7 +18,8 @@ NetApp Backup and Recovery unterstützt zwei S3-Archivspeicherklassen und die me
 
 []
 ====
-*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup and Recovery UI-Versionen finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zur vorherigen NetApp Backup and Recovery -Benutzeroberfläche"] .
+
+NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -UI-Versionen finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zur vorherigen NetApp Backup and Recovery -Benutzeroberfläche"] .
 
 ====
 

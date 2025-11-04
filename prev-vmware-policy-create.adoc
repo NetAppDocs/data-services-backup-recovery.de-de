@@ -16,11 +16,9 @@ summary: Schützen Sie Ihre VMware-Workloads mit NetApp NetApp Backup and Recove
 [role="lead"]
 Sie können eine Richtlinie erstellen oder eine der folgenden vordefinierten Richtlinien verwenden, die in NetApp Backup and Recovery verfügbar sind.
 
-[]
-====
-*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
 
-====
+NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
+
 .Bevor Sie beginnen
 * Sie sollten Richtlinien erstellen, wenn Sie die vordefinierten Richtlinien nicht bearbeiten möchten.
 * Um Backups vom Objektspeicher in den Archivspeicher zu verschieben, sollten Sie ONTAP 9.10.1 oder höher ausführen und Amazon Web Services oder Microsoft Azure sollte der Cloud-Anbieter sein.

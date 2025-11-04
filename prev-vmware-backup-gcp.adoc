@@ -16,11 +16,9 @@ summary: Schützen Sie Ihre VMware-Workloads mit NetApp NetApp Backup and Recove
 [role="lead"]
 Sie können einen oder mehrere Datenspeicher auf der Google Cloud Platform sichern, indem Sie das SnapCenter Plug-in for VMware vSphere Hosts mit NetApp Backup and Recovery integrieren.  Dies wird den VM-Administratoren dabei helfen, Daten einfach und schnell zu sichern und zu archivieren, um die Speichereffizienz zu steigern und den Übergang in die Cloud zu beschleunigen.
 
-[]
-====
-*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
 
-====
+NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
+
 .Bevor Sie beginnen
 Stellen Sie sicher, dass Sie allelink:prev-vmware-prereqs.html["Anforderungen für den Schutz virtueller Maschinen"] bevor Sie Datenspeicher in der Cloud sichern.
 

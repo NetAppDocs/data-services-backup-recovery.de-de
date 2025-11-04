@@ -19,11 +19,9 @@ Sie können die Backup-to-Object-Storage-Einstellungen auf Clusterebene ändern,
 
 NOTE: Diese Einstellungen sind nur für die Sicherung im Objektspeicher verfügbar.  Keine dieser Einstellungen wirkt sich auf Ihre Snapshot- oder Replikationseinstellungen aus.
 
-[]
-====
-*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
 
-====
+NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
+
 Auf der Seite „Erweiterte Einstellungen“ können Sie die folgenden Optionen ändern:
 
 * Ändern der Netzwerkbandbreite, die zum Hochladen von Backups in den Objektspeicher zugewiesen ist, mithilfe der Option „Maximale Übertragungsrate“ ifdef::aws[]

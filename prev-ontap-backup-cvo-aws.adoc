@@ -16,11 +16,9 @@ summary: Schützen Sie Ihre VMware-Workloads mit NetApp NetApp Backup and Recove
 [role="lead"]
 Führen Sie einige Schritte in NetApp Backup and Recovery aus, um mit der Sicherung von Volume-Daten von Ihren Cloud Volumes ONTAP Systemen auf Amazon S3 zu beginnen.
 
-[]
-====
-*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
 
-====
+NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
+
 
 
 == Überprüfen der Unterstützung für Ihre Konfiguration
@@ -77,60 +75,60 @@ Hier sind die spezifischen Berechtigungen aus der Richtlinie:
 [source, json]
 ----
 {
-            "Sid": "backupPolicy",
-            "Effect": "Allow",
-            "Action": [
-                "s3:DeleteBucket",
-                "s3:GetLifecycleConfiguration",
-                "s3:PutLifecycleConfiguration",
-                "s3:PutBucketTagging",
-                "s3:ListBucketVersions",
-                "s3:GetObject",
-                "s3:DeleteObject",
-                "s3:PutObject",
-                "s3:ListBucket",
-                "s3:ListAllMyBuckets",
-                "s3:GetBucketTagging",
-                "s3:GetBucketLocation",
-                "s3:GetBucketPolicyStatus",
-                "s3:GetBucketPublicAccessBlock",
-                "s3:GetBucketAcl",
-                "s3:GetBucketPolicy",
-                "s3:PutBucketPolicy",
-                "s3:PutBucketOwnershipControls"
-                "s3:PutBucketPublicAccessBlock",
-                "s3:PutEncryptionConfiguration",
-                "s3:GetObjectVersionTagging",
-                "s3:GetBucketObjectLockConfiguration",
-                "s3:GetObjectVersionAcl",
-                "s3:PutObjectTagging",
-                "s3:DeleteObjectTagging",
-                "s3:GetObjectRetention",
-                "s3:DeleteObjectVersionTagging",
-                "s3:PutBucketObjectLockConfiguration",
-                "s3:DeleteObjectVersion",
-                "s3:GetObjectTagging",
-                "s3:PutBucketVersioning",
-                "s3:PutObjectVersionTagging",
-                "s3:GetBucketVersioning",
-                "s3:BypassGovernanceRetention",
-                "s3:PutObjectRetention",
-                "s3:GetObjectVersion",
-                "athena:StartQueryExecution",
-                "athena:GetQueryResults",
-                "athena:GetQueryExecution",
-                "glue:GetDatabase",
-                "glue:GetTable",
-                "glue:CreateTable",
-                "glue:CreateDatabase",
-                "glue:GetPartitions",
-                "glue:BatchCreatePartition",
-                "glue:BatchDeletePartition"
-            ],
-            "Resource": [
-                "arn:aws:s3:::netapp-backup-*"
-            ]
-        },
+  "Sid": "backupPolicy",
+  "Effect": "Allow",
+  "Action": [
+    "s3:DeleteBucket",
+    "s3:GetLifecycleConfiguration",
+    "s3:PutLifecycleConfiguration",
+    "s3:PutBucketTagging",
+    "s3:ListBucketVersions",
+    "s3:GetObject",
+    "s3:DeleteObject",
+    "s3:PutObject",
+    "s3:ListBucket",
+    "s3:ListAllMyBuckets",
+    "s3:GetBucketTagging",
+    "s3:GetBucketLocation",
+    "s3:GetBucketPolicyStatus",
+    "s3:GetBucketPublicAccessBlock",
+    "s3:GetBucketAcl",
+    "s3:GetBucketPolicy",
+    "s3:PutBucketPolicy",
+    "s3:PutBucketOwnershipControls",
+    "s3:PutBucketPublicAccessBlock",
+    "s3:PutEncryptionConfiguration",
+    "s3:GetObjectVersionTagging",
+    "s3:GetBucketObjectLockConfiguration",
+    "s3:GetObjectVersionAcl",
+    "s3:PutObjectTagging",
+    "s3:DeleteObjectTagging",
+    "s3:GetObjectRetention",
+    "s3:DeleteObjectVersionTagging",
+    "s3:PutBucketObjectLockConfiguration",
+    "s3:DeleteObjectVersion",
+    "s3:GetObjectTagging",
+    "s3:PutBucketVersioning",
+    "s3:PutObjectVersionTagging",
+    "s3:GetBucketVersioning",
+    "s3:BypassGovernanceRetention",
+    "s3:PutObjectRetention",
+    "s3:GetObjectVersion",
+    "athena:StartQueryExecution",
+    "athena:GetQueryResults",
+    "athena:GetQueryExecution",
+    "glue:GetDatabase",
+    "glue:GetTable",
+    "glue:CreateTable",
+    "glue:CreateDatabase",
+    "glue:GetPartitions",
+    "glue:BatchCreatePartition",
+    "glue:BatchDeletePartition"
+  ],
+  "Resource": [
+    "arn:aws:s3:::netapp-backup-*"
+  ]
+}
 ----
 ====
 

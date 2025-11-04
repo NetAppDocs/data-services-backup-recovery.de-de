@@ -16,11 +16,9 @@ summary: Mit NetApp Backup and Recovery können Sie ein komplettes ONTAP Volume 
 [role="lead"]
 Backups Ihrer ONTAP -Volume-Daten sind an den Orten verfügbar, an denen Sie Backups erstellt haben: Snapshot-Kopien, replizierte Volumes und im Objektspeicher gespeicherte Backups.  Sie können Daten von einem bestimmten Zeitpunkt aus jedem dieser Sicherungsspeicherorte wiederherstellen.  Mit NetApp Backup and Recovery können Sie ein komplettes ONTAP Volume aus einer Sicherungsdatei wiederherstellen. Wenn Sie nur einige Dateien wiederherstellen müssen, können Sie einen Ordner oder einzelne Dateien wiederherstellen.
 
-[]
-====
-*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
 
-====
+NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
+
 * Sie können ein *Volume* (als neues Volume) auf dem ursprünglichen System, auf einem anderen System, das dasselbe Cloud-Konto verwendet, oder auf einem lokalen ONTAP -System wiederherstellen.
 * Sie können einen *Ordner* auf einem Volume im ursprünglichen System, auf einem Volume in einem anderen System, das dasselbe Cloud-Konto verwendet, oder auf einem Volume auf einem lokalen ONTAP System wiederherstellen.
 * Sie können *Dateien* auf einem Volume im ursprünglichen System, auf einem Volume in einem anderen System, das dasselbe Cloud-Konto verwendet, oder auf einem Volume auf einem lokalen ONTAP System wiederherstellen.

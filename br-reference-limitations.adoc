@@ -56,14 +56,10 @@ Für FlexVol -Volumes gibt es keine Einschränkung – Sie können alle FlexVol 
 +
 Eine Erklärung zu diesen Verschlüsselungsarten finden Sie unterhttps://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["Übersicht über die Konfiguration der NetApp Volume-Verschlüsselung"^] .
 
-
-
 * Wenn Snapshots mit langfristiger Aufbewahrung auf einem SnapMirror Zielvolume mithilfe des Zeitplans in der SnapMirror -Richtlinie aktiviert sind, werden Snapshots direkt auf dem Zielvolume erstellt.  In diesem Fall sollten Sie diese Volumes nicht mit NetApp Backup and Recovery sichern, da diese Snapshots nicht in den Objektspeicher verschoben werden.
 * Beim Sichern von Daten behält NetApp Backup and Recovery die NetApp Volume Encryption (NVE) nicht bei.  Dies bedeutet, dass verschlüsselte Daten auf dem NVE-Volume während der Datenübertragung zum Ziel entschlüsselt werden und die Verschlüsselung nicht aufrechterhalten wird.
 +
 Eine Erklärung zu diesen Verschlüsselungsarten finden Sie unterhttps://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["Übersicht über die Konfiguration der NetApp Volume-Verschlüsselung"^] .
-
-
 
 * Wenn Snapshots mit langfristiger Aufbewahrung auf einem SnapMirror Zielvolume mithilfe des Zeitplans in der SnapMirror -Richtlinie aktiviert sind, werden Snapshots direkt auf dem Zielvolume erstellt.  In diesem Fall sollten Sie diese Volumes nicht mit NetApp Backup and Recovery sichern, da diese Snapshots nicht in den Objektspeicher verschoben werden.
 * Wenn Sie eine Sicherungsrichtlinie erstellen oder bearbeiten und der Richtlinie keine Volumes zugewiesen sind, kann die Anzahl der aufbewahrten Sicherungen maximal 1018 betragen.  Nachdem Sie der Richtlinie Volumes zugewiesen haben, können Sie die Richtlinie bearbeiten, um bis zu 4.000 Sicherungen zu erstellen.
@@ -80,8 +76,6 @@ Eine Erklärung zu diesen Verschlüsselungsarten finden Sie unterhttps://docs.ne
 ** Backups werden nur vom sekundären ONTAP unterstützt.
 ** Die auf das Volume angewendete Snapshot-Richtlinie muss eine der von NetApp Backup and Recovery erkannten Richtlinien sein, einschließlich täglich, wöchentlich, monatlich usw. Die Standardrichtlinie „sm_created“ (verwendet für *Alle Snapshots spiegeln*) wird nicht erkannt und das DP-Volume wird nicht in der Liste der Volumes angezeigt, die gesichert werden können.
 ** SVM-DR und Volume-Backup und -Wiederherstellung funktionieren völlig unabhängig, wenn das Backup entweder von der Quelle oder vom Ziel erstellt wird.  Die einzige Einschränkung besteht darin, dass SVM-DR die SnapMirror -Cloud-Beziehung nicht repliziert.  Im DR-Szenario müssen Sie die SnapMirror Cloud-Beziehung manuell aktualisieren, wenn die SVM am sekundären Standort online geht.
-
-
 
 
 * MetroCluster -Unterstützung:

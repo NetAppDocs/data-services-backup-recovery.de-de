@@ -16,11 +16,9 @@ summary: Schützen Sie Ihre VMware-Workloads mit NetApp NetApp Backup and Recove
 [role="lead"]
 Sie sollten das SnapCenter Plug-in for VMware vSphere Host in NetApp Backup and Recovery registrieren, damit die Datenspeicher und virtuellen Maschinen angezeigt werden.  Nur ein Benutzer mit Administratorzugriff kann das SnapCenter Plug-in for VMware vSphere Host registrieren.
 
-[]
-====
-*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
 
-====
+NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
+
 .Schritte
 . Wählen Sie in der NetApp Console -Benutzeroberfläche *Schutz* > *Sicherung und Wiederherstellung* > *Virtuelle Maschinen*.
 . Wählen Sie im Dropdown-Menü *Einstellungen* die Option * SnapCenter Plug-in for VMware vSphere* aus.

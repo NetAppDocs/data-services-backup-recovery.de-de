@@ -39,8 +39,6 @@ Gehen Sie wie folgt vor, um AWS als Sicherungsziel vorzubereiten:
 ** Weitere Informationen zur Verwaltung Ihres AWS-Speichers in der Konsole finden Sie unter https://docs.netapp.com/us-en/console-setup-admin/task-viewing-amazon-s3.html["Verwalten Sie Ihre Amazon S3-Buckets"^] .
 
 
-
-
 * Microsoft Azure.
 +
 ** Siehe https://docs.netapp.com/us-en/storage-management-azure-netapp-files/index.html["Azure NetApp Files Dokumentation"^] .
@@ -79,48 +77,48 @@ Weitere Informationen finden Sie im https://docs.aws.amazon.com/IAM/latest/UserG
 [source, json]
 ----
 {
-    "Version": "2012-10-17",
-     "Statement": [
-        {
-           "Action": [
-                "s3:GetObject",
-                "s3:PutObject",
-                "s3:DeleteObject",
-                "s3:ListBucket",
-                "s3:ListAllMyBuckets",
-                "s3:GetBucketLocation",
-                "s3:PutEncryptionConfiguration"
-            ],
-            "Resource": "arn:aws:s3:::netapp-backup-*",
-            "Effect": "Allow",
-            "Sid": "backupPolicy"
-        },
-        {
-            "Action": [
-                "s3:ListBucket",
-                "s3:GetBucketLocation"
-            ],
-            "Resource": "arn:aws:s3:::netapp-backup*",
-            "Effect": "Allow"
-        },
-        {
-            "Action": [
-                "s3:GetObject",
-                "s3:PutObject",
-                "s3:DeleteObject",
-                "s3:ListAllMyBuckets",
-                "s3:PutObjectTagging",
-                "s3:GetObjectTagging",
-                "s3:RestoreObject",
-                "s3:GetBucketObjectLockConfiguration",
-                "s3:GetObjectRetention",
-                "s3:PutBucketObjectLockConfiguration",
-                "s3:PutObjectRetention"
-            ],
-            "Resource": "arn:aws:s3:::netapp-backup*/*",
-            "Effect": "Allow"
-        }
-    ]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "s3:GetObject",
+        "s3:PutObject",
+        "s3:DeleteObject",
+        "s3:ListBucket",
+        "s3:ListAllMyBuckets",
+        "s3:GetBucketLocation",
+        "s3:PutEncryptionConfiguration"
+      ],
+      "Resource": "arn:aws:s3:::netapp-backup-*",
+      "Effect": "Allow",
+      "Sid": "backupPolicy"
+    },
+    {
+      "Action": [
+        "s3:ListBucket",
+        "s3:GetBucketLocation"
+      ],
+      "Resource": "arn:aws:s3:::netapp-backup*",
+      "Effect": "Allow"
+    },
+    {
+      "Action": [
+        "s3:GetObject",
+        "s3:PutObject",
+        "s3:DeleteObject",
+        "s3:ListAllMyBuckets",
+        "s3:PutObjectTagging",
+        "s3:GetObjectTagging",
+        "s3:RestoreObject",
+        "s3:GetBucketObjectLockConfiguration",
+        "s3:GetObjectRetention",
+        "s3:PutBucketObjectLockConfiguration",
+        "s3:PutObjectRetention"
+      ],
+      "Resource": "arn:aws:s3:::netapp-backup*/*",
+      "Effect": "Allow"
+    }
+  ]
 }
 ----
 ====

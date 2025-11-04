@@ -18,11 +18,9 @@ Sie können einen oder mehrere Datenspeicher in Microsoft Azure sichern, indem S
 
 Wenn der Datenspeicher mit einer Archivierungsrichtlinie verknüpft ist, wird Ihnen die Möglichkeit geboten, die Archivierungsebene auszuwählen.  Die unterstützte Archivierungsebene ist Azure Archive Blob Storage.
 
-[]
-====
-*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
 
-====
+NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
+
 .Bevor Sie beginnen
 Stellen Sie sicher, dass Sie allelink:prev-vmware-prereqs.html["Anforderungen für den Schutz virtueller Maschinen"] bevor Sie Datenspeicher in der Cloud sichern.
 

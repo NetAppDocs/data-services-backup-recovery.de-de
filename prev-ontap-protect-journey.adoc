@@ -16,11 +16,9 @@ summary: Schützen Sie Ihre VMware-Workloads mit NetApp NetApp Backup and Recove
 [role="lead"]
 Mit NetApp Backup and Recovery können Sie zum Schutz Ihrer Daten bis zu drei Kopien Ihrer Quellvolumes erstellen.  Beim Aktivieren der Sicherung und Wiederherstellung auf Ihren Volumes stehen Ihnen zahlreiche Optionen zur Auswahl. Überprüfen Sie daher Ihre Auswahl, damit Sie vorbereitet sind.
 
-[]
-====
-*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
 
-====
+NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
+
 Wir gehen die folgenden Optionen durch:
 
 * Welche Schutzfunktionen werden Sie nutzen: Snapshot-Kopien, replizierte Volumes und/oder Backup in die Cloud

@@ -16,11 +16,9 @@ summary: Schützen Sie Ihre VMware-Workloads mit NetApp NetApp Backup and Recove
 [role="lead"]
 Verwenden Sie mit NetApp Backup and Recovery die von NetApp bereitgestellten Standard-Backup-Richtlinien zum Erstellen Ihrer Backups oder erstellen Sie benutzerdefinierte Richtlinien.  Richtlinien regeln die Sicherungshäufigkeit, den Zeitpunkt der Sicherung und die Anzahl der aufbewahrten Sicherungsdateien.
 
-[]
-====
-*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
 
-====
+NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
+
 Wenn Sie den Aktivierungsassistenten verwenden, um den Sicherungs- und Wiederherstellungsdienst für Ihre Volumes zu aktivieren, können Sie aus den Standardrichtlinien und allen anderen Richtlinien auswählen, die bereits im System vorhanden sind (Cloud Volumes ONTAP oder lokales ONTAP System).  Wenn Sie eine andere Richtlinie als die vorhandenen Richtlinien verwenden möchten, können Sie die Richtlinie vor oder während der Verwendung des Aktivierungsassistenten erstellen.
 
 Weitere Informationen zu den bereitgestellten Standard-Sicherungsrichtlinien finden Sie unterlink:prev-ontap-protect-journey.html["Planen Sie Ihren Schutzweg"] .

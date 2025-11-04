@@ -19,11 +19,9 @@ Mit NetApp Backup and Recovery können Sie Sicherungsrichtlinien mit einer Vielz
 
 NOTE: Diese Richtlinieneinstellungen sind nur für die Sicherung auf Objektspeicher relevant.  Keine dieser Einstellungen wirkt sich auf Ihre Snapshot- oder Replikationsrichtlinien aus.
 
-[]
-====
-*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
 
-====
+NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
+
 
 
 == Optionen für den Sicherungszeitplan

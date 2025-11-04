@@ -19,11 +19,9 @@ Verwalten Sie mit NetApp Backup and Recovery Backups für Ihre Cloud Volumes ONT
 
 CAUTION: Verwalten oder ändern Sie Sicherungsdateien nicht direkt auf Ihren Speichersystemen oder in der Umgebung Ihres Cloud-Anbieters.  Dies kann zu einer Beschädigung der Dateien führen und zu einer nicht unterstützten Konfiguration.
 
-[]
-====
-*HINWEIS* Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
 
-====
+NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
+
 
 
 == Den Sicherungsstatus der Volumes in Ihren Systemen anzeigen
