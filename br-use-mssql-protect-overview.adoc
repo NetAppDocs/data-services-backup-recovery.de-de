@@ -33,7 +33,7 @@ Zum Schutz Ihrer Daten können Sie Folgendes tun:
 * link:br-use-mssql-backup.html["Replizieren Sie Workloads auf den sekundären ONTAP -Speicher"]
 * link:br-use-mssql-backup.html["Sichern Sie Workloads an einem Objektspeicherort"]
 * link:br-use-mssql-backup.html["Sichern Sie Workloads jetzt"]
-* link:br-use-mssql-restore-overview.html["Wiederherstellen von Workloads"]
+* link:br-use-mssql-restore.html["Wiederherstellen von Workloads"]
 * link:br-use-mssql-clone.html["Klonen von Workloads"]
 * link:br-use-manage-inventory.html["Verwalten des Workload-Inventars"]
 * link:br-use-manage-snapshots.html["Verwalten von Snapshots"]

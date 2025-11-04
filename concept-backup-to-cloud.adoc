@@ -281,20 +281,8 @@ NOTE: Auch die Übertragung vom Primär- zum Objektspeicher wird unterstützt, n
 
 Sicherungskopien werden in einem Objektspeicher gespeichert, den die NetApp Console in Ihrem Cloud-Konto erstellt.  Es gibt einen Objektspeicher pro Cluster oder System und die Konsole benennt den Objektspeicher wie folgt: `netapp-backup-clusteruuid` .  Denken Sie daran, diesen Objektspeicher nicht zu löschen.
 
-ifdef::aws[]
-
-* In AWS ermöglicht die NetApp Console die https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html["Amazon S3-Funktion „Öffentlichen Zugriff blockieren“"^] auf dem S3-Bucket. endif::aws[]
-
-
-ifdef::azure[]
-
-* In Azure verwendet die NetApp Console eine neue oder vorhandene Ressourcengruppe mit einem Speicherkonto für den Blob-Container. Die Konsole https://docs.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-prevent["blockiert den öffentlichen Zugriff auf Ihre Blob-Daten"] standardmäßig. endif::azure[]
-
-
-ifdef::gcp[]
-
-endif::gcp[]
-
+* In AWS ermöglicht die NetApp Console die https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html["Amazon S3-Funktion „Öffentlichen Zugriff blockieren“"^] auf dem S3-Bucket.
+* In Azure verwendet die NetApp Console eine neue oder vorhandene Ressourcengruppe mit einem Speicherkonto für den Blob-Container. https://docs.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-prevent["blockiert den öffentlichen Zugriff auf Ihre Blob-Daten"] standardmäßig.
 * In StorageGRID verwendet die Konsole ein vorhandenes Speicherkonto für den Objektspeicher-Bucket.
 * In ONTAP S3 verwendet die Konsole ein vorhandenes Benutzerkonto für den S3-Bucket.
 

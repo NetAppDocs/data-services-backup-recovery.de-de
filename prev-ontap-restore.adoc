@@ -110,9 +110,10 @@ Informieren Sie sich über die Anforderungen und Wiederherstellungsschritte für
 
 == Wiederherstellen von ONTAP -Daten mithilfe von „Durchsuchen und Wiederherstellen“
 
-Bevor Sie mit der Wiederherstellung eines Volumes, Ordners oder einer Datei beginnen, sollten Sie den Namen des Volumes kennen, von dem Sie die Wiederherstellung durchführen möchten, den Namen des Systems und der SVM, auf dem sich das Volume befindet, sowie das ungefähre Datum der Sicherungsdatei, von der Sie die Wiederherstellung durchführen möchten.  Sie können ONTAP Daten aus einer Snapshot-Kopie, einem replizierten Volume oder aus im Objektspeicher gespeicherten Backups wiederherstellen.
+Notieren Sie sich vor der Wiederherstellung den Namen des Quellvolumes, das Quellsystem und die SVM sowie das Datum der Sicherungsdatei. Sie können ONTAP Daten aus einer Snapshot-Kopie, einem replizierten Volume oder aus im Objektspeicher gespeicherten Backups wiederherstellen.
 
-*Hinweis:* Wenn sich die Sicherungsdatei mit den wiederherzustellenden Daten im Archiv-Cloud-Speicher befindet (ab ONTAP 9.10.1), dauert der Wiederherstellungsvorgang länger und ist kostenpflichtig.  Darüber hinaus muss auf dem Zielcluster ONTAP 9.10.1 oder höher für die Volume-Wiederherstellung, 9.11.1 für die Dateiwiederherstellung, 9.12.1 für Google Archive und StorageGRID und 9.13.1 für die Ordnerwiederherstellung ausgeführt werden.
+
+NOTE: Befindet sich die wiederherzustellende Sicherungsdatei in einem Archiv-Cloud-Speicher (ab ONTAP 9.10.1), dauert der Wiederherstellungsvorgang länger und verursacht Kosten.  Auf dem Zielcluster muss außerdem ONTAP 9.10.1 oder höher für die Wiederherstellung von Volumes, 9.11.1 für die Wiederherstellung von Dateien, 9.12.1 für Google Archive und StorageGRID und 9.13.1 für die Wiederherstellung von Ordnern ausgeführt werden.
 
 ifdef::aws[]
 
@@ -159,18 +160,6 @@ Sie können ONTAP Daten aus einer Sicherungsdatei, die sich in einem sekundären
 
 | Zum lokalen ONTAP -System | ONTAP S3 | On-Premises- ONTAP -System | On-Premises- ONTAP -System Cloud Volumes ONTAP 
 |===
-ifdef::aws[]
-
-endif::aws[]
-
-ifdef::azure[]
-
-endif::azure[]
-
-ifdef::gcp[]
-
-endif::gcp[]
-
 Für „Durchsuchen und Wiederherstellen“ kann der Konsolenagent an den folgenden Speicherorten installiert werden:
 
 ifdef::aws[]
@@ -315,7 +304,7 @@ Wenn Sie nur einige Dateien aus einer ONTAP Volume-Sicherung wiederherstellen m�
 
 NOTE: Sie können einen Ordner oder einzelne Dateien derzeit nur aus einer Sicherungsdatei im Objektspeicher wiederherstellen.  Das Wiederherstellen von Dateien und Ordnern aus einer lokalen Snapshot-Kopie oder aus einer Sicherungsdatei, die sich auf einem sekundären System (einem replizierten Volume) befindet, wird derzeit nicht unterstützt.
 
-Wenn Sie mehrere Dateien auswählen, werden alle Dateien auf demselben von Ihnen ausgewählten Zielvolume wiederhergestellt.  Wenn Sie also Dateien auf verschiedenen Datenträgern wiederherstellen möchten, müssen Sie den Wiederherstellungsvorgang mehrmals ausführen.
+Wenn Sie mehrere Dateien auswählen, werden diese auf demselben Zielvolume wiederhergestellt.  Um Dateien auf verschiedenen Datenträgern wiederherzustellen, führen Sie den Vorgang mehrmals aus.
 
 Wenn Sie ONTAP 9.13.0 oder höher verwenden, können Sie einen Ordner zusammen mit allen darin enthaltenen Dateien und Unterordnern wiederherstellen.  Wenn Sie eine ONTAP -Version vor 9.13.0 verwenden, werden nur Dateien aus diesem Ordner wiederhergestellt – keine Unterordner oder Dateien in Unterordnern.
 
@@ -345,7 +334,7 @@ Sie können es mit einem speziellen Flag testen, das im https://community.netapp
 
 Der Vorgang läuft folgendermaßen ab:
 
-. Wenn Sie einen Ordner oder eine oder mehrere Dateien aus einer Volume-Sicherung wiederherstellen möchten, klicken Sie auf die Registerkarte *Wiederherstellen* und dann unter _Durchsuchen und Wiederherstellen_ auf *Dateien oder Ordner wiederherstellen*.
+. Um einen Ordner oder Dateien aus einer Volume-Sicherung wiederherzustellen, wählen Sie das Menü *Wiederherstellen* und anschließend unter _Durchsuchen & Wiederherstellen_ die Option *Dateien oder Ordner wiederherstellen*.
 . Wählen Sie das Quellsystem, das Volume und die Sicherungsdatei aus, in der sich der Ordner oder die Datei(en) befinden.
 . NetApp Backup and Recovery zeigt die Ordner und Dateien an, die in der ausgewählten Sicherungsdatei vorhanden sind.
 . Wählen Sie den Ordner oder die Datei(en) aus, die Sie aus dieser Sicherung wiederherstellen möchten.
@@ -355,7 +344,7 @@ Der Vorgang läuft folgendermaßen ab:
 
 image:diagram_browse_restore_file.png["Ein Diagramm, das den Ablauf zum Ausführen eines Dateiwiederherstellungsvorgangs mithilfe von „Durchsuchen und Wiederherstellen“ zeigt."]
 
-Wie Sie sehen, müssen Sie den Systemnamen, den Datenträgernamen, das Datum der Sicherungsdatei und den Ordner-/Dateinamen kennen, um eine Ordner- oder Dateiwiederherstellung durchzuführen.
+Um ein Volume wiederherzustellen, benötigen Sie den Namen des Quellsystems, die Speicher-VM, den Volume-Namen und das Datum der Sicherungsdatei.
 
 
 
@@ -433,7 +422,7 @@ Beim Wiederherstellen von Ordnern und Dateien stehen Ihnen einige Optionen für 
 
 * Wenn Sie dasselbe Zielsystem und Volume ausgewählt haben, in dem sich der Quellordner/die Quelldatei befand, können Sie „Pfad des Quellordners beibehalten“ auswählen, um den Ordner oder die Datei(en) in demselben Ordner wiederherzustellen, in dem sie in der Quellstruktur vorhanden waren.  Alle Ordner und Unterordner müssen bereits vorhanden sein; es werden keine Ordner erstellt.  Beim Wiederherstellen von Dateien an ihrem ursprünglichen Speicherort können Sie die Quelldatei(en) überschreiben oder neue Dateien erstellen.
 +
-.. Wählen Sie *Wiederherstellen* und Sie werden zum Wiederherstellungs-Dashboard zurückgeleitet, sodass Sie den Fortschritt des Wiederherstellungsvorgangs überprüfen können.  Sie können auch auf die Registerkarte *Jobüberwachung* klicken, um den Wiederherstellungsfortschritt anzuzeigen.
+.. Wählen Sie *Wiederherstellen*, um zum Wiederherstellungs-Dashboard zurückzukehren und den Fortschritt des Wiederherstellungsvorgangs zu überprüfen.
 
 
 
@@ -701,7 +690,7 @@ Abhängig von der Größe der Volumes im System und der Anzahl der Sicherungsdat
 
 === Wiederherstellen von Volumes, Ordnern und Dateien mit „Suchen und Wiederherstellen“
 
-Nachdem Sie<<enable-the-indexed-catalog-for-each-working-environment,Aktivierte Indizierung für Ihr System>> können Sie Volumes, Ordner und Dateien mithilfe von „Suchen und Wiederherstellen“ wiederherstellen.  Auf diese Weise können Sie eine breite Palette von Filtern verwenden, um aus allen Sicherungsdateien genau die Datei oder das Volume zu finden, das Sie wiederherstellen möchten.
+Nachdem Sie<<enable-the-indexed-catalog-for-each-system,Aktivierte Indizierung für Ihr System>> können Sie Volumes, Ordner und Dateien mithilfe von „Suchen und Wiederherstellen“ wiederherstellen. Auf diese Weise können Sie eine breite Palette von Filtern verwenden, um aus allen Sicherungsdateien genau die Datei oder das Volume zu finden, das Sie wiederherstellen möchten.
 
 .Schritte
 . Wählen Sie im Konsolenmenü *Schutz > Sicherung und Wiederherstellung*.

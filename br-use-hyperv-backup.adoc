@@ -17,7 +17,7 @@ summary: Schützen Sie Ihre Hyper-V-Workloads mit NetApp Backup und Recovery.
 Sichern Sie Hyper-V-VMs von lokalen ONTAP Systemen auf Amazon Web Services, Azure NetApp Files oder StorageGRID, um sicherzustellen, dass Ihre Daten geschützt sind. Backups werden automatisch erstellt und in einem Objektspeicher in Ihrem öffentlichen oder privaten Cloud-Konto gespeichert.
 
 * Um Workloads nach einem Zeitplan zu sichern, erstellen Sie Richtlinien, die die Sicherungs- und Wiederherstellungsvorgänge steuern.  Sehenlink:br-use-policies-create.html["Erstellen von Richtlinien"] Anweisungen hierzu finden Sie unter.
-* Erstellen Sie Schutzgruppen, um die Sicherungs- und Wiederherstellungsvorgänge für eine Reihe von Ressourcen zu verwalten. Sehenlink:br-use-hyper-v-protection-groups.html["Erstellen und verwalten Sie Schutzgruppen für Hyper-V-Workloads mit NetApp Backup and Recovery"] für weitere Informationen.
+* Erstellen Sie Schutzgruppen, um die Sicherungs- und Wiederherstellungsvorgänge für eine Reihe von Ressourcen zu verwalten. Sehenlink:br-use-hyperv-protection-groups.html["Erstellen und verwalten Sie Schutzgruppen für Hyper-V-Workloads mit NetApp Backup and Recovery"] für weitere Informationen.
 * Sichern Sie jetzt Workloads (erstellen Sie jetzt ein On-Demand-Backup).
 
 
