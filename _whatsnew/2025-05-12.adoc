@@ -6,7 +6,7 @@
 
 === SnapMirror to Cloud Resync für Volumemigrationen
 
-Die SnapMirror to Cloud Resync-Funktion optimiert den Datenschutz und die Kontinuität während Volumemigrationen in NetApp -Umgebungen.  Wenn ein Volume mithilfe von SnapMirror Logical Replication (LRSE) von einer lokalen NetApp Bereitstellung zu einer anderen oder zu einer Cloud-basierten Lösung wie Cloud Volumes ONTAP oder Cloud Volumes Service migriert wird, stellt SnapMirror to Cloud Resync sicher, dass vorhandene Cloud-Backups intakt und betriebsbereit bleiben.
+Die SnapMirror to Cloud Resync-Funktion optimiert den Datenschutz und die Kontinuität während Volumemigrationen in NetApp -Umgebungen. Wenn ein Volume mithilfe von SnapMirror Logical Replication (LRSE) von einer lokalen NetApp Bereitstellung zu einer anderen oder zu einer Cloud-basierten Lösung wie Cloud Volumes ONTAP migriert wird, stellt SnapMirror to Cloud Resync sicher, dass bestehende Cloud-Backups intakt und betriebsbereit bleiben.
 
 Durch diese Funktion entfällt die Notwendigkeit einer zeit- und ressourcenintensiven Neufestlegung der Basislinie, sodass die Sicherungsvorgänge nach der Migration fortgesetzt werden können.  Diese Funktion ist in Workload-Migrationsszenarien wertvoll, unterstützt sowohl FlexVols als auch FlexGroups und ist ab ONTAP Version 9.16.1 verfügbar.
 

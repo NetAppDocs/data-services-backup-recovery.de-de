@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: prev-ontap-migrate-resync.html 
-keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database, migrate volumes, SnapMirror to Cloud Resync, ONTAP, NetApp, NetApp ONTAP, NetApp Cloud Volumes ONTAP, NetApp Cloud Volumes Service, FlexVols, FlexGroups 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database, migrate volumes, SnapMirror to Cloud Resync, ONTAP, NetApp, NetApp ONTAP, NetApp Cloud Volumes ONTAP, FlexVols, FlexGroups 
 summary: Die SnapMirror to Cloud Resync-Funktion in NetApp Backup and Recovery optimiert den Datenschutz und die Kontinuität bei Volumemigrationen in NetApp -Umgebungen. 
 ---
 = Migrieren Sie Volumes mit SnapMirror zu Cloud Resync in NetApp Backup and Recovery
@@ -14,14 +14,14 @@ summary: Die SnapMirror to Cloud Resync-Funktion in NetApp Backup and Recovery o
 
 
 [role="lead"]
-Die SnapMirror to Cloud Resync-Funktion in NetApp Backup and Recovery optimiert den Datenschutz und die Kontinuität bei Volumemigrationen in NetApp -Umgebungen.  Wenn ein Volume mithilfe von SnapMirror Logical Replication (LRSE) von einer lokalen NetApp Bereitstellung zu einer anderen oder zu einer Cloud-basierten Lösung wie Cloud Volumes ONTAP oder Cloud Volumes Service migriert wird, stellt SnapMirror to Cloud Resync sicher, dass vorhandene Cloud-Backups intakt und betriebsbereit bleiben.
+Die SnapMirror to Cloud Resync-Funktion in NetApp Backup and Recovery optimiert den Datenschutz und die Kontinuität bei Volumemigrationen in NetApp -Umgebungen. Wenn ein Volume mithilfe von SnapMirror Logical Replication (LRSE) von einer lokalen NetApp Bereitstellung zu einer anderen oder zu einer Cloud-basierten Lösung wie Cloud Volumes ONTAP migriert wird, stellt SnapMirror to Cloud Resync sicher, dass bestehende Cloud-Backups intakt und betriebsbereit bleiben.
 
-Durch diese Funktion entfällt die Notwendigkeit einer zeit- und ressourcenintensiven Neufestlegung der Basislinie, sodass die Sicherungsvorgänge nach der Migration fortgesetzt werden können.  Diese Funktion ist in Workload-Migrationsszenarien wertvoll, unterstützt sowohl FlexVols als auch FlexGroups und ist ab ONTAP Version 9.16.1 verfügbar.
+Diese Funktion macht einen erneuten Baseline-Prozess überflüssig und ermöglicht die Fortsetzung der Backups nach der Migration. Diese Funktion ist in Workload-Migrationsszenarien wertvoll, unterstützt sowohl FlexVols als auch FlexGroups und ist ab ONTAP Version 9.16.1 verfügbar.
 
 
 NOTE: Diese Funktion ist ab NetApp Backup and Recovery Version 4.0.3 verfügbar, die im Mai 2025 veröffentlicht wurde.
 
-Durch die Aufrechterhaltung der Backup-Kontinuität in allen Umgebungen steigert SnapMirror to Cloud Resync die Betriebseffizienz und reduziert die Komplexität der Hybrid- und Multi-Cloud-Datenverwaltung.
+SnapMirror to Cloud Resync gewährleistet die Kontinuität der Datensicherung über verschiedene Umgebungen hinweg und erleichtert so die Datenverwaltung in Hybrid- und Multi-Cloud-Setups.
 
 []
 ====
@@ -34,8 +34,8 @@ Stellen Sie sicher, dass diese Voraussetzungen erfüllt sind:
 * Auf dem Ziel ONTAP -Cluster muss ONTAP Version 9.16.1 oder höher ausgeführt werden.
 * Der alte Quell- ONTAP Cluster muss mit NetApp Backup and Recovery geschützt werden.
 * Die SnapMirror to Cloud Resync-Funktion ist ab NetApp Backup and Recovery Version 4.0.3 verfügbar, die im Mai 2025 veröffentlicht wurde.
-* Das neueste Backup im Objektspeicher muss der gemeinsame Snapshot der alten Quelle, der neuen Quelle und des Objektspeichers sein. Der gemeinsame Snapshot darf nicht älter sein als der letzte Snapshot, der im Objektspeicher gesichert wird.
-* Sowohl die Snapshot- als auch die SnapMirror Richtlinien, die auf dem älteren ONTAP verwendet wurden, müssen auf dem neuen ONTAP Cluster erstellt werden, bevor der Resynchronisierungsvorgang gestartet wird. Wenn im Resynchronisierungsprozess eine Richtlinie verwendet werden soll, muss diese Richtlinie ebenfalls erstellt werden. Der Resync-Vorgang erstellt die Richtlinien nicht.
+* Stellen Sie sicher, dass die letzte Sicherung im Objektspeicher der gemeinsame Snapshot für die alte Quelle, die neue Quelle und den Objektspeicher ist.  Verwenden Sie keinen gemeinsamen Snapshot, der älter ist als der letzte im Objektspeicher gesicherte Snapshot.
+* Sowohl die Snapshot- als auch die SnapMirror Richtlinien, die auf dem älteren ONTAP -Cluster verwendet wurden, müssen auf dem neuen ONTAP -Cluster erstellt werden, bevor der Resynchronisierungsvorgang gestartet werden kann.  Wenn Sie im Resynchronisierungsprozess eine Richtlinie verwenden, müssen Sie diese Richtlinie auch erstellen.  Der Resync-Vorgang erstellt keine Richtlinien.
 * Stellen Sie sicher, dass die SnapMirror -Richtlinie, die auf die SnapMirror -Beziehung des Migrationsvolumes angewendet wird, dieselbe Bezeichnung enthält, die die Cloud-Beziehung verwendet. Um Probleme zu vermeiden, verwenden Sie die Richtlinie, die eine exakte Spiegelung des Volumes und aller Snapshots regelt.
 
 
@@ -50,7 +50,7 @@ Wenn Sie eine technische Aktualisierung durchführen oder Volumes von einem ONTA
 
 Hier ist ein Beispiel:
 
-Stellen Sie sich vor, Sie haben ein lokales Volume namens Vol1a.  Dieses Volume verfügt über drei Snapshots: S1, S2 und S3.  Diese Snapshots sind wie Wiederherstellungspunkte.  Vol1 wird bereits mit SnapMirror to Cloud (SM-C) auf einem Cloud-Objektspeicher-Endpunkt gesichert.  Bisher wurden jedoch nur S1 und S2 im Objektspeicher gesichert.
+Stellen Sie sich vor, Sie haben ein lokales Volume namens Vol1a. Dieses Volume verfügt über drei Snapshots: S1, S2 und S3. Diese Momentaufnahmen sind Wiederherstellungspunkte.  Band 1 wird mit SnapMirror to Cloud (SM-C) in der Cloud gesichert, aber nur S1 und S2 befinden sich im Objektspeicher.
 
 Jetzt möchten Sie Vol1 auf einen anderen ONTAP Cluster migrieren.  Dazu erstellen Sie eine SnapMirror Logical Replication (LRSE)-Beziehung zu einem neuen Cloud-Volume namens Vol1b.  Dadurch werden alle drei Snapshots – S1, S2 und S3 – von Vol1a nach Vol1b übertragen.
 
@@ -71,7 +71,7 @@ So funktioniert die Neusynchronisierung:
 
 Dies bedeutet, dass nur die nach S2 hinzugefügten neuen Daten an den Objektspeicher gesendet werden, nicht das gesamte Volume.
 
-Dieser Prozess vermeidet das erneute Senden bereits gesicherter Daten, spart Bandbreite und stellt sicher, dass Ihre Sicherungskette nach der Migration reibungslos fortgesetzt wird.
+Dieser Prozess verhindert doppelte Datensicherungen, spart Bandbreite und sorgt dafür, dass die Datensicherung auch nach der Migration weiterläuft.
 
 image:diagram-snapmirror-cloud-resync-migration.png["NetApp Backup and Recovery SnapMirror zur Cloud-Resynchronisierung"]
 
@@ -80,7 +80,7 @@ image:diagram-snapmirror-cloud-resync-migration.png["NetApp Backup and Recovery 
 == Verfahrenshinweise
 
 * Migrationen und technische Aktualisierungen werden nicht mit NetApp Backup and Recovery durchgeführt.  Sie sollten von einem professionellen Serviceteam oder einem qualifizierten Speicheradministrator durchgeführt werden.
-* Ein NetApp Migrationsteam ist für die Erstellung der SnapMirror -Beziehung zwischen den Quell- und Ziel ONTAP Clustern verantwortlich, um die Volume-Migration zu erleichtern.
+* Ein NetApp Migrationsteam erstellt die SnapMirror Beziehung zwischen den Quell- und Ziel ONTAP Clustern, um die Migration von Volumes zu erleichtern.
 * Stellen Sie sicher, dass die Migration während einer technischen Aktualisierung auf einer SnapMirror-basierten Migration basiert.
 
 
@@ -101,7 +101,7 @@ image:diagram-snapmirror-cloud-resync-migration-steps.png["Schritte zum Migriere
 
 === Befolgen Sie eine Checkliste vor der Migration
 
-Vor Beginn der Migration stellt ein NetApp Tech Refresh-Team sicher, dass die folgenden Voraussetzungen erfüllt sind, um Datenverluste zu vermeiden und einen reibungslosen Migrationsprozess zu gewährleisten.
+Vor der Migration prüft das NetApp Tech Refresh-Team diese Voraussetzungen, um Datenverlust zu vermeiden und einen reibungslosen Ablauf zu gewährleisten.
 
 . Stellen Sie sicher, dass alle zu migrierenden Volumes mit NetApp Backup and Recovery geschützt sind.
 . Zeichnen Sie die UUIDs der Volume-Instanz auf.  Notieren Sie sich die Instanz-UUIDs aller Volumes, bevor Sie mit der Migration beginnen.  Diese Kennungen sind für spätere Zuordnungs- und Neusynchronisierungsvorgänge von entscheidender Bedeutung.
