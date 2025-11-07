@@ -670,6 +670,42 @@ Wenn Sie den indizierten Katalog vor der Version 2 aktiviert haben, geschieht Fo
 Wenn die Indizierung für Ihr System bereits aktiviert wurde, fahren Sie mit dem nächsten Abschnitt fort, um Ihre Daten wiederherzustellen.
 
 .Schritte zum Aktivieren der Indizierung für ein System:
+Wenn die Indizierung für Ihr System bereits aktiviert wurde, fahren Sie mit dem nächsten Abschnitt fort, um Ihre Daten wiederherzustellen.
+
+Zuerst müssen Sie ein separates Volume einbinden, um die Katalogdateien aufzunehmen. Dadurch wird ein Datenverlust verhindert, falls die Größe der Dateien, die die Snapshots enthalten, zu groß wird. Dies ist nicht auf jedem Cluster erforderlich; Sie können ein beliebiges Volume von einem beliebigen Cluster in Ihrer Umgebung einbinden. Wenn Sie dies nicht tun, funktioniert die Indizierung möglicherweise nicht richtig.
+
+Für das Einbauvolumen sind folgende Größenrichtlinien zu beachten:
+
+* Verwenden Sie ein NetApp NVS-Volume
+* Empfohlener AFF Speicher mit einer Festplattendurchsatzrate von 300 MB/s. Geringerer Durchsatz wird sich auf die Suche und andere Vorgänge auswirken.
+* Aktivieren Sie NetApp Snapshots, um zusätzlich zu den Katalog-Backup-ZIP-Dateien auch die Katalogmetadaten zu sichern.
+* 50 GB pro 1 Milliarde Dateien
+* 20 GB für die Katalogdaten mit zusätzlichem Speicherplatz für die Erstellung von ZIP-Dateien und temporären Dateien
+
+
+.Schritt zum Einbinden des Volumes, um den Katalog neu zu indizieren
+. Montieren Sie das Volumen an `/opt/application/netapp/cbs` durch Eingabe des folgenden Befehls, wobei:
++
+** `volume name` ist das Volume auf dem Cluster, auf dem die Katalogdateien gespeichert werden.
+** `/opt/application/netapp/cbs` ist der Weg, auf dem es montiert wird.
++
+[source, console]
+----
+mount <cluster IP address>:/<volume name> /opt/application/netapp/cbs
+----
++
+Beispiel:
+
++
+[source, console]
+----
+mount 10.192.24.17:/CATALOG_SCALE_234 /opt/application/netapp/cbs
+----
+
+
+
+
+.Schritte zur Aktivierung des Index
 . Führen Sie einen der folgenden Schritte aus:
 +
 ** Wenn keine Systeme indiziert wurden, wählen Sie im Wiederherstellungs-Dashboard unter _Suchen und Wiederherstellen_ die Option *Indizierung für Systeme aktivieren*.
