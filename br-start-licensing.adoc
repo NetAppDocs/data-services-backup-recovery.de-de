@@ -75,19 +75,9 @@ https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-lic
 
 Verwenden Sie diese Links, um NetApp Backup and Recovery über den Marktplatz Ihres Cloud-Anbieters zu abonnieren:
 
-ifdef::aws[]
-
-* AWS: https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4["Preisdetails finden Sie im Marketplace-Angebot für NetApp Intelligent Services."^] .endif::aws[]
-
-
-ifdef::azure[]
-
-* Azurblau: https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["Preisdetails finden Sie im Marketplace-Angebot für NetApp Intelligent Services."^] .endif::azure[]
-
-
-ifdef::gcp[]
-
-* Google Cloud: https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["Preisdetails finden Sie im Marketplace-Angebot für NetApp Intelligent Services."^] .endif::gcp[]
+* AWS: https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4["Preisdetails finden Sie im Marketplace-Angebot für NetApp Intelligent Services."^] Die
+* Azurblau: https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["Preisdetails finden Sie im Marketplace-Angebot für NetApp Intelligent Services."^] Die
+* Google Cloud: https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["Preisdetails finden Sie im Marketplace-Angebot für NetApp Intelligent Services."^] Die
 
 
 
@@ -97,8 +87,6 @@ ifdef::gcp[]
 Bezahlen Sie jährlich für NetApp Backup and Recovery , indem Sie einen Jahresvertrag abschließen.  Sie sind mit einer Laufzeit von 1, 2 oder 3 Jahren erhältlich.
 
 Wenn Sie einen Jahresvertrag von einem Marktplatz haben, wird der gesamte Verbrauch von NetApp Backup and Recovery über diesen Vertrag abgerechnet.  Sie können einen jährlichen Marktplatzvertrag nicht mit einem BYOL kombinieren.
-
-ifdef::aws[]
 
 Wenn Sie AWS verwenden, stehen Ihnen zwei Jahresverträge zur Verfügung: https://aws.amazon.com/marketplace/pp/prodview-q7dg6zwszplri["AWS Marketplace-Seite"^] für Cloud Volumes ONTAP und lokale ONTAP Systeme:
 

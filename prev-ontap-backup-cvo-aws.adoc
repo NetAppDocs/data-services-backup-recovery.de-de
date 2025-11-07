@@ -409,7 +409,7 @@ Um eine Richtlinie zu erstellen, wählen Sie *Neue Richtlinie erstellen* und geh
 *** Wählen Sie *Erstellen*.
 
 
-** *Exportieren Sie vorhandene Snapshot-Kopien als Sicherungskopien in den Objektspeicher*: Wenn es lokale Snapshot-Kopien für Volumes in diesem System gibt, die mit der Bezeichnung des Sicherungszeitplans übereinstimmen, die Sie gerade für dieses System ausgewählt haben (z. B. täglich, wöchentlich usw.), wird diese zusätzliche Eingabeaufforderung angezeigt.  Aktivieren Sie dieses Kontrollkästchen, um alle historischen Snapshots als Sicherungsdateien in den Objektspeicher zu kopieren und so den umfassendsten Schutz für Ihre Volumes zu gewährleisten.
+** *Vorhandene Snapshots als Sicherungskopien in den Objektspeicher exportieren*: Wenn es lokale Snapshots für Volumes in diesem System gibt, die mit der von Ihnen soeben für dieses System ausgewählten Sicherungszeitplanbezeichnung übereinstimmen (z. B. täglich, wöchentlich usw.), wird diese zusätzliche Aufforderung angezeigt. Aktivieren Sie dieses Kontrollkästchen, um alle historischen Snapshots als Sicherungsdateien in den Objektspeicher zu kopieren und so den umfassendsten Schutz für Ihre Volumes zu gewährleisten.
 
 
 . Wählen Sie *Weiter*.
@@ -428,7 +428,7 @@ Dies ist die Gelegenheit, Ihre Auswahl zu überprüfen und gegebenenfalls Anpass
 
 
 .Ergebnis
-NetApp Backup and Recovery beginnt mit der Durchführung der ersten Sicherungen Ihrer Volumes.  Die Basisübertragung des replizierten Volumes und der Sicherungsdatei umfasst eine vollständige Kopie der Daten des primären Speichersystems.  Nachfolgende Übertragungen enthalten differenzielle Kopien der in Snapshot-Kopien enthaltenen Daten des primären Speichersystems.
+NetApp Backup and Recovery beginnt mit der Durchführung der ersten Sicherungen Ihrer Volumes. Die Basisübertragung des replizierten Volumes und der Sicherungsdatei umfasst eine vollständige Kopie der Daten des primären Speichersystems. Nachfolgende Übertragungen enthalten differentielle Kopien der Daten des primären Speichersystems, die in Snapshots enthalten sind.
 
 Im Zielcluster wird ein repliziertes Volume erstellt, das mit dem primären Speichervolume synchronisiert wird.
 

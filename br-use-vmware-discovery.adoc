@@ -22,7 +22,7 @@ Damit Sie den Dienst nutzen können, muss der NetApp Backup and Recovery -Dienst
 
 == Entdecken Sie VMware-Workloads und importieren Sie optional SnapCenter -Ressourcen
 
-Während der Erkennung analysiert NetApp Backup and Recovery VMware-Workloads in Ihrem Unternehmen und bewertet und importiert vorhandene Schutzrichtlinien, Snapshot-Kopien sowie Sicherungs- und Wiederherstellungsoptionen.
+Während der Erkennungsphase analysiert NetApp Backup and Recovery die VMware-Workloads innerhalb Ihrer Organisation und bewertet und importiert vorhandene Schutzrichtlinien, Snapshots sowie Backup- und Wiederherstellungsoptionen.
 
 Sie können VMware NFS- und VMFS-Datenspeicher und VMs von ihrem lokalen SnapCenter Plug-in for VMware vSphere in das NetApp Backup and Recovery Inventar importieren.
 
@@ -36,7 +36,7 @@ Während des Importvorgangs führt NetApp Backup and Recovery die folgenden Aufg
 * Bereitet die Metadaten des vCenters vor und markiert es in der NetApp Console als nicht verwaltet.
 * Konfiguriert den Datenbankzugriff.
 * Erkennt VMware vCenter, Datenspeicher und VMs.
-* Importiert vorhandene Schutzrichtlinien, Snapshot-Kopien sowie Sicherungs- und Wiederherstellungsoptionen aus dem SnapCenter Plug-in for VMware vSphere.
+* Importiert bestehende Schutzrichtlinien, Snapshots sowie Sicherungs- und Wiederherstellungsoptionen aus dem SnapCenter Plug-in for VMware vSphere.
 * Zeigt die erkannten Ressourcen auf der Inventarseite von NetApp Backup and Recovery an.
 
 
@@ -156,3 +156,14 @@ Nachdem Sie die Verwaltung der Ressourcen ausgewählt haben, werden die Ressourc
 
 .Ergebnis
 Auf der Inventarseite werden die neu verwalteten vCenter-Ressourcen angezeigt.
+
+
+
+==== Weiter zum NetApp Backup and Recovery Dashboard
+
+. Um das Dashboard anzuzeigen, wählen Sie im Menü „Sicherung und Wiederherstellung“ die Option *Dashboard*.
+. Überprüfen Sie den Zustand des Datenschutzes.  Die Anzahl der gefährdeten oder geschützten Workloads steigt basierend auf den neu entdeckten, geschützten und gesicherten Workloads.
++
+link:br-use-dashboard.html["Erfahren Sie, was Ihnen das Dashboard anzeigt"].
+
+

@@ -118,7 +118,7 @@ Aus den Informationen zu den Jobüberwachungsdetails können Sie eine JSON-Datei
 
 Überwachen Sie Aufbewahrungsflüsse (_Backup-Lebenszyklus_), um Backups zu überprüfen, sie zu schützen und Audits zu unterstützen.  Ermitteln Sie, wann Sicherungskopien ablaufen, um den Lebenszyklus zu verfolgen.
 
-Ein Backup-Lebenszyklusjob verfolgt alle Snapshot-Kopien, die gelöscht wurden oder sich in der Warteschlange zum Löschen befinden.  Ab ONTAP 9.13 können Sie sich alle Jobtypen mit der Bezeichnung „Retention“ auf der Seite „Jobüberwachung“ ansehen.
+Ein Backup-Lebenszyklus-Job verfolgt alle Snapshots, die gelöscht wurden oder sich in der Löschwarteschlange befinden. Ab ONTAP 9.13 können Sie sich alle Jobtypen mit der Bezeichnung „Retention“ auf der Seite „Jobüberwachung“ ansehen.
 
 Der Auftragstyp „Aufbewahrung“ erfasst alle Snapshot-Löschaufträge, die auf einem Volume initiiert werden, das durch NetApp Backup and Recovery geschützt ist.
 

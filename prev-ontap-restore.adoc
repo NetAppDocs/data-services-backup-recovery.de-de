@@ -14,7 +14,7 @@ summary: Mit NetApp Backup and Recovery können Sie ein komplettes ONTAP Volume 
 
 
 [role="lead"]
-Backups Ihrer ONTAP -Volume-Daten sind an den Orten verfügbar, an denen Sie Backups erstellt haben: Snapshot-Kopien, replizierte Volumes und im Objektspeicher gespeicherte Backups.  Sie können Daten von einem bestimmten Zeitpunkt aus jedem dieser Sicherungsspeicherorte wiederherstellen.  Mit NetApp Backup and Recovery können Sie ein komplettes ONTAP Volume aus einer Sicherungsdatei wiederherstellen. Wenn Sie nur einige Dateien wiederherstellen müssen, können Sie einen Ordner oder einzelne Dateien wiederherstellen.
+Sicherungskopien Ihrer ONTAP Volume-Daten sind an den Orten verfügbar, an denen Sie die Sicherungskopien erstellt haben: Snapshots, replizierte Volumes und im Objektspeicher gespeicherte Sicherungskopien. Sie können Daten von einem bestimmten Zeitpunkt aus jedem dieser Sicherungsspeicherorte wiederherstellen. Mit NetApp Backup and Recovery können Sie ein komplettes ONTAP Volume aus einer Sicherungsdatei wiederherstellen. Wenn Sie nur einige Dateien wiederherstellen müssen, können Sie einen Ordner oder einzelne Dateien wiederherstellen.
 
 
 NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
@@ -30,7 +30,7 @@ Zusammenfassend sind dies die gültigen Flows, die Sie zum Wiederherstellen von 
 
 * Sicherungsdatei -> wiederhergestelltes Volume
 * Repliziertes Volume -> wiederhergestelltes Volume
-* Snapshot-Kopie -> wiederhergestelltes Volume
+* Snapshot -> wiederhergestelltes Volume
 
 
 
@@ -87,7 +87,7 @@ Diese Tabelle enthält eine Liste gültiger Wiederherstellungsvorgänge basieren
 |  | *Lautstärke wiederherstellen* | *Dateien wiederherstellen* | *Ordner wiederherstellen* | *Lautstärke wiederherstellen* | *Dateien wiederherstellen* | *Ordner wiederherstellen* 
 
 
-| Snapshot-Kopie | Ja | Nein | Nein | Ja | Ja | Ja 
+| Schnappschuss | Ja | Nein | Nein | Ja | Ja | Ja 
 
 
 | Repliziertes Volume | Ja | Nein | Nein | Ja | Ja | Ja 
@@ -108,7 +108,7 @@ Informieren Sie sich über die Anforderungen und Wiederherstellungsschritte für
 
 == Wiederherstellen von ONTAP -Daten mithilfe von „Durchsuchen und Wiederherstellen“
 
-Notieren Sie sich vor der Wiederherstellung den Namen des Quellvolumes, das Quellsystem und die SVM sowie das Datum der Sicherungsdatei. Sie können ONTAP Daten aus einer Snapshot-Kopie, einem replizierten Volume oder aus im Objektspeicher gespeicherten Backups wiederherstellen.
+Notieren Sie sich vor der Wiederherstellung den Namen des Quellvolumes, das Quellsystem und die SVM sowie das Datum der Sicherungsdatei. Sie können ONTAP Daten aus einem Snapshot, einem replizierten Volume oder aus in Objektspeichern gespeicherten Backups wiederherstellen.
 
 
 NOTE: Befindet sich die wiederherzustellende Sicherungsdatei in einem Archiv-Cloud-Speicher (ab ONTAP 9.10.1), dauert der Wiederherstellungsvorgang länger und verursacht Kosten.  Auf dem Zielcluster muss außerdem ONTAP 9.10.1 oder höher für die Wiederherstellung von Volumes, 9.11.1 für die Wiederherstellung von Dateien, 9.12.1 für Google Archive und StorageGRID und 9.13.1 für die Wiederherstellung von Ordnern ausgeführt werden.
@@ -138,7 +138,7 @@ NOTE: Die hohe Priorität wird beim Wiederherstellen von Daten aus dem Azure-Arc
 
 === Durchsuchen und Wiederherstellen unterstützter Systeme und Objektspeicheranbieter
 
-Sie können ONTAP Daten aus einer Sicherungsdatei, die sich in einem sekundären System (einem replizierten Volume) oder im Objektspeicher (einer Sicherungsdatei) befindet, auf den folgenden Systemen wiederherstellen.  Snapshot-Kopien befinden sich auf dem Quellsystem und können nur auf demselben System wiederhergestellt werden.
+Sie können ONTAP Daten aus einer Sicherungsdatei, die sich in einem sekundären System (einem replizierten Volume) oder im Objektspeicher (einer Sicherungsdatei) befindet, auf den folgenden Systemen wiederherstellen. Snapshots befinden sich auf dem Quellsystem und können nur auf demselben System wiederhergestellt werden.
 
 *Hinweis:* Sie können ein Volume aus jeder Art von Sicherungsdatei wiederherstellen, einen Ordner oder einzelne Dateien können Sie derzeit jedoch nur aus einer Sicherungsdatei im Objektspeicher wiederherstellen.
 
@@ -213,7 +213,7 @@ Wie Sie sehen, müssen Sie den Namen des Quellsystems, die Speicher-VM, den Volu
 . Wählen Sie im Abschnitt „Durchsuchen und Wiederherstellen“ die Option „Volume wiederherstellen“ aus.
 . Navigieren Sie auf der Seite „Quelle auswählen“ zur Sicherungsdatei für das Volume, das Sie wiederherstellen möchten.  Wählen Sie das *System*, das *Volume* und die *Sicherungsdatei* mit dem Datums-/Zeitstempel aus, von dem Sie wiederherstellen möchten.
 +
-Die Spalte *Speicherort* zeigt an, ob die Sicherungsdatei (Snapshot) *lokal* (eine Snapshot-Kopie auf dem Quellsystem), *sekundär* (ein repliziertes Volume auf einem sekundären ONTAP System) oder *Objektspeicher* (eine Sicherungsdatei im Objektspeicher) ist.  Wählen Sie die Datei aus, die Sie wiederherstellen möchten.
+Die Spalte *Speicherort* zeigt an, ob die Sicherungsdatei (Snapshot) *lokal* (ein Snapshot auf dem Quellsystem), *sekundär* (ein repliziertes Volume auf einem sekundären ONTAP System) oder *Objektspeicher* (eine Sicherungsdatei im Objektspeicher) ist. Wählen Sie die Datei aus, die Sie wiederherstellen möchten.
 
 . Wählen Sie *Weiter*.
 +
@@ -300,7 +300,7 @@ Beachten Sie, dass die Wiederherstellung eines Volumes aus einer Sicherungsdatei
 Wenn Sie nur einige Dateien aus einer ONTAP Volume-Sicherung wiederherstellen müssen, können Sie anstelle der Wiederherstellung des gesamten Volumes einen Ordner oder einzelne Dateien wiederherstellen.  Sie können Ordner und Dateien auf einem vorhandenen Volume im ursprünglichen System oder auf einem anderen System wiederherstellen, das dasselbe Cloud-Konto verwendet.  Sie können Ordner und Dateien auch auf einem Volume auf einem lokalen ONTAP System wiederherstellen.
 
 
-NOTE: Sie können einen Ordner oder einzelne Dateien derzeit nur aus einer Sicherungsdatei im Objektspeicher wiederherstellen.  Das Wiederherstellen von Dateien und Ordnern aus einer lokalen Snapshot-Kopie oder aus einer Sicherungsdatei, die sich auf einem sekundären System (einem replizierten Volume) befindet, wird derzeit nicht unterstützt.
+NOTE: Sie können einen Ordner oder einzelne Dateien derzeit nur aus einer Sicherungsdatei im Objektspeicher wiederherstellen. Das Wiederherstellen von Dateien und Ordnern aus einem lokalen Snapshot oder aus einer Sicherungsdatei, die sich auf einem sekundären System (einem replizierten Volume) befindet, wird derzeit nicht unterstützt.
 
 Wenn Sie mehrere Dateien auswählen, werden diese auf demselben Zielvolume wiederhergestellt.  Um Dateien auf verschiedenen Datenträgern wiederherzustellen, führen Sie den Vorgang mehrmals aus.
 
@@ -431,7 +431,7 @@ Beim Wiederherstellen von Ordnern und Dateien stehen Ihnen einige Optionen für 
 
 Sie können mithilfe von „Suchen und Wiederherstellen“ ein Volume, einen Ordner oder Dateien aus einer ONTAP Sicherungsdatei wiederherstellen.  Mit „Suchen und Wiederherstellen“ können Sie in allen Sicherungen nach einem bestimmten Volume, Ordner oder einer Datei suchen und dann eine Wiederherstellung durchführen.  Sie müssen den genauen Systemnamen, Volumenamen oder Dateinamen nicht kennen – die Suche durchsucht alle Volume-Sicherungsdateien.
 
-Der Suchvorgang durchsucht alle lokalen Snapshot-Kopien, die für Ihre ONTAP -Volumes vorhanden sind, alle replizierten Volumes auf sekundären Speichersystemen und alle Sicherungsdateien, die im Objektspeicher vorhanden sind.  Da die Wiederherstellung von Daten aus einer lokalen Snapshot-Kopie oder einem replizierten Volume schneller und kostengünstiger sein kann als die Wiederherstellung aus einer Sicherungsdatei im Objektspeicher, möchten Sie möglicherweise Daten von diesen anderen Speicherorten wiederherstellen.
+Die Suchoperation durchsucht alle lokalen Snapshots Ihrer ONTAP Volumes, alle replizierten Volumes auf sekundären Speichersystemen und alle Sicherungsdateien im Objektspeicher.  Da die Wiederherstellung von Daten aus einem lokalen Snapshot oder einem replizierten Volume schneller und kostengünstiger sein kann als die Wiederherstellung aus einer Sicherungsdatei im Objektspeicher, sollten Sie möglicherweise Daten von diesen anderen Speicherorten wiederherstellen.
 
 Wenn Sie ein _vollständiges Volume_ aus einer Sicherungsdatei wiederherstellen, erstellt NetApp Backup and Recovery mithilfe der Daten aus der Sicherung ein _neues_ Volume.  Sie können die Daten als Volume im Originalsystem, auf einem anderen System, das sich im selben Cloud-Konto wie das Quellsystem befindet, oder auf einem lokalen ONTAP -System wiederherstellen.
 
@@ -474,7 +474,7 @@ Bevor Sie beginnen, sollten Sie eine Vorstellung vom Namen oder Speicherort des 
 
 === Von Search & Restore unterstützte Systeme und Objektspeicheranbieter
 
-Sie können ONTAP Daten aus einer Sicherungsdatei, die sich in einem sekundären System (einem replizierten Volume) oder im Objektspeicher (einer Sicherungsdatei) befindet, auf den folgenden Systemen wiederherstellen.  Snapshot-Kopien befinden sich auf dem Quellsystem und können nur auf demselben System wiederhergestellt werden.
+Sie können ONTAP Daten aus einer Sicherungsdatei, die sich in einem sekundären System (einem replizierten Volume) oder im Objektspeicher (einer Sicherungsdatei) befindet, auf den folgenden Systemen wiederherstellen. Snapshots befinden sich auf dem Quellsystem und können nur auf demselben System wiederhergestellt werden.
 
 *Hinweis:* Sie können Volumes und Dateien aus jeder Art von Sicherungsdatei wiederherstellen, einen Ordner können Sie derzeit jedoch nur aus Sicherungsdateien im Objektspeicher wiederherstellen.
 
@@ -538,7 +538,7 @@ Beachten Sie, dass Verweise auf „On-Premises ONTAP Systeme“ FAS, AFF und ONT
 ** Die ONTAP -Version muss 9.8 oder höher sein.
 ** Die Speicher-VM (SVM), auf der sich das Volume befindet, muss über ein konfiguriertes Daten-LIF verfügen.
 ** NFS muss auf dem Volume aktiviert sein (sowohl NFS- als auch SMB/CIFS-Volumes werden unterstützt).
-** Der SnapDiff RPC-Server muss auf der SVM aktiviert werden.  Die Konsole führt dies automatisch aus, wenn Sie die Indizierung auf dem System aktivieren.  (SnapDiff ist die Technologie, die Datei- und Verzeichnisunterschiede zwischen Snapshot-Kopien schnell erkennt.)
+** Der SnapDiff RPC-Server muss auf der SVM aktiviert werden. Die Konsole führt dies automatisch aus, wenn Sie die Indizierung auf dem System aktivieren. (SnapDiff ist die Technologie, die schnell die Datei- und Verzeichnisunterschiede zwischen Snapshots identifiziert.)
 
 
 
@@ -699,14 +699,14 @@ Nachdem Sie<<enable-the-indexed-catalog-for-each-system,Aktivierte Indizierung f
 +
 .. Geben Sie in der Suchleiste einen vollständigen oder teilweisen Datenträgernamen, Ordnernamen oder Dateinamen ein.
 .. Wählen Sie den Ressourcentyp aus: *Volumes*, *Dateien*, *Ordner* oder *Alle*.
-.. Wählen Sie im Bereich _Filtern nach_ die Filterkriterien aus.  Sie können beispielsweise das System auswählen, auf dem sich die Daten befinden, und den Dateityp, beispielsweise eine JPEG-Datei.  Oder Sie können den Typ des Sicherungsspeicherorts auswählen, wenn Sie nur in verfügbaren Snapshot-Kopien oder Sicherungsdateien im Objektspeicher nach Ergebnissen suchen möchten.
+.. Wählen Sie im Bereich _Filtern nach_ die Filterkriterien aus. Sie können beispielsweise das System auswählen, auf dem sich die Daten befinden, und den Dateityp, beispielsweise eine JPEG-Datei. Alternativ können Sie den Typ des Sicherungsspeicherorts auswählen, wenn Sie die Ergebnisse nur in verfügbaren Snapshots oder Sicherungsdateien im Objektspeicher suchen möchten.
 
 
 . Wählen Sie *Suchen* und im Bereich „Suchergebnisse“ werden alle Ressourcen angezeigt, die über eine Datei, einen Ordner oder ein Volume verfügen, das Ihrer Suche entspricht.
 . Suchen Sie die Ressource mit den Daten, die Sie wiederherstellen möchten, und wählen Sie *Alle Sicherungen anzeigen* aus, um alle Sicherungsdateien anzuzeigen, die das entsprechende Volume, den entsprechenden Ordner oder die entsprechende Datei enthalten.
 . Suchen Sie die Sicherungsdatei, die Sie zum Wiederherstellen der Daten verwenden möchten, und wählen Sie *Wiederherstellen*.
 +
-Beachten Sie, dass die Ergebnisse lokale Snapshot-Kopien von Volumes und replizierte Remote-Volumes identifizieren, die die von Ihnen gesuchte Datei enthalten.  Sie können die Wiederherstellung aus der Cloud-Sicherungsdatei, aus der Snapshot-Kopie oder aus dem replizierten Volume durchführen.
+Beachten Sie, dass die Ergebnisse lokale Volume-Snapshots und Remote-Replicated-Volumes identifizieren, die die in Ihrer Suche enthaltene Datei enthalten.  Sie können die Wiederherstellung entweder aus der Cloud-Sicherungsdatei, aus dem Snapshot oder aus dem replizierten Volume durchführen.
 
 . Wählen Sie den Zielspeicherort aus, an dem das Volume, der Ordner oder die Datei(en) wiederhergestellt werden sollen, und wählen Sie *Wiederherstellen*.
 +

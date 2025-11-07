@@ -49,7 +49,7 @@ Sie können die folgenden Ziele im Zusammenhang mit Richtlinien erreichen:
 
 == Erstellen einer Richtlinie
 
-Sie können Richtlinien erstellen, die Ihre lokalen Snapshots, Replikationen auf sekundären Speicher und Backups auf Objektspeicher regeln.  Ein Teil Ihrer 3-2-1-Strategie besteht darin, eine Snapshot-Kopie der Instanzen, Datenbanken, Anwendungen oder VMs auf dem *primären* Speichersystem zu erstellen.
+Sie können Richtlinien erstellen, die Ihre lokalen Snapshots, Replikationen auf sekundären Speicher und Backups auf Objektspeicher regeln. Ein Teil Ihrer 3-2-1-Strategie besteht darin, einen Snapshot der Instanzen, Datenbanken, Anwendungen oder VMs auf dem *primären* Speichersystem zu erstellen.
 
 *Erforderliche NetApp Console * Speicherbetrachter, Superadministrator für Backup und Wiederherstellung, Backupadministrator für Backup und Wiederherstellung.  Erfahren Sie mehr überlink:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 

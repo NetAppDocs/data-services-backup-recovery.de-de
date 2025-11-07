@@ -14,7 +14,7 @@ summary: Schützen Sie Ihre Oracle-Workloads mit NetApp Backup and Recovery.
 
 
 [role="lead"]
-Stellen Sie Oracle-Datenbanken mithilfe von NetApp Backup and Recovery aus Snapshot-Kopien, aus einem auf einen sekundären Speicher replizierten Backup oder aus im Objektspeicher gespeicherten Backups wieder her.
+Stellen Sie Oracle-Datenbanken aus Snapshots, aus einem auf Sekundärspeicher replizierten Backup oder aus in Objektspeichern gespeicherten Backups mithilfe von NetApp Backup and Recovery wieder her.
 
 .Von diesen Speicherorten wiederherstellen
 Sie können Datenbanken von verschiedenen Startorten wiederherstellen:

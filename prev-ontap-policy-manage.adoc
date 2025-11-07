@@ -61,7 +61,7 @@ Die Seite „Richtlinienverwaltung“ wird angezeigt.  Snapshot-Richtlinien werd
 
 == Erstellen von Richtlinien
 
-Sie können Richtlinien erstellen, die Ihre Snapshot-Kopien, Replikationen und Backups im Objektspeicher regeln:
+Sie können Richtlinien erstellen, die Ihre Snapshots, Replikationen und Backups im Objektspeicher steuern:
 
 * <<Erstellen Sie eine Snapshot-Richtlinie, bevor Sie den Snapshot starten>>
 * <<Erstellen Sie eine Replikationsrichtlinie, bevor Sie die Replikation starten>>
@@ -72,7 +72,7 @@ Sie können Richtlinien erstellen, die Ihre Snapshot-Kopien, Replikationen und B
 
 === Erstellen Sie eine Snapshot-Richtlinie, bevor Sie den Snapshot starten
 
-Ein Teil Ihrer 3-2-1-Strategie besteht darin, eine Snapshot-Kopie des Volumes auf dem *primären* Speichersystem zu erstellen.
+Ein Teil Ihrer 3-2-1-Strategie besteht darin, einen Snapshot des Volumes auf dem *primären* Speichersystem zu erstellen.
 
 Ein Teil des Richtlinienerstellungsprozesses umfasst die Identifizierung von Snapshot- und SnapMirror -Bezeichnungen, die den Zeitplan und die Aufbewahrung angeben.  Sie können vordefinierte Beschriftungen verwenden oder eigene erstellen.
 

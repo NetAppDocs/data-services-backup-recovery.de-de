@@ -14,7 +14,7 @@ summary: Verwalten Sie mit NetApp Backup and Recovery Backups für Ihre Cloud Vo
 
 
 [role="lead"]
-Verwalten Sie mit NetApp Backup and Recovery Backups für Ihre Cloud Volumes ONTAP und lokalen ONTAP Systeme, indem Sie den Backup-Zeitplan ändern, Volume-Backups aktivieren/deaktivieren, Backups anhalten, Backups löschen, das Löschen von Backups erzwingen und vieles mehr. Dies umfasst alle Arten von Backups, einschließlich Snapshot-Kopien, replizierten Volumes und Backup-Dateien im Objektspeicher.  Sie können die Registrierung von NetApp Backup and Recovery auch aufheben.
+Verwalten Sie mit NetApp Backup and Recovery Backups für Ihre Cloud Volumes ONTAP und lokalen ONTAP Systeme, indem Sie den Backup-Zeitplan ändern, Volume-Backups aktivieren/deaktivieren, Backups anhalten, Backups löschen, das Löschen von Backups erzwingen und vieles mehr. Dies umfasst alle Arten von Backups, einschließlich Snapshots, replizierter Volumes und Sicherungsdateien im Objektspeicher. Sie können die Registrierung von NetApp Backup and Recovery auch aufheben.
 
 
 CAUTION: Verwalten oder ändern Sie Sicherungsdateien nicht direkt auf Ihren Speichersystemen oder in der Umgebung Ihres Cloud-Anbieters.  Dies kann zu einer Beschädigung der Dateien führen und zu einer nicht unterstützten Konfiguration.
@@ -26,7 +26,7 @@ NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads 
 
 == Den Sicherungsstatus der Volumes in Ihren Systemen anzeigen
 
-Sie können im Volumes Backup Dashboard eine Liste aller Volumes anzeigen, die derzeit gesichert werden. Dies umfasst alle Arten von Backups, einschließlich Snapshot-Kopien, replizierten Volumes und Backup-Dateien im Objektspeicher.  Sie können auch die Volumes in den Systemen anzeigen, die derzeit nicht gesichert werden.
+Sie können im Volumes Backup Dashboard eine Liste aller Volumes anzeigen, die derzeit gesichert werden. Dies umfasst alle Arten von Backups, einschließlich Snapshots, replizierter Volumes und Sicherungsdateien im Objektspeicher. Sie können auch die Volumes in den Systemen anzeigen, die derzeit nicht gesichert werden.
 
 .Schritte
 . Wählen Sie im Konsolenmenü *Schutz > Sicherung und Wiederherstellung*.
@@ -35,7 +35,7 @@ Sie können im Volumes Backup Dashboard eine Liste aller Volumes anzeigen, die d
 +
 Um zusätzliche Spalten anzuzeigen (Aggregate, Sicherheitsstil (Windows oder UNIX), Snapshot-Richtlinie, Replikationsrichtlinie und Sicherungsrichtlinie), wählen Sie das Pluszeichen aus.
 
-. Überprüfen Sie den Status der Schutzoptionen in der Spalte „Vorhandener Schutz“.  Die 3 Symbole stehen für „Lokale Snapshot-Kopien“, „Replizierte Volumes“ und „Backups im Objektspeicher“.
+. Überprüfen Sie den Status der Schutzoptionen in der Spalte „Vorhandener Schutz“. Die 3 Symbole stehen für „Lokale Snapshots“, „Replizierte Volumes“ und „Backups im Objektspeicher“.
 +
 Jedes Symbol ist blau, wenn dieser Sicherungstyp aktiviert ist, und grau, wenn der Sicherungstyp inaktiv ist.  Sie können mit dem Cursor über die einzelnen Symbole fahren, um die verwendete Sicherungsrichtlinie und andere relevante Informationen zu den einzelnen Sicherungstypen anzuzeigen.
 
@@ -49,7 +49,7 @@ Wenn Sie bei der ersten Aktivierung von NetApp Backup and Recovery die Sicherung
 
 .Schritte
 . Identifizieren Sie auf der Registerkarte *Volumes* das Volume, auf dem Sie Backups aktivieren möchten, wählen Sie das Menü Aktionenimage:icon-action.png["Symbol „Aktionen“"] am Ende der Zeile und wählen Sie *Sicherung aktivieren*.
-. Wählen Sie auf der Seite „Sicherungsstrategie definieren“ die Sicherungsarchitektur aus und definieren Sie dann die Richtlinien und andere Details für lokale Snapshot-Kopien, replizierte Volumes und Sicherungsdateien.  Sehen Sie sich die Details zu den Sicherungsoptionen der ursprünglichen Volumes an, die Sie in diesem System aktiviert haben. Wählen Sie dann *Weiter*.
+. Auf der Seite _Sicherungsstrategie definieren_ wählen Sie die Sicherungsarchitektur aus und definieren dann die Richtlinien und weitere Details für lokale Snapshots, replizierte Volumes und Sicherungsdateien. Sehen Sie sich die Details zu den Sicherungsoptionen der ursprünglichen Volumes an, die Sie in diesem System aktiviert haben. Wählen Sie dann *Weiter*.
 . Überprüfen Sie die Sicherungseinstellungen für dieses Volume und wählen Sie dann *Sicherung aktivieren*.
 
 
@@ -57,7 +57,7 @@ Wenn Sie bei der ersten Aktivierung von NetApp Backup and Recovery die Sicherung
 
 == Ändern Sie die Sicherungseinstellungen, die vorhandenen Volumes zugewiesen sind
 
-Sie können die Sicherungsrichtlinien ändern, die Ihren vorhandenen Volumes mit zugewiesenen Richtlinien zugewiesen sind.  Sie können die Richtlinien für Ihre lokalen Snapshot-Kopien, replizierten Volumes und Sicherungsdateien ändern.  Alle neuen Snapshot-, Replikations- oder Sicherungsrichtlinien, die Sie auf die Volumes anwenden möchten, müssen bereits vorhanden sein.
+Sie können die Sicherungsrichtlinien ändern, die Ihren vorhandenen Volumes mit zugewiesenen Richtlinien zugewiesen sind. Sie können die Richtlinien für Ihre lokalen Snapshots, replizierten Volumes und Sicherungsdateien ändern. Alle neuen Snapshot-, Replikations- oder Sicherungsrichtlinien, die Sie auf die Volumes anwenden möchten, müssen bereits vorhanden sein.
 
 
 
@@ -65,7 +65,7 @@ Sie können die Sicherungsrichtlinien ändern, die Ihren vorhandenen Volumes mit
 
 .Schritte
 . Identifizieren Sie auf der Registerkarte *Volumes* das Volume, für das Sie Richtlinienänderungen vornehmen möchten, und wählen Sie das Menü Aktionenimage:icon-action.png["Symbol „Aktionen“"] am Ende der Zeile und wählen Sie *Sicherungsstrategie bearbeiten*.
-. Nehmen Sie auf der Seite „Sicherungsstrategie bearbeiten“ Änderungen an den vorhandenen Sicherungsrichtlinien für lokale Snapshot-Kopien, replizierte Volumes und Sicherungsdateien vor und wählen Sie *Weiter*.
+. Auf der Seite „Sicherungsstrategie bearbeiten“ können Sie die vorhandenen Sicherungsrichtlinien für lokale Snapshots, replizierte Volumes und Sicherungsdateien ändern und anschließend „Weiter“ auswählen.
 +
 Wenn Sie beim Aktivieren von NetApp Backup and Recovery für diesen Cluster in der anfänglichen Sicherungsrichtlinie _DataLock und Ransomware Resilience_ für Cloud-Sicherungen aktiviert haben, werden Ihnen nur andere Richtlinien angezeigt, die mit DataLock konfiguriert wurden.  Und wenn Sie beim Aktivieren von NetApp Backup and Recovery_DataLock und Ransomware Resilience_ nicht aktiviert haben, werden Ihnen nur andere Cloud-Backup-Richtlinien angezeigt, für die DataLock nicht konfiguriert ist.
 
@@ -108,7 +108,7 @@ Wenn mehr als fünf Volumes für die Sicherung aktiviert sind, initialisiert Net
 
 | Verwalten Sie mehrere Arten von Sicherungseinstellungen.  Mit dieser Option können Sie auch die Sicherungsarchitektur ändern. | *Sicherung und Wiederherstellung verwalten* 
 |===
-. Nehmen Sie auf der angezeigten Sicherungsseite Änderungen an den vorhandenen Sicherungsrichtlinien für lokale Snapshot-Kopien, replizierte Volumes oder Sicherungsdateien vor und wählen Sie *Speichern*.
+. Nehmen Sie auf der daraufhin angezeigten Sicherungsseite Änderungen an den bestehenden Sicherungsrichtlinien für lokale Snapshots, replizierte Volumes oder Sicherungsdateien vor und wählen Sie *Speichern*.
 +
 Wenn Sie beim Aktivieren von NetApp Backup and Recovery für diesen Cluster in der anfänglichen Sicherungsrichtlinie _DataLock und Ransomware Resilience_ für Cloud-Sicherungen aktiviert haben, werden Ihnen nur andere Richtlinien angezeigt, die mit DataLock konfiguriert wurden.  Und wenn Sie beim Aktivieren von NetApp Backup and Recovery_DataLock und Ransomware Resilience_ nicht aktiviert haben, werden Ihnen nur andere Cloud-Backup-Richtlinien angezeigt, für die DataLock nicht konfiguriert ist.
 
@@ -120,7 +120,7 @@ Wenn Sie beim Aktivieren von NetApp Backup and Recovery für diesen Cluster in d
 
 Sie können jederzeit ein On-Demand-Backup erstellen, um den aktuellen Status des Volumes zu erfassen.  Dies kann nützlich sein, wenn sehr wichtige Änderungen an einem Volume vorgenommen wurden und Sie nicht auf die nächste geplante Sicherung warten möchten, um diese Daten zu schützen.  Sie können diese Funktion auch verwenden, um eine Sicherung für ein Volume zu erstellen, das derzeit nicht gesichert wird und dessen aktuellen Status Sie erfassen möchten.
 
-Sie können eine Ad-hoc-Snapshot-Kopie oder ein Backup auf ein Objekt eines Volumes erstellen.  Sie können kein Ad-hoc-repliziertes Volume erstellen.
+Sie können einen Ad-hoc-Snapshot oder eine Sicherung eines Volumes erstellen. Sie können kein Ad-hoc-repliziertes Volume erstellen.
 
 Der Sicherungsname enthält den Zeitstempel, sodass Sie Ihre On-Demand-Sicherung von anderen geplanten Sicherungen unterscheiden können.
 
@@ -146,7 +146,7 @@ Sie können die Liste aller Sicherungsdateien anzeigen, die für jedes Volume vo
 .Schritte
 . Wählen Sie auf der Registerkarte *Volumes*image:icon-actions-horizontal.gif["Symbol „Aktionen“"] für das Quellvolume und wählen Sie *Volumedetails anzeigen*.
 +
-Die Details zum Volume und die Liste der Snapshot-Kopien werden angezeigt.
+Es werden die Details zum Volume und die Liste der Snapshots angezeigt.
 
 . Wählen Sie *Snapshot*, *Replikation* oder *Backup*, um die Liste aller Backup-Dateien für jeden Backup-Typ anzuzeigen.
 
@@ -195,7 +195,7 @@ In der folgenden Tabelle werden die verfügbaren Aktionen beschrieben:
 | Update-Replikation | Startet eine inkrementelle Übertragung, um das Zielvolume zu aktualisieren, das mit dem Quellvolume synchronisiert werden soll. 
 
 
-| Replikation anhalten | Unterbrechen Sie die inkrementelle Übertragung von Snapshot-Kopien, um das Zielvolume zu aktualisieren.  Sie können den Vorgang später fortsetzen, wenn Sie die inkrementellen Updates neu starten möchten. 
+| Replikation anhalten | Unterbrechen Sie die inkrementelle Übertragung von Snapshots, um das Zielvolume zu aktualisieren. Sie können den Vorgang später fortsetzen, wenn Sie die inkrementellen Updates neu starten möchten. 
 
 
 | Replikation unterbrechen | Bricht die Beziehung zwischen Quell- und Zielvolume ab und aktiviert das Zielvolume für den Datenzugriff – macht es lese- und schreibgeschützt.  Diese Option wird normalerweise verwendet, wenn das Quellvolume aufgrund von Ereignissen wie Datenbeschädigung, versehentlichem Löschen oder einem Offline-Status keine Daten bereitstellen kann.https://docs.netapp.com/us-en/ontap-sm-classic/volume-disaster-recovery/index.html["Erfahren Sie in der ONTAP -Dokumentation, wie Sie ein Zielvolume für den Datenzugriff konfigurieren und ein Quellvolume reaktivieren."^] 
@@ -319,7 +319,7 @@ CAUTION: Wenn Sie ein System oder einen Cluster löschen möchten, das bzw. der 
 
 Das Löschen aller Sicherungen im Objektspeicher für ein System deaktiviert nicht zukünftige Sicherungen von Volumes in diesem System.  Wenn Sie die Erstellung von Backups aller Volumes in einem System beenden möchten, können Sie Backups deaktivieren<<NetApp Backup and Recovery für ein System deaktivieren,wie hier beschrieben>> .
 
-Beachten Sie, dass diese Aktion keine Auswirkungen auf Snapshot-Kopien oder replizierte Volumes hat – diese Arten von Sicherungsdateien werden nicht gelöscht.
+Beachten Sie, dass diese Aktion keine Auswirkungen auf Snapshots oder replizierte Volumes hat – diese Arten von Sicherungsdateien werden nicht gelöscht.
 
 .Schritte
 . Wählen Sie auf der Registerkarte *Volumes* die Option *Backup-Einstellungen* aus.
@@ -366,14 +366,14 @@ CAUTION: Verwenden Sie diese Option mit Vorsicht und nur bei extremem Reinigungs
 
 === Löschen einer einzelnen Sicherungsdatei für ein Volume
 
-Sie können eine einzelne Sicherungsdatei löschen, wenn Sie sie nicht mehr benötigen.  Dazu gehört das Löschen einer einzelnen Sicherung einer Volume-Snapshot-Kopie oder einer Sicherung im Objektspeicher.
+Sie können eine einzelne Sicherungsdatei löschen, wenn Sie sie nicht mehr benötigen. Dies umfasst das Löschen einer einzelnen Sicherung eines Volume-Snapshots oder einer Sicherung im Objektspeicher.
 
 Sie können replizierte Volumes (Datensicherungsvolumes) nicht löschen.
 
 .Schritte
 . Wählen Sie auf der Registerkarte *Volumes*image:icon-actions-horizontal.gif["Symbol „Mehr“"] für das Quellvolume und wählen Sie *Volumedetails anzeigen*.
 +
-Die Details zum Volume werden angezeigt und Sie können *Snapshot*, *Replikation* oder *Backup* auswählen, um die Liste aller Backup-Dateien für das Volume anzuzeigen.  Standardmäßig werden die verfügbaren Snapshot-Kopien angezeigt.
+Die Details zum Volume werden angezeigt und Sie können *Snapshot*, *Replikation* oder *Backup* auswählen, um die Liste aller Backup-Dateien für das Volume anzuzeigen. Standardmäßig werden die verfügbaren Snapshots angezeigt.
 
 . Wählen Sie *Snapshot* oder *Backup*, um den Typ der Sicherungsdateien anzuzeigen, die Sie löschen möchten.
 . Wählenimage:icon-actions-horizontal.gif["Symbol „Aktionen“"] für die Volume-Sicherungsdatei, die Sie löschen möchten, und wählen Sie *Löschen*.

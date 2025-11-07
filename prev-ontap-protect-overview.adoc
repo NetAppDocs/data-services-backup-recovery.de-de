@@ -21,14 +21,14 @@ NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads 
 
 Nach der Aktivierung erstellt Backup und Recovery inkrementelle Backups auf Blockebene, die dauerhaft auf einem anderen ONTAP Cluster und im Objektspeicher in der Cloud gespeichert werden.  Zusätzlich zu Ihrem Quellvolumen verfügen Sie über:
 
-* Snapshot-Kopie des Volumes auf dem Quellsystem
+* Momentaufnahme des Volumens auf dem Quellsystem
 * Repliziertes Volume auf einem anderen Speichersystem
 * Sicherung des Volumes im Objektspeicher
 
 
-image:diagram-321-overview-unified.png["Ein Diagramm, das zeigt, wie Sicherungsdateien auf dem Quellsystem als Snapshot-Kopien, als replizierte Volumes auf dem sekundären Speichersystem und als Sicherungsdateien im Objektspeicher vorhanden sind."]
+image:diagram-321-overview-unified.png["Ein Diagramm, das zeigt, wie Sicherungsdateien auf dem Quellsystem als Snapshots, als replizierte Volumes auf dem sekundären Speichersystem und als Sicherungsdateien im Objektspeicher existieren."]
 
-NetApp Backup and Recovery nutzt die SnapMirror Datenreplikationstechnologie von NetApp, um sicherzustellen, dass alle Backups vollständig synchronisiert sind, indem Snapshot-Kopien erstellt und an die Backup-Speicherorte übertragen werden.
+NetApp Backup and Recovery nutzt die SnapMirror -Datenreplikationstechnologie von NetApp, um sicherzustellen, dass alle Backups vollständig synchronisiert werden, indem Snapshots erstellt und an die Backup-Speicherorte übertragen werden.
 
 Zu den Vorteilen des 3-2-1-Ansatzes gehören:
 
@@ -77,7 +77,7 @@ Sehenlink:br-reference-limitations.html["Replikationsbeschränkungen für ONTAP 
 
 *Funktionen wiederherstellen:*
 
-* Stellen Sie Daten von einem bestimmten Zeitpunkt aus lokalen Snapshot-Kopien, replizierten Volumes oder gesicherten Volumes im Objektspeicher wieder her.
+* Daten von einem bestimmten Zeitpunkt aus lokalen Snapshots, replizierten Volumes oder gesicherten Volumes im Objektspeicher wiederherstellen.
 * Stellen Sie ein Volume, einen Ordner oder einzelne Dateien auf dem Quellsystem oder einem anderen System wieder her.
 * Stellen Sie Daten auf einem System wieder her, das ein anderes Abonnement/Konto verwendet oder sich in einer anderen Region befindet.
 * Führen Sie eine _schnelle Wiederherstellung_ eines Volumes aus dem Cloud-Speicher auf ein Cloud Volumes ONTAP -System oder auf ein lokales System durch. Ideal für Disaster-Recovery-Situationen, in denen Sie schnellstmöglich Zugriff auf ein Volume bereitstellen müssen.
@@ -103,7 +103,7 @@ https://bluexp.netapp.com/cloud-volumes-global-regions["Erfahren Sie mehr mit de
 
 === Unterstützte Sicherungsziele
 
-Mit NetApp Backup and Recovery können Sie ONTAP Volumes von den folgenden Quellsystemen auf die folgenden Sekundärsysteme und Objektspeicher bei öffentlichen und privaten Cloud-Anbietern sichern.  Snapshot-Kopien befinden sich auf dem Quellsystem.
+NetApp Backup and Recovery ermöglicht die Sicherung von ONTAP Volumes von den folgenden Quellsystemen auf die folgenden Sekundärsysteme und Objektspeicher bei öffentlichen und privaten Cloud-Anbietern. Die Snapshots werden auf dem Quellsystem gespeichert.
 
 [cols="33,33,33"]
 |===
@@ -125,7 +125,7 @@ Mit NetApp Backup and Recovery können Sie ONTAP Volumes von den folgenden Quell
 
 === Unterstützte Wiederherstellungsziele
 
-Sie können ONTAP Daten aus einer Sicherungsdatei, die sich in einem sekundären System (einem replizierten Volume) oder im Objektspeicher (einer Sicherungsdatei) befindet, auf den folgenden Systemen wiederherstellen.  Snapshot-Kopien befinden sich auf dem Quellsystem und können nur auf demselben System wiederhergestellt werden.
+ONTAP Daten können aus einer Sicherungsdatei, die sich auf einem sekundären System (einem replizierten Volume) oder im Objektspeicher (einer Sicherungsdatei) befindet, auf den folgenden Systemen wiederhergestellt werden. Snapshots befinden sich auf dem Quellsystem und können nur auf demselben System wiederhergestellt werden.
 
 [cols="33,33,33"]
 |===
@@ -175,7 +175,7 @@ Siehe die Abschnitte zulink:br-reference-limitations.html["Einschränkungen bei 
 
 Mit der Verwendung von NetApp Backup and Recovery mit ONTAP -Systemen sind zwei Arten von Kosten verbunden: Ressourcengebühren und Servicegebühren.  Beide Gebühren gelten für den Objekt-Backup-Teil des Dienstes.
 
-Für die Erstellung von Snapshot-Kopien oder replizierten Volumes fallen keine Kosten an – abgesehen vom erforderlichen Speicherplatz zum Speichern der Snapshot-Kopien und replizierten Volumes.
+Für die Erstellung von Snapshots oder replizierten Volumes fallen keine Gebühren an – außer dem Speicherplatz, der zum Speichern der Snapshots und replizierten Volumes benötigt wird.
 
 *Ressourcenkosten*
 
@@ -236,7 +236,7 @@ NetApp Backup and Recovery ist mit den folgenden Verbrauchsmodellen verfügbar:
 * *Jährlich*: Ein Jahresvertrag vom Marktplatz Ihres Cloud-Anbieters.
 
 
-Eine Backup-Lizenz ist nur für die Sicherung und Wiederherstellung aus dem Objektspeicher erforderlich.  Für das Erstellen von Snapshot-Kopien und replizierten Volumes ist keine Lizenz erforderlich.
+Eine Backup-Lizenz ist nur für die Sicherung und Wiederherstellung aus dem Objektspeicher erforderlich. Für die Erstellung von Snapshots und replizierten Volumes ist keine Lizenz erforderlich.
 
 
 
@@ -311,7 +311,7 @@ Dieses Diagramm zeigt, wie Volumes auf ein Cloud Volumes ONTAP -System replizier
 
 Je nach Sicherungstyp befinden sich die Sicherungen an unterschiedlichen Speicherorten:
 
-* _Snapshot-Kopien_ befinden sich auf dem Quellvolume im Quellsystem.
+* _Snapshots_ befinden sich auf dem Quellvolume im Quellsystem.
 * _Replizierte Volumes_ befinden sich auf dem sekundären Speichersystem – einem Cloud Volumes ONTAP oder On-Premises ONTAP -System.
 * _Sicherungskopien_ werden in einem Objektspeicher gespeichert, den die Konsole in Ihrem Cloud-Konto erstellt.  Es gibt einen Objektspeicher pro Cluster/System und die Konsole benennt den Objektspeicher wie folgt: „netapp-backup-clusteruuid“.  Denken Sie daran, diesen Objektspeicher nicht zu löschen.
 
@@ -344,12 +344,12 @@ Wenn Sie den Zielobjektspeicher für einen Cluster in Zukunft ändern möchten, 
 
 === Anpassbarer Sicherungszeitplan und Aufbewahrungseinstellungen
 
-Wenn Sie NetApp Backup and Recovery für ein System aktivieren, werden alle ursprünglich ausgewählten Volumes unter Verwendung der von Ihnen ausgewählten Richtlinien gesichert.  Sie können separate Richtlinien für Snapshot-Kopien, replizierte Volumes und Sicherungsdateien auswählen.  Wenn Sie bestimmten Volumes mit unterschiedlichen Recovery Point Objectives (RPO) unterschiedliche Sicherungsrichtlinien zuweisen möchten, können Sie zusätzliche Richtlinien für diesen Cluster erstellen und diese Richtlinien den anderen Volumes zuweisen, nachdem NetApp Backup and Recovery aktiviert wurde.
+Wenn Sie NetApp Backup and Recovery für ein System aktivieren, werden alle ursprünglich ausgewählten Volumes unter Verwendung der von Ihnen ausgewählten Richtlinien gesichert. Sie können separate Richtlinien für Snapshots, replizierte Volumes und Sicherungsdateien auswählen. Wenn Sie bestimmten Volumes mit unterschiedlichen Recovery Point Objectives (RPO) unterschiedliche Sicherungsrichtlinien zuweisen möchten, können Sie zusätzliche Richtlinien für diesen Cluster erstellen und diese Richtlinien den anderen Volumes zuweisen, nachdem NetApp Backup and Recovery aktiviert wurde.
 
 Sie können eine Kombination aus stündlichen, täglichen, wöchentlichen, monatlichen und jährlichen Backups aller Volumes auswählen.  Für die Sicherung auf Objekt können Sie auch eine der systemdefinierten Richtlinien auswählen, die Sicherungen und Aufbewahrung für 3 Monate, 1 Jahr und 7 Jahre vorsehen.  Richtlinien zum Sicherungsschutz, die Sie mit ONTAP System Manager oder der ONTAP CLI auf dem Cluster erstellt haben, werden ebenfalls als Auswahlmöglichkeiten angezeigt.  Dazu gehören Richtlinien, die mit benutzerdefinierten SnapMirror -Labels erstellt wurden.
 
 
-NOTE: Die auf das Volume angewendete Snapshot-Richtlinie muss eine der Bezeichnungen aufweisen, die Sie in Ihrer Replikationsrichtlinie und Ihrer Richtlinie zur Sicherung auf Objekt verwenden.  Wenn keine passenden Labels gefunden werden, werden keine Sicherungsdateien erstellt.  Wenn Sie beispielsweise „wöchentlich“ replizierte Volumes und Sicherungsdateien erstellen möchten, müssen Sie eine Snapshot-Richtlinie verwenden, die „wöchentliche“ Snapshot-Kopien erstellt.
+NOTE: Die auf das Volume angewendete Snapshot-Richtlinie muss eine der Bezeichnungen aufweisen, die Sie in Ihrer Replikationsrichtlinie und Ihrer Richtlinie zur Sicherung auf Objekt verwenden. Wenn keine passenden Labels gefunden werden, werden keine Sicherungsdateien erstellt. Wenn Sie beispielsweise wöchentlich replizierte Volumes und Sicherungsdateien erstellen möchten, müssen Sie eine Snapshot-Richtlinie verwenden, die wöchentliche Snapshots erstellt.
 
 Sobald Sie die maximale Anzahl an Backups für eine Kategorie oder ein Intervall erreicht haben, werden ältere Backups entfernt, sodass Sie immer über die aktuellsten Backups verfügen (und veraltete Backups nicht weiterhin Speicherplatz belegen).
 
@@ -366,7 +366,7 @@ Wenn Ihr Cluster ONTAP 9.11.1 oder höher verwendet, können Sie Ihre Backups im
 * Der Ransomware-Schutz durchsucht Ihre Sicherungsdateien nach Hinweisen auf einen Ransomware-Angriff, wenn eine Sicherungsdatei erstellt wird und wenn Daten aus einer Sicherungsdatei wiederhergestellt werden.
 
 
-Geplante Ransomware-Schutzscans sind standardmäßig aktiviert.  Die Standardeinstellung für die Scanhäufigkeit beträgt 7 Tage.  Der Scan erfolgt nur auf der neuesten Snapshot-Kopie.  Um Ihre Kosten zu senken, können die geplanten Scans deaktiviert werden.  Sie können geplante Ransomware-Scans für die neueste Snapshot-Kopie aktivieren oder deaktivieren, indem Sie die Option auf der Seite „Erweiterte Einstellungen“ verwenden.  Wenn Sie es aktivieren, werden Scans standardmäßig wöchentlich durchgeführt.  Sie können diesen Zeitplan auf Tage oder Wochen ändern oder ihn deaktivieren, um Kosten zu sparen.
+Geplante Ransomware-Schutzscans sind standardmäßig aktiviert. Die Standardeinstellung für die Scanhäufigkeit beträgt 7 Tage. Der Scan erfolgt nur für den neuesten Snapshot. Um Ihre Kosten zu senken, können die geplanten Scans deaktiviert werden. Sie können geplante Ransomware-Scans für den neuesten Snapshot über die entsprechende Option auf der Seite „Erweiterte Einstellungen“ aktivieren oder deaktivieren. Wenn Sie es aktivieren, werden Scans standardmäßig wöchentlich durchgeführt. Sie können diesen Zeitplan auf Tage oder Wochen ändern oder ihn deaktivieren, um Kosten zu sparen.
 
 Der Aufbewahrungszeitraum für die Sicherung entspricht dem Aufbewahrungszeitraum des Sicherungsplans zuzüglich eines Puffers von maximal 31 Tagen.  Beispielsweise wird bei _wöchentlichen_ Sicherungen mit _5_ aufbewahrten Kopien jede Sicherungsdatei für 5 Wochen gesperrt.  Bei _monatlichen_ Backups mit _6_ aufbewahrten Kopien wird jede Backup-Datei für 6 Monate gesperrt.
 

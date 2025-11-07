@@ -14,7 +14,7 @@ summary: Schützen Sie Ihre KVM-Workloads mit NetApp Backup and Recovery.
 
 
 [role="lead"]
-Stellen Sie virtuelle KVM-Maschinen aus Snapshot-Kopien, aus einem auf einen sekundären Speicher replizierten Schutzgruppen-Backup oder aus im Objektspeicher gespeicherten Backups mit NetApp Backup and Recovery wieder her.
+Stellen Sie virtuelle KVM-Maschinen aus Snapshots, aus einer auf einen Sekundärspeicher replizierten Schutzgruppensicherung oder aus in Objektspeichern gespeicherten Sicherungen mithilfe von NetApp Backup and Recovery wieder her.
 
 .Von diesen Speicherorten wiederherstellen
 Sie können virtuelle Maschinen von verschiedenen Startorten aus wiederherstellen:

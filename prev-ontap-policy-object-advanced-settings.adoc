@@ -14,7 +14,7 @@ summary: Schützen Sie Ihre VMware-Workloads mit NetApp NetApp Backup and Recove
 
 
 [role="lead"]
-Sie können die Backup-to-Object-Storage-Einstellungen auf Clusterebene ändern, die Sie beim Aktivieren von NetApp Backup and Recovery für jedes ONTAP System festlegen, indem Sie die Seite „Erweiterte Einstellungen“ verwenden.  Sie können auch einige Einstellungen ändern, die als „Standard“-Sicherungseinstellungen angewendet werden.  Dazu gehört das Ändern der Übertragungsrate von Backups zum Objektspeicher, ob historische Snapshot-Kopien als Backup-Dateien exportiert werden und das Aktivieren oder Deaktivieren von Ransomware-Scans für ein System.
+Sie können die Backup-to-Object-Storage-Einstellungen auf Clusterebene ändern, die Sie beim Aktivieren von NetApp Backup and Recovery für jedes ONTAP System festlegen, indem Sie die Seite „Erweiterte Einstellungen“ verwenden. Sie können auch einige Einstellungen ändern, die als „Standard“-Sicherungseinstellungen angewendet werden. Dies umfasst die Änderung der Übertragungsrate von Backups auf Objektspeicher, die Frage, ob historische Snapshots als Backup-Dateien exportiert werden, und die Aktivierung oder Deaktivierung von Ransomware-Scans für ein System.
 
 
 NOTE: Diese Einstellungen sind nur für die Sicherung im Objektspeicher verfügbar.  Keine dieser Einstellungen wirkt sich auf Ihre Snapshot- oder Replikationseinstellungen aus.
@@ -29,7 +29,7 @@ Auf der Seite „Erweiterte Einstellungen“ können Sie die folgenden Optionen 
 
 endif::aws[]
 
-* Ändern, ob historische Snapshot-Kopien als Sicherungsdateien exportiert und in Ihre anfänglichen Basissicherungsdateien für zukünftige Volumes aufgenommen werden
+* Ändern der Option, ob historische Snapshots als Sicherungsdateien exportiert und in die anfänglichen Basissicherungsdateien für zukünftige Volumes aufgenommen werden.
 * Ändern, ob „jährliche“ Snapshots aus dem Quellsystem entfernt werden
 * Aktivieren oder Deaktivieren von Ransomware-Scans für ein System, einschließlich geplanter Scans
 
@@ -77,17 +77,17 @@ endif::aws[]
 
 
 
-== Ändern, ob historische Snapshot-Kopien als Sicherungsdateien exportiert werden
+== Ändern Sie, ob historische Snapshots als Sicherungsdateien exportiert werden.
 
-Wenn lokale Snapshot-Kopien für Volumes vorhanden sind, die mit der Bezeichnung des Sicherungszeitplans übereinstimmen, den Sie in diesem System verwenden (z. B. täglich, wöchentlich usw.), können Sie diese historischen Snapshots als Sicherungsdateien in den Objektspeicher exportieren.  Auf diese Weise können Sie Ihre Backups in der Cloud initialisieren, indem Sie ältere Snapshot-Kopien in die Basis-Backup-Kopie verschieben.
+Falls lokale Snapshots für Volumes existieren, die mit der in diesem System verwendeten Backup-Zeitplanbezeichnung übereinstimmen (z. B. täglich, wöchentlich usw.), können Sie diese historischen Snapshots als Sicherungsdateien in den Objektspeicher exportieren.  Dies ermöglicht es Ihnen, Ihre Backups in der Cloud zu initialisieren, indem ältere Snapshots in die Basis-Backup-Kopie verschoben werden.
 
 Beachten Sie, dass diese Option nur für neue Sicherungsdateien für neue Lese-/Schreibvolumes gilt und bei Datensicherungsvolumes (DP) nicht unterstützt wird.
 
 .Schritte
 . Wählen Sie auf der Registerkarte *Volumes* die Option *Backup-Einstellungen* aus.
 . Klicken Sie auf der Seite „Backup-Einstellungen“ aufimage:icon-actions-horizontal.gif["Symbol „Mehr“"] für das System und wählen Sie *Erweiterte Einstellungen*.
-. Erweitern Sie auf der Seite „Erweiterte Einstellungen“ den Abschnitt *Vorhandene Snapshot-Kopien exportieren*.
-. Wählen Sie aus, ob vorhandene Snapshot-Kopien exportiert werden sollen.
+. Erweitern Sie auf der Seite „Erweiterte Einstellungen“ den Abschnitt *Vorhandene Snapshots exportieren*.
+. Wählen Sie aus, ob vorhandene Snapshots exportiert werden sollen.
 . Wählen Sie *Übernehmen*.
 
 
@@ -95,7 +95,7 @@ Beachten Sie, dass diese Option nur für neue Sicherungsdateien für neue Lese-/
 
 == Ändern, ob „jährliche“ Snapshots aus dem Quellsystem entfernt werden
 
-Wenn Sie für eine Sicherungsrichtlinie für eines Ihrer Volumes die Sicherungsbezeichnung „jährlich“ auswählen, ist die erstellte Snapshot-Kopie sehr groß.  Standardmäßig werden diese jährlichen Snapshots nach der Übertragung in den Objektspeicher automatisch aus dem Quellsystem gelöscht.  Sie können dieses Standardverhalten im Abschnitt „Jährliche Löschung von Snapshots“ ändern.
+Wenn Sie für eine Sicherungsrichtlinie eines Ihrer Volumes die Bezeichnung „jährlich“ auswählen, wird ein sehr großer Snapshot erstellt. Standardmäßig werden diese jährlichen Snapshots nach der Übertragung in den Objektspeicher automatisch aus dem Quellsystem gelöscht. Sie können dieses Standardverhalten im Abschnitt „Jährliche Löschung von Snapshots“ ändern.
 
 .Schritte
 . Wählen Sie auf der Registerkarte *Volumes* die Option *Backup-Einstellungen* aus.
@@ -112,7 +112,7 @@ image:screenshot_backup_edit_yearly_snap_delete.png["Ein Screenshot des Eintrags
 
 == Aktivieren oder Deaktivieren von Ransomware-Scans
 
-Ransomware-Schutzscans sind standardmäßig aktiviert.  Die Standardeinstellung für die Scanhäufigkeit beträgt 7 Tage.  Der Scan erfolgt nur auf der neuesten Snapshot-Kopie.  Sie können Ransomware-Scans für die neueste Snapshot-Kopie aktivieren oder deaktivieren, indem Sie die Option auf der Seite „Erweiterte Einstellungen“ verwenden.  Wenn Sie es aktivieren, werden standardmäßig alle 7 Tage Scans durchgeführt.
+Ransomware-Schutzscans sind standardmäßig aktiviert. Die Standardeinstellung für die Scanhäufigkeit beträgt 7 Tage. Der Scan erfolgt nur für den neuesten Snapshot. Sie können Ransomware-Scans für den neuesten Snapshot über die entsprechende Option auf der Seite „Erweiterte Einstellungen“ aktivieren oder deaktivieren. Wenn Sie es aktivieren, werden standardmäßig alle 7 Tage Scans durchgeführt.
 
 Weitere Informationen zu den Optionen DataLock und Ransomware Resilience finden Sie unterlink:prev-ontap-policy-object-options.html["DataLock- und Ransomware-Resilienzoptionen"] .
 
@@ -121,7 +121,7 @@ Sie können diesen Zeitplan auf Tage oder Wochen ändern oder ihn deaktivieren, 
 
 TIP: Für die Aktivierung von Ransomware-Scans fallen je nach Cloud-Anbieter zusätzliche Gebühren an.
 
-Geplante Ransomware-Scans werden nur auf der neuesten Snapshot-Kopie ausgeführt.
+Geplante Ransomware-Scans werden nur auf dem aktuellsten Snapshot ausgeführt.
 
 Wenn die geplanten Ransomware-Scans deaktiviert sind, können Sie weiterhin On-Demand-Scans durchführen und der Scan während eines Wiederherstellungsvorgangs wird weiterhin ausgeführt.
 

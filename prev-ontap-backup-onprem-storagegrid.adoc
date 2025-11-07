@@ -69,7 +69,7 @@ Stellen Sie sicher, dass das Netzwerk, in dem der Konsolenagent installiert ist,
 
 * Die NetApp Backup and Recovery Funktionalität ist in den Konsolenagenten integriert.  Wenn es im privaten Modus installiert ist, müssen Sie die Konsolenagent-Software regelmäßig aktualisieren, um Zugriff auf neue Funktionen zu erhalten.  Überprüfen Sie dielink:whats-new.html["NetApp Backup and Recovery – Neuigkeiten"] um die neuen Funktionen in jeder Version von NetApp Backup and Recovery anzuzeigen.  Wenn Sie die neuen Funktionen nutzen möchten, folgen Sie den Schritten zum https://docs.netapp.com/us-en/console-setup-admin/task-upgrade-connector.html["Aktualisieren Sie die Konsolenagentsoftware"^] .
 +
-Die neue Version von NetApp Backup and Recovery , die neben der Erstellung von Backups im Objektspeicher auch die Möglichkeit zum Planen und Erstellen von Snapshot-Kopien und replizierten Volumes umfasst, erfordert die Verwendung von Version 3.9.31 oder höher des Konsolenagenten.  Es wird daher empfohlen, dass Sie sich diese neueste Version besorgen, um alle Ihre Backups zu verwalten.
+Die neue Version von NetApp Backup and Recovery , die neben der Erstellung von Backups auf Objektspeicher auch die Möglichkeit bietet, Snapshots und replizierte Volumes zu planen und zu erstellen, erfordert die Verwendung der Version 3.9.31 oder höher des Console-Agenten. Es wird daher empfohlen, dass Sie sich diese neueste Version besorgen, um alle Ihre Backups zu verwalten.
 
 * Wenn Sie NetApp Backup and Recovery in einer SaaS-Umgebung verwenden, werden die NetApp Backup and Recovery -Konfigurationsdaten in der Cloud gesichert.  Wenn Sie NetApp Backup and Recovery an einem Standort ohne Internetzugang verwenden, werden die Konfigurationsdaten von NetApp Backup and Recovery im StorageGRID Bucket gesichert, in dem Ihre Backups gespeichert werden.
 
@@ -447,7 +447,7 @@ Wenn Ihr Cluster ONTAP 9.12.1 oder höher verwendet und Ihr StorageGRID System V
 +
 Wählen oder erstellen Sie einen neuen StorageGRID Cluster.  Weitere Informationen zum Erstellen eines StorageGRID -Clusters, damit die Konsole ihn erkennen kann, finden Sie unter https://docs.netapp.com/us-en/storagegrid-117/["StorageGRID -Dokumentation"^] .
 
-** *Exportieren Sie vorhandene Snapshot-Kopien als Sicherungskopien in den Objektspeicher*: Wenn es lokale Snapshot-Kopien für Volumes in diesem System gibt, die mit der Bezeichnung des Sicherungszeitplans übereinstimmen, die Sie gerade für dieses System ausgewählt haben (z. B. täglich, wöchentlich usw.), wird diese zusätzliche Eingabeaufforderung angezeigt.  Aktivieren Sie dieses Kontrollkästchen, um alle historischen Snapshots als Sicherungsdateien in den Objektspeicher zu kopieren und so den umfassendsten Schutz für Ihre Volumes zu gewährleisten.
+** *Vorhandene Snapshots als Sicherungskopien in den Objektspeicher exportieren*: Wenn es lokale Snapshots für Volumes in diesem System gibt, die mit der von Ihnen soeben für dieses System ausgewählten Sicherungszeitplanbezeichnung übereinstimmen (z. B. täglich, wöchentlich usw.), wird diese zusätzliche Aufforderung angezeigt. Aktivieren Sie dieses Kontrollkästchen, um alle historischen Snapshots als Sicherungsdateien in den Objektspeicher zu kopieren und so den umfassendsten Schutz für Ihre Volumes zu gewährleisten.
 
 
 . Wählen Sie *Weiter*.
@@ -466,7 +466,7 @@ Dies ist die Gelegenheit, Ihre Auswahl zu überprüfen und gegebenenfalls Anpass
 
 
 .Ergebnis
-NetApp Backup and Recovery beginnt mit der Durchführung der ersten Sicherungen Ihrer Volumes.  Die Basisübertragung des replizierten Volumes und der Sicherungsdatei umfasst eine vollständige Kopie der Quelldaten.  Nachfolgende Übertragungen enthalten differenzielle Kopien der in Snapshot-Kopien enthaltenen primären Speicherdaten.
+NetApp Backup and Recovery beginnt mit der Durchführung der ersten Sicherungen Ihrer Volumes. Die Basisübertragung des replizierten Volumes und der Sicherungsdatei umfasst eine vollständige Kopie der Quelldaten. Nachfolgende Übertragungen enthalten differentielle Kopien der im Primärspeicher enthaltenen Daten, die in Snapshots gespeichert sind.
 
 Im Zielcluster wird ein repliziertes Volume erstellt, das mit dem primären Speichervolume synchronisiert wird.
 

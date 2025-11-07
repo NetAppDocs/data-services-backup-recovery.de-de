@@ -123,7 +123,7 @@ Mit der Verwendung der Backup-to-Object-Funktion von NetApp Backup and Recovery 
 * Servicegebühren
 
 
-Für die Erstellung von Snapshot-Kopien oder replizierten Volumes fallen keine Kosten an – abgesehen vom erforderlichen Speicherplatz zum Speichern der Snapshot-Kopien und replizierten Volumes.
+Für die Erstellung von Snapshots oder replizierten Volumes fallen keine Gebühren an – außer dem Speicherplatz, der zum Speichern der Snapshots und replizierten Volumes benötigt wird.
 
 *Ressourcenkosten*
 
@@ -193,7 +193,7 @@ NetApp Backup and Recovery ist mit den folgenden Verbrauchsmodellen verfügbar:
 * *Jährlich*: Ein Jahresvertrag vom Marktplatz Ihres Cloud-Anbieters.
 
 
-Eine Backup-Lizenz ist nur für die Sicherung und Wiederherstellung aus dem Objektspeicher erforderlich.  Für das Erstellen von Snapshot-Kopien und replizierten Volumes ist keine Lizenz erforderlich.
+Eine Backup-Lizenz ist nur für die Sicherung und Wiederherstellung aus dem Objektspeicher erforderlich. Für die Erstellung von Snapshots und replizierten Volumes ist keine Lizenz erforderlich.
 
 *Bringen Sie Ihren eigenen Führerschein mit*
 

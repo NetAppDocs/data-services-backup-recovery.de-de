@@ -14,7 +14,7 @@ summary: Schützen Sie Ihre VMware-Workloads mit NetApp NetApp Backup and Recove
 
 
 [role="lead"]
-Stellen Sie VMware-Workloads aus Snapshot-Kopien, aus einem auf einen sekundären Speicher replizierten Workload-Backup oder aus im Objektspeicher gespeicherten Backups mit NetApp Backup and Recovery wieder her.
+VMware-Workloads können mithilfe von NetApp Backup and Recovery aus Snapshots, aus einer auf einen Sekundärspeicher replizierten Workload-Sicherung oder aus in Objektspeichern gespeicherten Sicherungen wiederhergestellt werden.
 
 .Von diesen Speicherorten wiederherstellen
 Sie können Workloads von verschiedenen Startorten wiederherstellen:

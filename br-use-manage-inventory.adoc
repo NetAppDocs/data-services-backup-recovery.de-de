@@ -39,7 +39,7 @@ Sie können die folgenden Aufgaben im Zusammenhang mit der Verwaltung Ihres Inve
 ** Sichern Sie jetzt, indem Sie ein On-Demand-Backup starten
 
 
-* Konfigurieren Sie das Protokollverzeichnis (unter Inventar > Hosts).  Wenn Sie Protokolle für Ihre Datenbankhosts im Snapshot sichern möchten, konfigurieren Sie zuerst die Protokolle in NetApp Backup and Recovery.  Weitere Einzelheiten finden Sie unterlink:br-start-setup.html["Konfigurieren der NetApp Backup and Recovery -Einstellungen"] .
+* Konfigurieren Sie das Protokollverzeichnis (unter *Inventar* > *Hosts*). Wenn Sie Protokolle für Ihre Datenbankhosts im Snapshot sichern möchten, konfigurieren Sie zuerst die Protokolle in NetApp Backup and Recovery. Weitere Einzelheiten finden Sie unterlink:br-start-setup.html["Konfigurieren der NetApp Backup and Recovery -Einstellungen"] .
 
 
 

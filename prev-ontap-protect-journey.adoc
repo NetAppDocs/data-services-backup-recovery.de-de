@@ -21,7 +21,7 @@ NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads 
 
 Wir gehen die folgenden Optionen durch:
 
-* Welche Schutzfunktionen werden Sie nutzen: Snapshot-Kopien, replizierte Volumes und/oder Backup in die Cloud
+* Welche Schutzfunktionen werden Sie verwenden: Snapshots, replizierte Volumes und/oder Backup in der Cloud?
 * Welche Backup-Architektur werden Sie verwenden: ein Kaskaden- oder Fan-Out-Backup Ihrer Volumes
 * Werden Sie die Standard-Backup-Richtlinien verwenden oder müssen Sie benutzerdefinierte Richtlinien erstellen?
 * Möchten Sie, dass der Dienst die Cloud-Buckets für Sie erstellt, oder möchten Sie Ihre Objektspeichercontainer erstellen, bevor Sie beginnen?
@@ -39,7 +39,7 @@ Bevor Sie die Funktionen auswählen, die Sie verwenden möchten, finden Sie hier
 | Sicherungstyp | Beschreibung 
 
 
-| Schnappschuss | Erstellt ein schreibgeschütztes Point-in-Time-Image eines Volumes innerhalb des Quellvolumes als Snapshot-Kopie.  Sie können die Snapshot-Kopie verwenden, um einzelne Dateien oder den gesamten Inhalt eines Volumes wiederherzustellen. 
+| Schnappschuss | Erstellt ein schreibgeschütztes Momentaufnahme-Image eines Volumes innerhalb des Quellvolumes.  Sie können den Snapshot verwenden, um einzelne Dateien wiederherzustellen oder um den gesamten Inhalt eines Volumes wiederherzustellen. 
 
 
 | Replikation | Erstellt eine sekundäre Kopie Ihrer Daten auf einem anderen ONTAP Speichersystem und aktualisiert die sekundären Daten kontinuierlich.  Ihre Daten bleiben aktuell und stehen Ihnen jederzeit zur Verfügung. 
@@ -47,17 +47,17 @@ Bevor Sie die Funktionen auswählen, die Sie verwenden möchten, finden Sie hier
 
 | Cloud-Backup | Erstellt zum Schutz und zur langfristigen Archivierung Backups Ihrer Daten in der Cloud.  Bei Bedarf können Sie ein Volume, einen Ordner oder einzelne Dateien aus der Sicherung auf demselben oder einem anderen System wiederherstellen. 
 |===
-Snapshots sind die Grundlage aller Sicherungsmethoden und werden für die Verwendung des Sicherungs- und Wiederherstellungsdienstes benötigt.  Eine Snapshot-Kopie ist ein schreibgeschütztes, zeitpunktbezogenes Abbild eines Datenträgers.  Das Image benötigt nur minimalen Speicherplatz und verursacht nur einen vernachlässigbaren Leistungsaufwand, da es nur die Änderungen an Dateien seit der letzten Snapshot-Kopie aufzeichnet.  Die auf Ihrem Volume erstellte Snapshot-Kopie wird verwendet, um das replizierte Volume und die Sicherungsdatei mit den am Quellvolume vorgenommenen Änderungen synchron zu halten – wie in der Abbildung gezeigt.
+Snapshots sind die Grundlage aller Sicherungsmethoden und werden für die Verwendung des Sicherungs- und Wiederherstellungsdienstes benötigt. Ein Snapshot ist ein schreibgeschütztes, zeitpunktbezogenes Abbild eines Datenträgers. Das Image benötigt nur minimalen Speicherplatz und verursacht einen vernachlässigbaren Leistungsmehraufwand, da es lediglich die Änderungen an den Dateien seit der Erstellung des letzten Snapshots aufzeichnet.  Der auf Ihrem Volume erstellte Snapshot dient dazu, das replizierte Volume und die Sicherungsdatei mit den am Quellvolume vorgenommenen Änderungen zu synchronisieren – wie in der Abbildung dargestellt.
 
-image:diagram-321-overview.png["Ein Diagramm, das zeigt, wie Sicherungsdateien auf dem Quellsystem als Snapshot-Kopien, als replizierte Volumes auf dem sekundären Speichersystem und als Sicherungsdateien im Objektspeicher vorhanden sind."]
+image:diagram-321-overview.png["Ein Diagramm, das zeigt, wie Sicherungsdateien auf dem Quellsystem als Snapshots, als replizierte Volumes auf dem sekundären Speichersystem und als Sicherungsdateien im Objektspeicher existieren."]
 
 Sie können sowohl replizierte Volumes auf einem anderen ONTAP Speichersystem erstellen als auch Dateien in der Cloud sichern.  Oder Sie können sich dafür entscheiden, nur replizierte Volumes oder Sicherungsdateien zu erstellen – Sie haben die Wahl.
 
 Zusammenfassend sind dies die gültigen Schutzflüsse, die Sie für Volumes in Ihrem ONTAP System erstellen können:
 
-* Quellvolume -> Snapshot-Kopie -> Repliziertes Volume -> Sicherungsdatei
-* Quellvolume -> Snapshot-Kopie -> Sicherungsdatei
-* Quellvolume -> Snapshot-Kopie -> Repliziertes Volume
+* Quellvolume -> Snapshot -> Repliziertes Volume -> Sicherungsdatei
+* Quellvolume -> Snapshot -> Sicherungsdatei
+* Quellvolume -> Snapshot -> Repliziertes Volume
 
 
 
@@ -88,13 +88,13 @@ Zusätzlich zu diesen Kriterien bietet der Cloud-Speicher zusätzliche Sicherhei
 
 Wenn Sie sowohl replizierte Volumes als auch Sicherungsdateien erstellen, können Sie zum Sichern Ihrer Volumes eine Fan-Out- oder Kaskadenarchitektur wählen.
 
-Eine *Fan-Out*-Architektur überträgt die Snapshot-Kopie unabhängig voneinander sowohl auf das Zielspeichersystem als auch auf das Sicherungsobjekt in der Cloud.
+Eine *Fan-Out*-Architektur überträgt den Snapshot unabhängig sowohl an das Zielspeichersystem als auch an das Backup-Objekt in der Cloud.
 
-image:diagram-321-fanout-detailed.png["Ein Diagramm, das zeigt, wie eine Snapshot-Kopie eines Volumes zum Erstellen und Aktualisieren eines replizierten Volumes und einer Sicherungsdatei verwendet wird."]
+image:diagram-321-fanout-detailed.png["Ein Diagramm, das zeigt, wie ein Snapshot eines Volumes verwendet wird, um ein repliziertes Volume und eine Sicherungsdatei zu erstellen und zu aktualisieren."]
 
-Bei einer *Kaskaden*-Architektur wird die Snapshot-Kopie zunächst auf das Zielspeichersystem übertragen, und dieses System überträgt die Kopie dann auf das Sicherungsobjekt in der Cloud.
+Eine *kaskadierte* Architektur überträgt den Snapshot zuerst an das Zielspeichersystem, und dieses System überträgt dann die Kopie an das Backup-Objekt in der Cloud.
 
-image:diagram-321-cascade-detailed.png["Ein Diagramm, das zeigt, wie eine Snapshot-Kopie eines Volumes zum Erstellen und Aktualisieren eines replizierten Volumes und einer Sicherungsdatei verwendet wird."]
+image:diagram-321-cascade-detailed.png["Ein Diagramm, das zeigt, wie ein Snapshot eines Volumes verwendet wird, um ein repliziertes Volume und eine Sicherungsdatei zu erstellen und zu aktualisieren."]
 
 *Vergleich der verschiedenen Architekturoptionen*
 
@@ -105,7 +105,7 @@ Diese Tabelle bietet einen Vergleich der Fan-Out- und Kaskadenarchitekturen.
 | Fan-Out | Kaskade 
 
 
-| Geringe Leistungseinbußen beim Quellsystem, da Snapshot-Kopien an zwei verschiedene Systeme gesendet werden | Geringere Auswirkungen auf die Leistung des Quellspeichersystems, da die Snapshot-Kopie nur einmal gesendet wird 
+| Geringe Auswirkungen auf die Leistung des Quellsystems, da Snapshots an zwei verschiedene Systeme gesendet werden. | Geringere Auswirkungen auf die Leistung des Quellspeichersystems, da der Snapshot nur einmal gesendet wird. 
 
 
 | Einfachere Einrichtung, da alle Richtlinien, Netzwerke und ONTAP -Konfigurationen auf dem Quellsystem vorgenommen werden | Erfordert einige Netzwerk- und ONTAP -Konfigurationen, die auch vom sekundären System aus durchgeführt werden müssen. 
@@ -116,9 +116,9 @@ Diese Tabelle bietet einen Vergleich der Fan-Out- und Kaskadenarchitekturen.
 
 Sie können zum Erstellen Ihrer Backups die von NetApp bereitgestellten Standardrichtlinien verwenden oder benutzerdefinierte Richtlinien erstellen.  Wenn Sie den Aktivierungsassistenten verwenden, um den Sicherungs- und Wiederherstellungsdienst für Ihre Volumes zu aktivieren, können Sie aus den Standardrichtlinien und allen anderen Richtlinien auswählen, die bereits im System vorhanden sind (Cloud Volumes ONTAP oder lokales ONTAP System).  Wenn Sie eine andere Richtlinie als die vorhandenen Richtlinien verwenden möchten, können Sie die Richtlinie vor dem Start oder während der Verwendung des Aktivierungsassistenten erstellen.
 
-* Die Standard-Snapshot-Richtlinie erstellt stündliche, tägliche und wöchentliche Snapshot-Kopien und behält 6 stündliche, 2 tägliche und 2 wöchentliche Snapshot-Kopien bei.
-* Die Standardreplikationsrichtlinie repliziert tägliche und wöchentliche Snapshot-Kopien und behält 7 tägliche und 52 wöchentliche Snapshot-Kopien bei.
-* Die Standard-Sicherungsrichtlinie repliziert tägliche und wöchentliche Snapshot-Kopien und behält 7 tägliche und 52 wöchentliche Snapshot-Kopien bei.
+* Die Standard-Snapshot-Richtlinie erstellt stündliche, tägliche und wöchentliche Snapshots, wobei 6 stündliche, 2 tägliche und 2 wöchentliche Snapshots gespeichert werden.
+* Die Standardreplikationsrichtlinie repliziert tägliche und wöchentliche Snapshots und speichert 7 tägliche und 52 wöchentliche Snapshots.
+* Die Standard-Backup-Richtlinie repliziert tägliche und wöchentliche Snapshots und speichert 7 tägliche und 52 wöchentliche Snapshots.
 
 
 Wenn Sie benutzerdefinierte Richtlinien für die Replikation oder Sicherung erstellen, müssen die Richtlinienbezeichnungen (z. B. „täglich“ oder „wöchentlich“) mit den Bezeichnungen in Ihren Snapshot-Richtlinien übereinstimmen. Andernfalls werden keine replizierten Volumes und Sicherungsdateien erstellt.

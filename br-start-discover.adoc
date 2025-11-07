@@ -24,7 +24,7 @@ NetApp Backup and Recovery muss zunächst Microsoft SQL Server-Workloads erkenne
 
 Während der Erkennung analysiert NetApp Backup and Recovery Microsoft SQL Server-Instanzen und Datenbanken in Systemen innerhalb Ihres Unternehmens.
 
-NetApp Backup and Recovery bewertet Microsoft SQL Server-Anwendungen.  Der Dienst bewertet das vorhandene Schutzniveau, einschließlich der aktuellen Sicherungsschutzrichtlinien, Snapshot-Kopien sowie Sicherungs- und Wiederherstellungsoptionen.
+NetApp Backup and Recovery bewertet Microsoft SQL Server-Anwendungen. Der Dienst bewertet den aktuellen Schutzstatus einschließlich der bestehenden Backup-Richtlinien, Snapshots sowie Backup- und Wiederherstellungsoptionen.
 
 Die Ermittlung erfolgt auf folgende Weise:
 
@@ -59,7 +59,7 @@ Dies ist ein zweiteiliger Prozess:
 
 ==== Importieren Sie SnapCenter Server-Anwendungs- und Hostressourcen
 
-Dieser erste Schritt importiert Hostressourcen aus SnapCenter und zeigt diese Ressourcen auf der Inventarseite von NetApp Backup and Recovery an.  Zu diesem Zeitpunkt werden die Ressourcen noch nicht von NetApp Backup and Recovery verwaltet.
+Dieser erste Schritt importiert Host-Ressourcen aus SnapCenter und zeigt diese Ressourcen auf der NetApp Backup and Recovery Inventory-Seite an. Zu diesem Zeitpunkt werden die Ressourcen noch nicht von NetApp Backup and Recovery verwaltet.
 
 
 TIP: Nachdem Sie SnapCenter -Hostressourcen importiert haben, übernimmt NetApp Backup and Recovery die Schutzverwaltung nicht automatisch.  Dazu müssen Sie explizit auswählen, dass die importierten Ressourcen in NetApp Backup and Recovery verwaltet werden sollen.  Dadurch wird sichergestellt, dass Sie bereit sind, diese Ressourcen durch NetApp Backup and Recovery sichern zu lassen.

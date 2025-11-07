@@ -23,7 +23,7 @@ Zu den Vorteilen des 3-2-1-Ansatzes gehören:
 * Sie können die Wiederherstellung schnell von der Vor-Ort-Kopie durchführen und die Offsite-Kopien verwenden, wenn die Vor-Ort-Kopie kompromittiert ist.
 
 
-NetApp Backup and Recovery verwendet NetApp SnapMirror zum Synchronisieren von Backups, indem Snapshot-Kopien erstellt und an die Backup-Speicherorte übertragen werden.
+NetApp Backup and Recovery verwendet NetApp SnapMirror, um Backups zu synchronisieren, indem Snapshots erstellt und an die Backup-Speicherorte übertragen werden.
 
 Zum Schutz Ihrer Daten können Sie Folgendes tun:
 
@@ -42,7 +42,7 @@ Zum Schutz Ihrer Daten können Sie Folgendes tun:
 Zum Sichern von Workloads erstellen Sie Richtlinien, die Sicherungs- und Wiederherstellungsvorgänge verwalten. Sehenlink:br-use-policies-create.html["Erstellen von Richtlinien"] für weitere Informationen.
 
 .Unterstützte Sicherungsziele
-Mit NetApp Backup and Recovery können Sie Microsoft SQL Server-Instanzen und -Datenbanken von den folgenden Quellsystemen auf die folgenden Sekundärsysteme und Objektspeicher bei öffentlichen und privaten Cloud-Anbietern sichern.  Snapshot-Kopien befinden sich auf dem Quellsystem.
+NetApp Backup and Recovery ermöglicht die Sicherung von Microsoft SQL Server-Instanzen und -Datenbanken von den folgenden Quellsystemen auf die folgenden Sekundärsysteme und Objektspeicher bei öffentlichen und privaten Cloud-Anbietern. Die Snapshots werden auf dem Quellsystem gespeichert.
 
 [cols="33,33,33"]
 |===
@@ -58,10 +58,10 @@ Mit NetApp Backup and Recovery können Sie Microsoft SQL Server-Instanzen und -D
 | On-Premises- ONTAP -System | Cloud Volumes ONTAP On-Premises ONTAP -System | Amazon S3 Azure Blob NetApp StorageGRID ONTAP S3 
 
 
-| Amazon FSx for NetApp ONTAP | Amazon FSx for NetApp ONTAP | N/A ifdef::gcp[] endif::gcp[] ifdef::gcp[] endif::gcp[] 
+| Amazon FSx for NetApp ONTAP | Amazon FSx for NetApp ONTAP | N / A 
 |===
 .Unterstützte Wiederherstellungsziele
-Sie können Microsoft SQL Server-Instanzen und -Datenbanken aus einer Sicherung, die sich im Primärspeicher oder einem Sekundärsystem (einem replizierten Volume) oder im Objektspeicher (einer Sicherungsdatei) befindet, auf den folgenden Systemen wiederherstellen.  Snapshot-Kopien befinden sich auf dem Quellsystem und können nur auf demselben System wiederhergestellt werden.
+Sie können Microsoft SQL Server-Instanzen und -Datenbanken aus einer Sicherung, die sich im Primärspeicher oder einem Sekundärsystem (einem replizierten Volume) oder im Objektspeicher (einer Sicherungsdatei) befindet, auf den folgenden Systemen wiederherstellen. Snapshots befinden sich auf dem Quellsystem und können nur auf demselben System wiederhergestellt werden.
 
 [cols="33,33,33"]
 |===
@@ -74,7 +74,7 @@ Sie können Microsoft SQL Server-Instanzen und -Datenbanken aus einer Sicherung,
 | Amazon S3 | Cloud Volumes ONTAP in AWS On-Premises- ONTAP -System | Cloud Volumes im AWS On-Premises ONTAP -System ONTAP S3 
 
 
-| Azure-Blob | Cloud Volumes ONTAP in Azure On-Premises- ONTAP -System | Cloud Volumes ONTAP in Azure Lokales ONTAP -System ONTAP S3 ifdef::gcp[] endif::gcp[] 
+| Azure-Blob | Cloud Volumes ONTAP in Azure On-Premises- ONTAP -System | Cloud Volumes ONTAP in Azure Lokales ONTAP -System ONTAP S3 
 
 
 | StorageGRID | Cloud Volumes ONTAP On-Premises ONTAP -System | On-Premises ONTAP -System ONTAP S3 
