@@ -346,7 +346,6 @@
   <block id="a9ad02ebb13f3d9fa3cb4a1b59be6548" category="paragraph">Plattformen, Geräte oder Funktionen, die mit dieser Version nicht oder nicht gut funktionieren, sind hier aufgelistet.  Lesen Sie diese Einschränkungen sorgfältig durch.</block>
   <block id="0e32e31adc232e70ce479856e16c7f00" category="section-title">Nicht unterstützte Aktionen</block>
   <block id="57a114780f98fd4bb0b06506b0ca9577" category="paragraph">Die folgenden Aktionen werden in der privaten Vorschauversion von Hyper-V-Workloads in NetApp Backup and Recovery nicht unterstützt:</block>
-  <block id="020a36deb114af1bb518c70d5975e940" category="list-text">Erstellen von Ressourcengruppen</block>
   <block id="5ae6a8a06c30125d00a57910609856cf" category="list-text">Spanning-Disks (über mehrere CIFS-Freigaben hinweg)</block>
   <block id="5cb642b37b3102019402cbd3b93a5693" category="list-text">Schützen Sie VMs über SAN</block>
   <block id="0fffe3f2fb1497b9e344ba8dceac922b" category="list-text">Schützen Sie Hyper-V-Hosts, die mit System Center Virtual Machine Manager (SCVMM) geclustert sind.</block>
@@ -677,7 +676,6 @@
   <block id="6fa0f470d5826983538c3b3091b8d4f3" category="list-text">Wählen Sie den Konsolenagenten aus, der mit diesem Host verwendet werden soll.</block>
   <block id="f536637d4867fa48ae5f42ffcabb3da0" category="list-text">Geben Sie einen Namen für diese Anmeldeinformationen ein.</block>
   <block id="c7312d0cf4cda8f78a6f1769e7958906" category="list-text">Geben Sie den Benutzernamen und das Kennwort für das Konto ein.</block>
-  <block id="5cf90f1e7bb7c40d89ed2ddaf928978f" category="list-text">*Hostregistrierung*: Fügen Sie einen neuen Hyper-V-Host hinzu.  Geben Sie den FQDN oder die IP-Adresse, die Anmeldeinformationen, den Konsolenagenten und die Portnummer des Hosts ein.</block>
   <block id="98ab4e23cce41ca38b39c7baf6ef4567" category="admonition">Dieser Vorgang kann einige Minuten dauern.</block>
   <block id="d4908a7dd622060706f5e0df98a716da" category="paragraph">Nachdem NetApp Backup and Recovery Ressourcen erkannt hat, wird auf der Seite „Inventar“ die Hyper-V-Arbeitslast in der Liste der Arbeitslasten angezeigt.</block>
   <block id="8c75bc4aab98ebfa4607c6737296d0fa" category="section-title">Weiter zum NetApp Backup and Recovery Dashboard</block>
@@ -4538,8 +4536,6 @@
   <block id="299981ed6b0aaf1c2eed2a8e35151313" category="list-text">*Schnelle Wiederherstellung aktivieren*: Wählen Sie diese Option, um eine schnelle Wiederherstellung durchzuführen. Sie können die wiederhergestellten Volumes und Daten sofort verwenden. Verwenden Sie dies nicht auf Volumes, die eine hohe Leistung erfordern, da der Zugriff auf die Daten während des schnellen Wiederherstellungsprozesses langsamer als gewöhnlich sein kann.</block>
   <block id="ca9d8ef3573c04098ddeb120eb1f19e5" category="list-text">*E-Mail-Benachrichtigungen aktivieren*: Wählen Sie diese Option aus, um E-Mail-Benachrichtigungen über den Wiederherstellungsvorgang zu erhalten, und wählen Sie die gewünschten Benachrichtigungstypen aus.</block>
   <block id="63751d750873479f94855f0a16fc63d8" category="list-text">Softwareanforderungen für den Hyper-V Windows Server-Host:</block>
-  <block id="1acabacd9fabb89313b2019250c36913" category="inline-link">Microsoft Windows Server-Dokumentation</block>
-  <block id="a05b36aea5976933f3daab44cd5602a1" category="list-text">Stellen Sie sicher, dass die Host Guardian Service-Rolle installiert ist (siehe<block ref="48d767cc816bb4d4b129a75bf7c81af1" category="inline-link-rx"></block> für Anweisungen)</block>
   <block id="fd7bb5c3777005321645f38a2d07ea27" category="admonition">Wenn der Wiederherstellungsvorgang nicht abgeschlossen werden kann, warten Sie, bis der Job Monitor „Fehlgeschlagen“ anzeigt, bevor Sie den Wiederherstellungsvorgang wiederholen.</block>
   <block id="df3ee99c8171743d8bd35d65cf62b2ed" category="paragraph">Mit NetApp Backup and Recovery können Sie Daten virtueller Maschinen aus der Cloud auf dem lokalen vCenter Server wiederherstellen. Sie können die virtuelle Maschine an genau demselben Speicherort wiederherstellen, von dem die Sicherung erstellt wurde, oder an einem anderen Speicherort. Wenn die virtuelle Maschine mithilfe einer Archivierungsrichtlinie gesichert wurde, können Sie die Priorität für die Archivwiederherstellung festlegen.</block>
   <block id="51e153ee1aa6cdb4ca7796e926180b53" category="admonition">Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unter<block ref="e56b09183f5489111204017fecace77e" category="inline-link-macro-rx"></block> .</block>
@@ -4791,4 +4787,9 @@
   <block id="b341302252cb59acb02da2074d4fe6c4" category="list-text">*Servicegebühren*: Gebühren für NetApp Backup and Recovery.  Befindet sich das Quellvolume jedoch in einem Speichersystem, das den CVO Professional-Plan nutzt, wird NetApp Backup and Recovery kostenlos bereitgestellt.</block>
   <block id="40d372f97e4d897da51bc1fa5978329b" category="paragraph">Wenn Sie die Google Cloud Platform nutzen, fordern Sie ein individuelles Angebot von NetApp an und wählen Sie Ihren Tarif während der Aktivierung im Google Cloud Marketplace aus.</block>
   <block id="3cd3cc23191003954a83615e7dc619e1" category="list-text">Oracle-Workloads (Vorschau)</block>
+  <block id="14e2c3c5d70d421449af52fed7355245" category="list-text">Erstellen Sie Ressourcengruppen mithilfe von VMs von mehreren Hyper-V-Hosts.</block>
+  <block id="c224c03fd1f5cab444913dab60a8d013" category="list-text">*Hostregistrierung*: Fügen Sie einen neuen Hyper-V-Host hinzu, indem Sie den FQDN oder die IP-Adresse des Hosts, die Anmeldeinformationen, den Konsolenagenten und die Portnummer eingeben. Falls der FQDN vom Konsolenagenten nicht aufgelöst werden kann, verwenden Sie stattdessen die IP-Adresse. Geben Sie für FCI-Cluster die Management-IP-Adresse des FCI-Clusters ein.</block>
+  <block id="36c0d00755a4d8daae367144e5daca38" category="list-text">Wenn Benutzer, die nicht Teil einer Administratordomäne sind, Hyper-V-VMs schützen sollen, stellen Sie sicher, dass der Benutzer über die folgenden Berechtigungen verfügt:</block>
+  <block id="57d2171dbc8d8d7a864a60de1ab4656c" category="list-text">Stellen Sie sicher, dass der Benutzer Mitglied der lokalen Administratorgruppe ist.</block>
+  <block id="27bc296e867cae2ef33b5cac51392cb2" category="list-text">Stellen Sie sicher, dass der Benutzer Teil der lokalen Sicherheitsrichtlinie „Anmelden als Dienst“ ist.</block>
 </blocks>

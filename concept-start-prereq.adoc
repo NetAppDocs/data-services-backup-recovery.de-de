@@ -216,6 +216,12 @@ Stellen Sie sicher, dass Ihre Hyper-V-Instanz bestimmte Anforderungen zum Erkenn
 ** Microsoft Hyper-V 2019, 2022 und 2025 Editionen
 ** ASP.NET Core Runtime 8.0.12 Hosting Bundle (und alle nachfolgenden 8.0.x-Patches)
 ** PowerShell 7.4.2 oder höher
+** Wenn Benutzer, die nicht Teil einer Administratordomäne sind, Hyper-V-VMs schützen sollen, stellen Sie sicher, dass der Benutzer über die folgenden Berechtigungen verfügt:
++
+*** Stellen Sie sicher, dass der Benutzer Mitglied der lokalen Administratorgruppe ist.
+*** Stellen Sie sicher, dass der Benutzer Teil der lokalen Sicherheitsrichtlinie „Anmelden als Dienst“ ist.
+
+
 ** Stellen Sie sicher, dass in den Windows-Firewall-Einstellungen bidirektionaler HTTPS-Verkehr für die folgenden Ports zugelassen ist:
 +
 *** 8144 (NetApp -Plugin für Hyper-V)

@@ -22,7 +22,8 @@ Plattformen, Geräte oder Funktionen, die mit dieser Version nicht oder nicht gu
 
 Die folgenden Aktionen werden in der privaten Vorschauversion von Hyper-V-Workloads in NetApp Backup and Recovery nicht unterstützt:
 
-* Erstellen von Ressourcengruppen
+* Erstellen Sie Ressourcengruppen mithilfe von VMs von mehreren Hyper-V-Hosts.
+* Wiederherstellen von VMs an einem anderen Standort
 * Spanning-Disks (über mehrere CIFS-Freigaben hinweg)
 * Schützen Sie VMs über SAN
 * Schutzgruppen bearbeiten

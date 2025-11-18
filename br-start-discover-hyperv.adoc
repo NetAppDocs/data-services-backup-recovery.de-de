@@ -44,7 +44,7 @@ Wenn Sie sich zum ersten Mal bei NetApp Backup and Recovery anmelden und bereits
 ... Wählen Sie *Fertig*.
 
 
-.. *Hostregistrierung*: Fügen Sie einen neuen Hyper-V-Host hinzu.  Geben Sie den FQDN oder die IP-Adresse, die Anmeldeinformationen, den Konsolenagenten und die Portnummer des Hosts ein.
+.. *Hostregistrierung*: Fügen Sie einen neuen Hyper-V-Host hinzu, indem Sie den FQDN oder die IP-Adresse des Hosts, die Anmeldeinformationen, den Konsolenagenten und die Portnummer eingeben. Falls der FQDN vom Konsolenagenten nicht aufgelöst werden kann, verwenden Sie stattdessen die IP-Adresse. Geben Sie für FCI-Cluster die Management-IP-Adresse des FCI-Clusters ein.
 
 
 . Wählen Sie *Entdecken*.
