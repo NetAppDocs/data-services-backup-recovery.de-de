@@ -111,7 +111,7 @@ Sie müssen den Azure Synapse Analytics-Ressourcenanbieter (genannt „Microsoft
 +
 [%collapsible]
 ====
-[source, console]
+[source, text]
 ----
 "Microsoft.Storage/storageAccounts/listkeys/action",
 "Microsoft.Storage/storageAccounts/read",

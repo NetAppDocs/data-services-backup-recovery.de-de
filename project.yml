@@ -105,7 +105,13 @@ sidebar:
       - title: Verwalten von ONTAP -Backups
         url: "/prev-ontap-backup-manage.html"
       - title: Wiederherstellung aus ONTAP -Backups
-        url: "/prev-ontap-restore.html"
+        entries:
+        - title: Übersicht wiederherstellen
+          url: "/prev-ontap-restore.html"
+        - title: Wiederherstellung aus ONTAP -Backups mithilfe von Suchen & Wiederherstellen
+          url: "/prev-ontap-restore-search.html"
+        - title: Wiederherstellung aus ONTAP -Backups mithilfe von Durchsuchen & Wiederherstellen
+          url: "/prev-ontap-restore-browse.html"
     - title: Schützen Sie Microsoft SQL Server-Workloads
       entries:
       - title: Übersicht zum Schützen von Microsoft SQL Server-Workloads

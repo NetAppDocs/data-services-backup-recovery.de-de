@@ -92,7 +92,7 @@ Um die Funktion „Suchen und Wiederherstellen“ von NetApp Backup and Recovery
 . Wählen Sie *Rolle bearbeiten*, um die Berechtigungen der Rolle zu aktualisieren.
 . Wählen Sie *Berechtigungen hinzufügen* aus, um der Rolle die folgenden neuen Berechtigungen hinzuzufügen.
 +
-[source, console]
+[source, text]
 ----
 bigquery.jobs.get
 bigquery.jobs.list
@@ -243,7 +243,7 @@ Sie müssen Speicherzugriffsschlüssel für ein Dienstkonto bereitstellen, das �
 . Im https://console.cloud.google.com["Google Cloud Console"^] , gehen Sie zur Seite *Rollen*.
 . https://cloud.google.com/iam/docs/creating-custom-roles#creating_a_custom_role["Erstellen einer neuen Rolle"^]mit den folgenden Berechtigungen:
 +
-[source, console]
+[source, text]
 ----
 storage.buckets.create
 storage.buckets.delete
@@ -297,7 +297,7 @@ Wenn Sie Ihre eigenen, vom Kunden verwalteten Schlüssel verwenden möchten:
 * Sie benötigen den Schlüsselbund und den Schlüsselnamen, damit Sie diese Informationen im Aktivierungsassistenten hinzufügen können. https://cloud.google.com/kms/docs/cmek["Erfahren Sie mehr über vom Kunden verwaltete Verschlüsselungsschlüssel"^] .
 * Sie müssen überprüfen, ob die folgenden erforderlichen Berechtigungen in der Rolle für den Konsolenagenten enthalten sind:
 +
-[source, console]
+[source, text]
 ----
 cloudkms.cryptoKeys.get
 cloudkms.cryptoKeys.getIamPolicy

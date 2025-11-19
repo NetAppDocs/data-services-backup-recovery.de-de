@@ -206,7 +206,7 @@ Wenn Sie die Sicherung auf StorageGRID einrichten, fordert Sie der Sicherungsass
 
 Diese Zugriffsschlüssel müssen einem Benutzer zugeordnet sein, der über die folgenden Berechtigungen verfügt:
 
-[source, console]
+[source, text]
 ----
 "s3:ListAllMyBuckets",
 "s3:ListBucket",
