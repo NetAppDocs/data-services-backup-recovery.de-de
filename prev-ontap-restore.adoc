@@ -69,12 +69,6 @@ Diese Tabelle bietet einen Funktionsvergleich der beiden Methoden.
 | Führt keine Dateiwiederherstellung durch, wenn die Datei gelöscht oder umbenannt wurde und der Benutzer den ursprünglichen Dateinamen nicht kennt | Verarbeitet neu erstellte/gelöschte/umbenannte Verzeichnisse und neu erstellte/gelöschte/umbenannte Dateien 
 
 
-| Keine zusätzlichen Ressourcen des Cloud-Anbieters erforderlich | Wenn Sie aus der Cloud wiederherstellen, sind pro Konto zusätzliche Bucket- und Public-Cloud-Provider-Ressourcen erforderlich. 
-
-
-| Keine zusätzlichen Kosten für den Cloud-Anbieter erforderlich | Bei der Wiederherstellung aus der Cloud fallen zusätzliche Kosten an, wenn Ihre Backups und Volumes nach Suchergebnissen durchsucht werden. 
-
-
 | Die schnelle Wiederherstellung wird unterstützt. | Die schnelle Wiederherstellung wird nicht unterstützt. 
 |===
 Diese Tabelle enthält eine Liste gültiger Wiederherstellungsvorgänge basierend auf dem Speicherort Ihrer Sicherungsdateien.

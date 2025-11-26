@@ -126,6 +126,8 @@ Beachten Sie, dass Verweise auf „On-Premises ONTAP Systeme“ FAS, AFF und ONT
 
 == Voraussetzungen suchen und wiederherstellen
 
+Stellen Sie sicher, dass Ihre Umgebung diese Anforderungen erfüllt, bevor Sie die Such- und Wiederherstellungsfunktion aktivieren:
+
 * Clusteranforderungen:
 +
 ** Die ONTAP -Version muss 9.8 oder höher sein.
@@ -141,6 +143,10 @@ Beachten Sie, dass Verweise auf „On-Premises ONTAP Systeme“ FAS, AFF und ONT
 
 === Voraussetzungen für die Legacy-Suche und -Wiederherstellung (bei Verwendung von Indexed Catalog v1)
 
+Folgende Anforderungen gelten für die Funktion „Suchen & Wiederherstellen“ bei Verwendung der Legacy-Indexierung:
+
+[%collapsible]
+====
 ifdef::aws[]
 
 * AWS-Anforderungen:
@@ -203,6 +209,7 @@ Auch wenn Sie einen lokalen Konsolen-Agenten verwenden, müssen die Anforderunge
 
 
 
+====
 
 
 == Such- und Wiederherstellungsprozess
@@ -251,7 +258,7 @@ Zuerst müssen Sie ein separates Volume einbinden, um die Katalogdateien aufzune
 
 Für das Einbauvolumen sind folgende Größenrichtlinien zu beachten:
 
-* Verwenden Sie ein NetApp NVS-Volume
+* Verwenden Sie ein NetApp NFS-Volume
 * Empfohlener AFF Speicher mit einer Festplattendurchsatzrate von 300 MB/s. Geringerer Durchsatz wird sich auf die Suche und andere Vorgänge auswirken.
 * Aktivieren Sie NetApp Snapshots, um zusätzlich zu den Katalog-Backup-ZIP-Dateien auch die Katalogmetadaten zu sichern.
 * 50 GB pro 1 Milliarde Dateien

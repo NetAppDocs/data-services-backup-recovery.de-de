@@ -3734,10 +3734,6 @@
   <block id="c601431e32ca59eda5545781d799fc84" category="cell">Suchen Sie in *allen Sicherungsdateien* nach einem Volume, Ordner oder einer Datei anhand des teilweisen oder vollständigen Volumenamens, des teilweisen oder vollständigen Ordner-/Dateinamens, des Größenbereichs und zusätzlicher Suchfilter.</block>
   <block id="8042f6982b79849d158e3d7ac9190cc2" category="cell">Führt keine Dateiwiederherstellung durch, wenn die Datei gelöscht oder umbenannt wurde und der Benutzer den ursprünglichen Dateinamen nicht kennt</block>
   <block id="609c9e9bd29468f2ba84839f3741b886" category="cell">Verarbeitet neu erstellte/gelöschte/umbenannte Verzeichnisse und neu erstellte/gelöschte/umbenannte Dateien</block>
-  <block id="c6df30fd69d443c5f65257f03e22d182" category="cell">Keine zusätzlichen Ressourcen des Cloud-Anbieters erforderlich</block>
-  <block id="ba3b7ed6a9e20a17536af523c17d7d72" category="cell">Wenn Sie aus der Cloud wiederherstellen, sind pro Konto zusätzliche Bucket- und Public-Cloud-Provider-Ressourcen erforderlich.</block>
-  <block id="f487cfb88239842615093e7eb26153a0" category="cell">Keine zusätzlichen Kosten für den Cloud-Anbieter erforderlich</block>
-  <block id="e4da0c30ee3e36e87eec129bd901c319" category="cell">Bei der Wiederherstellung aus der Cloud fallen zusätzliche Kosten an, wenn Ihre Backups und Volumes nach Suchergebnissen durchsucht werden.</block>
   <block id="bc7f13477d0119c48bad565ccf971e6a" category="cell">Die schnelle Wiederherstellung wird unterstützt.</block>
   <block id="acf00c252198c9be0294aaf561c5d662" category="cell">Die schnelle Wiederherstellung wird nicht unterstützt.</block>
   <block id="36bce3524e4446bfe42ccad6f813430a" category="paragraph">Diese Tabelle enthält eine Liste gültiger Wiederherstellungsvorgänge basierend auf dem Speicherort Ihrer Sicherungsdateien.</block>
@@ -4715,7 +4711,6 @@
   <block id="4fbc8584021c60a153dbf213f698df58" category="paragraph">Beachten Sie, dass die Ergebnisse lokale Volume-Snapshots und Remote-Replicated-Volumes identifizieren, die die in Ihrer Suche enthaltene Datei enthalten.  Sie können die Wiederherstellung entweder aus der Cloud-Sicherungsdatei, aus dem Snapshot oder aus dem replizierten Volume durchführen.</block>
   <block id="8cb59bcb28ab4d28eff3f32b41c1619f" category="paragraph">Zuerst müssen Sie ein separates Volume einbinden, um die Katalogdateien aufzunehmen. Dadurch wird ein Datenverlust verhindert, falls die Größe der Dateien, die die Snapshots enthalten, zu groß wird. Dies ist nicht auf jedem Cluster erforderlich; Sie können ein beliebiges Volume von einem beliebigen Cluster in Ihrer Umgebung einbinden. Wenn Sie dies nicht tun, funktioniert die Indizierung möglicherweise nicht richtig.</block>
   <block id="49b1bd86131611255094bea2f77118b7" category="paragraph">Für das Einbauvolumen sind folgende Größenrichtlinien zu beachten:</block>
-  <block id="0207db4ce855854d816d06443ff062ea" category="list-text">Verwenden Sie ein NetApp NVS-Volume</block>
   <block id="aa45cf8d923bfb8185fed2178e78d921" category="list-text">Empfohlener AFF Speicher mit einer Festplattendurchsatzrate von 300 MB/s. Geringerer Durchsatz wird sich auf die Suche und andere Vorgänge auswirken.</block>
   <block id="076bea46cdc896921ec2687cf3f345bb" category="list-text">Aktivieren Sie NetApp Snapshots, um zusätzlich zu den Katalog-Backup-ZIP-Dateien auch die Katalogmetadaten zu sichern.</block>
   <block id="1c3669c2099ac1b271c6bc4f19601ca5" category="list-text">50 GB pro 1 Milliarde Dateien</block>
@@ -4779,4 +4774,7 @@
   <block id="b72cbffce68718636e4f9c2f1c2a8173" category="list-text"><block ref="f0a1a1822bca6dd563c941cbc831d447" category="inline-link-macro-rx"></block></block>
   <block id="cee41b55e417d2c681bd345802b719fd" category="sidebar">Übersicht wiederherstellen</block>
   <block id="a49488740a7ad2d76917598dae6b3fbb" category="sidebar">Wiederherstellung aus ONTAP -Backups mithilfe von Durchsuchen &amp; Wiederherstellen</block>
+  <block id="4db9a239be0f58f8e4742665ad2371e2" category="paragraph">Stellen Sie sicher, dass Ihre Umgebung diese Anforderungen erfüllt, bevor Sie die Such- und Wiederherstellungsfunktion aktivieren:</block>
+  <block id="d0320c3b870d5944eb8c31ee83638872" category="paragraph">Folgende Anforderungen gelten für die Funktion „Suchen &amp; Wiederherstellen“ bei Verwendung der Legacy-Indexierung:</block>
+  <block id="9078cbf758e0949f0dca426e9aa6c0ce" category="list-text">Verwenden Sie ein NetApp NFS-Volume</block>
 </blocks>
