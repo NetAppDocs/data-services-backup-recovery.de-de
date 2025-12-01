@@ -4777,4 +4777,5 @@
   <block id="4db9a239be0f58f8e4742665ad2371e2" category="paragraph">Stellen Sie sicher, dass Ihre Umgebung diese Anforderungen erfüllt, bevor Sie die Such- und Wiederherstellungsfunktion aktivieren:</block>
   <block id="d0320c3b870d5944eb8c31ee83638872" category="paragraph">Folgende Anforderungen gelten für die Funktion „Suchen &amp; Wiederherstellen“ bei Verwendung der Legacy-Indexierung:</block>
   <block id="9078cbf758e0949f0dca426e9aa6c0ce" category="list-text">Verwenden Sie ein NetApp NFS-Volume</block>
+  <block id="459af9b852bd375bac17fb30c8c1b979" category="list-text">NetApp Backup &amp; Recovery unterstützt nicht die Konvertierung eines FlexVol volume mit einer aktiven Cloud-Backup-Beziehung in ein FlexGroup -Volume unter Beibehaltung der Cloud-Backup-Funktionalität.</block>
 </blocks>
