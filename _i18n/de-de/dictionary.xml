@@ -1037,7 +1037,6 @@
   <block id="8dee103972185c1aba0e0c814961a8db" category="list-text">Abschnitt *Benachrichtigung*:</block>
   <block id="d705348f84095bf9f266942da2cf2b84" category="list-text">*E-Mail-Benachrichtigungen aktivieren*: Wählen Sie diese Option aus, um E-Mail-Benachrichtigungen über den Wiederherstellungsvorgang zu erhalten, und geben Sie an, welche Art von Benachrichtigungen Sie erhalten möchten.</block>
   <block id="f77361b272ce81d8275727f7b1a756a8" category="list-text">Wählen Sie *Wiederherstellen*.</block>
-  <block id="aef04a364ab7bd7fcab1346a4084cdaa" category="paragraph">Nicht verfügbar für die private Vorschau von Hyper-V.</block>
   <block id="4c931104d6ff5fdc2a76bdfc6fba4662" category="summary">Sie können Kubernetes-Anwendungen und Anwendungsdaten von lokalen ONTAP -Systemen auf Amazon Web Services, Microsoft Azure, Google Cloud Platform und StorageGRID schützen und so sicherstellen, dass Ihre Daten geschützt sind.</block>
   <block id="ff1a3fbe6f92249e286b8a93cf5b5d2e" category="doc">Übersicht über die Verwaltung von Kubernetes-Workloads</block>
   <block id="14cca4b1ac5c46a49fffa25e733381e7" category="paragraph">Durch die Verwaltung von Kubernetes-Workloads in NetApp Backup and Recovery können Sie Ihre Kubernetes-Cluster und -Anwendungen an einem Ort erkennen, verwalten und schützen. Sie können die auf Ihren Kubernetes-Clustern gehosteten Ressourcen und Anwendungen verwalten. Außerdem können Sie Schutzrichtlinien erstellen und Ihren Kubernetes-Workloads zuordnen – alles über eine einzige Oberfläche.</block>
@@ -1090,7 +1089,6 @@
   <block id="42b3c9b2282ae6b4644cee5b5995979d" category="summary">Schützen Sie Ihre KVM-Workloads mit NetApp Backup and Recovery.</block>
   <block id="02055854e5f8d7c0a2161503c5645d5a" category="doc">Wiederherstellen virtueller KVM-Maschinen mit NetApp Backup and Recovery</block>
   <block id="4ebed5b1ff5b9230bfba78b5f3751082" category="paragraph">Sie können virtuelle Maschinen von verschiedenen Startorten aus wiederherstellen:</block>
-  <block id="2003d1dd0ff605a8b0183ae69c3823f3" category="paragraph">Sie können Daten am ursprünglichen Speicherort wiederherstellen. Die Wiederherstellung an einem anderen Speicherort ist in dieser Vorschauversion nicht verfügbar.</block>
   <block id="c149f6b4ccbdba8011de4b1e3579b42f" category="list-text">Am ursprünglichen Speicherort wiederherstellen</block>
   <block id="25a77bf38583c396d6997e367e9268c8" category="section-title">So funktioniert die Wiederherstellung virtueller Maschinen</block>
   <block id="01d60535f98ec4122ee816d29473c760" category="paragraph">Wenn Sie virtuelle Maschinen wiederherstellen, geschieht Folgendes:</block>
@@ -1101,7 +1099,6 @@
   <block id="108ce4e259c8e5532d28e1f7b55053e0" category="paragraph">Stellen Sie virtuelle KVM-Maschinen mithilfe der Option „Wiederherstellen“ wieder her. Sie können nach dem Snapshot anhand seines Namens oder mithilfe von Filtern suchen.</block>
   <block id="28826b6f1571b9d0354ca0ae481f50c6" category="list-text">Wählen Sie aus der Dropdown-Liste rechts neben dem Namenssuchfeld *KVM* aus.</block>
   <block id="066fa262c239f022506c95a1e09ebb65" category="list-text">Geben Sie den Namen der VM ein, die Sie wiederherstellen möchten, oder filtern Sie nach dem VM-Host oder Speicherpool, in dem sich die wiederherzustellende Ressource befindet.</block>
-  <block id="7f95c9104d9c5d062c442ee5aade255c" category="paragraph">Für die KVM-Vorschau nicht verfügbar.</block>
   <block id="67833cdc3e0f9b5bea226d3734262615" category="summary">Mit NetApp Backup and Recovery können Sie Ausführungs-Hooks verwalten, um vor oder nach Anwendungsschutzvorgängen Maßnahmen zu ergreifen.</block>
   <block id="3d932cbb71cd117a65669b165e078b5b" category="doc">Verwalten Sie NetApp Backup and Recovery -Ausführungs-Hook-Vorlagen für Kubernetes-Workloads</block>
   <block id="ac84b7596169ab3fb6c24e8a5c85c234" category="inline-link">Datenschutz mit KubeVirt-VMs</block>
@@ -1916,16 +1913,7 @@
   <block id="ba48c3305320f5df1a8db5cbd6fed75a" category="paragraph">Sie können Daten bis zu diesen Punkten wiederherstellen:</block>
   <block id="600582313b42616fbf96d317e8033ef9" category="paragraph">Stellen Sie VMware-Workloads mithilfe der Option „Wiederherstellen“ wieder her. Sie können nach dem Snapshot anhand seines Namens oder mithilfe von Filtern suchen.</block>
   <block id="1ca9578c25474d5cfeaa6c44bdbaa9b2" category="paragraph">*Erforderliche NetApp Console * Speicherbetrachter, Superadministrator für Backup und Wiederherstellung, Administratorrolle für Backup- und Wiederherstellungswiederherstellung.<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block> .</block>
-  <block id="71032b474c00a68ab57e3f805cdf5d61" category="list-text">Wählen Sie aus der Dropdown-Liste rechts neben dem Namenssuchfeld *Virtuelle Maschinen* aus.</block>
   <block id="2aceb93307f82c2d88347faa7eaa4e71" category="list-text">Geben Sie den Namen der Ressource ein, die Sie wiederherstellen möchten, oder filtern Sie nach dem vCenter, Rechenzentrum oder Datenspeicher, in dem sich die wiederherzustellende Ressource befindet.</block>
-  <block id="3fca73cfa6e5a82be82156106e4db553" category="paragraph">Es wird eine Liste mit Optionen für den Wiederherstellungsort angezeigt.</block>
-  <block id="eb58d19c210547f2e0cbe6a7689d6a12" category="list-text">Wählen Sie den Wiederherstellungsort aus, an dem Sie den Snapshot wiederherstellen möchten:</block>
-  <block id="c318ddc11c1d9b56e2cfda2af9351a42" category="list-text">Lokal: Stellt den Snapshot am ursprünglichen Speicherort wieder her.</block>
-  <block id="e4e4935a5dbb6b2200b975d599e683e4" category="list-text">Sekundärspeicher: Stellt den Snapshot an einem sekundären Speicherort wieder her.</block>
-  <block id="33a039fcca21669940ad7ee10455c43d" category="list-text">Objektspeicher: Stellt den Snapshot an einem Objektspeicherort wieder her.</block>
-  <block id="6fa9a019160376f2b85947c9116180fb" category="paragraph">Wenn Sie sich für Objektspeicher entscheiden, prüfen Sie, ob Sie den Snapshot vor der Wiederherstellung erneut scannen möchten.</block>
-  <block id="0bff45ae654663c7b091c0f6dd70d653" category="paragraph">Geben Sie auf der Seite „Details zum Wiederherstellungsziel“ die folgenden Informationen ein:</block>
-  <block id="c8f730ad9d8597b4dfcdd623d5a511aa" category="paragraph">Nicht für die VMware-Vorschau verfügbar.</block>
   <block id="a5315c2927cf2b05876fdd6713fbd713" category="summary">NetApp Backup and Recovery ist ein Datenservice, der effizienten, sicheren und kostengünstigen Datenschutz für alle Ihre ONTAP Workloads bietet, einschließlich Volumes, Datenbanken, virtuellen Maschinen und Kubernetes-Workloads.</block>
   <block id="0541ead918a4013aad82336e0654ba53" category="paragraph">Die Unterstützung für Backup und Recovery ist bereits in alle ONTAP -Systeme integriert, sodass keine zusätzliche Hardware, Softwarelizenzen oder Medien-Gateways erforderlich sind.  Dadurch werden Sicherungsvorgänge einfach und kostengünstig.  Die NetApp Konsole vereinfacht die Implementierung jeder Backup-Strategie, einschließlich des gesamten Spektrums an 3-2-1-Backup-Varianten, ohne dass mehrere Ressourcenmanager oder spezialisiertes Personal erforderlich sind.</block>
   <block id="8fa16cd18cf0722e85fe3e62f649f0c8" category="admonition">Dokumentation zum Schutz von VMware-, KVM-, Hyper-V- und Kubernetes-Workloads wird als Technologievorschau bereitgestellt. Bei diesem Vorschauangebot behält sich NetApp das Recht vor, Angebotsdetails, Inhalte und Zeitplan vor der allgemeinen Verfügbarkeit zu ändern.</block>
@@ -4487,9 +4475,6 @@
   <block id="2b2261b532e949e52edc443eb38fcb1c" category="admonition">Möglicherweise zahlen Sie Ihrem Cloud-Anbieter zusätzliche Gebühren für den Zugriff auf die Sicherungsdatei.</block>
   <block id="d4356e3242caba9699bd9bc147a04798" category="paragraph">Auf der Seite „Wiederherstellen“ (Suchen und Wiederherstellen) können Sie eine Ressource wiederherstellen, indem Sie mithilfe von Filtern nach dem Snapshot suchen, auch wenn Sie sich nicht an den genauen Namen, den Speicherort oder das letzte bekannte Datum erinnern.</block>
   <block id="167f8fde1782c144b38a4f581246608e" category="paragraph">Wenn Sie sekundären Speicher wählen, geben Sie die Quell- und Zielspeicherorte für Daten und Protokolle ein.</block>
-  <block id="9908b0e588dc1ce9587bfb1206e3118e" category="paragraph">Wählen Sie als Nächstes die Zieleinstellungen sowie die Optionen vor und nach der Wiederherstellung.</block>
-  <block id="299981ed6b0aaf1c2eed2a8e35151313" category="list-text">*Schnelle Wiederherstellung aktivieren*: Wählen Sie diese Option, um eine schnelle Wiederherstellung durchzuführen. Sie können die wiederhergestellten Volumes und Daten sofort verwenden. Verwenden Sie dies nicht auf Volumes, die eine hohe Leistung erfordern, da der Zugriff auf die Daten während des schnellen Wiederherstellungsprozesses langsamer als gewöhnlich sein kann.</block>
-  <block id="ca9d8ef3573c04098ddeb120eb1f19e5" category="list-text">*E-Mail-Benachrichtigungen aktivieren*: Wählen Sie diese Option aus, um E-Mail-Benachrichtigungen über den Wiederherstellungsvorgang zu erhalten, und wählen Sie die gewünschten Benachrichtigungstypen aus.</block>
   <block id="63751d750873479f94855f0a16fc63d8" category="list-text">Softwareanforderungen für den Hyper-V Windows Server-Host:</block>
   <block id="fd7bb5c3777005321645f38a2d07ea27" category="admonition">Wenn der Wiederherstellungsvorgang nicht abgeschlossen werden kann, warten Sie, bis der Job Monitor „Fehlgeschlagen“ anzeigt, bevor Sie den Wiederherstellungsvorgang wiederholen.</block>
   <block id="df3ee99c8171743d8bd35d65cf62b2ed" category="paragraph">Mit NetApp Backup and Recovery können Sie Daten virtueller Maschinen aus der Cloud auf dem lokalen vCenter Server wiederherstellen. Sie können die virtuelle Maschine an genau demselben Speicherort wiederherstellen, von dem die Sicherung erstellt wurde, oder an einem anderen Speicherort. Wenn die virtuelle Maschine mithilfe einer Archivierungsrichtlinie gesichert wurde, können Sie die Priorität für die Archivwiederherstellung festlegen.</block>
@@ -4778,4 +4763,40 @@
   <block id="d0320c3b870d5944eb8c31ee83638872" category="paragraph">Folgende Anforderungen gelten für die Funktion „Suchen &amp; Wiederherstellen“ bei Verwendung der Legacy-Indexierung:</block>
   <block id="9078cbf758e0949f0dca426e9aa6c0ce" category="list-text">Verwenden Sie ein NetApp NFS-Volume</block>
   <block id="459af9b852bd375bac17fb30c8c1b979" category="list-text">NetApp Backup &amp; Recovery unterstützt nicht die Konvertierung eines FlexVol volume mit einer aktiven Cloud-Backup-Beziehung in ein FlexGroup -Volume unter Beibehaltung der Cloud-Backup-Funktionalität.</block>
+  <block id="063090df0880212c0ba8eec878096a21" category="doc">VMware Workloads Vorschau-Verbesserungen</block>
+  <block id="24936fb650df7af8295e75a3667becef" category="list-text">Sie können Backups und Snapshots jetzt an einem alternativen Speicherort wiederherstellen. Dies ist nützlich, wenn Sie Versionen einer VM auf verschiedenen VMware vCenter-Bereitstellungen, VMware ESXi-Hosts oder VMware-Datenspeichern verwalten möchten.</block>
+  <block id="99ee61e75520f174d08caa35e0ad294d" category="list-text">Sie können nun bestimmte virtuelle VMware-Festplatten (VMDK-Images) entweder von einem primären oder einem sekundären Speicherort wiederherstellen, was eine feinere Kontrolle über die Wiederherstellung von VM-Daten ermöglicht.</block>
+  <block id="814957340a966bc73ff87feca2905da9" category="inline-link-macro">Erfahren Sie mehr über die Wiederherstellung von VMware-Workloads mit NetApp Backup and Recovery.</block>
+  <block id="8b8a6f71e41f04ff546fb14f0800f38f" category="paragraph"><block ref="9f09945a70747c90951b9e96b5ea16be" category="inline-link-macro-rx"></block>.</block>
+  <block id="7689264f717abcf16a917111f707d7e0" category="paragraph">Nicht verfügbar für Hyper-V-Workloads in der Vorschau.</block>
+  <block id="77f252cb66af8ee7dab8b27bcf3851ca" category="paragraph">Nicht verfügbar für die KVM-Workload-Vorschau.</block>
+  <block id="516f1f530028d7905b72cd1b035c8a73" category="list-text">*Wiederherstellung am ursprünglichen Speicherort*: Die VM wird am ursprünglichen Speicherort wiederhergestellt, und zwar in derselben vCenter-Bereitstellung, auf demselben ESXi-Host und im selben Datenspeicher. Die VM und alle darauf befindlichen Daten werden überschrieben.</block>
+  <block id="d2f574e5e69d11881580660614b89ba3" category="list-text">*Wiederherstellung an einem alternativen Speicherort*: Sie können einen anderen vCenter-Server, ESXi-Host oder Datenspeicher als Wiederherstellungsziel für die VM auswählen. Dies ist nützlich, um verschiedene Kopien derselben VM an unterschiedlichen Standorten und in verschiedenen Zuständen zu verwalten.</block>
+  <block id="fa378eb8651e1bbe815e91c2a4ec5b2b" category="list-text">Wählen Sie in der Dropdown-Liste rechts neben dem Namenssuchfeld *VMware* aus.</block>
+  <block id="b2135f4d6adba994b22c157197d8699b" category="paragraph">Es erscheint eine Liste virtueller Maschinen, die Ihren Suchkriterien entsprechen.</block>
+  <block id="7e4be521d13fb903d20636d087795bdb" category="list-text">Suchen Sie in der Liste die VM, die Sie wiederherstellen möchten, und wählen Sie für diese VM die Schaltfläche *Virtuelle Maschine wiederherstellen* aus.</block>
+  <block id="02e027e60aca2a9aa354a74b09718442" category="paragraph">Es wird eine Liste der auf dieser virtuellen Maschine erstellten Snapshots (Wiederherstellungspunkte) angezeigt.</block>
+  <block id="a15361d377b43197c1044f0729f9742e" category="list-text">Aktivieren Sie das Kontrollkästchen für den Snapshot, den Sie wiederherstellen möchten.</block>
+  <block id="4716cc8d1f61fba6b3c321e87aece13d" category="paragraph">Optionen zum Speichern des Schnappschusses werden angezeigt.</block>
+  <block id="f16b36eea83bd45d35d7613cab7f6cf8" category="list-text">Wählen Sie das Wiederherstellungsziel für den Snapshot aus:</block>
+  <block id="086fbde8fbe590f104f5100808b42c0b" category="list-text">*Lokal*: Stellt den Snapshot vom lokalen Speicherort wieder her.</block>
+  <block id="3a786499ea5d54fb6bb418032aca3117" category="list-text">*Sekundär*: Stellt den Snapshot von einem entfernten Speicherort wieder her.</block>
+  <block id="bc9234ce73c565f247a8ae290b842ff6" category="list-text">Wählen Sie die Zieleinstellungen sowie die Optionen vor und nach der Wiederherstellung.</block>
+  <block id="8ed9e5a565b596ef7f9cb364cf2536d7" category="paragraph">Bei der Wiederherstellung am ursprünglichen Speicherort können Sie weder das Ziel-vCenter, den ESXi-Host, den Datenspeicher noch den Namen der VM ändern. Die ursprüngliche VM wird bei der Wiederherstellungsoperation überschrieben.</block>
+  <block id="10b0d3ffb47c4e67fc652e3b0f0220d7" category="list-text">Wählen Sie den Bereich *Ursprünglicher Speicherort* aus.</block>
+  <block id="1b8d4d654146b4eec3cc22bd8b461dbb" category="list-text">Wählen Sie aus den folgenden Optionen:</block>
+  <block id="9969fdcd80f8f04232cfe10158190f8c" category="list-text">Abschnitt *Optionen vor der Wiederherstellung*:</block>
+  <block id="3e4b444bf949d263dd0a42369aeba637" category="list-text">*Vorgabe*: Aktivieren Sie diese Option, um zusätzliche Aufgaben zu automatisieren, indem Sie vor Beginn des Wiederherstellungsvorgangs ein benutzerdefiniertes Skript ausführen. Geben Sie den vollständigen Pfad zu dem auszuführenden Skript sowie alle Argumente an, die das Skript benötigt.</block>
+  <block id="181dff5c613144551ed16703a090b3b5" category="list-text">Abschnitt *Optionen nach der Wiederherstellung*:</block>
+  <block id="81dcec9119b8491a178fac7f1cf17c92" category="list-text">*Virtuelle Maschine neu starten*: Aktivieren Sie diese Option, um die virtuelle Maschine nach Abschluss des Wiederherstellungsvorgangs und nach Anwendung des Nachwiederherstellungsskripts neu zu starten.</block>
+  <block id="7de4def82cb6f4cb7277085992e1be0a" category="list-text">*Nachtrag*: Aktivieren Sie diese Option, um zusätzliche Aufgaben zu automatisieren, indem Sie nach Abschluss der Wiederherstellung ein benutzerdefiniertes Skript ausführen. Geben Sie den vollständigen Pfad zu dem auszuführenden Skript sowie alle Argumente an, die das Skript benötigt.</block>
+  <block id="72e03b5a87389f676881b79f8d4170ca" category="paragraph">Bei der Wiederherstellung an einem alternativen Speicherort können Sie das Ziel-vCenter, den ESXi-Host, den Datenspeicher und den Namen der VM ändern, um eine neue Kopie der VM an einem anderen Speicherort oder mit einem anderen Namen zu erstellen.</block>
+  <block id="d9a04cc80eb84134a783629255c7bc36" category="list-text">Wählen Sie den Bereich *Alternativer Standort* aus.</block>
+  <block id="f78868ada341077e1afdf76ea00e0454" category="list-text">Abschnitt *Zieleinstellungen*:</block>
+  <block id="fd6f2a9c82421585e9dfe5f8820c97c0" category="list-text">*vCenter FQDN oder IP-Adresse*: Wählen Sie den vCenter-Server aus, auf dem Sie den Snapshot wiederherstellen möchten.</block>
+  <block id="a239cc572a24441f1bb1a7abc259ccab" category="list-text">*ESXi-Host*: Wählen Sie den Host aus, auf dem Sie den Snapshot wiederherstellen möchten.</block>
+  <block id="c2942751152cd0449e1de7861200bde4" category="list-text">*Netzwerk*: Wählen Sie das Netzwerk aus, in dem Sie den Snapshot wiederherstellen möchten.</block>
+  <block id="08c806f7ec865a3481f751e978944e5d" category="list-text">*Datenspeicher*: Geben Sie den Namen des Datenspeichers ein, in dem Sie den Snapshot wiederherstellen möchten.</block>
+  <block id="70fd3915e87d44c5f19fc35858b165f8" category="list-text">*Name der virtuellen Maschine*: Geben Sie den Namen der VM ein, auf der Sie den Snapshot wiederherstellen möchten. Wenn der Name mit einer bereits im Datenspeicher vorhandenen VM übereinstimmt, sorgt Backup and Recovery für einen eindeutigen Namen, indem ein aktueller Zeitstempel angehängt wird.</block>
+  <block id="2727f68982ff25e8b3c57e026120561d" category="section-title">8. Dezember 2025</block>
 </blocks>

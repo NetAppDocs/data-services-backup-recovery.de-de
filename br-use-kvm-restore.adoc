@@ -25,7 +25,7 @@ Sie können virtuelle Maschinen von verschiedenen Startorten aus wiederherstelle
 
 
 .Stellen Sie diese Punkte wieder her
-Sie können Daten am ursprünglichen Speicherort wiederherstellen. Die Wiederherstellung an einem anderen Speicherort ist in dieser Vorschauversion nicht verfügbar.
+Sie können Daten bis zu diesen Punkten wiederherstellen:
 
 * Am ursprünglichen Speicherort wiederherstellen
 
@@ -108,10 +108,7 @@ Als Nächstes können Sie die Zieleinstellungen sowie die Optionen vor und nach 
 --
 .An einem anderen Speicherort wiederherstellen
 --
-Für die KVM-Vorschau nicht verfügbar.
-
-. Wählen Sie *Wiederherstellen*.
-
+Nicht verfügbar für die KVM-Workload-Vorschau.
 
 --
 ====

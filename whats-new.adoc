@@ -18,6 +18,24 @@ Erfahren Sie, was es Neues bei NetApp Backup and Recovery gibt.
 
 
 
+== 8. Dezember 2025
+
+Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
+
+
+
+=== VMware Workloads Vorschau-Verbesserungen
+
+Die Vorschauversion von VMware-Workloads führt die folgenden erweiterten Funktionen ein:
+
+* Sie können Backups und Snapshots jetzt an einem alternativen Speicherort wiederherstellen. Dies ist nützlich, wenn Sie Versionen einer VM auf verschiedenen VMware vCenter-Bereitstellungen, VMware ESXi-Hosts oder VMware-Datenspeichern verwalten möchten.
+* Sie können nun bestimmte virtuelle VMware-Festplatten (VMDK-Images) entweder von einem primären oder einem sekundären Speicherort wiederherstellen, was eine feinere Kontrolle über die Wiederherstellung von VM-Daten ermöglicht.
+
+
+link:br-use-vmware-restore.html["Erfahren Sie mehr über die Wiederherstellung von VMware-Workloads mit NetApp Backup and Recovery."].
+
+
+
 == 06. Oktober 2025
 
 Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.

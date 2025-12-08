@@ -25,7 +25,10 @@ Sie können Workloads von verschiedenen Startorten wiederherstellen:
 
 
 .Stellen Sie diese Punkte wieder her
-Sie können Daten am ursprünglichen Speicherort wiederherstellen. Die Wiederherstellung an einem anderen Speicherort ist in dieser privaten Vorschauversion nicht verfügbar.
+Sie können Daten bis zu diesen Punkten wiederherstellen:
+
+* Am ursprünglichen Speicherort wiederherstellen
+
 
 .Überlegungen zur Wiederherstellung aus dem Objektspeicher
 Wenn Sie eine Sicherungsdatei im Objektspeicher auswählen und für diese Sicherung der Ransomware-Schutz aktiv ist (wenn Sie DataLock und Ransomware Resilience in der Sicherungsrichtlinie aktiviert haben), werden Sie aufgefordert, vor der Wiederherstellung der Daten eine zusätzliche Integritätsprüfung der Sicherungsdatei durchzuführen.  Wir empfehlen Ihnen, den Scan durchzuführen.
@@ -101,10 +104,7 @@ Als Nächstes können Sie die Zieleinstellungen sowie die Optionen vor und nach 
 --
 .An einem anderen Speicherort wiederherstellen
 --
-Nicht verfügbar für die private Vorschau von Hyper-V.
-
-. Wählen Sie *Wiederherstellen*.
-
+Nicht verfügbar für Hyper-V-Workloads in der Vorschau.
 
 --
 ====

@@ -27,7 +27,8 @@ Sie können Workloads von verschiedenen Startorten wiederherstellen:
 .Stellen Sie diese Punkte wieder her
 Sie können Daten bis zu diesen Punkten wiederherstellen:
 
-* Am ursprünglichen Speicherort wiederherstellen
+* *Wiederherstellung am ursprünglichen Speicherort*: Die VM wird am ursprünglichen Speicherort wiederhergestellt, und zwar in derselben vCenter-Bereitstellung, auf demselben ESXi-Host und im selben Datenspeicher. Die VM und alle darauf befindlichen Daten werden überschrieben.
+* *Wiederherstellung an einem alternativen Speicherort*: Sie können einen anderen vCenter-Server, ESXi-Host oder Datenspeicher als Wiederherstellungsziel für die VM auswählen. Dies ist nützlich, um verschiedene Kopien derselben VM an unterschiedlichen Standorten und in verschiedenen Zuständen zu verwalten.
 
 
 .Überlegungen zur Wiederherstellung aus dem Objektspeicher
@@ -62,57 +63,56 @@ Stellen Sie VMware-Workloads mithilfe der Option „Wiederherstellen“ wieder h
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Wiederherstellen* aus.
-. Wählen Sie aus der Dropdown-Liste rechts neben dem Namenssuchfeld *Virtuelle Maschinen* aus.
+. Wählen Sie in der Dropdown-Liste rechts neben dem Namenssuchfeld *VMware* aus.
 . Geben Sie den Namen der Ressource ein, die Sie wiederherstellen möchten, oder filtern Sie nach dem vCenter, Rechenzentrum oder Datenspeicher, in dem sich die wiederherzustellende Ressource befindet.
 +
-Es wird eine Liste mit Snapshots angezeigt, die Ihren Suchkriterien entsprechen.
+Es erscheint eine Liste virtueller Maschinen, die Ihren Suchkriterien entsprechen.
 
-. Wählen Sie den Snapshot aus, den Sie wiederherstellen möchten.
+. Suchen Sie in der Liste die VM, die Sie wiederherstellen möchten, und wählen Sie für diese VM die Schaltfläche *Virtuelle Maschine wiederherstellen* aus.
 +
-Es wird eine Liste mit Optionen für den Wiederherstellungsort angezeigt.
+Es wird eine Liste der auf dieser virtuellen Maschine erstellten Snapshots (Wiederherstellungspunkte) angezeigt.
 
-. Wählen Sie den Wiederherstellungsort aus, an dem Sie den Snapshot wiederherstellen möchten:
+. Aktivieren Sie das Kontrollkästchen für den Snapshot, den Sie wiederherstellen möchten.
+. Wählen Sie *Weiter*.
 +
-** Lokal: Stellt den Snapshot am ursprünglichen Speicherort wieder her.
-** Sekundärspeicher: Stellt den Snapshot an einem sekundären Speicherort wieder her.
+Optionen zum Speichern des Schnappschusses werden angezeigt.
+
+. Wählen Sie das Wiederherstellungsziel für den Snapshot aus:
++
+** *Lokal*: Stellt den Snapshot vom lokalen Speicherort wieder her.
+** *Sekundär*: Stellt den Snapshot von einem entfernten Speicherort wieder her.
 +
 Wenn Sie sekundären Speicher wählen, geben Sie die Quell- und Zielspeicherorte für Daten und Protokolle ein.
 
-** Objektspeicher: Stellt den Snapshot an einem Objektspeicherort wieder her.
-+
-Wenn Sie sich für Objektspeicher entscheiden, prüfen Sie, ob Sie den Snapshot vor der Wiederherstellung erneut scannen möchten.
 
 
-
-. Wählen Sie *Fertig* oder *Weiter*, um zur Seite „Zieleinstellungen wiederherstellen“ zu gelangen.
-+
-Wählen Sie als Nächstes die Zieleinstellungen sowie die Optionen vor und nach der Wiederherstellung.
-
+. Wählen Sie *Weiter*, um mit der Seite „Zieleinstellungen wiederherstellen“ fortzufahren.
+. Wählen Sie die Zieleinstellungen sowie die Optionen vor und nach der Wiederherstellung.
 
 
 [discrete]
 ===== Zielauswahl
 
-. Wählen Sie die Zieleinstellungen und die Optionen vor und nach der Wiederherstellung.
-
-
 [role="tabbed-block"]
 ====
 .Am ursprünglichen Speicherort wiederherstellen
 --
-Geben Sie auf der Seite „Details zum Wiederherstellungsziel“ die folgenden Informationen ein:
+Bei der Wiederherstellung am ursprünglichen Speicherort können Sie weder das Ziel-vCenter, den ESXi-Host, den Datenspeicher noch den Namen der VM ändern. Die ursprüngliche VM wird bei der Wiederherstellungsoperation überschrieben.
 
-. *Schnelle Wiederherstellung aktivieren*: Wählen Sie diese Option, um eine schnelle Wiederherstellung durchzuführen. Sie können die wiederhergestellten Volumes und Daten sofort verwenden. Verwenden Sie dies nicht auf Volumes, die eine hohe Leistung erfordern, da der Zugriff auf die Daten während des schnellen Wiederherstellungsprozesses langsamer als gewöhnlich sein kann.
-. *Optionen vor der Wiederherstellung*: Geben Sie den vollständigen Pfad für ein Skript ein, das vor dem Wiederherstellungsvorgang ausgeführt werden soll, sowie alle Argumente, die das Skript verwendet.
-. *Optionen nach der Wiederherstellung*:
+. Wählen Sie den Bereich *Ursprünglicher Speicherort* aus.
+. Wählen Sie aus den folgenden Optionen:
 +
-** *VM neu starten*: Wählen Sie diese Option aus, um die VM nach Abschluss des Wiederherstellungsvorgangs und nach Anwendung des Post-Restore-Skripts neu zu starten.
-** *Postscript*: Geben Sie den vollständigen Pfad für ein Skript ein, das nach dem Wiederherstellungsvorgang ausgeführt werden soll, sowie alle Argumente, die das Skript verwendet.
-
-
-. Abschnitt *Benachrichtigung*:
+** Abschnitt *Optionen vor der Wiederherstellung*:
 +
-** *E-Mail-Benachrichtigungen aktivieren*: Wählen Sie diese Option aus, um E-Mail-Benachrichtigungen über den Wiederherstellungsvorgang zu erhalten, und wählen Sie die gewünschten Benachrichtigungstypen aus.
+*** *Vorgabe*: Aktivieren Sie diese Option, um zusätzliche Aufgaben zu automatisieren, indem Sie vor Beginn des Wiederherstellungsvorgangs ein benutzerdefiniertes Skript ausführen. Geben Sie den vollständigen Pfad zu dem auszuführenden Skript sowie alle Argumente an, die das Skript benötigt.
+
+
+** Abschnitt *Optionen nach der Wiederherstellung*:
++
+*** *Virtuelle Maschine neu starten*: Aktivieren Sie diese Option, um die virtuelle Maschine nach Abschluss des Wiederherstellungsvorgangs und nach Anwendung des Nachwiederherstellungsskripts neu zu starten.
+*** *Nachtrag*: Aktivieren Sie diese Option, um zusätzliche Aufgaben zu automatisieren, indem Sie nach Abschluss der Wiederherstellung ein benutzerdefiniertes Skript ausführen. Geben Sie den vollständigen Pfad zu dem auszuführenden Skript sowie alle Argumente an, die das Skript benötigt.
+
+
 
 
 . Wählen Sie *Wiederherstellen*.
@@ -121,7 +121,35 @@ Geben Sie auf der Seite „Details zum Wiederherstellungsziel“ die folgenden I
 --
 .An einem anderen Speicherort wiederherstellen
 --
-Nicht für die VMware-Vorschau verfügbar.
+Bei der Wiederherstellung an einem alternativen Speicherort können Sie das Ziel-vCenter, den ESXi-Host, den Datenspeicher und den Namen der VM ändern, um eine neue Kopie der VM an einem anderen Speicherort oder mit einem anderen Namen zu erstellen.
+
+. Wählen Sie den Bereich *Alternativer Standort* aus.
+. Geben Sie die folgenden Informationen ein:
++
+** Abschnitt *Zieleinstellungen*:
++
+*** *vCenter FQDN oder IP-Adresse*: Wählen Sie den vCenter-Server aus, auf dem Sie den Snapshot wiederherstellen möchten.
+*** *ESXi-Host*: Wählen Sie den Host aus, auf dem Sie den Snapshot wiederherstellen möchten.
+*** *Netzwerk*: Wählen Sie das Netzwerk aus, in dem Sie den Snapshot wiederherstellen möchten.
+*** *Datenspeicher*: Geben Sie den Namen des Datenspeichers ein, in dem Sie den Snapshot wiederherstellen möchten.
+*** *Name der virtuellen Maschine*: Geben Sie den Namen der VM ein, auf der Sie den Snapshot wiederherstellen möchten. Wenn der Name mit einer bereits im Datenspeicher vorhandenen VM übereinstimmt, sorgt Backup and Recovery für einen eindeutigen Namen, indem ein aktueller Zeitstempel angehängt wird.
+
+
+** Abschnitt *Optionen vor der Wiederherstellung*:
++
+*** *Vorgabe*: Aktivieren Sie diese Option, um zusätzliche Aufgaben zu automatisieren, indem Sie vor Beginn des Wiederherstellungsvorgangs ein benutzerdefiniertes Skript ausführen. Geben Sie den vollständigen Pfad zu dem auszuführenden Skript sowie alle Argumente an, die das Skript benötigt.
+
+
+** Abschnitt *Optionen nach der Wiederherstellung*:
++
+*** *Virtuelle Maschine neu starten*: Aktivieren Sie diese Option, um die virtuelle Maschine nach Abschluss des Wiederherstellungsvorgangs und nach Anwendung des Nachwiederherstellungsskripts neu zu starten.
+*** *Nachtrag*: Aktivieren Sie diese Option, um zusätzliche Aufgaben zu automatisieren, indem Sie nach Abschluss der Wiederherstellung ein benutzerdefiniertes Skript ausführen. Geben Sie den vollständigen Pfad zu dem auszuführenden Skript sowie alle Argumente an, die das Skript benötigt.
+
+
+
+
+. Wählen Sie *Wiederherstellen*.
+
 
 --
 ====
