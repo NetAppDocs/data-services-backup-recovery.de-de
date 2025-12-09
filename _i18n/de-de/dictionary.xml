@@ -1286,7 +1286,6 @@
   <block id="f12cc055f626f9974e07168ee36fc2b6" category="list-text">Wählen Sie im NetApp Backup and Recovery -Menü *Überwachung* aus.</block>
   <block id="e81a8bad1be4be12a837fcfb49f51617" category="list-text">Um zusätzliche Spalten (System, SVM, Benutzername, Workload, Richtlinienname, Snapshot-Bezeichnung) anzuzeigen, wählen Sie das Pluszeichen aus.</block>
   <block id="87aa191eff82d3ce3518c07577f209bd" category="section-title">Suchen und filtern Sie die Liste der Jobs</block>
-  <block id="9d0747ab797d5b67d7daca67845988b1" category="paragraph">Sie können die Vorgänge auf der Seite „Jobüberwachung“ mithilfe mehrerer Filter filtern, z. B. Richtlinie, Snapshot-Bezeichnung, Vorgangstyp (Schutz, Wiederherstellung, Aufbewahrung oder Sonstiges) und Schutztyp (lokaler Snapshot, Replikation oder Sicherung in der Cloud).</block>
   <block id="7f8ba7d41d11ab3b1061dbce2eeadb52" category="paragraph">Standardmäßig werden auf der Seite „Jobüberwachung“ Schutz- und Wiederherstellungsjobs der letzten 24 Stunden angezeigt.  Sie können den Zeitrahmen mithilfe des Zeitrahmenfilters ändern.</block>
   <block id="a466bc110c2ee16333fcf19f4e7b5dc2" category="list-text">Um die Ergebnisse anders zu sortieren, wählen Sie jede Spaltenüberschrift aus, um sie nach Status, Startzeit, Ressourcenname usw. zu sortieren.</block>
   <block id="abfa7a0ebf0068a9c8b2a22cab7ee2b3" category="list-text">Wenn Sie nach bestimmten Jobs suchen, wählen Sie den Bereich *Erweiterte Suche und Filterung* aus, um das Suchfeld zu öffnen.</block>
@@ -1311,16 +1310,13 @@
   <block id="2b0ecb40cc305f7af9fe7f986b5bb2dd" category="list-text">Um eine CSV-Datei für alle Jobs herunterzuladen, wählen Sie die Schaltfläche „Herunterladen“ und suchen Sie die Datei in Ihrem Download-Verzeichnis.</block>
   <block id="1dc45daaf063a4c51a123d4f491b6b42" category="list-text">Um eine JSON-Datei für einen einzelnen Job herunterzuladen, wählen Sie das Menü Aktionen<block ref="2a0f14b836fbf833847542e256b2473a" category="inline-image-macro-rx" type="image"></block> Wählen Sie für den Job *JSON-Datei herunterladen* und suchen Sie die Datei in Ihrem Download-Verzeichnis.</block>
   <block id="f1a15f873b659fefcf2800c9489b580b" category="section-title">Aufbewahrungsaufträge (Sicherungslebenszyklus) überprüfen</block>
-  <block id="5168f75ce01db43e41309dbb9ba106a7" category="paragraph">Der Auftragstyp „Aufbewahrung“ erfasst alle Snapshot-Löschaufträge, die auf einem Volume initiiert werden, das durch NetApp Backup and Recovery geschützt ist.</block>
   <block id="9304f305aa89a02039b5cb4ac930f498" category="list-text">Wählen Sie den Bereich *Erweiterte Suche und Filterung* aus, um das Suchfeld zu öffnen.</block>
   <block id="67e8772c27eee052c978af0d5760e36a" category="list-text">Wählen Sie als Auftragstyp „Aufbewahrung“ aus.</block>
   <block id="1c3cccbea914c20304f63319b99fb585" category="section-title">Überprüfen Sie Sicherungs- und Wiederherstellungswarnungen im Benachrichtigungscenter der NetApp Console</block>
   <block id="bacd9783e91bb01896a4e564be2f9207" category="paragraph">Das Benachrichtigungscenter der NetApp Console verfolgt den Fortschritt der von Ihnen initiierten Sicherungs- und Wiederherstellungsaufträge, sodass Sie überprüfen können, ob der Vorgang erfolgreich war oder nicht.</block>
   <block id="44d4deb8868ac8159ee85f4a8e68725c" category="inline-link">Erfahren Sie mehr über das Benachrichtigungscenter und wie Sie Warn-E-Mails für Sicherungs- und Wiederherstellungsaufträge senden</block>
-  <block id="3b27991b1aa229f52835df236ba4b917" category="paragraph">Das Benachrichtigungscenter zeigt zahlreiche Snapshot-, Replikations-, Cloud-Backup- und Wiederherstellungsereignisse an, aber nur bestimmte Ereignisse lösen E-Mail-Benachrichtigungen aus:</block>
   <block id="9e35f94818feb2156d0744e4be9fb2ea" category="cell">Vorgangstyp</block>
   <block id="a4ecfc70574394990cf17bd83df499f7" category="cell">Ereignis</block>
-  <block id="630469b1210edbcdbdfbbd418f05c1ca" category="cell">Alarmstufe</block>
   <block id="cfa4593b1fb6aea2e32d9928f2c4349b" category="cell">E-Mail gesendet</block>
   <block id="a9a62e70841c4d06dd16306a85700d36" category="cell">Aktivierung</block>
   <block id="c74709859d025e289686ff60f170d924" category="cell">Die Aktivierung von Backup und Recovery für das System ist fehlgeschlagen</block>
@@ -1992,11 +1988,8 @@
   <block id="705d7d5204c001ada8d7869c065a6a70" category="list-text">Wenn Sie Volumedaten aus einer Sicherungsdatei wiederherstellen möchten, die in einen Archivobjektspeicher verschoben wurde, fällt beim Cloud-Anbieter eine zusätzliche Abrufgebühr pro GiB und pro Anforderung an.</block>
   <block id="e44d61516574d94ce56af3468723e18a" category="list-text">Wenn Sie während der Wiederherstellung von Volumedaten eine Sicherungsdatei auf Ransomware scannen möchten (wenn Sie DataLock und Ransomware Resilience für Ihre Cloud-Sicherungen aktiviert haben), entstehen Ihnen auch bei Ihrem Cloud-Anbieter zusätzliche Kosten für den ausgehenden Datenverkehr.</block>
   <block id="e1b4a0ddcd3124f71fd5c65649282433" category="paragraph">*Servicegebühren*</block>
-  <block id="40ff88020bcb9f0e42545b8535db30db" category="paragraph">Servicegebühren werden an NetApp gezahlt und decken sowohl die Kosten für das Erstellen von Backups im Objektspeicher als auch für das Wiederherstellen von Volumes oder Dateien aus diesen Backups ab.  Sie zahlen nur für die Daten, die Sie im Objektspeicher schützen. Die Berechnung erfolgt anhand der logisch genutzten Quellkapazität (_vor_ ONTAP -Effizienz) der ONTAP Volumes, die im Objektspeicher gesichert werden.  Diese Kapazität wird auch als Front-End-Terabyte (FETB) bezeichnet.</block>
   <block id="9b84371e23a14f93e2d9314a2599ac9a" category="admonition">Für Microsoft SQL Server fallen Gebühren an, wenn Sie die Replikation von Snapshots auf ein sekundäres ONTAP Ziel oder einen Objektspeicher initiieren.</block>
-  <block id="da19f2e50cbb3312d0bcc973d8486544" category="paragraph">Es gibt drei Möglichkeiten, für den Backup-Dienst zu bezahlen:</block>
   <block id="032820ef020ebdcb4972d36db7394681" category="list-text">Die erste Möglichkeit besteht darin, ein Abonnement bei Ihrem Cloud-Anbieter abzuschließen, bei dem Sie monatlich zahlen können.</block>
-  <block id="a426b39cc5038676b39d2265b22cebec" category="list-text">Die zweite Möglichkeit besteht darin, einen Jahresvertrag abzuschließen.</block>
   <block id="0b9c6eef4e3d3a222eb04e910d252339" category="inline-xref">Lizenzierung</block>
   <block id="8426d45850b9ec06adef93652db54080" category="list-text">Die dritte Möglichkeit besteht darin, Lizenzen direkt von NetApp zu erwerben.  Lesen Sie die<block ref="b839456cc57645a9392f4db60a4f044a" category="inline-xref-macro-rx"></block> Weitere Informationen finden Sie im Abschnitt „Informationen zur Sicherheit“.</block>
   <block id="30c887a11915f5c1adb97321b93a9e39" category="paragraph">NetApp Backup and Recovery ist mit den folgenden Verbrauchsmodellen verfügbar:</block>
@@ -4608,7 +4601,6 @@
   <block id="35521e84b87db7ff299e3d292854a426" category="paragraph">Stellen Sie Hyper-V-Workloads aus Snapshots, aus einer auf Sekundärspeicher replizierten Workload-Sicherung oder aus in Objektspeichern gespeicherten Sicherungen mithilfe von NetApp Backup and Recovery wieder her.</block>
   <block id="c71707f07223923dbaab7d7f94cf956b" category="paragraph">Stellen Sie virtuelle KVM-Maschinen aus Snapshots, aus einer auf einen Sekundärspeicher replizierten Schutzgruppensicherung oder aus in Objektspeichern gespeicherten Sicherungen mithilfe von NetApp Backup and Recovery wieder her.</block>
   <block id="c4a9fad82bfaa655d1dc063df314c9ed" category="list-text">Konfigurieren Sie das Protokollverzeichnis (unter *Inventar* &gt; *Hosts*). Wenn Sie Protokolle für Ihre Datenbankhosts im Snapshot sichern möchten, konfigurieren Sie zuerst die Protokolle in NetApp Backup and Recovery. Weitere Einzelheiten finden Sie unter<block ref="24412093cd6bfc9d3bb3355f8f2561e8" category="inline-link-macro-rx"></block> .</block>
-  <block id="d4269b8b09864c01c1c86fd8fbf36f7e" category="paragraph">Ein Backup-Lebenszyklus-Job verfolgt alle Snapshots, die gelöscht wurden oder sich in der Löschwarteschlange befinden. Ab ONTAP 9.13 können Sie sich alle Jobtypen mit der Bezeichnung „Retention“ auf der Seite „Jobüberwachung“ ansehen.</block>
   <block id="e55271e37b053fabbe06b3671cfb3c48" category="paragraph">NetApp Backup and Recovery verwendet NetApp SnapMirror, um Backups zu synchronisieren, indem Snapshots erstellt und an die Backup-Speicherorte übertragen werden.</block>
   <block id="ac953870175731881060585a6b9ee690" category="paragraph">NetApp Backup and Recovery ermöglicht die Sicherung von Microsoft SQL Server-Instanzen und -Datenbanken von den folgenden Quellsystemen auf die folgenden Sekundärsysteme und Objektspeicher bei öffentlichen und privaten Cloud-Anbietern. Die Snapshots werden auf dem Quellsystem gespeichert.</block>
   <block id="d07d19d5986209f0a00db1f8289e73d2" category="paragraph">Sie können Microsoft SQL Server-Instanzen und -Datenbanken aus einer Sicherung, die sich im Primärspeicher oder einem Sekundärsystem (einem replizierten Volume) oder im Objektspeicher (einer Sicherungsdatei) befindet, auf den folgenden Systemen wiederherstellen. Snapshots befinden sich auf dem Quellsystem und können nur auf demselben System wiederhergestellt werden.</block>
@@ -4825,4 +4817,36 @@
   <block id="7580e90069a8f15fc27aabfe1ca9e800" category="list-text">Wählen Sie im daraufhin angezeigten Menü die Option *Virtuelle Maschine wiederherstellen*.</block>
   <block id="17f7a448c0fdbce6c9a45d289bcf9e83" category="list-text">*Datenspeicher*: Wählen Sie in der Dropdown-Liste den Namen des Datenspeichers aus, in dem Sie den Snapshot wiederherstellen möchten.</block>
   <block id="92ef4bdfd24483ff1f89cbc83ac91ce5" category="list-text">Sie können die VM an genau demselben Speicherort wiederherstellen, von dem die Sicherung erstellt wurde, oder an einem anderen Speicherort.</block>
+  <block id="c8114f7295c45b5e4daffaaf7225f524" category="paragraph">Sie können die Vorgänge auf der Seite „Auftragsüberwachung“ mithilfe verschiedener Filter filtern, z. B. nach Richtlinie, Snapshot-Bezeichnung, Art des Vorgangs (Schutz, Wiederherstellung, Aufbewahrung oder Sonstiges) und Schutztyp (lokaler Snapshot, Replikation oder Sicherung in die Cloud).</block>
+  <block id="8e357ee9c7f7033fb2069bec01bfa7b5" category="paragraph">Ein Backup-Lebenszyklus-Job verfolgt alle Snapshots, die gelöscht wurden oder sich in der Löschwarteschlange befinden. Ab ONTAP 9.13 können Sie alle Jobtypen mit der Bezeichnung „Retention“ auf der Seite „Job Monitoring“ anzeigen.</block>
+  <block id="192bfa3d569dc6662018c9e874cd07e8" category="paragraph">Der Auftragstyp „Aufbewahrung“ erfasst alle Snapshot-Löschaufträge, die auf einem Volume initiiert wurden, das durch NetApp Backup and Recovery geschützt ist.</block>
+  <block id="81f2ef03318777ac36a4a73237288610" category="paragraph">Das Benachrichtigungscenter zeigt zahlreiche Ereignisse im Zusammenhang mit Snapshots, Replikation, Cloud-Backups und Wiederherstellungen an, aber nur bestimmte Ereignisse lösen E-Mail-Benachrichtigungen aus:</block>
+  <block id="5dd32721e3e223e6a87039f75b4c315d" category="cell">Alarm ausgelöst</block>
+  <block id="a907ac316a0e62996e50939eddb00cf1" category="cell">Volume ist jetzt der Snapshot-Richtlinie zugeordnet</block>
+  <block id="de05700e8dd719721f13f9c6b00f1b7a" category="cell">Datensicherung oder Statusänderung</block>
+  <block id="832781ccddafcada7da950ee920e4677" category="cell">Sicherung und Wiederherstellung wurden für das System erfolgreich aktiviert.</block>
+  <block id="f4ceecec904030bc411eb94dfb80f45a" category="cell">Ad-hoc-Volume-Backup fehlgeschlagen</block>
+  <block id="80fd95bd893f8df76c2fa9dd4bad6849" category="cell">Ad-hoc-Volume-Backup erfolgreich</block>
+  <block id="5ed835b77018cbf32fbdfb39bcc25527" category="cell">Datensicherung über mehrere Volumes fehlgeschlagen</block>
+  <block id="0298583ff5a55aeec25dc314bbd47357" category="cell">Cron-Operationen</block>
+  <block id="f771739629c02b8a1545a40985444450" category="cell">Überprüfung auf fehlende Snapshot-Labels</block>
+  <block id="39e7a35fbe3bf187f05710b99a1abab5" category="cell">Das Senden des Sicherheitstokens an ONTAP für dieses System ist fehlgeschlagen.</block>
+  <block id="1da6059b2e40a5d5dcd0f29c0344d522" category="cell">Pub/Sub-Veranstaltungen</block>
+  <block id="75c3b3bb89bde01f9166a94cbfa98588" category="cell">Verbindungsfehler</block>
+  <block id="4d40cebef25fff7de69b66a1fd2b91ac" category="cell">Das Löschen eines geplanten Snapshots ist fehlgeschlagen.</block>
+  <block id="01a38301f446b2e021e1fa29a4fb17a3" category="cell">Geplante Datensicherung fehlgeschlagen</block>
+  <block id="331af99e5b6a5cf68b545ebe121bccfb" category="cell">Die Wiederherstellung des Volumes war erfolgreich.</block>
+  <block id="6be567f0c08a3a4af17cffb149fa98ce" category="cell">Wiederherstellung des Volumes fehlgeschlagen</block>
+  <block id="232a2b16a1710c0ed1d16548ba8bb8f1" category="cell">Ransomware</block>
+  <block id="cac26c3a96c9684d7c23fab2394f7ee9" category="cell">Potenzieller Ransomware-Angriff auf Sicherungskopie identifiziert</block>
+  <block id="4f7bae4887ae7adfba52529b1ef897f1" category="cell">Potenzieller Ransomware-Angriff auf der Sicherungskopie dieses Systems festgestellt</block>
+  <block id="781ab27075c39bdc6b2c5a6f2d1c7999" category="cell">Modifikation der Replikationsbeziehung des Volumenausfalls</block>
+  <block id="dcbc181d9286ddc85c2def0e5a88a627" category="cell">Zieloperationen</block>
+  <block id="490b6cef8b42244be7db684255156f74" category="cell">Wiederherstellung am lokalen oder Cloud-Ziel fehlgeschlagen</block>
+  <block id="985aacac93e75bfb41dca796dd136773" category="cell">Fehler bei der Wiederherstellung auf Abruf</block>
+  <block id="df660ed534483b04ecb1bf0371cdbe53" category="cell">Systembetrieb</block>
+  <block id="eb31ef8eb2f5dc2e91e3fc628c278047" category="cell">Fehler bei der Erstellung eines Ad-hoc-Volume-Snapshots</block>
+  <block id="cf45f15c2dbe19bdbf9de3e329061b93" category="paragraph">Die Servicegebühren werden an NetApp gezahlt und decken sowohl die Kosten für die Erstellung von Backups auf Objektspeicher oder einem ONTAP Ziel als auch die Kosten für die Wiederherstellung von Volumes oder Dateien aus diesen Backups ab.  Sie zahlen nur für die Daten, die Sie im Objektspeicher oder in ONTAP schützen (dies schließt SnapMirror -Konfigurationen ein).  Die Gebühren werden anhand der logischen Quellkapazität (vor ONTAP Effizienz) der ONTAP Volumes berechnet, die auf Objektspeicher oder ein ONTAP Ziel gesichert werden. Diese Kapazität wird auch als Front-End-Terabyte (FETB) bezeichnet.</block>
+  <block id="1da151060a18e6460ac3d7eb0f913a37" category="paragraph">Es gibt drei Möglichkeiten, für Backup und Wiederherstellung zu bezahlen:</block>
+  <block id="6fa5c823869ff5f58a4f5dcaaa68d86d" category="list-text">Die zweite Möglichkeit besteht im Kauf eines Jahresvertrags.</block>
 </blocks>

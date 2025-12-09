@@ -49,7 +49,7 @@ NOTE: Wenn Sie Ihre ONTAP -Systeme auf 9.13.x aktualisiert haben und im Job Moni
 
 === Suchen und filtern Sie die Liste der Jobs
 
-Sie können die Vorgänge auf der Seite „Jobüberwachung“ mithilfe mehrerer Filter filtern, z. B. Richtlinie, Snapshot-Bezeichnung, Vorgangstyp (Schutz, Wiederherstellung, Aufbewahrung oder Sonstiges) und Schutztyp (lokaler Snapshot, Replikation oder Sicherung in der Cloud).
+Sie können die Vorgänge auf der Seite „Auftragsüberwachung“ mithilfe verschiedener Filter filtern, z. B. nach Richtlinie, Snapshot-Bezeichnung, Art des Vorgangs (Schutz, Wiederherstellung, Aufbewahrung oder Sonstiges) und Schutztyp (lokaler Snapshot, Replikation oder Sicherung in die Cloud).
 
 Standardmäßig werden auf der Seite „Jobüberwachung“ Schutz- und Wiederherstellungsjobs der letzten 24 Stunden angezeigt.  Sie können den Zeitrahmen mithilfe des Zeitrahmenfilters ändern.
 
@@ -118,9 +118,9 @@ Aus den Informationen zu den Jobüberwachungsdetails können Sie eine JSON-Datei
 
 Überwachen Sie Aufbewahrungsflüsse (_Backup-Lebenszyklus_), um Backups zu überprüfen, sie zu schützen und Audits zu unterstützen.  Ermitteln Sie, wann Sicherungskopien ablaufen, um den Lebenszyklus zu verfolgen.
 
-Ein Backup-Lebenszyklus-Job verfolgt alle Snapshots, die gelöscht wurden oder sich in der Löschwarteschlange befinden. Ab ONTAP 9.13 können Sie sich alle Jobtypen mit der Bezeichnung „Retention“ auf der Seite „Jobüberwachung“ ansehen.
+Ein Backup-Lebenszyklus-Job verfolgt alle Snapshots, die gelöscht wurden oder sich in der Löschwarteschlange befinden. Ab ONTAP 9.13 können Sie alle Jobtypen mit der Bezeichnung „Retention“ auf der Seite „Job Monitoring“ anzeigen.
 
-Der Auftragstyp „Aufbewahrung“ erfasst alle Snapshot-Löschaufträge, die auf einem Volume initiiert werden, das durch NetApp Backup and Recovery geschützt ist.
+Der Auftragstyp „Aufbewahrung“ erfasst alle Snapshot-Löschaufträge, die auf einem Volume initiiert wurden, das durch NetApp Backup and Recovery geschützt ist.
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Überwachung* aus.
@@ -136,41 +136,98 @@ Das Benachrichtigungscenter der NetApp Console verfolgt den Fortschritt der von 
 
 Sie können Warnungen im Benachrichtigungscenter anzeigen und die Konsole so konfigurieren, dass bei wichtigen Systemaktivitäten E-Mail-Warnungen gesendet werden, auch wenn Sie nicht angemeldet sind. https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html["Erfahren Sie mehr über das Benachrichtigungscenter und wie Sie Warn-E-Mails für Sicherungs- und Wiederherstellungsaufträge senden"^] .
 
-Das Benachrichtigungscenter zeigt zahlreiche Snapshot-, Replikations-, Cloud-Backup- und Wiederherstellungsereignisse an, aber nur bestimmte Ereignisse lösen E-Mail-Benachrichtigungen aus:
+Das Benachrichtigungscenter zeigt zahlreiche Ereignisse im Zusammenhang mit Snapshots, Replikation, Cloud-Backups und Wiederherstellungen an, aber nur bestimmte Ereignisse lösen E-Mail-Benachrichtigungen aus:
 
 [cols="1,2,1,1"]
 |===
-| Vorgangstyp | Ereignis | Alarmstufe | E-Mail gesendet 
+| Vorgangstyp | Ereignis | Alarm ausgelöst | E-Mail gesendet 
 
 
-| Aktivierung | Die Aktivierung von Backup und Recovery für das System ist fehlgeschlagen | Fehler | Ja 
+| Aktivierung | Die Aktivierung von Backup und Recovery für das System ist fehlgeschlagen | Ja | Ja 
 
 
-| Aktivierung | Bearbeitung von Sicherung und Wiederherstellung für System fehlgeschlagen | Fehler | Ja 
+| Aktivierung | Bearbeitung von Sicherung und Wiederherstellung für System fehlgeschlagen | Ja | Ja 
 
 
-| Lokaler Schnappschuss | Fehler beim Erstellen eines Ad-hoc-Snapshots bei NetApp Backup and Recovery | Fehler | Ja 
+| Aktivierung | Volume ist jetzt der Snapshot-Richtlinie zugeordnet | Ja | Ja 
 
 
-| Replikation | Fehler beim Ad-hoc-Replikationsjob von NetApp Backup and Recovery | Fehler | Ja 
+| Aktivierung | Datensicherung oder Statusänderung | Ja | Ja 
 
 
-| Replikation | Fehler beim Anhalten des Replikationsjobs bei NetApp Backup and Recovery | Fehler | Nein 
+| Aktivierung | Sicherung und Wiederherstellung wurden für das System erfolgreich aktiviert. | Ja | Ja 
 
 
-| Replikation | Fehler beim Abbrechen des Replikationsjobs bei NetApp Backup and Recovery | Fehler | Nein 
+| Aktivierung | Ad-hoc-Volume-Backup fehlgeschlagen | Ja | Ja 
 
 
-| Replikation | Fehler beim Resynchronisierungsjob für NetApp Backup and Recovery -Replikation | Fehler | Nein 
+| Aktivierung | Ad-hoc-Volume-Backup erfolgreich | Ja | Nein 
 
 
-| Replikation | Fehler beim Stoppen des Replikationsjobs bei NetApp Backup and Recovery | Fehler | Nein 
+| Aktivierung | Datensicherung über mehrere Volumes fehlgeschlagen | Ja | Ja 
 
 
-| Replikation | Fehler beim Reverse-Resync-Job für die Replikation von NetApp Backup and Recovery | Fehler | Ja 
+| Cron-Operationen | Überprüfung auf fehlende Snapshot-Labels | Ja | Ja 
 
 
-| Replikation | Fehler beim Löschen des Replikationsjobs bei NetApp Backup and Recovery | Fehler | Ja 
+| Cron-Operationen | Das Senden des Sicherheitstokens an ONTAP für dieses System ist fehlgeschlagen. | Ja | Ja 
+
+
+| Pub/Sub-Veranstaltungen | Verbindungsfehler | Ja | Nein 
+
+
+| Pub/Sub-Veranstaltungen | Das Löschen eines geplanten Snapshots ist fehlgeschlagen. | Ja | Nein 
+
+
+| Pub/Sub-Veranstaltungen | Geplante Datensicherung fehlgeschlagen | Ja | Nein 
+
+
+| Pub/Sub-Veranstaltungen | Die Wiederherstellung des Volumes war erfolgreich. | Ja | Nein 
+
+
+| Pub/Sub-Veranstaltungen | Wiederherstellung des Volumes fehlgeschlagen | Ja | Nein 
+
+
+| Ransomware | Potenzieller Ransomware-Angriff auf Sicherungskopie identifiziert | Ja | Ja 
+
+
+| Ransomware | Potenzieller Ransomware-Angriff auf der Sicherungskopie dieses Systems festgestellt | Ja | Ja 
+
+
+| Lokaler Schnappschuss | Fehler beim Erstellen eines Ad-hoc-Snapshots bei NetApp Backup and Recovery | Ja | Ja 
+
+
+| Replikation | Modifikation der Replikationsbeziehung des Volumenausfalls | Ja | Ja 
+
+
+| Replikation | Fehler beim Ad-hoc-Replikationsjob von NetApp Backup and Recovery | Ja | Ja 
+
+
+| Replikation | Fehler beim Anhalten des Replikationsjobs bei NetApp Backup and Recovery | Ja | Nein 
+
+
+| Replikation | Fehler beim Abbrechen des Replikationsjobs bei NetApp Backup and Recovery | Ja | Nein 
+
+
+| Replikation | Fehler beim Resynchronisierungsjob für NetApp Backup and Recovery -Replikation | Ja | Nein 
+
+
+| Replikation | Fehler beim Stoppen des Replikationsjobs bei NetApp Backup and Recovery | Ja | Nein 
+
+
+| Replikation | Fehler beim Reverse-Resync-Job für die Replikation von NetApp Backup and Recovery | Ja | Ja 
+
+
+| Replikation | Fehler beim Löschen des Replikationsjobs bei NetApp Backup and Recovery | Ja | Ja 
+
+
+| Zieloperationen | Wiederherstellung am lokalen oder Cloud-Ziel fehlgeschlagen | Ja | Ja 
+
+
+| Zieloperationen | Fehler bei der Wiederherstellung auf Abruf | Ja | Ja 
+
+
+| Systembetrieb | Fehler bei der Erstellung eines Ad-hoc-Volume-Snapshots | Ja | Ja 
 |===
 
 NOTE: Ab ONTAP 9.13.0 werden alle Warnungen für Cloud Volumes ONTAP und lokale ONTAP -Systeme angezeigt.  Bei Systemen mit Cloud Volumes ONTAP 9.13.0 und lokalem ONTAP wird nur die Warnmeldung „Wiederherstellungsauftrag abgeschlossen, aber mit Warnungen“ angezeigt.
