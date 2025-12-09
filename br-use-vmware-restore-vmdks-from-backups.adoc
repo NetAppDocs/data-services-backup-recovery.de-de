@@ -1,0 +1,131 @@
+---
+sidebar: sidebar 
+permalink: br-use-vmware-restore-vmdks-from-backups.html 
+keywords:  
+summary: Sie können vorhandene VMDKs oder gelöschte oder getrennte VMDKs entweder aus einem primären oder sekundären Backup herkömmlicher VMs oder vVol-VMs wiederherstellen. 
+---
+= Bestimmte virtuelle Festplatten aus Backups wiederherstellen
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können vorhandene virtuelle Festplatten (VMDKs) oder gelöschte bzw. getrennte virtuelle Festplatten aus primären oder sekundären Backups herkömmlicher VMs wiederherstellen. Dadurch können Sie nur bestimmte VM-Daten oder Anwendungen wiederherstellen, sodass Sie nicht die gesamte VM und alle zugehörigen virtuellen Festplatten wiederherstellen müssen, wenn nur bestimmte Daten betroffen sind. Nach der Wiederherstellung der virtuellen Festplatte wird diese wieder an die ursprüngliche VM angebunden und ist sofort einsatzbereit.
+
+Sie können eine oder mehrere virtuelle Maschinenfestplatten (VMDKs) einer VM auf demselben Datenspeicher oder auf verschiedenen Datenspeichern wiederherstellen.
+
+
+TIP: Aktivieren Sie die VMware-Anwendung vStorage API for Array Integration (VAAI), um die Leistung von Wiederherstellungsvorgängen in NFS-Umgebungen zu verbessern.
+
+.Bevor Sie beginnen
+* Es muss ein Backup vorhanden sein.
+* Die VM darf sich nicht im Transit befinden.
++
+Die VM, die Sie wiederherstellen möchten, darf sich nicht im Zustand vMotion oder Storage vMotion befinden.
+
+
+
+.Informationen zu diesem Vorgang
+* Wenn das VMDK gelöscht oder von der VM getrennt wird, wird das VMDK beim Wiederherstellungsvorgang an die VM angehängt.
+* Ein Wiederherstellungsvorgang kann fehlschlagen, wenn die Speicherebene des FabricPool , in dem sich die VM befindet, nicht verfügbar ist.
+* Anfügen- und Wiederherstellungsvorgänge verbinden VMDKs mithilfe des Standard-SCSi-Controllers. Wenn jedoch VMDKs gesichert werden, die an eine VM mit einer NVMe-Festplatte angeschlossen sind, verwenden die Anfüge- und Wiederherstellungsvorgänge den NVMe-Controller, sofern verfügbar.
+
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery -Menü *Wiederherstellen* aus.
+. Wählen Sie in der Dropdown-Liste rechts neben dem Namenssuchfeld *VMware* aus.
+. Geben Sie den Namen der Ressource ein, die Sie wiederherstellen möchten, oder filtern Sie nach dem vCenter, Rechenzentrum oder Datenspeicher, in dem sich die wiederherzustellende Ressource befindet.
++
+Es erscheint eine Liste virtueller Maschinen, die Ihren Suchkriterien entsprechen.
+
+. Suchen Sie in der Liste die VM, von der Sie die VM wiederherstellen möchten, und wählen Sie die entsprechende Menüschaltfläche für diese VM aus.
+. Wählen Sie im daraufhin angezeigten Menü die Option *Virtuelle Festplatten wiederherstellen*.
++
+Es wird eine Liste der auf dieser virtuellen Maschine erstellten Snapshots (Wiederherstellungspunkte) angezeigt. Standardmäßig werden die neuesten Snapshots für den im Dropdown-Menü *Zeitraum* ausgewählten Zeitraum angezeigt.
+
++
+Für jeden Snapshot zeigen alle leuchtenden Symbole in der Spalte *Speicherort* die Speicherorte an, an denen der Snapshot verfügbar ist (primärer Speicher, sekundärer Speicher oder Objektspeicher).
+
+. Aktivieren Sie das Optionsfeld für den Snapshot, den Sie wiederherstellen möchten.
+. Wählen Sie *Weiter*.
++
+Optionen zum Speichern des Schnappschusses werden angezeigt.
+
+. Wählen Sie das Wiederherstellungsziel für den Snapshot aus:
++
+** *Lokal*: Stellt den Snapshot vom lokalen Speicherort wieder her.
+** *Sekundär*: Stellt den Snapshot von einem entfernten Speicherort wieder her.
+** *Objektspeicher*: Stellt den Snapshot aus dem Objektspeicher wieder her.
++
+Wenn Sie sich für einen sekundären Speicher entscheiden, wählen Sie den Zielspeicherort aus der Dropdown-Liste aus.
+
+
+
+. Wählen Sie *Weiter*.
+. Wählen Sie die Zieleinstellungen sowie die Optionen vor und nach der Wiederherstellung aus:
+
+
+[discrete]
+===== Zielauswahl
+
+[role="tabbed-block"]
+====
+.Am ursprünglichen Speicherort wiederherstellen
+--
+Bei der Wiederherstellung am ursprünglichen Speicherort können Sie weder das Ziel-vCenter, den ESXi-Host, den Datenspeicher noch den Namen der virtuellen Festplatte ändern. Die ursprüngliche virtuelle Festplatte wird überschrieben.
+
+. Wählen Sie den Bereich *Ursprünglicher Speicherort* aus.
+. Aktivieren Sie im Abschnitt *Zieleinstellungen* das Kontrollkästchen für alle virtuellen Festplatten, die Sie wiederherstellen möchten.
+. Wählen Sie aus den folgenden Optionen:
++
+** Abschnitt *Optionen vor der Wiederherstellung*:
++
+*** *Vorgabe*: Aktivieren Sie diese Option, um zusätzliche Aufgaben zu automatisieren, indem Sie vor Beginn des Wiederherstellungsvorgangs ein benutzerdefiniertes Skript ausführen. Geben Sie den vollständigen Pfad zu dem auszuführenden Skript sowie alle Argumente an, die das Skript benötigt.
+
+
+** Abschnitt *Optionen nach der Wiederherstellung*:
++
+*** *Nachtrag*: Aktivieren Sie diese Option, um zusätzliche Aufgaben zu automatisieren, indem Sie nach Abschluss der Wiederherstellung ein benutzerdefiniertes Skript ausführen. Geben Sie den vollständigen Pfad zu dem auszuführenden Skript sowie alle Argumente an, die das Skript benötigt.
+
+
+
+
+. Wählen Sie *Wiederherstellen*.
+
+
+--
+.An einem anderen Speicherort wiederherstellen
+--
+Bei der Wiederherstellung an einem alternativen Speicherort kann der Zieldatenspeicher geändert werden. Die virtuelle Festplatte wird nach dem Wiederherstellungsvorgang unabhängig vom gewählten Datenspeicher an die ursprüngliche VM angehängt.
+
+. Wählen Sie den Bereich *Alternativer Standort* aus.
+. Aktivieren Sie im Abschnitt *Zieleinstellungen* das Kontrollkästchen für alle virtuellen Festplatten, die Sie wiederherstellen möchten.
+. Für alle von Ihnen ausgewählten virtuellen Festplatten:
++
+.. Wählen Sie *Datenspeicher auswählen*, um ein anderes Datenspeicherziel für die Wiederherstellung der virtuellen Festplatte auszuwählen.
+.. Wählen Sie *Auswählen*, um Ihre Auswahl zu bestätigen und das Auswahlfenster zu schließen.
+
+
+. Wählen Sie aus den folgenden Optionen:
++
+** Abschnitt *Optionen vor der Wiederherstellung*:
++
+*** *Vorgabe*: Aktivieren Sie diese Option, um zusätzliche Aufgaben zu automatisieren, indem Sie vor Beginn des Wiederherstellungsvorgangs ein benutzerdefiniertes Skript ausführen. Geben Sie den vollständigen Pfad zu dem auszuführenden Skript sowie alle Argumente an, die das Skript benötigt.
+
+
+** Abschnitt *Optionen nach der Wiederherstellung*:
++
+*** *Nachtrag*: Aktivieren Sie diese Option, um zusätzliche Aufgaben zu automatisieren, indem Sie nach Abschluss der Wiederherstellung ein benutzerdefiniertes Skript ausführen. Geben Sie den vollständigen Pfad zu dem auszuführenden Skript sowie alle Argumente an, die das Skript benötigt.
+
+
+
+
+. Wählen Sie *Wiederherstellen*.
+
+
+--
+====

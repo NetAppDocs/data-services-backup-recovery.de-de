@@ -43,8 +43,8 @@ TIP: Möglicherweise zahlen Sie Ihrem Cloud-Anbieter zusätzliche Gebühren für
 
 Beim Wiederherstellen von Workloads geschieht Folgendes:
 
-* Wenn Sie eine Workload aus einer lokalen Sicherungsdatei wiederherstellen, erstellt NetApp Backup and Recovery mithilfe der Daten aus der Sicherung eine _neue_ Ressource.
-* Wenn Sie eine Wiederherstellung aus einem replizierten Workload durchführen, können Sie den Workload auf dem ursprünglichen System oder auf einem lokalen ONTAP System wiederherstellen.
+* Wenn Sie eine Arbeitslast aus einem lokalen Snapshot oder einem Remote-Backup wiederherstellen, überschreibt NetApp Backup and Recovery die ursprüngliche VM, wenn Sie die Wiederherstellung am ursprünglichen Speicherort vornehmen, und erstellt eine _neue_ Ressource, wenn Sie die Wiederherstellung an einem alternativen Speicherort vornehmen.
+* Bei der Wiederherstellung einer replizierten Arbeitslast können Sie die Arbeitslast auf dem ursprünglichen lokalen ONTAP System oder auf einem anderen lokalen ONTAP System wiederherstellen.
 +
 image:diagram_browse_restore_volume-unified.png["Ein Diagramm, das den Ablauf zum Wiederherstellen einer Ressource zeigt"]
 
@@ -68,11 +68,15 @@ Stellen Sie VMware-Workloads mithilfe der Option „Wiederherstellen“ wieder h
 +
 Es erscheint eine Liste virtueller Maschinen, die Ihren Suchkriterien entsprechen.
 
-. Suchen Sie in der Liste die VM, die Sie wiederherstellen möchten, und wählen Sie für diese VM die Schaltfläche *Virtuelle Maschine wiederherstellen* aus.
+. Suchen Sie in der Liste die VM, von der Sie die VM wiederherstellen möchten, und wählen Sie die entsprechende Menüschaltfläche für diese VM aus.
+. Wählen Sie im daraufhin angezeigten Menü die Option *Virtuelle Maschine wiederherstellen*.
 +
-Es wird eine Liste der auf dieser virtuellen Maschine erstellten Snapshots (Wiederherstellungspunkte) angezeigt.
+Es wird eine Liste der auf dieser virtuellen Maschine erstellten Snapshots (Wiederherstellungspunkte) angezeigt. Standardmäßig werden die neuesten Snapshots für den im Dropdown-Menü *Zeitraum* ausgewählten Zeitraum angezeigt.
 
-. Aktivieren Sie das Kontrollkästchen für den Snapshot, den Sie wiederherstellen möchten.
++
+Für jeden Snapshot zeigen alle leuchtenden Symbole in der Spalte *Speicherort* die Speicherorte an, an denen der Snapshot verfügbar ist (primärer Speicher, sekundärer Speicher oder Objektspeicher).
+
+. Aktivieren Sie das Optionsfeld für den Snapshot, den Sie wiederherstellen möchten.
 . Wählen Sie *Weiter*.
 +
 Optionen zum Speichern des Schnappschusses werden angezeigt.
@@ -81,12 +85,13 @@ Optionen zum Speichern des Schnappschusses werden angezeigt.
 +
 ** *Lokal*: Stellt den Snapshot vom lokalen Speicherort wieder her.
 ** *Sekundär*: Stellt den Snapshot von einem entfernten Speicherort wieder her.
+** *Objektspeicher*: Stellt den Snapshot aus dem Objektspeicher wieder her.
 +
-Wenn Sie sekundären Speicher wählen, geben Sie die Quell- und Zielspeicherorte für Daten und Protokolle ein.
+Wenn Sie sich für einen sekundären Speicher entscheiden, wählen Sie den Zielspeicherort aus der Dropdown-Liste aus.
 
 
 
-. Wählen Sie *Weiter*, um mit der Seite „Zieleinstellungen wiederherstellen“ fortzufahren.
+. Wählen Sie *Weiter*.
 . Wählen Sie die Zieleinstellungen sowie die Optionen vor und nach der Wiederherstellung.
 
 
@@ -131,7 +136,7 @@ Bei der Wiederherstellung an einem alternativen Speicherort können Sie das Ziel
 *** *vCenter FQDN oder IP-Adresse*: Wählen Sie den vCenter-Server aus, auf dem Sie den Snapshot wiederherstellen möchten.
 *** *ESXi-Host*: Wählen Sie den Host aus, auf dem Sie den Snapshot wiederherstellen möchten.
 *** *Netzwerk*: Wählen Sie das Netzwerk aus, in dem Sie den Snapshot wiederherstellen möchten.
-*** *Datenspeicher*: Geben Sie den Namen des Datenspeichers ein, in dem Sie den Snapshot wiederherstellen möchten.
+*** *Datenspeicher*: Wählen Sie in der Dropdown-Liste den Namen des Datenspeichers aus, in dem Sie den Snapshot wiederherstellen möchten.
 *** *Name der virtuellen Maschine*: Geben Sie den Namen der VM ein, auf der Sie den Snapshot wiederherstellen möchten. Wenn der Name mit einer bereits im Datenspeicher vorhandenen VM übereinstimmt, sorgt Backup and Recovery für einen eindeutigen Namen, indem ein aktueller Zeitstempel angehängt wird.
 
 

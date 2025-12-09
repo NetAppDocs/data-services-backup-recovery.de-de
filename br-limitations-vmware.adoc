@@ -20,8 +20,6 @@ Die folgenden Aktionen werden in der Vorschauversion von VMware-Workloads in Net
 
 * Montieren
 * Aushängen
-* An einem anderen Speicherort wiederherstellen
-* VMDK wiederherstellen
 * VMDK anhängen
 * VMDK trennen
 * vVol-Unterstützung

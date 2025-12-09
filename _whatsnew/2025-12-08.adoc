@@ -9,7 +9,11 @@
 Die Vorschauversion von VMware-Workloads führt die folgenden erweiterten Funktionen ein:
 
 * Sie können Backups und Snapshots jetzt an einem alternativen Speicherort wiederherstellen. Dies ist nützlich, wenn Sie Versionen einer VM auf verschiedenen VMware vCenter-Bereitstellungen, VMware ESXi-Hosts oder VMware-Datenspeichern verwalten möchten.
+
+
+link:br-use-vmware-restore.html["Erfahren Sie mehr über die Wiederherstellung von VMware-VMs mit NetApp Backup and Recovery."].
+
 * Sie können nun bestimmte virtuelle VMware-Festplatten (VMDK-Images) entweder von einem primären oder einem sekundären Speicherort wiederherstellen, was eine feinere Kontrolle über die Wiederherstellung von VM-Daten ermöglicht.
 
 
-link:br-use-vmware-restore.html["Erfahren Sie mehr über die Wiederherstellung von VMware-Workloads mit NetApp Backup and Recovery."].
+link:br-use-vmware-restore-vmdks-from-backups.html["Erfahren Sie mehr über die Wiederherstellung virtueller VMware-Festplatten mit NetApp Backup and Recovery."].
