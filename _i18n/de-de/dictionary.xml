@@ -4846,7 +4846,4 @@
   <block id="985aacac93e75bfb41dca796dd136773" category="cell">Fehler bei der Wiederherstellung auf Abruf</block>
   <block id="df660ed534483b04ecb1bf0371cdbe53" category="cell">Systembetrieb</block>
   <block id="eb31ef8eb2f5dc2e91e3fc628c278047" category="cell">Fehler bei der Erstellung eines Ad-hoc-Volume-Snapshots</block>
-  <block id="cf45f15c2dbe19bdbf9de3e329061b93" category="paragraph">Die Servicegebühren werden an NetApp gezahlt und decken sowohl die Kosten für die Erstellung von Backups auf Objektspeicher oder einem ONTAP Ziel als auch die Kosten für die Wiederherstellung von Volumes oder Dateien aus diesen Backups ab.  Sie zahlen nur für die Daten, die Sie im Objektspeicher oder in ONTAP schützen (dies schließt SnapMirror -Konfigurationen ein).  Die Gebühren werden anhand der logischen Quellkapazität (vor ONTAP Effizienz) der ONTAP Volumes berechnet, die auf Objektspeicher oder ein ONTAP Ziel gesichert werden. Diese Kapazität wird auch als Front-End-Terabyte (FETB) bezeichnet.</block>
-  <block id="1da151060a18e6460ac3d7eb0f913a37" category="paragraph">Es gibt drei Möglichkeiten, für Backup und Wiederherstellung zu bezahlen:</block>
-  <block id="6fa5c823869ff5f58a4f5dcaaa68d86d" category="list-text">Die zweite Möglichkeit besteht im Kauf eines Jahresvertrags.</block>
 </blocks>
