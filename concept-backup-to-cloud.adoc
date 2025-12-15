@@ -16,7 +16,7 @@ summary: NetApp Backup and Recovery ist ein Datenservice, der effizienten, siche
 [role="lead"]
 NetApp Backup and Recovery ist ein Datenservice, der effizienten, sicheren und kostengünstigen Datenschutz für alle Ihre ONTAP Workloads bietet, einschließlich Volumes, Datenbanken, virtuellen Maschinen und Kubernetes-Workloads.
 
-Die Unterstützung für Backup und Recovery ist bereits in alle ONTAP -Systeme integriert, sodass keine zusätzliche Hardware, Softwarelizenzen oder Medien-Gateways erforderlich sind.  Dadurch werden Sicherungsvorgänge einfach und kostengünstig.  Die NetApp Konsole vereinfacht die Implementierung jeder Backup-Strategie, einschließlich des gesamten Spektrums an 3-2-1-Backup-Varianten, ohne dass mehrere Ressourcenmanager oder spezialisiertes Personal erforderlich sind.
+Die Unterstützung für Backup und Recovery ist bereits in alle ONTAP -Systeme integriert, sodass keine zusätzliche Hardware, Softwarelizenzen oder Medien-Gateways erforderlich sind. Dadurch werden Sicherungsvorgänge einfach und kostengünstig. Die NetApp Console vereinfacht die Implementierung jeder Backup-Strategie, einschließlich des gesamten Spektrums an 3-2-1-Backup-Varianten, ohne dass mehrere Ressourcenmanager oder spezialisiertes Personal erforderlich sind.
 
 
 NOTE: Dokumentation zum Schutz von VMware-, KVM-, Hyper-V- und Kubernetes-Workloads wird als Technologievorschau bereitgestellt. Bei diesem Vorschauangebot behält sich NetApp das Recht vor, Angebotsdetails, Inhalte und Zeitplan vor der allgemeinen Verfügbarkeit zu ändern.
@@ -169,16 +169,16 @@ ifdef::gcp[]
 
 *Servicegebühren*
 
-40ff88020bcb9f0e42545b8535db30db
+Die Servicegebühren werden an NetApp gezahlt und decken sowohl die Kosten für die Erstellung von Backups auf Objektspeicher oder einem ONTAP Ziel als auch die Kosten für die Wiederherstellung von Volumes oder Dateien aus diesen Backups ab. Sie zahlen nur für die Daten, die Sie im Objektspeicher oder in ONTAP schützen (dies schließt SnapMirror -Konfigurationen ein). Die Gebühren werden anhand der logischen Quellkapazität (vor ONTAP Effizienz) der ONTAP Volumes berechnet, die auf Objektspeicher oder ein ONTAP Ziel gesichert werden. Diese Kapazität wird auch als Front-End-Terabyte (FETB) bezeichnet.
 
 
 NOTE: Für Microsoft SQL Server fallen Gebühren an, wenn Sie die Replikation von Snapshots auf ein sekundäres ONTAP Ziel oder einen Objektspeicher initiieren.
 
-da19f2e50cbb3312d0bcc973d8486544
+Es gibt drei Möglichkeiten, für Backup und Wiederherstellung zu bezahlen:
 
 * Die erste Möglichkeit besteht darin, ein Abonnement bei Ihrem Cloud-Anbieter abzuschließen, bei dem Sie monatlich zahlen können.
-* a426b39cc5038676b39d2265b22cebec
-* Die dritte Möglichkeit besteht darin, Lizenzen direkt von NetApp zu erwerben.  Lesen Sie die<<Lizenzierung,Lizenzierung>> Weitere Informationen finden Sie im Abschnitt „Informationen zur Sicherheit“.
+* Die zweite Möglichkeit besteht im Kauf eines Jahresvertrags.
+* Die dritte Möglichkeit besteht darin, Lizenzen direkt von NetApp zu erwerben. Siehe die <<Lizenzierung,Lizenzierung>> Im Abschnitt finden Sie weitere Details.
 
 
 

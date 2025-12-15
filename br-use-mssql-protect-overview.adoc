@@ -23,7 +23,7 @@ Zu den Vorteilen des 3-2-1-Ansatzes gehören:
 * Sie können die Wiederherstellung schnell von der Vor-Ort-Kopie durchführen und die Offsite-Kopien verwenden, wenn die Vor-Ort-Kopie kompromittiert ist.
 
 
-NetApp Backup and Recovery verwendet NetApp SnapMirror, um Backups zu synchronisieren, indem Snapshots erstellt und an die Backup-Speicherorte übertragen werden.
+NetApp Backup and Recovery verwendet NetApp SnapMirror , um Backups zu synchronisieren, indem Snapshots erstellt und an die Backup-Speicherorte übertragen werden.
 
 Zum Schutz Ihrer Daten können Sie Folgendes tun:
 

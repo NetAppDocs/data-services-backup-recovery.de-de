@@ -12,7 +12,7 @@ summary: Erstellen Sie in NetApp Backup and Recovery Berichte, um den Status Ihr
 
 
 [role="lead"]
-Erstellen Sie in NetApp Backup and Recovery Berichte für Microsoft SQL Server-Workloads, um den Status Ihrer Backups anzuzeigen, einschließlich der Anzahl der Backups, der Anzahl der erfolgreichen Backups und der Anzahl der fehlgeschlagenen Backups.  Sie können auch die Details jeder Sicherung anzeigen, einschließlich des Sicherungstyps, des für die Sicherung verwendeten Speichersystems und der Sicherungszeit.
+In NetApp Backup and Recovery können Sie Berichte für Microsoft SQL Server-Workloads erstellen, um den Sicherungsstatus und Details anzuzeigen, einschließlich der Anzahl erfolgreicher und fehlgeschlagener Sicherungen, Sicherungstypen, Speichersysteme und Zeitstempel.
 
 
 
