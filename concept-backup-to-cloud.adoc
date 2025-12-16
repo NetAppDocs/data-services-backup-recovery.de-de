@@ -169,10 +169,9 @@ ifdef::gcp[]
 
 *Servicegebühren*
 
-Die Servicegebühren werden an NetApp gezahlt und decken sowohl die Kosten für die Erstellung von Backups auf Objektspeicher oder einem ONTAP Ziel als auch die Kosten für die Wiederherstellung von Volumes oder Dateien aus diesen Backups ab. Sie zahlen nur für die Daten, die Sie im Objektspeicher oder in ONTAP schützen (dies schließt SnapMirror -Konfigurationen ein). Die Gebühren werden anhand der logischen Quellkapazität (vor ONTAP Effizienz) der ONTAP Volumes berechnet, die auf Objektspeicher oder ein ONTAP Ziel gesichert werden. Diese Kapazität wird auch als Front-End-Terabyte (FETB) bezeichnet.
+Bei ONTAP Volume-Workloads werden Ihnen nur die Volumes in Rechnung gestellt, die durch Objektspeicher geschützt sind. Die Gebühren basieren auf der logischen Nutzkapazität der Quell ONTAP -Volumes vor Anwendung von Effizienzmaßnahmen, auch bekannt als Front-End-Terabytes (FETB).
 
-
-NOTE: Für Microsoft SQL Server fallen Gebühren an, wenn Sie die Replikation von Snapshots auf ein sekundäres ONTAP Ziel oder einen Objektspeicher initiieren.
+Für alle anderen Workloads werden Ihnen Ressourcen in Rechnung gestellt, die auf mindestens einem sekundären Speicherziel oder Objektspeicherziel geschützt sind. Die Gebühren werden anhand der logischen Größe der Quell-Workload berechnet. Bei Datenbanken bedeutet dies die Datenbankgröße; bei VMs die VM-Größe.
 
 Es gibt drei Möglichkeiten, für Backup und Wiederherstellung zu bezahlen:
 
