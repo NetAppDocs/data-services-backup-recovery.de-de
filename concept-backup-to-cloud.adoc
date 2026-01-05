@@ -215,31 +215,31 @@ link:br-start-licensing.html["Erfahren Sie, wie Sie Lizenzen einrichten"].
 
 
 
-== Unterstützte Datenquellen, Systeme und Sicherungsziele
+== Unterstützte Workloads, Systeme und Sicherungsziele
 
-.Unterstützte Workload-Datenquellen
-NetApp Backup and Recovery schützt die folgenden Workloads:
+.Unterstützte Arbeitslasten
+NetApp Backup and Recovery schützt die folgenden Arten von Workloads:
 
 * ONTAP -Volumes
-* Microsoft SQL Server-Instanzen und -Datenbanken für physisches VMware Virtual Machine File System (VMFS) und VMware Virtual Machine Disk (VMDK) NFS
+* Microsoft SQL Server-Instanzen und -Datenbanken werden auf physischen Festplatten und VMware Virtual Machine Disks (VMDK) über VMFS oder NFS gespeichert.
 * VMware-VMs und -Datenspeicher
 * KVM-Workloads (Vorschau)
 * Hyper-V-Workloads (Vorschau)
-* Oracle-Workloads (Vorschau)
+* Oracle Database-Workloads (Vorschau)
 * Kubernetes-Workloads (Vorschau)
 
 
 .Unterstützte Systeme
-* On-Premises ONTAP SAN (iSCSI-Protokoll) und NAS (mit NFS- und CIFS-Protokollen) mit ONTAP Version 9.8 und höher
+* Lokales ONTAP SAN (iSCSI-Protokoll) und NAS (über NFS- und CIFS-Protokolle) mit ONTAP Version 9.8 oder höher
 * Cloud Volumes ONTAP 9.8 oder höher für AWS (mit SAN und NAS)
-
-
+* Cloud Volumes ONTAP 9.8 oder höher für Google Cloud Platform (unter Verwendung der NFS- und CIFS-Protokolle)
 * Cloud Volumes ONTAP 9.8 oder höher für Microsoft Azure (mit SAN und NAS)
-* Amazon FSx for NetApp ONTAP
+* Amazon FSx for NetApp ONTAP (nur Microsoft SQL Server-Workloads)
 
 
 .Unterstützte Sicherungsziele
 * Amazon Web Services (AWS) S3
+* Google Cloud-Speicher
 * Microsoft Azure Blob (nicht verfügbar für VMware-Workloads in der Vorschau)
 * StorageGRID
 * ONTAP S3 (Nicht verfügbar für VMware-Workloads in der Vorschau)
