@@ -9,19 +9,6 @@ settings:
     pdf_enabled: true
     harmony_enabled: false
   rss_page: whats-new.html
-  filter:
-    label: Cloud-Anbieter
-    default: Alle Cloud-Anbieter
-    options:
-    - name: Amazon Web Services
-      alias: AWS
-      id: aws
-    - name: Google Cloud
-      alias: Google Cloud
-      id: gcp
-    - name: Microsoft Azure
-      alias: Azurblau
-      id: azure
   langs: de-de,us-en,es-es,fr-fr,it-it,pt-br,ja-jp,ko-kr,zh-cn,zh-tw
 sidebar:
   entries:

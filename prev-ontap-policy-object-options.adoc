@@ -165,25 +165,23 @@ Sie können DataLock- und Ransomware-Schutz auf ONTAP -Volumes der folgenden Sys
 
 [cols="55,45"]
 |===
-| Quellsystem | Ziel der Sicherungsdatei ifdef::aws[] 
+| Quellsystem | Ziel der Sicherungsdatei 
 
 
-| Cloud Volumes ONTAP in AWS | Amazon S3 endif::aws[] ifdef::azure[] 
+| Cloud Volumes ONTAP in AWS | Amazon S3 
 
 
-| Cloud Volumes ONTAP in Azure | Azure Blob endif::azure[] ifdef::gcp[] 
+| Cloud Volumes ONTAP in Azure | Azure-Blob 
 
 
-| Cloud Volumes ONTAP in Google Cloud | Google Cloud endif::gcp[] 
+| Cloud Volumes ONTAP in Google Cloud | Google Cloud 
 
 
-| On-Premises- ONTAP -System | ifdef::aws[] Amazon S3 endif::aws[] ifdef::azure[] Azure Blob endif::azure[] ifdef::gcp[] Google Cloud endif::gcp[] NetApp StorageGRID 
+| On-Premises- ONTAP -System | Amazon S3, Azure Blob, Google Cloud , NetApp StorageGRID 
 |===
 
 
 === Anforderungen
-
-ifdef::aws[]
 
 * Für AWS:
 +
@@ -228,33 +226,17 @@ https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html
 
 
 
-
-
-endif::aws[]
-
-ifdef::azure[]
-
 * Für Azure:
 +
 ** Ihre Cluster müssen ONTAP 9.12.1 oder höher ausführen
 ** Der Konsolenagent kann in der Cloud oder vor Ort eingesetzt werden
 
 
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
 * Für Google Cloud:
 +
 ** Ihre Cluster müssen ONTAP 9.17.1 oder höher ausführen
 ** Der Konsolenagent kann in der Cloud oder vor Ort eingesetzt werden
 
-
-
-
-endif::gcp[]
 
 * Für StorageGRID:
 +
@@ -355,8 +337,6 @@ Auf Daten in Archivebenen kann bei Bedarf nicht sofort zugegriffen werden und de
 ====
 Jede Sicherungsrichtlinie enthält einen Abschnitt für _Archivierungsrichtlinien_, den Sie auf Ihre Sicherungsdateien anwenden können.
 
-ifdef::aws[]
-
 * In AWS beginnen Backups in der Speicherklasse _Standard_ und wechseln nach 30 Tagen zur Speicherklasse _Standard – seltener Zugriff_.
 +
 Wenn Ihr Cluster ONTAP 9.10.1 oder höher verwendet, können Sie ältere Backups entweder in den Speicher _S3 Glacier_ oder _S3 Glacier Deep Archive_ verschieben. link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über AWS-Archivspeicher"].
@@ -369,42 +349,23 @@ Wenn Ihr Cluster ONTAP 9.10.1 oder höher verwendet, können Sie ältere Backups
 
 
 
-endif::aws[]
-
-ifdef::azure[]
-
 * In Azure sind Sicherungen mit der Zugriffsebene „Cool“ verknüpft.
 +
 Wenn Ihr Cluster ONTAP 9.10.1 oder höher verwendet, können Sie ältere Sicherungen in den Azure Archive-Speicher verschieben. link:prev-reference-azure-archive-storage-tiers.html["Erfahren Sie mehr über Azure-Archivspeicher"].
 
 
 
-endif::azure[]
-
-ifdef::gcp[]
-
 * In GCP sind Backups mit der Speicherklasse _Standard_ verknüpft.
 +
 Wenn Ihr Cluster vor Ort ONTAP 9.12.1 oder höher verwendet, können Sie zur weiteren Kostenoptimierung ältere Backups nach einer bestimmten Anzahl von Tagen in der NetApp Backup and Recovery -Benutzeroberfläche in den Archivspeicher verschieben. link:prev-reference-gcp-archive-storage-tiers.html["Erfahren Sie mehr über den Archivspeicher von Google"].
-
-
-
-endif::gcp[]
 
 * In StorageGRID sind Backups mit der Speicherklasse _Standard_ verknüpft.
 +
 Wenn Ihr lokaler Cluster ONTAP 9.12.1 oder höher verwendet und Ihr StorageGRID System 11.4 oder höher verwendet, können Sie ältere Sicherungsdateien im öffentlichen Cloud-Archivspeicher archivieren.
 
++
+** Bei AWS können Sie Backups auf AWS _S3 Glacier_ oder _S3 Glacier Deep Archive_-Speicher auslagern. link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über AWS-Archivspeicher"^]Die
+** Bei Azure können Sie ältere Backups im Azure-Archivspeicher auslagern. link:prev-reference-azure-archive-storage-tiers.html["Erfahren Sie mehr über Azure-Archivspeicher"^]Die
 
 
-ifdef::aws[]
 
-+ ** Für AWS können Sie Backups auf AWS _S3 Glacier_ oder _S3 Glacier Deep Archive_-Speicher stufen. link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über AWS-Archivspeicher"^].
-
-endif::aws[]
-
-ifdef::azure[]
-
-+ ** Für Azure können Sie ältere Sicherungen in den _Azure Archive_-Speicher verschieben. link:prev-reference-azure-archive-storage-tiers.html["Erfahren Sie mehr über Azure-Archivspeicher"^].
-
-endif::azure[]

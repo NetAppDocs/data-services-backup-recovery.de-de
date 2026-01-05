@@ -219,27 +219,3 @@ Es werden dieselben drei Optionen angezeigt wie beim Wiederherstellen über die 
 
 . Fahren Sie mit den gleichen Schritten für die Wiederherstellungsoption auf der Seite „Wiederherstellen“ fort
 
-
-ifdef::aws[]
-
-endif::aws[]
-
-ifdef::azure[]
-
-endif::azure[]
-
-ifdef::gcp[]
-
-endif::gcp[]
-
-ifdef::aws[]
-
-endif::aws[]
-
-ifdef::azure[]
-
-endif::azure[]
-
-ifdef::gcp[]
-
-endif::gcp[]

@@ -257,19 +257,9 @@ Eine Liste der gültigen Konsolenagent-Speicherorte finden Sie in einem der folg
 
 NetApp Backup and Recovery kann an einem Standort mit eingeschränkter Internetverbindung (auch als _eingeschränkter Modus_ bezeichnet) zum Sichern von Volumedaten verwendet werden.  In diesem Fall müssen Sie den Konsolenagenten in der Ziel-Cloudregion bereitstellen.
 
-ifdef::aws[]
-
 * Sie können Daten von lokalen ONTAP -Systemen oder Cloud Volumes ONTAP -Systemen, die in kommerziellen AWS-Regionen installiert sind, auf Amazon S3 sichern. link:prev-ontap-backup-cvo-aws.html["Sichern Sie Cloud Volumes ONTAP Daten auf Amazon S3"].
-
-
-endif::aws[]
-
-ifdef::azure[]
-
 * Sie können Daten von lokalen ONTAP -Systemen oder Cloud Volumes ONTAP -Systemen, die in kommerziellen Azure-Regionen installiert sind, in Azure Blob sichern. link:prev-ontap-backup-cvo-azure.html["Sichern Sie Cloud Volumes ONTAP Daten in Azure Blob"].
 
-
-endif::azure[]
 
 
 
@@ -281,11 +271,5 @@ NetApp Backup and Recovery kann an einem Standort ohne Internetverbindung (auch 
 NOTE: Der private BlueXP Modus (alte BlueXP -Schnittstelle) wird normalerweise in lokalen Umgebungen ohne Internetverbindung und mit sicheren Cloud-Regionen verwendet, darunter AWS Secret Cloud, AWS Top Secret Cloud und Azure IL6. NetApp unterstützt diese Umgebungen weiterhin mit der alten BlueXP Schnittstelle. Die Dokumentation zum privaten Modus in der alten BlueXP Schnittstelle finden Sie im https://docs.netapp.com/us-en/console-setup-admin/media/BlueXP-Private-Mode-legacy-interface.pdf["PDF-Dokumentation für den privaten Modus von BlueXP"] .
 
 * Sie können Daten von lokalen ONTAP -Systemen vor Ort auf lokalen NetApp StorageGRID -Systemen sichern. link:prev-ontap-backup-onprem-storagegrid.html["Sichern Sie lokale ONTAP Daten auf StorageGRID"].
-* Sie können Daten von lokalen ONTAP -Systemen vor Ort auf lokalen ONTAP Systemen vor Ort oder auf für S3-Objektspeicher konfigurierten Cloud Volumes ONTAP -Systemen sichern. link:prev-ontap-backup-onprem-ontaps3.html["Sichern Sie lokale ONTAP -Daten auf ONTAP S3"] .ifdef::aws[]
+* Sie können Daten von lokalen ONTAP -Systemen vor Ort auf lokalen ONTAP Systemen vor Ort oder auf für S3-Objektspeicher konfigurierten Cloud Volumes ONTAP -Systemen sichern. link:prev-ontap-backup-onprem-ontaps3.html["Sichern Sie lokale ONTAP -Daten auf ONTAP S3"]Die
 
-
-endif::aws[]
-
-ifdef::azure[]
-
-endif::azure[]

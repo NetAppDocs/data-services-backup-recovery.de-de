@@ -236,27 +236,12 @@ Sie können die Attribute für eine Sicherungsrichtlinie ändern, die derzeit au
 Wenn auf Ihrem Cluster ONTAP 9.10.1 oder höher ausgeführt wird, haben Sie auch die Möglichkeit, die Einstufung von Backups in den Archivspeicher nach einer bestimmten Anzahl von Tagen zu aktivieren oder zu deaktivieren.
 
 +
-ifdef::aws[]
+link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über die Verwendung von AWS-Archivspeicher"]Die link:prev-reference-azure-archive-storage-tiers.html["Weitere Informationen zur Verwendung des Azure-Archivspeichers"]Die link:prev-reference-gcp-archive-storage-tiers.html["Erfahren Sie mehr über die Verwendung des Google-Archivspeichers"]Die (Erfordert ONTAP 9.12.1.)
+
++
+Beachten Sie, dass alle Sicherungsdateien, die in den Archivspeicher verschoben wurden, in dieser Ebene verbleiben, wenn Sie die Verschiebung von Sicherungen in den Archivspeicher beenden – sie werden nicht automatisch zurück in die Standardebene verschoben. Nur neue Volume-Backups werden im Standard-Tier gespeichert.
 
 
-
-link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über die Verwendung von AWS-Archivspeicher"].
-
-endif::aws[]
-
-ifdef::azure[]
-
-link:prev-reference-azure-archive-storage-tiers.html["Weitere Informationen zur Verwendung des Azure-Archivspeichers"].
-
-endif::azure[]
-
-ifdef::gcp[]
-
-link:prev-reference-gcp-archive-storage-tiers.html["Erfahren Sie mehr über die Verwendung des Google-Archivspeichers"]. (Erfordert ONTAP 9.12.1.)
-
-endif::gcp[]
-
-+ Beachten Sie, dass alle Sicherungsdateien, die in den Archivspeicher verschoben wurden, in dieser Schicht verbleiben, wenn Sie die Verschiebung der Sicherungen ins Archiv beenden. Sie werden nicht automatisch zurück in die Standardschicht verschoben.  Nur neue Volume-Backups werden in der Standardebene gespeichert.
 
 
 
@@ -282,25 +267,9 @@ Wenn Sie eine neue Sicherungsrichtlinie auf bestimmte Volumes in einem System an
 Wenn auf Ihrem Cluster ONTAP 9.10.1 oder höher ausgeführt wird, haben Sie auch die Möglichkeit, die Einstufung von Backups in den Archivspeicher nach einer bestimmten Anzahl von Tagen zu aktivieren oder zu deaktivieren.
 
 +
-ifdef::aws[]
+link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über die Verwendung von AWS-Archivspeicher"]Die link:prev-reference-azure-archive-storage-tiers.html["Weitere Informationen zur Verwendung des Azure-Archivspeichers"]Die link:prev-reference-gcp-archive-storage-tiers.html["Erfahren Sie mehr über die Verwendung des Google-Archivspeichers"]Die (Erfordert ONTAP 9.12.1.)
 
 
-
-link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über die Verwendung von AWS-Archivspeicher"].
-
-endif::aws[]
-
-ifdef::azure[]
-
-link:prev-reference-azure-archive-storage-tiers.html["Weitere Informationen zur Verwendung des Azure-Archivspeichers"].
-
-endif::azure[]
-
-ifdef::gcp[]
-
-link:prev-reference-gcp-archive-storage-tiers.html["Erfahren Sie mehr über die Verwendung des Google-Archivspeichers"]. (Erfordert ONTAP 9.12.1.)
-
-endif::gcp[]
 
 
 

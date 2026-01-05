@@ -287,24 +287,8 @@ Informationen zum Erstellen eines Konsolenagenten in der NetApp Console vor der 
 .Wo soll der Konsolenagent installiert werden?
 Um einen Wiederherstellungsvorgang abzuschließen, kann der Konsolenagent an den folgenden Speicherorten installiert werden:
 
-ifdef::aws[]
-
 * Für Amazon S3 kann der Konsolenagent bei Ihnen vor Ort bereitgestellt werden.
-
-
-endif::aws[]
-
-ifdef::azure[]
-
 * Für Azure Blob kann der Konsolen-Agent vor Ort bereitgestellt werden.
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
-endif::gcp[]
-
 * Für StorageGRID muss der Konsolenagent in Ihren Räumlichkeiten bereitgestellt werden, mit oder ohne Internetzugang.
 * Für ONTAP S3 kann der Konsolenagent in Ihren Räumlichkeiten (mit oder ohne Internetzugang) oder in einer Cloud-Provider-Umgebung bereitgestellt werden
 

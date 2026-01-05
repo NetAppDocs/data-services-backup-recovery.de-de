@@ -34,23 +34,7 @@ Die Wiederherstellungsmöglichkeiten hängen von Ihrer ONTAP Version ab:
 
 
 
-ifdef::aws[]
-
-link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über die Wiederherstellung aus dem AWS-Archivspeicher"].
-
-endif::aws[]
-
-ifdef::azure[]
-
-link:prev-reference-azure-archive-storage-tiers.html["Weitere Informationen zur Wiederherstellung aus dem Azure-Archivspeicher"].
-
-endif::azure[]
-
-ifdef::gcp[]
-
-link:prev-reference-gcp-archive-storage-tiers.html["Erfahren Sie mehr über die Wiederherstellung aus dem Google-Archivspeicher"].
-
-endif::gcp[]
+link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über die Wiederherstellung aus dem AWS-Archivspeicher"]Die link:prev-reference-azure-archive-storage-tiers.html["Weitere Informationen zur Wiederherstellung aus dem Azure-Archivspeicher"]Die link:prev-reference-gcp-archive-storage-tiers.html["Erfahren Sie mehr über die Wiederherstellung aus dem Google-Archivspeicher"]Die
 
 [NOTE]
 ====
@@ -76,16 +60,16 @@ Sie können ONTAP Daten aus einer Sicherungsdatei, die sich in einem sekundären
 2+| Speicherort der Sicherungsdatei | Zielsystem 
 
 
-| *Objektspeicher (Backup)* | *Sekundäres System (Replikation)* | ifdef::aws[] 
+| *Objektspeicher (Backup)* | *Sekundäres System (Replikation)* |  
 
 
-| Amazon S3 | Cloud Volumes ONTAP in AWS On-Premises- ONTAP -System | Cloud Volumes ONTAP in AWS Lokales ONTAP -System endif::aws[] ifdef::azure[] 
+| Amazon S3 | Cloud Volumes ONTAP in AWS On-Premises- ONTAP -System | Cloud Volumes ONTAP in AWS On-Premises- ONTAP -System 
 
 
-| Azure-Blob | Cloud Volumes ONTAP in Azure On-Premises- ONTAP -System | Cloud Volumes ONTAP in Azure Lokales ONTAP -System endif::azure[] ifdef::gcp[] 
+| Azure-Blob | Cloud Volumes ONTAP in Azure On-Premises- ONTAP -System | Cloud Volumes ONTAP in Azure On-Premises- ONTAP -System 
 
 
-| Google Cloud-Speicher | Cloud Volumes ONTAP im lokalen ONTAP -System von Google | Cloud Volumes ONTAP im lokalen ONTAP -System von Google endif::gcp[] 
+| Google Cloud-Speicher | Cloud Volumes ONTAP im lokalen ONTAP -System von Google | Cloud Volumes ONTAP im lokalen ONTAP -System von Google 
 
 
 | NetApp StorageGRID | On-Premises- ONTAP -System Cloud Volumes ONTAP | On-Premises- ONTAP -System 
@@ -95,27 +79,9 @@ Sie können ONTAP Daten aus einer Sicherungsdatei, die sich in einem sekundären
 |===
 Für Search & Restore kann der Konsolenagent an den folgenden Speicherorten installiert werden:
 
-ifdef::aws[]
-
 * Für Amazon S3 kann der Konsolenagent in AWS oder in Ihren Räumlichkeiten bereitgestellt werden
-
-
-endif::aws[]
-
-ifdef::azure[]
-
 * Für Azure Blob kann der Konsolenagent in Azure oder in Ihren Räumlichkeiten bereitgestellt werden
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
 * Für Google Cloud Storage muss der Konsolenagent in Ihrem Google Cloud Platform VPC bereitgestellt werden
-
-
-endif::gcp[]
-
 * Für StorageGRID muss der Konsolenagent in Ihren Räumlichkeiten bereitgestellt werden; mit oder ohne Internetzugang
 * Für ONTAP S3 kann der Konsolenagent in Ihren Räumlichkeiten (mit oder ohne Internetzugang) oder in einer Cloud-Provider-Umgebung bereitgestellt werden
 
@@ -147,8 +113,6 @@ Folgende Anforderungen gelten für die Funktion „Suchen & Wiederherstellen“ 
 
 [%collapsible]
 ====
-ifdef::aws[]
-
 * AWS-Anforderungen:
 +
 ** Der Benutzerrolle, die der Konsole Berechtigungen erteilt, müssen bestimmte Amazon Athena-, AWS Glue- und AWS S3-Berechtigungen hinzugefügt werden. link:prev-ontap-backup-onprem-aws.html["Stellen Sie sicher, dass alle Berechtigungen richtig konfiguriert sind"].
@@ -158,10 +122,6 @@ Beachten Sie: Wenn Sie NetApp Backup and Recovery bereits mit einem zuvor konfig
 
 
 
-
-endif::aws[]
-
-ifdef::azure[]
 
 * Azure-Anforderungen:
 +
@@ -175,10 +135,6 @@ Beachten Sie: Wenn Sie NetApp Backup and Recovery bereits mit einem zuvor konfig
 
 
 
-endif::azure[]
-
-ifdef::gcp[]
-
 * Google Cloud-Anforderungen:
 +
 ** Der Benutzerrolle, die der NetApp Console Berechtigungen erteilt, müssen bestimmte Google BigQuery-Berechtigungen hinzugefügt werden. link:prev-ontap-backup-onprem-gcp.html["Stellen Sie sicher, dass alle Berechtigungen richtig konfiguriert sind"].
@@ -186,10 +142,6 @@ ifdef::gcp[]
 Wenn Sie NetApp Backup and Recovery bereits mit einem zuvor konfigurierten Konsolenagenten verwendet haben, müssen Sie jetzt der Konsolenbenutzerrolle die BigQuery-Berechtigungen hinzufügen.  Sie werden für Search & Restore benötigt.
 
 
-
-
-
-endif::gcp[]
 
 * StorageGRID und ONTAP S3-Anforderungen:
 +
@@ -336,34 +288,15 @@ Beachten Sie, dass die Ergebnisse lokale Volume-Snapshots und Remote-Replicated-
 Wenn Sie ein lokales ONTAP -System auswählen und die Clusterverbindung zum Objektspeicher noch nicht konfiguriert haben, werden Sie zur Eingabe zusätzlicher Informationen aufgefordert:
 
 +
-ifdef::aws[]
-
-+
 *** Wählen Sie beim Wiederherstellen von Amazon S3 den IPspace im ONTAP Cluster aus, in dem sich das Zielvolume befinden soll, geben Sie den Zugriffsschlüssel und den geheimen Schlüssel für den Benutzer ein, den Sie erstellt haben, um dem ONTAP Cluster Zugriff auf den S3-Bucket zu gewähren, und wählen Sie optional einen privaten VPC-Endpunkt für die sichere Datenübertragung. link:prev-ontap-backup-onprem-aws.html["Details zu diesen Anforderungen anzeigen"].
+*** Wählen Sie beim Wiederherstellen aus Azure Blob den IPspace im ONTAP Cluster aus, in dem sich das Zielvolume befinden soll, und wählen Sie optional einen privaten Endpunkt für die sichere Datenübertragung, indem Sie das VNet und das Subnetz auswählen. link:prev-ontap-backup-onprem-azure.html["Details zu diesen Anforderungen anzeigen"].
+*** Wählen Sie beim Wiederherstellen aus Google Cloud Storage den IPspace im ONTAP Cluster aus, in dem sich das Zielvolume befinden wird, sowie den Zugriffsschlüssel und den geheimen Schlüssel für den Zugriff auf den Objektspeicher. link:prev-ontap-backup-onprem-gcp.html["Details zu diesen Anforderungen anzeigen"].
+*** Geben Sie beim Wiederherstellen von StorageGRID den FQDN des StorageGRID -Servers und den Port ein, den ONTAP für die HTTPS-Kommunikation mit StorageGRID verwenden soll, geben Sie den für den Zugriff auf den Objektspeicher erforderlichen Zugriffsschlüssel und Geheimschlüssel sowie den IP-Bereich im ONTAP -Cluster ein, in dem sich das Zielvolume befindet. link:prev-ontap-backup-onprem-storagegrid.html["Details zu diesen Anforderungen anzeigen"].
+*** Geben Sie beim Wiederherstellen von ONTAP S3 den FQDN des ONTAP S3-Servers und den Port ein, den ONTAP für die HTTPS-Kommunikation mit ONTAP S3 verwenden soll, wählen Sie den für den Zugriff auf den Objektspeicher erforderlichen Zugriffsschlüssel und Geheimschlüssel sowie den IP-Bereich im ONTAP Cluster aus, in dem sich das Zielvolume befinden wird. link:prev-ontap-backup-onprem-ontaps3.html["Details zu diesen Anforderungen anzeigen"].
 
 
 
 
-
-
-endif::aws[]
-
-ifdef::azure[]
-
-* Wählen Sie beim Wiederherstellen aus Azure Blob den IPspace im ONTAP Cluster aus, in dem sich das Zielvolume befinden soll, und wählen Sie optional einen privaten Endpunkt für die sichere Datenübertragung, indem Sie das VNet und das Subnetz auswählen. link:prev-ontap-backup-onprem-azure.html["Details zu diesen Anforderungen anzeigen"].
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
-* Wählen Sie beim Wiederherstellen aus Google Cloud Storage den IPspace im ONTAP Cluster aus, in dem sich das Zielvolume befinden wird, sowie den Zugriffsschlüssel und den geheimen Schlüssel für den Zugriff auf den Objektspeicher. link:prev-ontap-backup-onprem-gcp.html["Details zu diesen Anforderungen anzeigen"].
-
-
-endif::gcp[]
-
-* Geben Sie beim Wiederherstellen von StorageGRID den FQDN des StorageGRID -Servers und den Port ein, den ONTAP für die HTTPS-Kommunikation mit StorageGRID verwenden soll, geben Sie den für den Zugriff auf den Objektspeicher erforderlichen Zugriffsschlüssel und Geheimschlüssel sowie den IP-Bereich im ONTAP -Cluster ein, in dem sich das Zielvolume befindet. link:prev-ontap-backup-onprem-storagegrid.html["Details zu diesen Anforderungen anzeigen"].
-* Geben Sie beim Wiederherstellen von ONTAP S3 den FQDN des ONTAP S3-Servers und den Port ein, den ONTAP für die HTTPS-Kommunikation mit ONTAP S3 verwenden soll, wählen Sie den für den Zugriff auf den Objektspeicher erforderlichen Zugriffsschlüssel und Geheimschlüssel sowie den IP-Bereich im ONTAP Cluster aus, in dem sich das Zielvolume befinden wird. link:prev-ontap-backup-onprem-ontaps3.html["Details zu diesen Anforderungen anzeigen"].
 
 
 .Ergebnisse

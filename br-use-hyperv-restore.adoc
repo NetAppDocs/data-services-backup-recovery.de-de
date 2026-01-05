@@ -108,26 +108,3 @@ Nicht verfügbar für Hyper-V-Workloads in der Vorschau.
 
 --
 ====
-ifdef::aws[]
-
-endif::aws[]
-
-ifdef::azure[]
-
-endif::azure[]
-
-ifdef::gcp[]
-
-endif::gcp[]
-
-ifdef::aws[]
-
-endif::aws[]
-
-ifdef::azure[]
-
-endif::azure[]
-
-ifdef::gcp[]
-
-endif::gcp[]

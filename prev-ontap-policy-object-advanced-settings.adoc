@@ -24,11 +24,7 @@ NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads 
 
 Auf der Seite „Erweiterte Einstellungen“ können Sie die folgenden Optionen ändern:
 
-* Ändern der Netzwerkbandbreite, die zum Hochladen von Backups in den Objektspeicher zugewiesen ist, mithilfe der Option „Maximale Übertragungsrate“ ifdef::aws[]
-
-
-endif::aws[]
-
+* Ändern der für das Hochladen von Backups in den Objektspeicher zugewiesenen Netzwerkbandbreite mithilfe der Option „Maximale Übertragungsrate“
 * Ändern der Option, ob historische Snapshots als Sicherungsdateien exportiert und in die anfänglichen Basissicherungsdateien für zukünftige Volumes aufgenommen werden.
 * Ändern, ob „jährliche“ Snapshots aus dem Quellsystem entfernt werden
 * Aktivieren oder Deaktivieren von Ransomware-Scans für ein System, einschließlich geplanter Scans
@@ -70,10 +66,6 @@ Wenn Sie NetApp Backup and Recovery für ein System aktivieren, kann ONTAP stand
 
 
 Diese Einstellung hat keine Auswirkungen auf die Bandbreite, die anderen Replikationsbeziehungen zugewiesen wird, die möglicherweise für Volumes im System konfiguriert sind.
-
-ifdef::aws[]
-
-endif::aws[]
 
 
 

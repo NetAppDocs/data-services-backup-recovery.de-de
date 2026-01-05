@@ -30,23 +30,7 @@ Die Wiederherstellungsmöglichkeiten hängen von Ihrer ONTAP Version ab:
 
 
 
-ifdef::aws[]
-
-link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über die Wiederherstellung aus dem AWS-Archivspeicher"].
-
-endif::aws[]
-
-ifdef::azure[]
-
-link:prev-reference-azure-archive-storage-tiers.html["Weitere Informationen zur Wiederherstellung aus dem Azure-Archivspeicher"].
-
-endif::azure[]
-
-ifdef::gcp[]
-
-link:prev-reference-gcp-archive-storage-tiers.html["Erfahren Sie mehr über die Wiederherstellung aus dem Google-Archivspeicher"].
-
-endif::gcp[]
+link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über die Wiederherstellung aus dem AWS-Archivspeicher"]Die link:prev-reference-azure-archive-storage-tiers.html["Weitere Informationen zur Wiederherstellung aus dem Azure-Archivspeicher"]Die link:prev-reference-gcp-archive-storage-tiers.html["Erfahren Sie mehr über die Wiederherstellung aus dem Google-Archivspeicher"]Die
 
 
 NOTE: Die hohe Priorität wird beim Wiederherstellen von Daten aus dem Azure-Archivspeicher auf StorageGRID -Systemen nicht unterstützt.
@@ -61,43 +45,25 @@ Sie können ONTAP Daten aus einer Sicherungsdatei, die sich in einem sekundären
 
 [cols="25,25,25,25"]
 |===
-| *Aus dem Objektspeicher (Backup)* | *Vom Primär (Schnappschuss)* | *Vom sekundären System (Replikation)* | Zum Zielsystem ifdef::aws[] 
+| *Aus dem Objektspeicher (Backup)* | *Vom Primär (Schnappschuss)* | *Vom sekundären System (Replikation)* | Zum Zielsystem 
 
 
-| Amazon S3 | Cloud Volumes ONTAP in AWS On-Premises- ONTAP -System | Cloud Volumes ONTAP in AWS Lokales ONTAP -System endif::aws[] ifdef::azure[] | Azure-Blob 
+| Amazon S3 | Cloud Volumes ONTAP in AWS On-Premises- ONTAP -System | Cloud Volumes ONTAP in AWS On-Premises- ONTAP -System | Azure-Blob 
 
 
-| Cloud Volumes ONTAP in Azure On-Premises- ONTAP -System | Cloud Volumes ONTAP in Azure Lokales ONTAP -System endif::azure[] ifdef::gcp[] | Google Cloud-Speicher | Cloud Volumes ONTAP im lokalen ONTAP -System von Google 
+| Cloud Volumes ONTAP in Azure On-Premises- ONTAP -System | Cloud Volumes ONTAP in Azure On-Premises- ONTAP -System | Google Cloud-Speicher | Cloud Volumes ONTAP im lokalen ONTAP -System von Google 
 
 
-| Cloud Volumes ONTAP im lokalen ONTAP -System von Google endif::gcp[] | NetApp StorageGRID | On-Premises- ONTAP -System | On-Premises- ONTAP -System Cloud Volumes ONTAP 
+| Cloud Volumes ONTAP im lokalen ONTAP -System von Google | NetApp StorageGRID | On-Premises- ONTAP -System | On-Premises- ONTAP -System Cloud Volumes ONTAP 
 
 
 | Zum lokalen ONTAP -System | ONTAP S3 | On-Premises- ONTAP -System | On-Premises- ONTAP -System Cloud Volumes ONTAP 
 |===
 Für „Durchsuchen und Wiederherstellen“ kann der Konsolenagent an den folgenden Speicherorten installiert werden:
 
-ifdef::aws[]
-
 * Für Amazon S3 kann der Konsolenagent in AWS oder in Ihren Räumlichkeiten bereitgestellt werden
-
-
-endif::aws[]
-
-ifdef::azure[]
-
 * Für Azure Blob kann der Konsolenagent in Azure oder in Ihren Räumlichkeiten bereitgestellt werden
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
 * Für Google Cloud Storage muss der Konsolenagent in Ihrem Google Cloud Platform VPC bereitgestellt werden
-
-
-endif::gcp[]
-
 * Für StorageGRID muss der Konsolenagent in Ihren Räumlichkeiten bereitgestellt werden; mit oder ohne Internetzugang
 * Für ONTAP S3 kann der Konsolenagent in Ihren Räumlichkeiten (mit oder ohne Internetzugang) oder in einer Cloud-Provider-Umgebung bereitgestellt werden
 
@@ -139,34 +105,14 @@ Beachten Sie: Wenn Sie eine Sicherungsdatei im Objektspeicher auswählen und Ran
 . Wählen Sie auf der Seite „Ziel auswählen“ das *System* aus, auf dem Sie das Volume wiederherstellen möchten.
 . Wenn Sie beim Wiederherstellen einer Sicherungsdatei aus dem Objektspeicher ein lokales ONTAP -System auswählen und die Clusterverbindung zum Objektspeicher noch nicht konfiguriert haben, werden Sie zur Eingabe zusätzlicher Informationen aufgefordert:
 +
-ifdef::aws[]
-
-+
 ** Wählen Sie beim Wiederherstellen von Amazon S3 den IPspace im ONTAP Cluster aus, in dem sich das Zielvolume befinden soll, geben Sie den Zugriffsschlüssel und den geheimen Schlüssel für den Benutzer ein, den Sie erstellt haben, um dem ONTAP Cluster Zugriff auf den S3-Bucket zu gewähren, und wählen Sie optional einen privaten VPC-Endpunkt für die sichere Datenübertragung.
+** Wählen Sie beim Wiederherstellen aus Azure Blob den IPspace im ONTAP Cluster aus, in dem sich das Zielvolume befinden soll, wählen Sie das Azure-Abonnement für den Zugriff auf den Objektspeicher aus und wählen Sie optional einen privaten Endpunkt für die sichere Datenübertragung, indem Sie das VNet und das Subnetz auswählen.
+** Wählen Sie beim Wiederherstellen aus Google Cloud Storage das Google Cloud-Projekt sowie den Zugriffsschlüssel und den geheimen Schlüssel aus, um auf den Objektspeicher, die Region, in der die Sicherungen gespeichert sind, und den IP-Bereich im ONTAP Cluster zuzugreifen, in dem sich das Zielvolume befinden wird.
+** Geben Sie beim Wiederherstellen von StorageGRID den FQDN des StorageGRID -Servers und den Port ein, den ONTAP für die HTTPS-Kommunikation mit StorageGRID verwenden soll, wählen Sie den für den Zugriff auf den Objektspeicher erforderlichen Zugriffsschlüssel und Geheimschlüssel sowie den IP-Bereich im ONTAP Cluster aus, in dem sich das Zielvolume befinden wird.
+** Geben Sie beim Wiederherstellen von ONTAP S3 den FQDN des ONTAP S3-Servers und den Port ein, den ONTAP für die HTTPS-Kommunikation mit ONTAP S3 verwenden soll, wählen Sie den für den Zugriff auf den Objektspeicher erforderlichen Zugriffsschlüssel und Geheimschlüssel sowie den IP-Bereich im ONTAP Cluster aus, in dem sich das Zielvolume befinden wird.
 
 
-
-
-endif::aws[]
-
-ifdef::azure[]
-
-* Wählen Sie beim Wiederherstellen aus Azure Blob den IPspace im ONTAP Cluster aus, in dem sich das Zielvolume befinden soll, wählen Sie das Azure-Abonnement für den Zugriff auf den Objektspeicher aus und wählen Sie optional einen privaten Endpunkt für die sichere Datenübertragung, indem Sie das VNet und das Subnetz auswählen.
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
-* Wählen Sie beim Wiederherstellen aus Google Cloud Storage das Google Cloud-Projekt sowie den Zugriffsschlüssel und den geheimen Schlüssel aus, um auf den Objektspeicher, die Region, in der die Sicherungen gespeichert sind, und den IP-Bereich im ONTAP Cluster zuzugreifen, in dem sich das Zielvolume befinden wird.
-
-
-endif::gcp[]
-
-* Geben Sie beim Wiederherstellen von StorageGRID den FQDN des StorageGRID -Servers und den Port ein, den ONTAP für die HTTPS-Kommunikation mit StorageGRID verwenden soll, wählen Sie den für den Zugriff auf den Objektspeicher erforderlichen Zugriffsschlüssel und Geheimschlüssel sowie den IP-Bereich im ONTAP Cluster aus, in dem sich das Zielvolume befinden wird.
-* Geben Sie beim Wiederherstellen von ONTAP S3 den FQDN des ONTAP S3-Servers und den Port ein, den ONTAP für die HTTPS-Kommunikation mit ONTAP S3 verwenden soll, wählen Sie den für den Zugriff auf den Objektspeicher erforderlichen Zugriffsschlüssel und Geheimschlüssel sowie den IP-Bereich im ONTAP Cluster aus, in dem sich das Zielvolume befinden wird.
-+
-.. Geben Sie den Namen ein, den Sie für das wiederhergestellte Volume verwenden möchten, und wählen Sie die Speicher-VM und das Aggregat aus, in dem sich das Volume befinden soll.  Beim Wiederherstellen eines FlexGroup -Volumes müssen Sie mehrere Aggregate auswählen.  Standardmäßig wird *<source_volume_name>_restore* als Volumename verwendet.
+. Geben Sie den Namen ein, den Sie für das wiederhergestellte Volume verwenden möchten, und wählen Sie die Speicher-VM und das Aggregat aus, in dem sich das Volume befinden soll.  Beim Wiederherstellen eines FlexGroup -Volumes müssen Sie mehrere Aggregate auswählen.  Standardmäßig wird *<source_volume_name>_restore* als Volumename verwendet.
 +
 Wenn Sie ein Backup vom Objektspeicher auf einem Cloud Volumes ONTAP -System mit ONTAP 9.13.0 oder höher oder auf einem lokalen ONTAP System mit ONTAP 9.14.1 wiederherstellen, haben Sie die Möglichkeit, eine _schnelle Wiederherstellung_ durchzuführen.
 
@@ -174,27 +120,7 @@ Wenn Sie ein Backup vom Objektspeicher auf einem Cloud Volumes ONTAP -System mit
 Und wenn Sie das Volume aus einer Sicherungsdatei wiederherstellen, die sich in einer Archivspeicherebene befindet (verfügbar ab ONTAP 9.10.1), können Sie die Wiederherstellungspriorität auswählen.
 
 +
-ifdef::aws[]
-
-
-
-
-
-link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über die Wiederherstellung aus dem AWS-Archivspeicher"].
-
-endif::aws[]
-
-ifdef::azure[]
-
-link:prev-reference-azure-archive-storage-tiers.html["Weitere Informationen zur Wiederherstellung aus dem Azure-Archivspeicher"].
-
-endif::azure[]
-
-ifdef::gcp[]
-
-link:prev-reference-gcp-archive-storage-tiers.html["Erfahren Sie mehr über die Wiederherstellung aus dem Google-Archivspeicher"]. Sicherungsdateien in der Speicherebene des Google-Archivs werden fast sofort wiederhergestellt und erfordern keine Wiederherstellungspriorität.
-
-endif::gcp[]
+link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über die Wiederherstellung aus dem AWS-Archivspeicher"]. link:prev-reference-azure-archive-storage-tiers.html["Weitere Informationen zur Wiederherstellung aus dem Azure-Archivspeicher"]. link:prev-reference-gcp-archive-storage-tiers.html["Erfahren Sie mehr über die Wiederherstellung aus dem Google-Archivspeicher"]. Sicherungsdateien in der Speicherebene des Google-Archivs werden fast sofort wiederhergestellt und erfordern keine Wiederherstellungspriorität.
 
 . Wählen Sie *Weiter*, um auszuwählen, ob Sie eine normale Wiederherstellung oder eine schnelle Wiederherstellung durchführen möchten:
 +
@@ -278,47 +204,25 @@ Wenn Sie Dateien auswählen, werden diese auf der linken Seite der Seite hinzuge
 Wenn Sie einen lokalen Cluster auswählen und die Clusterverbindung zum Objektspeicher noch nicht konfiguriert haben, werden Sie zur Eingabe zusätzlicher Informationen aufgefordert:
 
 +
-ifdef::aws[]
-
-+
 ** Geben Sie beim Wiederherstellen von Amazon S3 den IPspace im ONTAP Cluster ein, in dem sich das Zielvolume befindet, sowie den AWS-Zugriffsschlüssel und den geheimen Schlüssel, die für den Zugriff auf den Objektspeicher erforderlich sind.  Sie können auch eine Private Link-Konfiguration für die Verbindung zum Cluster auswählen.
+** Geben Sie beim Wiederherstellen aus Azure Blob den IPspace im ONTAP Cluster ein, in dem sich das Zielvolume befindet.  Sie können auch eine private Endpunktkonfiguration für die Verbindung zum Cluster auswählen.
+** Geben Sie beim Wiederherstellen aus Google Cloud Storage den IP-Bereich im ONTAP Cluster ein, in dem sich die Zielvolumes befinden, sowie den Zugriffsschlüssel und den geheimen Schlüssel, die für den Zugriff auf den Objektspeicher erforderlich sind.
+** Geben Sie beim Wiederherstellen von StorageGRID den FQDN des StorageGRID -Servers und den Port ein, den ONTAP für die HTTPS-Kommunikation mit StorageGRID verwenden soll, geben Sie den für den Zugriff auf den Objektspeicher erforderlichen Zugriffsschlüssel und Geheimschlüssel sowie den IP-Bereich im ONTAP -Cluster ein, in dem sich das Zielvolume befindet.
 
 
-
-
-endif::aws[]
-
-ifdef::azure[]
-
-* Geben Sie beim Wiederherstellen aus Azure Blob den IPspace im ONTAP Cluster ein, in dem sich das Zielvolume befindet.  Sie können auch eine private Endpunktkonfiguration für die Verbindung zum Cluster auswählen.
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
-* Geben Sie beim Wiederherstellen aus Google Cloud Storage den IP-Bereich im ONTAP Cluster ein, in dem sich die Zielvolumes befinden, sowie den Zugriffsschlüssel und den geheimen Schlüssel, die für den Zugriff auf den Objektspeicher erforderlich sind.
-
-
-endif::gcp[]
-
-* Geben Sie beim Wiederherstellen von StorageGRID den FQDN des StorageGRID -Servers und den Port ein, den ONTAP für die HTTPS-Kommunikation mit StorageGRID verwenden soll, geben Sie den für den Zugriff auf den Objektspeicher erforderlichen Zugriffsschlüssel und Geheimschlüssel sowie den IP-Bereich im ONTAP -Cluster ein, in dem sich das Zielvolume befindet.
-+
-.. Wählen Sie dann das *Volume* und den *Ordner* aus, in dem Sie den Ordner oder die Datei(en) wiederherstellen möchten.
+. Wählen Sie dann das *Volume* und den *Ordner* aus, in dem Sie den Ordner oder die Datei(en) wiederherstellen möchten.
 +
 Beim Wiederherstellen von Ordnern und Dateien stehen Ihnen einige Optionen für den Speicherort zur Verfügung.
 
-
-
-* Wenn Sie wie oben gezeigt „Zielordner auswählen“ ausgewählt haben:
 +
-** Sie können einen beliebigen Ordner auswählen.
-** Sie können mit der Maus über einen Ordner fahren und am Ende der Zeile klicken, um in die Unterordner zu gelangen, und dann einen Ordner auswählen.
-
-
-* Wenn Sie dasselbe Zielsystem und Volume ausgewählt haben, in dem sich der Quellordner/die Quelldatei befand, können Sie „Pfad des Quellordners beibehalten“ auswählen, um den Ordner oder die Datei(en) in demselben Ordner wiederherzustellen, in dem sie in der Quellstruktur vorhanden waren.  Alle Ordner und Unterordner müssen bereits vorhanden sein; es werden keine Ordner erstellt.  Beim Wiederherstellen von Dateien an ihrem ursprünglichen Speicherort können Sie die Quelldatei(en) überschreiben oder neue Dateien erstellen.
+** Wenn Sie wie oben gezeigt „Zielordner auswählen“ ausgewählt haben:
 +
-.. Wählen Sie *Wiederherstellen*, um zum Wiederherstellungs-Dashboard zurückzukehren und den Fortschritt des Wiederherstellungsvorgangs zu überprüfen.
+*** Sie können einen beliebigen Ordner auswählen.
+*** Sie können mit der Maus über einen Ordner fahren und am Ende der Zeile klicken, um in die Unterordner zu gelangen, und dann einen Ordner auswählen.
 
 
+** Wenn Sie dasselbe Zielsystem und Volume ausgewählt haben, in dem sich der Quellordner/die Quelldatei befand, können Sie „Pfad des Quellordners beibehalten“ auswählen, um den Ordner oder die Datei(en) in demselben Ordner wiederherzustellen, in dem sie in der Quellstruktur vorhanden waren.  Alle Ordner und Unterordner müssen bereits vorhanden sein; es werden keine Ordner erstellt.  Beim Wiederherstellen von Dateien an ihrem ursprünglichen Speicherort können Sie die Quelldatei(en) überschreiben oder neue Dateien erstellen.
+
+
+. Wählen Sie *Wiederherstellen*, um zum Wiederherstellungs-Dashboard zurückzukehren und den Fortschritt des Wiederherstellungsvorgangs zu überprüfen.
 

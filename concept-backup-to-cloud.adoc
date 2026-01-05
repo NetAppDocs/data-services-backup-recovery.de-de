@@ -136,35 +136,13 @@ Da NetApp Backup and Recovery die Speichereffizienz des Quellvolumes beibehält,
 
 * Für die Wiederherstellung von Daten mit Search & Restore werden bestimmte Ressourcen von Ihrem Cloud-Anbieter bereitgestellt. Außerdem fallen Kosten pro TiB an, die sich nach der Datenmenge richten, die von Ihren Suchanfragen gescannt wird.  (Diese Ressourcen werden für Browse & Restore nicht benötigt.)
 +
-ifdef::aws[]
-
-+
 ** In AWS, https://aws.amazon.com/athena/faqs/["Amazon Athena"^] Und https://aws.amazon.com/glue/faqs/["AWS Glue"^] Ressourcen werden in einem neuen S3-Bucket bereitgestellt.
-+
-endif::aws[]
-
-
-
-+
-ifdef::azure[]
-
-+
 ** In Azure https://azure.microsoft.com/en-us/services/synapse-analytics/?&ef_id=EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE:G:s&OCID=AIDcmm5edswduu_SEM_EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE:G:s&gclid=EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE["Azure Synapse-Arbeitsbereich"^] Und https://azure.microsoft.com/en-us/services/storage/data-lake-storage/?&ef_id=EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE:G:s&OCID=AIDcmm5edswduu_SEM_EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE:G:s&gclid=EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE["Azure Data Lake-Speicher"^] werden in Ihrem Speicherkonto bereitgestellt, um Ihre Daten zu speichern und zu analysieren.
-+
-endif::azure[]
+** Bei Google wird ein neuer Bucket bereitgestellt und der https://cloud.google.com/bigquery["Google Cloud BigQuery-Dienste"^] werden auf Konto-/Projektebene bereitgestellt.
 
 
-
-
-
-ifdef::gcp[]
-
-* Bei Google wird ein neuer Bucket bereitgestellt und der https://cloud.google.com/bigquery["Google Cloud BigQuery-Dienste"^] werden auf Konto-/Projektebene bereitgestellt. endif::gcp[]
-+
-** Wenn Sie Volumedaten aus einer Sicherungsdatei wiederherstellen möchten, die in einen Archivobjektspeicher verschoben wurde, fällt beim Cloud-Anbieter eine zusätzliche Abrufgebühr pro GiB und pro Anforderung an.
-** Wenn Sie während der Wiederherstellung von Volumedaten eine Sicherungsdatei auf Ransomware scannen möchten (wenn Sie DataLock und Ransomware Resilience für Ihre Cloud-Sicherungen aktiviert haben), entstehen Ihnen auch bei Ihrem Cloud-Anbieter zusätzliche Kosten für den ausgehenden Datenverkehr.
-
-
+* Wenn Sie Volumedaten aus einer Sicherungsdatei wiederherstellen möchten, die in einen Archivobjektspeicher verschoben wurde, fällt beim Cloud-Anbieter eine zusätzliche Abrufgebühr pro GiB und pro Anforderung an.
+* Wenn Sie während der Wiederherstellung von Volumedaten eine Sicherungsdatei auf Ransomware scannen möchten (wenn Sie DataLock und Ransomware Resilience für Ihre Cloud-Sicherungen aktiviert haben), entstehen Ihnen auch bei Ihrem Cloud-Anbieter zusätzliche Kosten für den ausgehenden Datenverkehr.
 
 
 *Servicegebühren*
