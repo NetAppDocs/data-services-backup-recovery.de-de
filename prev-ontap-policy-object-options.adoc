@@ -72,7 +72,7 @@ Diese Funktion bietet keinen Schutz für Ihre Quellvolumes, sondern nur für die
 
 === Was ist DataLock
 
-Mit dieser Funktion können Sie die über SnapMirror in der Cloud replizierten Cloud-Snapshots sperren und die Funktion außerdem aktivieren, um einen Ransomware-Angriff zu erkennen und eine konsistente Kopie des Snapshots im Objektspeicher wiederherzustellen.  Diese Funktion wird auf AWS, Azure und StorageGRID unterstützt.
+Mit dieser Funktion können Sie die über SnapMirror in die Cloud replizierten Cloud-Snapshots sperren und außerdem die Funktion aktivieren, einen Ransomware-Angriff zu erkennen und eine konsistente Kopie des Snapshots im Objektspeicher wiederherzustellen. Diese Funktion wird auf AWS, Azure, Google Cloud Platform und StorageGRID unterstützt.
 
 DataLock schützt Ihre Sicherungsdateien für einen bestimmten Zeitraum vor Änderungen oder Löschungen – auch als _unveränderlicher Speicher_ bezeichnet.  Diese Funktion nutzt die Technologie des Objektspeicheranbieters zur „Objektsperre“.
 
