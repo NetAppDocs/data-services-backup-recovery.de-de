@@ -69,34 +69,22 @@ Es wird eine Liste möglicher Wiederherstellungspunkte angezeigt.
 
 . Wählen Sie den Wiederherstellungspunkt aus, den Sie verwenden möchten.
 . Wählen Sie einen Quellspeicherort für den Snapshot aus.
-. Wählen Sie *Fertig* oder *Weiter*, um zur Seite „Zieleinstellungen wiederherstellen“ zu gelangen.
-+
-Als Nächstes können Sie die Zieleinstellungen sowie die Optionen vor und nach der Wiederherstellung auswählen.
-
+. Wählen Sie *Weiter*, um fortzufahren.
+. Wählen Sie das Wiederherstellungsziel und die Einstellungen aus:
 
 
 [discrete]
 ===== Zielauswahl
 
-. Wählen Sie die Zieleinstellungen und die Optionen vor und nach der Wiederherstellung.
-
-
 [role="tabbed-block"]
 ====
 .Am ursprünglichen Speicherort wiederherstellen
 --
-. *Schnelle Wiederherstellung aktivieren*: Wählen Sie diese Option, um eine schnelle Wiederherstellung durchzuführen. Wiederhergestellte Volumes und Daten stehen sofort zur Verfügung. Verwenden Sie dies nicht auf Volumes, die eine hohe Leistung erfordern, da der Zugriff auf die Daten während des schnellen Wiederherstellungsprozesses langsamer als gewöhnlich sein kann.
-. *Optionen vor der Wiederherstellung*: Geben Sie den vollständigen Pfad für ein Skript ein, das vor dem Wiederherstellungsvorgang ausgeführt werden soll, sowie alle Argumente, die das Skript verwendet.
-. *Optionen nach der Wiederherstellung*:
+Wenn Sie zum ursprünglichen Speicherort zurückkehren, können Sie die Zieleinstellungen einsehen, indem Sie den Abschnitt *Zieleinstellungen* erweitern. Sie können diese jedoch nicht ändern.
+
+. Im Abschnitt *Optionen nach der Wiederherstellung* sollten Sie folgende Option in Betracht ziehen:
 +
-** *VM neu starten*: Wählen Sie diese Option aus, um die VM nach Abschluss des Wiederherstellungsvorgangs und nach Anwendung des Post-Restore-Skripts neu zu starten.
-** *Postscript*: Geben Sie den vollständigen Pfad für ein Skript ein, das nach dem Wiederherstellungsvorgang ausgeführt werden soll, sowie alle Argumente, die das Skript verwendet.
-
-
-. Abschnitt *Benachrichtigung*:
-+
-** *E-Mail-Benachrichtigungen aktivieren*: Wählen Sie diese Option aus, um E-Mail-Benachrichtigungen über den Wiederherstellungsvorgang zu erhalten, und geben Sie an, welche Art von Benachrichtigungen Sie erhalten möchten.
-
+*Virtuelle Maschine neu starten*: Aktivieren Sie diese Option, um die neue virtuelle Maschine nach der Wiederherstellung zu starten.
 
 . Wählen Sie *Wiederherstellen*.
 

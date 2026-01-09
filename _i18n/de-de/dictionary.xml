@@ -1013,10 +1013,7 @@
   <block id="47d76616568defc7344e2cfbcdf92653" category="paragraph">Es wird eine Liste möglicher Wiederherstellungspunkte angezeigt.</block>
   <block id="effade56c0dfab07db57229c5b4e6e4e" category="list-text">Wählen Sie den Wiederherstellungspunkt aus, den Sie verwenden möchten.</block>
   <block id="6f012e8e8abed5b3c7ee277d331469f3" category="list-text">Wählen Sie einen Quellspeicherort für den Snapshot aus.</block>
-  <block id="39e791cd576f013480b8ac3c88fcd655" category="list-text">Wählen Sie *Fertig* oder *Weiter*, um zur Seite „Zieleinstellungen wiederherstellen“ zu gelangen.</block>
-  <block id="94697b58b65e2562f9eac2c0fef08c35" category="paragraph">Als Nächstes können Sie die Zieleinstellungen sowie die Optionen vor und nach der Wiederherstellung auswählen.</block>
   <block id="23de539bf06cfaf2cd9dc515802272ce" category="floating-title">Zielauswahl</block>
-  <block id="5dd0bd8435aec915fe085d771534ba47" category="list-text">Wählen Sie die Zieleinstellungen und die Optionen vor und nach der Wiederherstellung.</block>
   <block id="abfc7c0c366258e23e15cd12a5f89811" category="open-title">Am ursprünglichen Speicherort wiederherstellen</block>
   <block id="f841432c2e7b95f0e1480a64c27a957d" category="list-text">*Schnelle Wiederherstellung aktivieren*: Wählen Sie diese Option, um eine schnelle Wiederherstellung durchzuführen. Wiederhergestellte Volumes und Daten stehen sofort zur Verfügung. Verwenden Sie dies nicht auf Volumes, die eine hohe Leistung erfordern, da der Zugriff auf die Daten während des schnellen Wiederherstellungsprozesses langsamer als gewöhnlich sein kann.</block>
   <block id="6ca1e0675a4f2fa0425b153f38956afe" category="list-text">*Optionen vor der Wiederherstellung*: Geben Sie den vollständigen Pfad für ein Skript ein, das vor dem Wiederherstellungsvorgang ausgeführt werden soll, sowie alle Argumente, die das Skript verwendet.</block>
@@ -1590,7 +1587,6 @@
   <block id="e778183067d12c261c4b71b0ccc4eaad" category="open-title">Wiederherstellen aus Snapshots ohne Wiederherstellung</block>
   <block id="e9bde7b168cf5fbb3d9d5b297ca8bfb2" category="list-text">Wählen Sie *Aus Snapshots ohne Wiederherstellung wiederherstellen*.</block>
   <block id="002b8c566162a2cd02c4e355805ac3f6" category="paragraph">Die passenden Schnappschüsse werden angezeigt.</block>
-  <block id="ae0355b3acbc8735275d2415050e631f" category="list-text">Wählen Sie *Weiter*, um mit der Seite „Zieleinstellungen wiederherstellen“ fortzufahren.</block>
   <block id="98b2af096c36f02920b21c788a2a0dc6" category="list-text">*Zieleinstellungen*:</block>
   <block id="12c0707880528cef62d0f97d7a498d1a" category="list-text">Wählen Sie, ob die gesamte Datenbank oder nur die Tablespaces für die Datenbank wiederhergestellt werden sollen.</block>
   <block id="78847577cebd91850d891ed95fe6bce3" category="list-text">*Steuerdateien*: Aktivieren Sie diese Option optional, um auch die Datenbank-Steuerdateien wiederherzustellen.</block>
@@ -4698,7 +4694,6 @@
   <block id="f16b36eea83bd45d35d7613cab7f6cf8" category="list-text">Wählen Sie das Wiederherstellungsziel für den Snapshot aus:</block>
   <block id="086fbde8fbe590f104f5100808b42c0b" category="list-text">*Lokal*: Stellt den Snapshot vom lokalen Speicherort wieder her.</block>
   <block id="3a786499ea5d54fb6bb418032aca3117" category="list-text">*Sekundär*: Stellt den Snapshot von einem entfernten Speicherort wieder her.</block>
-  <block id="bc9234ce73c565f247a8ae290b842ff6" category="list-text">Wählen Sie die Zieleinstellungen sowie die Optionen vor und nach der Wiederherstellung.</block>
   <block id="8ed9e5a565b596ef7f9cb364cf2536d7" category="paragraph">Bei der Wiederherstellung am ursprünglichen Speicherort können Sie weder das Ziel-vCenter, den ESXi-Host, den Datenspeicher noch den Namen der VM ändern. Die ursprüngliche VM wird bei der Wiederherstellungsoperation überschrieben.</block>
   <block id="10b0d3ffb47c4e67fc652e3b0f0220d7" category="list-text">Wählen Sie den Bereich *Ursprünglicher Speicherort* aus.</block>
   <block id="1b8d4d654146b4eec3cc22bd8b461dbb" category="list-text">Wählen Sie aus den folgenden Optionen:</block>
@@ -4737,7 +4732,6 @@
   <block id="cd1f1a4a4415e09f2c3fc9ab17aff625" category="list-text">Aktivieren Sie das Optionsfeld für den Snapshot, den Sie wiederherstellen möchten.</block>
   <block id="57385260ec48afcc58eb70dc9059c8c0" category="list-text">*Objektspeicher*: Stellt den Snapshot aus dem Objektspeicher wieder her.</block>
   <block id="c1389ae5f188f85d79b6e1088e21576d" category="paragraph">Wenn Sie sich für einen sekundären Speicher entscheiden, wählen Sie den Zielspeicherort aus der Dropdown-Liste aus.</block>
-  <block id="a1ff6993d36232fbd0d0471769216a69" category="list-text">Wählen Sie die Zieleinstellungen sowie die Optionen vor und nach der Wiederherstellung aus:</block>
   <block id="21ba1fcc630eae9c060829f621ac7124" category="paragraph">Bei der Wiederherstellung am ursprünglichen Speicherort können Sie weder das Ziel-vCenter, den ESXi-Host, den Datenspeicher noch den Namen der virtuellen Festplatte ändern. Die ursprüngliche virtuelle Festplatte wird überschrieben.</block>
   <block id="9f63eee4b169a6ac1fce2d2e6ec65d64" category="list-text">Aktivieren Sie im Abschnitt *Zieleinstellungen* das Kontrollkästchen für alle virtuellen Festplatten, die Sie wiederherstellen möchten.</block>
   <block id="e3926503d87ede09d428d2ca5fc4abf5" category="paragraph">Bei der Wiederherstellung an einem alternativen Speicherort kann der Zieldatenspeicher geändert werden. Die virtuelle Festplatte wird nach dem Wiederherstellungsvorgang unabhängig vom gewählten Datenspeicher an die ursprüngliche VM angehängt.</block>
@@ -4811,4 +4805,9 @@
   <block id="96e895b3970ec91a00e97afd2eb59250" category="list-text">In StorageGRID verwendet die Konsole ein bestehendes Mandantenkonto für den S3-Bucket.</block>
   <block id="836b4aa41fc8e9938df6b2350419d4f6" category="paragraph"><block ref="ee2d4c64a4d42f71a3357c6cd2b7b94b" category="inline-link-macro-rx"></block>Die <block ref="bf09a0f29ffa1dc0ee63da51e58f16ef" category="inline-link-macro-rx"></block>Die <block ref="9220ac6939e2eccbf843225c6d0eb5f6" category="inline-link-macro-rx"></block>Die</block>
   <block id="5b9be87b8cd311cb68b9eddc1c1d9d4b" category="paragraph">Mit dieser Funktion können Sie die über SnapMirror in die Cloud replizierten Cloud-Snapshots sperren und außerdem die Funktion aktivieren, einen Ransomware-Angriff zu erkennen und eine konsistente Kopie des Snapshots im Objektspeicher wiederherzustellen. Diese Funktion wird auf AWS, Azure, Google Cloud Platform und StorageGRID unterstützt.</block>
+  <block id="ab042cf6b82a1ca2824a55aecccf0f72" category="list-text">Wählen Sie *Weiter*, um fortzufahren.</block>
+  <block id="38cf859695687379726e3ea14b05ddc1" category="list-text">Wählen Sie das Wiederherstellungsziel und die Einstellungen aus:</block>
+  <block id="a30b9d9cd5fcd792454de596b4a70bbf" category="paragraph">Wenn Sie zum ursprünglichen Speicherort zurückkehren, können Sie die Zieleinstellungen einsehen, indem Sie den Abschnitt *Zieleinstellungen* erweitern. Sie können diese jedoch nicht ändern.</block>
+  <block id="6ae1e8b4e49e0eb340bfe865ab9bf2be" category="list-text">Im Abschnitt *Optionen nach der Wiederherstellung* sollten Sie folgende Option in Betracht ziehen:</block>
+  <block id="549fac1df4ed1f1a9ecf014524bf6245" category="paragraph">*Virtuelle Maschine neu starten*: Aktivieren Sie diese Option, um die neue virtuelle Maschine nach der Wiederherstellung zu starten.</block>
 </blocks>

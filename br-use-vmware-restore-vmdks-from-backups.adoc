@@ -65,8 +65,8 @@ Wenn Sie sich für einen sekundären Speicher entscheiden, wählen Sie den Ziels
 
 
 
-. Wählen Sie *Weiter*.
-. Wählen Sie die Zieleinstellungen sowie die Optionen vor und nach der Wiederherstellung aus:
+. Wählen Sie *Weiter*, um fortzufahren.
+. Wählen Sie das Wiederherstellungsziel und die Einstellungen aus:
 
 
 [discrete]

@@ -108,17 +108,12 @@ Die passenden Schnappschüsse werden angezeigt.
 --
 ====
 . Wählen Sie einen Quellspeicherort für den Snapshot aus.
-. Wählen Sie *Weiter*, um mit der Seite „Zieleinstellungen wiederherstellen“ fortzufahren.
-+
-Als Nächstes können Sie die Zieleinstellungen sowie die Optionen vor und nach der Wiederherstellung auswählen.
-
+. Wählen Sie *Weiter*, um fortzufahren.
+. Wählen Sie das Wiederherstellungsziel und die Einstellungen aus:
 
 
 [discrete]
 ===== Zielauswahl
-
-. Wählen Sie die Zieleinstellungen und die Optionen vor und nach der Wiederherstellung.
-
 
 [role="tabbed-block"]
 ====
