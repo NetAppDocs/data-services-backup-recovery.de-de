@@ -17,12 +17,9 @@ summary: Sie können eine oder mehrere Dateien oder Ordner aus einem VMDK auf ei
 Sie können eine oder mehrere Dateien oder Ordner aus einem VMDK auf einem Windows-Gastbetriebssystem wiederherstellen.
 
 .Bevor Sie beginnen
-
-NOTE: Bevor Sie Dateien und Ordner der Gast-VM wiederherstellen können, müssen Sie in NetApp Backup and Recovery Anmeldeinformationen dafür erstellen. NetApp Backup and Recovery verwendet diese Anmeldeinformationen zur Authentifizierung bei der Gast-VM beim Anbinden der virtuellen Festplatte.
+Bevor Sie Dateien und Ordner der Gast-VM wiederherstellen können, müssen Sie in NetApp Backup and Recovery Anmeldeinformationen dafür erstellen. NetApp Backup and Recovery verwendet diese Anmeldeinformationen zur Authentifizierung bei der Gast-VM beim Anbinden der virtuellen Festplatte.
 
 .Informationen zu diesem Vorgang
-Standardmäßig stellt NetApp Backup and Recovery die angeschlossene virtuelle Festplatte 24 Stunden lang zur Verfügung und trennt sie dann automatisch. Im Assistenten können Sie auswählen, ob die Gastdatei-Wiederherstellungssitzung nach dem Wiederherstellungsvorgang automatisch gelöscht werden soll oder ob die Sitzung manuell gelöscht werden soll.
-
 Die Leistung der Wiederherstellung von Gastdateien oder -ordnern hängt von zwei Faktoren ab: der Größe der wiederherzustellenden Dateien oder Ordner und der Anzahl der wiederherzustellenden Dateien oder Ordner. Das Wiederherstellen einer großen Anzahl kleiner Dateien kann im Vergleich zum Wiederherstellen einer kleinen Anzahl großer Dateien länger dauern als erwartet, wenn der wiederherzustellende Datensatz dieselbe Größe hat.
 
 

@@ -4873,7 +4873,6 @@
   <block id="0bf794e2b090829c5f342b426fa04d5c" category="summary">Sie können eine oder mehrere Dateien oder Ordner aus einem VMDK auf einem Windows-Gastbetriebssystem wiederherstellen.</block>
   <block id="9cda0c7b074ab9336e54e5c799f32f1d" category="doc">Wiederherstellen von Gastdateien und -ordnern aus VMDKs</block>
   <block id="a26360f952d07b84e1088cc6c613eafe" category="admonition">Bevor Sie Dateien und Ordner der Gast-VM wiederherstellen können, müssen Sie in NetApp Backup and Recovery Anmeldeinformationen dafür erstellen. NetApp Backup and Recovery verwendet diese Anmeldeinformationen zur Authentifizierung bei der Gast-VM beim Anbinden der virtuellen Festplatte.</block>
-  <block id="50f6ae852890a51c1bdcbc5fa3074be0" category="paragraph">Standardmäßig stellt NetApp Backup and Recovery die angeschlossene virtuelle Festplatte 24 Stunden lang zur Verfügung und trennt sie dann automatisch. Im Assistenten können Sie auswählen, ob die Gastdatei-Wiederherstellungssitzung nach dem Wiederherstellungsvorgang automatisch gelöscht werden soll oder ob die Sitzung manuell gelöscht werden soll.</block>
   <block id="84768fbdedcb14c4c8dd78daf9604451" category="paragraph">Die Leistung der Wiederherstellung von Gastdateien oder -ordnern hängt von zwei Faktoren ab: der Größe der wiederherzustellenden Dateien oder Ordner und der Anzahl der wiederherzustellenden Dateien oder Ordner. Das Wiederherstellen einer großen Anzahl kleiner Dateien kann im Vergleich zum Wiederherstellen einer kleinen Anzahl großer Dateien länger dauern als erwartet, wenn der wiederherzustellende Datensatz dieselbe Größe hat.</block>
   <block id="851e8e79b33ecfa430d9ed62957e5cad" category="admonition">Auf einer VM kann gleichzeitig nur ein Anfüge- oder Wiederherstellungsvorgang ausgeführt werden. Sie können auf derselben VM keine parallelen Anfüge- oder Wiederherstellungsvorgänge ausführen.</block>
   <block id="7392d9ba3083cd42958684b4749d4c72" category="admonition">Mit der Gastwiederherstellungsfunktion können Sie Systemdateien und versteckte Dateien anzeigen und wiederherstellen sowie verschlüsselte Dateien anzeigen. Überschreiben Sie keine vorhandenen Systemdateien und stellen Sie verschlüsselte Dateien nicht in einem verschlüsselten Ordner wieder her. Während des Wiederherstellungsvorgangs werden die versteckten, System- und verschlüsselten Attribute der Gastdateien nicht in der wiederhergestellten Datei beibehalten. Das Anzeigen oder Durchsuchen reservierter Partitionen kann einen Fehler verursachen.</block>
@@ -4901,7 +4900,6 @@
   <block id="6682a5a344207b03b09bfb0798a193b6" category="section-title">Workflow zur Gastwiederherstellung</block>
   <block id="dfb5e1e797a80916627d17588b36ab12" category="paragraph">Die Wiederherstellungsvorgänge des Gastbetriebssystems umfassen die folgenden Schritte:</block>
   <block id="7193518e6f5f0076ef05680742323f9c" category="list-text">Befestigen</block>
-  <block id="f02fee54a71e292fba6eea93ae620b05" category="paragraph">Schließen Sie eine virtuelle Festplatte an eine Gast-VM oder Proxy-VM an und starten Sie eine Gast-Dateiwiederherstellungssitzung.</block>
   <block id="0f68101772bd5397ef8eb1b632798652" category="list-text">Warten</block>
   <block id="75acbae837699c01fe86ee8a2c9fec00" category="paragraph">Warten Sie, bis der Anfügevorgang abgeschlossen ist, bevor Sie durchsuchen und wiederherstellen können. Nach Abschluss des Anfügevorgangs wird automatisch eine Gastdatei-Wiederherstellungssitzung erstellt.</block>
   <block id="137bf66cd89f2d7f861099ca8519563c" category="list-text">Dateien oder Ordner auswählen</block>
@@ -4912,7 +4910,6 @@
   <block id="6a7a37bd722f9a7ebe568ae7d8778d8f" category="paragraph">Prüfen Sie alle Voraussetzungen, bevor Sie Dateien oder Ordner aus einer VMDK-Datei auf einem Windows-Gastbetriebssystem wiederherstellen.</block>
   <block id="36139d788258b0f7f760e90a7e475cfb" category="list-text">VMware-Tools müssen installiert und ausgeführt werden.</block>
   <block id="9809213078fe536846ce61d52cfab742" category="paragraph">NetApp Backup and Recovery nutzt Informationen von VMware Tools, um eine Verbindung zum VMware-Gastbetriebssystem herzustellen.</block>
-  <block id="1572f8be6f1646b62b5c0d4d4c380fe8" category="list-text">Auf dem Windows-Gastbetriebssystem muss Windows Server 2008 R2 oder höher ausgeführt werden.</block>
   <block id="697ea025ecb303d4f40d1bf3a8b4bde0" category="inline-link">NetApp Interoperability Matrix Tool (IMT)</block>
   <block id="95477275bd206a7fb98bf4a8ec799a0b" category="paragraph">Aktuelle Informationen zu unterstützten Versionen finden Sie unter<block ref="dd731ea0dfaa7ba4b5325a39b353b5a2" category="inline-link-rx"></block> .</block>
   <block id="73e99419f23009b467a68b78510f24c7" category="list-text">Die Anmeldeinformationen für die Ziel-VM verwenden das integrierte Domänen- oder lokale Administratorkonto mit dem Benutzernamen „Administrator“. Bevor Sie mit dem Wiederherstellungsvorgang beginnen, konfigurieren Sie die Anmeldeinformationen für die VM, an die Sie die virtuelle Festplatte anhängen möchten. Für den Anfüge- und Wiederherstellungsvorgang werden Anmeldeinformationen benötigt. Benutzer von Arbeitsgruppen können das integrierte lokale Administratorkonto verwenden.</block>
@@ -4926,8 +4923,6 @@
   <block id="9229096468701d10aab6b30f546310c1" category="section-title">Einschränkungen bei der Wiederherstellung von Gastdateien</block>
   <block id="ce6cdc51d08da1519febc60a0e9593aa" category="paragraph">Bevor Sie eine Datei oder einen Ordner aus einem Gastbetriebssystem wiederherstellen, sollten Sie sich über die Funktionsbeschränkungen im Klaren sein.</block>
   <block id="0938c50db6a8d08637c074ab0c183305" category="list-text">Sie können dynamische Datenträgertypen nicht innerhalb eines Gastbetriebssystems wiederherstellen.</block>
-  <block id="306e51cbbbbd449259f2c9a524080247" category="list-text">Wenn Sie eine verschlüsselte Datei oder einen verschlüsselten Ordner wiederherstellen, bleibt das Verschlüsselungsattribut nicht erhalten. Sie können keine Dateien oder Ordner in einem verschlüsselten Ordner wiederherstellen.</block>
-  <block id="631e06eeff5fdebb1ee6aaaa3f7502fd" category="list-text">Auf der Seite „Gastdatei durchsuchen“ werden die versteckten Dateien und Ordner angezeigt, die Sie nicht filtern können.</block>
   <block id="21e6b4873654be153e3c8d0024f83773" category="list-text">Eine Wiederherstellung von einem Linux-Gastbetriebssystem ist nicht möglich.</block>
   <block id="eccd74f81ec87affcad9c90ed7e1c714" category="paragraph">Sie können keine Dateien und Ordner von einer VM wiederherstellen, auf der ein Linux-Gastbetriebssystem ausgeführt wird. Sie können jedoch ein VMDK anhängen und die Dateien und Ordner dann manuell wiederherstellen. Aktuelle Informationen zu unterstützten Gastbetriebssystemen finden Sie im<block ref="dd731ea0dfaa7ba4b5325a39b353b5a2" category="inline-link-rx"></block> .</block>
   <block id="a24b5bfa95a0c9efe3023cae447296e6" category="list-text">Sie können keine Wiederherstellung von einem NTFS-Dateisystem auf ein FAT-Dateisystem durchführen.</block>
@@ -4975,4 +4970,9 @@
   <block id="9b7e5fddcf3e2a7a93fe6669de87fbc2" category="sidebar">Bestimmte virtuelle Festplatten wiederherstellen</block>
   <block id="6d74a680eadd149117f584cf67b83c34" category="sidebar">Gastdateien und -ordner wiederherstellen</block>
   <block id="3a4d751e404219df1dc6de0a13c8db55" category="sidebar">Arbeitsablauf, Voraussetzungen und Einschränkungen</block>
+  <block id="d85468613eebe17a50e2bf01c2bd42f5" category="paragraph">Binden Sie eine virtuelle Festplatte an eine Gast-VM an und starten Sie eine Gastdatei-Wiederherstellungssitzung.</block>
+  <block id="b2c5a3b35bd8f72bf653aa42e54cc06c" category="list-text">Als Gastbetriebssystem muss Windows Server 2008 R2 oder höher ausgeführt werden.</block>
+  <block id="367aa9be05b109b226ffbefe3981ac88" category="list-text">Wenn Sie eine verschlüsselte Datei oder einen verschlüsselten Ordner wiederherstellen, bleibt das Verschlüsselungsattribut nicht erhalten.</block>
+  <block id="34454c78e4e96cfe4c311b8ba072f6cd" category="list-text">Sie können keine Dateien oder Ordner in einem verschlüsselten Ordner wiederherstellen.</block>
+  <block id="86a44ece7a205cf4a21804522a9cd44a" category="list-text">Versteckte Dateien und Ordner werden auf der Dateiauswahlseite angezeigt und können nicht gefiltert werden.</block>
 </blocks>

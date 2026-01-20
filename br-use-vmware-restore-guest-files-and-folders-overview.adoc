@@ -24,7 +24,7 @@ Die Wiederherstellungsvorgänge des Gastbetriebssystems umfassen die folgenden S
 
 . Befestigen
 +
-Schließen Sie eine virtuelle Festplatte an eine Gast-VM oder Proxy-VM an und starten Sie eine Gast-Dateiwiederherstellungssitzung.
+Binden Sie eine virtuelle Festplatte an eine Gast-VM an und starten Sie eine Gastdatei-Wiederherstellungssitzung.
 
 . Warten
 +
@@ -50,7 +50,7 @@ Prüfen Sie alle Voraussetzungen, bevor Sie Dateien oder Ordner aus einer VMDK-D
 +
 NetApp Backup and Recovery nutzt Informationen von VMware Tools, um eine Verbindung zum VMware-Gastbetriebssystem herzustellen.
 
-* Auf dem Windows-Gastbetriebssystem muss Windows Server 2008 R2 oder höher ausgeführt werden.
+* Als Gastbetriebssystem muss Windows Server 2008 R2 oder höher ausgeführt werden.
 +
 Aktuelle Informationen zu unterstützten Versionen finden Sie unter https://imt.netapp.com/imt/imt.jsp?components=180121;&solution=1517&isHWU&src=IMT["NetApp Interoperability Matrix Tool (IMT)"^] .
 
@@ -82,8 +82,9 @@ Sie können Dateien mit nicht-alphabetischen Namen, wie etwa japanische Kanji, w
 Bevor Sie eine Datei oder einen Ordner aus einem Gastbetriebssystem wiederherstellen, sollten Sie sich über die Funktionsbeschränkungen im Klaren sein.
 
 * Sie können dynamische Datenträgertypen nicht innerhalb eines Gastbetriebssystems wiederherstellen.
-* Wenn Sie eine verschlüsselte Datei oder einen verschlüsselten Ordner wiederherstellen, bleibt das Verschlüsselungsattribut nicht erhalten. Sie können keine Dateien oder Ordner in einem verschlüsselten Ordner wiederherstellen.
-* Auf der Seite „Gastdatei durchsuchen“ werden die versteckten Dateien und Ordner angezeigt, die Sie nicht filtern können.
+* Wenn Sie eine verschlüsselte Datei oder einen verschlüsselten Ordner wiederherstellen, bleibt das Verschlüsselungsattribut nicht erhalten.
+* Sie können keine Dateien oder Ordner in einem verschlüsselten Ordner wiederherstellen.
+* Versteckte Dateien und Ordner werden auf der Dateiauswahlseite angezeigt und können nicht gefiltert werden.
 * Eine Wiederherstellung von einem Linux-Gastbetriebssystem ist nicht möglich.
 +
 Sie können keine Dateien und Ordner von einer VM wiederherstellen, auf der ein Linux-Gastbetriebssystem ausgeführt wird. Sie können jedoch ein VMDK anhängen und die Dateien und Ordner dann manuell wiederherstellen. Aktuelle Informationen zu unterstützten Gastbetriebssystemen finden Sie im https://imt.netapp.com/imt/imt.jsp?components=180121;&solution=1517&isHWU&src=IMT["NetApp Interoperability Matrix Tool (IMT)"^] .
