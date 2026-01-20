@@ -36,7 +36,7 @@ Gruppieren Sie Workloads, die Sie gemeinsam schützen möchten, in einer Schutzg
 . Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
 . Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.
 . Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*.
-. Wählen Sie die Registerkarte *Schutzgruppen*.
+. Wählen Sie das Menü *Schutzgruppen*.
 . Wählen Sie *Schutzgruppe erstellen*.
 . Geben Sie einen Namen für die Schutzgruppe ein.
 . Wählen Sie die VMs aus, die Sie in die Schutzgruppe aufnehmen möchten.
@@ -45,6 +45,25 @@ Gruppieren Sie Workloads, die Sie gemeinsam schützen möchten, in einer Schutzg
 . Wählen Sie *Weiter*.
 . Überprüfen Sie die Konfiguration.
 . Wählen Sie *Erstellen* aus, um die Schutzgruppe zu erstellen.
+
+
+
+
+== Bearbeiten Sie eine Schutzgruppe
+
+Bearbeiten Sie eine Schutzgruppe, um deren Namen oder Einstellungen zu ändern. Möglicherweise möchten Sie eine Schutzgruppe bearbeiten, wenn sich die Ressourcen in der Gruppe geändert haben.
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
+. Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.
+. Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*.
+. Wählen Sie die Registerkarte *Schutzgruppen*.
+. Wählen Sie die Schutzgruppe aus, die Sie bearbeiten möchten.
+. Wählen Sie das Symbol „Aktionen“ aus. image:../media/icon-action.png["Aktionsoption"] > *Bearbeiten*.
+. Ändern Sie beliebige Einstellungen für die Schutzgruppe, wie z. B. den Namen oder die in der Gruppe enthaltenen virtuellen Maschinen.
+. Wählen Sie *Weiter*.
+. Ändern Sie die Schutzrichtlinie gegebenenfalls. Wenn Sie fertig sind, wählen Sie *Weiter*.
+. Überprüfen Sie die Konfiguration und wählen Sie *Absenden*.
 
 
 

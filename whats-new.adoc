@@ -18,6 +18,60 @@ Erfahren Sie, was es Neues bei NetApp Backup and Recovery gibt.
 
 
 
+== 19. Januar 2026
+
+Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
+
+
+
+=== ONTAP Volume-Workload-Erweiterungen
+
+Diese Version der ONTAP Volume-Workloads führt die folgenden erweiterten Funktionen ein:
+
+*Unterstützung für mehrere Buckets*: (Private Vorschau) Ab ONTAP 9.17.1 und neueren Versionen können Sie nun die Volumes innerhalb eines Systems mit bis zu 6 Buckets pro System über verschiedene Cloud-Anbieter hinweg schützen.
+
+link:prev-ontap-backup-manage.html["Erfahren Sie mehr über die Sicherung von ONTAP Volume-Daten mit NetApp Backup and Recovery."]Die
+
+
+
+=== VMware-Workload-Verbesserungen
+
+Diese Version von VMware-Workloads bietet die folgenden erweiterten Funktionen:
+
+* Die Unterstützung für VMware-Workloads ist jetzt allgemein verfügbar (GA) in NetApp Backup and Recovery.
+* Sie können jetzt Gastbetriebssystemdateien und -ordner wiederherstellen.
+
+
+https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["Erfahren Sie mehr über die Wiederherstellung von VMware-VMs mit NetApp Backup and Recovery."]Die
+
+https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-restore-guest-files-and-folders-overview.html["Erfahren Sie mehr über das Wiederherstellen von Gastdateien und -ordnern."]Die
+
+
+
+=== Vorschau der Verbesserungen für Hyper-V-Workloads
+
+Diese Version von Hyper-V-Workloads bietet die folgenden erweiterten Funktionen:
+
+* Sie können nun Hyper-V VM-Backups und Snapshots an einem alternativen Speicherort wiederherstellen. Dies ist nützlich, wenn Sie Versionen einer VM auf verschiedenen Hyper-V-Hosts verwalten möchten.
+* Von System Center Virtual Machine Manager (SCVMM) bereitgestellte und auf einer CIFS-Freigabe gehostete Hyper-V-VMs werden jetzt von NetApp Backup and Recovery unterstützt.
+* Sie können nun Schutzgruppen bearbeiten.
+
+
+
+NOTE: Nur in dieser Version ist es nicht möglich, die NetApp -Plugins für Hyper-V oder Windows über die Option *Upgrade* im Menü Aktionen zu aktualisieren. Entfernen Sie stattdessen jeden Hyper-V-Host und fügen Sie ihn anschließend wieder hinzu, um die Plugins zu aktualisieren.
+
+https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-restore.html["Erfahren Sie mehr über die Wiederherstellung von Hyper-V-VMs mit NetApp Backup and Recovery."]Die
+
+
+
+=== Vorschau der Verbesserungen für KVM-Workloads
+
+Die Vorschau für KVM-Workloads unterstützt jetzt die Integration mit der Apache CloudStack-Managementplattform, sodass Sie KVM-Hosts und virtuelle Maschinen schützen können, die von Apache CloudStack verwaltet werden.
+
+Weitere Informationen zum Schutz von KVM-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Übersicht über den Schutz von KVM-Workloads"] .
+
+
+
 == 8. Dezember 2025
 
 Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.

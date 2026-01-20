@@ -26,6 +26,8 @@ Die folgenden Aktionen werden in der privaten Vorschauversion von Hyper-V-Worklo
 * Wiederherstellen von VMs an einem anderen Standort
 * Spanning-Disks (über mehrere CIFS-Freigaben hinweg)
 * Schützen Sie VMs über SAN
-* Schutzgruppen bearbeiten
-* Schützen Sie Hyper-V-Hosts, die mit System Center Virtual Machine Manager (SCVMM) geclustert sind.
+* Unabhängig von der Einstellung „Prozessorkompatibilität“ in Hyper-V können Sie keine VMs oder VM-Daten zwischen Systemen mit unterschiedlichen CPU-Herstellern (Intel zu AMD oder umgekehrt) wiederherstellen. Diese Einstellung unterstützt nur die Kompatibilität zwischen verschiedenen Generationen desselben Herstellers (z. B. Intel zu Intel oder AMD zu AMD).
 
+
+
+NOTE: In der Version vom 19. Januar 2026 ist ein Upgrade der NetApp -Plugins für Hyper-V oder Windows über die Option *Upgrade* im Menü Aktionen nicht möglich. Entfernen Sie stattdessen jeden Hyper-V-Host und fügen Sie ihn anschließend wieder hinzu, um die Plugins zu aktualisieren.

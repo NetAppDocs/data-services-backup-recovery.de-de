@@ -45,3 +45,14 @@ Die folgenden Konfigurationen werden nicht unterstützt:
 * RAW-Festplattenformat
 * Andere Speicherpooltypen als NetFS (nur NetFS wird unterstützt)
 
+
+
+
+== Hinweise zur Fehlerbehebung
+
+Beachten Sie Folgendes bei der Verwendung der privaten Vorschau von KVM-Workloads mit NetApp Backup and Recovery:
+
+* Um sicherzustellen, dass die Wiederherstellung von KVM-Workloads vollständig und erfolgreich verläuft, vergewissern Sie sich, dass die Einstellung *VM-konsistenten Snapshot aktivieren* in der Schutzrichtlinie, die Sie für KVM-Backups verwenden, aktiv ist.
+* Ein Speicherpool mit KVM-Hosts, die von Apache CloudStack verwaltet werden, kann nur gesichert werden, wenn alle verwalteten Hosts zu NetApp Backup and Recovery hinzugefügt werden. Als Ausweichlösung fügen Sie jeden von CloudStack verwalteten KVM-Host zu NetApp Backup and Recovery hinzu.
+* Eine gestoppte VM, die zu einer Schutzgruppe gehört, kann nicht gesichert werden. Als Ausweichlösung sollte die gestoppte VM vor dem Start der Sicherung aus der Schutzgruppe entfernt werden.
+

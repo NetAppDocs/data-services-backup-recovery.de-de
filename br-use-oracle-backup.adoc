@@ -34,7 +34,7 @@ Führen Sie vor Systemänderungen eine On-Demand-Sicherung durch, um sicherzuste
 
 .Schritte
 . Wählen Sie im NetApp Console *Schutz > Sicherung und Wiederherstellung*.
-. Wählen Sie in der Oracle-Kachel *Erkennen und verwalten* aus.
+. Wählen Sie unter *Workloads* die Kachel *Oracle* aus.
 . Wählen Sie *Inventar*.
 . Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.
 . Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*.
@@ -59,7 +59,7 @@ Sie können bei Bedarf eine Sicherung einer einzelnen Datenbank ausführen.
 
 .Schritte
 . Wählen Sie im NetApp Console *Schutz > Sicherung und Wiederherstellung*.
-. Wählen Sie in der Oracle-Kachel *Erkennen und verwalten* aus.
+. Wählen Sie unter *Workloads* die Kachel *Oracle* aus.
 . Wählen Sie *Inventar*.
 . Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.
 . Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*.

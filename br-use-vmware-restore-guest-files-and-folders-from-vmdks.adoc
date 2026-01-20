@@ -1,0 +1,75 @@
+---
+sidebar: sidebar 
+permalink: br-use-vmware-restore-guest-files-and-folders-from-vmdks.html 
+keywords:  
+summary: Sie können eine oder mehrere Dateien oder Ordner aus einem VMDK auf einem Windows-Gastbetriebssystem wiederherstellen. 
+---
+= Wiederherstellen von Gastdateien und -ordnern aus VMDKs
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können eine oder mehrere Dateien oder Ordner aus einem VMDK auf einem Windows-Gastbetriebssystem wiederherstellen.
+
+.Bevor Sie beginnen
+
+NOTE: Bevor Sie Dateien und Ordner der Gast-VM wiederherstellen können, müssen Sie in NetApp Backup and Recovery Anmeldeinformationen dafür erstellen. NetApp Backup and Recovery verwendet diese Anmeldeinformationen zur Authentifizierung bei der Gast-VM beim Anbinden der virtuellen Festplatte.
+
+.Informationen zu diesem Vorgang
+Standardmäßig stellt NetApp Backup and Recovery die angeschlossene virtuelle Festplatte 24 Stunden lang zur Verfügung und trennt sie dann automatisch. Im Assistenten können Sie auswählen, ob die Gastdatei-Wiederherstellungssitzung nach dem Wiederherstellungsvorgang automatisch gelöscht werden soll oder ob die Sitzung manuell gelöscht werden soll.
+
+Die Leistung der Wiederherstellung von Gastdateien oder -ordnern hängt von zwei Faktoren ab: der Größe der wiederherzustellenden Dateien oder Ordner und der Anzahl der wiederherzustellenden Dateien oder Ordner. Das Wiederherstellen einer großen Anzahl kleiner Dateien kann im Vergleich zum Wiederherstellen einer kleinen Anzahl großer Dateien länger dauern als erwartet, wenn der wiederherzustellende Datensatz dieselbe Größe hat.
+
+
+IMPORTANT: Auf einer VM kann gleichzeitig nur ein Anfüge- oder Wiederherstellungsvorgang ausgeführt werden. Sie können auf derselben VM keine parallelen Anfüge- oder Wiederherstellungsvorgänge ausführen.
+
+
+IMPORTANT: Mit der Gastwiederherstellungsfunktion können Sie Systemdateien und versteckte Dateien anzeigen und wiederherstellen sowie verschlüsselte Dateien anzeigen. Überschreiben Sie keine vorhandenen Systemdateien und stellen Sie verschlüsselte Dateien nicht in einem verschlüsselten Ordner wieder her. Während des Wiederherstellungsvorgangs werden die versteckten, System- und verschlüsselten Attribute der Gastdateien nicht in der wiederhergestellten Datei beibehalten. Das Anzeigen oder Durchsuchen reservierter Partitionen kann einen Fehler verursachen.
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
+. Wählen Sie das Menü *Virtuelle Maschinen*.
+. Wählen Sie aus der Liste eine virtuelle Maschine aus, die die wiederherzustellenden Dateien enthält.
+. Wählen Sie das Symbol „Aktionen“ aus. image:../media/icon-action.png["Aktionsoption"] für diese VM.
+. Wählen Sie *Dateien und Ordner wiederherstellen*.
+. Wählen Sie einen Snapshot aus, aus dem die Wiederherstellung erfolgen soll, und klicken Sie dann auf *Weiter*.
+. Wählen Sie den Speicherort des Snapshots aus, von dem die Wiederherstellung erfolgen soll. Wenn Sie einen sekundären Speicherort auswählen, wählen Sie den sekundären Snapshot aus der Liste aus.
+. Wählen Sie *Weiter*.
+. Wählen Sie aus der Liste die virtuelle Festplatte aus, die an die VM angehängt werden soll, und klicken Sie dann auf *Weiter*.
+. Wenn Sie auf der Seite „Anmeldeinformationen für virtuelle Maschinen auswählen“ noch keine Anmeldeinformationen für die Gast-VM gespeichert haben, wählen Sie „Anmeldeinformationen hinzufügen“ und gehen Sie wie folgt vor:
++
+.. *Name der Anmeldeinformationen*: Geben Sie einen Namen für die Anmeldeinformationen ein.
+.. *Authentifizierungsmodus*: Wählen Sie *Windows*.
+.. *Agenten*: Wählen Sie aus der Liste einen Konsolenagenten aus, der die Kommunikation zwischen NetApp Backup and Recovery und diesem Host übernimmt.
+.. *Domänen- und Benutzername*: Geben Sie den NetBIOS- oder Domänen-FQDN und den Benutzernamen für die Anmeldeinformationen ein.
+.. *Passwort*: Geben Sie ein Passwort für die Anmeldeinformationen ein.
+.. Wählen Sie *Hinzufügen*.
+
+
+. Wählen Sie die Anmeldeinformationen der virtuellen Maschine aus, mit denen Sie sich bei der Gast-VM authentifizieren möchten.
++
+NetApp Backup and Recovery bindet die virtuelle Festplatte an die VM an und zeigt alle Dateien und Ordner an, einschließlich der versteckten. Es weist jeder Partition einen Laufwerksbuchstaben zu, einschließlich der systemreservierten Partitionen.
+
++
+Die von Ihnen ausgewählten Dateien und Ordner werden im rechten Bereich des Bildschirms aufgelistet.
+
+. Wählen Sie *Weiter*.
+. Geben Sie den UNC-Freigabepfad zum Gast ein, auf dem die ausgewählten Dateien wiederhergestellt werden.
++
+** Beispiel für eine IPv4-Adresse: `\\10.60.136.65\c$`
+** Beispiel für eine IPv6-Adresse: `\\fd20-8b1e-b255-832e--61.ipv6-literal.net\C\restore`
+
+
++
+Falls bereits Dateien mit demselben Namen existieren, können Sie diese überschreiben oder überspringen.
+
+. Wählen Sie *Wiederherstellen*.
++
+Den Fortschritt der Wiederherstellung können Sie auf der Seite „Auftragsüberwachung“ einsehen.
+
+

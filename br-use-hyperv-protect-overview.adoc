@@ -14,7 +14,7 @@ summary: Sie können virtuelle Hyper-V-Maschinen von lokalen ONTAP Systemen auf 
 
 
 [role="lead"]
-Schützen Sie Ihre Hyper-V-VMs mit NetApp Backup and Recovery.  NetApp Backup and Recovery bietet schnelle, platzsparende, absturzkonsistente und VM-konsistente Sicherungs- und Wiederherstellungsvorgänge sowohl für eigenständige als auch für FCI-Clusterinstanzen.
+Schützen Sie Ihre Hyper-V-VMs mit NetApp Backup and Recovery. NetApp Backup and Recovery bietet schnelle, speichereffiziente, absturzsichere und VM-konsistente Backup- und Wiederherstellungsvorgänge sowohl für eigenständige Instanzen als auch für FCI-Cluster-Instanzen. Sie können auch Hyper-V-VMs schützen, die mit System Center Virtual Machine Manager (SCVMM) bereitgestellt und auf einer CIFS-Freigabe gehostet werden.
 
 Sie können Hyper-V-Workloads auf Amazon Web Services S3 oder StorageGRID sichern und Hyper-V-Workloads auf einem lokalen Hyper-V-Host wiederherstellen.
 

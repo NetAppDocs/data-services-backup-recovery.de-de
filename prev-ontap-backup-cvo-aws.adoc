@@ -258,7 +258,7 @@ Sie können auch<<API-Befehle anzeigen>> im Überprüfungsschritt, damit Sie den
 +
 Wenn das AWS-Ziel für Ihre Backups als System auf der Konsolenseite *Systeme* vorhanden ist, können Sie den ONTAP Cluster auf den AWS-Objektspeicher ziehen.
 
-** Wählen Sie in der Leiste „Sichern und Wiederherstellen“ *Volumes* aus.  Wählen Sie auf der Registerkarte „Volumes“ die Option „Aktionen“ aus.image:icon-action.png["Symbol „Aktionen“"] Symboloption und wählen Sie *Sicherung aktivieren* für ein einzelnes Volume (für das die Replikation oder Sicherung in den Objektspeicher noch nicht aktiviert ist).
+** Wählen Sie in der Sicherungs- und Wiederherstellungsleiste *Volumes* aus. Wählen Sie auf der Registerkarte „Volumes“ die Option „Aktionen“. image:icon-action.png["Symbol „Aktionen“"] Wählen Sie die Option „Symbol“ und aktivieren Sie *3-2-1-Schutz* für ein einzelnes Volume (bei dem die Replikation oder Sicherung auf Objektspeicher noch nicht aktiviert ist).
 
 
 +
@@ -322,7 +322,7 @@ NOTE: Wenn die von Ihnen ausgewählten Volumes andere Snapshot- und Replikations
 +
 ** *Lokale Snapshots*: Wenn Sie eine Replikation oder Sicherung im Objektspeicher durchführen, müssen lokale Snapshots erstellt werden.
 ** *Replikation*: Erstellt replizierte Volumes auf einem anderen ONTAP Speichersystem.
-** *Backup*: Sichert Volumes im Objektspeicher.
+** *Backup*: Sichert Volumes im Objektspeicher. Beim Auswählen vorhandener Buckets oder Konfigurieren neuer Buckets können Sie Volumes in bis zu sechs Buckets pro Cluster sichern.
 
 
 . *Architektur*: Wenn Sie Replikation und Sicherung gewählt haben, wählen Sie einen der folgenden Informationsflüsse:
@@ -343,14 +343,14 @@ TIP: Informationen zum Erstellen einer benutzerdefinierten Richtlinie vor der Ak
 Um eine Richtlinie zu erstellen, wählen Sie *Neue Richtlinie erstellen* und gehen Sie wie folgt vor:
 
 +
-** Geben Sie den Namen der Richtlinie ein.
-** Wählen Sie bis zu fünf Zeitpläne aus, normalerweise mit unterschiedlicher Häufigkeit.
-** Wählen Sie *Erstellen*.
+.. Geben Sie den Namen der Richtlinie ein.
+.. Wählen Sie bis zu fünf Zeitpläne aus, normalerweise mit unterschiedlicher Häufigkeit.
+.. Wählen Sie *Erstellen*.
 
 
 . *Replikation*: Legen Sie die folgenden Optionen fest:
 +
-** *Replikationsziel*: Wählen Sie das Zielsystem und die SVM aus.  Wählen Sie optional das oder die Zielaggregate sowie das Präfix oder Suffix aus, das dem Namen des replizierten Volumes hinzugefügt wird.
+** *Replikationsziel*: Wählen Sie das Zielsystem und die Speicher-VM aus. Optional können Sie das oder die Zielaggregate sowie ein Präfix oder Suffix auswählen, das dem Namen des replizierten Datenträgers hinzugefügt werden soll.
 ** *Replikationsrichtlinie*: Wählen Sie eine vorhandene Replikationsrichtlinie aus oder erstellen Sie eine.
 +
 
@@ -360,14 +360,14 @@ TIP: Informationen zum Erstellen einer benutzerdefinierten Richtlinie finden Sie
 Um eine Richtlinie zu erstellen, wählen Sie *Neue Richtlinie erstellen* und gehen Sie wie folgt vor:
 
 +
-*** Geben Sie den Namen der Richtlinie ein.
-*** Wählen Sie bis zu fünf Zeitpläne aus, normalerweise mit unterschiedlicher Häufigkeit.
-*** Wählen Sie *Erstellen*.
+... Geben Sie den Namen der Richtlinie ein.
+... Wählen Sie bis zu fünf Zeitpläne aus, normalerweise mit unterschiedlicher Häufigkeit.
+... Wählen Sie *Erstellen*.
 
 
 
 
-. *Sichern auf Objekt*: Wenn Sie *Sichern* ausgewählt haben, legen Sie die folgenden Optionen fest:
+. *Sicherung*: Legen Sie die folgenden Optionen fest:
 +
 ** *Anbieter*: Wählen Sie *Amazon Web Services*.
 ** *Anbietereinstellungen*: Geben Sie die Anbieterdetails und die Region ein, in der die Backups gespeichert werden.
@@ -383,17 +383,15 @@ Wählen Sie die Region aus, in der die Sicherungen gespeichert werden sollen.  D
 +
 Erstellen Sie entweder einen neuen Bucket oder wählen Sie einen vorhandenen aus.
 
-** *Verschlüsselungsschlüssel*: Wenn Sie einen neuen Bucket erstellt haben, geben Sie die Informationen zum Verschlüsselungsschlüssel ein, die Sie vom Anbieter erhalten haben.  Wählen Sie, ob Sie die standardmäßigen AWS-Verschlüsselungsschlüssel verwenden oder Ihre eigenen, vom Kunden verwalteten Schlüssel aus Ihrem AWS-Konto auswählen möchten, um die Verschlüsselung Ihrer Daten zu verwalten. (https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-setting-up-kms.html["Erfahren Sie, wie Sie Ihre eigenen Verschlüsselungsschlüssel verwenden"^] ).
+** *Verschlüsselung*: Wenn Sie einen neuen Bucket erstellt haben, geben Sie die Ihnen vom Anbieter mitgeteilten Verschlüsselungsschlüsselinformationen ein. Entscheiden Sie, ob Sie die standardmäßigen AWS-Verschlüsselungsschlüssel verwenden oder Ihre eigenen, vom Kunden verwalteten Schlüssel aus Ihrem AWS-Konto auswählen möchten, um die Verschlüsselung Ihrer Daten zu verwalten. (https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-setting-up-kms.html["Erfahren Sie, wie Sie Ihre eigenen Verschlüsselungsschlüssel verwenden"^]).
 +
 Wenn Sie Ihre eigenen, vom Kunden verwalteten Schlüssel verwenden möchten, geben Sie den Schlüsseltresor und die Schlüsselinformationen ein.
-
-
 
 +
 
 NOTE: Wenn Sie einen vorhandenen Bucket ausgewählt haben, sind die Verschlüsselungsinformationen bereits verfügbar, sodass Sie sie jetzt nicht eingeben müssen.
 
-+
+** *Netzwerk*: Konfigurieren Sie die Netzwerkoptionen für diesen Anbieter.
 ** *Sicherungsrichtlinie*: Wählen Sie eine vorhandene Richtlinie für die Sicherung in Objektspeicher aus oder erstellen Sie eine.
 +
 
@@ -403,13 +401,13 @@ TIP: Informationen zum Erstellen einer benutzerdefinierten Richtlinie vor der Ak
 Um eine Richtlinie zu erstellen, wählen Sie *Neue Richtlinie erstellen* und gehen Sie wie folgt vor:
 
 +
-*** Geben Sie den Namen der Richtlinie ein.
-*** Wählen Sie bis zu fünf Zeitpläne aus, normalerweise mit unterschiedlicher Häufigkeit.
-*** Legen Sie für Backup-to-Object-Richtlinien die Einstellungen „DataLock“ und „Ransomware Resilience“ fest.  Weitere Informationen zu DataLock und Ransomware Resilience finden Sie unterlink:prev-ontap-policy-object-options.html["Einstellungen der Backup-to-Object-Richtlinie"] .
-*** Wählen Sie *Erstellen*.
+... Geben Sie den Namen der Richtlinie ein.
+... Wählen Sie bis zu fünf Zeitpläne aus, normalerweise mit unterschiedlicher Häufigkeit.
+... Legen Sie für Backup-to-Object-Richtlinien die Einstellungen „DataLock“ und „Ransomware Resilience“ fest.  Weitere Informationen zu DataLock und Ransomware Resilience finden Sie unterlink:prev-ontap-policy-object-options.html["Einstellungen der Backup-to-Object-Richtlinie"] .
+... Wählen Sie *Erstellen*.
 
 
-** *Vorhandene Snapshots als Sicherungskopien in den Objektspeicher exportieren*: Wenn es lokale Snapshots für Volumes in diesem System gibt, die mit der von Ihnen soeben für dieses System ausgewählten Sicherungszeitplanbezeichnung übereinstimmen (z. B. täglich, wöchentlich usw.), wird diese zusätzliche Aufforderung angezeigt. Aktivieren Sie dieses Kontrollkästchen, um alle historischen Snapshots als Sicherungsdateien in den Objektspeicher zu kopieren und so den umfassendsten Schutz für Ihre Volumes zu gewährleisten.
+** *Vorhandenen Snapshot exportieren*: Wenn es lokale Snapshots für Volumes in diesem System gibt, die mit der von Ihnen soeben für dieses System ausgewählten Sicherungszeitplanbezeichnung übereinstimmen (z. B. täglich, wöchentlich usw.), wird diese zusätzliche Aufforderung angezeigt. Aktivieren Sie dieses Kontrollkästchen, um alle historischen Snapshots als Sicherungsdateien im Objektspeicher zu speichern und so einen umfassenden Schutz Ihrer Volumes zu gewährleisten.
 
 
 . Wählen Sie *Weiter*.
@@ -423,7 +421,7 @@ Dies ist die Gelegenheit, Ihre Auswahl zu überprüfen und gegebenenfalls Anpass
 
 .Schritte
 . Überprüfen Sie Ihre Auswahl auf der Überprüfungsseite.
-. Aktivieren Sie optional das Kontrollkästchen, um *die Snapshot-Richtlinienbezeichnungen automatisch mit den Replikations- und Sicherungsrichtlinienbezeichnungen zu synchronisieren*.  Dadurch werden Snapshots mit einer Bezeichnung erstellt, die mit den Bezeichnungen in den Replikations- und Sicherungsrichtlinien übereinstimmt.
+. Optional können Sie das Kontrollkästchen aktivieren, um *nicht übereinstimmende Bezeichnungen bei lokalen Snapshots, Replikationen und Backups automatisch zu korrigieren*. Dadurch werden Snapshots mit einer Bezeichnung erstellt, die mit den Bezeichnungen in den Snapshot-, Replikations- und Sicherungsrichtlinien übereinstimmt.
 . Wählen Sie *Backup aktivieren*.
 
 

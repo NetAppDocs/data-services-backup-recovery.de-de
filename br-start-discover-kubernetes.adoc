@@ -27,7 +27,7 @@ Ermitteln Sie im Sicherungs- und Wiederherstellungsinventar die Kubernetes-Workl
 .Schritte
 . Führen Sie einen der folgenden Schritte aus:
 +
-** Wenn Sie Kubernetes-Workloads zum ersten Mal erkennen, wählen Sie in NetApp Backup and Recovery unter dem Kubernetes-Workload-Typ „Erkennen und verwalten“ aus.
+** Wenn Sie Kubernetes-Workloads zum ersten Mal entdecken, wählen Sie in NetApp Backup and Recovery unter *Workloads* die Kachel *Kubernetes* aus.
 ** Wenn Sie Kubernetes-Workloads bereits erkannt haben, wählen Sie in NetApp Backup and Recovery*Inventar* > *Workloads* und dann *Ressourcen erkennen*.
 
 

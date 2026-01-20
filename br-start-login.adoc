@@ -34,8 +34,8 @@ Die Anmeldeseite der NetApp Console wird angezeigt.
 . Melden Sie sich bei der Konsole an.
 . Wählen Sie in der linken Navigation der Konsole *Schutz* > *Sicherung und Wiederherstellung*.
 +
-** Wenn Sie sich zum ersten Mal bei Backup and Recovery anmelden und der Seite *Systeme* noch kein System hinzugefügt haben, zeigt Backup and Recovery die Zielseite „Willkommen beim neuen NetApp Backup and Recovery“ an und bietet die Möglichkeit, ein System hinzuzufügen.  Weitere Informationen zum Hinzufügen eines Systems zur Seite *Systeme* finden Sie unter https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-standard-mode.html["Erste Schritte mit dem Standardmodus der NetApp Console"^] .
-** Wenn Sie sich zum ersten Mal bei Backup and Recovery anmelden und der Seite *Systeme* bereits ein System hinzugefügt, aber noch keine Ressourcen entdeckt haben, wird die Zielseite „Willkommen beim neuen NetApp Backup and Recovery“ mit der Option „Ressourcen entdecken“ angezeigt.
+** Wenn Sie sich zum ersten Mal bei Backup and Recovery anmelden und noch kein System zur Seite *Systeme* hinzugefügt haben, zeigt Backup and Recovery die Startseite "Willkommen bei der neuen NetApp Backup and Recovery" mit der Option zum Hinzufügen eines Systems an. Einzelheiten zum Hinzufügen eines Systems zur Seite *Systeme* finden Sie unter https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-standard-mode.html["Erste Schritte mit dem Standardmodus der NetApp Console"^]Die
+** Wenn Sie sich zum ersten Mal bei Backup and Recovery anmelden und zwar ein System in der Konsole haben, aber keine Ressourcen erkannt wurden, wird die Seite _Willkommen bei der neuen NetApp Backup and Recovery_ mit einer Option zum *Erkennen von Ressourcen* angezeigt.
 
 
 . Falls noch nicht geschehen, wählen Sie die Option *Erkennen und verwalten*.

@@ -130,10 +130,18 @@ Eine Liste der erforderlichen vCenter-Berechtigungen finden Sie unter https://do
 Sie benötigen bestimmte Anforderungen, um virtuelle KVM-Maschinen zu erkennen und zu schützen.
 
 * Eine moderne Linux-Distribution mit Kernelversion 5.14.0-503.22.1.el9_5.x86_64 (longterm) oder höher
-* Stellen Sie sicher, dass eingehender Datenverkehr vom Konsolenagenten zum KVM-Host über Port 22 zulässig ist
+* Ihre KVM-Hosts und VMs müssen über eine Managementplattform verwaltet werden. NetApp Backup and Recovery unterstützt die folgenden Managementplattformen:
++
+** Apache CloudStack 4.22.0.0
+
+
+* Stellen Sie sicher, dass eingehender Netzwerkverkehr von der Konsolenagentur zum KVM-Host an Port 22 zugelassen ist.
 * QEMU-Gastagent Version 9.0.0 oder höher
 * libvirt Version 10.5.0 oder höher
 
+
+
+NOTE: Um sicherzustellen, dass die Wiederherstellung von KVM-Workloads vollständig und erfolgreich verläuft, vergewissern Sie sich, dass die Einstellung *VM-konsistenten Snapshot aktivieren* in der Schutzrichtlinie, die Sie für KVM-Backups verwenden, aktiv ist.
 
 [NOTE]
 ====

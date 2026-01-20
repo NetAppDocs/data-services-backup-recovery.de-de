@@ -24,6 +24,8 @@ NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads 
 
 Auf der Seite „Erweiterte Einstellungen“ können Sie die folgenden Optionen ändern:
 
+* Ändern der Speicherschlüssel, die Ihrem ONTAP System die Berechtigung zum Zugriff auf den Objektspeicher erteilen.
+* Ändern des ONTAP IP-Bereichs, der mit dem Objektspeicher verbunden ist
 * Ändern der für das Hochladen von Backups in den Objektspeicher zugewiesenen Netzwerkbandbreite mithilfe der Option „Maximale Übertragungsrate“
 * Ändern der Option, ob historische Snapshots als Sicherungsdateien exportiert und in die anfänglichen Basissicherungsdateien für zukünftige Volumes aufgenommen werden.
 * Ändern, ob „jährliche“ Snapshots aus dem Quellsystem entfernt werden
@@ -34,21 +36,18 @@ Auf der Seite „Erweiterte Einstellungen“ können Sie die folgenden Optionen 
 
 == Anzeigen der Sicherungseinstellungen auf Clusterebene
 
-Sie können die Backup-Einstellungen auf Clusterebene für jedes System anzeigen.
+Sie können die Systemeinstellungen auf Clusterebene und die Provider-Einstellungen für jedes System anzeigen.
 
 .Schritte
 . Wählen Sie im Konsolenmenü *Schutz > Sicherung und Wiederherstellung*.
 . Wählen Sie auf der Registerkarte *Volumes* die Option *Backup-Einstellungen* aus.
-. Klicken Sie auf der Seite „Backup-Einstellungen“ aufimage:icon-actions-horizontal.gif["Symbol „Mehr“"] für das System und wählen Sie *Erweiterte Einstellungen*.
+. Wählen Sie auf der Seite „Sicherungseinstellungen“ die Option „…“ aus. image:icon-actions-horizontal.gif["Symbol „Mehr“"] Wählen Sie für das System *Erweiterte Einstellungen konfigurieren > Systemeinstellungen*, um die Systemeinstellungen anzuzeigen, und *Erweiterte Einstellungen konfigurieren > Anbietereinstellungen*, um die Anbietereinstellungen anzuzeigen.
 +
-Auf der Seite „Erweiterte Einstellungen“ werden die aktuellen Einstellungen für dieses System angezeigt.
-
-. Erweitern Sie die Option und nehmen Sie die Änderung vor.
+Auf der daraufhin angezeigten Seite werden die aktuellen Einstellungen für dieses System angezeigt. Die angezeigten Provider-Einstellungen beziehen sich auf den Bucket, den Sie oben auf der Seite auswählen.
 
 
-Alle Sicherungsvorgänge nach der Änderung verwenden die neuen Werte.
 
-Beachten Sie, dass einige Optionen je nach ONTAP -Version auf dem Quellcluster und je nach Ziel des Cloud-Anbieters, wo sich die Sicherungen befinden, nicht verfügbar sind.
+Beachten Sie, dass einige Optionen je nach ONTAP -Version auf dem Quellcluster und dem Cloud-Anbieter, bei dem die Backups gespeichert sind, nicht verfügbar sind.
 
 
 
@@ -58,7 +57,7 @@ Wenn Sie NetApp Backup and Recovery für ein System aktivieren, kann ONTAP stand
 
 .Schritte
 . Wählen Sie auf der Registerkarte *Volumes* die Option *Backup-Einstellungen* aus.
-. Klicken Sie auf der Seite „Backup-Einstellungen“ aufimage:icon-actions-horizontal.gif["Symbol „Mehr“"] für das System und wählen Sie *Erweiterte Einstellungen*.
+. Klicken Sie auf der Seite „Sicherungseinstellungen“ auf image:icon-actions-horizontal.gif["Symbol „Mehr“"] für das System und wählen Sie *Erweiterte Einstellungen konfigurieren > Systemeinstellungen*.
 . Erweitern Sie auf der Seite „Erweiterte Einstellungen“ den Abschnitt „Maximale Übertragungsrate“.
 . Wählen Sie als maximale Übertragungsrate einen Wert zwischen 1 und 1.000 Mbit/s.
 . Wählen Sie das Optionsfeld *Begrenzt* und geben Sie die maximal nutzbare Bandbreite ein, oder wählen Sie *Unbegrenzt*, um anzugeben, dass keine Begrenzung besteht.
@@ -77,8 +76,8 @@ Beachten Sie, dass diese Option nur für neue Sicherungsdateien für neue Lese-/
 
 .Schritte
 . Wählen Sie auf der Registerkarte *Volumes* die Option *Backup-Einstellungen* aus.
-. Klicken Sie auf der Seite „Backup-Einstellungen“ aufimage:icon-actions-horizontal.gif["Symbol „Mehr“"] für das System und wählen Sie *Erweiterte Einstellungen*.
-. Erweitern Sie auf der Seite „Erweiterte Einstellungen“ den Abschnitt *Vorhandene Snapshots exportieren*.
+. Klicken Sie auf der Seite „Sicherungseinstellungen“ auf image:icon-actions-horizontal.gif["Symbol „Mehr“"] für das System und wählen Sie *Erweiterte Einstellungen konfigurieren > Systemeinstellungen*.
+. Erweitern Sie auf der Seite „Erweiterte Einstellungen“ den Abschnitt *Vorhandene Snapshot-Kopien exportieren*.
 . Wählen Sie aus, ob vorhandene Snapshots exportiert werden sollen.
 . Wählen Sie *Übernehmen*.
 
@@ -91,11 +90,8 @@ Wenn Sie für eine Sicherungsrichtlinie eines Ihrer Volumes die Bezeichnung „j
 
 .Schritte
 . Wählen Sie auf der Registerkarte *Volumes* die Option *Backup-Einstellungen* aus.
-. Klicken Sie auf der Seite „Backup-Einstellungen“ aufimage:icon-actions-horizontal.gif["Symbol „Mehr“"] für das System und wählen Sie *Erweiterte Einstellungen*.
+. Klicken Sie auf der Seite „Sicherungseinstellungen“ auf image:icon-actions-horizontal.gif["Symbol „Mehr“"] für das System und wählen Sie *Erweiterte Einstellungen konfigurieren > Systemeinstellungen*.
 . Erweitern Sie auf der Seite „Erweiterte Einstellungen“ den Abschnitt „Jährliche Snapshot-Löschung“*.
-+
-image:screenshot_backup_edit_yearly_snap_delete.png["Ein Screenshot des Eintrags „Jährliche Snapshots“ auf der Seite „Erweiterte Einstellungen“."]
-
 . Wählen Sie *Deaktiviert*, um die jährlichen Snapshots auf dem Quellsystem beizubehalten.
 . Wählen Sie *Übernehmen*.
 
@@ -104,7 +100,7 @@ image:screenshot_backup_edit_yearly_snap_delete.png["Ein Screenshot des Eintrags
 
 == Aktivieren oder Deaktivieren von Ransomware-Scans
 
-Ransomware-Schutzscans sind standardmäßig aktiviert. Die Standardeinstellung für die Scanhäufigkeit beträgt 7 Tage. Der Scan erfolgt nur für den neuesten Snapshot. Sie können Ransomware-Scans für den neuesten Snapshot über die entsprechende Option auf der Seite „Erweiterte Einstellungen“ aktivieren oder deaktivieren. Wenn Sie es aktivieren, werden standardmäßig alle 7 Tage Scans durchgeführt.
+Ransomware-Schutzscans sind standardmäßig aktiviert. Die Standardeinstellung für die Scanhäufigkeit beträgt 7 Tage. Der Scan erfolgt nur für den neuesten Snapshot.
 
 Weitere Informationen zu den Optionen DataLock und Ransomware Resilience finden Sie unterlink:prev-ontap-policy-object-options.html["DataLock- und Ransomware-Resilienzoptionen"] .
 
@@ -113,16 +109,38 @@ Sie können diesen Zeitplan auf Tage oder Wochen ändern oder ihn deaktivieren, 
 
 TIP: Für die Aktivierung von Ransomware-Scans fallen je nach Cloud-Anbieter zusätzliche Gebühren an.
 
-Geplante Ransomware-Scans werden nur auf dem aktuellsten Snapshot ausgeführt.
-
 Wenn die geplanten Ransomware-Scans deaktiviert sind, können Sie weiterhin On-Demand-Scans durchführen und der Scan während eines Wiederherstellungsvorgangs wird weiterhin ausgeführt.
 
 Siehelink:prev-ontap-policy-manage.html["Richtlinien verwalten"] Weitere Informationen zum Verwalten von Richtlinien zur Implementierung der Ransomware-Erkennung.
 
+
+
+=== Aktivieren oder deaktivieren Sie Ransomware-Scans für ein System
+
+Sie können Ransomware-Scans für einen Cluster aktivieren oder deaktivieren.
+
 .Schritte
 . Wählen Sie auf der Registerkarte *Volumes* die Option *Backup-Einstellungen* aus.
-. Klicken Sie auf der Seite „Backup-Einstellungen“ aufimage:icon-actions-horizontal.gif["Symbol „Mehr“"] für das System und wählen Sie *Erweiterte Einstellungen*.
-. Erweitern Sie auf der Seite „Erweiterte Einstellungen“ den Abschnitt *Ransomware-Scan*.
+. Klicken Sie auf der Seite „Sicherungseinstellungen“ auf image:icon-actions-horizontal.gif["Symbol „Mehr“"] für das System und wählen Sie *Erweiterte Einstellungen konfigurieren > Systemeinstellungen*.
+. Erweitern Sie auf der folgenden Seite den Abschnitt *Ransomware-Scan*.
+. Aktivieren oder deaktivieren Sie den *Ransomware-Scan*.
+. Wählen Sie *Geplanter Ransomware-Scan*.
+. Ändern Sie optional den wöchentlichen Standardscan auf Tage oder Wochen.
+. Legen Sie fest, wie oft (in Tagen oder Wochen) der Scan ausgeführt werden soll.
+. Wählen Sie *Übernehmen*.
+
+
+
+
+=== Aktivieren oder deaktivieren Sie Ransomware-Scans für einen Anbieter.
+
+Sie können Ransomware-Scans auf Anbieterebene über die Anbietereinstellungsseite aktivieren oder deaktivieren. Die Einstellungen auf dieser Seite beziehen sich auf den Bucket, den Sie oben auf der Seite auswählen.
+
+.Schritte
+. Wählen Sie auf der Registerkarte *Volumes* die Option *Backup-Einstellungen* aus.
+. Klicken Sie auf der Seite „Sicherungseinstellungen“ auf image:icon-actions-horizontal.gif["Symbol „Mehr“"] für das System und wählen Sie *Erweiterte Einstellungen konfigurieren > Anbietereinstellungen*.
+. Wählen Sie oben auf der angezeigten Seite den Bucket aus, dessen Einstellungen Sie ändern möchten.
+. Erweitern Sie den Abschnitt *Ransomware-Scan*.
 . Aktivieren oder deaktivieren Sie den *Ransomware-Scan*.
 . Wählen Sie *Geplanter Ransomware-Scan*.
 . Ändern Sie optional den wöchentlichen Standardscan auf Tage oder Wochen.

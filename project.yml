@@ -131,9 +131,19 @@ sidebar:
       - title: Sichern Sie VMware-Workloads
         url: "/br-use-vmware-backup.html"
       - title: Wiederherstellen von VMware-Workloads
-        url: "/br-use-vmware-restore.html"
-      - title: Bestimmte virtuelle Festplatten aus Backups wiederherstellen
-        url: "/br-use-vmware-restore-vmdks-from-backups.html"
+        entries:
+        - title: Wiederherstellen von VMware-VMs
+          url: "/br-use-vmware-restore.html"
+        - title: Bestimmte virtuelle Festplatten wiederherstellen
+          url: "/br-use-vmware-restore-vmdks-from-backups.html"
+        - title: Gastdateien und -ordner wiederherstellen
+          entries:
+          - title: Arbeitsablauf, Voraussetzungen und Einschränkungen
+            url: "/br-use-vmware-restore-guest-files-and-folders-overview.html"
+          - title: Wiederherstellen von Gastdateien und -ordnern aus VMDKs
+            url: "/br-use-vmware-restore-guest-files-and-folders-from-vmdks.html"
+          - title: Fehlerbehebung bei der Wiederherstellung von Gastdateien
+            url: "/br-use-vmware-guest-file-restore-scenarios-you-might-encounter.html"
     - title: Schützen Sie VMware-Workloads (mit dem SnapCenter -Plug-in für VMware)
       entries:
       - title: Übersicht über den Schutz virtueller Maschinen-Workloads

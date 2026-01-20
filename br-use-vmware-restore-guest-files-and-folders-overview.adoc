@@ -1,0 +1,102 @@
+---
+sidebar: sidebar 
+permalink: br-use-vmware-restore-guest-files-and-folders-overview.html 
+keywords:  
+summary: 'Sie können Dateien oder Ordner von einer virtuellen Maschinenfestplatte (VMDK) auf einem Windows-Gastbetriebssystem wiederherstellen.' 
+---
+= Anforderungen und Einschränkungen beim Wiederherstellen von Gastdateien und -ordnern
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können Dateien oder Ordner von einer virtuellen Maschinenfestplatte (VMDK) auf einem Windows-Gastbetriebssystem wiederherstellen.
+
+
+
+== Workflow zur Gastwiederherstellung
+
+Die Wiederherstellungsvorgänge des Gastbetriebssystems umfassen die folgenden Schritte:
+
+. Befestigen
++
+Schließen Sie eine virtuelle Festplatte an eine Gast-VM oder Proxy-VM an und starten Sie eine Gast-Dateiwiederherstellungssitzung.
+
+. Warten
++
+Warten Sie, bis der Anfügevorgang abgeschlossen ist, bevor Sie durchsuchen und wiederherstellen können. Nach Abschluss des Anfügevorgangs wird automatisch eine Gastdatei-Wiederherstellungssitzung erstellt.
+
+. Dateien oder Ordner auswählen
++
+Durchsuchen Sie die VMDK-Dateien und wählen Sie eine oder mehrere Dateien oder Ordner zur Wiederherstellung aus.
+
+. Wiederherstellen
++
+Stellen Sie die ausgewählten Dateien oder Ordner an einem angegebenen Speicherort wieder her.
+
+
+
+
+
+== Voraussetzungen für die Wiederherstellung von Gastdateien und -ordnern
+
+Prüfen Sie alle Voraussetzungen, bevor Sie Dateien oder Ordner aus einer VMDK-Datei auf einem Windows-Gastbetriebssystem wiederherstellen.
+
+* VMware-Tools müssen installiert und ausgeführt werden.
++
+NetApp Backup and Recovery nutzt Informationen von VMware Tools, um eine Verbindung zum VMware-Gastbetriebssystem herzustellen.
+
+* Auf dem Windows-Gastbetriebssystem muss Windows Server 2008 R2 oder höher ausgeführt werden.
++
+Aktuelle Informationen zu unterstützten Versionen finden Sie unter https://imt.netapp.com/imt/imt.jsp?components=180121;&solution=1517&isHWU&src=IMT["NetApp Interoperability Matrix Tool (IMT)"^] .
+
+* Die Anmeldeinformationen für die Ziel-VM verwenden das integrierte Domänen- oder lokale Administratorkonto mit dem Benutzernamen „Administrator“. Bevor Sie mit dem Wiederherstellungsvorgang beginnen, konfigurieren Sie die Anmeldeinformationen für die VM, an die Sie die virtuelle Festplatte anhängen möchten. Für den Anfüge- und Wiederherstellungsvorgang werden Anmeldeinformationen benötigt. Benutzer von Arbeitsgruppen können das integrierte lokale Administratorkonto verwenden.
++
+
+IMPORTANT: Wenn Sie ein Konto verwenden müssen, das nicht das integrierte Administratorkonto ist, aber über Administratorrechte innerhalb der VM verfügt, müssen Sie die Benutzerkontensteuerung auf der Gast-VM deaktivieren.
+
+* Sie müssen den Sicherungs-Snapshot und das VMDK kennen, von dem die Wiederherstellung durchgeführt werden soll.
++
+NetApp Backup and Recovery unterstützt keine Suche nach wiederherzustellenden Dateien oder Ordnern. Bevor Sie beginnen, müssen Sie wissen, wo sich die Dateien oder Ordner im Snapshot und die zugehörige VMDK befinden.
+
+* Die anzuhängende virtuelle Festplatte muss sich in einem NetApp Backup and Recovery -Backup befinden.
++
+Die virtuelle Festplatte, die die wiederherzustellende Datei oder den Ordner enthält, muss sich in einer VM-Sicherung befinden, die mit NetApp Backup and Recovery erstellt wurde.
+
+
+
+* Dateien mit Namen, die nicht aus dem englischen Alphabet stammen, müssen Sie in einem Verzeichnis und nicht als einzelne Datei wiederherstellen.
++
+Sie können Dateien mit nicht-alphabetischen Namen, wie etwa japanische Kanji, wiederherstellen, indem Sie das Verzeichnis wiederherstellen, in dem sich die Dateien befinden.
+
+
+
+
+
+== Einschränkungen bei der Wiederherstellung von Gastdateien
+
+Bevor Sie eine Datei oder einen Ordner aus einem Gastbetriebssystem wiederherstellen, sollten Sie sich über die Funktionsbeschränkungen im Klaren sein.
+
+* Sie können dynamische Datenträgertypen nicht innerhalb eines Gastbetriebssystems wiederherstellen.
+* Wenn Sie eine verschlüsselte Datei oder einen verschlüsselten Ordner wiederherstellen, bleibt das Verschlüsselungsattribut nicht erhalten. Sie können keine Dateien oder Ordner in einem verschlüsselten Ordner wiederherstellen.
+* Auf der Seite „Gastdatei durchsuchen“ werden die versteckten Dateien und Ordner angezeigt, die Sie nicht filtern können.
+* Eine Wiederherstellung von einem Linux-Gastbetriebssystem ist nicht möglich.
++
+Sie können keine Dateien und Ordner von einer VM wiederherstellen, auf der ein Linux-Gastbetriebssystem ausgeführt wird. Sie können jedoch ein VMDK anhängen und die Dateien und Ordner dann manuell wiederherstellen. Aktuelle Informationen zu unterstützten Gastbetriebssystemen finden Sie im https://imt.netapp.com/imt/imt.jsp?components=180121;&solution=1517&isHWU&src=IMT["NetApp Interoperability Matrix Tool (IMT)"^] .
+
+* Sie können keine Wiederherstellung von einem NTFS-Dateisystem auf ein FAT-Dateisystem durchführen.
++
+Wenn Sie versuchen, vom NTFS-Format ins FAT-Format wiederherzustellen, wird der NTFS-Sicherheitsdeskriptor nicht kopiert, da das FAT-Dateisystem keine Windows-Sicherheitsattribute unterstützt.
+
+* Sie können keine Gastdateien aus einem geklonten VMDK oder einem nicht initialisierten VMDK wiederherstellen.
+* Sie können die Verzeichnisstruktur einer Datei nicht wiederherstellen.
++
+Wenn Sie eine Datei aus einem verschachtelten Verzeichnis wiederherstellen, stellt das System nur die Datei selbst wieder her, nicht aber die Verzeichnisstruktur. Um die gesamte Verzeichnisstruktur wiederherzustellen, kopieren Sie das oberste Verzeichnis.
+
+* Sie können keine Gastdateien von einer vVol-VM auf einem alternativen Host wiederherstellen.
+* Sie können verschlüsselte Gastdateien nicht wiederherstellen.
+

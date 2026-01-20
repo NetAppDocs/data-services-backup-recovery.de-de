@@ -37,7 +37,7 @@ Um zusätzliche Spalten anzuzeigen (Aggregate, Sicherheitsstil (Windows oder UNI
 
 . Überprüfen Sie den Status der Schutzoptionen in der Spalte „Vorhandener Schutz“. Die 3 Symbole stehen für „Lokale Snapshots“, „Replizierte Volumes“ und „Backups im Objektspeicher“.
 +
-Jedes Symbol ist blau, wenn dieser Sicherungstyp aktiviert ist, und grau, wenn der Sicherungstyp inaktiv ist.  Sie können mit dem Cursor über die einzelnen Symbole fahren, um die verwendete Sicherungsrichtlinie und andere relevante Informationen zu den einzelnen Sicherungstypen anzuzeigen.
+Das jeweilige Symbol leuchtet auf, wenn der entsprechende Sicherungstyp aktiviert ist, und ist grau, wenn der Sicherungstyp inaktiv ist. Sie können den Mauszeiger über jedes Symbol bewegen, um die verwendete Sicherungsrichtlinie und weitere relevante Informationen zu jedem Sicherungstyp anzuzeigen.
 
 
 
@@ -48,7 +48,7 @@ Jedes Symbol ist blau, wenn dieser Sicherungstyp aktiviert ist, und grau, wenn d
 Wenn Sie bei der ersten Aktivierung von NetApp Backup and Recovery die Sicherung nur auf einigen Volumes in einem System aktiviert haben, können Sie später Sicherungen auf weiteren Volumes aktivieren.
 
 .Schritte
-. Identifizieren Sie auf der Registerkarte *Volumes* das Volume, auf dem Sie Backups aktivieren möchten, wählen Sie das Menü Aktionenimage:icon-action.png["Symbol „Aktionen“"] am Ende der Zeile und wählen Sie *Sicherung aktivieren*.
+. Wählen Sie auf der Registerkarte *Volumes* das Volume aus, auf dem Sie Backups aktivieren möchten, und anschließend das Menü „Aktionen“ aus. image:icon-action.png["Symbol „Aktionen“"] Am Ende der Zeile wählen Sie *3-2-1-Schutz aktivieren*.
 . Auf der Seite _Sicherungsstrategie definieren_ wählen Sie die Sicherungsarchitektur aus und definieren dann die Richtlinien und weitere Details für lokale Snapshots, replizierte Volumes und Sicherungsdateien. Sehen Sie sich die Details zu den Sicherungsoptionen der ursprünglichen Volumes an, die Sie in diesem System aktiviert haben. Wählen Sie dann *Weiter*.
 . Überprüfen Sie die Sicherungseinstellungen für dieses Volume und wählen Sie dann *Sicherung aktivieren*.
 
@@ -64,7 +64,7 @@ Sie können die Sicherungsrichtlinien ändern, die Ihren vorhandenen Volumes mit
 === Bearbeiten der Sicherungseinstellungen auf einem einzelnen Volume
 
 .Schritte
-. Identifizieren Sie auf der Registerkarte *Volumes* das Volume, für das Sie Richtlinienänderungen vornehmen möchten, und wählen Sie das Menü Aktionenimage:icon-action.png["Symbol „Aktionen“"] am Ende der Zeile und wählen Sie *Sicherungsstrategie bearbeiten*.
+. Suchen Sie im Menü *Volumes* das Volume, dessen Richtlinieneinstellungen Sie ändern möchten, und wählen Sie dann das Menü „Aktionen“ aus. image:icon-action.png["Symbol „Aktionen“"] Am Ende der Zeile und wählen Sie *Backup-Strategie bearbeiten*.
 . Auf der Seite „Sicherungsstrategie bearbeiten“ können Sie die vorhandenen Sicherungsrichtlinien für lokale Snapshots, replizierte Volumes und Sicherungsdateien ändern und anschließend „Weiter“ auswählen.
 +
 Wenn Sie beim Aktivieren von NetApp Backup and Recovery für diesen Cluster in der anfänglichen Sicherungsrichtlinie _DataLock und Ransomware Resilience_ für Cloud-Sicherungen aktiviert haben, werden Ihnen nur andere Richtlinien angezeigt, die mit DataLock konfiguriert wurden.  Und wenn Sie beim Aktivieren von NetApp Backup and Recovery_DataLock und Ransomware Resilience_ nicht aktiviert haben, werden Ihnen nur andere Cloud-Backup-Richtlinien angezeigt, für die DataLock nicht konfiguriert ist.
@@ -85,7 +85,7 @@ Wenn Sie mit mehreren Volumes arbeiten, müssen alle Volumes die folgenden gemei
 * gleicher Typ (Lese-/Schreib- oder Datenschutz-Volume)
 
 
-Wenn mehr als fünf Volumes für die Sicherung aktiviert sind, initialisiert NetApp Backup and Recovery jeweils nur fünf Volumes.  Wenn diese abgeschlossen sind, wird der nächste Stapel mit fünf Unteraufträgen erstellt, um den nächsten Satz zu starten, und der Vorgang wird fortgesetzt, bis alle Datenträger initialisiert sind.
+Wenn mehr als fünf Volumes für die Sicherung aktiviert sind, initialisiert NetApp Backup and Recovery jeweils nur fünf Volumes. Wenn diese abgeschlossen sind, wird der Vorgang in Gruppen von 5 fortgesetzt, bis alle Volumes initialisiert sind.
 
 .Schritte
 . Filtern Sie auf der Registerkarte *Volumes* nach dem System, auf dem sich die Volumes befinden.
@@ -120,7 +120,7 @@ Wenn Sie beim Aktivieren von NetApp Backup and Recovery für diesen Cluster in d
 
 Sie können jederzeit ein On-Demand-Backup erstellen, um den aktuellen Status des Volumes zu erfassen.  Dies kann nützlich sein, wenn sehr wichtige Änderungen an einem Volume vorgenommen wurden und Sie nicht auf die nächste geplante Sicherung warten möchten, um diese Daten zu schützen.  Sie können diese Funktion auch verwenden, um eine Sicherung für ein Volume zu erstellen, das derzeit nicht gesichert wird und dessen aktuellen Status Sie erfassen möchten.
 
-Sie können einen Ad-hoc-Snapshot oder eine Sicherung eines Volumes erstellen. Sie können kein Ad-hoc-repliziertes Volume erstellen.
+Sie können einen Ad-hoc-Snapshot oder eine Sicherung eines Volumes im Objektspeicher erstellen. Es ist nicht möglich, ein ad hoc repliziertes Volume zu erstellen.
 
 Der Sicherungsname enthält den Zeitstempel, sodass Sie Ihre On-Demand-Sicherung von anderen geplanten Sicherungen unterscheiden können.
 
