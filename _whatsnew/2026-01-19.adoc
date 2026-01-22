@@ -22,8 +22,6 @@ Diese Version von VMware-Workloads bietet die folgenden erweiterten Funktionen:
 * Sie können jetzt Gastbetriebssystemdateien und -ordner wiederherstellen.
 
 
-https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["Erfahren Sie mehr über die Wiederherstellung von VMware-VMs mit NetApp Backup and Recovery."]Die
-
 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-restore-guest-files-and-folders-overview.html["Erfahren Sie mehr über das Wiederherstellen von Gastdateien und -ordnern."]Die
 
 
@@ -32,8 +30,8 @@ https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-restor
 
 Diese Version von Hyper-V-Workloads bietet die folgenden erweiterten Funktionen:
 
-* Sie können nun Hyper-V VM-Backups und Snapshots an einem alternativen Speicherort wiederherstellen. Dies ist nützlich, wenn Sie Versionen einer VM auf verschiedenen Hyper-V-Hosts verwalten möchten.
-* Von System Center Virtual Machine Manager (SCVMM) bereitgestellte und auf einer CIFS-Freigabe gehostete Hyper-V-VMs werden jetzt von NetApp Backup and Recovery unterstützt.
+* Sie können jetzt Hyper-V-VM-Backups und -Snapshots an einem alternativen Speicherort wiederherstellen. Nutzen Sie diese Funktion, um VM-Versionen auf verschiedenen Hyper-V-Hosts zu verwalten.
+* NetApp Backup und Recovery unterstützt jetzt Hyper-V-VMs, die von System Center Virtual Machine Manager (SCVMM) bereitgestellt und auf einer CIFS-Freigabe gehostet werden.
 * Sie können nun Schutzgruppen bearbeiten.
 
 
@@ -46,6 +44,6 @@ https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-restor
 
 === Vorschau der Verbesserungen für KVM-Workloads
 
-Die Vorschau für KVM-Workloads unterstützt jetzt die Integration mit der Apache CloudStack-Managementplattform, sodass Sie KVM-Hosts und virtuelle Maschinen schützen können, die von Apache CloudStack verwaltet werden.
+Die KVM-Workload-Vorschau schützt jetzt KVM-Hosts und virtuelle Maschinen, die von Apache CloudStack verwaltet werden.
 
 Weitere Informationen zum Schutz von KVM-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Übersicht über den Schutz von KVM-Workloads"] .
