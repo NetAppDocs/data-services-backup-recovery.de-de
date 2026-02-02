@@ -463,7 +463,6 @@
   <block id="27e92fcddc23071f7a376e1c06fa20d6" category="list-text">MetroCluster -Unterstützung:</block>
   <block id="fa5ec1bbbde705a6b3fbd36d5f35b9f9" category="list-text">Wenn Sie ONTAP 9.12.1 GA oder höher verwenden, wird die Sicherung unterstützt, wenn eine Verbindung zum primären System besteht.  Die gesamte Backup-Konfiguration wird auf das sekundäre System übertragen, sodass die Backups in die Cloud nach der Umstellung automatisch fortgesetzt werden.  Sie müssen auf dem sekundären System kein Backup einrichten (tatsächlich ist dies nicht möglich).</block>
   <block id="a1e9108dbd21ffa07a61d3c3e7ecf506" category="list-text">Wenn Sie ONTAP 9.12.0 und früher verwenden, wird die Sicherung nur vom sekundären ONTAP System unterstützt.</block>
-  <block id="6413e2887d9fc1bca42a1d8fa137281d" category="list-text">Sicherungen von FlexGroup -Volumes werden derzeit nicht unterstützt.</block>
   <block id="ff65f252d2a0aa40e634cf2ad7eaa2d3" category="list-text">Die Ad-hoc-Volume-Sicherung mit der Schaltfläche „Jetzt sichern“ wird auf Datensicherungsvolumes nicht unterstützt.</block>
   <block id="3dd0180637528cde8671a0c957cf90da" category="list-text">SM-BC-Konfigurationen werden nicht unterstützt.</block>
   <block id="28014e4f484f0639d9b0151965328912" category="list-text">ONTAP unterstützt kein Fan-Out von SnapMirror -Beziehungen von einem einzelnen Volume auf mehrere Objektspeicher. Daher wird diese Konfiguration von NetApp Backup and Recovery nicht unterstützt.</block>
@@ -4974,4 +4973,5 @@
   <block id="f411222cfe4404b6e0b3d9790460b804" category="list-text">Sie können jetzt Hyper-V-VM-Backups und -Snapshots an einem alternativen Speicherort wiederherstellen. Nutzen Sie diese Funktion, um VM-Versionen auf verschiedenen Hyper-V-Hosts zu verwalten.</block>
   <block id="83de53928b74eea738d883969ca231fa" category="list-text">NetApp Backup und Recovery unterstützt jetzt Hyper-V-VMs, die von System Center Virtual Machine Manager (SCVMM) bereitgestellt und auf einer CIFS-Freigabe gehostet werden.</block>
   <block id="fe3a06f4a23ebd296fcaecd751b29ac6" category="paragraph">Die KVM-Workload-Vorschau schützt jetzt KVM-Hosts und virtuelle Maschinen, die von Apache CloudStack verwaltet werden.</block>
+  <block id="e82f8585939ff44aeed4d4c863058cee" category="list-text">Ab ONTAP 9.18.1 werden FlexGroup-Volume-Backups in MetroCluster-Konfigurationen unterstützt.</block>
 </blocks>

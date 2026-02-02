@@ -83,7 +83,7 @@ Eine Erklärung zu diesen Verschlüsselungsarten finden Sie unterhttps://docs.ne
 +
 ** Wenn Sie ONTAP 9.12.1 GA oder höher verwenden, wird die Sicherung unterstützt, wenn eine Verbindung zum primären System besteht.  Die gesamte Backup-Konfiguration wird auf das sekundäre System übertragen, sodass die Backups in die Cloud nach der Umstellung automatisch fortgesetzt werden.  Sie müssen auf dem sekundären System kein Backup einrichten (tatsächlich ist dies nicht möglich).
 ** Wenn Sie ONTAP 9.12.0 und früher verwenden, wird die Sicherung nur vom sekundären ONTAP System unterstützt.
-** Sicherungen von FlexGroup -Volumes werden derzeit nicht unterstützt.
+** Ab ONTAP 9.18.1 werden FlexGroup-Volume-Backups in MetroCluster-Konfigurationen unterstützt.
 
 
 * Die Ad-hoc-Volume-Sicherung mit der Schaltfläche „Jetzt sichern“ wird auf Datensicherungsvolumes nicht unterstützt.
