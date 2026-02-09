@@ -1,0 +1,227 @@
+---
+sidebar: sidebar 
+permalink: br-use-back-up-now-kubernetes-applications-cr.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, snapcenter 
+summary: 'NetApp Backup and Recovery ermöglicht es Ihnen, Kubernetes-Anwendungen mithilfe von benutzerdefinierten Ressourcen (CRs) manuell zu sichern.' 
+---
+= Sichern Sie jetzt Kubernetes-Anwendungen mithilfe benutzerdefinierter Ressourcen in Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Backup and Recovery ermöglicht es Ihnen, Kubernetes-Anwendungen mithilfe von benutzerdefinierten Ressourcen (CRs) manuell zu sichern.
+
+
+
+== Sichern Sie jetzt eine Kubernetes-Anwendung mithilfe benutzerdefinierter Ressourcen
+
+Erstellen Sie manuell ein Backup einer Kubernetes-Anwendung, um eine Basis für zukünftige Backups und Snapshots zu schaffen oder um sicherzustellen, dass die aktuellsten Daten geschützt sind.
+
+
+NOTE: Clusterbezogene Ressourcen werden in eine Sicherung, einen Snapshot oder einen Klon aufgenommen, wenn sie in der Anwendungsdefinition explizit referenziert werden oder wenn sie Verweise auf einen der Anwendungs-Namespaces enthalten.
+
+.Bevor Sie beginnen
+Stellen Sie sicher, dass die Gültigkeitsdauer des AWS-Sitzungstokens für alle länger laufenden s3-Backup-Vorgänge ausreichend ist. Wenn das Token während des Backup-Vorgangs abläuft, kann der Vorgang fehlschlagen.
+
+* Weitere Informationen zum Prüfen des Ablaufs des aktuellen Sitzungstokens finden Sie in der https://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html["AWS API-Dokumentation"^].
+* Weitere Informationen zu Anmeldeinformationen für AWS-Ressourcen finden Sie im  https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html["AWS IAM-Dokumentation"^].
+
+
+
+
+=== Erstellen Sie einen lokalen Snapshot mithilfe einer benutzerdefinierten Ressource
+
+Um einen Snapshot Ihrer Kubernetes-Anwendung zu erstellen und lokal zu speichern, verwenden Sie die benutzerdefinierte Ressource Snapshot mit spezifischen Attributen.
+
+.Schritte
+. Erstellen Sie die benutzerdefinierte Ressourcendatei (CR) und benennen Sie sie `local-snapshot-cr.yaml`.
+. Konfigurieren Sie in der von Ihnen erstellten Datei die folgenden Attribute:
++
+** *metadata.name*: (_Erforderlich_) Der Name dieser benutzerdefinierten Ressource; wählen Sie einen eindeutigen und sinnvollen Namen für Ihre Umgebung.
+** *spec.applicationRef*: Der Kubernetes-Name der Anwendung, für die ein Snapshot erstellt werden soll.
+** *spec.appVaultRef*: (_Erforderlich_) Der Name des AppVault, wo die Snapshot-Inhalte (Metadaten) gespeichert werden sollen.
+** *spec.reclaimPolicy*: (_Optional_) Definiert, was mit dem AppArchive eines Snapshots geschieht, wenn die Snapshot-CR gelöscht wird. Das bedeutet, dass selbst wenn auf `Retain` gesetzt, der Snapshot gelöscht wird. Gültige Optionen:
++
+*** `Retain` (Standard)
+*** `Delete`
++
+[source, yaml]
+----
+apiVersion: protect.trident.netapp.io/v1
+kind: Snapshot
+metadata:
+  namespace: my-app-namespace
+  name: local-snapshot-cr
+spec:
+  applicationRef: my-application
+  appVaultRef: appvault-name
+  reclaimPolicy: Retain
+----
+
+
+
+
+. Nachdem Sie die  `local-snapshot-cr.yaml` Datei mit den korrekten Werten gefüllt haben, wenden Sie die CR an:
++
+[source, console]
+----
+kubectl apply -f local-snapshot-cr.yaml
+----
+
+
+
+
+=== Sichern Sie eine Anwendung in einem Objektspeicher mithilfe einer benutzerdefinierten Ressource
+
+Erstellen Sie eine Backup-CR mit spezifischen Attributen, um Ihre Anwendung in einem Objektspeicher zu sichern.
+
+.Schritte
+. Erstellen Sie die benutzerdefinierte Ressourcendatei (CR) und benennen Sie sie  `object-store-backup-cr.yaml`.
+. Konfigurieren Sie in der von Ihnen erstellten Datei die folgenden Attribute:
++
+** *metadata.name*: (_Erforderlich_) Der Name dieser benutzerdefinierten Ressource; wählen Sie einen eindeutigen und sinnvollen Namen für Ihre Umgebung.
+** *spec.applicationRef*: (_Erforderlich_) Der Kubernetes-Name der zu sichernden Anwendung.
+** *spec.appVaultRef*: (_Erforderlich, schließt sich gegenseitig mit spec.appVaultTargetsRef aus_) Wenn Sie denselben Bucket zum Speichern des Snapshots und des Backups verwenden, ist dies der Name des AppVault, in dem die Backup-Inhalte gespeichert werden sollen.
+** *spec.appVaultTargetsRef*: (_Erforderlich, schließt sich gegenseitig mit spec.appVaultRef aus_) Wenn Sie unterschiedliche Buckets zum Speichern des Snapshots und des Backups verwenden, ist dies der Name des AppVault, in dem die Backup-Inhalte gespeichert werden sollen.
+** *spec.dataMover*: (_Optional_) Eine Zeichenkette, die angibt, welches Sicherungstool für den Sicherungsvorgang verwendet werden soll. Der Wert ist Groß-/Kleinschreibung und muss `CBS` sein.
+** *spec.reclaimPolicy*: (_Optional_) Definiert, was mit den Sicherungsinhalten (Metadaten/Volume-Daten) geschieht, wenn die Backup-CR gelöscht wird. Mögliche Werte:
++
+*** `Delete`
+*** `Retain` (Standard)
+
+
+** *spec.cleanupSnapshot*: (_Erforderlich_) Stellt sicher, dass der vom Backup CR erstellte temporäre Snapshot nach Abschluss des Sicherungsvorgangs nicht gelöscht wird. Empfohlener Wert: `false`.
++
+Beispiel-YAML bei Verwendung desselben Buckets zum Speichern des Snapshots und des Backups:
+
++
+[source, yaml]
+----
+apiVersion: protect.trident.netapp.io/v1
+kind: Backup
+metadata:
+  namespace: my-app-namespace
+  name: my-cr-name
+spec:
+  applicationRef: my-application
+  appVaultRef: appvault-name
+  dataMover: CBS
+  reclaimPolicy: Retain
+  cleanupSnapshot: false
+----
++
+Beispiel-YAML bei Verwendung unterschiedlicher Buckets zum Speichern des Snapshots und des Backups:
+
++
+[source, yaml]
+----
+apiVersion: protect.trident.netapp.io/v1
+kind: Backup
+metadata:
+  namespace: my-app-namespace
+  name: object-store-backup-cr
+spec:
+  applicationRef: my-application
+  appVaultTargetsRef: appvault-targets-name
+  dataMover: CBS
+  reclaimPolicy: Retain
+  cleanupSnapshot: false
+----
+
+
+. Nachdem Sie die  `object-store-backup-cr.yaml` Datei mit den korrekten Werten gefüllt haben, wenden Sie die CR an:
++
+[source, console]
+----
+kubectl apply -f object-store-backup-cr.yaml
+----
+
+
+
+
+=== Erstellen Sie ein 3-2-1-Fanout-Backup mithilfe einer benutzerdefinierten Ressource
+
+Bei der Datensicherung mit einer 3-2-1-Fanout-Architektur wird eine Sicherung sowohl auf einem Sekundärspeicher als auch in einem Objektspeicher erstellt. Um eine 3-2-1-Fanout-Sicherung zu erstellen, erstellen Sie ein Backup CR mit bestimmten Attributen.
+
+.Schritte
+. Erstellen Sie die benutzerdefinierte Ressourcendatei (CR) und benennen Sie sie  `3-2-1-fanout-backup-cr.yaml`.
+. Konfigurieren Sie in der von Ihnen erstellten Datei die folgenden Attribute:
++
+** *metadata.name*: (_Erforderlich_) Der Name dieser benutzerdefinierten Ressource; wählen Sie einen eindeutigen und sinnvollen Namen für Ihre Umgebung.
+** *spec.applicationRef*: (_Erforderlich_) Der Kubernetes-Name der zu sichernden Anwendung.
+** *spec.appVaultTargetsRef*: (_Erforderlich_) Der Name des AppVault, wo die Sicherungsinhalte gespeichert werden sollen.
+** *spec.dataMover*: (_Optional_) Eine Zeichenkette, die angibt, welches Sicherungstool für den Sicherungsvorgang verwendet werden soll. Der Wert ist Groß-/Kleinschreibung und muss `CBS` sein.
+** *spec.reclaimPolicy*: (_Optional_) Definiert, was mit den Sicherungsinhalten (Metadaten/Volume-Daten) geschieht, wenn die Backup-CR gelöscht wird. Mögliche Werte:
++
+*** `Delete`
+*** `Retain` (Standard)
+
+
+** *spec.cleanupSnapshot*: (_Erforderlich_) Stellt sicher, dass der vom Backup CR erstellte temporäre Snapshot nach Abschluss des Sicherungsvorgangs nicht gelöscht wird. Empfohlener Wert: `false`.
+** *spec.replicateSnapshot*: (_Erforderlich_) Weist Backup and Recovery an, den Snapshot auf den Sekundärspeicher zu replizieren. Erforderlicher Wert: `true`.
+** *spec.replicateSnapshotReclaimPolicy*: (_Optional_) Definiert, was mit dem replizierten Snapshot geschieht, wenn er gelöscht wird. Mögliche Werte:
++
+*** `Delete`
+*** `Retain` (Standard)
++
+Beispiel YAML:
+
++
+[source, yaml]
+----
+apiVersion: protect.trident.netapp.io/v1
+kind: Backup
+metadata:
+  namespace: my-app-namespace
+  name: 3-2-1-fanout-backup-cr
+spec:
+  applicationRef: my-application
+  appVaultTargetsRef: appvault-targets-name
+  dataMover: CBS
+  reclaimPolicy: Retain
+  cleanupSnapshot: false
+  replicateSnapshot: true
+  replicateSnapshotReclaimPolicy: Retain
+----
+
+
+
+
+. Nachdem Sie die  `3-2-1-fanout-backup-cr.yaml` Datei mit den korrekten Werten gefüllt haben, wenden Sie die CR an:
++
+[source, console]
+----
+kubectl apply -f 3-2-1-fanout-backup-cr.yaml
+----
+
+
+
+
+== Unterstützte Sicherungsanmerkungen
+
+Die folgende Tabelle beschreibt die Anmerkungen, die Sie beim Erstellen eines Backup-CR verwenden können.
+
+[cols="2,1,3,1"]
+|===
+| Anmerkung | Typ | Beschreibung | Standardwert 
+
+
+| protect.trident.netapp.io/full-backup | Zeichenkette | Legt fest, ob eine Sicherung nicht inkrementell sein soll. Setzen Sie auf  `true`, um eine nicht inkrementelle Sicherung zu erstellen. Es ist bewährte Praxis, regelmäßig eine vollständige Sicherung durchzuführen und dazwischen inkrementelle Sicherungen zu erstellen, um das mit Wiederherstellungen verbundene Risiko zu minimieren. | "false" 
+
+
+| protect.trident.netapp.io/snapshot-completion-timeout | Zeichenkette | Die maximal zulässige Zeit für den Abschluss des gesamten Snapshot-Vorgangs. | "60m" 
+
+
+| protect.trident.netapp.io/volume-snapshots-ready-to-use-timeout | Zeichenkette | Die maximal zulässige Zeitspanne, bis Volume-Snapshots den einsatzbereiten Zustand erreichen. | "30m" 
+
+
+| protect.trident.netapp.io/volume-snapshots-created-timeout | Zeichenkette | Die maximal zulässige Zeit für die Erstellung von Volume-Snapshots. | "5m" 
+
+
+| protect.trident.netapp.io/pvc-bind-timeout-sec | Zeichenkette | Maximale Zeit (in Sekunden), die gewartet wird, bis neu erstellte PersistentVolumeClaims (PVCs) die  `Bound` Phase erreichen, bevor die Operation fehlschlägt. | "1200" (20 Minuten) 
+|===

@@ -77,7 +77,7 @@ Verwenden Sie NetApp Backup and Recovery, um die folgenden Ziele zu erreichen:
 ** Siehelink:br-use-hyperv-protect-overview.html["Schützen Sie Hyper-V-Workloads"] .
 
 
-* *Oracle-Workloads (Vorschau)*:
+* *Oracle Database workloads (Vorschau)*:
 +
 ** Sichern und Wiederherstellen von Datenbanken und Protokollen
 ** Verwenden Sie Schutzgruppen, um Sicherungsaufgaben zu verwalten
@@ -85,7 +85,7 @@ Verwenden Sie NetApp Backup and Recovery, um die folgenden Ziele zu erreichen:
 ** Schutz einer Datenbank mit einer 3-2-1-Backup-Architektur
 ** Konfigurieren der Sicherungsaufbewahrung
 ** Mounten und Unmounten von ARCHIVELOG-Backups
-** Siehelink:br-use-oracle-protect-overview.html["Schützen Sie Oracle-Workloads"] .
+** Siehe link:br-use-oracle-protect-overview.html["Oracle Database-Workloads schützen"].
 
 
 * *Kubernetes-Workloads (Vorschau)*:
@@ -148,6 +148,8 @@ Da NetApp Backup and Recovery die Speichereffizienz des Quellvolumes beibehält,
 *Servicegebühren*
 
 Bei ONTAP Volume-Workloads werden Ihnen nur die Volumes in Rechnung gestellt, die durch Objektspeicher geschützt sind. Die Gebühren basieren auf der logischen Nutzkapazität der Quell ONTAP -Volumes vor Anwendung von Effizienzmaßnahmen, auch bekannt als Front-End-Terabytes (FETB).
+
+Für Kubernetes-Workloads werden die Gebühren basierend auf der kombinierten Größe aller persistenten Volumes berechnet.
 
 Für alle anderen Workloads werden Ihnen Ressourcen in Rechnung gestellt, die auf mindestens einem sekundären Speicherziel oder Objektspeicherziel geschützt sind. Die Gebühren werden anhand der logischen Größe der Quell-Workload berechnet. Bei Datenbanken bedeutet dies die Datenbankgröße; bei VMs die VM-Größe.
 

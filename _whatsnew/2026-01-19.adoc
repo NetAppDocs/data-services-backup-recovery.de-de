@@ -10,7 +10,7 @@ Diese Version der ONTAP Volume-Workloads führt die folgenden erweiterten Funkti
 
 *Unterstützung für mehrere Buckets*: (Private Vorschau) Ab ONTAP 9.17.1 und neueren Versionen können Sie nun die Volumes innerhalb eines Systems mit bis zu 6 Buckets pro System über verschiedene Cloud-Anbieter hinweg schützen.
 
-link:prev-ontap-backup-manage.html["Erfahren Sie mehr über die Sicherung von ONTAP Volume-Daten mit NetApp Backup and Recovery."]Die
+link:https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-backup-manage.html["Erfahren Sie mehr über die Sicherung von ONTAP Volume-Daten mit NetApp Backup and Recovery."].
 
 
 

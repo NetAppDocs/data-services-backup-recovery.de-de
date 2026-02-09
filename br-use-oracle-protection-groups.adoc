@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: br-use-oracle-protection-groups.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle, database, workloads, volumes, snapshots 
-summary: Erstellen und verwalten Sie Schutzgruppen für Oracle-Workloads in NetApp Backup and Recovery. 
+summary: Erstellen und Verwalten von Schutzgruppen für Oracle Database-Workloads in NetApp Backup und Recovery. 
 ---
-= Erstellen und verwalten Sie Schutzgruppen für Oracle-Workloads mit NetApp Backup and Recovery
+= Erstellen und Verwalten von Schutzgruppen für Oracle-Datenbank-Workloads mit NetApp Backup und Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -20,7 +20,7 @@ Sie können die folgenden Aufgaben im Zusammenhang mit Schutzgruppen ausführen:
 
 * Erstellen Sie eine Schutzgruppe.
 * Schutzdetails anzeigen.
-* Sichern Sie jetzt eine Schutzgruppe. Sehenlink:br-use-kvm-backup.html["Sichern Sie jetzt Oracle-Workloads"] .
+* Sichern Sie jetzt eine Schutzgruppe. Siehe link:br-use-kvm-backup.html["Sichern Sie jetzt Oracle Database Workloads"].
 * Löschen Sie eine Schutzgruppe.
 
 

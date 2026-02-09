@@ -28,6 +28,10 @@ Der erste Schritt zum Schutz von Kubernetes-Anwendungen besteht darin, eine Anwe
 .Bevor Sie beginnen
 Bevor Sie eine Kubernetes-Anwendung hinzufügen und schützen können, müssen Sielink:br-start-discover.html["Kubernetes-Workloads entdecken"] .
 
+[role="tabbed-block"]
+====
+.Fügen Sie eine Anwendung über die Web-Benutzeroberfläche hinzu
+--
 .Schritte
 . Wählen Sie in NetApp Backup and Recovery*Inventar* aus.
 . Wählen Sie eine Kubernetes-Instanz und wählen Sie *Anzeigen*, um die mit dieser Instanz verknüpften Ressourcen anzuzeigen.
@@ -58,41 +62,130 @@ NOTE: Die Konsole speichert die Suchparameter oder Ergebnisse nicht. Die Paramet
 .Ergebnis
 Die Anwendung wird erstellt und in der Liste der Anwendungen auf der Registerkarte *Anwendungen* des Kubernetes-Inventars angezeigt.  Die NetApp Console ermöglicht den Schutz der Anwendung basierend auf Ihren Einstellungen und Sie können den Fortschritt im Bereich *Überwachung* der Sicherung und Wiederherstellung überwachen.
 
-
-
-== Schützen einer vorhandenen Kubernetes-Anwendung
-
-Aktivieren Sie eine Schutzrichtlinie für eine Kubernetes-Anwendung, die Sie bereits hinzugefügt haben.
-
+--
+.Fügen Sie eine Anwendung mithilfe eines CR hinzu
+--
 .Schritte
-. Wählen Sie in NetApp Backup and Recovery*Inventar* aus.
-. Wählen Sie eine Kubernetes-Instanz und wählen Sie *Anzeigen*, um die mit dieser Instanz verknüpften Ressourcen anzuzeigen.
-. Wählen Sie die Registerkarte *Anwendungen*.
-. Wählen Sie in der Anwendungsliste eine Anwendung aus, die Sie schützen möchten, und wählen Sie das zugehörige Aktionsmenü.
-. Wählen Sie *Schützen*.
-. Wählen Sie im Bereich *Richtlinie* eine vorhandene Schutzrichtlinie zum Schutz der Anwendung aus oder erstellen Sie eine neue Richtlinie. Siehelink:br-use-policies-create.html#create-a-policy["Erstellen einer Richtlinie"] Weitere Informationen zum Erstellen von Schutzrichtlinien finden Sie unter.
-. Aktivieren und konfigurieren Sie im Bereich *Prescripts und Postscripts* alle Prescript- oder Postscript-Ausführungs-Hooks, die Sie vor oder nach Sicherungsvorgängen ausführen möchten.  Sie können den Typ des Ausführungs-Hooks, die verwendete Vorlage, Argumente und Label-Selektoren konfigurieren.
-. Wählen Sie *Fertig*.
+. Erstellen Sie die CR-Datei der Zielanwendung:
++
+.. Erstellen Sie die benutzerdefinierte Ressourcendatei (CR) und benennen Sie sie (zum Beispiel  `my-app-name.yaml`).
+.. Konfigurieren Sie die folgenden Attribute:
++
+*** *metadata.name*: (_Erforderlich_) Der Name der benutzerdefinierten Anwendungsressource. Merken Sie sich den Namen, den Sie wählen, da andere für Schutzvorgänge benötigte CR-Dateien auf diesen Wert verweisen.
+*** *spec.includedNamespaces*: (_Erforderlich_) Verwenden Sie Namespace und Label-Selektor, um die Namespaces und Ressourcen anzugeben, die die Anwendung verwendet. Der Anwendungsnamespace muss Teil dieser Liste sein. Der Label-Selektor ist optional und kann verwendet werden, um Ressourcen innerhalb jedes angegebenen Namespace zu filtern.
+*** *spec.includedClusterScopedResources*: (_Optional_) Verwenden Sie dieses Attribut, um Cluster-Scoped-Ressourcen anzugeben, die in die Anwendungsdefinition aufgenommen werden sollen. Mit diesem Attribut können Sie diese Ressourcen anhand ihrer Gruppe, Version, Art und Bezeichnungen auswählen.
++
+**** *groupVersionKind*: (_Erforderlich_) Gibt die API-Gruppe, die Version und die Art der clusterweiten Ressource an.
+**** *labelSelector*: (_Optional_) Filtert die clusterweiten Ressourcen anhand ihrer Labels.
 
 
-.Ergebnis
-Die Konsole ermöglicht den Schutz der Anwendung basierend auf Ihren Einstellungen und Sie können den Fortschritt im Bereich *Überwachung* der Sicherung und Wiederherstellung überwachen.  Sobald Sie den Schutz für eine Anwendung aktivieren, erstellt die Konsole eine vollständige Sicherung der Anwendung. Alle zukünftigen inkrementellen Backups werden basierend auf dem Zeitplan erstellt, den Sie in der zugehörigen Schutzrichtlinie festgelegt haben.
+
+
+.. Konfigurieren Sie die folgenden Annotationen, falls erforderlich:
++
+*** *metadata.annotations.protect.trident.netapp.io/skip-vm-freeze*: (_Optional_) Diese Annotation ist nur für Anwendungen relevant, die von virtuellen Maschinen aus definiert werden, z. B. in KubeVirt-Umgebungen, in denen das Dateisystem vor Snapshots eingefroren wird. Legen Sie fest, ob diese Anwendung während eines Snapshots auf das Dateisystem schreiben darf. Ist die Option auf true gesetzt, ignoriert die Anwendung die globale Einstellung und kann während eines Snapshots auf das Dateisystem schreiben. Ist die Option auf false gesetzt, ignoriert die Anwendung die globale Einstellung und das Dateisystem wird während eines Snapshots eingefroren. Wird die Option angegeben, die Anwendung hat jedoch keine virtuellen Maschinen in der Anwendungsdefinition, wird die Annotation ignoriert. Wird sie nicht angegeben, folgt die Anwendung der link:trident-protect-requirements.html#protecting-data-with-kubevirt-vms["Einstellung für das globale Dateisystem-Freeze"].
+*** *protect.trident.netapp.io/protection-command*: (_Optional_) Verwenden Sie diese Annotation, um Backup and Recovery anzuweisen, die Anwendung zu schützen oder den Schutz zu beenden. Die möglichen Werte sind `protect` oder `unprotect`.
+*** *protect.trident.netapp.io/protection-policy-name*: (_Optional_) Verwenden Sie diese Annotation, um den Namen der Backup und Recovery Datensicherungsstrategie anzugeben, die Sie zum Schutz dieser Anwendung verwenden möchten. Diese Datensicherungsstrategie muss bereits in Backup und Recovery vorhanden sein.
++
+[NOTE]
+====
+Falls Sie diese Annotation nachträglich anwenden müssen, nachdem eine Anwendung bereits erstellt wurde, können Sie den folgenden Befehl verwenden:
+
+[source, console]
+----
+kubectl annotate application -n <application CR namespace> <application CR name> protect.trident.netapp.io/skip-vm-freeze="true"
+----
+====
++
+Beispiel YAML:
+
++
+[source, yaml]
+----
+apiVersion: protect.trident.netapp.io/v1
+kind: Application
+metadata:
+  annotations:
+    protect.trident.netapp.io/skip-vm-freeze: "false"
+    protect.trident.netapp.io/protection-command: "protect"
+    protect.trident.netapp.io/protection-policy-name: "policy-name"
+  name: my-app-name
+  namespace: my-app-namespace
+spec:
+  includedNamespaces:
+    - namespace: namespace-1
+      labelSelector:
+        matchLabels:
+          app: example-app
+    - namespace: namespace-2
+      labelSelector:
+        matchLabels:
+          app: another-example-app
+  includedClusterScopedResources:
+    - groupVersionKind:
+        group: rbac.authorization.k8s.io
+        kind: ClusterRole
+        version: v1
+      labelSelector:
+        matchLabels:
+          mylabel: test
+----
 
 
 
-== Sichern Sie jetzt eine Kubernetes-Anwendung
 
-Erstellen Sie manuell ein Backup einer Kubernetes-Anwendung, um eine Basis für zukünftige Backups und Snapshots zu schaffen oder um sicherzustellen, dass die aktuellsten Daten geschützt sind.
+. (_Optional_) Fügen Sie eine Filterung hinzu, die Ressourcen mit bestimmten Labels ein- oder ausschließt:
++
+** *resourceFilter.resourceSelectionCriteria*: (Für die Filterung erforderlich) Verwenden Sie  `Include` oder  `Exclude`, um eine in resourceMatchers definierte Ressource ein- oder auszuschließen. Fügen Sie die folgenden resourceMatchers Parameter hinzu, um die Ressourcen zu definieren, die ein- oder auszuschließen sind:
++
+*** *resourceFilter.resourceMatchers*: Ein Array von resourceMatcher-Objekten. Wenn Sie mehrere Elemente in diesem Array definieren, werden diese mit einer ODER-Verknüpfung verglichen und die Felder innerhalb jedes Elements (group, kind, version) werden mit einer UND-Verknüpfung verglichen.
++
+**** *resourceMatchers[].group*: (_Optional_) Gruppe der zu filternden Ressource.
+**** *resourceMatchers[].kind*: (_Optional_) Art der zu filternden Ressource.
+**** *resourceMatchers[].version*: (_Optional_) Version der zu filternden Ressource.
+**** *resourceMatchers[].names*: (_Optional_) Namen im Kubernetes metadata.name-Feld der Ressource, die gefiltert werden soll.
+**** *resourceMatchers[].namespaces*: (_Optional_) Namespaces im Kubernetes metadata.name-Feld der Ressource, die gefiltert werden soll.
+**** *resourceMatchers[].labelSelectors*: (_Optional_) Label-Selektorzeichenfolge im Kubernetes-Metadatenfeld name der Ressource, wie definiert in der https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors["Kubernetes-Dokumentation"^]. Zum Beispiel: `"trident.netapp.io/os=linux"`.
++
 
-.Schritte
-. Wählen Sie in NetApp Backup and Recovery*Inventar* aus.
-. Wählen Sie eine Kubernetes-Instanz und wählen Sie *Anzeigen*, um die mit dieser Instanz verknüpften Ressourcen anzuzeigen.
-. Wählen Sie die Registerkarte *Anwendungen*.
-. Wählen Sie in der Anwendungsliste eine Anwendung aus, die Sie sichern möchten, und wählen Sie das zugehörige Aktionsmenü.
-. Wählen Sie *Jetzt sichern*.
-. Stellen Sie sicher, dass der richtige Anwendungsname ausgewählt ist.
-. Wählen Sie *Sichern*.
+NOTE: Wenn sowohl  `resourceFilter` als auch  `labelSelector` verwendet werden, wird  `resourceFilter` zuerst ausgeführt und anschließend  `labelSelector` auf die resultierenden Ressourcen angewendet.
+
++
+Beispiel:
+
++
+[source, yaml]
+----
+spec:
+  resourceFilter:
+    resourceSelectionCriteria: "Include"
+    resourceMatchers:
+      - group: my-resource-group-1
+        kind: my-resource-kind-1
+        version: my-resource-version-1
+        names: ["my-resource-names"]
+        namespaces: ["my-resource-namespaces"]
+        labelSelectors: ["trident.netapp.io/os=linux"]
+      - group: my-resource-group-2
+        kind: my-resource-kind-2
+        version: my-resource-version-2
+        names: ["my-resource-names"]
+        namespaces: ["my-resource-namespaces"]
+        labelSelectors: ["trident.netapp.io/os=linux"]
+----
 
 
-.Ergebnis
-Die Konsole erstellt eine Sicherungskopie der Anwendung und zeigt den Fortschritt im Bereich *Überwachung* von Sicherung und Wiederherstellung an. Das Backup wird basierend auf der mit der Anwendung verknüpften Schutzrichtlinie erstellt.
+
+
+
+
+. Nachdem Sie die Anwendungs-CR erstellt haben, die zu Ihrer Umgebung passt, wenden Sie die CR an. Zum Beispiel:
++
+[source, console]
+----
+kubectl apply -f my-app-name.yaml
+----
+
+
+--
+====

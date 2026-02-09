@@ -104,7 +104,7 @@ Diese Version von NetApp Backup and Recovery bietet Unterstützung für die Erke
 * Oracle-Dashboard-Unterstützung
 
 
-Weitere Informationen zum Schutz von Oracle Database-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Übersicht zum Schützen von Oracle-Workloads"] .
+Weitere Informationen zum Schutz von Oracle Database-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Übersicht über den Schutz von Oracle Database-Workloads"].
 
 
 

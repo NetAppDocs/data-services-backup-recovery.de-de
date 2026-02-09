@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: br-use-oracle-backup.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database, protection group 
-summary: Schützen Sie Ihre Oracle-Workloads mit NetApp Backup und Recovery. 
+summary: Schützen Sie Ihre Oracle-Datenbank-Workloads mit NetApp Backup und Recovery. 
 ---
-= Sichern Sie Oracle-Workloads mit NetApp Backup and Recovery
+= Sichern Sie Oracle-Datenbank-Workloads mit NetApp Backup und Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -19,7 +19,7 @@ Verwenden Sie NetApp Backup and Recovery , um Oracle Database-Schutzgruppen oder
 
 NOTE: Um Schutzgruppen oder einzelne Datenbanken nach einem Zeitplan zu sichern, erstellen Sie Richtlinien, die Sicherungs- und Wiederherstellungsvorgänge verwalten. Sehenlink:br-use-policies-create.html["Erstellen von Richtlinien"] Anweisungen hierzu finden Sie unter.
 
-* Erstellen Sie Schutzgruppen, um die Sicherungs- und Wiederherstellungsvorgänge für eine Reihe von Ressourcen zu verwalten. Sehenlink:br-use-kvm-protection-groups.html["Erstellen und verwalten Sie Schutzgruppen für Oracle-Workloads mit NetApp Backup and Recovery"] für weitere Informationen.
+* Erstellen Sie Schutzgruppen, um die Backup- und Recovery-Vorgänge für eine Gruppe von Ressourcen zu verwalten. Siehe link:br-use-kvm-protection-groups.html["Erstellen und Verwalten von Schutzgruppen für Oracle-Datenbank-Workloads mit NetApp Backup und Recovery"] für weitere Informationen.
 * Sichern Sie jetzt eine Schutzgruppe (erstellen Sie jetzt ein On-Demand-Backup).
 * Sichern Sie jetzt eine Datenbank.
 

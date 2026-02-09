@@ -14,7 +14,7 @@ summary: Sie können virtuelle Oracle-Maschinen von lokalen ONTAP -Systemen bis 
 
 
 [role="lead"]
-Schützen Sie Oracle-Datenbanken und -Protokolle mit NetApp Backup and Recovery.  Erhalten Sie schnelle, platzsparende, absturzkonsistente und datenbankkonsistente Backups und Wiederherstellungen.  Sichern Sie Oracle-Workloads auf AWS S3, NetApp StorageGRID, Azure Blob Storage oder ONTAP S3.  Stellen Sie Sicherungen auf einem lokalen Oracle-Host wieder her.
+Schützen Sie Oracle-Datenbanken und -Protokolle mit NetApp Backup und Recovery. Erhalten Sie schnelle, platzsparende, absturzkonsistente und datenbankkonsistente Backups und Wiederherstellungen. Sichern Sie Oracle Database-Workloads in AWS S3, NetApp StorageGRID, Azure Blob Storage oder ONTAP S3. Stellen Sie Backups auf einem lokalen Oracle-Host wieder her.
 
 Verwenden Sie NetApp Backup and Recovery , um eine 3-2-1-Schutzstrategie zu implementieren, bei der Sie 3 Kopien Ihrer Quelldaten auf 2 verschiedenen Speichersystemen sowie 1 Kopie in der Cloud haben. Zu den Vorteilen des 3-2-1-Ansatzes gehören:
 
@@ -26,10 +26,10 @@ Verwenden Sie NetApp Backup and Recovery , um eine 3-2-1-Schutzstrategie zu impl
 
 NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -UI-Versionen finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zur vorherigen NetApp Backup and Recovery -Benutzeroberfläche"] .
 
-Mit NetApp Backup and Recovery können Sie die folgenden Aufgaben im Zusammenhang mit Oracle-Workloads ausführen:
+Sie können NetApp Backup und Recovery verwenden, um die folgenden Aufgaben im Zusammenhang mit Oracle Database-Workloads durchzuführen:
 
-* link:br-start-discover-oracle.html["Entdecken Sie Oracle-Workloads"]
-* link:br-use-oracle-protection-groups.html["Erstellen und Verwalten von Schutzgruppen für Oracle-Workloads"]
-* link:br-use-oracle-backup.html["Sichern Sie Oracle-Workloads"]
-* link:br-use-oracle-restore.html["Wiederherstellen von Oracle-Workloads"]
+* link:br-start-discover-oracle.html["Oracle Database-Workloads entdecken"]
+* link:br-use-oracle-protection-groups.html["Erstellen und Verwalten von Schutzgruppen für Oracle Database-Workloads"]
+* link:br-use-oracle-backup.html["Oracle-Datenbank-Workloads sichern"]
+* link:br-use-oracle-restore.html["Oracle-Datenbank-Workloads wiederherstellen"]
 

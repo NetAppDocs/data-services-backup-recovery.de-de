@@ -18,7 +18,7 @@ Ein Ausführungs-Hook ist eine benutzerdefinierte Aktion, die mit einem Datensch
 
 [NOTE]
 ====
-NetApp Backup and Recovery friert während der Datensicherung Dateisysteme für Anwendungen wie KubeVirt ein und gibt sie wieder frei.  Sie können dieses Verhalten global oder für bestimmte Anwendungen mithilfe der Trident Protect-Dokumentation deaktivieren:
+NetApp Backup and Recovery friert Dateisysteme für Anwendungen wie KubeVirt während der Datensicherung ein und taut sie wieder auf. Sie können dieses Verhalten global oder für bestimmte Anwendungen mithilfe der Trident Protect Dokumentation deaktivieren:
 
 * Um dieses Verhalten für alle Anwendungen zu deaktivieren, lesen Sie https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-requirements.html#protecting-data-with-kubevirt-vms["Datenschutz mit KubeVirt-VMs"] .
 * Informationen zum Deaktivieren dieses Verhaltens für eine bestimmte Anwendung finden Sie unter https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-manage-applications.html#define-an-application["Definieren einer Anwendung"] .
@@ -105,6 +105,9 @@ Besuchen Sie die https://github.com/NetApp/Verda["NetApp Verda GitHub-Projekt"] 
 == Erstellen einer Ausführungs-Hook-Vorlage
 
 Sie können eine benutzerdefinierte Ausführungs-Hook-Vorlage erstellen, mit der Sie Aktionen vor oder nach einem Datenschutzvorgang für eine Anwendung ausführen können.
+
+
+NOTE: Vorlagen, die Sie hier erstellen, sind nur beim Schutz von Kubernetes-Workloads verwendbar.
 
 .Schritte
 . Gehen Sie in der Konsole zu *Schutz* > *Sicherung und Wiederherstellung*.

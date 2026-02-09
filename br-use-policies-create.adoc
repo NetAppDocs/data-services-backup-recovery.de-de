@@ -36,7 +36,7 @@ Sie können die folgenden Ziele im Zusammenhang mit Richtlinien erreichen:
 . Wählen Sie im NetApp Backup and Recovery -Menü *Richtlinien* aus.
 . Überprüfen Sie diese Richtliniendetails.
 +
-** *Workload*: Beispiele sind Microsoft SQL Server, Volumes, VMware, KVM, Hyper-V oder Kubernetes.
+** *Workload*: Beispiele sind Microsoft SQL Server, Volumes, VMware, KVM, Hyper-V, Oracle Database oder Kubernetes.
 ** *Sicherungstyp*: Beispiele sind vollständige Sicherung und Protokollsicherung.
 ** *Architektur*: Beispiele hierfür sind lokaler Snapshot, Fan-Out, Kaskadierung, Disk-to-Disk und Disk-to-Object-Store.
 ** *Geschützte Ressourcen*: Zeigt an, wie viele Ressourcen der Gesamtressourcen dieser Arbeitslast geschützt sind.
@@ -78,7 +78,7 @@ TIP: Eine Liste der zu vermeidenden Zeichen finden Sie im Hover-Tipp.
 
 ** Abschnitt *Sicherungsarchitektur*: Wählen Sie den Abwärtspfeil und wählen Sie den Datenfluss für die Sicherung, z. B. 3-2-1-Fan-Out, 3-2-1-Kaskade oder Festplatte zu Festplatte.
 +
-*** *3-2-1-Fanout*: Primärspeicher (Festplatte) zu Sekundärspeicher (Festplatte) zu Cloud (Objektspeicher). Erstellt mehrere Kopien von Daten über verschiedene Speichersysteme hinweg, beispielsweise ONTAP zu ONTAP und ONTAP zu-Objektspeicher-Konfigurationen. Dies kann ein Cloud-Hyperscaler-Objektspeicher oder ein privater Objektspeicher sein – StorageGRID. Diese Konfigurationen tragen dazu bei, optimalen Datenschutz und Notfallwiederherstellung zu erreichen.
+*** *3-2-1 fanout*: Primärspeicher (Festplatte) zu Sekundärspeicher (Festplatte) zu Cloud (Objektspeicher). Erstellt mehrere Kopien von Daten auf verschiedenen Speichersystemen, wie ONTAP zu ONTAP und ONTAP zu Objektspeicher-Konfigurationen. Dies kann ein Cloud-Hyperscaler Objektspeicher oder ein privater Objektspeicher sein. Diese Konfigurationen helfen dabei, optimalen Datenschutz und Notfallwiederherstellung zu erreichen.
 +
 
 NOTE: Diese Option ist für Amazon FSx for NetApp ONTAP nicht verfügbar.

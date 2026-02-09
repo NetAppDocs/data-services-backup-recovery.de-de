@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: br-use-back-up-now-kubernetes-applications-web-ui.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, snapcenter 
+summary: Mit NetApp Backup and Recovery können Sie Ihre Workload-Host-Informationen, Datenbankinformationen und Instanzinformationen verwalten.  Sie können Schutzeinstellungen für Ihr Inventar anzeigen, bearbeiten und löschen. 
+---
+= Sichern Sie jetzt Kubernetes-Anwendungen mit der Backup and Recovery-Weboberfläche.
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Backup and Recovery ermöglicht es Ihnen, Kubernetes-Anwendungen manuell über die Weboberfläche zu sichern.
+
+.Erforderliche NetApp Console
+Organisationsadministrator oder SnapCenter Administrator. link:reference-roles.html["Erfahren Sie mehr über die Zugriffsrollen für NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
+
+
+
+== Sichern Sie jetzt eine Kubernetes-Anwendung über die Web-Oberfläche
+
+Erstellen Sie manuell ein Backup einer Kubernetes-Anwendung, um eine Basis für zukünftige Backups und Snapshots zu schaffen oder um sicherzustellen, dass die aktuellsten Daten geschützt sind.
+
+.Schritte
+. Wählen Sie in NetApp Backup and Recovery*Inventar* aus.
+. Wählen Sie eine Kubernetes-Instanz und wählen Sie *Anzeigen*, um die mit dieser Instanz verknüpften Ressourcen anzuzeigen.
+. Wählen Sie die Registerkarte *Anwendungen*.
+. Wählen Sie in der Anwendungsliste eine Anwendung aus, die Sie sichern möchten, und wählen Sie das zugehörige Aktionsmenü.
+. Wählen Sie *Jetzt sichern*.
+. Stellen Sie sicher, dass der richtige Anwendungsname ausgewählt ist.
+. Wählen Sie *Sichern*.
+
+
+.Ergebnis
+Die Konsole erstellt eine Sicherungskopie der Anwendung und zeigt den Fortschritt im Bereich *Überwachung* von Sicherung und Wiederherstellung an. Das Backup wird basierend auf der mit der Anwendung verknüpften Schutzrichtlinie erstellt.

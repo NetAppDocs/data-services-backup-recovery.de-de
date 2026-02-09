@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-oracle-restore.html 
 keywords: restore, vm, oracle, databases, snapshots, object storage, cloud storage, backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Schützen Sie Ihre Oracle-Workloads mit NetApp Backup and Recovery. 
+summary: Schützen Sie Ihre Oracle-Datenbank-Workloads mit NetApp Backup und Recovery. 
 ---
 = Stellen Sie Oracle-Datenbanken mit NetApp Backup and Recovery wieder her
 :hardbreaks:
@@ -148,7 +148,7 @@ Die passenden Schnappschüsse werden angezeigt.
 --
 .An einem anderen Speicherort wiederherstellen
 --
-Nicht für die Vorschau von Oracle-Workloads verfügbar.
+Nicht verfügbar für Oracle Database-Workloads Preview.
 
 --
 ====

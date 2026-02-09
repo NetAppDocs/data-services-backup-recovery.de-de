@@ -84,17 +84,17 @@ indexpage:
       url: "/br-use-hyperv-backup.html"
     - title: Wiederherstellen von Hyper-V-Workloads
       url: "/br-use-hyperv-restore.html"
-  - title: Schützen Sie Oracle-Workloads (private Vorschau)
+  - title: Oracle Database-Workloads schützen (private preview)
     links:
-    - title: Übersicht zum Schützen von Oracle-Workloads
+    - title: Übersicht über den Schutz von Oracle Database-Workloads
       url: "/br-use-oracle-protect-overview.html"
-    - title: Entdecken Sie Oracle-Workloads
+    - title: Oracle Database-Workloads entdecken
       url: "/br-start-discover-oracle.html"
-    - title: Erstellen und Verwalten von Schutzgruppen für Oracle-Workloads
+    - title: Erstellen und Verwalten von Schutzgruppen für Oracle Database-Workloads
       url: "/br-use-oracle-protection-groups.html"
-    - title: Sichern Sie Oracle-Workloads
+    - title: Oracle-Datenbank-Workloads sichern
       url: "/br-use-oracle-backup.html"
-    - title: Wiederherstellen von Oracle-Workloads
+    - title: Oracle-Datenbank-Workloads wiederherstellen
       url: "/br-use-oracle-restore.html"
   - title: Schützen von Kubernetes-Workloads (Vorschau)
     links:

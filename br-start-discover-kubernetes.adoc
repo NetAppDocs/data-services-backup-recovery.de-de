@@ -24,6 +24,11 @@ NetApp Backup and Recovery muss Kubernetes-Workloads erkennen, bevor sie geschü
 
 Ermitteln Sie im Sicherungs- und Wiederherstellungsinventar die Kubernetes-Workloads in Ihrer Umgebung.  Durch das Hinzufügen einer Workload wird NetApp Backup and Recovery ein Kubernetes-Cluster hinzugefügt.  Anschließend können Sie Anwendungen hinzufügen und Clusterressourcen schützen.
 
+[NOTE]
+====
+Wenn Sie einen Cluster entdecken, der aktuell mit Trident Protect geschützt ist, werden alle mit Trident Protect verwendeten Sicherungszeitpläne während des Erkennungsprozesses deaktiviert (Trident Protect-Sicherungszeitpläne sind nicht mit Backup and Recovery kompatibel). Um die Anwendungen des Clusters zu schützen, link:br-use-policies-create.html["eine neue Datensicherungsstrategie erstellen"] oder ordnen Sie die Anwendungen einer bestehenden Richtlinie zu. Sie können dann die Trident Protect-Sicherungszeitpläne bei Bedarf entfernen.
+
+====
 .Schritte
 . Führen Sie einen der folgenden Schritte aus:
 +
@@ -35,10 +40,10 @@ Ermitteln Sie im Sicherungs- und Wiederherstellungsinventar die Kubernetes-Workl
 . Geben Sie einen Clusternamen ein und wählen Sie einen Connector zur Verwendung mit dem Cluster aus.
 . Befolgen Sie die angezeigten Befehlszeilenanweisungen:
 +
-** Erstellen Sie einen Trident Schutznamespace
+** Erstellen Sie einen Trident Protect-Namespace
 ** Erstellen eines Kubernetes-Geheimnisses
 ** Hinzufügen eines Helm-Repositorys
-** Installieren Sie Trident Protect und den Trident Protect-Anschluss
+** Installieren oder aktualisieren Sie Trident Protect und den Trident Protect connector
 +
 Diese Schritte stellen sicher, dass NetApp Backup and Recovery mit dem Cluster interagieren kann.
 

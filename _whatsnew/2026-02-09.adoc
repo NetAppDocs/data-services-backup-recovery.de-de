@@ -1,0 +1,50 @@
+= Kubernetes-Workloads-Erweiterungen
+:allow-uri-read: 
+
+
+
+
+=== Kubernetes-Workloads-Erweiterungen
+
+Diese Version von Kubernetes-Workloads bietet die folgenden erweiterten Funktionen:
+
+* *CR-Workflow-Unterstützung*: Sie können jetzt gängige Schutzaufgaben sowohl mit CRs als auch über die Backup and Recovery-Weboberfläche durchführen.
+* *Clustermigration*: Sie können jetzt bestehende Kubernetes-Cluster, die mit Trident Protect geschützt sind, zu Backup and Recovery hinzufügen.
+* *Unterstützung des Alerting-Frameworks*: Sie können jetzt E-Mail- und UI-Benachrichtigungen für bestimmte Kubernetes-Workload-Ereignisse erhalten.
+* *Integration der Registerkarte "Wiederherstellen"*: Sie können jetzt über das Menü "Wiederherstellen" auf die Aktionen zur Wiederherstellung von Kubernetes-Workloads zugreifen.
+* *Unterstützung für die 3-2-1-Fanout-Backup-Architektur*: Sie können jetzt eine 3-2-1-Fanout-Architektur in Ihrer Datensicherungsstrategie verwenden, wenn Sie Kubernetes-Workloads schützen.
+
+
+Weitere Informationen zum Schutz von Kubernetes-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Übersicht zum Schützen von Kubernetes-Workloads"] .
+
+
+
+=== Verbesserungen der Oracle Database Workloads
+
+Diese Version der Oracle Database Workloads bietet die folgenden erweiterten Funktionen:
+
+* *Unterstützung für Nicht-Root-Benutzer*: Nicht-Root-Benutzer können nun Sicherungs-, Wiederherstellungs- und Klonvorgänge durchführen, was die Sicherheit und Compliance verbessert.
+* *Klonunterstützung*: Klonfunktionen werden jetzt in primären und sekundären NAS-, SAN- und ASM-Umgebungen mithilfe der ASM library v2 unterstützt, wodurch koordinierte Schutz-Workflows ermöglicht werden.
+* *Unterstützung für das Aufteilen von Klonen*: Sie können jetzt beschreibbare Snapshots (Klone) von ihren übergeordneten Volumes trennen, Speicherplatz freigeben und unabhängige Operationen ermöglichen.
+* *Sicherung und Wiederherstellung für Objektspeicher*: Native Sicherungs- und Wiederherstellungsfunktionen werden jetzt für objektbasierte S3-kompatible Speicherziele unterstützt.
+* *Clone Lifecycle Management (CLM)*: Klonaktualisierungsvorgänge werden auf dem primären Speicher unterstützt.
+* *Auf alternativen Host klonen*: Sie können jetzt Datenbanken zu Test- oder Analysezwecken sowohl vom primären als auch vom sekundären Speicher auf einen anderen Host klonen.
+* *ONTAP Konsistenzgruppen-Support*: ONTAP Konsistenzgruppen werden jetzt unterstützt, wodurch applikationskonsistente Snapshots über mehrere Volumes hinweg gewährleistet werden.
+* Backup and Recovery unterstützt jetzt die folgenden Datensicherungsstrategie-Architekturen für Oracle Database-Workloads:
++
+** 3-2-1 Fanout
+** Festplatte zu Festplatte
+** Festplatte zu Objektspeicher
+** Kaskadierend
+** Lokaler Schnappschuss
+
+
+
+
+Weitere Informationen zum Schutz von Oracle Database-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Übersicht über den Schutz von Oracle Database-Workloads"].
+
+
+
+=== Weitere Verbesserungen
+
+Hyper-V-Workloads, KVM-Workloads und VMware-Workloads sind jetzt allgemein verfügbar (GA) in NetApp Backup and Recovery.

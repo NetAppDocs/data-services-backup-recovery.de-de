@@ -1,0 +1,26 @@
+= Erstellen einer Ausführungs-Hook-Vorlage
+:allow-uri-read: 
+
+
+
+
+== Erstellen einer Ausführungs-Hook-Vorlage
+
+Sie können eine benutzerdefinierte Ausführungs-Hook-Vorlage erstellen, mit der Sie Aktionen vor oder nach einem Datenschutzvorgang für eine Anwendung ausführen können.
+
+
+NOTE: Vorlagen, die Sie hier erstellen, sind nur beim Schutz von Kubernetes-Workloads verwendbar.
+
+.Schritte
+. Gehen Sie in der Konsole zu *Schutz* > *Sicherung und Wiederherstellung*.
+. Wählen Sie die Registerkarte *Einstellungen*.
+. Erweitern Sie den Abschnitt *Ausführungs-Hook-Vorlage*.
+. Wählen Sie *Ausführungs-Hook-Vorlage erstellen*.
+. Geben Sie einen Namen für den Ausführungs-Hook ein.
+. Wählen Sie optional einen Hook-Typ aus. Beispielsweise wird ein Post-Restore-Hook ausgeführt, nachdem der Wiederherstellungsvorgang abgeschlossen ist.
+. Geben Sie im Textfeld *Skript* das ausführbare Shell-Skript ein, das Sie als Teil der Ausführungs-Hook-Vorlage ausführen möchten.  Optional können Sie *Skript hochladen* auswählen, um stattdessen eine Skriptdatei hochzuladen.
+. Wählen Sie *Erstellen*.
++
+Nachdem Sie die Vorlage erstellt haben, wird sie in der Vorlagenliste im Abschnitt *Ausführungs-Hook-Vorlage* angezeigt.
+
+

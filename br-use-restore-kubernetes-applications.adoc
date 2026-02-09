@@ -4,7 +4,7 @@ permalink: br-use-restore-kubernetes-applications.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
 summary: Mit NetApp Backup and Recovery können Sie Anwendungen wiederherstellen, die Sie mit einer Schutzrichtlinie geschützt haben. 
 ---
-= Wiederherstellen von Kubernetes-Anwendungen
+= Kubernetes-Anwendungen mithilfe der Web-Benutzeroberfläche wiederherstellen
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -16,30 +16,32 @@ summary: Mit NetApp Backup and Recovery können Sie Anwendungen wiederherstellen
 [role="lead"]
 Mit NetApp Backup and Recovery können Sie Anwendungen wiederherstellen, die Sie mit einer Schutzrichtlinie geschützt haben. Zur Wiederherstellung einer Anwendung muss mindestens ein Wiederherstellungspunkt verfügbar sein. Ein Wiederherstellungspunkt besteht entweder aus dem lokalen Snapshot oder der Sicherung im Objektspeicher (oder beidem). Sie können eine Anwendung mithilfe des lokalen, sekundären oder Objektspeicherarchivs wiederherstellen.
 
+.Bevor Sie beginnen
+Wenn Sie eine Anwendung wiederherstellen, die mit Trident Protect gesichert wurde, stellen Sie sicher, dass Trident Protect sowohl auf dem Quell-Cluster als auch auf dem Ziel-Cluster installiert ist.
+
 .Erforderliche NetApp Console
 Organisationsadministrator oder SnapCenter Administrator. link:reference-roles.html["Erfahren Sie mehr über die Zugriffsrollen für NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
 .Schritte
-. Wählen Sie in NetApp Backup and Recovery*Inventar* aus.
-. Wählen Sie eine Kubernetes-Instanz und wählen Sie *Anzeigen*, um die mit dieser Instanz verknüpften Ressourcen anzuzeigen.
-. Wählen Sie die Registerkarte *Anwendungen*.
-. Wählen Sie in der Anwendungsliste eine Anwendung aus, die Sie wiederherstellen möchten, und wählen Sie das zugehörige Aktionsmenü.
-. Wählen Sie *Anzeigen und wiederherstellen*.
+. Wählen Sie im NetApp Backup und Recovery-Menü *Wiederherstellen* aus.
+. Wählen Sie eine Kubernetes-Anwendung aus der Liste und wählen Sie *Anzeigen und Wiederherstellen* für diese Anwendung.
 +
 Die Liste der Wiederherstellungspunkte wird angezeigt.
 
-. Öffnen Sie das Aktionsmenü für den Wiederherstellungspunkt, den Sie verwenden möchten, und wählen Sie *Wiederherstellen*.
+. Wählen Sie die Schaltfläche *Restore* für den Wiederherstellungspunkt aus, den Sie verwenden möchten.
 
 
 [discrete]
 ===== Allgemeine Einstellungen
 
-. Wählen Sie die Quelle für die Wiederherstellung (lokaler oder Objektspeicher).
+. Wählen Sie den Quellspeicherort aus, von dem wiederhergestellt werden soll.
 . Wählen Sie den Zielcluster aus der Liste *Cluster* aus.
-. Wählen Sie den Namespace für das Wiederherstellungsziel.
 +
-Sie können den ursprünglichen Namespace oder einen neuen Namespace wiederherstellen.
 
+NOTE: Das Wiederherstellen eines von Trident Protect erstellten lokalen Snapshots auf einem anderen Cluster wird derzeit nicht unterstützt.
+
+. Wählen Sie, ob Sie in die ursprünglichen Namensräume oder in neue Namensräume wiederherstellen möchten.
+. Wenn Sie die Wiederherstellung in neuen Namensräumen gewählt haben, geben Sie den Ziel-Namespace oder die Ziel-Namensräume an, die verwendet werden sollen.
 . Wählen Sie *Weiter*.
 
 
@@ -80,7 +82,13 @@ NOTE: Bei den angezeigten Ressourcen handelt es sich um die Ressourcen, die derz
 [discrete]
 ===== Zieleinstellungen
 
-. Wählen Sie die Wiederherstellung entweder in der Standardspeicherklasse oder in einer anderen Speicherklasse.
-. Wenn Sie die Wiederherstellung in einer anderen Speicherklasse durchführen möchten, wählen Sie optional eine Zielspeicherklasse aus, die jeder Quellspeicherklasse entspricht.
+. Erweitern Sie den Abschnitt *Destination settings* und wählen Sie aus, ob Sie entweder in der Standard-Speicherklasse, in einer anderen Speicherklasse wiederherstellen möchten oder, wenn Sie in einem anderen Cluster wiederherstellen, die Speicherklassen dem Ziel-Cluster zuordnen möchten.
+. Wenn Sie die Wiederherstellung in einer anderen Speicherklasse gewählt haben, wählen Sie eine Zielspeicherklasse aus, die zu jeder Quellspeicherklasse passt.
+. Optional können Sie, wenn Sie eine mit Trident Protect erstellte Sicherung oder einen Snapshot wiederherstellen, die Details des AppVault, der als Speicher-Bucket für die Wiederherstellungsoperation verwendet wurde, anzeigen. Wenn es eine Änderung in Ihrer Umgebung oder im AppVault-Status gibt, wählen Sie *Sync App Vault*, um die Details zu aktualisieren.
++
+
+NOTE: Wenn Sie einen AppVault auf einem Kubernetes-Cluster erstellen müssen, um die Wiederherstellung eines mit Trident Protect erstellten Backups oder Snapshots zu erleichtern, lesen Sie  https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-appvault-custom-resources.html["Verwenden Sie Trident Protect AppVault-Objekte, um Buckets zu verwalten"].
+
+. Optional können Sie den Abschnitt *Wiederherstellungsskripte* erweitern und die Option *Postscript* aktivieren, um eine Ausführungs-Hook-Vorlage auszuwählen, die nach Abschluss des Wiederherstellungsvorgangs ausgeführt wird. Geben Sie bei Bedarf alle Argumente ein, die das Skript benötigt, und fügen Sie Label-Selektoren hinzu, um Ressourcen anhand von Ressourcen-Labels zu filtern.
 . Wählen Sie *Wiederherstellen*.
 

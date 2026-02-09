@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: br-limitations-kubernetes.html 
+keywords: limitations, known, NetApp Backup and Recovery, Kubernetes 
+summary: Beachten Sie diese NetApp Backup und Recovery-Einschränkungen, bevor Sie Backup und Recovery in Ihrer Umgebung einsetzen. 
+---
+= Bekannte Einschränkungen mit NetApp Backup and Recovery für Kubernetes-Workloads
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Plattformen, Geräte oder Funktionen, die mit dieser Version nicht oder nicht gut funktionieren, sind hier aufgelistet.  Lesen Sie diese Einschränkungen sorgfältig durch.
+
+
+
+== Ändern der Datensicherungsstrategie für eine Anwendung
+
+Wenn Sie die zugehörige Datensicherungsstrategie für eine Anwendung ändern, um einen anderen Bucket oder ein anderes sekundäres Replikationsziel zu verwenden, kann die Datensicherungsstrategie fehlschlagen.
+
+*Abhilfe*: Entfernen Sie die Anwendung und fügen Sie sie erneut hinzu.
+
+
+
+== Konfigurationsbeschränkung der 3-2-1-Datensicherungsstrategie
+
+Wenn Sie eine 3-2-1-Datensicherungsstrategie erstellen, bei der keine Objektspeichersicherungen gleichzeitig mit der Replikation auf den Sekundärspeicher erfolgen, hängt sich die Datensicherungsstrategie beim Schutz der Anwendung auf.
+
+*Abhilfe*: Entfernen Sie die Anwendung, fügen Sie sie erneut hinzu und schützen Sie sie mit einer anderen Datensicherungsstrategie.

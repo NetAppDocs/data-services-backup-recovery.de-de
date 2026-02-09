@@ -21,6 +21,7 @@ Nachdem Sie die NetApp Console eingerichtet haben, konfigurieren Sie die Sicheru
 * <<Importieren und Verwalten von SnapCenter -Hostressourcen>>. (Nur Microsoft SQL Server-Workloads)
 * <<Fügen Sie eine KVM-Managementplattform hinzu.>>Die (Nur KVM-Workloads)
 * <<Konfigurieren von Protokollverzeichnissen in Snapshots für Windows-Hosts>>.
+* <<Erstellen einer Ausführungs-Hook-Vorlage>> zum Ausführen von Skripten vor und nach Backup-Jobs. (Nur Kubernetes-Workloads)
 
 
 *Erforderliche NetApp Console * Superadministrator für Backup und Wiederherstellung, Backup-Administrator für Backup und Wiederherstellung, Wiederherstellungsadministrator für Backup und Wiederherstellung.  Erfahren Sie mehr überlink:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
@@ -268,4 +269,27 @@ Bevor Sie Richtlinien für Windows-Hosts erstellen, sollten Sie Protokollverzeic
 . Wählen Sie auf der Seite „Inventardetails“ einen Host aus und wählen Sie das Symbol „Aktionen“image:../media/icon-action.png["Aktionsoption"] > *Protokollverzeichnis konfigurieren*.
 . Durchsuchen Sie das Protokollverzeichnis oder geben Sie den Pfad ein.
 . Wählen Sie *Speichern*.
+
+
+
+
+== Erstellen einer Ausführungs-Hook-Vorlage
+
+Sie können eine benutzerdefinierte Ausführungs-Hook-Vorlage erstellen, mit der Sie Aktionen vor oder nach einem Datenschutzvorgang für eine Anwendung ausführen können.
+
+
+NOTE: Vorlagen, die Sie hier erstellen, sind nur beim Schutz von Kubernetes-Workloads verwendbar.
+
+.Schritte
+. Gehen Sie in der Konsole zu *Schutz* > *Sicherung und Wiederherstellung*.
+. Wählen Sie die Registerkarte *Einstellungen*.
+. Erweitern Sie den Abschnitt *Ausführungs-Hook-Vorlage*.
+. Wählen Sie *Ausführungs-Hook-Vorlage erstellen*.
+. Geben Sie einen Namen für den Ausführungs-Hook ein.
+. Wählen Sie optional einen Hook-Typ aus. Beispielsweise wird ein Post-Restore-Hook ausgeführt, nachdem der Wiederherstellungsvorgang abgeschlossen ist.
+. Geben Sie im Textfeld *Skript* das ausführbare Shell-Skript ein, das Sie als Teil der Ausführungs-Hook-Vorlage ausführen möchten.  Optional können Sie *Skript hochladen* auswählen, um stattdessen eine Skriptdatei hochzuladen.
+. Wählen Sie *Erstellen*.
++
+Nachdem Sie die Vorlage erstellt haben, wird sie in der Vorlagenliste im Abschnitt *Ausführungs-Hook-Vorlage* angezeigt.
+
 

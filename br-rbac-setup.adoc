@@ -1,0 +1,60 @@
+---
+sidebar: sidebar 
+permalink: br-rbac-setup.html 
+keywords: backup, back up, restore, recovery, aws, azure 
+summary: Zur Erhöhung der Sicherheit konfigurieren Sie den Zugriff für bestimmte Rollen in NetApp Backup und Recovery. 
+---
+= Richten Sie rollenbasierte Zugriffssteuerung in NetApp Backup and Recovery ein
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Um die Sicherheit zu erhöhen und den Ressourcenzugriff zu kontrollieren, konfigurieren Sie rollenbasierte Zugriffssteuerung für NetApp Backup and Recovery. Die NetApp Console unterstützt rollenbasierte Zugriffssteuerung (RBAC) für einige Backup and Recovery Workloads. Sie können diesen Workloads spezifische Administrator- oder Betrachterrollen zuweisen. Andere Workloads, die noch keine rollenbasierte Zugriffssteuerung unterstützen, bleiben für alle Benutzer mit Backup and Recovery Rollen zugänglich, bis die Zuordnung auf Projektebene unterstützt wird.
+
+Führen Sie diese Schritte aus, um den Zugriff auf Ressourcen in Ihrer Organisation zu steuern. Nehmen Sie Änderungen auf der Seite *Administration > Identität und Zugriff* im NetApp Console-Menü vor.
+
+
+NOTE: Diese Schritte setzen voraus, dass Ihnen in der Console die Rolle „Organization Admin“ zugewiesen ist.
+
+.Schritte
+. Erstellen Sie die Identitäts- und Zugriffsprojektstruktur.
++
+Als Organisationsadministrator richten Sie den Ordner für Identität und Zugriff sowie die Projektstruktur ein, in der die Workloads gespeichert werden.
+
+. Benutzerrollen zuweisen.
++
+.. Primäre Option:
++
+Fügen Sie jedem für Arbeitslasten vorgesehenen Projekt Benutzer hinzu und weisen Sie ihnen die entsprechende Rolle zu. Beispiel:
+
++
+*** *Organisationsadministrator* und *Backup and Recovery Superadministrator*: Ein Benutzer mit diesen Rollen kann alle Ressourcen in allen Organisationen sehen, und Backup and Recovery Workloads erkennen und diese Projekten zuordnen (zum Beispiel US East oder US West).
+*** *Ordner- oder Projektadministrator* und *Backup and Recovery Superadmin*: Ein Benutzer mit diesen Rollen kann nur die Ressourcen in dem Ordner oder Projekt sehen, für das er Berechtigungen hat, kann aber Backup and Recovery Workloads erkennen und sie diesem Projekt zuweisen.
+
+
+.. Alternative Option:
++
+Anstatt einem Benutzer vollen Backup and Recovery-Administratorzugriff zu gewähren, können Sie sich selbst die Backup and Recovery-Superadmin-Rolle zuweisen und die Workloads direkt entdecken.
+
+
+
+. Workloads in NetApp Backup and Recovery ermitteln.
++
+Organisation-Admins oder Ordner- oder Projekt-Admins entdecken die verfügbaren Workloads und wählen das entsprechende Projekt aus (wie US East oder US West). Jeder Workload wird automatisch dem ausgewählten Projekt zugeordnet.
+
+. Fügen Sie Benutzer zu Projekten hinzu.
++
+Organisation-Admins oder Ordner-/Projekt-Admins fügen Console-Benutzer zu Projekten mit Workloads hinzu. Weisen Sie Benutzern die Rolle Organization viewer und eine Backup and Recovery-Rolle entsprechend ihren Zugriffsanforderungen zu. Benutzer mit der richtigen Backup and Recovery-Rolle erhalten automatisch Zugriff auf neue Workloads in diesen Projekten.
+
+
+
+
+
+== Verwandte Informationen
+
+* link:https://docs.netapp.com/us-en/console-setup-admin/concept-identity-and-access-management.html["Erfahren Sie mehr über das NetApp Console-Identitäts- und Zugriffsmanagement"^].
+* link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-backup-rec-roles.html["NetApp Backup and Recovery -Rollen in der NetApp Console"^].
+

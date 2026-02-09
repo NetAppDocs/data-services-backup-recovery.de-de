@@ -28,7 +28,7 @@ sidebar:
       url: "/br-limitations-hyperv.html"
     - title: Bekannte Einschränkungen für KVM-Workloads
       url: "/br-limitations-kvm.html"
-    - title: Bekannte Einschränkungen für Oracle-Workloads
+    - title: Bekannte Einschränkungen für Oracle Database Workloads
       url: "/br-limitations-oracle.html"
   - title: Erste Schritte
     entries:
@@ -51,6 +51,9 @@ sidebar:
       url: "/br-start-switch-ui.html"
     - title: Konfigurieren der allgemeinen Einstellungen für NetApp Backup and Recovery
       url: "/br-start-configure.html"
+    - title: Richten Sie rollenbasierte Zugriffssteuerung in NetApp Backup and Recovery
+        ein
+      url: "/br-rbac-setup.html"
   - title: Verwenden Sie NetApp Backup and Recovery
     entries:
     - title: Anzeigen des Schutzstatus im Dashboard
@@ -190,17 +193,17 @@ sidebar:
         url: "/br-use-hyperv-backup.html"
       - title: Wiederherstellen von Hyper-V-Workloads
         url: "/br-use-hyperv-restore.html"
-    - title: Schutz von Oracle-Workloads (Vorschau)
+    - title: Oracle Database-Workloads schützen (Preview)
       entries:
-      - title: Übersicht zum Schützen von Oracle-Workloads
+      - title: Übersicht über den Schutz von Oracle Database-Workloads
         url: "/br-use-oracle-protect-overview.html"
-      - title: Entdecken Sie Oracle-Workloads
+      - title: Oracle Database-Workloads entdecken
         url: "/br-start-discover-oracle.html"
-      - title: Erstellen und Verwalten von Schutzgruppen für Oracle-Workloads
+      - title: Erstellen und Verwalten von Schutzgruppen für Oracle Database-Workloads
         url: "/br-use-oracle-protection-groups.html"
-      - title: Sichern Sie Oracle-Workloads
+      - title: Oracle-Datenbank-Workloads sichern
         url: "/br-use-oracle-backup.html"
-      - title: Wiederherstellen von Oracle-Workloads
+      - title: Oracle-Datenbank-Workloads wiederherstellen
         url: "/br-use-oracle-restore.html"
       - title: Wiederherstellungspunkte einbinden und ausbinden
         url: "/br-use-oracle-mount-unmount.html"
@@ -211,9 +214,24 @@ sidebar:
       - title: Entdecken Sie Kubernetes-Workloads
         url: "/br-start-discover-kubernetes.html"
       - title: Kubernetes-Anwendungen hinzufügen und schützen
-        url: "/br-use-protect-kubernetes-applications.html"
+        entries:
+        - title: Kubernetes-Anwendungen hinzufügen und schützen
+          url: "/br-use-protect-kubernetes-applications.html"
+        - title: Sichern Sie jetzt eine Kubernetes-Anwendung über die Web-Oberfläche
+          url: "/br-use-back-up-now-kubernetes-applications-web-ui.html"
+        - title: Sichern Sie jetzt eine Kubernetes-Anwendung mithilfe benutzerdefinierter
+            Ressourcen
+          url: "/br-use-back-up-now-kubernetes-applications-cr.html"
       - title: Wiederherstellen von Kubernetes-Anwendungen
-        url: "/br-use-restore-kubernetes-applications.html"
+        entries:
+        - title: Kubernetes-Anwendungen mithilfe der Web-Benutzeroberfläche wiederherstellen
+          url: "/br-use-restore-kubernetes-applications.html"
+        - title: Kubernetes-Anwendungen mithilfe von benutzerdefinierten Ressourcen
+            wiederherstellen
+          url: "/br-use-restore-kubernetes-applications-cr.html"
+        - title: Erweiterte benutzerdefinierte Ressourcenwiederherstellungseinstellungen
+            verwenden
+          url: "/br-use-kubernetes-advanced-restore-settings.html"
       - title: Verwalten von Kubernetes-Clustern
         url: "/br-use-manage-kubernetes-clusters.html"
       - title: Verwalten von Kubernetes-Anwendungen
