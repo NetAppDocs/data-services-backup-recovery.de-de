@@ -4216,9 +4216,6 @@
   <block id="4dba655852206fd33ef2ae210d0f09ea" category="sidebar">Sichern Sie Microsoft SQL Server-Workloads</block>
   <block id="a86a44463f171d5cbfffdac926d2c5f7" category="sidebar">Wiederherstellen von Microsoft SQL Server-Workloads</block>
   <block id="c82b8b73ed613da47a71b640f8e94c5d" category="sidebar">Klonen von Microsoft SQL Server-Workloads</block>
-  <block id="460a4c33ada7a6581872d15b96a4344b" category="sidebar">Schutz von VMware-Workloads (Vorschau)</block>
-  <block id="6a3bb59ab6ca7e1af58c7f804a58a47c" category="sidebar">KVM-Workloads schützen (private Vorschau)</block>
-  <block id="d800ef02fd04e0bcce643b8bacdfd33e" category="sidebar">Schützen Sie Hyper-V-Workloads (private Vorschau)</block>
   <block id="8f12fe2d1611902de146ad61b89b8295" category="sidebar">Schützen von Kubernetes-Workloads (Vorschau)</block>
   <block id="813011e2103649bb71f124adedcc10ea" category="sidebar">Blogs und Community</block>
   <block id="cc58d3a9b2264c4fd8cb1d3f61b90bdc" category="sidebar">NetApp Data Services</block>
@@ -4253,7 +4250,6 @@
   <block id="c00b274754a2d13242a61b1534660a37" category="sidebar">Verwalten des Microsoft SQL Server-Inventars</block>
   <block id="41e1a34ea3ba2b687b86e55ec1a7955d" category="sidebar">Verwalten von Microsoft SQL Server-Snapshots</block>
   <block id="c8ffa42e0e508862d020665c979eb5c0" category="sidebar">Erstellen von Microsoft SQL Server-Berichten</block>
-  <block id="f4aa5ca6921e92380246ea7a562973a9" category="sidebar">Schützen Sie VMware-Workloads (Vorschau ohne SnapCenter -Plug-in für VMware)</block>
   <block id="b1b8c22062b7762d4a3c459e880dee3b" category="sidebar">Schützen Sie VMware-Workloads (mit dem SnapCenter -Plug-in für VMware)</block>
   <block id="7706cc052aa7120ddac8475709793258" category="sidebar">Übersicht über den Schutz virtueller Maschinen-Workloads</block>
   <block id="9ce88727019b612743000c7bcc2bfd23" category="sidebar">Voraussetzungen für den Schutz der Workloads virtueller Maschinen</block>
@@ -4266,7 +4262,6 @@
   <block id="9a3f2e7eb30992bb084418711e5093f2" category="sidebar">Verwalten Sie den Schutz von Datenspeichern und virtuellen Maschinen</block>
   <block id="9234f5bc35aa09673eacbf8fece508db" category="sidebar">Wiederherstellen von Daten und Datenspeichern virtueller Maschinen</block>
   <block id="a6c93de7c03701dfba222e9072ffe5e7" category="sidebar">KVM-Workloads schützen (Vorschau)</block>
-  <block id="1db561ecd535caff5b4a1e7b87668d89" category="sidebar">Schützen Sie Hyper-V-Workloads (Vorschau)</block>
   <block id="34caa737a5a671b66cc6fe7531c1f8b9" category="sidebar">Wiederherstellungspunkte einbinden und ausbinden</block>
   <block id="60c0c463b8839d0f2c5e5cea8fa728ad" category="sidebar">Schützen Sie Kubernetes-Workloads (Vorschau)</block>
   <block id="3186e7c44dc909386a0204716ffc46f6" category="sidebar">Verwalten von Ausführungs-Hook-Vorlagen für Kubernetes-Workloads</block>
@@ -5005,8 +5000,6 @@
   <block id="55cf8812c6c22803ddfa5fd41279187d" category="list-text">Festplatte zu Festplatte</block>
   <block id="0f6d38819f95da81f8bc80258fee7071" category="list-text">Festplatte zu Objektspeicher</block>
   <block id="e3b858c29172bddae0dbb7e461b2f7df" category="list-text">Kaskadierend</block>
-  <block id="cc5d8c9d6668803b438b03567e08b611" category="section-title">Weitere Verbesserungen</block>
-  <block id="6ec61dc6a9b7787975d159ba164424f9" category="paragraph">Hyper-V-Workloads, KVM-Workloads und VMware-Workloads sind jetzt allgemein verfügbar (GA) in NetApp Backup and Recovery.</block>
   <block id="6e56df4eb422b0b15187c84ba551237e" category="summary">Beachten Sie diese NetApp Backup und Recovery-Einschränkungen, bevor Sie Backup und Recovery in Ihrer Umgebung einsetzen.</block>
   <block id="36f1a2626b3ec6834b4eb361bac96c37" category="doc">Bekannte Einschränkungen mit NetApp Backup and Recovery für Kubernetes-Workloads</block>
   <block id="36c070b302c08836d912ffb6841bb46e" category="section-title">Ändern der Datensicherungsstrategie für eine Anwendung</block>
@@ -5241,8 +5234,14 @@
   <block id="8c703f00b817f5c9121d74efc33cdde9" category="list-text">NetApp Trident Protect Connector 25.07 or later (wird während der Kubernetes-Workload-Erkennung installiert)</block>
   <block id="5254dbe16e57a413455e2c5f7d5e70a1" category="list-text">Stellen Sie sicher, dass TCP-Port 443 in ausgehender Richtung zwischen dem Kubernetes-Cluster, dem Trident Protect Connector und dem Trident Protect Proxy ungefiltert ist.</block>
   <block id="c9d872b23d54864ab58551a55106a3db" category="section-title">09. Februar 2026</block>
-  <block id="f3effb5ce493101e0cf4cbc9e93014e1" category="sidebar">Oracle Database-Workloads schützen (private preview)</block>
   <block id="e45770f83b5d2c438c00dea64c505ce7" category="sidebar">Bekannte Einschränkungen für Oracle Database Workloads</block>
   <block id="c33d3729ba9e6e1c1dd6ccc4b6c7f949" category="sidebar">Oracle Database-Workloads schützen (Preview)</block>
   <block id="1e6021824e75d382885d2bb2e945f719" category="sidebar">Kubernetes-Anwendungen mithilfe von benutzerdefinierten Ressourcen wiederherstellen</block>
+  <block id="6108d5ad430f0631e5c6e10714ba980c" category="doc">Microsoft Hyper-V-Workloads, die in General Availability (GA) unterstützt werden</block>
+  <block id="c5db154b8366e71dcf87e4624b1a0112" category="paragraph">Die Unterstützung für Microsoft Hyper-V-Workloads ist jetzt allgemein verfügbar (GA) in NetApp Backup and Recovery.</block>
+  <block id="5a9e2fbc6e8b2849a76465cd1a86c575" category="section-title">KVM-Workloads, die in der General Availability (GA) unterstützt werden</block>
+  <block id="1d30989467a5dda6a77c2158034a190b" category="paragraph">Die Unterstützung für KVM-Workloads ist jetzt allgemein verfügbar (GA) in NetApp Backup and Recovery.</block>
+  <block id="a4af15d338a93411ae3eacbe3e9d1c5e" category="sidebar">KVM-Workloads schützen (Preview)</block>
+  <block id="bd7b6aa0517dacb10ee10e479293ef82" category="sidebar">Oracle Database-Workloads schützen (Preview)</block>
+  <block id="72f656ffc88a48ec4092d869ae05c4e6" category="sidebar">VMware-Workloads schützen (ohne SnapCenter Plug-in für VMware)</block>
 </blocks>

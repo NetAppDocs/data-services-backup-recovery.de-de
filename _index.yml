@@ -48,7 +48,7 @@ indexpage:
       url: br-use-mssql-restore.html
     - title: Klonen von Microsoft SQL Server-Workloads
       url: br-use-mssql-clone.html
-  - title: Schutz von VMware-Workloads (Vorschau)
+  - title: Schutz von VMware-Workloads
     links:
     - title: Übersicht zum Schützen von VMware-Workloads
       url: br-use-vmware-protect-overview.html
@@ -60,7 +60,7 @@ indexpage:
       url: br-use-vmware-backup.html
     - title: Wiederherstellen von VMware-Workloads
       url: br-use-vmware-restore.html
-  - title: KVM-Workloads schützen (private Vorschau)
+  - title: KVM-Workloads schützen (Preview)
     links:
     - title: Übersicht über den Schutz von KVM-Workloads
       url: "/br-use-kvm-protect-overview.html"
@@ -72,7 +72,7 @@ indexpage:
       url: "/br-use-kvm-backup.html"
     - title: KVM-Workloads wiederherstellen
       url: "/br-use-kvm-restore.html"
-  - title: Schützen Sie Hyper-V-Workloads (private Vorschau)
+  - title: Schützen Sie Hyper-V-Workloads
     links:
     - title: Übersicht zum Schützen von Hyper-V-Workloads
       url: "/br-use-hyperv-protect-overview.html"
@@ -84,7 +84,7 @@ indexpage:
       url: "/br-use-hyperv-backup.html"
     - title: Wiederherstellen von Hyper-V-Workloads
       url: "/br-use-hyperv-restore.html"
-  - title: Oracle Database-Workloads schützen (private preview)
+  - title: Oracle Database-Workloads schützen (Preview)
     links:
     - title: Übersicht über den Schutz von Oracle Database-Workloads
       url: "/br-use-oracle-protect-overview.html"
