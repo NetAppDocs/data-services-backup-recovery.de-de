@@ -152,8 +152,6 @@ sidebar:
         url: "/prev-vmware-protect-overview.html"
       - title: Voraussetzungen für den Schutz der Workloads virtueller Maschinen
         url: "/prev-vmware-prereqs.html"
-      - title: Registrieren Sie das SnapCenter Plug-in for VMware vSphere Host
-        url: "/prev-vmware-register-snapcenter.html"
       - title: Erstellen einer Richtlinie zum Sichern von Daten virtueller Maschinen
         url: "/prev-vmware-policy-create.html"
       - title: Sichern Sie Datenspeicher auf Amazon Web Services
