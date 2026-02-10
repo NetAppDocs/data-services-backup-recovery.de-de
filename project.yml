@@ -146,26 +146,6 @@ sidebar:
             url: "/br-use-vmware-restore-guest-files-and-folders-from-vmdks.html"
           - title: Fehlerbehebung bei der Wiederherstellung von Gastdateien
             url: "/br-use-vmware-guest-file-restore-scenarios-you-might-encounter.html"
-    - title: Schützen Sie VMware-Workloads (mit dem SnapCenter -Plug-in für VMware)
-      entries:
-      - title: Übersicht über den Schutz virtueller Maschinen-Workloads
-        url: "/prev-vmware-protect-overview.html"
-      - title: Voraussetzungen für den Schutz der Workloads virtueller Maschinen
-        url: "/prev-vmware-prereqs.html"
-      - title: Erstellen einer Richtlinie zum Sichern von Daten virtueller Maschinen
-        url: "/prev-vmware-policy-create.html"
-      - title: Sichern Sie Datenspeicher auf Amazon Web Services
-        url: "/prev-vmware-backup-aws.html"
-      - title: Sichern Sie Datenspeicher in Microsoft Azure
-        url: "/prev-vmware-backup-azure.html"
-      - title: Sichern Sie Datenspeicher auf der Google Cloud Platform
-        url: "/prev-vmware-backup-gcp.html"
-      - title: Sichern Sie Datenspeicher in StorageGRID
-        url: "/prev-vmware-backup-storagegrid.html"
-      - title: Verwalten Sie den Schutz von Datenspeichern und virtuellen Maschinen
-        url: "/prev-vmware-manage.html"
-      - title: Wiederherstellen von Daten und Datenspeichern virtueller Maschinen
-        url: "/prev-vmware-restore.html"
     - title: KVM-Workloads schützen (Vorschau)
       entries:
       - title: Übersicht über den Schutz von KVM-Workloads
