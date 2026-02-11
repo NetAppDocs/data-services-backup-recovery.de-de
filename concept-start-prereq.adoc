@@ -88,7 +88,7 @@ Sie benötigen bestimmte Anforderungen, um Ihre VMware-Workloads zu erkennen und
 
 *Softwareunterstützung*
 
-* NFS- und VMFS-Datenspeicher werden unterstützt. vVols werden nicht unterstützt.
+* NFS und VMFS-Datenspeicher werden unterstützt.
 * Unterstützte NFS-Versionen: NFS 3 und NFS 4.1
 * Unterstützte VMware ESXi Server-Versionen: 7.0U1 und höher
 * Unterstützte VMware vCenter vSphere-Versionen: 7.0U1 und höher
@@ -106,11 +106,6 @@ Sie benötigen bestimmte Anforderungen, um Ihre VMware-Workloads zu erkennen und
 
 | VMware ESXi-Server-Port  a| 
 443 (HTTPS), bidirektional. Die Funktion „Gastdateiwiederherstellung“ verwendet diesen Port.
-
-
-
-| VMware vSphere vCenter Server-Port  a| 
-Wenn Sie vVol-VMs schützen, müssen Sie Port 443 verwenden.
 
 
 

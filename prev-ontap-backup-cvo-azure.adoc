@@ -378,10 +378,6 @@ Erstellen Sie entweder Ihre eigene Ressourcengruppe, die den Blob-Container verw
 
 TIP: Wenn Sie Ihre Sicherungsdateien vor Änderungen oder Löschungen schützen möchten, stellen Sie sicher, dass das Speicherkonto mit aktiviertem unveränderlichem Speicher und einer Aufbewahrungsfrist von 30 Tagen erstellt wurde.
 
-+
-
-TIP: Wenn Sie ältere Sicherungsdateien zur weiteren Kostenoptimierung in Azure Archive Storage auslagern möchten, stellen Sie sicher, dass das Speicherkonto über die entsprechende Lebenszyklusregel verfügt.
-
 ** *Verschlüsselungsschlüssel*: Wenn Sie ein neues Azure-Speicherkonto erstellt haben, geben Sie die Informationen zum Verschlüsselungsschlüssel ein, die Sie vom Anbieter erhalten haben.  Wählen Sie, ob Sie die standardmäßigen Azure-Verschlüsselungsschlüssel verwenden oder Ihre eigenen, vom Kunden verwalteten Schlüssel aus Ihrem Azure-Konto auswählen möchten, um die Verschlüsselung Ihrer Daten zu verwalten.
 +
 Wenn Sie Ihre eigenen, vom Kunden verwalteten Schlüssel verwenden möchten, geben Sie den Schlüsseltresor und die Schlüsselinformationen ein. https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["Erfahren Sie, wie Sie Ihre eigenen Schlüssel verwenden"^] .
