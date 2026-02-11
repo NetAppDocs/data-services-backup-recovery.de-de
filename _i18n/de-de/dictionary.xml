@@ -3822,183 +3822,7 @@
   <block id="f2b162f98b611318ceee106c4b60ae51" category="list-text">Detaillierte Preise für Google Cloud Storage nach Regionen finden Sie auf der<block ref="51a97b69fb4ea5748d26915fe19e0057" category="inline-link-rx"></block> .</block>
   <block id="fd161debce2c53100b7c61aa8b2d7c6b" category="list-text">Wie lange dauert die Wiederherstellung meiner im Google-Archiv archivierten Objekte?</block>
   <block id="efce98c74b9fc5fb1711b2f3d4da8f34" category="list-text">*Abrufzeit*: Die Zeit, die zum Abrufen der Sicherungsdatei aus dem Archiv und zum Platzieren im Standardspeicher benötigt wird.  Dies wird manchmal als „Rehydratationszeit“ bezeichnet.  Im Gegensatz zu den „kältesten“ Speicherlösungen anderer Cloud-Anbieter sind Ihre Daten innerhalb von Millisekunden zugänglich.</block>
-  <block id="ea41fefc75b4937d079e3db8ee84bd6b" category="doc">Sichern Sie Datenspeicher in Amazon Web Services in NetApp Backup and Recovery</block>
-  <block id="88d382e3b7aa9d602ce38d8495a201ac" category="paragraph">Sie können einen oder mehrere Datenspeicher mit NetApp Backup and Recovery auf Amazon Web Services sichern und archivieren, um die Speichereffizienz und den Cloud-Umstieg zu verbessern.</block>
-  <block id="88e6abd4ee4f112ba359e37a218778f6" category="paragraph">Wenn der Datenspeicher mit einer Archivierungsrichtlinie verknüpft ist, haben Sie die Möglichkeit, die Archivierungsebene auszuwählen.  Die unterstützten Archivebenen sind Glacier und Glacier Deep.</block>
-  <block id="c5697e1933bfd2df9d2052983e1d9241" category="inline-link-macro">Anforderungen für den Schutz virtueller Maschinen</block>
-  <block id="a7772e34879d0350763b229c08abb4ce" category="paragraph">Stellen Sie sicher, dass Sie alle<block ref="b3cdcdb9363cf72cee94211d1cf49d2a" category="inline-link-macro-rx"></block> bevor Sie Datenspeicher in der Cloud sichern.</block>
-  <block id="ec20419fe9b99a13a7e6a63187f9ad59" category="list-text">Wählen Sie in der Konsolen-Benutzeroberfläche *Schutz* &gt; *Sicherung und Wiederherstellung* &gt; *Virtuelle Maschinen*.</block>
-  <block id="418c5509e2171d55b0aee5c2ea4442b5" category="inline-image-macro">Aktion</block>
-  <block id="4d2ca83fc058acd8fd1a2b0e9633319d" category="list-text">Wählen<block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> entsprechend dem Datenspeicher, den Sie sichern möchten, und klicken Sie auf *Sicherung aktivieren*.</block>
-  <block id="323d618819396c39de9471cdfb373ee7" category="list-text">Wählen Sie auf der Seite „Richtlinie zuweisen“ die Richtlinie aus und klicken Sie auf *Weiter*.</block>
-  <block id="65c66680701f71dd9f3d5af61f0f6b41" category="list-text">Fügen Sie das System hinzu.</block>
-  <block id="5acc11cd60ff7e94ad464f395b9bc687" category="paragraph">Konfigurieren Sie das Cluster-Management-LIF, das die Konsole erkennen soll.  Nachdem das System für einen der Datenspeicher hinzugefügt wurde, kann es für alle anderen Datenspeicher wiederverwendet werden, die sich auf demselben ONTAP Cluster befinden.</block>
-  <block id="c4f42debc709f58c735092418fa00fa1" category="list-text">Wählen Sie *System hinzufügen* entsprechend der SVM.</block>
-  <block id="30871e9b3db5bb3040245da62e031a45" category="list-text">Gehen Sie im Assistent „System hinzufügen“ wie folgt vor:</block>
-  <block id="b19fb0dfd78b28bc5415a7f3f4ad6a49" category="list-text">Geben Sie die IP-Adresse des Cluster-Management-LIF an.</block>
-  <block id="73f07eefb51e62cc902b672233bd4977" category="list-text">Geben Sie die Anmeldeinformationen des ONTAP Clusterbenutzers an.</block>
-  <block id="85f2ee063f5ea4d52167b81f6a73c16a" category="list-text">Wählen Sie *System hinzufügen*.</block>
-  <block id="52405c4e62742959f93902e51bb72d0b" category="list-text">Wählen Sie *Amazon Web Services* aus, um es als Cloud-Anbieter zu konfigurieren.</block>
-  <block id="4117af0b4d26b5ba222b63a2b7e1eb27" category="list-text">Geben Sie das AWS-Konto an.</block>
-  <block id="0b6515b0d85be4c32021431c5119a675" category="list-text">Geben Sie im Feld AWS-Zugriffsschlüssel den Schlüssel für die Datenverschlüsselung an.</block>
-  <block id="095a532bc2c4eed2ec2c64b6008b497f" category="list-text">Geben Sie im Feld AWS Secret Key das Passwort für die Datenverschlüsselung an.</block>
-  <block id="b5d98853353bde168501864a9aa65bfd" category="list-text">Wählen Sie die Region aus, in der Sie die Sicherungen erstellen möchten.</block>
-  <block id="386a17271d92cc7a25bf8eec122b0494" category="list-text">Geben Sie die IP-Adressen des Cluster-Management-LIF an, die als Systeme hinzugefügt wurden.</block>
-  <block id="e1a761122b21c1ecd586765e53dacaf5" category="list-text">Wählen Sie die Archivierungsebene aus.</block>
-  <block id="e56d2516907f7fa0a6e073e43392e9ff" category="paragraph">Es wird empfohlen, die Archivierungsebene festzulegen, da dies eine einmalige Aktivität ist und Sie sie später nicht mehr einrichten können.</block>
-  <block id="aa6666c7d701e3d022bd0894584ba6bc" category="list-text">Überprüfen Sie die Details und wählen Sie *Backup aktivieren*.</block>
-  <block id="0d41ec9efd8e5ceb127f404e3e8dc747" category="doc">Sichern Sie Datenspeicher mit NetApp Backup and Recovery in Microsoft Azure</block>
-  <block id="edad35da0f3ccd8716a3ecbec6ba4250" category="paragraph">Sie können einen oder mehrere Datenspeicher in Microsoft Azure sichern, indem Sie das SnapCenter Plug-in for VMware vSphere Hosts mit NetApp Backup and Recovery integrieren.  Dies wird den VM-Administratoren dabei helfen, Daten einfach und schnell zu sichern und zu archivieren, um die Speichereffizienz zu steigern und den Übergang in die Cloud zu beschleunigen.</block>
-  <block id="0f375a841aae3358a6339864ccfaa86f" category="paragraph">Wenn der Datenspeicher mit einer Archivierungsrichtlinie verknüpft ist, wird Ihnen die Möglichkeit geboten, die Archivierungsebene auszuwählen.  Die unterstützte Archivierungsebene ist Azure Archive Blob Storage.</block>
-  <block id="a5d365a9b7414bdc6e9205c9e8eb585d" category="list-text">Wählen Sie in der NetApp Console -Benutzeroberfläche *Schutz* &gt; *Sicherung und Wiederherstellung* &gt; *Virtuelle Maschinen*.</block>
-  <block id="b621b490b47d0134904539933037722c" category="list-text">Wählen<block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> entsprechend dem Datenspeicher, den Sie sichern möchten, und wählen Sie *Sicherung aktivieren*.</block>
-  <block id="8a8bca40b3d548c634cd73d37e5a630c" category="list-text">Wählen Sie *Microsoft Azure* aus, um es als Cloud-Anbieter zu konfigurieren.</block>
-  <block id="3cc0854835f3b022e6a1537884da217d" category="list-text">Geben Sie die Azure-Abonnement-ID an.</block>
-  <block id="db7f740fbee2466830a1f559dba6b17b" category="list-text">Erstellen Sie eine neue Ressourcengruppe oder verwenden Sie eine vorhandene Ressourcengruppe.</block>
-  <block id="9e8ed7b08261a94b9277289757488767" category="paragraph">Es wird empfohlen, die Archivierungsebene festzulegen, da es sich hierbei um eine einmalige Aktivität handelt und Sie sie später nicht mehr einrichten können.</block>
-  <block id="ea30425cb29f7e447fdeace74c26461f" category="doc">Sichern Sie Datenspeicher mit NetApp Backup and Recovery auf der Google Cloud Platform</block>
-  <block id="476c041ec40c52b29e7eff32f4cb7b32" category="paragraph">Sie können einen oder mehrere Datenspeicher auf der Google Cloud Platform sichern, indem Sie das SnapCenter Plug-in for VMware vSphere Hosts mit NetApp Backup and Recovery integrieren.  Dies wird den VM-Administratoren dabei helfen, Daten einfach und schnell zu sichern und zu archivieren, um die Speichereffizienz zu steigern und den Übergang in die Cloud zu beschleunigen.</block>
-  <block id="bccdf5c7461a91341c81491a049f7917" category="list-text">Wählen Sie *Google Cloud Platform* aus, um es als Cloud-Anbieter zu konfigurieren.</block>
-  <block id="bd1bf42f3eb311ef9f00c80352b4b141" category="list-text">Wählen Sie das Google Cloud-Projekt aus, in dem der Google Cloud Storage-Bucket für Backups erstellt werden soll.</block>
-  <block id="fa0f3e6189a17df2b37f1f89872dbee4" category="list-text">Geben Sie im Feld „Google Cloud-Zugriffsschlüssel“ den Schlüssel an.</block>
-  <block id="3ee34b7fd8f9ec35694f9ada246e9a7b" category="list-text">Geben Sie im Feld „Google Cloud Secret Key“ das Kennwort ein.</block>
-  <block id="3ec390de7db5c59f007c717fb9aa2dac" category="list-text">Geben Sie den IP-Bereich an.</block>
-  <block id="71fb704fe6aa28d59f46358c61d5b35a" category="doc">Sichern Sie Datenspeicher mit NetApp Backup and Recovery in StorageGRID</block>
-  <block id="5cf880745ad0e6e8d8208ad538957b63" category="paragraph">Sie können einen oder mehrere Datenspeicher in StorageGRID sichern, indem Sie das SnapCenter Plug-in for VMware vSphere Hosts mit NetApp Backup and Recovery integrieren.  Dies wird den VM-Administratoren dabei helfen, Daten einfach und schnell zu sichern und zu archivieren, um die Speichereffizienz zu steigern und den Übergang in die Cloud zu beschleunigen.</block>
-  <block id="6c5cc1315b69c8256bbc33cf47a5a7ab" category="list-text">Wählen Sie * StorageGRID*.</block>
-  <block id="cf4e6e70123f43cdec5ffd93f792c083" category="list-text">Geben Sie die IP des Speicherservers an.</block>
-  <block id="10303a499a9e21a77e6dad69618c622b" category="list-text">Wählen Sie den Zugriffsschlüssel und den geheimen Schlüssel aus.</block>
-  <block id="b26e7e8656acba73c7e69f8c75f299d1" category="doc">Verwalten Sie den Schutz von Datenspeichern und VMs in NetApp Backup and Recovery</block>
-  <block id="749f97c0bfe03215ddfcc33e348d0c86" category="paragraph">Sie können Richtlinien, Datenspeicher und virtuelle Maschinen anzeigen, bevor Sie Daten mit NetApp Backup and Recovery sichern und wiederherstellen.  Abhängig von den Änderungen in der Datenbank, den Richtlinien oder den Ressourcengruppen können Sie die Aktualisierungen über die Benutzeroberfläche der NetApp Console anzeigen.</block>
-  <block id="5bea9354a7049a7e639553b703f18e84" category="paragraph">Sie können alle vorgefertigten Standardrichtlinien anzeigen.  Wenn Sie die Details zu jeder dieser Richtlinien anzeigen, werden alle zugehörigen Richtlinien und virtuellen Maschinen aufgelistet.</block>
-  <block id="b69b2eb51081aa4642c6e881faa0bcb8" category="list-text">Wählen Sie im Dropdownmenü *Einstellungen* die Option *Richtlinien* aus.</block>
-  <block id="8448a57387950bac4af453a04975933d" category="list-text">Wählen Sie *Details anzeigen* für die Richtlinie aus, deren Details Sie anzeigen möchten.</block>
-  <block id="1c281da53a696408c46b6da9d44b27e7" category="paragraph">Die zugehörigen Richtlinien und virtuellen Maschinen werden aufgelistet.</block>
-  <block id="8ed12ef54cb1d9b3b955b96ba5173201" category="section-title">Anzeigen von Datenspeichern und virtuellen Maschinen</block>
-  <block id="e3dbc361d0cd589544c61663904eef2c" category="paragraph">Es werden die Datenspeicher und virtuellen Maschinen angezeigt, die mit dem registrierten SnapCenter Plug-in for VMware vSphere Host geschützt sind.</block>
-  <block id="4e98200f297bd7d5853a285fdfe1191f" category="list-text">Wählen Sie in der Konsolen-Benutzeroberfläche *Schutz* &gt; *Sicherung und Wiederherstellung* &gt; *Virtuelle Maschinen* &gt; *Einstellungen* &gt; * SnapCenter Plug-in for VMware vSphere*.</block>
-  <block id="18a02c3f300d1165ca70adad83d6a91a" category="list-text">Wählen Sie das SnapCenter Plug-in for VMware vSphere Host aus, für den Sie die Datenspeicher und virtuellen Maschinen anzeigen möchten.</block>
-  <block id="b1314bfff132a050766ce5d32ac976de" category="section-title">Schutz von Datenspeichern aufheben</block>
-  <block id="24e973d26bb253c7b5fb8a764db6860a" category="paragraph">Sie können den Schutz eines Datenspeichers aufheben, der bereits zuvor geschützt war.  Sie können den Schutz eines Datenspeichers aufheben, wenn Sie die Cloud-Sicherungen löschen oder keine Sicherungen mehr in der Cloud durchführen möchten.  Nach erfolgreicher Aufhebung des Schutzes kann der Datenspeicher erneut geschützt werden.</block>
-  <block id="a4d4871f49f1183bee5e02ea1b2064f9" category="list-text">Wählen Sie das Symbol Aktionen<block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> entsprechend dem Datenspeicher, dessen Schutz Sie aufheben möchten, und wählen Sie *Schutz aufheben*.</block>
-  <block id="b4aa547260f4fe266f03ec3a845576a5" category="section-title">Bearbeiten Sie das SnapCenter Plug-in for VMware vSphere Instanz</block>
-  <block id="7d890413f9b664e2bcf99c30c870de89" category="paragraph">Sie können die Details des SnapCenter Plug-in for VMware vSphere Host in der Konsole bearbeiten.</block>
-  <block id="73f6eff78e2d5b4c91558c1e0c0e8a24" category="list-text">Wählen Sie das Symbol Aktionen<block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> und wählen Sie *Bearbeiten*.</block>
-  <block id="05c829c7b617d014c0186656453575ea" category="list-text">Ändern Sie die Details nach Bedarf.</block>
-  <block id="738c224049615eeb47fe5a57a6ea8f7c" category="section-title">Aktualisieren von Ressourcen und Sicherungen</block>
-  <block id="0e9cec251ac8debda34d029f4302d4eb" category="paragraph">Wenn Sie die neuesten Datenspeicher und Sicherungen anzeigen möchten, die der Anwendung hinzugefügt wurden, sollten Sie die Ressourcen und Sicherungen aktualisieren.  Dadurch wird die Erkennung der Ressourcen und Sicherungen eingeleitet und die neuesten Details werden angezeigt.</block>
-  <block id="04fa58f349615d27149f6dda8efe38e2" category="list-text">Wählen Sie *Sicherung und Wiederherstellung* &gt; *Virtuelle Maschinen*.</block>
-  <block id="266f9ff12956ac5692bc7be08bda846f" category="list-text">Wählen Sie im Dropdown-Menü *Einstellungen* die Option * SnapCenter Plug-in for VMware vSphere* aus.</block>
-  <block id="3909de0b2400078920ffd3d72a06f81b" category="list-text">Wählen Sie das Symbol Aktionen<block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> entsprechend dem SnapCenter Plug-in for VMware vSphere Host und wählen Sie *Ressourcen und Backups aktualisieren*.</block>
-  <block id="aa8a6c50e00adebd857afeb3c163080e" category="section-title">Aktualisierungsrichtlinie oder Ressourcengruppe</block>
-  <block id="a663847f6a4dfe84a9e34d968b306aef" category="paragraph">Wenn sich die Richtlinie oder die Ressourcengruppe ändert, sollten Sie die Schutzbeziehung aktualisieren.</block>
-  <block id="dfc67c4e882a2d4fffb8d16037fa7dd2" category="list-text">Wählen Sie das Symbol Aktionen<block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> entsprechend dem Datenspeicher und wählen Sie *Schutz aktualisieren*.</block>
-  <block id="ecb0c28cd21006ad8c86d4be09edf297" category="section-title">Aufheben der Registrierung des SnapCenter Plug-in for VMware vSphere Host</block>
-  <block id="3d61f1dcef482f1c526370542b798e50" category="paragraph">Alle mit dem SnapCenter Plug-in for VMware vSphere Host verbundenen Datenspeicher und virtuellen Maschinen sind ungeschützt.</block>
-  <block id="b184ae3f5a4589cacbec55aa0fa973fc" category="list-text">Wählen Sie das Symbol Aktionen<block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> entsprechend dem SnapCenter Plug-in for VMware vSphere Host und wählen Sie *Registrierung aufheben*.</block>
-  <block id="d65dcf19e9eda758238d835f23a69642" category="section-title">Jobs überwachen</block>
-  <block id="4044636ea8a32c730e3b044adcda1f8c" category="paragraph">Für alle NetApp Backup and Recovery und Wiederherstellungsvorgänge werden Jobs erstellt.  Sie können alle Jobs und alle Unteraufgaben überwachen, die im Rahmen jeder Aufgabe ausgeführt werden.</block>
-  <block id="942b89acbe370667e9d70389e84f8544" category="list-text">Wählen Sie *Sicherung und Wiederherstellung* &gt; *Auftragsüberwachung*.</block>
-  <block id="5f2c87cb3d6dde849915754be64e1690" category="paragraph">Wenn Sie einen Vorgang starten, wird ein Fenster angezeigt, das Sie darüber informiert, dass der Auftrag gestartet wurde.  Sie können den Link auswählen, um den Job zu überwachen.</block>
-  <block id="84d686b7ff9ad225b36fb397dd4cbce7" category="list-text">Wählen Sie die Hauptaufgabe aus, um die Unteraufgaben und den Status jeder dieser Unteraufgaben anzuzeigen.</block>
-  <block id="38f579d721675ddff9e2ac5938361837" category="doc">Erstellen Sie eine Richtlinie zum Sichern von Datenspeichern in NetApp Backup and Recovery</block>
-  <block id="b584330b721e66ff5dabb697badb5ff7" category="paragraph">Sie können eine Richtlinie erstellen oder eine der folgenden vordefinierten Richtlinien verwenden, die in NetApp Backup and Recovery verfügbar sind.</block>
-  <block id="43852dc1e0c3229284688eb4c01dfef0" category="list-text">Sie sollten Richtlinien erstellen, wenn Sie die vordefinierten Richtlinien nicht bearbeiten möchten.</block>
-  <block id="38fb3153d6139974d24ba11e28a0718d" category="list-text">Um Backups vom Objektspeicher in den Archivspeicher zu verschieben, sollten Sie ONTAP 9.10.1 oder höher ausführen und Amazon Web Services oder Microsoft Azure sollte der Cloud-Anbieter sein.</block>
-  <block id="5d0ad01dbdb8717fbebf1cb44a3c10cd" category="list-text">Sie sollten die Archivzugriffsebene für jeden Cloud-Anbieter konfigurieren.</block>
   <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">Informationen zu diesem Vorgang</block>
-  <block id="25a9fea1bd39d0e24939bbbf1f842b7a" category="paragraph">Die folgenden vordefinierten Richtlinien sind in der NetApp Console verfügbar:</block>
-  <block id="002f7378a5fcfc2f66cfea851a7fd5f4" category="cell">Richtlinienname</block>
-  <block id="b021df6aac4654c454f46c77646e745f" category="cell">Etikett</block>
-  <block id="dfa56cb0ff8ac0e7087134a3d7e1f39d" category="cell">Retentionswert</block>
-  <block id="7250cb0d0c1524aec805084d9f0ffc21" category="paragraph">1 Jahr täglich LTR (Langzeitaufbewahrung)</block>
-  <block id="c512b685438f41daa7386329a3b8f8d3" category="paragraph">Täglich</block>
-  <block id="5ef698cd9fe650923ea331c15af3b160" category="paragraph">366</block>
-  <block id="5ea7bb0579b5fe6d2acf33c0ab584548" category="paragraph">5 Jahre täglich LTR</block>
-  <block id="069654d5ce089c13f642d19f09a3d1c0" category="paragraph">1830</block>
-  <block id="2cd29ea4d4dd80df56178fc41c9bc385" category="paragraph">7 Jahre wöchentliche LTR</block>
-  <block id="6c25e6a6da95b3d583c6ec4c3f82ed4d" category="paragraph">Wöchentlich</block>
-  <block id="d709f38ef758b5066ef31b18039b8ce5" category="paragraph">370</block>
-  <block id="f76a9390149b62241c42efed985a431a" category="paragraph">10 Jahre monatliche LTR</block>
-  <block id="9030e39f00132d583da4122532e509e9" category="paragraph">Monatlich</block>
-  <block id="da4fb5c6e93e74d3df8527599fa62642" category="paragraph">120</block>
-  <block id="0ef51421739da7017b4d3decc1813f4a" category="list-text">Wählen Sie auf der Seite „Virtuelle Maschinen“ aus der Dropdownliste „Einstellungen“ die Option „Richtlinien“ aus.</block>
-  <block id="db92c743d97601150bbdfa11bf3cf66b" category="list-text">Wählen Sie *Richtlinie erstellen*.</block>
-  <block id="9f6b1aa82322cc4f853fe0fe7c532ff0" category="list-text">Wählen Sie im Abschnitt „Aufbewahrung“ einen Aufbewahrungstyp aus und geben Sie die Anzahl der aufzubewahrenden Sicherungen an.</block>
-  <block id="db2205364549e4c4841dc9b5d66f62a3" category="list-text">Wählen Sie „Primär“ oder „Sekundär“ als Sicherungsspeicherquelle aus.</block>
-  <block id="2a60e5494e07cff54330378780f8e2a4" category="list-text">(Optional) Wenn Sie Sicherungen zur Kostenoptimierung nach einer bestimmten Anzahl von Tagen vom Objektspeicher in den Archivspeicher verschieben möchten, aktivieren Sie das Kontrollkästchen *Sicherungen in Archivspeicher verschieben* und geben Sie die Anzahl der Tage ein, nach denen die Sicherung archiviert werden soll.</block>
-  <block id="44dae527927c9be3aabaf37ba09b9068" category="admonition">Sie können eine Richtlinie, die mit einem Datenspeicher verknüpft ist, weder bearbeiten noch löschen.</block>
-  <block id="ac58e4fdaef529d7061db727c7d95b98" category="doc">Voraussetzungen für Workloads virtueller Maschinen in NetApp Backup and Recovery</block>
-  <block id="443b7d29fe382a91202282145dbedf43" category="paragraph">Bevor Sie mit dem Schutz Ihrer virtuellen Maschinen-Workloads mit NetApp Backup and Recovery beginnen, stellen Sie sicher, dass Sie die folgenden Voraussetzungen erfüllen:</block>
-  <block id="d511399444cf864b695600d159b7c93b" category="list-text">SnapCenter Plug-in for VMware vSphere 4.6P1 oder höher</block>
-  <block id="2a18af02b6c0b7e92a17df9509574f26" category="list-text">Sie sollten das SnapCenter Plug-in for VMware vSphere 4.7P1 oder höher verwenden, um Datenspeicher vom sekundären Speicher vor Ort zu sichern.</block>
-  <block id="c3ce6809be6bdc67ae978395484d0585" category="list-text">ONTAP 9.8 oder höher</block>
-  <block id="06126ace9559015b34270e5c984cb3c9" category="list-text">Für die VMFS-Unterstützung sollte das SnapCenter Plug-in for VMware vSphere Host unter 4.9 oder höher ausgeführt werden.  Stellen Sie sicher, dass Sie eine Sicherungskopie des VMFS-Datenspeichers erstellen, wenn das SnapCenter Plug-in for VMware vSphere Host von einer früheren Version auf die Version 4.9 aktualisiert wurde.</block>
-  <block id="bff3cdd2fd5f993f3bc3fbbd3c43fb30" category="list-text">Mindestens eine Sicherung sollte im SnapCenter Plug-in for VMware vSphere 4.6P1 erstellt worden sein.</block>
-  <block id="61607910a1db523098b12865f02faff4" category="list-text">Mindestens eine tägliche, wöchentliche oder monatliche Richtlinie im SnapCenter Plug-in for VMware vSphere ohne Bezeichnung oder mit derselben Bezeichnung wie die Richtlinie für virtuelle Maschinen in der Konsole.</block>
-  <block id="9c2d7e78a68e18061466c4c12001d828" category="list-text">Bei einer vorgefertigten Richtlinie sollte die Zeitplanebene für den Datenspeicher im SnapCenter Plug-in for VMware vSphere und in der Cloud identisch sein.</block>
-  <block id="ad747f24f06324c9bc58eeaa274f014a" category="list-text">Stellen Sie sicher, dass sich im Datenspeicher keine FlexGroup -Volumes befinden, da das Sichern und Wiederherstellen von FlexGroup -Volumes nicht unterstützt wird.</block>
-  <block id="f8038513f93eb5ca7b2505674255b67b" category="list-text">Deaktivieren Sie „*_recent*“ für die erforderlichen Ressourcengruppen.  Wenn Sie „*_recent*“ für die Ressourcengruppe aktiviert haben, können die Sicherungen dieser Ressourcengruppen nicht für den Datenschutz in der Cloud und folglich nicht für den Wiederherstellungsvorgang verwendet werden.</block>
-  <block id="391eb750d98c55b72607ff6ec6311db2" category="list-text">Stellen Sie sicher, dass der Zieldatenspeicher, in dem die virtuelle Maschine wiederhergestellt wird, über genügend Speicherplatz verfügt, um eine Kopie aller Dateien der virtuellen Maschine wie VMDK, VMX, VMSD usw. aufzunehmen.</block>
-  <block id="6ee2c41b7a9bfae5bb618327d9499834" category="list-text">Stellen Sie sicher, dass der Zieldatenspeicher keine veralteten virtuellen Maschinendateien im Format restore_xxx_xxxxxx_filename aus den vorherigen fehlgeschlagenen Wiederherstellungsvorgängen enthält.  Sie sollten die veralteten Dateien löschen, bevor Sie einen Wiederherstellungsvorgang auslösen.</block>
-  <block id="7148963c1fe9bd20799d84596b688191" category="list-text">Um einen Connector mit konfiguriertem Proxy bereitzustellen, stellen Sie sicher, dass alle ausgehenden Connector-Anrufe über den Proxyserver geleitet werden.</block>
-  <block id="e0d0f7f19ee8c764850a895376299f6e" category="list-text">Wenn ein Volume, das einen Datenspeicher sichert, bereits über die Registerkarte „Volumes“ (NetApp Backup and Recovery -&gt; Volumes) geschützt ist, kann derselbe Datenspeicher nicht erneut über die Registerkarte „Virtuelle Maschinen“ (NetApp Backup and Recovery -&gt; Virtuelle Maschinen) geschützt werden.</block>
-  <block id="455299fd2e4b438ff8661df0bfd1cace" category="paragraph">Das folgende Bild zeigt jede Komponente und die Verbindungen, die Sie zwischen ihnen vorbereiten müssen:</block>
-  <block id="add26d38486fad5ca461f986832fa6c3" category="inline-image-macro">Architekturdiagramm</block>
-  <block id="955c6f1851b4039bd20ae31d5f14d338" category="paragraph"><block ref="955c6f1851b4039bd20ae31d5f14d338" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="1ad1b9b9f7ac4090b8d287b119a246b7" category="doc">Schützen Sie die Workloads virtueller Maschinen in der NetApp Backup and Recovery -Übersicht</block>
-  <block id="f2e6828ccbddc013dabb3aca8551e78b" category="paragraph">Schützen Sie die Workloads Ihrer virtuellen Maschinen mit NetApp Backup and Recovery.  NetApp Backup and Recovery bietet schnelle, platzsparende, absturzkonsistente und VM-konsistente Sicherungs- und Wiederherstellungsvorgänge für VMs, Datenspeicher und VMDKs.</block>
-  <block id="40c5998ccd6f421d1eaa29ece0c36b59" category="paragraph">Sie können Datenspeicher auf Amazon Web Services S3, Microsoft Azure Blob, Google Cloud Platform und StorageGRID sichern und virtuelle Maschinen auf dem lokalen SnapCenter Plug-in for VMware vSphere Host wiederherstellen.</block>
-  <block id="21b169a7cabe8831cd38ce5fb6f77475" category="paragraph">Anweisungen zum Schützen der Workloads virtueller Maschinen finden Sie in den folgenden Themen:</block>
-  <block id="49ef03573c7748afa14739a88a72a8fe" category="inline-link-macro">Erstellen einer Richtlinie für VMware-Workloads</block>
-  <block id="f906bca37e956e72a0c25eb84a587aba" category="list-text"><block ref="f906bca37e956e72a0c25eb84a587aba" category="inline-link-macro-rx"></block></block>
-  <block id="533a49682158340fa752f41b001c3ed7" category="inline-link-macro">Sichern Sie VMware-Datenspeicher auf Amazon Web Services</block>
-  <block id="28ed746142d082cc313c957c3916de57" category="list-text"><block ref="28ed746142d082cc313c957c3916de57" category="inline-link-macro-rx"></block></block>
-  <block id="b4d632569ac2a60a95624d732b062c21" category="inline-link-macro">Sichern Sie VMware-Datenspeicher in Microsoft Azure</block>
-  <block id="8452a00d810c3f304181a9750756e3c3" category="list-text"><block ref="8452a00d810c3f304181a9750756e3c3" category="inline-link-macro-rx"></block></block>
-  <block id="f54c20442d5c079704492d9e9cc632b0" category="inline-link-macro">Sichern Sie VMware-Datenspeicher auf der Google Cloud Platform</block>
-  <block id="08261c8a90295d24c0179c89fab872df" category="list-text"><block ref="08261c8a90295d24c0179c89fab872df" category="inline-link-macro-rx"></block></block>
-  <block id="d4e0304413c6571799459b3f2395df3b" category="inline-link-macro">Sichern Sie VMware-Datenspeicher in StorageGRID</block>
-  <block id="a8fdfae9cbcef9f449ea9eb2143c4f64" category="list-text"><block ref="a8fdfae9cbcef9f449ea9eb2143c4f64" category="inline-link-macro-rx"></block></block>
-  <block id="2f8f18e2be23909e758abe786154b05f" category="list-text"><block ref="2f8f18e2be23909e758abe786154b05f" category="inline-link-macro-rx"></block></block>
-  <block id="1f325f707555c5e4623d4ca3ed92bc14" category="inline-link-macro">Verwalten Sie den Schutz für VMware-Workloads</block>
-  <block id="6b5e78f60de50d17c6c9e6c26f183c04" category="list-text"><block ref="6b5e78f60de50d17c6c9e6c26f183c04" category="inline-link-macro-rx"></block></block>
-  <block id="450da046762e94e9e23eb94084dbc43c" category="doc">Registrieren Sie das SnapCenter Plug-in for VMware vSphere Host zur Verwendung mit NetApp Backup and Recovery</block>
-  <block id="dbb710aaa3d97d2921c1e1444e6686e3" category="paragraph">Sie sollten das SnapCenter Plug-in for VMware vSphere Host in NetApp Backup and Recovery registrieren, damit die Datenspeicher und virtuellen Maschinen angezeigt werden.  Nur ein Benutzer mit Administratorzugriff kann das SnapCenter Plug-in for VMware vSphere Host registrieren.</block>
-  <block id="30ba7e7d6da357cee0df5cb67f525c81" category="list-text">Wählen Sie * SnapCenter Plug-in for VMware vSphere registrieren*.</block>
-  <block id="12f2045076b291561318e5d9855f26de" category="list-text">Geben Sie die folgenden Details an:</block>
-  <block id="ebeea6bd6cc46b0c9f463f2b01659606" category="list-text">Geben Sie im Feld „SnapCenter Plug-in for VMware vSphere“ den FQDN oder die IP-Adresse des SnapCenter Plug-in for VMware vSphere Host an.</block>
-  <block id="463d350eb6c9887e5addb9a6561a47ad" category="list-text">Geben Sie im Feld „Port“ die Portnummer an, auf der das SnapCenter Plug-in for VMware vSphere Host ausgeführt wird.</block>
-  <block id="618dcf671038308466415a25c2670cec" category="paragraph">Sie sollten sicherstellen, dass die Kommunikation zwischen dem lokalen SnapCenter Plug-in for VMware vSphere Host, der auf dem Standardport 8144 ausgeführt wird, und der Konsolen-Agent-Instanz, die entweder bei einem beliebigen Cloud-Anbieter (Amazon Web Services, Microsoft Azure, Google Cloud Platform) oder vor Ort ausgeführt werden kann, offen ist.</block>
-  <block id="eeba430c3c4e0795629fe640359a8730" category="list-text">Geben Sie im Feld „Benutzername“ und „Passwort“ die Anmeldeinformationen des vCenter-Benutzers mit der Administratorrolle an.</block>
-  <block id="b5249314aff5fae6b6de54ce7f13f16b" category="list-text">Wählen Sie *Registrieren*.</block>
-  <block id="a2635d75789f249837881cc5136979e1" category="paragraph">*Nachdem Sie fertig sind*</block>
-  <block id="b6ee3dd78c315fa7dfd1bfa66181a1c2" category="paragraph">Wählen Sie *Sicherung und Wiederherstellung* &gt; *Virtuelle Maschinen*, um alle Datenspeicher und virtuellen Maschinen anzuzeigen, die mit dem registrierten SnapCenter Plug-in for VMware vSphere Host geschützt sind.</block>
-  <block id="4f42130e8cfb9f713223107cb029a735" category="doc">Wiederherstellen von Daten virtueller Maschinen mit NetApp Backup and Recovery</block>
-  <block id="b9f7c26581cad3cbd789c6d293692814" category="admonition">Sie können keine virtuellen Maschinen wiederherstellen, die sich über mehrere Datenspeicher erstrecken.</block>
-  <block id="1c79f8653ccf267be1bce47f8ccf3d2f" category="list-text">Wenn Sie an einem anderen Speicherort wiederherstellen:</block>
-  <block id="0bd63162a36deb15bb735dfc68ec0b84" category="list-text">Stellen Sie sicher, dass sich die Quell- und Ziel-vCenter im verknüpften Modus befinden.</block>
-  <block id="ccea797bbf5eba8cc950fa05c806cd76" category="list-text">Stellen Sie sicher, dass die Quell- und Zielclusterdetails auf der Seite *Systeme* der NetApp Console und in vCentern im verknüpften Modus in beiden SnapCenter Plug-in for VMware vSphere Hosts hinzugefügt werden.</block>
-  <block id="52bda1d8d40e82cef23f0197a5e0c990" category="list-text">Wählen Sie in der Konsolen-Benutzeroberfläche *Schutz* &gt; *Sicherung und Wiederherstellung* &gt; *Virtuelle Maschinen* &gt; * SnapCenter Plug-in for VMware vSphere* und wählen Sie das SnapCenter Plug-in for VMware vSphere Host aus.</block>
-  <block id="d180a4da8965c4cd5488cd05903774f0" category="list-text">Sie können die virtuelle Maschine am ursprünglichen Speicherort oder an einem alternativen Speicherort aus dem Datenspeicher oder von virtuellen Maschinen wiederherstellen:</block>
-  <block id="db5366d69994d30376d1a970dcebb9ce" category="cell">Wenn Sie die virtuelle Maschine wiederherstellen möchten ...</block>
-  <block id="5e2ad6fd9deb412d871137094ee43ef0" category="cell">Machen Sie Folgendes...</block>
-  <block id="ccc5c5f6926c7affe9ddb8b5fd8e78d0" category="paragraph">vom Datenspeicher zum ursprünglichen Speicherort</block>
-  <block id="7103002346129eef1e9f38419a6c849d" category="list-text">Wählen Sie das Symbol Aktionen<block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> entsprechend dem Datenspeicher, den Sie wiederherstellen möchten, und klicken Sie auf *Details anzeigen*.</block>
-  <block id="a7b5011dd36cfe0539eff959f97ab523" category="list-text">Wählen Sie *Wiederherstellen* entsprechend der Sicherung aus, die Sie wiederherstellen möchten.</block>
-  <block id="ce924f0dcf910e34ec23b7b7ca88af8d" category="list-text">Wählen Sie die virtuelle Maschine aus, die Sie aus der Sicherung wiederherstellen möchten, und wählen Sie *Weiter*.</block>
-  <block id="8cc375f4ce3601a663a600c7d8e620e5" category="list-text">Stellen Sie sicher, dass *Original* ausgewählt ist, und wählen Sie *Weiter*.</block>
-  <block id="793f88b02160a70ac96d346b799dd570" category="list-text">Wenn die virtuelle Maschine mithilfe einer Richtlinie geschützt ist, in der Archivierungseinstellungen konfiguriert sind, wählen Sie die *Archivierungswiederherstellungspriorität* und dann *Weiter*.</block>
-  <block id="5f6a823289f7bbe90f46815d77f2f0f9" category="list-text">Überprüfen Sie die Details und wählen Sie *Wiederherstellen*.</block>
-  <block id="c0df5d97adcf3825af806d990e658e67" category="paragraph">an einen anderen Speicherort vom Datenspeicher</block>
-  <block id="1be093b2878514e1a668a6557e0fa48f" category="list-text">Wählen Sie das Symbol Aktionen<block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> entsprechend dem Datenspeicher, den Sie wiederherstellen möchten, und wählen Sie *Details anzeigen*.</block>
-  <block id="2f663ab73d99f410b05e9f748fdb9f69" category="list-text">Wählen Sie *Alternative*.</block>
-  <block id="1825907f18d398bff7d7bf89210651db" category="list-text">Wählen Sie den alternativen vCenter Server, ESXi-Host, Datenspeicher und das Netzwerk aus.</block>
-  <block id="94187c3780ece70dc5689a3db077e744" category="list-text">Geben Sie der VM nach der Wiederherstellung einen Namen und wählen Sie *Weiter*.</block>
-  <block id="0236f808af929087f6a9616d379b96a4" category="paragraph">von virtuellen Maschinen zum ursprünglichen Speicherort</block>
-  <block id="6cd8cc5fdd9e1409bcb46d17177068ee" category="list-text">Wählen Sie das Symbol Aktionen<block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> entsprechend der virtuellen Maschine, die Sie wiederherstellen möchten, und wählen Sie *Wiederherstellen*.</block>
-  <block id="071df86763e0e93af80e50596aa0710c" category="list-text">Wählen Sie das Backup aus, über das Sie die virtuelle Maschine wiederherstellen möchten.</block>
-  <block id="ccb90cb50d99e7cb9712a836810d4fae" category="paragraph">von virtuellen Maschinen an einen anderen Standort</block>
   <block id="b92e6028af16604f3b6fd4eade9dfec6" category="summary">Wenn Sie NetApp Backup and Recovery an einem Standort ohne Internetzugang verwenden (bekannt als „privater Modus“), werden die Konfigurationsdaten von NetApp Backup and Recovery im StorageGRID oder ONTAP S3-Bucket gesichert, in dem Ihre Backups gespeichert werden.  Wenn in Zukunft ein Problem mit dem Hostsystem des Konsolenagenten auftritt, können Sie einen neuen Konsolenagenten bereitstellen und die kritischen NetApp Backup and Recovery -Daten wiederherstellen.</block>
   <block id="a215e32a572a4f73138eb57df3fb494d" category="doc">Wiederherstellen der NetApp Backup and Recovery -Konfigurationsdaten in einer Dark Site</block>
   <block id="e49ea1690cc473e646cdffd861381cbc" category="paragraph">Wenn Sie NetApp Backup and Recovery an einem Standort ohne Internetzugang verwenden (bekannt als _privater Modus_), werden die Konfigurationsdaten von NetApp Backup and Recovery im StorageGRID oder ONTAP S3-Bucket gesichert, in dem Ihre Backups gespeichert werden.  Wenn Sie ein Problem mit dem Hostsystem des Konsolenagenten haben, können Sie einen neuen Konsolenagenten bereitstellen und die kritischen NetApp Backup and Recovery -Daten wiederherstellen.</block>
@@ -4250,17 +4074,6 @@
   <block id="c00b274754a2d13242a61b1534660a37" category="sidebar">Verwalten des Microsoft SQL Server-Inventars</block>
   <block id="41e1a34ea3ba2b687b86e55ec1a7955d" category="sidebar">Verwalten von Microsoft SQL Server-Snapshots</block>
   <block id="c8ffa42e0e508862d020665c979eb5c0" category="sidebar">Erstellen von Microsoft SQL Server-Berichten</block>
-  <block id="b1b8c22062b7762d4a3c459e880dee3b" category="sidebar">Schützen Sie VMware-Workloads (mit dem SnapCenter -Plug-in für VMware)</block>
-  <block id="7706cc052aa7120ddac8475709793258" category="sidebar">Übersicht über den Schutz virtueller Maschinen-Workloads</block>
-  <block id="9ce88727019b612743000c7bcc2bfd23" category="sidebar">Voraussetzungen für den Schutz der Workloads virtueller Maschinen</block>
-  <block id="437ae89009b207d1aafce3d11e58f524" category="sidebar">Registrieren Sie das SnapCenter Plug-in for VMware vSphere Host</block>
-  <block id="776ec5ed6f61de56be98c037c8ca01c9" category="sidebar">Erstellen einer Richtlinie zum Sichern von Daten virtueller Maschinen</block>
-  <block id="1d5ad62b9217b4a3f085f517534f40bb" category="sidebar">Sichern Sie Datenspeicher auf Amazon Web Services</block>
-  <block id="32d2b45dd98e36ad888d7156b4532053" category="sidebar">Sichern Sie Datenspeicher in Microsoft Azure</block>
-  <block id="eb1ab874b09a7eab583845e8576be828" category="sidebar">Sichern Sie Datenspeicher auf der Google Cloud Platform</block>
-  <block id="ba7b66b996d8928df996e4fd4fffa4a4" category="sidebar">Sichern Sie Datenspeicher in StorageGRID</block>
-  <block id="9a3f2e7eb30992bb084418711e5093f2" category="sidebar">Verwalten Sie den Schutz von Datenspeichern und virtuellen Maschinen</block>
-  <block id="9234f5bc35aa09673eacbf8fece508db" category="sidebar">Wiederherstellen von Daten und Datenspeichern virtueller Maschinen</block>
   <block id="a6c93de7c03701dfba222e9072ffe5e7" category="sidebar">KVM-Workloads schützen (Vorschau)</block>
   <block id="34caa737a5a671b66cc6fe7531c1f8b9" category="sidebar">Wiederherstellungspunkte einbinden und ausbinden</block>
   <block id="60c0c463b8839d0f2c5e5cea8fa728ad" category="sidebar">Schützen Sie Kubernetes-Workloads (Vorschau)</block>
@@ -4300,11 +4113,7 @@
   <block id="d4356e3242caba9699bd9bc147a04798" category="paragraph">Auf der Seite „Wiederherstellen“ (Suchen und Wiederherstellen) können Sie eine Ressource wiederherstellen, indem Sie mithilfe von Filtern nach dem Snapshot suchen, auch wenn Sie sich nicht an den genauen Namen, den Speicherort oder das letzte bekannte Datum erinnern.</block>
   <block id="63751d750873479f94855f0a16fc63d8" category="list-text">Softwareanforderungen für den Hyper-V Windows Server-Host:</block>
   <block id="fd7bb5c3777005321645f38a2d07ea27" category="admonition">Wenn der Wiederherstellungsvorgang nicht abgeschlossen werden kann, warten Sie, bis der Job Monitor „Fehlgeschlagen“ anzeigt, bevor Sie den Wiederherstellungsvorgang wiederholen.</block>
-  <block id="df3ee99c8171743d8bd35d65cf62b2ed" category="paragraph">Mit NetApp Backup and Recovery können Sie Daten virtueller Maschinen aus der Cloud auf dem lokalen vCenter Server wiederherstellen. Sie können die virtuelle Maschine an genau demselben Speicherort wiederherstellen, von dem die Sicherung erstellt wurde, oder an einem anderen Speicherort. Wenn die virtuelle Maschine mithilfe einer Archivierungsrichtlinie gesichert wurde, können Sie die Priorität für die Archivwiederherstellung festlegen.</block>
   <block id="51e153ee1aa6cdb4ca7796e926180b53" category="admonition">Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unter<block ref="e56b09183f5489111204017fecace77e" category="inline-link-macro-rx"></block> .</block>
-  <block id="2f3b7eef1cf7df43dea1233ed03f5f42" category="list-text">Stellen Sie sicher, dass das System für den anderen Standort auf der Konsolenseite *Systeme* hinzugefügt wird.</block>
-  <block id="870482577443f708a74b9dbe9b8fe928" category="admonition">Wenn Sie eine virtuelle Maschine mit VMware vSphere vMotion verschieben und sie von der Konsole aus wiederherstellen, stellt Backup and Recovery sie am ursprünglichen Sicherungsspeicherort wieder her.</block>
-  <block id="6e6630b7443f8dd6eade1b55e3c59141" category="paragraph">Die unterstützten Prioritäten für die Archivwiederherstellung sind „Hoch“, „Standard“ und „Niedrig“ für Amazon Web Services und „Hoch“ und „Standard“ für Microsoft Azure.</block>
   <block id="2f52181b09a7c053aed22699e227b9db" category="paragraph">Wenn Sie NetApp Backup and Recovery in einer SaaS-Umgebung verwenden und der Konsolenagent bei Ihrem Cloud-Anbieter oder auf Ihrem eigenen mit dem Internet verbundenen Host bereitgestellt wird, sichert und schützt das System alle wichtigen Konfigurationsdaten in der Cloud.  Wenn Sie ein Problem mit dem Konsolenagenten haben, erstellen Sie einen neuen Konsolenagenten und fügen Sie Ihre Systeme hinzu.  Die Sicherungsdetails werden automatisch wiederhergestellt.</block>
   <block id="361cc78877d7de2ea952f510e7626ad4" category="paragraph">Diese Daten werden einmal täglich um Mitternacht gesichert und es werden maximal 7 Kopien jeder Datei aufbewahrt. Wenn der Konsolenagent mehrere lokale ONTAP -Systeme verwaltet, werden die NetApp Backup and Recovery im Bucket des zuerst aktivierten Systems gespeichert.</block>
   <block id="2be5ff28599e1447ad26486d058560b3" category="paragraph">Wenn Ihr lokaler Konsolenagent nicht mehr funktioniert, müssen Sie einen neuen Konsolenagenten installieren und dann die NetApp Backup and Recovery -Daten auf dem neuen Konsolenagenten wiederherstellen.</block>
@@ -5244,4 +5053,5 @@
   <block id="a4af15d338a93411ae3eacbe3e9d1c5e" category="sidebar">KVM-Workloads schützen (Preview)</block>
   <block id="bd7b6aa0517dacb10ee10e479293ef82" category="sidebar">Oracle Database-Workloads schützen (Preview)</block>
   <block id="72f656ffc88a48ec4092d869ae05c4e6" category="sidebar">VMware-Workloads schützen (ohne SnapCenter Plug-in für VMware)</block>
+  <block id="2e6a10996a90ae08a445bcd92b94e301" category="list-text">Unterstützter verbundener Speicher: ONTAP 9.13 oder höher</block>
 </blocks>

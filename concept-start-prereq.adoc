@@ -94,6 +94,7 @@ Sie benötigen bestimmte Anforderungen, um Ihre VMware-Workloads zu erkennen und
 * Unterstützte VMware vCenter vSphere-Versionen: 7.0U1 und höher
 * IP-Adressen: IPv4 und IPv6
 * VMware TLS: 1.2, 1.3
+* Unterstützter verbundener Speicher: ONTAP 9.13 oder höher
 
 
 *Verbindungs- und Portanforderungen zum Schutz von VMware-Workloads*
