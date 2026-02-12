@@ -10,9 +10,9 @@ Die Unterstützung für Microsoft Hyper-V-Workloads ist jetzt allgemein verfügb
 
 
 
-=== KVM-Workloads, die in der General Availability (GA) unterstützt werden
+=== Unterstützte VMware-Workloads in der allgemeinen Verfügbarkeit (GA)
 
-Die Unterstützung für KVM-Workloads ist jetzt allgemein verfügbar (GA) in NetApp Backup and Recovery.
+Die Unterstützung für VMware-Workloads ist jetzt allgemein verfügbar (GA) in NetApp Backup and Recovery.
 
 
 
