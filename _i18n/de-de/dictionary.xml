@@ -5050,4 +5050,6 @@
   <block id="2e6a10996a90ae08a445bcd92b94e301" category="list-text">Unterstützter verbundener Speicher: ONTAP 9.13 oder höher</block>
   <block id="a58576b20da9581ef64dc73d9299ba68" category="list-text">NFS und VMFS-Datenspeicher werden unterstützt.</block>
   <block id="dbeedec7ca35d125dd2a7ee8355c41f5" category="section-title">Unterstützte VMware-Workloads in der allgemeinen Verfügbarkeit (GA)</block>
+  <block id="1fe60033089958dd8dab2fc11925056d" category="section-title">Überschreitung der Lizenzkapazität</block>
+  <block id="73b5f5184f0b378b50b42a6e8ceb743c" category="paragraph">Wenn Sie Ihr lizenziertes Speicherkontingent überschreiten, fallen PAYGO-Gebühren an; ohne ein PAYGO-Abonnement können Sie keine neuen Backups erstellen, bestehende Backups bleiben jedoch ohne Servicegarantie wiederherstellbar. Erneuern Sie Ihre Lizenz unbedingt, bevor sie abläuft; eine abgelaufene Lizenz verhindert neue Backups und unterbricht den Service.</block>
 </blocks>

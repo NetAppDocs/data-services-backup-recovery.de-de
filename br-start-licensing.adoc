@@ -137,3 +137,9 @@ Wenn Sie über eine nicht zugewiesene knotenbasierte Lizenz für Cloud Volumes O
 Sie verwenden die NetApp Console , um BYOL-Lizenzen zu verwalten.  Sie können neue Lizenzen hinzufügen, vorhandene Lizenzen aktualisieren und den Lizenzstatus über die Konsole anzeigen.
 
 https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html["Informationen zum Hinzufügen von Lizenzen"^].
+
+
+
+== Überschreitung der Lizenzkapazität
+
+Wenn Sie Ihr lizenziertes Speicherkontingent überschreiten, fallen PAYGO-Gebühren an; ohne ein PAYGO-Abonnement können Sie keine neuen Backups erstellen, bestehende Backups bleiben jedoch ohne Servicegarantie wiederherstellbar. Erneuern Sie Ihre Lizenz unbedingt, bevor sie abläuft; eine abgelaufene Lizenz verhindert neue Backups und unterbricht den Service.
