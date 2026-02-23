@@ -215,6 +215,8 @@ sidebar:
         url: "/br-use-manage-kubernetes-applications.html"
       - title: Verwalten von Ausführungs-Hook-Vorlagen für Kubernetes-Workloads
         url: "/br-use-manage-execution-hook-templates.html"
+      - title: Schutzberichte erstellen und verwalten
+        url: "/br-use-kubernetes-reports.html"
     - title: Überwachen von Jobs
       url: "/br-use-monitor-tasks.html"
     - title: Starten Sie NetApp Backup and Recovery neu

@@ -18,6 +18,30 @@ Erfahren Sie, was es Neues bei NetApp Backup and Recovery gibt.
 
 
 
+== 23. Februar 2026
+
+Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
+
+
+
+=== KVM-Workloads, die in der General Availability (GA) unterstützt werden
+
+Die Unterstützung für Microsoft Hyper-V-Workloads ist jetzt allgemein verfügbar (GA) in NetApp Backup and Recovery.
+
+Weitere Informationen zum Schutz von KVM-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Übersicht über den Schutz von KVM-Workloads"] .
+
+
+
+=== Kubernetes wird in der General Availability (GA) unterstützt
+
+Die Unterstützung für Kubernetes-Workloads ist jetzt allgemein verfügbar (GA) in NetApp Backup and Recovery. Diese Version von Kubernetes-Workloads bietet außerdem die folgenden erweiterten Funktionen:
+
+*Berichtsunterstützung*: Sie können jetzt Berichte über die Schutzaktivitäten für Kubernetes-Cluster und Anwendungen generieren, die durch NetApp Backup and Recovery geschützt sind.
+
+Weitere Informationen zum Schutz von Kubernetes-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Übersicht zum Schützen von Kubernetes-Workloads"] .
+
+
+
 == 09. Februar 2026
 
 Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.

@@ -28,8 +28,6 @@ Die folgenden Aktionen werden in der privaten Vorschauversion nicht unterstützt
 * Wiederherstellen von VMs an einem anderen Standort
 * Schützen Sie im SAN gespeicherte VMs
 * Anwendungen schützen
-* Schutzgruppen bearbeiten
-* Erstellen Sie Schutzgruppen mithilfe von VMs von mehreren KVM-Hosts
 * Erstellen Sie benutzerdefinierte Backups (es werden nur Backups unterstützt, die von der NetApp Console aus initiiert werden).
 
 
@@ -50,9 +48,7 @@ Die folgenden Konfigurationen werden nicht unterstützt:
 
 == Hinweise zur Fehlerbehebung
 
-Beachten Sie Folgendes bei der Verwendung der privaten Vorschau von KVM-Workloads mit NetApp Backup and Recovery:
+Beachten Sie Folgendes bei der Verwendung der privaten Vorschau von KVM-Workloads mit NetApp Backup and Recovery.
 
-* Um sicherzustellen, dass die Wiederherstellung von KVM-Workloads vollständig und erfolgreich verläuft, vergewissern Sie sich, dass die Einstellung *VM-konsistenten Snapshot aktivieren* in der Schutzrichtlinie, die Sie für KVM-Backups verwenden, aktiv ist.
-* Ein Speicherpool mit KVM-Hosts, die von Apache CloudStack verwaltet werden, kann nur gesichert werden, wenn alle verwalteten Hosts zu NetApp Backup and Recovery hinzugefügt werden. Als Ausweichlösung fügen Sie jeden von CloudStack verwalteten KVM-Host zu NetApp Backup and Recovery hinzu.
-* Eine gestoppte VM, die zu einer Schutzgruppe gehört, kann nicht gesichert werden. Als Ausweichlösung sollte die gestoppte VM vor dem Start der Sicherung aus der Schutzgruppe entfernt werden.
+* Backups können fehlschlagen, wenn der QEMU Guest Agent nicht in einer geschützten VM ausgeführt wird. Um dieses Problem zu umgehen, stellen Sie sicher, dass der  `qemu-guest-agent` Daemon auf der VM ausgeführt wird, bevor Sie das Backup starten.
 

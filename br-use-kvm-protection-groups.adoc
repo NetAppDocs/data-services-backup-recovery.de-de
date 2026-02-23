@@ -21,6 +21,7 @@ Sie können die folgenden Aufgaben im Zusammenhang mit Schutzgruppen ausführen:
 * Erstellen Sie eine Schutzgruppe.
 * Schutzdetails anzeigen.
 * Sichern Sie jetzt eine Schutzgruppe. Sehenlink:br-use-kvm-backup.html["Sichern Sie jetzt KVM-Workloads"] .
+* Bearbeiten Sie eine Datensicherungsgruppe.
 * Löschen Sie eine Schutzgruppe.
 
 
@@ -39,15 +40,39 @@ Gruppieren Sie VMs und Speicherpools, die Sie gemeinsam schützen möchten, in e
 . Wählen Sie die Registerkarte *Schutzgruppen*.
 . Wählen Sie *Schutzgruppe erstellen*.
 . Geben Sie einen Namen für die Schutzgruppe ein.
-. Wählen Sie die VMs oder Speicherpools aus, die Sie in die Schutzgruppe aufnehmen möchten.
+. Wählen Sie einen Host aus, um die auf diesem Host verfügbaren VMs aufzulisten. Um VMs von allen gefundenen Hosts einzubeziehen, wählen Sie in der Hostliste *All* aus.
+. Wählen Sie einzelne VMs aus, die Sie in die Datensicherungsgruppe aufnehmen möchten, oder wählen Sie *All*, um alle VMs in die Liste aufzunehmen.
++
+Die von Ihnen ausgewählten VMs werden im Bereich *Added virtual machines* angezeigt. Sie können einzelne VMs aus der Liste entfernen oder die Liste vollständig leeren. Sie können VMs von mehreren KVM-Hosts zur Liste hinzufügen.
+
 . Wählen Sie *Weiter*.
-. Wählen Sie die *Sicherungsrichtlinie* aus, die Sie auf die Schutzgruppe anwenden möchten.
+. Wählen Sie die Datensicherungsstrategie, die Sie auf die Schutzgruppe anwenden möchten, oder erstellen Sie eine neue Strategie, indem Sie *Create new policy* auswählen.
 +
 Weitere Informationen zum Erstellen einer Sicherungsrichtlinie finden Sie unterlink:br-use-policies-create.html["Erstellen und Verwalten von Richtlinien"] .
 
 . Wählen Sie *Weiter*.
 . Überprüfen Sie die Konfiguration.
 . Wählen Sie *Erstellen* aus, um die Schutzgruppe zu erstellen.
+
+
+
+
+== Bearbeiten Sie eine Schutzgruppe
+
+Bearbeiten Sie eine Datensicherungsgruppe, wenn Sie Details der Datensicherungsgruppe ändern müssen, ohne sie zu löschen und neu zu erstellen.
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
+. Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.
+. Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*.
+. Wählen Sie die Registerkarte *Schutzgruppen*.
+. Wählen Sie die Schutzgruppe aus, die Sie bearbeiten möchten.
+. Wählen Sie das Symbol „Aktionen“ aus. image:../media/icon-action.png["Aktionsoption"] > *Bearbeiten*.
+. Nehmen Sie alle erforderlichen Änderungen an den allgemeinen Details und den VMs in der protection group vor.
+. Wählen Sie *Weiter*.
+. Ändern Sie bei Bedarf die mit der Schutzgruppe verknüpfte Datensicherungsstrategie.
+. Wählen Sie *Weiter*.
+. Überprüfen Sie die Konfiguration und wählen Sie *Absenden*.
 
 
 
