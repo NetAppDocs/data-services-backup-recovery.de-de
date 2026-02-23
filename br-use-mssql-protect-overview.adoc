@@ -78,9 +78,6 @@ Sie können Microsoft SQL Server-Instanzen und -Datenbanken aus einer Sicherung,
 
 
 | StorageGRID | Cloud Volumes ONTAP On-Premises ONTAP -System | On-Premises ONTAP -System ONTAP S3 
-
-
-| Amazon FSx for NetApp ONTAP | Amazon FSx for NetApp ONTAP | N / A 
 |===
 
 NOTE: Verweise auf „On-Premises ONTAP -Systeme“ umfassen FAS und AFF Systeme.
