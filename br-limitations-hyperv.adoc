@@ -20,7 +20,7 @@ Plattformen, Geräte oder Funktionen, die mit dieser Version nicht oder nicht gu
 
 == Nicht unterstützte Aktionen
 
-Die folgenden Aktionen werden in der privaten Vorschauversion von Hyper-V-Workloads in NetApp Backup and Recovery nicht unterstützt:
+Die folgenden Aktionen werden in Hyper-V-Workloads in NetApp Backup and Recovery nicht unterstützt:
 
 * Erstellen Sie Ressourcengruppen mithilfe von VMs von mehreren Hyper-V-Hosts.
 * Wiederherstellen von VMs an einem anderen Standort

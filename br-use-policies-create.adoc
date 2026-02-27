@@ -25,7 +25,7 @@ Sie können die folgenden Ziele im Zusammenhang mit Richtlinien erreichen:
 * Erstellen einer Richtlinie für die Replikation auf sekundären Speicher
 * Erstellen einer Richtlinie für Objektspeichereinstellungen
 * Konfigurieren erweiterter Richtlinieneinstellungen
-* Richtlinien bearbeiten (nicht verfügbar für VMware-Vorschau-Workloads)
+* Richtlinien bearbeiten (nicht verfügbar für VMware workloads)
 * Richtlinien löschen
 
 

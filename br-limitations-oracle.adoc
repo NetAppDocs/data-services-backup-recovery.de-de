@@ -16,7 +16,7 @@ summary: Beachten Sie diese NetApp Backup und Recovery-Einschränkungen, bevor S
 [role="lead"]
 Plattformen, Geräte oder Funktionen, die mit dieser Version nicht oder nicht gut funktionieren, sind hier aufgelistet.  Lesen Sie diese Einschränkungen sorgfältig durch.
 
-Die folgende Aktion wird in der privaten Vorschauversion von Oracle Database-Workloads in NetApp Backup and Recovery nicht unterstützt:
+Die folgende Aktion wird in der Vorschauversion von Oracle Database-Workloads in NetApp Backup and Recovery nicht unterstützt:
 
 * Offline-Backup
 

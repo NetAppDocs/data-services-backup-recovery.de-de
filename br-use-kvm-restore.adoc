@@ -103,7 +103,7 @@ Es wird eine Liste möglicher Wiederherstellungspunkte angezeigt.
 --
 .An einem anderen Speicherort wiederherstellen
 --
-Nicht verfügbar für die KVM-Workload-Vorschau.
+Nicht verfügbar für KVM-Workloads.
 
 --
 ====

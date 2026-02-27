@@ -60,7 +60,7 @@ indexpage:
       url: br-use-vmware-backup.html
     - title: Wiederherstellen von VMware-Workloads
       url: br-use-vmware-restore.html
-  - title: KVM-Workloads schützen (Preview)
+  - title: Schützen Sie KVM -Workloads
     links:
     - title: Übersicht über den Schutz von KVM-Workloads
       url: "/br-use-kvm-protect-overview.html"
@@ -96,7 +96,7 @@ indexpage:
       url: "/br-use-oracle-backup.html"
     - title: Oracle-Datenbank-Workloads wiederherstellen
       url: "/br-use-oracle-restore.html"
-  - title: Schützen von Kubernetes-Workloads (Vorschau)
+  - title: Schützen Sie Kubernetes-Workloads
     links:
     - title: Übersicht zum Schützen von Kubernetes-Workloads
       url: br-use-kubernetes-protect-overview.html

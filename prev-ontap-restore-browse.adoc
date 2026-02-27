@@ -153,7 +153,7 @@ Wenn Sie ONTAP 9.13.0 oder höher verwenden, können Sie einen Ordner zusammen m
 ====
 * Wenn die Sicherungsdatei mit DataLock- und Ransomware-Schutz konfiguriert wurde, wird die Wiederherstellung auf Ordnerebene nur unterstützt, wenn die ONTAP -Version 9.13.1 oder höher ist.  Wenn Sie eine frühere Version von ONTAP verwenden, können Sie das gesamte Volume aus der Sicherungsdatei wiederherstellen und dann auf die benötigten Ordner und Dateien zugreifen.
 * Wenn sich die Sicherungsdatei im Archivspeicher befindet, wird die Wiederherstellung auf Ordnerebene nur unterstützt, wenn die ONTAP Version 9.13.1 oder höher ist.  Wenn Sie eine frühere Version von ONTAP verwenden, können Sie den Ordner aus einer neueren, nicht archivierten Sicherungsdatei wiederherstellen oder das gesamte Volume aus der archivierten Sicherung wiederherstellen und dann auf den benötigten Ordner und die benötigten Dateien zugreifen.
-* Mit ONTAP 9.15.1 können Sie FlexGroup -Ordner mit der Option „Durchsuchen und wiederherstellen“ wiederherstellen.  Diese Funktion befindet sich im Technologievorschaumodus.
+* Mit ONTAP 9.15.1 können Sie FlexGroup Ordner mit der Option „Durchsuchen und wiederherstellen“ wiederherstellen.
 +
 Sie können es mit einem speziellen Flag testen, das im https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-July-2024-Release/ba-p/453993#toc-hId-1830672444["Blog zur NetApp Backup and Recovery Version vom Juli 2024"^] .
 

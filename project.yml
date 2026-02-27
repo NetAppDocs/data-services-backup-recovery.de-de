@@ -146,7 +146,7 @@ sidebar:
             url: "/br-use-vmware-restore-guest-files-and-folders-from-vmdks.html"
           - title: Fehlerbehebung bei der Wiederherstellung von Gastdateien
             url: "/br-use-vmware-guest-file-restore-scenarios-you-might-encounter.html"
-    - title: KVM-Workloads schützen (Vorschau)
+    - title: Schützen Sie KVM -Workloads
       entries:
       - title: Übersicht über den Schutz von KVM-Workloads
         url: "/br-use-kvm-protect-overview.html"
@@ -184,7 +184,7 @@ sidebar:
         url: "/br-use-oracle-restore.html"
       - title: Wiederherstellungspunkte einbinden und ausbinden
         url: "/br-use-oracle-mount-unmount.html"
-    - title: Schützen Sie Kubernetes-Workloads (Vorschau)
+    - title: Schützen Sie Kubernetes-Workloads
       entries:
       - title: Übersicht zum Schützen von Kubernetes-Workloads
         url: "/br-use-kubernetes-protect-overview.html"

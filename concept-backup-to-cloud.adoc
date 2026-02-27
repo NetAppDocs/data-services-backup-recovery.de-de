@@ -19,9 +19,6 @@ NetApp Backup and Recovery ist ein Datenservice, der effizienten, sicheren und k
 Die Unterstützung für Backup und Recovery ist bereits in alle ONTAP -Systeme integriert, sodass keine zusätzliche Hardware, Softwarelizenzen oder Medien-Gateways erforderlich sind. Dadurch werden Sicherungsvorgänge einfach und kostengünstig. Die NetApp Console vereinfacht die Implementierung jeder Backup-Strategie, einschließlich des gesamten Spektrums an 3-2-1-Backup-Varianten, ohne dass mehrere Ressourcenmanager oder spezialisiertes Personal erforderlich sind.
 
 
-NOTE: Dokumentation zum Schutz von VMware-, KVM-, Hyper-V- und Kubernetes-Workloads wird als Technologievorschau bereitgestellt. Bei diesem Vorschauangebot behält sich NetApp das Recht vor, Angebotsdetails, Inhalte und Zeitplan vor der allgemeinen Verfügbarkeit zu ändern.
-
-
 
 == Was Sie mit NetApp Backup and Recovery tun können
 
@@ -44,25 +41,17 @@ Verwenden Sie NetApp Backup and Recovery, um die folgenden Ziele zu erreichen:
 ** Siehelink:br-use-mssql-protect-overview.html["Schützen Sie Microsoft SQL Server-Workloads"] .
 
 
-* *VMware-Workloads (Vorschau mit neuer Benutzeroberfläche ohne SnapCenter Plug-in for VMware vSphere)*:
+* *VMware-Workloads (mit neuer Benutzeroberfläche ohne SnapCenter Plug-in für VMware vSphere)*:
 +
 ** Schützen Sie Ihre VMware-VMs und Datenspeicher mit NetApp Backup and Recovery.
-** Sichern Sie VMware-Workloads auf Amazon Web Services S3 oder StorageGRID (für die Vorschau).
+** Sichern Sie VMware-Workloads auf Amazon Web Services S3 oder StorageGRID.
 ** Stellen Sie VMware-Daten aus der Cloud wieder im lokalen vCenter wieder her.
 ** Sie können die VM an genau demselben Speicherort wiederherstellen, von dem die Sicherung erstellt wurde, oder an einem anderen Speicherort.
 ** Verwenden Sie NetApp Backup and Recovery ohne SnapCenter Plug-in for VMware vSphere.
 ** Siehelink:br-use-vmware-protect-overview.html["Schutz von VMware-Workloads"] .
 
 
-* *VMware-Workloads (mit SnapCenter Plug-in for VMware vSphere)*:
-+
-** Sichern Sie VMs und Datenspeicher auf Amazon Web Services S3, Microsoft Azure Blob, Google Cloud Platform und StorageGRID und stellen Sie VMs auf dem lokalen SnapCenter Plug-in for VMware vSphere Host wieder her.
-** Stellen Sie mit NetApp Backup and Recovery VM-Daten aus der Cloud zurück in das lokale vCenter wieder her. Sie können die VM an genau demselben Speicherort wiederherstellen, von dem die Sicherung erstellt wurde, oder an einem anderen Speicherort.
-** Verwenden Sie NetApp Backup and Recovery zusammen mit dem SnapCenter Plug-in for VMware vSphere.
-** Siehelink:prev-vmware-protect-overview.html["Schutz von VMware-Workloads"] .
-
-
-* *KVM-Workloads (Vorschau)*:
+* *KVM-Workloads*:
 +
 ** Sichern und Wiederherstellen virtueller Maschinen
 ** KVM-Speicherpools sichern
@@ -70,7 +59,7 @@ Verwenden Sie NetApp Backup and Recovery, um die folgenden Ziele zu erreichen:
 ** Siehelink:br-use-kvm-protect-overview.html["Schützen Sie KVM -Workloads"] .
 
 
-* *Hyper-V-Workloads (Vorschau)*:
+* *Hyper-V-Workloads*:
 +
 ** Sichern und Wiederherstellen virtueller Maschinen
 ** Verwenden Sie Schutzgruppen, um Sicherungsaufgaben zu verwalten
@@ -88,7 +77,7 @@ Verwenden Sie NetApp Backup and Recovery, um die folgenden Ziele zu erreichen:
 ** Siehe link:br-use-oracle-protect-overview.html["Oracle Database-Workloads schützen"].
 
 
-* *Kubernetes-Workloads (Vorschau)*:
+* *Kubernetes-Workloads*:
 +
 ** Verwalten und schützen Sie Ihre Kubernetes-Anwendungen und -Ressourcen an einem Ort.
 ** Verwenden Sie Schutzrichtlinien, um Ihre inkrementellen Backups zu strukturieren.
@@ -203,10 +192,10 @@ NetApp Backup and Recovery schützt die folgenden Arten von Workloads:
 * ONTAP -Volumes
 * Microsoft SQL Server-Instanzen und -Datenbanken werden auf physischen Festplatten und VMware Virtual Machine Disks (VMDK) über VMFS oder NFS gespeichert.
 * VMware-VMs und -Datenspeicher
-* KVM-Workloads (Vorschau)
-* Hyper-V-Workloads (Vorschau)
+* KVM-Workloads
+* Hyper-V-Workloads
 * Oracle Database-Workloads (Vorschau)
-* Kubernetes-Workloads (Vorschau)
+* Kubernetes-Workloads
 
 
 .Unterstützte Systeme
@@ -220,9 +209,9 @@ NetApp Backup and Recovery schützt die folgenden Arten von Workloads:
 .Unterstützte Sicherungsziele
 * Amazon Web Services (AWS) S3
 * Google Cloud-Speicher
-* Microsoft Azure Blob (nicht verfügbar für VMware-Workloads in der Vorschau)
+* Microsoft Azure Blob (nicht verfügbar für VMware workloads)
 * StorageGRID
-* ONTAP S3 (Nicht verfügbar für VMware-Workloads in der Vorschau)
+* ONTAP S3 (Nicht verfügbar für VMware workloads)
 
 
 

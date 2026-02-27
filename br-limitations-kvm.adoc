@@ -16,13 +16,13 @@ summary: Diese Version von NetApp Backup and Recovery weist die folgenden bekann
 [role="lead"]
 Plattformen, Geräte oder Funktionen, die mit dieser Version nicht oder nicht gut funktionieren, sind hier aufgelistet.  Lesen Sie diese Einschränkungen sorgfältig durch.
 
-Die folgenden Aktionen und Konfigurationen werden in der privaten Vorschauversion von KVM-Workloads in NetApp Backup and Recovery nicht unterstützt:
+Die folgenden Aktionen und Konfigurationen werden in KVM-Workloads in NetApp Backup and Recovery nicht unterstützt:
 
 
 
 == Nicht unterstützte Aktionen
 
-Die folgenden Aktionen werden in der privaten Vorschauversion nicht unterstützt:
+Folgende Aktionen werden nicht unterstützt:
 
 * Klonen, Mounten oder Unmounten von VMs
 * Wiederherstellen von VMs an einem anderen Standort
@@ -48,7 +48,7 @@ Die folgenden Konfigurationen werden nicht unterstützt:
 
 == Hinweise zur Fehlerbehebung
 
-Beachten Sie Folgendes bei der Verwendung der privaten Vorschau von KVM-Workloads mit NetApp Backup and Recovery.
+Beachten Sie Folgendes bei der Verwendung von KVM-Workloads mit NetApp Backup and Recovery.
 
 * Backups können fehlschlagen, wenn der QEMU Guest Agent nicht in einer geschützten VM ausgeführt wird. Um dieses Problem zu umgehen, stellen Sie sicher, dass der  `qemu-guest-agent` Daemon auf der VM ausgeführt wird, bevor Sie das Backup starten.
 
