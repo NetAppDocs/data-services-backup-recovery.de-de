@@ -14,13 +14,13 @@ summary: NetApp Backup and Recovery muss zunächst Workloads erkennen, damit Sie
 
 
 [role="lead"]
-NetApp Backup and Recovery muss zuerst Ihre Oracle-Datenbanken erkennen, damit Sie sie schützen können.
+Die Erkennung von Oracle-Datenbanken ermöglicht es NetApp Backup and Recovery, diese durch das Erstellen und Wiederherstellen von Backups und Snapshots zu schützen.
 
 *Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung.  Erfahren Sie mehr überlink:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
 
 
-== Hinzufügen eines Oracle-Hosts und Ermitteln von Ressourcen
+== Fügen Sie einen Oracle Database-Host hinzu und entdecken Sie Ressourcen
 
 Fügen Sie Oracle-Hostinformationen hinzu und lassen Sie NetApp Backup and Recovery die Workloads erkennen. Wählen Sie in jedem Konsolenagenten die Systeme aus, auf denen Sie Workloads ermitteln möchten.
 
@@ -31,18 +31,27 @@ Fügen Sie Oracle-Hostinformationen hinzu und lassen Sie NetApp Backup and Recov
 Wenn Sie sich zum ersten Mal bei Backup and Recovery anmelden und zwar ein System in der Konsole haben, aber keine Ressourcen erkannt wurden, wird die Seite _Willkommen bei der neuen NetApp Backup and Recovery_ mit einer Option zum *Erkennen von Ressourcen* angezeigt.
 
 . Wählen Sie *Ressourcen entdecken*.
-. Geben Sie die folgenden Informationen ein:
+. Wählen Sie *Oracle* für das Feld *Workload type* aus.
+. Wenn Sie noch keine Anmeldeinformationen für diesen Oracle Database-Host gespeichert haben, wählen Sie *Add credentials*.
 +
-.. *Workload-Typ*: Wählen Sie *Oracle*.
-.. Wenn Sie für diesen Oracle-Host noch keine Anmeldeinformationen gespeichert haben, wählen Sie *Anmeldeinformationen hinzufügen*.
-+
-... Wählen Sie den Konsolenagenten aus, der mit diesem Host verwendet werden soll.
-... Geben Sie einen Namen für diese Anmeldeinformationen ein.
-... Geben Sie den Benutzernamen und das Kennwort für das Konto ein.
-... Wählen Sie *Fertig*.
+.. Wählen Sie den Konsolenagenten aus, der mit diesem Host verwendet werden soll.
+.. Geben Sie einen Namen für diese Anmeldeinformationen ein.
+.. Geben Sie den Benutzernamen und das Kennwort für das Konto ein.
+.. Wählen Sie *Fertig*.
 
 
-.. *Host-Registrierung*: Fügen Sie einen neuen Oracle-Host hinzu.  Geben Sie den FQDN oder die IP-Adresse, die Anmeldeinformationen, den Konsolenagenten und die Portnummer des Hosts ein.
+. *Host registration*: Fügen Sie einen neuen Oracle Database Host hinzu. Geben Sie den FQDN oder die IP-Adresse des Hosts, die Anmeldeinformationen, den Console Agent und die Portnummer ein.
+. (Optional) Wenn Sie Anmeldeinformationen für einen Nicht-Root-Benutzer auswählen, führen Sie Folgendes aus:
++
+.. Anweisungen zum Hinzufügen des von Ihnen ausgewählten Nicht-Root-Benutzers zur sudoers-Datei auf dem Oracle Database-Host finden Sie unter *Configure sudoers*.
+.. Folgen Sie den Anweisungen im Dialog, aktivieren Sie das Kontrollkästchen, wenn Sie fertig sind, und wählen Sie *Fertig*.
+
+
+. *Erweiterte Einstellungen*: Führen Sie Folgendes aus:
++
+.. Geben Sie den Port und den Installationspfad für das NetApp Plug-in ein. Das Plug-in ermöglicht die Kommunikation zwischen dem Oracle-Datenbankhost und NetApp Backup and Recovery.
+.. Wählen Sie aus, ob NetApp Backup and Recovery das Plug-in automatisch installieren soll oder die Installation übersprungen werden soll (Sie müssen das Plug-in manuell auf dem Host installieren).
+.. Wählen Sie, ob Vorinstallationsprüfungen durchgeführt oder übersprungen werden sollen.
 
 
 . Wählen Sie *Entdecken*.
@@ -53,7 +62,7 @@ TIP: Dieser Vorgang kann einige Minuten dauern.
 
 
 .Ergebnis
-Die Oracle-Workload wird in der Workload-Liste auf der Inventarseite angezeigt.
+Die Oracle Database-Workload wird in der Liste der Workloads auf der Inventarseite angezeigt.
 
 
 

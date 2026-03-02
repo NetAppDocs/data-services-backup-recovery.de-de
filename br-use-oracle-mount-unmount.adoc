@@ -18,7 +18,7 @@ Möglicherweise möchten Sie einen Wiederherstellungspunkt für die Oracle-Daten
 
 
 
-== Mounten eines Oracle-Datenbank-Wiederherstellungspunkts
+== Einen Oracle-Datenbank-Recovery-Punkt einbinden
 
 Wenn Sie die Schutzrichtlinie für eine Datenbank so konfigurieren, dass Archivprotokolle aufbewahrt werden, können Sie Wiederherstellungspunkte bereitstellen, um den Änderungsverlauf der Datenbank anzuzeigen.
 
@@ -50,7 +50,7 @@ Der Wiederherstellungspunkt wird auf dem Oracle-Host bereitgestellt.
 
 
 
-== Unmounten eines Oracle-Datenbank-Wiederherstellungspunkts
+== Einen Wiederherstellungspunkt einer Oracle-Datenbank aushängen
 
 Heben Sie die Bereitstellung des Wiederherstellungspunkts auf, wenn Sie die an dieser Datenbank vorgenommenen Änderungen nicht mehr anzeigen müssen.
 

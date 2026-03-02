@@ -36,7 +36,7 @@ Sie können die folgenden Ziele im Zusammenhang mit Richtlinien erreichen:
 . Wählen Sie im NetApp Backup and Recovery -Menü *Richtlinien* aus.
 . Überprüfen Sie diese Richtliniendetails.
 +
-** *Workload*: Beispiele sind Microsoft SQL Server, Volumes, VMware, KVM, Hyper-V, Oracle Database oder Kubernetes.
+** *Workload*: Beispiele sind Microsoft SQL Server, ONTAP Volumes, VMware, KVM, Hyper-V, Oracle Database oder Kubernetes.
 ** *Sicherungstyp*: Beispiele sind vollständige Sicherung und Protokollsicherung.
 ** *Architektur*: Beispiele hierfür sind lokaler Snapshot, Fan-Out, Kaskadierung, Disk-to-Disk und Disk-to-Object-Store.
 ** *Geschützte Ressourcen*: Zeigt an, wie viele Ressourcen der Gesamtressourcen dieser Arbeitslast geschützt sind.

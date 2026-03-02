@@ -159,7 +159,7 @@ Sie können einen Klon Ihrer Microsoft SQL Server-Workloads aufteilen.  Durch da
 
 Sie können einen Klon in unabhängige oder langfristige Klone aufteilen.  Ein Assistent zeigt die Liste der Aggregate an, die Teil der SVM sind, ihre Größen und wo sich das geklonte Volume befindet.  NetApp Backup and Recovery zeigt außerdem an, ob genügend Speicherplatz zum Aufteilen des Klons vorhanden ist.  Nachdem der Klon aufgeteilt wurde, wird er zum Schutz zu einer unabhängigen Datenbank.
 
-Der Klonauftrag wird nicht entfernt und kann für andere Klone erneut verwendet werden.
+Der Klon-Job wird nicht entfernt und kann für andere Klone erneut verwendet werden.
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Klonen* aus.

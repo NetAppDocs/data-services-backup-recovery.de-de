@@ -180,6 +180,8 @@ sidebar:
         url: "/br-use-oracle-protection-groups.html"
       - title: Oracle-Datenbank-Workloads sichern
         url: "/br-use-oracle-backup.html"
+      - title: Oracle-Datenbank-Workloads klonen
+        url: "/br-use-oracle-clone.html"
       - title: Oracle-Datenbank-Workloads wiederherstellen
         url: "/br-use-oracle-restore.html"
       - title: Wiederherstellungspunkte einbinden und ausbinden
