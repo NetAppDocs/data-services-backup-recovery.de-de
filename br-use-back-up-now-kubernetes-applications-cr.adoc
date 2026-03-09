@@ -88,7 +88,7 @@ Erstellen Sie eine Backup-CR mit spezifischen Attributen, um Ihre Anwendung in e
 ** *spec.applicationRef*: (_Erforderlich_) Der Kubernetes-Name der zu sichernden Anwendung.
 ** *spec.appVaultRef*: (_Erforderlich, schließt sich gegenseitig mit spec.appVaultTargetsRef aus_) Wenn Sie denselben Bucket zum Speichern des Snapshots und des Backups verwenden, ist dies der Name des AppVault, in dem die Backup-Inhalte gespeichert werden sollen.
 ** *spec.appVaultTargetsRef*: (_Erforderlich, schließt sich gegenseitig mit spec.appVaultRef aus_) Wenn Sie unterschiedliche Buckets zum Speichern des Snapshots und des Backups verwenden, ist dies der Name des AppVault, in dem die Backup-Inhalte gespeichert werden sollen.
-** *spec.dataMover*: (_Optional_) Eine Zeichenkette, die angibt, welches Sicherungstool für den Sicherungsvorgang verwendet werden soll. Der Wert ist Groß-/Kleinschreibung und muss `CBS` sein.
+** *spec.dataMover*: (Optional, erforderlich für Cluster, die von Trident Protect migriert wurden) Eine Zeichenkette, die angibt, welches Backup-Tool für den Backup-Vorgang verwendet werden soll. Wenn dieser Cluster von Trident Protect zu NetApp Backup and Recovery migriert wurde, ist der Wert Groß-/Kleinschreibung und muss  `CBS` sein.
 ** *spec.reclaimPolicy*: (_Optional_) Definiert, was mit den Sicherungsinhalten (Metadaten/Volume-Daten) geschieht, wenn die Backup-CR gelöscht wird. Mögliche Werte:
 +
 *** `Delete`

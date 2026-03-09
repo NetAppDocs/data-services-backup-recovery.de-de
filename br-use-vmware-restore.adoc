@@ -142,6 +142,7 @@ Bei der Wiederherstellung an einem alternativen Speicherort können Sie das Ziel
 
 ** Abschnitt *Optionen vor der Wiederherstellung*:
 +
+*** *Schnellwiederherstellung*: Aktivieren Sie diese Option, um NetApp Backup and Recovery anzuweisen, nur VM-Metadaten (Dateien, LUNs und Namespaces) aus dem Objektspeicher wiederherzustellen. Dadurch stehen Volumes schneller zur Verfügung als bei einer vollständigen Wiederherstellung.
 *** *Vorgabe*: Aktivieren Sie diese Option, um zusätzliche Aufgaben zu automatisieren, indem Sie vor Beginn des Wiederherstellungsvorgangs ein benutzerdefiniertes Skript ausführen. Geben Sie den vollständigen Pfad zu dem auszuführenden Skript sowie alle Argumente an, die das Skript benötigt.
 
 

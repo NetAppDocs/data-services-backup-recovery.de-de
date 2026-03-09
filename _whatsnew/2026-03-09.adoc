@@ -1,0 +1,32 @@
+= ONTAP Volumes Workloads-Verbesserungen
+:allow-uri-read: 
+
+
+
+
+=== ONTAP Volumes Workloads-Verbesserungen
+
+In dieser Version führt ONTAP Volumes Workloads die folgenden erweiterten Funktionen ein:
+
+* *Wiederherstellung am Quellspeicherort*: Sie können jetzt Dateien aus lokalen Snapshots und replizierten Snapshots am Quellspeicherort sowie an einem alternativen Speicherort wiederherstellen.
+* *Stündliche Volumenerkennung*: Das Dashboard erkennt und aktualisiert neue Volumes jetzt schneller.
+* *Unterstützung für Dark Sites*: Sie können Backup und Recovery für Dark Sites jetzt von der https://mysupport.netapp.com/site/products/all/details/netapp-console/downloads-tab/download/61906/4.4.0/downloads["NetApp Support Site"] herunterladen. Aktuell unterstützt NetApp Backup und Recovery für Dark Sites nur ONTAP Volumes-Workloads.
+* *Verbesserungen der Unicode-Kompatibilität*: Die Katalogindizierung verarbeitet Unicode-Zeichen jetzt besser.
+* *Verbesserte FlexGroup-Kompatibilität*: Wenn Sie ein ONTAP FlexVol Volume in ein FlexGroup Volume konvertieren, können Sie jetzt Backups wiederherstellen, die vor der Konvertierung erstellt wurden.
+* *Unterstützung mehrerer Buckets*: Sie können jetzt die Volumes innerhalb eines Systems mit bis zu 6 Buckets pro System über verschiedene Cloud-Anbieter schützen.
+
+
+Weitere Informationen zum Schutz von ONTAP Volume-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["Überblick über den Schutz von ONTAP Volume-Workloads"].
+
+
+
+=== VMware-Workload-Verbesserungen
+
+In dieser Version führt VMware workloads die folgenden erweiterten Funktionen ein:
+
+* *Gastdaten aus Objektspeicher wiederherstellen*: Sie können jetzt Gastdateien und -ordner aus dem Objektspeicher wiederherstellen.
+* *Schnellwiederherstellung für VMFS/NFS*: Sie können jetzt die Schnellwiederherstellungsoption beim Wiederherstellen an einem alternativen Speicherort aktivieren. Ist diese Option aktiviert, werden nur VM-Metadaten (Dateien, LUNs und Namespaces) aus dem Objektspeicher abgerufen, wodurch Volumes schneller verfügbar sind als bei einer vollständigen Wiederherstellung.
+* *Unterstützung für Amazon FSx for NetApp ONTAP*: VMware-Workloads unterstützen jetzt Amazon FSx for NetApp ONTAP-Speichersysteme mit Version 9.13.1 oder höher.
+
+
+Weitere Informationen zum Schutz von VMware-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["Übersicht zum Schützen von VMware-Workloads"] .

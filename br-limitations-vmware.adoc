@@ -20,8 +20,6 @@ Die folgenden Aktionen werden in VMware-Workloads in NetApp Backup and Recovery 
 
 * Montieren
 * Aushängen
-* VMDK anhängen
-* VMDK trennen
 * vVol-Unterstützung
 * NVMe-Unterstützung
 * E-Mail-Integration
