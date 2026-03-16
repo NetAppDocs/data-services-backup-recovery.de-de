@@ -20,5 +20,3 @@ Die folgende Aktion wird in der Vorschauversion von Oracle Database-Workloads in
 
 * Offline-Backup
 
-
-Oracle Database wird nur als eigenständige Bereitstellung mit NFS, SAN oder ASM SAN in der privaten Vorschauversion von Oracle Database-Workloads unterstützt.

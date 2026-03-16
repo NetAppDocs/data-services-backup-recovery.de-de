@@ -50,14 +50,14 @@ Wenn Sie sich zum ersten Mal bei Backup and Recovery anmelden und zwar ein Syste
 . *Erweiterte Einstellungen*: Führen Sie Folgendes aus:
 +
 .. Geben Sie den Port und den Installationspfad für das NetApp Plug-in ein. Das Plug-in ermöglicht die Kommunikation zwischen dem Oracle-Datenbankhost und NetApp Backup and Recovery.
-.. Wählen Sie aus, ob NetApp Backup and Recovery das Plug-in automatisch installieren soll oder die Installation übersprungen werden soll (Sie müssen das Plug-in manuell auf dem Host installieren).
+.. Wählen Sie aus, ob NetApp Backup and Recovery das Plug-in automatisch installieren soll oder ob die automatische Plug-in-Installation übersprungen werden soll (wenn Sie *manuelle Installation verwenden* aktivieren, müssen Sie das Plug-in manuell auf dem Host installieren).
 .. Wählen Sie, ob Vorinstallationsprüfungen durchgeführt oder übersprungen werden sollen.
 
 
 . Wählen Sie *Entdecken*.
 +
 
-TIP: Dieser Vorgang kann einige Minuten dauern.
+TIP: Das Hinzufügen von Ressourcen kann einige Minuten dauern. Um den Fortschritt zu sehen, wählen Sie *Fortschritt verfolgen* im Statusdialog unten auf der Inventarseite oder wählen Sie *Überwachung* im Menü auf der linken Seite.
 
 
 

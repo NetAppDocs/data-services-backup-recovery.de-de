@@ -16,6 +16,8 @@ summary: 'Wenn Sie NetApp Backup and Recovery an einem Standort ohne Internetzug
 [role="lead"]
 Wenn Sie NetApp Backup and Recovery an einem Standort ohne Internetzugang verwenden (bekannt als _privater Modus_), werden die Konfigurationsdaten von NetApp Backup and Recovery im StorageGRID oder ONTAP S3-Bucket gesichert, in dem Ihre Backups gespeichert werden.  Wenn Sie ein Problem mit dem Hostsystem des Konsolenagenten haben, können Sie einen neuen Konsolenagenten bereitstellen und die kritischen NetApp Backup and Recovery -Daten wiederherstellen.
 
+Sie können diese Schritte auch befolgen, um den Console-Agenten zu ersetzen und Konfigurationsdaten wiederherzustellen, die darauf gespeichert waren, wenn Sie Backup and Recovery im _Standardmodus_ lokal verwenden und keine Cloud-Konten beteiligt sind (zum Beispiel, wenn Sie NetApp StorageGrid als Backup-Ziel verwenden).
+
 
 NOTE: Dieses Verfahren gilt nur für ONTAP Volume-Daten.
 
@@ -133,7 +135,7 @@ mysql> select * from volume;
 ----
 unzip Indexed_Catalog_DB_Backup_catalogdb1_23_05_2023.zip -d catalogdb1
 ----
-. Führen Sie den Befehl *ls* aus, um sicherzustellen, dass der Ordner „catalogdb1“ mit den darunter liegenden Unterordnern „changes“ und „snapshots“ erstellt wurde.
+. Führen Sie den Befehl *ls* aus, um sicherzustellen, dass der Ordner "catalogdb1" erstellt wurde und dass er die Unterordner  `files`, `versions` und  `snapshots` enthält.
 
 
 
