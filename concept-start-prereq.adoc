@@ -188,11 +188,7 @@ Stellen Sie sicher, dass Ihre Umgebung bestimmte Anforderungen erfüllt, um Orac
 | Anforderung | Unterstützt 
 
 
-| Bereitstellungstopologie  a| 
-* Standalone (NFS, SAN, ASM SAN)
-* RAC über ASM (VMDK auf VMFS)
-
-
+| Bereitstellungstopologie | Standalone (NFS, SAN, ASM SAN) 
 
 
 | Oracle Database-Versionen  a| 
