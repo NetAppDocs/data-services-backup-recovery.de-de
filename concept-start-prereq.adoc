@@ -261,7 +261,7 @@ Stellen Sie sicher, dass Ihre Hyper-V-Instanz bestimmte Anforderungen zum Erkenn
 | ASP.NET Core Runtime | 8.0.23 Hosting Bundle (und alle nachfolgenden 8.0.x-Patches) 
 
 
-| PowerShell | 7.0U1 und höher 
+| PowerShell | 7.4.13 oder später 
 
 
 | Wenn Benutzer ohne Administratorrechte Hyper-V-VMs schützen sollen, stellen Sie sicher, dass diese Benutzer über die folgenden Berechtigungen verfügen  a| 

@@ -5120,7 +5120,6 @@
   <block id="a5f167b540745795bfa82881525658b7" category="paragraph">Stellen Sie sicher, dass Ihre Umgebung bestimmte Anforderungen erfüllt, um Oracle Database-Ressourcen zu erkennen und zu schützen.</block>
   <block id="be84d19651fadb3105ee4563b1a749a1" category="cell">Bereitstellungstopologie</block>
   <block id="6573228c28e984dea35ef8e206b9b22e" category="list-text">Standalone (NFS, SAN, ASM SAN)</block>
-  <block id="40462b3520e204c56d496704b2197731" category="list-text">RAC über ASM (VMDK auf VMFS)</block>
   <block id="23288ce9e4c4065a0c262950a798255a" category="cell">Oracle Database-Versionen</block>
   <block id="0ac3a1f034484f75f44fe8688e650ffe" category="list-text">Oracle Database 19c</block>
   <block id="e78bd68f4ea5809752852eea2f74942d" category="list-text">Oracle Database 21c</block>
@@ -5147,4 +5146,5 @@
   <block id="86a1075e6640849bd364878900fd5412" category="paragraph">Sie können diese Schritte auch befolgen, um den Console-Agenten zu ersetzen und Konfigurationsdaten wiederherzustellen, die darauf gespeichert waren, wenn Sie Backup and Recovery im _Standardmodus_ lokal verwenden und keine Cloud-Konten beteiligt sind (zum Beispiel, wenn Sie NetApp StorageGrid als Backup-Ziel verwenden).</block>
   <block id="72edcbdd4436f32d101a83a36dd2d1db" category="list-text">Führen Sie den Befehl *ls* aus, um sicherzustellen, dass der Ordner "catalogdb1" erstellt wurde und dass er die Unterordner <block ref="45b963397aa40d4a0063e0d85e4fe7a1" prefix=" " category="inline-code"></block>,<block ref="b17be6650251f2e6c7d4e90209beb4e0" prefix=" " category="inline-code"></block> und <block ref="695633290d050f31cec0c9d4bd4a57fe" prefix=" " category="inline-code"></block> enthält.</block>
   <block id="69b1a964078d5301a2aa9822cb2304f2" category="section-title">16. März 2026</block>
+  <block id="5896522d63454009d1844a27f9e16972" category="cell">7.4.13 oder später</block>
 </blocks>
