@@ -4,7 +4,7 @@ permalink: br-use-oracle-mount-unmount.html
 keywords: restore, vm, oracle, databases, snapshots, object storage, cloud storage, backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
 summary: Schützen Sie Ihre Oracle-Datenbank-Workloads mit NetApp Backup und Recovery. 
 ---
-= Mounten und Unmounten von Oracle-Datenbankwiederherstellungspunkten mit NetApp Backup and Recovery
+= Oracle Database-Wiederherstellungspunkte mit NetApp Backup und Recovery einbinden, aushängen und katalogisieren
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Schützen Sie Ihre Oracle-Datenbank-Workloads mit NetApp Backup und Rec
 
 
 [role="lead"]
-Möglicherweise möchten Sie einen Wiederherstellungspunkt für die Oracle-Datenbank bereitstellen, wenn Sie zum Durchführen von Wiederherstellungsvorgängen in einem kontrollierten Zustand auf die Datenbank zugreifen müssen.
+Sie sollten einen Oracle Database-Wiederherstellungspunkt einbinden, wenn Sie auf die Datenbank in einem kontrollierten Zustand zugreifen müssen, um Wiederherstellungsvorgänge durchzuführen. Katalogisieren Sie den Wiederherstellungspunkt manuell, wenn Sie die Backup und Recovery Metadaten der Sicherungs- und Wiederherstellungsvorgänge im RMAN-Wiederherstellungskatalog speichern müssen und die Option zur automatischen Katalogisierung der Metadaten nicht aktiviert ist.
 
 
 
@@ -66,4 +66,24 @@ Es wird eine Liste mit Wiederherstellungspunkten für diese Datenbank angezeigt.
 
 . Wählen Sie einen Wiederherstellungspunkt aus der Liste und wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Aushängen*.
 . Bestätigen Sie die Aktion, indem Sie *Unmount* auswählen.
+
+
+
+
+== Katalogisieren Sie einen Wiederherstellungspunkt einer Oracle-Datenbank
+
+Katalogisieren Sie einen Wiederherstellungspunkt manuell, wenn Sie dessen Backup und Recovery-Betriebsmetadaten erhalten müssen. Die Metadaten werden gemäß den von Ihnen für die Datenbank gewählten Einstellungen für *Configure RMAN catalog* gespeichert (standardmäßig in der Ziel-Kontrolldatei). Sie müssen nur manuell katalogisieren, wenn die automatische Katalogisierung in der zugehörigen Datensicherungsstrategie deaktiviert ist.
+
+.Schritte
+. Wählen Sie im NetApp Console *Schutz > Sicherung und Wiederherstellung*.
+. Wählen Sie die Oracle-Kachel aus.
+. Wählen Sie im Menü „Sichern und Wiederherstellen“ die Option „Inventar“ aus.
+. Wählen Sie für die Oracle-Workload in der Liste *Anzeigen* aus.
+. Wählen Sie das Menü *Datenbanken*.
+. Wählen Sie eine Datenbank aus der Liste und wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Schutzdetails anzeigen*.
++
+Es wird eine Liste mit Wiederherstellungspunkten für diese Datenbank angezeigt.
+
+. Wählen Sie einen Wiederherstellungspunkt aus der Liste und klicken Sie auf das Symbol Aktionen image:../media/icon-action.png["Aktionsoption"] > *Katalog*.
+. Bestätigen Sie die Aktion durch Auswahl von *Katalog*.
 

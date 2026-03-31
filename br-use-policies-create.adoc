@@ -231,6 +231,13 @@ Optional können Sie erweiterte Einstellungen in der Richtlinie konfigurieren.  
 . Aktivieren Sie alle Einstellungen, die Sie anzeigen oder ändern möchten, und wählen Sie dann *Akzeptieren*.
 . Geben Sie die folgenden Informationen an:
 +
+** *RMAN-Katalogeinstellungen*: (Gilt nur für Oracle-Datenbank-Workloads) Aktivieren Sie die Option *Sicherung mit Oracle Recovery Manager (RMAN) katalogisieren*, um Metadaten für Oracle Datenbank-Backup und Recovery-Vorgänge automatisch zu katalogisieren. Die Metadaten werden gemäß den *RMAN-Katalog konfigurieren*-Einstellungen gespeichert, die Sie für die Datenbank auswählen (standardmäßig in der Ziel-Kontrolldatei). Siehe link:br-start-configure-oracle-database.html["Konfigurieren einer Oracle-Datenbank"] zum Ändern dieser Einstellungen für eine Datenbank.
+** *SnapMirror Volume- und Snapshot-Format*: Wählen Sie aus den folgenden Optionen:
++
+*** *Benutzerdefiniertes Namensformat für Snapshot-Kopien verwenden*: Wählen Sie ein Namensschema für Snapshots. Wenn Sie dieses Feld leer lassen, wird jedem Snapshot-Namen ein Zeitstempel hinzugefügt.
+*** *SnapMirror-Volume-Format angeben*: Geben Sie ein Präfix, ein Suffix oder beides an, um den Standard-SnapMirror-Volume-Namen zu ändern. Standardmäßig übernimmt ein SnapMirror-Volume den Namen des Quell-Volumes.
+
+
 ** *Nur Kopie-Backup*: (Gilt nur für Microsoft SQL Server-Workloads) Wählen Sie „Nur Kopie-Backup“ (eine Art Microsoft SQL Server-Backup), wenn Sie Ihre Ressourcen mithilfe einer anderen Backup-Anwendung sichern müssen.
 ** *Einstellungen der Verfügbarkeitsgruppe*: (Gilt nur für Microsoft SQL Server-Workloads) Wählen Sie bevorzugte Sicherungsreplikate aus oder geben Sie ein bestimmtes Replikat an.  Diese Einstellung ist nützlich, wenn Sie über eine SQL Server-Verfügbarkeitsgruppe verfügen und steuern möchten, welches Replikat für Sicherungen verwendet wird.
 ** *Maximale Übertragungsrate*: Um keine Begrenzung der Bandbreitennutzung festzulegen, wählen Sie *Unbegrenzt*.  Wenn Sie die Übertragungsrate begrenzen möchten, wählen Sie *Begrenzt* und wählen Sie die Netzwerkbandbreite zwischen 1 und 1.000 Mbit/s aus, die zum Hochladen von Backups in den Objektspeicher zugewiesen ist.  Standardmäßig kann ONTAP eine unbegrenzte Bandbreite nutzen, um die Sicherungsdaten von Volumes im System in den Objektspeicher zu übertragen.  Wenn Sie feststellen, dass der Sicherungsverkehr die normale Arbeitslast der Benutzer beeinträchtigt, sollten Sie die während der Übertragung verwendete Netzwerkbandbreite verringern.

@@ -174,6 +174,8 @@ sidebar:
         url: "/br-use-oracle-protect-overview.html"
       - title: Oracle Database-Workloads entdecken
         url: "/br-start-discover-oracle.html"
+      - title: Konfigurieren einer Oracle-Datenbank
+        url: "/br-start-configure-oracle-database.html"
       - title: Erstellen und Verwalten von Schutzgruppen für Oracle Database-Workloads
         url: "/br-use-oracle-protection-groups.html"
       - title: Oracle-Datenbank-Workloads sichern
@@ -182,7 +184,7 @@ sidebar:
         url: "/br-use-oracle-clone.html"
       - title: Oracle-Datenbank-Workloads wiederherstellen
         url: "/br-use-oracle-restore.html"
-      - title: Wiederherstellungspunkte einbinden und ausbinden
+      - title: Mount-, Unmount- und Katalogisierungs-Wiederherstellungspunkte
         url: "/br-use-oracle-mount-unmount.html"
     - title: Schützen Sie Kubernetes-Workloads
       entries:

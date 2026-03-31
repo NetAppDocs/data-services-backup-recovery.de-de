@@ -1,0 +1,55 @@
+---
+sidebar: sidebar 
+permalink: br-start-configure-oracle-database.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, workloads, protect, Oracle, configure 
+summary: Konfigurieren Sie Ihre Oracle-Datenbank in NetApp Backup und Recovery. 
+---
+= Konfigurieren einer Oracle-Datenbank in NetApp Backup und Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können Authentifizierung und Knoteneinstellungen für eine neue eigenständige oder geclusterte Oracle-Datenbank ändern. NetApp Backup und Recovery schützt Datenbanken ohne diese Änderungen. Wenn sich Ihre Umgebung nach der Erkennung ändert, müssen Sie möglicherweise die Datenbankeinstellungen aktualisieren.
+
+*Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung.  Erfahren Sie mehr überlink:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
+
+
+
+== Konfigurieren einer Oracle-Datenbank
+
+Ändern Sie die Konfiguration für eine eigenständige oder geclusterte Oracle-Datenbank.
+
+.Schritte
+. Wählen Sie im NetApp Console *Schutz > Sicherung und Wiederherstellung*.
+. Wählen Sie unter *Workloads* die Kachel *Oracle* aus.
+. Wählen Sie im Oracle-Inventar das Menü *Datenbanken* aus.
+. Wählen Sie in der Liste der Datenbanken entweder *Datenbank konfigurieren* (eigenständige Datenbank) oder *RAC-Datenbank konfigurieren* (Clusterdatenbank) für die Datenbank aus, die Sie konfigurieren möchten.
+. *Datenbankeinstellungen konfigurieren*: Konfigurieren Sie die Authentifizierungseinstellungen für die eigenständige oder die Cluster-Datenbank.
++
+** Wählen Sie *OS-Authentifizierung*, um sich nur beim Host-Betriebssystem zu authentifizieren. Backup und Recovery verwendet die Host-Anmeldeinformationen, die Sie während der Erkennung angegeben haben.
+** Wählen Sie *Database authentication*, wenn die Datenbank Anmeldeinformationen erfordert. Wählen Sie anschließend vorhandene Anmeldeinformationen aus oder fügen Sie neue hinzu und wählen Sie den Port für die Verbindung.
+
+
+. *RMAN-Katalog konfigurieren*: Wählen Sie aus, wo Metadaten für Backup- und Recovery-Vorgänge für diese Datenbank oder diesen Cluster gespeichert werden, wenn die automatische Katalogisierung in der Datensicherungsstrategie aktiviert ist oder wenn Sie einen Wiederherstellungspunkt manuell katalogisieren:
++
+** Wählen Sie *Target control file* aus, um Metadaten in der Datenbank-Kontrolldatei zu speichern.
+** Wählen Sie *Katalogdatenbank* aus, um Metadaten im RMAN-Wiederherstellungskatalog zu speichern. Wählen Sie die Anmeldeinformationen und den Transparent Network Substrate (TNS)-Namen aus, um eine Verbindung zum Wiederherstellungskatalog herzustellen.
++
+Der RMAN-Wiederherstellungskatalog ist ein separates Datenbankschema, das vom RMAN-Dienstprogramm verwendet wird, um Metadaten zu Sicherungs- und Wiederherstellungsvorgängen registrierter Datenbanken zu speichern. Er bietet Redundanz und langfristige Aufbewahrung für den Fall, dass die Kontrolldatei verloren geht oder historische Daten benötigt werden. Aktivieren Sie diese Option, um Datendateien und Archivprotokollkopien im RMAN-Repository zu registrieren, sodass RMAN diese Kopien für Berichterstellung und Wiederherstellung nachverfolgen und verwalten kann.
+
+
+
+. *Knoten konfigurieren* (nur für Clusterdatenbanken): Knoten zum Schutz hinzufügen oder entfernen oder die Knotenpriorität mithilfe der Pfeiltasten ändern.
++
+Knoten mit höherer Priorität werden zuerst geschützt. Knoten mit niedrigerer Priorität werden nur dann geschützt, wenn Knoten mit höherer Priorität nicht erreichbar oder fehlerhaft sind.
+
+. Wenn Sie fertig sind, wählen Sie *Fertig*.
+
+
+.Ergebnis
+Backup und Recovery stellt mit den neuen Einstellungen eine Verbindung zur Datenbank her.

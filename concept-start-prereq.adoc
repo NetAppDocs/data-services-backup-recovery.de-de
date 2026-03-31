@@ -101,6 +101,9 @@ Sie benötigen bestimmte Anforderungen, um Ihre VMware-Workloads zu erkennen und
 | VMware vCenter vSphere Versionen | 7.0U1 und höher 
 
 
+| VMware Tools | VMware Tools wird für die Wiederherstellung von Dateien und Ordnern sowie für VM-konsistente Backups benötigt. Um sicherzustellen, dass die VMware Tools-Version mit Ihrer Version des ESXi Server übereinstimmt, konsultieren Sie die  https://packages.vmware.com/tools/versions["VMware-Versionszuordnungsinformationen"]. 
+
+
 | IP-Adresstypen | IPv4, IPv6 
 
 
@@ -121,7 +124,7 @@ Sie benötigen bestimmte Anforderungen, um Ihre VMware-Workloads zu erkennen und
 
 
 | VMware ESXi-Server-Port  a| 
-443 (HTTPS), bidirektional. Die Funktion „Gastdateiwiederherstellung“ verwendet diesen Port.
+443 (HTTPS), bidirektional. Die Funktion zum Wiederherstellen von Dateien und Ordnern nutzt diesen Port.
 
 
 
@@ -133,9 +136,9 @@ Sie benötigen bestimmte Anforderungen, um Ihre VMware-Workloads zu erkennen und
 |===
 *Anforderungen an die rollenbasierte Zugriffskontrolle (RBAC) zum Schutz von VMware-Workloads*
 
-Das vCenter-Administratorkonto muss über die erforderlichen vCenter-Berechtigungen verfügen.
+Ihr Console-Benutzerkonto benötigt die Backup und Recovery Super-Admin-Rolle, um mit VMware-Workloads arbeiten zu können.
 
-Eine Liste der erforderlichen vCenter-Berechtigungen finden Sie unter https://docs.netapp.com/us-en/sc-plugin-vmware-vsphere/scpivs44_deployment_planning_and_requirements.html#rbac-privileges-required["SnapCenter Plug-in for VMware vSphere vCenter-Berechtigungen erforderlich"^] .
+Weitere Informationen zu Backup- und Recovery-Rollen finden Sie unter  https://docs.netapp.com/us-en/console-setup-admin/reference-iam-backup-rec-roles.html["Backup- und Wiederherstellungsrollen in der NetApp Console"].
 
 
 
@@ -188,7 +191,11 @@ Stellen Sie sicher, dass Ihre Umgebung bestimmte Anforderungen erfüllt, um Orac
 | Anforderung | Unterstützt 
 
 
-| Bereitstellungstopologie | Standalone (NFS, SAN, ASM SAN) 
+| Bereitstellungstopologie  a| 
+* Standalone (NFS, SAN, ASM SAN)
+* RAC über ASM (VMDK auf VMFS)
+
+
 
 
 | Oracle Database-Versionen  a| 
