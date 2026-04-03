@@ -12,4 +12,4 @@ In dieser Version wird für Oracle Database-Workloads die folgende Verbesserung 
 * *RMAN-Katalogunterstützung*: Sie können Backup und Recovery jetzt so konfigurieren, dass Schutzmetadaten im RMAN-Wiederherstellungskatalog gespeichert werden, was Redundanz und langfristige Aufbewahrung für den Fall bietet, dass die Kontrolldatei verloren geht. Weitere Informationen finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-start-configure-oracle-database.html["Konfigurieren einer Oracle-Datenbank"].
 
 
-Weitere Informationen zum Schutz von Oracle Database-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Übersicht zum Schutz von Oracle-Datenbank-Workloads"].
+Weitere Informationen zum Schutz von Oracle Database-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Übersicht über den Schutz von Oracle Database-Workloads"].
