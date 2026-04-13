@@ -18,9 +18,9 @@ Erstellen Sie Schutzgruppen, um die Sicherungs- und Wiederherstellungsvorgänge 
 
 Sie können die folgenden Aufgaben im Zusammenhang mit Schutzgruppen ausführen:
 
-* Erstellen Sie eine Schutzgruppe.
+* Erstellen Sie eine Schutzgruppe, indem Sie VMs manuell zur Gruppe hinzufügen oder VMware vSphere-Tags verwenden.
 * Schutzdetails anzeigen.
-* Sichern Sie jetzt eine Schutzgruppe. Sehenlink:br-use-vmware-backup.html["Sichern Sie jetzt VMware-Workloads"] .
+* Sichern Sie jetzt eine Schutzgruppe. Siehe link:br-use-vmware-backup.html["Sichern Sie jetzt VMware-Workloads"].
 * Unterbrechen und Fortsetzen des Sicherungszeitplans einer Schutzgruppe.
 * Löschen Sie eine Schutzgruppe.
 
@@ -42,13 +42,74 @@ Gruppieren Sie Workloads, die Sie schützen möchten, in einer Schutzgruppe, um 
 . Geben Sie einen Namen für die Schutzgruppe ein.
 . Wählen Sie die VMs oder Datenbanken aus, die Sie in die Schutzgruppe aufnehmen möchten.
 . Wählen Sie *Weiter*.
-. Wählen Sie die *Sicherungsrichtlinie* aus, die Sie auf die Schutzgruppe anwenden möchten.
+. Wählen Sie die Datensicherungsstrategie, die Sie auf die Schutzgruppe anwenden möchten.
 +
 Wenn Sie eine Richtlinie erstellen möchten, wählen Sie *Neue Richtlinie erstellen* und folgen Sie den Anweisungen zum Erstellen einer Richtlinie.  Sehenlink:br-use-policies-create.html["Erstellen von Richtlinien"] für weitere Informationen.
 
 . Wählen Sie *Weiter*.
 . Überprüfen Sie die Konfiguration.
 . Wählen Sie *Erstellen* aus, um die Schutzgruppe zu erstellen.
+
+
+
+
+== Erstellen Sie eine Schutzgruppe mithilfe von vSphere-Tags
+
+Verwenden Sie tagbasierte Schutzmaßnahmen, um die Verwaltung von Schutzgruppen in NetApp Backup and Recovery zu vereinfachen.
+
+Hier sind die Vorteile des tagbasierten Schutzes:
+
+* Wenn Sie einem VM oder Datastore in vCenter ein vSphere-Tag hinzufügen, wird dieses Objekt automatisch in das nächste Backup für jede NetApp Backup and Recovery-Schutzgruppe aufgenommen, die auf dieses Tag verweist.
+* Wenn Sie einen vSphere-Tag von einer VM oder einem Datenspeicher entfernen, wird dieses Objekt automatisch von nachfolgenden Backups für diese tagbasierte Schutzgruppe ausgeschlossen.
+* Wenn ein vSphere-Tag in vCenter gelöscht wird, überspringen zukünftige Backups diesen Tag und melden eine Warnung.
+* Wird eine VM in einen anderen Datenspeicher migriert, bleibt sie so lange geschützt, wie sie noch das Tag besitzt, das Teil einer tagbasierten Schutzgruppe ist.
+
+
+
+IMPORTANT: Das Mischen von Ressourcentypen (z. B. das Kombinieren von Tags mit einzelnen VMs oder Datenspeichern in derselben Schutzgruppe) wird nicht unterstützt.
+
+.Bevor Sie beginnen
+* Stellen Sie sicher, dass in Ihrer Umgebung unterstützte Versionen von VMware vSphere verwendet werden.
+* Stellen Sie in vCenter sicher, dass die virtuellen Maschinen und Datenspeicher, die Sie schützen möchten, bereits mit einem oder mehreren vSphere Tags verknüpft sind.
+
+
+
+NOTE: Die Tag-Zugehörigkeit wird zum Zeitpunkt der Sicherung von vCenter aufgelöst. Alle Änderungen, die Sie an Tags in vCenter vornehmen (Hinzufügen/Entfernen von Tags, Löschen von Tags, Hinzufügen/Entfernen von VMs), werden automatisch in der nächsten Sicherung berücksichtigt.
+
+.Schritte
+. Sign in bei NetApp Backup and Recovery.
+. Navigieren Sie zur Ansicht *Schutzgruppen*.
+. Wählen Sie *Schutzgruppe erstellen*.
+. Unter *Allgemeine Details > Name der Schutzgruppe* geben Sie einen Namen für die Schutzgruppe ein.
+. Im Abschnitt *Allgemeine Details > Ressourcen der Schutzgruppe* wählen Sie *Tags* aus.
+. Wenn mehrere vCenters konfiguriert sind, wählen Sie das entsprechende vCenter aus der Liste aus, um die für dieses vCenter verfügbaren Tags anzuzeigen.
+. Im Abschnitt *Tags auswählen*:
++
+.. Auf der linken Seite:
++
+... Wählen Sie ein vCenter aus der Liste aus.
+... Wählen Sie die Kontrollkästchen für ein oder mehrere Tags innerhalb dieses vCenter aus.
+
+
+.. Auf der rechten Seite:
++
+... Überprüfen Sie die Liste der ausgewählten Schlagwörter, gruppiert nach vCenter.
+... Entfernen Sie alle Tags, die Sie nicht in der Schutzgruppe haben möchten.
+
+
+
+
+. Wählen Sie *Weiter*.
+. Wählen Sie die Datensicherungsstrategie, die Sie auf die Schutzgruppe anwenden möchten.
++
+Wenn Sie eine Richtlinie erstellen möchten, wählen Sie *Neue Richtlinie erstellen* und folgen Sie den Anweisungen zum Erstellen einer Richtlinie.  Sehenlink:br-use-policies-create.html["Erstellen von Richtlinien"] für weitere Informationen.
+
+. Wählen Sie *Weiter*.
+. Überprüfen Sie die Tag-Einstellungen im Schritt *Review*.
+. Wählen Sie *Erstellen* aus, um die Schutzgruppe zu erstellen.
++
+Die neue tagbasierte Schutzgruppe erscheint in der Liste, gekennzeichnet durch ein Tag-Symbol.
+
 
 
 

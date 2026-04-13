@@ -25,7 +25,6 @@ Die folgenden Aktionen und Konfigurationen werden in KVM-Workloads in NetApp Bac
 Folgende Aktionen werden nicht unterstützt:
 
 * Klonen, Mounten oder Unmounten von VMs
-* Wiederherstellen von VMs an einem anderen Standort
 * Schützen Sie im SAN gespeicherte VMs
 * Anwendungen schützen
 * Erstellen Sie benutzerdefinierte Backups (es werden nur Backups unterstützt, die von der NetApp Console aus initiiert werden).

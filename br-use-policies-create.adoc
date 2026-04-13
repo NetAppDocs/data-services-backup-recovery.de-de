@@ -34,7 +34,7 @@ Sie können die folgenden Ziele im Zusammenhang mit Richtlinien erreichen:
 == Richtlinien anzeigen
 
 . Wählen Sie im NetApp Backup and Recovery -Menü *Richtlinien* aus.
-. Überprüfen Sie diese Richtliniendetails.
+. Überprüfen Sie die Richtliniendetails. Zum Beispiel:
 +
 ** *Workload*: Beispiele sind Microsoft SQL Server, ONTAP Volumes, VMware, KVM, Hyper-V, Oracle Database oder Kubernetes.
 ** *Sicherungstyp*: Beispiele sind vollständige Sicherung und Protokollsicherung.
@@ -63,166 +63,99 @@ Allgemeine Informationen zum Sperren von Snapshots finden Sie unter https://docs
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Richtlinien* aus.
 . Wählen Sie auf der Seite „Richtlinien“ die Option „Neue Richtlinie erstellen“ aus.
-. Geben Sie auf der Seite „Richtlinien“ die folgenden Informationen ein.
 +
-** Abschnitt *Details*:
+Die Seite „Richtlinien“ wird angezeigt.
+
+. Geben Sie im Abschnitt *Details* Informationen ein:
 +
-*** Workload-Typ: Wählen Sie den Workload aus, der die Richtlinie verwenden soll.
-*** Geben Sie einen Richtliniennamen ein.
+** Workload-Typ: Wählen Sie den Workload aus, der die Richtlinie verwenden soll.
+** Geben Sie einen Richtliniennamen ein.
+** Wählen Sie einen Konsolenagenten aus der Liste *Agent* aus.
+
+
+. Geben Sie im Abschnitt *Backup-Architektur* Informationen ein. Wählen Sie den Datenfluss für das Backup aus der Liste aus:
 +
-
-TIP: Eine Liste der zu vermeidenden Zeichen finden Sie im Hover-Tipp.
-
-*** Wählen Sie einen Konsolenagenten aus der Liste *Agent* aus.
-
-
-** Abschnitt *Sicherungsarchitektur*: Wählen Sie den Abwärtspfeil und wählen Sie den Datenfluss für die Sicherung, z. B. 3-2-1-Fan-Out, 3-2-1-Kaskade oder Festplatte zu Festplatte.
-+
-*** *3-2-1 fanout*: Primärspeicher (Festplatte) zu Sekundärspeicher (Festplatte) zu Cloud (Objektspeicher). Erstellt mehrere Kopien von Daten auf verschiedenen Speichersystemen, wie ONTAP zu ONTAP und ONTAP zu Objektspeicher-Konfigurationen. Dies kann ein Cloud-Hyperscaler Objektspeicher oder ein privater Objektspeicher sein. Diese Konfigurationen helfen dabei, optimalen Datenschutz und Notfallwiederherstellung zu erreichen.
-+
-
-NOTE: Diese Option ist für Amazon FSx for NetApp ONTAP nicht verfügbar.
-
+** *3-2-1-Fanout*: Primärspeicher (Festplatte) zu Sekundärspeicher (Festplatte) zu Cloud (Objektspeicher). Erstellt mehrere Kopien von Daten auf verschiedenen Speichersystemen, wie ONTAP zu ONTAP und ONTAP zu Objektspeicher-Konfigurationen. Dies kann ein Cloud-Hyperscaler-Objektspeicher oder ein privater Objektspeicher sein. Am besten geeignet für optimale Datensicherung und Disaster Recovery. Diese Option ist für Amazon FSx for NetApp ONTAP nicht verfügbar.
 +
 Bei VMware-Workloads wird dadurch der lokale Snapshot auf den Datenspeichern oder VMs auf dem primären Speicher konfiguriert und vom primären Festplattenspeicher auf den sekundären Festplattenspeicher sowie vom primären auf den Cloud-Objektspeicher repliziert.
 
-*** *3-2-1-Kaskade*: (Nicht verfügbar für Kubernetes-Workloads) Primärspeicher (Festplatte) zu Sekundärspeicher (Festplatte) und Primärspeicher (Festplatte) zu Cloud-Speicher (Objektspeicher). Dies kann ein Cloud-Hyperscaler-Objektspeicher oder ein privater Objektspeicher sein – StorageGRID. Dadurch wird eine Kette der Datenreplikation über mehrere Systeme hinweg erstellt, um Redundanz und Zuverlässigkeit zu gewährleisten.
-+
-
-NOTE: Diese Option ist für Amazon FSx for NetApp ONTAP nicht verfügbar.
-
+** *3-2-1-Kaskade*: (Nicht verfügbar für Kubernetes-Workloads) Primärspeicher (Festplatte) zu Sekundärspeicher (Festplatte) und Primärspeicher (Festplatte) zu Cloud-Speicher (Objektspeicher). Dies kann ein Cloud-Hyperscaler-Objektspeicher oder ein privater Objektspeicher wie StorageGRID sein. Dadurch entsteht eine Kette der Datenreplizierung über mehrere Systeme hinweg, um Redundanz und Zuverlässigkeit zu gewährleisten. Diese Option ist für Amazon FSx for NetApp ONTAP nicht verfügbar.
 +
 Für VMware-Workloads wird dadurch der lokale Snapshot auf den Datenspeichern oder VMs auf dem primären Speicher und eine Kaskade vom primären Festplattenspeicher zum sekundären Festplattenspeicher und dann zum Cloud-Objektspeicher konfiguriert.
 
-*** *Disk to Disk*: (Nicht verfügbar für Kubernetes-Workloads) Primärspeicher (Disk) zu sekundärem Speicher (Disk). Die ONTAP -zu- ONTAP Datensicherungsstrategie repliziert Daten zwischen zwei ONTAP Systemen, um hohe Verfügbarkeit und Notfallwiederherstellung sicherzustellen. Dies wird normalerweise mit SnapMirror erreicht, das sowohl synchrone als auch asynchrone Replikation unterstützt. Diese Methode stellt sicher, dass Ihre Daten kontinuierlich aktualisiert werden und an mehreren Standorten verfügbar sind, und bietet einen robusten Schutz vor Datenverlust.
+** *Festplatte zu Festplatte*: Primärspeicher (Festplatte) zu Sekundärspeicher (Festplatte). Die ONTAP zu ONTAP Datensicherungsstrategie repliziert Daten zwischen zwei ONTAP Systemen, um hohe Verfügbarkeit und Disaster Recovery zu gewährleisten. Dies wird typischerweise mithilfe von SnapMirror erreicht, das sowohl synchron als auch asynchrone Replizierung unterstützt. Diese Methode hält Ihre Daten standortübergreifend aktuell und verfügbar für eine starke Datensicherung.
 +
 Bei VMware-Workloads wird dadurch der lokale Snapshot auf den Datenspeichern oder VMwares auf dem primären Speichersystem konfiguriert und anschließend werden die Daten vom primären Festplattenspeichersystem auf das sekundäre Festplattenspeichersystem repliziert.
 
-*** *Disk-to-Object-Store*: Primärspeicher (Disk) zur Cloud (Objektspeicher).  Dadurch werden Daten von einem ONTAP -System auf ein Objektspeichersystem wie AWS S3, Azure Blob Storage oder StorageGRID repliziert.  Dies wird normalerweise durch die Verwendung von SnapMirror Cloud erreicht, das inkrementelle Backups für immer bereitstellt, indem nach der anfänglichen Basisübertragung nur geänderte Datenblöcke übertragen werden. Dies kann ein Cloud-Hyperscaler-Objektspeicher oder ein privater Objektspeicher sein – StorageGRID.  Diese Methode eignet sich ideal für die langfristige Datenaufbewahrung und -archivierung und bietet eine kostengünstige und skalierbare Lösung für den Datenschutz.
+** *Disk-to-object storage*: Primärspeicher (Festplatte) zu Cloud (Objektspeicher). Dabei werden Daten von einem ONTAP System zu einem Objektspeichersystem repliziert. Dies kann ein Cloud-Hyperscaler-Objektspeicher oder ein privater Objektspeicher wie StorageGRID sein. Diese Methode ist ideal für die langfristige Datenaufbewahrung und Archivierung.
 +
 Für VMWare-Workloads wird hierdurch der lokale Snapshot auf den Datenspeichern oder VMs auf dem primären Server und die Replikation vom primären Festplattenspeicher zum Cloud-Objektspeicher konfiguriert.
 
-*** *Disk-to-Disk-Fanout*: (Nicht verfügbar für Kubernetes-Workloads) Primärspeicher (Disk) zu Sekundärspeicher (Disk) und Primärspeicher (Disk) zu Sekundärspeicher (Disk).
-+
-
-NOTE: Sie können mehrere sekundäre Einstellungen für die Disk-to-Disk-Fanout-Option konfigurieren.
-
+** *Disk-to-Disk-Fanout*: (Nicht verfügbar für Kubernetes-Workloads) Primärspeicher (Festplatte) zu Sekundärspeicher (Festplatte) und Primärspeicher (Festplatte) zu Sekundärspeicher (Festplatte). Sie können mehrere sekundäre Einstellungen für die Disk-to-Disk-Fanout-Option konfigurieren.
 +
 Bei VMware-Workloads wird dadurch der primäre Festplattenspeicher auf den sekundären Festplattenspeicher konfiguriert und der primäre Festplattenspeicher auf den sekundären Festplattenspeicher repliziert.
 
-*** *Lokale Snapshots*: Lokaler Snapshot auf dem ausgewählten Volume (Microsoft SQL Server). Lokale Snapshots sind eine Schlüsselkomponente von Datenschutzstrategien, da sie den Zustand Ihrer Daten zu bestimmten Zeitpunkten erfassen. Dadurch werden schreibgeschützte Point-in-Time-Kopien der Produktionsvolumes erstellt, auf denen Ihre Workloads ausgeführt werden. Der Snapshot verbraucht nur minimalen Speicherplatz und verursacht nur einen vernachlässigbaren Leistungsaufwand, da er nur die Änderungen an Dateien seit dem letzten Snapshot aufzeichnet. Sie können lokale Snapshots verwenden, um Datenverlust oder -beschädigung zu beheben und um Backups für die Notfallwiederherstellung zu erstellen.
+** *Lokale Snapshots*: Lokaler Snapshot des ausgewählten Volumes. Dadurch werden schreibgeschützte, zeitpunktgenaue Kopien der Produktionsvolumes erstellt, auf denen Ihre Workloads ausgeführt werden. Sie können lokale Snapshots verwenden, um Datenverlust oder -beschädigung zu beheben sowie um Backups für die Notfallwiederherstellung zu erstellen.
 +
 Für VMware-Workloads wird hierdurch der lokale Snapshot auf den Datenspeichern oder VMs auf dem primären Speichersystem konfiguriert.
 
 
 
-
-
-
-
-
-
-=== Erstellen einer lokalen Snapshot-Richtlinie
-
-Geben Sie Informationen zum lokalen Snapshot an.
-
-* Wählen Sie die Option *Zeitplan hinzufügen*, um den oder die Snapshot-Zeitpläne auszuwählen.  Sie können maximal 5 Zeitpläne haben.
-* *Schnappschusshäufigkeit*: Wählen Sie die Häufigkeit stündlich, täglich, wöchentlich, monatlich oder jährlich.  Die jährliche Häufigkeit ist für Kubernetes-Workloads nicht verfügbar.
-* *Aufbewahrung von Snapshots*: Geben Sie die Anzahl der aufzubewahrenden Snapshots ein.
-* *Protokollsicherung aktivieren*: (Gilt nur für Microsoft SQL Server-Workloads und Oracle Database-Workloads.)  Aktivieren Sie diese Option, um Protokolle zu sichern und die Häufigkeit und Aufbewahrung der Protokollsicherungen festzulegen. Dazu müssen Sie bereits eine Protokollsicherung konfiguriert haben.  Sehenlink:br-start-configure.html["Konfigurieren von Protokollverzeichnissen"] .
+. Geben Sie Informationen für den Abschnitt *Lokale Snapshot-Einstellungen* an:
 +
-** *Archivprotokolle nach der Sicherung bereinigen*: (Nur Oracle-Datenbank-Workloads) Wenn Protokollsicherungen aktiviert sind, können Sie diese Funktion optional aktivieren, um zu begrenzen, wie lange Backup and Recovery Oracle-Archivprotokolle aufbewahrt.  Sie können den Aufbewahrungszeitraum sowie den Ort auswählen, an dem Backup and Recovery die Archivprotokolle löschen soll.
-
-
-* *Anbieter*: (Nur Kubernetes-Workloads) Wählen Sie den Speicheranbieter aus, der die Kubernetes-Anwendungsressourcen hostet.
-
-
-
-
-=== Erstellen Sie eine Richtlinie für sekundäre Einstellungen (Replikation auf sekundären Speicher).
-
-Geben Sie Informationen zur Replikation auf den Sekundärspeicher an. Zeitplaninformationen aus den lokalen Snapshot-Einstellungen werden Ihnen in den sekundären Einstellungen angezeigt. Diese Einstellungen sind für Kubernetes-Workloads nicht verfügbar.
-
-* *Sicherung*: Wählen Sie die Häufigkeit stündlich, täglich, wöchentlich, monatlich oder jährlich.
-* *Sicherungsziel*: Wählen Sie das Zielsystem auf dem Sekundärspeicher für die Sicherung aus.
-* *Aufbewahrung*: Geben Sie die Anzahl der aufzubewahrenden Snapshots ein.
-* *Snapshot-Sperre aktivieren*: Wählen Sie aus, ob Sie manipulationssichere Snapshots aktivieren möchten.
-* *Sperrzeitraum für Snapshots*: Geben Sie die Anzahl der Tage, Monate oder Jahre ein, für die Sie den Snapshot sperren möchten.
-* *Wechsel zur weiterführenden Schule*:
+** Wählen Sie die Option *Zeitplan hinzufügen*, um den oder die Snapshot-Zeitpläne auszuwählen.  Sie können maximal 5 Zeitpläne haben.
+** *Schnappschusshäufigkeit*: Wählen Sie die Häufigkeit stündlich, täglich, wöchentlich, monatlich oder jährlich.  Die jährliche Häufigkeit ist für Kubernetes-Workloads nicht verfügbar.
+** *Aufbewahrung von Snapshots*: Geben Sie die Anzahl der aufzubewahrenden Snapshots ein.
+** *Protokollsicherung aktivieren*: (Gilt nur für Microsoft SQL Server-Workloads und Oracle Database-Workloads.)  Aktivieren Sie diese Option, um Protokolle zu sichern und die Häufigkeit und Aufbewahrung der Protokollsicherungen festzulegen. Dazu müssen Sie bereits eine Protokollsicherung konfiguriert haben.  Sehenlink:br-start-configure.html["Konfigurieren von Protokollverzeichnissen"] .
 +
-** Die Option * ONTAP Übertragungsplan – Inline* ist standardmäßig ausgewählt und gibt an, dass Snapshots sofort auf das sekundäre Speichersystem übertragen werden.  Sie müssen die Sicherung nicht planen.
-** Weitere Optionen: Wenn Sie eine aufgeschobene Überweisung wählen, erfolgen die Überweisungen nicht sofort und Sie können einen Zeitplan festlegen.
+*** *Archivprotokolle nach der Sicherung bereinigen*: (Nur Oracle-Datenbank-Workloads) Wenn Protokollsicherungen aktiviert sind, können Sie diese Funktion optional aktivieren, um zu begrenzen, wie lange Backup and Recovery Oracle-Archivprotokolle aufbewahrt.  Sie können den Aufbewahrungszeitraum sowie den Ort auswählen, an dem Backup and Recovery die Archivprotokolle löschen soll.
 
 
-* * Sekundäre Beziehung zwischen SnapMirror und SnapVault SMAS*: Verwenden Sie sekundäre Beziehungen zwischen SnapMirror und SnapVault SMAS für SQL Server-Workloads.
+** *Anbieter*: (Nur Kubernetes-Workloads) Wählen Sie den Speicheranbieter aus, der die Kubernetes-Anwendungsressourcen hostet, und geben Sie die Anmeldeinformationen zur Authentifizierung beim Anbieter ein.
 
 
+. Geben Sie Informationen für den Abschnitt *Sekundäre Einstellungen* (Replikation auf Sekundärspeicher) an:
++
+** *Sicherung*: Wählen Sie die Häufigkeit stündlich, täglich, wöchentlich, monatlich oder jährlich.
+** *Sicherungsziel*: Wählen Sie das Zielsystem auf dem Sekundärspeicher für die Sicherung aus.
+** *Aufbewahrung*: Geben Sie die Anzahl der aufzubewahrenden Snapshots ein.
+** *Snapshot-Sperre aktivieren*: Wählen Sie aus, ob Sie manipulationssichere Snapshots aktivieren möchten.
+** *Sperrzeitraum für Snapshots*: Geben Sie die Anzahl der Tage, Monate oder Jahre ein, für die Sie den Snapshot sperren möchten.
+** *Wechsel zur weiterführenden Schule*:
++
+*** Die Option * ONTAP Übertragungsplan – Inline* ist standardmäßig ausgewählt und gibt an, dass Snapshots sofort auf das sekundäre Speichersystem übertragen werden.  Sie müssen die Sicherung nicht planen.
+*** Weitere Optionen: Wenn Sie eine aufgeschobene Überweisung wählen, erfolgen die Überweisungen nicht sofort und Sie können einen Zeitplan festlegen.
 
 
-=== Erstellen einer Richtlinie für Objektspeichereinstellungen
+** * Sekundäre Beziehung zwischen SnapMirror und SnapVault SMAS*: Verwenden Sie sekundäre Beziehungen zwischen SnapMirror und SnapVault SMAS für SQL Server-Workloads.
+** *Anbieter*: (Nur Kubernetes-Workloads) Wählen Sie den Speicheranbieter aus, der die Kubernetes-Anwendungsressourcen hostet, und geben Sie die Anmeldeinformationen zur Authentifizierung beim Anbieter ein.
 
-Geben Sie Informationen für die Sicherung im Objektspeicher an.  Diese Einstellungen werden als „Sicherungseinstellungen“ für Kubernetes-Workloads bezeichnet.
 
+. Geben Sie Informationen für den Abschnitt *Objektspeichereinstellungen* (Sicherung im Objektspeicher) an:
++
 
 NOTE: Die angezeigten Felder unterscheiden sich je nach ausgewähltem Anbieter und Architektur.
 
++
+** *Anbieter*: Wählen Sie den Anbieter für Ihren Objektspeicher und geben Sie die Anmeldeinformationen in die entsprechenden Felder ein (die Felder für die Anmeldeinformationen unterscheiden sich je nach Anbieter).
+** *Sicherungsziel*: Wählen Sie ein registriertes Objektspeicherziel aus.  Stellen Sie sicher, dass das Ziel in Ihrer Sicherungsumgebung zugänglich ist.
+** *IPspace*: Wählen Sie den IPspace aus, der für die Sicherungsvorgänge verwendet werden soll.  Dies ist nützlich, wenn Sie über mehrere IP-Bereiche verfügen und steuern möchten, welcher für Sicherungen verwendet wird.
+** *Zeitplaneinstellungen*: Wählen Sie den Zeitplan aus, der für die lokalen Snapshots festgelegt wurde.  Sie können einen Zeitplan entfernen, aber keinen hinzufügen, da die Zeitpläne entsprechend den lokalen Snapshot-Zeitplänen festgelegt werden.
+** *Aufbewahrungskopien*: Geben Sie die Anzahl der aufzubewahrenden Snapshots ein.
+** *Ausführen um*: Wählen Sie den ONTAP Übertragungszeitplan zum Sichern von Daten im Objektspeicher.
+** *Stufen Sie Ihre Backups vom Objektspeicher in den Archivspeicher auf*: Wenn Sie Backups in den Archivspeicher (z. B. AWS Glacier) aufstufen möchten, wählen Sie die Stufenoption und die Anzahl der Tage für die Archivierung aus.
+** *Integritätsprüfung aktivieren*: (Nicht verfügbar für Kubernetes-Workloads) Wählen Sie aus, ob Sie Integritätsprüfungen (Snapshot-Sperrung) für den Objektspeicher aktivieren möchten. Dadurch wird sichergestellt, dass Backups gültig und wiederherstellbar sind. Die Häufigkeit der Integritätsprüfung ist standardmäßig auf 7 Tage eingestellt. Um Ihre Backups vor Änderungen oder Löschung zu schützen, wählen Sie die Option *Integritätsprüfung*. Die Prüfung erfolgt nur für den neuesten Snapshot. Sie können Integritätsprüfungen für den neuesten Snapshot aktivieren oder deaktivieren.
 
 
-==== Erstellen einer Richtlinie für AWS-Objektspeicher
-
-Geben Sie Informationen in die folgenden Felder ein:
-
-* *Anbieter*: Wählen Sie *AWS*.
-* *AWS-Konto*: Wählen Sie das AWS-Konto aus.
-* *Sicherungsziel*: Wählen Sie ein registriertes S3-Objektspeicherziel aus.  Stellen Sie sicher, dass das Ziel in Ihrer Sicherungsumgebung zugänglich ist.
-* *IPspace*: Wählen Sie den IPspace aus, der für die Sicherungsvorgänge verwendet werden soll.  Dies ist nützlich, wenn Sie über mehrere IP-Bereiche verfügen und steuern möchten, welcher für Sicherungen verwendet wird.
-* *Zeitplaneinstellungen*: Wählen Sie den Zeitplan aus, der für die lokalen Snapshots festgelegt wurde.  Sie können einen Zeitplan entfernen, aber keinen hinzufügen, da die Zeitpläne entsprechend den lokalen Snapshot-Zeitplänen festgelegt werden.
-* *Aufbewahrungskopien*: Geben Sie die Anzahl der aufzubewahrenden Snapshots ein.
-* *Ausführen um*: Wählen Sie den ONTAP Übertragungszeitplan zum Sichern von Daten im Objektspeicher.
-* *Stufen Sie Ihre Backups vom Objektspeicher in den Archivspeicher auf*: Wenn Sie Backups in den Archivspeicher (z. B. AWS Glacier) aufstufen möchten, wählen Sie die Stufenoption und die Anzahl der Tage für die Archivierung aus.
-* *Integritätsscan aktivieren*: (Nicht verfügbar für Kubernetes-Workloads) Wählen Sie aus, ob Sie Integritätsscans (Snapshot-Sperre) im Objektspeicher aktivieren möchten.  Dadurch wird sichergestellt, dass die Sicherungen gültig sind und erfolgreich wiederhergestellt werden können.  Die Häufigkeit des Integritätsscans ist standardmäßig auf 7 Tage eingestellt.  Um Ihre Backups vor Änderungen oder Löschungen zu schützen, wählen Sie die Option *Integritätsscan*.  Der Scan erfolgt nur für den neuesten Snapshot.  Sie können Integritätsscans für den neuesten Snapshot aktivieren oder deaktivieren.
-
-
-
-
-==== Erstellen einer Richtlinie für Microsoft Azure-Objektspeicher
-
-Geben Sie Informationen in die folgenden Felder ein:
-
-* *Anbieter*: Wählen Sie *Azure*.
-* *Azure-Abonnement*: Wählen Sie das erkannte Azure-Abonnement aus.
-* *Azure-Ressourcengruppe*: Wählen Sie die Azure-Ressourcengruppe aus den erkannten aus.
-* *Sicherungsziel*: Wählen Sie ein registriertes Objektspeicherziel aus.  Stellen Sie sicher, dass das Ziel in Ihrer Sicherungsumgebung zugänglich ist.
-* *IPspace*: Wählen Sie den IPspace aus, der für die Sicherungsvorgänge verwendet werden soll.  Dies ist nützlich, wenn Sie über mehrere IP-Bereiche verfügen und steuern möchten, welcher für Sicherungen verwendet wird.
-* *Zeitplaneinstellungen*: Wählen Sie den Zeitplan aus, der für die lokalen Snapshots festgelegt wurde.  Sie können einen Zeitplan entfernen, aber keinen hinzufügen, da die Zeitpläne entsprechend den lokalen Snapshot-Zeitplänen festgelegt werden.
-* *Aufbewahrungskopien*: Geben Sie die Anzahl der aufzubewahrenden Snapshots ein.
-* *Ausführen um*: Wählen Sie den ONTAP Übertragungszeitplan zum Sichern von Daten im Objektspeicher.
-* *Stufen Sie Ihre Backups vom Objektspeicher in den Archivspeicher auf*: Wenn Sie Backups in den Archivspeicher aufstufen möchten, wählen Sie die Stufenoption und die Anzahl der Tage für die Archivierung aus.
-* *Integritätsscan aktivieren*: (Nicht verfügbar für Kubernetes-Workloads) Wählen Sie aus, ob Sie Integritätsscans (Snapshot-Sperre) im Objektspeicher aktivieren möchten.  Dadurch wird sichergestellt, dass die Sicherungen gültig sind und erfolgreich wiederhergestellt werden können.  Die Häufigkeit des Integritätsscans ist standardmäßig auf 7 Tage eingestellt.  Um Ihre Backups vor Änderungen oder Löschungen zu schützen, wählen Sie die Option *Integritätsscan*.  Der Scan erfolgt nur für den neuesten Snapshot.  Sie können Integritätsscans für den neuesten Snapshot aktivieren oder deaktivieren.
-
-
-
-
-==== Erstellen einer Richtlinie für den StorageGRID Objektspeicher
-
-Geben Sie Informationen in die folgenden Felder ein:
-
-* *Anbieter*: Wählen Sie * StorageGRID*.
-* * StorageGRID -Anmeldeinformationen*: Wählen Sie die StorageGRID -Anmeldeinformationen aus den erkannten aus.  Diese Anmeldeinformationen werden für den Zugriff auf das StorageGRID Objektspeichersystem verwendet und wurden in der Option „Einstellungen“ eingegeben.
-* *Sicherungsziel*: Wählen Sie ein registriertes S3-Objektspeicherziel aus.  Stellen Sie sicher, dass das Ziel in Ihrer Sicherungsumgebung zugänglich ist.
-* *IPspace*: Wählen Sie den IPspace aus, der für die Sicherungsvorgänge verwendet werden soll.  Dies ist nützlich, wenn Sie über mehrere IP-Bereiche verfügen und steuern möchten, welcher für Sicherungen verwendet wird.
-* *Zeitplaneinstellungen*: Wählen Sie den Zeitplan aus, der für die lokalen Snapshots festgelegt wurde.  Sie können einen Zeitplan entfernen, aber keinen hinzufügen, da die Zeitpläne entsprechend den lokalen Snapshot-Zeitplänen festgelegt werden.
-* *Aufbewahrungskopien*: Geben Sie die Anzahl der Snapshots ein, die für jede Frequenz aufbewahrt werden sollen.
-* *Übertragungsplan für Objektspeicher*: (Nicht verfügbar für Kubernetes-Workloads) Wählen Sie den ONTAP Übertragungsplan, um Daten im Objektspeicher zu sichern.
-* *Integritätsscan aktivieren*: (Nicht verfügbar für Kubernetes-Workloads) Wählen Sie aus, ob Sie Integritätsscans (Snapshot-Sperre) im Objektspeicher aktivieren möchten.  Dadurch wird sichergestellt, dass die Sicherungen gültig sind und erfolgreich wiederhergestellt werden können.  Die Häufigkeit des Integritätsscans ist standardmäßig auf 7 Tage eingestellt.  Um Ihre Backups vor Änderungen oder Löschungen zu schützen, wählen Sie die Option *Integritätsscan*.  Der Scan erfolgt nur für den neuesten Snapshot.  Sie können Integritätsscans für den neuesten Snapshot aktivieren oder deaktivieren.
-* *Stufen Sie Ihre Backups vom Objektspeicher in den Archivspeicher auf*: (Nicht verfügbar für Kubernetes-Workloads) Wenn Sie Backups in den Archivspeicher aufstufen möchten, wählen Sie die Stufenoption und die Anzahl der Tage für die Archivierung aus.
 
 
 
 
 === Konfigurieren Sie erweiterte Einstellungen in der Richtlinie
 
-Optional können Sie erweiterte Einstellungen in der Richtlinie konfigurieren.  Diese Einstellungen sind für alle Backup-Architekturen verfügbar, einschließlich lokaler Snapshots, Replikation auf sekundären Speicher und Backups auf Objektspeicher. Diese Einstellungen sind für Kubernetes-Workloads nicht verfügbar.  Die verfügbaren erweiterten Einstellungen unterscheiden sich je nach der oben auf der Seite ausgewählten Arbeitslast. Daher gelten die hier beschriebenen erweiterten Einstellungen möglicherweise nicht für alle Arbeitslasten.  Beim Konfigurieren einer Richtlinie für Kubernetes-Workloads sind erweiterte Einstellungen nicht verfügbar.
+[%collapsible]
+====
+Sie können optional erweiterte Einstellungen in der Richtlinie konfigurieren. Diese Optionen stehen Ihnen für alle Backup-Architekturen und Speicherziele zur Verfügung. Die verfügbaren erweiterten Optionen hängen von der oben auf der Seite ausgewählten Arbeitslast ab, daher treffen einige der hier beschriebenen Optionen möglicherweise nicht auf alle Arbeitslasten zu. Für Kubernetes-Arbeitslasten können keine erweiterten Optionen festgelegt werden.
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Richtlinien* aus.
@@ -240,8 +173,8 @@ Optional können Sie erweiterte Einstellungen in der Richtlinie konfigurieren.  
 
 ** *Nur Kopie-Backup*: (Gilt nur für Microsoft SQL Server-Workloads) Wählen Sie „Nur Kopie-Backup“ (eine Art Microsoft SQL Server-Backup), wenn Sie Ihre Ressourcen mithilfe einer anderen Backup-Anwendung sichern müssen.
 ** *Einstellungen der Verfügbarkeitsgruppe*: (Gilt nur für Microsoft SQL Server-Workloads) Wählen Sie bevorzugte Sicherungsreplikate aus oder geben Sie ein bestimmtes Replikat an.  Diese Einstellung ist nützlich, wenn Sie über eine SQL Server-Verfügbarkeitsgruppe verfügen und steuern möchten, welches Replikat für Sicherungen verwendet wird.
-** *Maximale Übertragungsrate*: Um keine Begrenzung der Bandbreitennutzung festzulegen, wählen Sie *Unbegrenzt*.  Wenn Sie die Übertragungsrate begrenzen möchten, wählen Sie *Begrenzt* und wählen Sie die Netzwerkbandbreite zwischen 1 und 1.000 Mbit/s aus, die zum Hochladen von Backups in den Objektspeicher zugewiesen ist.  Standardmäßig kann ONTAP eine unbegrenzte Bandbreite nutzen, um die Sicherungsdaten von Volumes im System in den Objektspeicher zu übertragen.  Wenn Sie feststellen, dass der Sicherungsverkehr die normale Arbeitslast der Benutzer beeinträchtigt, sollten Sie die während der Übertragung verwendete Netzwerkbandbreite verringern.
-** *Sicherungswiederholungen*: (Gilt nicht für VMware-Workloads) Um den Job im Falle eines Fehlers oder einer Unterbrechung zu wiederholen, wählen Sie *Jobwiederholungen bei Fehler aktivieren*. Geben Sie die maximale Anzahl der Wiederholungsversuche für Snapshot- und Sicherungsaufträge sowie das Wiederholungszeitintervall ein. Die Nachzählung muss weniger als 10 ergeben. Diese Einstellung ist nützlich, wenn Sie sicherstellen möchten, dass der Sicherungsauftrag im Falle eines Fehlers oder einer Unterbrechung wiederholt wird.
+** *Maximale Transferrate*: Um kein Limit für die Bandbreitennutzung festzulegen, wählen Sie *Unbegrenzt*. Wenn Sie die Transferrate begrenzen möchten, wählen Sie *Begrenzt* und wählen Sie die Netzwerkbandbreite zwischen 1 und 1.000 Mbps, die für das Hochladen von Backups in den Objektspeicher zugewiesen wird. Standardmäßig kann ONTAP eine unbegrenzte Menge an Bandbreite verwenden, um die Backup-Daten von Volumes im System in den Objektspeicher zu übertragen. Wenn der Backup-Datenverkehr die Workloads beeinträchtigt, reduzieren Sie die Netzwerkbandbreite für Übertragungen.
+** *Wiederholungsversuche für Backups*: (Gilt nicht für VMware-Workloads) Um den Auftrag im Fehlerfall oder bei einer Unterbrechung zu wiederholen, wählen Sie *Wiederholungsversuche bei Fehlern aktivieren*. Geben Sie die maximale Anzahl an Wiederholungsversuchen für Snapshot- und Backup-Aufträge sowie das Wiederholungsintervall ein. Die Anzahl der Wiederholungsversuche muss weniger als 10 betragen.
 +
 
 TIP: Wenn die Snapshot-Frequenz auf 1 Stunde eingestellt ist, sollte die maximale Verzögerung zusammen mit der Anzahl der Wiederholungsversuche 45 Minuten nicht überschreiten.
@@ -272,11 +205,12 @@ Konfigurieren Sie zusätzlich die folgenden Optionen:
 
 
 
+====
 
 
 == Bearbeiten einer Richtlinie
 
-Sie können die Sicherungsarchitektur, die Sicherungshäufigkeit, die Aufbewahrungsrichtlinie und andere Einstellungen für eine Richtlinie bearbeiten.
+Sie können die Backup-Architektur, die Backup-Frequenz, die Aufbewahrungsrichtlinie und weitere Einstellungen einer Richtlinie bearbeiten. Für Kubernetes-Workload-Richtlinien können Sie nur die Zeitplan- und Aufbewahrungseinstellungen bearbeiten.
 
 Sie können beim Bearbeiten einer Richtlinie eine weitere Schutzebene hinzufügen, aber keine Schutzebene entfernen.  Wenn die Richtlinie beispielsweise nur lokale Snapshots schützt, können Sie die Replikation zum sekundären Speicher oder die Backups zum Objektspeicher hinzufügen.  Wenn Sie über lokale Snapshots und Replikation verfügen, können Sie Objektspeicher hinzufügen.  Wenn Sie jedoch über lokale Snapshots, Replikation und Objektspeicher verfügen, können Sie keine dieser Ebenen entfernen.
 

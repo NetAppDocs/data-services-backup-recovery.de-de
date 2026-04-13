@@ -16,8 +16,8 @@ summary: Schützen Sie Ihre VMware-Workloads mit NetApp NetApp Backup and Recove
 [role="lead"]
 Sichern Sie VMware-VMs und Datenspeicher von lokalen ONTAP -Systemen auf Amazon Web Services, Azure NetApp Files oder StorageGRID , um sicherzustellen, dass Ihre Daten geschützt sind. Backups werden automatisch erstellt und in einem Objektspeicher in Ihrem öffentlichen oder privaten Cloud-Konto gespeichert.
 
-* Um Workloads nach einem Zeitplan zu sichern, erstellen Sie Richtlinien, die die Sicherungs- und Wiederherstellungsvorgänge steuern.  Sehenlink:br-use-policies-create.html["Erstellen von Richtlinien"] Anweisungen hierzu finden Sie unter.
-* Erstellen Sie Schutzgruppen, um die Sicherungs- und Wiederherstellungsvorgänge für eine Reihe von Ressourcen zu verwalten. Sehenlink:br-use-vmware-protection-groups.html["Erstellen und verwalten Sie Schutzgruppen für VMware-Workloads mit NetApp Backup and Recovery"] für weitere Informationen.
+* Um Workloads regelmäßig zu sichern, erstellen Sie Richtlinien, die die Sicherungs- und Wiederherstellungsvorgänge steuern. Siehe link:br-use-policies-create.html["Schutzrichtlinien erstellen"] für Anweisungen.
+* Erstellen Sie Schutzgruppen, um die Backup- und Recovery-Vorgänge für eine Gruppe von Ressourcen zu verwalten. Siehe link:br-use-vmware-protection-groups.html["Schutzgruppen erstellen und verwalten"] für weitere Informationen.
 * Sichern Sie jetzt Workloads (erstellen Sie jetzt ein On-Demand-Backup).
 
 
@@ -33,12 +33,12 @@ Erstellen Sie sofort ein On-Demand-Backup.  Möglicherweise möchten Sie eine On
 . Wählen Sie im Menü „Sicherung und Wiederherstellung“ die Option „Inventar“ aus.
 . Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.
 . Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*.
-. Wählen Sie die Registerkarte *Schutzgruppen*, *Datenspeicher* oder *Virtuelle Maschinen*.
-. Wählen Sie die Schutzgruppe, Datenspeicher oder virtuellen Maschinen aus, die Sie sichern möchten.
+. Wählen Sie die Menüüberschrift *Protection Groups*, *Datastores*, *Virtual machines* oder *Tags* aus.
+. Wählen Sie die Schutzgruppe, Datenspeicher, virtuellen Maschinen oder getaggten Ressourcen aus, die Sie sichern möchten.
 . Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Jetzt sichern*.
 +
 
-NOTE: Die auf die Sicherung angewendete Richtlinie ist dieselbe Richtlinie, die der Schutzgruppe, dem Datenspeicher oder der virtuellen Maschine zugewiesen ist.
+NOTE: Die für die Datensicherung angewendete Richtlinie ist dieselbe Richtlinie, die der Schutzgruppe, dem Datenspeicher, der virtuellen Maschine oder den getaggten Ressourcen zugewiesen ist.
 
 . Wählen Sie die Zeitplanstufe aus.
 . Wählen Sie *Jetzt sichern*.

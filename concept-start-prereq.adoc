@@ -231,6 +231,9 @@ Sie benötigen spezifische Anforderungen, um Kubernetes-Ressourcen zu erkennen u
 
 Informationen zu den NetApp Console finden Sie unter<<In der NetApp Console>> .
 
+
+NOTE: NetApp empfiehlt dringend, dem für Kubernetes-Workloads verwendeten Console-Agenten eine statische IP-Adresse zuzuweisen, um Probleme zu vermeiden, falls sich die IP-Adresse des Agenten ändert.
+
 * Ein primäres ONTAP System (ONTAP 9.16.1 oder höher)
 * Ein Kubernetes-Cluster – Zu den unterstützten Kubernetes-Distributionen und -Versionen gehören:
 +
@@ -288,6 +291,7 @@ Stellen Sie sicher, dass Ihre Hyper-V-Instanz bestimmte Anforderungen zum Erkenn
 | Vernetzter Speicher  a| 
 * ONTAP 9.13.1 oder höher
 * Amazon FSx for NetApp ONTAP-Speichersysteme mit Version 9.13.1 oder höher
+* SAN-Speicher (Vorschau) (unterstützt für Backups und Wiederherstellung am ursprünglichen Speicherort vom primären und sekundären Speicher)
 
 
 |===

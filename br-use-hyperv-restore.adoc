@@ -47,13 +47,13 @@ Beim Wiederherstellen von Workloads geschieht Folgendes:
 * Wenn Sie eine Wiederherstellung aus einem replizierten Workload durchführen, können Sie den Workload auf dem ursprünglichen System oder auf einem lokalen ONTAP System wiederherstellen.
 
 
-Auf der Seite „Wiederherstellen“ (auch als „Suchen und Wiederherstellen“ bezeichnet) können Sie eine Ressource wiederherstellen, auch wenn Sie sich nicht an den genauen Namen, den Speicherort oder das Datum erinnern, an dem sie zuletzt in gutem Zustand war. Sie können mithilfe von Filtern nach dem Schnappschuss suchen.
+Auf der Seite „Wiederherstellen“ können Sie eine Ressource wiederherstellen, selbst wenn Sie sich nicht mehr an den genauen Namen, den Speicherort oder das Datum erinnern, an dem sie zuletzt in einwandfreiem Zustand war. Sie können mithilfe von Filtern nach dem Snapshot suchen.
 
 
 
-== Wiederherstellen von Workload-Daten über die Option „Wiederherstellen“ (Suchen und Wiederherstellen)
+== Wiederherstellen von Hyper-V-Workloads
 
-Stellen Sie Hyper-V-Workloads mit der Option „Wiederherstellen“ wieder her. Sie können nach dem Snapshot anhand seines Namens oder mithilfe von Filtern suchen.
+Stellen Sie Hyper-V-Workloads über das Menü „Wiederherstellen“ wieder her. Sie können den Snapshot anhand seines Namens oder mithilfe von Filtern suchen.
 
 *Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung oder Administratorrolle für Backup und Wiederherstellung zur Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
@@ -72,48 +72,48 @@ Es wird eine Liste möglicher Wiederherstellungspunkte angezeigt.
 . Wählen Sie einen Quellspeicherort für den Snapshot aus.
 . Wählen Sie *Weiter*, um fortzufahren.
 . Wählen Sie das Wiederherstellungsziel und die Einstellungen aus:
-
-
++
 [discrete]
 ===== Zielauswahl
 
++
 [role="tabbed-block"]
 ====
 .Am ursprünglichen Speicherort wiederherstellen
 --
-Wenn Sie zum ursprünglichen Speicherort zurückkehren, können Sie die Zieleinstellungen einsehen, indem Sie den Abschnitt *Zieleinstellungen* erweitern. Sie können diese jedoch nicht ändern.
-
-. Im Abschnitt *Optionen nach der Wiederherstellung* sollten Sie folgende Option in Betracht ziehen:
+.. Wählen Sie den Bereich *Ursprünglicher Speicherort* aus. Wenn Sie zum ursprünglichen Speicherort wiederherstellen, können Sie die Zieleinstellungen anzeigen, indem Sie den Abschnitt *Zieleinstellungen* erweitern, aber Sie können sie nicht ändern.
+.. Im Abschnitt *Optionen nach der Wiederherstellung* sollten Sie folgende Option in Betracht ziehen:
 +
-** *Starten der virtuellen Maschine*: Aktivieren Sie diese Option, um die neue virtuelle Maschine nach der Wiederherstellung zu starten.
+*** *Starten der virtuellen Maschine*: Aktivieren Sie diese Option, um die neue virtuelle Maschine nach der Wiederherstellung zu starten.
 
 
-. Wählen Sie *Wiederherstellen*.
 
 
 --
 .An einem anderen Speicherort wiederherstellen
 --
-. Geben Sie im Abschnitt *Zieleinstellungen* die folgenden Informationen ein:
+.. Wählen Sie den Bereich *Alternativer Standort* aus.
+.. Geben Sie im Abschnitt *Zieleinstellungen* die folgenden Informationen ein:
 +
-** *Hyper-V FQDN oder IP-Adresse*: Geben Sie den vollqualifizierten Domänennamen oder die IP-Adresse des Ziel-Hyper-V-Hosts ein.
-** *Netzwerk*: Wählen Sie das Zielnetzwerk aus, in dem Sie den Snapshot wiederherstellen möchten.
-** *Name der virtuellen Maschine*: Geben Sie den Namen der VM ein, die Sie wiederherstellen möchten.
-** *Zielort*: Geben Sie den Zielordner oder die CIFS-Freigabe ein, die die wiederhergestellten Daten enthalten soll.
+*** *Hyper-V FQDN oder IP-Adresse*: Geben Sie den vollqualifizierten Domänennamen oder die IP-Adresse des Ziel-Hyper-V-Hosts ein.
+*** *Netzwerk*: Wählen Sie das Zielnetzwerk aus, in dem Sie den Snapshot wiederherstellen möchten.
+*** *Name der virtuellen Maschine*: Geben Sie den Namen der VM ein, die Sie wiederherstellen möchten.
+*** *Zielort*: Geben Sie den Zielordner oder die CIFS-Freigabe ein, die die wiederhergestellten Daten enthalten soll.
 
 
-. Im Abschnitt *Vorbereitende Wiederherstellungsoptionen* sollten Sie folgende Optionen in Betracht ziehen:
+.. Im Abschnitt *Vorbereitende Wiederherstellungsoptionen* sollten Sie folgende Optionen in Betracht ziehen:
 +
-** *Schnellwiederherstellung*: Aktivieren Sie diese Option, um die wiederhergestellte VM sofort verfügbar zu machen. Aus dem Objektspeicher werden nur die zum Ausführen der VM benötigten Dateien wiederhergestellt, nicht das gesamte Volume.
+*** *Schnellwiederherstellung*: Aktivieren Sie diese Option, um die wiederhergestellte VM sofort verfügbar zu machen. Aus dem Objektspeicher werden nur die zum Ausführen der VM benötigten Dateien wiederhergestellt, nicht das gesamte Volume.
 
 
-. Im Abschnitt *Optionen nach der Wiederherstellung* sollten Sie folgende Optionen in Betracht ziehen:
+.. Im Abschnitt *Optionen nach der Wiederherstellung* sollten Sie folgende Optionen in Betracht ziehen:
 +
-** *Starten der virtuellen Maschine*: Aktivieren Sie diese Option, um die neue virtuelle Maschine nach der Wiederherstellung zu starten.
+*** *Starten der virtuellen Maschine*: Aktivieren Sie diese Option, um die neue virtuelle Maschine nach der Wiederherstellung zu starten.
 
 
-. Wählen Sie *Wiederherstellen*.
 
 
 --
 ====
+. Wählen Sie *Wiederherstellen*.
+

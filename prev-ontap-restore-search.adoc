@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: prev-ontap-restore-search.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Mit Search & Restore können Sie Volumes, Ordner oder Dateien aus ONTAP Sicherungsdateien wiederherstellen. 
+summary: Mit der Such- und Wiederherstellungsfunktion können Sie Volumes, Ordner oder Dateien aus ONTAP Backup-Dateien wiederherstellen. 
 ---
-= Wiederherstellung aus ONTAP -Backups mithilfe von Suchen & Wiederherstellen
+= Wiederherstellung aus ONTAP-Backups mithilfe der Such- und Wiederherstellungsfunktion
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Mit Search & Restore können Sie Volumes, Ordner oder Dateien aus ONTAP
 
 
 [role="lead"]
-Mit Search & Restore können Sie Volumes, Ordner oder Dateien aus ONTAP Sicherungsdateien wiederherstellen.  Mit Search & Restore können Sie alle Backups durchsuchen (einschließlich lokaler Snapshots, replizierter Volumes und Objektspeicher), ohne dass Sie genaue System-, Volume- oder Dateinamen benötigen.
+Mit der Such- und Wiederherstellungsfunktion können Sie Volumes, Ordner oder Dateien aus ONTAP Backup-Dateien wiederherstellen. Die Such- und Wiederherstellungsfunktion ermöglicht die Suche in allen Backups (einschließlich lokaler Snapshots, replizierter Volumes und Objektspeicher), ohne dass genaue System-, Volume- oder Dateinamen erforderlich sind.
 
 Die Wiederherstellung aus lokalen Snapshots oder replizierten Volumes ist in der Regel schneller und kostengünstiger als die Wiederherstellung aus dem Objektspeicher.
 
@@ -121,8 +121,6 @@ Beachten Sie: Wenn Sie NetApp Backup and Recovery bereits mit einem zuvor konfig
 
 
 
-
-
 * Azure-Anforderungen:
 +
 ** Sie müssen den Azure Synapse Analytics-Ressourcenanbieter (genannt „Microsoft.Synapse“) mit Ihrem Abonnement registrieren. https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["Erfahren Sie, wie Sie diesen Ressourcenanbieter für Ihr Abonnement registrieren."^] .  Sie müssen der *Eigentümer* oder *Mitwirkende* des Abonnements sein, um den Ressourcenanbieter zu registrieren.
@@ -131,8 +129,6 @@ Beachten Sie: Wenn Sie NetApp Backup and Recovery bereits mit einem zuvor konfig
 Beachten Sie: Wenn Sie NetApp Backup and Recovery bereits mit einem zuvor konfigurierten Konsolenagenten verwendet haben, müssen Sie der Konsolenbenutzerrolle jetzt die Berechtigungen für den Azure Synapse-Arbeitsbereich und das Data Lake Storage-Konto hinzufügen.  Sie werden für Search & Restore benötigt.
 
 ** Der Konsolenagent muss *ohne* Proxyserver für die HTTP-Kommunikation mit dem Internet konfiguriert werden.  Wenn Sie einen HTTP-Proxyserver für Ihren Konsolenagenten konfiguriert haben, können Sie die Such- und Wiederherstellungsfunktion nicht verwenden.
-
-
 
 
 * Google Cloud-Anforderungen:
@@ -169,6 +165,10 @@ Auch wenn Sie einen lokalen Konsolen-Agenten verwenden, müssen die Anforderunge
 Der Vorgang läuft folgendermaßen ab:
 
 . Bevor Sie „Suchen und Wiederherstellen“ verwenden können, müssen Sie die „Indizierung“ auf jedem Quellsystem aktivieren, von dem Sie Volumedaten wiederherstellen möchten.  Dadurch kann der indizierte Katalog die Sicherungsdateien für jedes Volume verfolgen.
++
+
+NOTE: Backup and Recovery indiziert keine Snapshots, deren Erstellungszeitstempel exakt mit einem anderen Snapshot desselben Volumes übereinstimmt.
+
 . Wenn Sie ein Volume oder Dateien aus einer Volumesicherung wiederherstellen möchten, wählen Sie unter _Suchen und Wiederherstellen_ die Option *Suchen und Wiederherstellen*.
 . Geben Sie die Suchkriterien für ein Volume, einen Ordner oder eine Datei nach teilweisem oder vollständigem Volumenamen, teilweisem oder vollständigem Dateinamen, Sicherungsspeicherort, Größenbereich, Erstellungsdatumsbereich und anderen Suchfiltern ein und wählen Sie *Suchen*.
 +

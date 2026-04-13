@@ -31,10 +31,11 @@ Sie müssen mindestens eine Arbeitslast ermitteln, bevor Sie ein externes Sicher
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
-. Wählen Sie die Registerkarte *Offsite-Sicherungsziele*.
+. Wählen Sie die Registerkarte *Verwaltete externe Sicherungsziele* aus.
 . Wählen Sie *Sicherungsziel ermitteln*.
-. Wählen Sie einen der Sicherungszieltypen: *Amazon Web Services (AWS) S3*, *Microsoft Azure Blob Storage*, * StorageGRID* oder * ONTAP S3*.
-. Wählen Sie im Abschnitt *Speicherort der Anmeldeinformationen auswählen* den Speicherort aus, an dem sich die Anmeldeinformationen befinden, und wählen Sie dann aus, wie die Anmeldeinformationen verknüpft werden sollen.
+. Wählen Sie einen der verfügbaren Backup-Zieltypen aus: *AWS*, *Azure*, *StorageGRID*, *ONTAP S3* oder *GCP*.
+. Wählen Sie *Weiter*.
+. (Nur für AWS- und Azure-Backup-Ziele) Wählen Sie im Abschnitt *Speicherort der Anmeldeinformationen auswählen* den Speicherort aus, an dem sich die Anmeldeinformationen befinden, und wählen Sie dann aus, wie die Anmeldeinformationen verknüpft werden sollen.
 . Wählen Sie *Weiter*.
 . Geben Sie die Anmeldeinformationen ein. Die Informationen variieren je nach Art des ausgewählten Sicherungsziels und dem von Ihnen gewählten Speicherort der Anmeldeinformationen.
 +
@@ -71,6 +72,13 @@ Sie müssen mindestens eine Arbeitslast ermitteln, bevor Sie ein externes Sicher
 *** *Geheimschlüssel*: Geben Sie den geheimen Schlüssel von ONTAP S3 ein.
 
 
+** Für GCP:
++
+*** *Name der Anmeldeinformationen*: Geben Sie den Namen der Google Cloud-Anmeldeinformationen ein.
+*** *Zugriffsschlüssel*: Geben Sie den Google Cloud access key ein.
+*** *Geheimer Schlüssel*: Geben Sie den Google Cloud-Geheimschlüssel ein.
+
+
 
 
 . Wählen Sie *Entdecken*.
@@ -84,7 +92,7 @@ Anstatt Buckets automatisch von NetApp Backup and Recovery erkennen zu lassen, k
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
-. Wählen Sie *Offsite-Sicherungsziele*.
+. Wählen Sie *Verwaltete externe Sicherungsziele*.
 . Wählen Sie das Ziel aus und wählen Sie rechts die *Aktionen*image:icon-action.png["Symbol „Aktionen“"] Symbol und wählen Sie *Bucket hinzufügen*.
 . Geben Sie die Bucket-Informationen ein.  Die Informationen unterscheiden sich je nach Art des ausgewählten Sicherungsziels.
 +
@@ -135,6 +143,14 @@ Anstatt Buckets automatisch von NetApp Backup and Recovery erkennen zu lassen, k
 *** *Kapazität*: Geben Sie die Kapazität für den ONTAP S3-Bucket ein.  Dies ist die maximale Datenmenge, die im Bucket gespeichert werden kann.
 *** *Versionierung aktivieren*: Wählen Sie diese Option, um die Versionierung für den ONTAP S3-Bucket zu aktivieren.  Durch die Versionierung können Sie mehrere Versionen von Objekten im Bucket behalten, was für Sicherungs- und Wiederherstellungszwecke nützlich sein kann.
 *** *Objektsperre*: Wählen Sie diese Option, um die Objektsperre für den ONTAP S3-Bucket zu aktivieren.  Durch die Objektsperre wird verhindert, dass Objekte für einen bestimmten Aufbewahrungszeitraum gelöscht oder überschrieben werden, und so eine zusätzliche Ebene des Datenschutzes geschaffen.  Sie können dies nur aktivieren, wenn Sie einen Bucket erstellen, und Sie können es später nicht mehr deaktivieren.
+
+
+** Für GCP:
++
+*** *Bucket-Name*: Geben Sie den Namen des Google Cloud-Buckets ein.
+*** *GCP-Projekt*: Wählen Sie den Namen des Google Cloud-Projekts aus.
+*** *Bucket-Region*: Wählen Sie eine Region für den Google Cloud-Bucket aus.
+*** *Objektsperrung*: Wählen Sie diese Option, um Aufbewahrungsfristen für Objekte in diesem Bucket zu aktivieren. Während einer Aufbewahrungsfrist können Objekte weder geändert noch gelöscht werden und sind bis zum Ablauf der Frist unveränderlich. Wenn Sie diese Option für einen Bucket aktivieren, kann sie nicht mehr deaktiviert werden.
 
 
 

@@ -140,6 +140,11 @@ Bei der Wiederherstellung an einem alternativen Speicherort können Sie das Ziel
 *** *Name der virtuellen Maschine*: Geben Sie den Namen der VM ein, auf der Sie den Snapshot wiederherstellen möchten. Wenn der Name mit einer bereits im Datenspeicher vorhandenen VM übereinstimmt, sorgt Backup and Recovery für einen eindeutigen Namen, indem ein aktueller Zeitstempel angehängt wird.
 
 
+** *Zielspeicher*-Abschnitt (nur sichtbar beim Wiederherstellen aus Objektspeicher):
++
+*** *Standardspeicherort ändern*: Aktivieren Sie diese Option, um eine Objektspeichersicherung auf einer anderen Speicher-VM wiederherzustellen, falls der Quellspeicherort nicht erreichbar oder voll ist. Wählen Sie einen anderen Cluster, eine andere Speicher-VM oder ein anderes Aggregat aus.
+
+
 ** Abschnitt *Optionen vor der Wiederherstellung*:
 +
 *** *Schnellwiederherstellung*: Aktivieren Sie diese Option, um NetApp Backup and Recovery anzuweisen, nur VM-Metadaten (Dateien, LUNs und Namespaces) aus dem Objektspeicher wiederherzustellen. Dadurch stehen Volumes schneller zur Verfügung als bei einer vollständigen Wiederherstellung.

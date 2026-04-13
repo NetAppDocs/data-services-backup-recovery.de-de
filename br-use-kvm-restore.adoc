@@ -28,6 +28,7 @@ Sie können virtuelle Maschinen von verschiedenen Startorten aus wiederherstelle
 Sie können Daten bis zu diesen Punkten wiederherstellen:
 
 * Am ursprünglichen Speicherort wiederherstellen
+* An einem alternativen Speicherort wiederherstellen
 
 
 .Überlegungen zur Wiederherstellung aus dem Objektspeicher
@@ -47,13 +48,13 @@ Wenn Sie virtuelle Maschinen wiederherstellen, geschieht Folgendes:
 * Wenn Sie eine Sicherung aus dem Objektspeicher wiederherstellen, können Sie die Daten auf dem ursprünglichen System oder auf einem lokalen ONTAP -System wiederherstellen.
 
 
-Auf der Seite „Wiederherstellen“ (auch als „Suchen und Wiederherstellen“ bezeichnet) können Sie eine VM wiederherstellen, auch wenn Sie sich nicht an den genauen Namen, den Speicherort oder das Datum erinnern, an dem sie zuletzt in gutem Zustand war. Sie können mithilfe von Filtern nach dem Schnappschuss suchen.
+Auf der Seite „Wiederherstellen“ können Sie eine VM wiederherstellen, selbst wenn Sie sich nicht mehr an den genauen Namen, den Speicherort oder das Datum des letzten fehlerfreien Zustands erinnern. Sie können mithilfe von Filtern nach dem Snapshot suchen.
 
 
 
-== Stellen Sie VMs über die Wiederherstellungsoption wieder her (Suchen und Wiederherstellen).
+== Wiederherstellen von KVM-VMs
 
-Stellen Sie virtuelle KVM-Maschinen mithilfe der Option „Wiederherstellen“ wieder her. Sie können nach dem Snapshot anhand seines Namens oder mithilfe von Filtern suchen.
+Stellen Sie KVM-VMs über das Menü „Wiederherstellen“ wieder her. Sie können den Snapshot anhand seines Namens oder mithilfe von Filtern suchen.
 
 *Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung oder Administratorrolle für Backup und Wiederherstellung zur Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
@@ -71,39 +72,48 @@ Es wird eine Liste möglicher Wiederherstellungspunkte angezeigt.
 
 . Wählen Sie den Wiederherstellungspunkt aus, den Sie verwenden möchten.
 . Wählen Sie einen Quellspeicherort für den Snapshot aus.
-
-
 . Wählen Sie *Weiter*, um fortzufahren.
 . Wählen Sie das Wiederherstellungsziel und die Einstellungen aus:
-
-
++
 [discrete]
 ===== Zielauswahl
 
++
 [role="tabbed-block"]
 ====
 .Am ursprünglichen Speicherort wiederherstellen
 --
-. *Schnelle Wiederherstellung aktivieren*: Wählen Sie diese Option, um eine schnelle Wiederherstellung durchzuführen. Wiederhergestellte Volumes und Daten stehen sofort zur Verfügung. Verwenden Sie dies nicht auf Volumes, die eine hohe Leistung erfordern, da der Zugriff auf die Daten während des schnellen Wiederherstellungsprozesses langsamer als gewöhnlich sein kann.
-. *Optionen vor der Wiederherstellung*: Geben Sie den vollständigen Pfad für ein Skript ein, das vor dem Wiederherstellungsvorgang ausgeführt werden soll, sowie alle Argumente, die das Skript verwendet.
-. *Optionen nach der Wiederherstellung*:
-+
-** *VM neu starten*: Wählen Sie diese Option aus, um die VM nach Abschluss des Wiederherstellungsvorgangs und nach Anwendung des Post-Restore-Skripts neu zu starten.
-** *Postscript*: Geben Sie den vollständigen Pfad für ein Skript ein, das nach dem Wiederherstellungsvorgang ausgeführt werden soll, sowie alle Argumente, die das Skript verwendet.
-
-
-. Abschnitt *Benachrichtigung*:
-+
-** *E-Mail-Benachrichtigungen aktivieren*: Wählen Sie diese Option aus, um E-Mail-Benachrichtigungen über den Wiederherstellungsvorgang zu erhalten, und geben Sie an, welche Art von Benachrichtigungen Sie erhalten möchten.
-
-
-. Wählen Sie *Wiederherstellen*.
+.. Wählen Sie den Bereich *Ursprünglicher Speicherort* aus.
+.. Aktivieren Sie im Abschnitt *Optionen nach der Wiederherstellung* die Option *Virtuelle Maschine neu starten*, um die VM nach Abschluss des Wiederherstellungsvorgangs neu zu starten.
 
 
 --
 .An einem anderen Speicherort wiederherstellen
 --
-Nicht verfügbar für KVM-Workloads.
+.. Wählen Sie den Bereich *Alternativer Standort* aus.
+.. Geben Sie im Abschnitt *Cloudstack settings*: die folgenden Informationen an:
++
+*** *Zone*: Wählen Sie eine Zielzone CloudStack aus der Liste.
+*** *Pod*: Wählen Sie aus der Liste einen Ziel-Pod innerhalb der ausgewählten Zone aus.
+*** *Cluster*: Wählen Sie einen Ziel-Cluster innerhalb des ausgewählten Pods aus der Liste aus.
+*** *Host*: Wählen Sie aus der Liste einen Zielhost im Cluster aus.
+*** *Speicherpool*: Wählen Sie einen Zielspeicherpool aus der Liste (das Zielvolume sollte sich hier befinden).
+*** *Netzwerk*: Wählen Sie das Netzwerk aus, mit dem die wiederhergestellte VM verbunden wird.
+*** *VM-Name*: Geben Sie einen Namen für die wiederherzustellende VM ein.
+*** *Anzeigename*: Geben Sie den Namen ein, der für diese VM in Backup and Recovery angezeigt werden soll.
+*** *Speicherpoolpfad*: Geben Sie den Speicherpoolpfad ein, in dem die VM-Volumes gespeichert werden sollen.
+
+
+.. Wählen Sie aus der Liste *Serviceangebot auswählen* das Serviceangebot aus, das Ihrem bevorzugten Ressourceneinsatz entspricht.
+.. Aktivieren Sie die Option *Erzwungen*, um die wiederhergestellte VM auch dann zu importieren, wenn eine oder mehrere MAC-Adressen der Netzwerkkarte der VM bereits vorhanden sind. Existiert eine MAC-Adresse bereits, wird für diese Netzwerkkarte eine neue MAC-Adresse generiert.
+.. Im Abschnitt *Optionen nach der Wiederherstellung* sollten Sie folgende Optionen in Betracht ziehen:
++
+*** *Virtuelle Maschine neu starten*: Aktivieren Sie diese Option, um die neue virtuelle Maschine nach der Wiederherstellung zu starten.
+
+
+
 
 --
 ====
+. Wählen Sie *Wiederherstellen*.
+

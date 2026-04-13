@@ -10,7 +10,7 @@ summary: Sie können CR-Wiederherstellungsvorgänge mithilfe von Annotationen, N
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 
 [role="lead"]
