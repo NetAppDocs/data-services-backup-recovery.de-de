@@ -4,7 +4,7 @@ permalink: br-use-vmware-restore-guest-files-and-folders-from-vmdks.html
 keywords:  
 summary: Sie können eine oder mehrere Dateien oder Ordner aus einem VMDK auf einem Windows-Gastbetriebssystem wiederherstellen. 
 ---
-= Dateien und Ordner aus VMDKs wiederherstellen
+= Dateien und Ordner von virtuellen Festplatten wiederherstellen
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,11 +14,12 @@ summary: Sie können eine oder mehrere Dateien oder Ordner aus einem VMDK auf ei
 
 
 [role="lead"]
-Sie können eine oder mehrere Dateien oder Ordner aus einer VMDK auf die ursprüngliche VM oder auf eine andere VM auf demselben VMware vCenter Server wiederherstellen. Windows- und Linux-Gast-VMs werden unterstützt.
+Stellen Sie Dateien oder Ordner von einer virtuellen Festplatte auf der ursprünglichen VM oder auf einer anderen VM wieder her. Wenn Sie die virtuelle Festplatte nicht an die ursprüngliche VM anbinden möchten, können Sie sie stattdessen an eine Proxy-VM anbinden.
 
 .Bevor Sie beginnen
 * Überprüfen Sie die Voraussetzungen und Einschränkungen in link:br-use-vmware-restore-guest-files-and-folders-overview.html["Anforderungen und Einschränkungen beim Wiederherstellen von Gastdateien und -ordnern"].
-* Bevor Sie Dateien und Ordner der Gast-VM wiederherstellen können, müssen Sie in NetApp Backup and Recovery Anmeldeinformationen dafür erstellen. NetApp Backup and Recovery verwendet diese Anmeldeinformationen zur Authentifizierung bei der Gast-VM beim Anbinden der virtuellen Festplatte.
+* Um Dateien und Ordner mithilfe einer Proxy-VM wiederherzustellen, stellen Sie sicher, dass die Proxy-VM bereits konfiguriert ist, bevor Sie mit dem Wiederherstellungsprozess für Dateien und Ordner beginnen.
+* Sie müssen Anmeldeinformationen für die virtuelle Quellfestplatte und die Ziel-VM in NetApp Backup and Recovery erstellen, bevor Sie Dateien und Ordner wiederherstellen können. NetApp Backup and Recovery verwendet diese Anmeldeinformationen, um sich bei der virtuellen Festplatte und der Ziel-VM zu authentifizieren, wenn Dateien und Ordner wiederhergestellt werden.
 
 
 .Informationen zu diesem Vorgang
@@ -34,27 +35,31 @@ IMPORTANT: Mit der Funktion zum Wiederherstellen von Dateien und Ordnern können
 
 [role="tabbed-block"]
 ====
-.Dateien und Ordner auf der ursprünglichen VM wiederherstellen
+.Hängen Sie die VMDK an die ursprüngliche VM an, um Dateien und Ordner wiederherzustellen
 --
 Gastdateien und -ordner von einer virtuellen Festplatte auf die ursprüngliche (Quell-)VM wiederherstellen.
 
 .Schritte
-. Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
-. Wählen Sie das Menü *Virtuelle Maschinen*.
+. Wählen Sie im NetApp Backup and Recovery -Menü *Wiederherstellen* aus.
+. Wählen Sie *VMware* aus der Workload-Liste oben rechts auf der Seite aus.
 . Wählen Sie in der Liste der virtuellen Maschinen das Aktionssymbol image:../media/icon-action.png["Aktionsoption"] für eine VM aus, die Dateien enthält, die Sie wiederherstellen möchten.
 . Wählen Sie *Dateien und Ordner wiederherstellen*.
 . Wählen Sie einen Snapshot aus, aus dem die Wiederherstellung erfolgen soll, und klicken Sie dann auf *Weiter*.
 . Wählen Sie den Speicherort des Snapshots aus, von dem die Wiederherstellung erfolgen soll. Wenn Sie einen sekundären Speicherort auswählen, wählen Sie den sekundären Snapshot aus der Liste aus.
 . Wählen Sie *Weiter*.
-. Wählen Sie aus der Liste eine virtuelle Festplatte aus, die an die VM angehängt werden soll, und wählen Sie dann *Weiter*.
+. Wählen Sie in der Liste eine virtuelle Festplatte aus, die die Dateien und Ordner enthält, die Sie wiederherstellen müssen, und wählen Sie dann *Weiter* aus.
 . Führen Sie auf der Seite _Details zur Gast-VM_ die folgenden Schritte aus:
 +
 .. Im Abschnitt *Details zur Gast-VM* hängen Sie die virtuelle Festplatte an die ursprüngliche VM an, indem Sie *Original virtual machine* auswählen.
-.. Im Abschnitt *Anmeldeinformationen für die Gast-VM*, falls Sie noch keine Anmeldeinformationen für die Gast-VM gespeichert haben, wählen Sie *Anmeldeinformationen hinzufügen*, geben Sie die Anmeldeinformationen für den Windows- oder Linux-Host ein und wählen Sie *Hinzufügen*.
-.. Wählen Sie die Anmeldeinformationen der virtuellen Maschine aus, mit denen Sie sich bei der Gast-VM authentifizieren möchten.
+.. Im Abschnitt *Anmeldeinformationen für die Gast-VM* wählen Sie *Anmeldeinformationen hinzufügen*, wenn Sie noch keine Anmeldeinformationen für die Quellfestplatte und die Ziel-Gast-VM gespeichert haben, geben Sie die Windows- oder Linux-Anmeldeinformationen ein und wählen Sie *Hinzufügen*.
++
+
+NOTE: Die Quell- und Ziel-VMs müssen zur selben Betriebssystemfamilie gehören; die Betriebssystemversionen können unterschiedlich sein.
+
+.. Wählen Sie aus der Liste die Anmeldeinformationen für die virtuelle Maschine aus.
 .. Wählen Sie *Weiter*.
 +
-NetApp Backup and Recovery bindet die virtuelle Festplatte an die VM an und zeigt alle Dateien und Ordner an, einschließlich der versteckten. Für Windows-Gäste wird jeder Partition, einschließlich systemreservierter Partitionen, ein Laufwerksbuchstabe zugewiesen.
+NetApp Backup and Recovery verbindet die virtuelle Festplatte mit der ursprünglichen VM und zeigt alle Dateien und Ordner an, einschließlich der versteckten. Für Windows-Gäste wird jeder Partition, einschließlich systemreservierter Partitionen, ein Laufwerksbuchstabe zugewiesen.
 
 +
 Sie können das Lupensymbol (Suchsymbol) neben dem Dateibrowser verwenden, um nach Dateien und Ordnern zu suchen. Die Mustererkennung wird nicht unterstützt, aber Sie können nach Dateien oder Ordnern anhand eines Teils des Namens oder der Erweiterung suchen.
@@ -66,7 +71,7 @@ Sie können das Lupensymbol (Suchsymbol) neben dem Dateibrowser verwenden, um na
 Die Dateien und Ordner, die Sie zur Wiederherstellung ausgewählt haben, werden im rechten Bereich des Bildschirms aufgelistet.
 
 . Wählen Sie *Weiter*.
-. Geben Sie im Abschnitt „Wiederherstellen unter Pfad“ den Pfad zur Gast-VM ein, in dem die ausgewählten Dateien wiederhergestellt werden sollen:
+. Geben Sie im Abschnitt „Wiederherstellen unter Pfad“ den Pfad zur Ziel-VM und zum Dateisystemspeicherort ein, an dem die ausgewählten Dateien wiederhergestellt werden sollen:
 +
 ** Für Windows-Gastsysteme geben Sie den UNC-Freigabepfad ein:
 +
@@ -86,7 +91,7 @@ Die Dateien und Ordner, die Sie zur Wiederherstellung ausgewählt haben, werden 
 +
 Falls bereits Dateien mit demselben Namen existieren, können Sie diese überschreiben oder überspringen.
 
-. Im Abschnitt „Optionen nach der Wiederherstellung“ können Sie die Gastsitzung nach Abschluss der Wiederherstellung optional trennen, indem Sie die Einstellung *Gastsitzung nach Abschluss der Wiederherstellung trennen* aktivieren. Dadurch wird die VMDK getrennt und der Datenspeicher ausgehängt. Das bedeutet, dass Sie die Gastsitzung erneut verbinden müssen, bevor Sie weitere Datei- und Ordnerwiederherstellungsvorgänge durchführen können.
+. Im Abschnitt „Optionen nach der Wiederherstellung“ können Sie die Gastsitzung nach Abschluss der Wiederherstellung optional trennen, indem Sie die Einstellung *Gastsitzung nach Abschluss der Wiederherstellung trennen* aktivieren. Dadurch wird die virtuelle Festplatte getrennt und der Datenspeicher ausgehängt. Das bedeutet, dass Sie die Gastsitzung erneut verbinden müssen, bevor Sie weitere Datei- und Ordnerwiederherstellungsvorgänge durchführen können.
 . Wählen Sie *Wiederherstellen*.
 +
 Den Fortschritt der Wiederherstellung können Sie auf der Seite „Auftragsüberwachung“ einsehen.
@@ -94,33 +99,37 @@ Den Fortschritt der Wiederherstellung können Sie auf der Seite „Auftragsüber
 
 
 --
-.Dateien und Ordner auf einer anderen VM wiederherstellen
+.Hängen Sie die VMDK an eine Proxy-VM an, um Dateien und Ordner wiederherzustellen.
 --
-Verwenden Sie eine Proxy-VM (eine andere VM auf demselben vCenter wie die Original-VM), um Gastdateien und -ordner von einer virtuellen Festplatte auf eine andere virtuelle Maschine wiederherzustellen.
+Verwenden Sie eine Proxy-VM (eine andere VM auf demselben vCenter wie die Original-VM), um Gastdateien und -ordner wiederherzustellen, wenn Sie die virtuelle Festplatte nicht an die Original-VM anhängen möchten.
 
 .Schritte
-. Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
-. Wählen Sie das Menü *Virtuelle Maschinen*.
+. Wählen Sie im NetApp Backup and Recovery -Menü *Wiederherstellen* aus.
+. Wählen Sie *VMware* aus der Workload-Liste oben rechts auf der Seite aus.
 . Wählen Sie in der Liste der virtuellen Maschinen das Aktionssymbol image:../media/icon-action.png["Aktionsoption"] für eine VM aus, die Dateien enthält, die Sie wiederherstellen möchten.
 . Wählen Sie *Dateien und Ordner wiederherstellen*.
 . Wählen Sie einen Snapshot aus, aus dem die Wiederherstellung erfolgen soll, und klicken Sie dann auf *Weiter*.
 . Wählen Sie den Speicherort des Snapshots aus, von dem die Wiederherstellung erfolgen soll. Wenn Sie einen sekundären Speicherort auswählen, wählen Sie den sekundären Snapshot aus der Liste aus.
 . Wählen Sie *Weiter*.
-. Wählen Sie aus der Liste eine virtuelle Festplatte aus, die an die VM angehängt werden soll, und wählen Sie dann *Weiter*.
+. Wählen Sie in der Liste eine virtuelle Festplatte aus, die die Dateien und Ordner enthält, die Sie wiederherstellen müssen, und wählen Sie dann *Weiter* aus.
 . Führen Sie auf der Seite _Details zur Gast-VM_ die folgenden Schritte aus:
 +
 .. Im Abschnitt *Details zur Gast-VM*:
 +
 ... Verbinden Sie die virtuelle Festplatte mit einer Proxy-VM, indem Sie *Proxy virtual machine* auswählen.
-... Wählen Sie die Quelle vCenter, das Rechenzentrum und den Datenspeicher aus den Listen.
-... Wählen Sie eine VM für die Wiederherstellung aus. Die ausgewählte VM wird im rechten Bereich angezeigt.
+... Wählen Sie ein vCenter, ein Rechenzentrum und einen Datenspeicher aus den Listen aus, in dem sich die Proxy-VM befindet.
+... Wählen Sie aus der Liste eine VM aus, die als Proxy-VM verwendet werden soll. Die virtuelle Festplatte wird an diese VM angehängt. Die ausgewählte Proxy-VM wird im rechten Bereich angezeigt.
 
 
-.. Im Abschnitt *Anmeldeinformationen für die Gast-VM*, falls Sie noch keine Anmeldeinformationen für die Gast-VM gespeichert haben, wählen Sie *Anmeldeinformationen hinzufügen*, geben Sie die Anmeldeinformationen für den Windows- oder Linux-Host ein und wählen Sie *Hinzufügen*.
-.. Wählen Sie die Anmeldeinformationen der virtuellen Maschine aus, mit denen Sie sich bei der Gast-VM authentifizieren möchten.
+.. Im Abschnitt *Anmeldeinformationen für die Gast-VM* wählen Sie *Anmeldeinformationen hinzufügen*, wenn Sie noch keine Anmeldeinformationen für die Quellfestplatte und die Ziel-Gast-VM gespeichert haben, geben Sie die Windows- oder Linux-Anmeldeinformationen ein und wählen Sie *Hinzufügen*.
++
+
+NOTE: Die Quell- und Ziel-VMs müssen zur selben Betriebssystemfamilie gehören; die Betriebssystemversionen können unterschiedlich sein.
+
+.. Wählen Sie aus der Liste die Anmeldeinformationen für die virtuelle Maschine aus.
 .. Wählen Sie *Weiter*.
 +
-NetApp Backup and Recovery bindet die virtuelle Festplatte an die VM an und zeigt alle Dateien und Ordner an, einschließlich der versteckten. Für Windows-Gäste wird jeder Partition, einschließlich systemreservierter Partitionen, ein Laufwerksbuchstabe zugewiesen.
+NetApp Backup and Recovery verbindet die virtuelle Festplatte mit der Proxy-VM und zeigt alle Dateien und Ordner an, einschließlich der versteckten. Für Windows-Gäste wird jeder Partition, einschließlich der systemreservierten Partitionen, ein Laufwerksbuchstabe zugewiesen.
 
 +
 Sie können das Lupensymbol (Suchsymbol) neben dem Dateibrowser verwenden, um nach Dateien und Ordnern zu suchen. Die Mustererkennung wird nicht unterstützt, aber Sie können nach Dateien oder Ordnern anhand eines Teils des Namens oder der Erweiterung suchen.
@@ -132,7 +141,7 @@ Sie können das Lupensymbol (Suchsymbol) neben dem Dateibrowser verwenden, um na
 Die Dateien und Ordner, die Sie zur Wiederherstellung ausgewählt haben, werden im rechten Bereich des Bildschirms aufgelistet.
 
 . Wählen Sie *Weiter*.
-. Geben Sie im Abschnitt „Wiederherstellen unter Pfad“ den Pfad zur Gast-VM ein, in dem die ausgewählten Dateien wiederhergestellt werden sollen:
+. Geben Sie im Abschnitt „Wiederherstellen unter Pfad“ den Pfad zur Ziel-VM und zum Dateisystemspeicherort ein, an dem die ausgewählten Dateien wiederhergestellt werden sollen:
 +
 ** Für Windows-Gastsysteme geben Sie den UNC-Freigabepfad ein:
 +
@@ -152,7 +161,7 @@ Die Dateien und Ordner, die Sie zur Wiederherstellung ausgewählt haben, werden 
 +
 Falls bereits Dateien mit demselben Namen existieren, können Sie diese überschreiben oder überspringen.
 
-. Im Abschnitt „Optionen nach der Wiederherstellung“ können Sie die Gastsitzung nach Abschluss der Wiederherstellung optional trennen, indem Sie die Einstellung *Gastsitzung nach Abschluss der Wiederherstellung trennen* aktivieren. Dadurch wird die VMDK getrennt und der Datenspeicher ausgehängt. Das bedeutet, dass Sie die Gastsitzung erneut verbinden müssen, bevor Sie weitere Datei- und Ordnerwiederherstellungsvorgänge durchführen können.
+. Im Abschnitt „Optionen nach der Wiederherstellung“ können Sie die Gastsitzung nach Abschluss der Wiederherstellung optional trennen, indem Sie die Einstellung *Gastsitzung nach Abschluss der Wiederherstellung trennen* aktivieren. Dadurch wird die virtuelle Festplatte getrennt und der Datenspeicher ausgehängt. Das bedeutet, dass Sie die Gastsitzung erneut verbinden müssen, bevor Sie weitere Datei- und Ordnerwiederherstellungsvorgänge durchführen können.
 . Wählen Sie *Wiederherstellen*.
 +
 Den Fortschritt der Wiederherstellung können Sie auf der Seite „Auftragsüberwachung“ einsehen.

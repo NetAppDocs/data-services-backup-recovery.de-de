@@ -24,7 +24,7 @@ Die Wiederherstellungsvorgänge des Gastbetriebssystems umfassen die folgenden S
 
 . Befestigen
 +
-Binden Sie eine virtuelle Festplatte an eine Gast-VM an und starten Sie eine Gastdatei-Wiederherstellungssitzung.
+Binden Sie eine virtuelle Festplatte an eine Gast-VM oder eine Proxy-VM an und starten Sie eine Gast-VM-Dateiwiederherstellungssitzung.
 
 . Warten
 +
@@ -32,7 +32,7 @@ Warten Sie, bis der Anfügevorgang abgeschlossen ist, bevor Sie durchsuchen und 
 
 . Dateien oder Ordner auswählen
 +
-Durchsuchen Sie die VMDK-Dateien und wählen Sie eine oder mehrere Dateien oder Ordner zur Wiederherstellung aus.
+Durchsuchen Sie die virtuellen Festplattendateien und wählen Sie eine oder mehrere Dateien oder Ordner zur Wiederherstellung aus.
 
 . Wiederherstellen
 +
@@ -55,7 +55,9 @@ NetApp Backup and Recovery nutzt Informationen von VMware Tools, um eine Verbind
 +
 Die virtuelle Festplatte, die die wiederherzustellende Datei oder den Ordner enthält, muss sich in einer VM-Sicherung befinden, die mit NetApp Backup and Recovery erstellt wurde.
 
-
+* Um eine Proxy-VM zu verwenden, muss die Proxy-VM konfiguriert werden.
++
+Wenn Sie eine virtuelle Festplatte an eine Proxy-VM anhängen möchten, muss die Proxy-VM konfiguriert werden, bevor der Anhänge- und Wiederherstellungsvorgang beginnt.
 
 * Dateien mit Namen, die nicht aus dem englischen Alphabet stammen, müssen Sie in einem Verzeichnis und nicht als einzelne Datei wiederherstellen.
 +
