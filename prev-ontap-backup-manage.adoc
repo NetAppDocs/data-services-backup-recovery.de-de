@@ -312,21 +312,24 @@ CAUTION: Verwenden Sie diese Option mit Vorsicht und nur bei extremem Reinigungs
 
 Durch das Löschen aller Sicherungen für ein Volume werden auch zukünftige Sicherungen für dieses Volume deaktiviert.
 
+
+NOTE: Einzelne Volume-Sicherungsdateien können nicht mehr gelöscht werden, sobald die Sicherungsbeziehung gelöscht wurde. Löschen Sie die Sicherungsdateien eines Volumes, bevor Sie die Sicherungsbeziehung des Volumes löschen.
+
 .Schritte
-. Klicken Sie auf der Registerkarte *Volumes* aufimage:icon-actions-horizontal.gif["Symbol „Mehr“"] für das Quellvolume und wählen Sie *Details & Sicherungsliste*.
+. Klicken Sie im Menü *Volumes* auf image:icon-actions-horizontal.gif["Symbol „Mehr“"] das Quellvolume und wählen Sie *Manage backups > View backup*.
 +
 Die Liste aller Sicherungsdateien wird angezeigt.
 
-. Wählen Sie *Aktionen* > *Alle Backups löschen*.
-. Geben Sie den Datenträgernamen ein.
-. Wählen Sie *Erweiterte Einstellungen*.
-. *Löschen von Backups erzwingen*: Geben Sie an, ob Sie das Löschen aller Backups erzwingen möchten oder nicht.
+. Wählen Sie eine Sicherung aus der Liste aus und wählen Sie *Aktionen > Alle Sicherungen löschen*.
+. Bestätigen Sie die Löschung, indem Sie den Volume-Namen eingeben.
+. Erweitern Sie den Bereich *Erweiterte Einstellungen*.
+. Unter *Backups zwangsweise löschen* wählen Sie aus, ob alle Backups zwangsweise gelöscht werden sollen.
 +
-In einigen extremen Fällen möchten Sie möglicherweise, dass NetApp Backup and Recovery keinen Zugriff mehr auf Backups hat. Dies kann beispielsweise passieren, wenn der Dienst keinen Zugriff mehr auf den Backup-Bucket hat oder Backups durch DataLock geschützt sind, Sie diese aber nicht mehr möchten. Bisher konnten Sie diese nicht selbst löschen und mussten den NetApp -Support anrufen. Mit dieser Version können Sie die Option zum erzwungenen Löschen von Sicherungen (auf Volume- und Systemebene) verwenden.
+In seltenen Fällen müssen Sie möglicherweise den Zugriff von NetApp Backup and Recovery auf Backups widerrufen; beispielsweise, wenn Backup and Recovery den Zugriff auf den Backup-Bucket verliert oder Backups DataLock-geschützt sind, Sie diese aber nicht mehr benötigen. Verwenden Sie diese Option, um Backups auf Volume- und Systemebene zwangsweise zu löschen.
 
 +
 
-CAUTION: Verwenden Sie diese Option mit Vorsicht und nur bei extremem Reinigungsbedarf. NetApp Backup and Recovery hat keinen Zugriff mehr auf diese Backups, auch wenn sie nicht im Objektspeicher gelöscht werden. Sie müssen zu Ihrem Cloud-Anbieter gehen und die Backups manuell löschen.
+CAUTION: Verwenden Sie diese Option nur für eine extreme Bereinigung. Nach der Aktivierung wird NetApp Backup and Recovery nicht mehr auf diese Backups zugreifen (selbst wenn die Objekte weiterhin im Cloud-Speicher vorhanden sind). Sie müssen diese manuell bei Ihrem Cloud-Anbieter löschen.
 
 . Wählen Sie *Löschen*.
 
@@ -335,9 +338,10 @@ CAUTION: Verwenden Sie diese Option mit Vorsicht und nur bei extremem Reinigungs
 
 === Löschen einer einzelnen Sicherungsdatei für ein Volume
 
-Sie können eine einzelne Sicherungsdatei löschen, wenn Sie sie nicht mehr benötigen. Dies umfasst das Löschen einer einzelnen Sicherung eines Volume-Snapshots oder einer Sicherung im Objektspeicher.
+Löschen Sie ein einzelnes Backup, wenn es nicht mehr benötigt wird. Sie können replizierte Volumes (Datensicherungsvolumes) nicht löschen.
 
-Sie können replizierte Volumes (Datensicherungsvolumes) nicht löschen.
+
+NOTE: Einzelne Volume-Sicherungsdateien können nicht mehr gelöscht werden, sobald die Sicherungsbeziehung aufgehoben wurde. Sie können jedoch <<Löschen aller Sicherungsdateien für ein Volume,Löschen Sie alle Sicherungsdateien für das Volume>>.
 
 .Schritte
 . Wählen Sie auf der Registerkarte *Volumes*image:icon-actions-horizontal.gif["Symbol „Mehr“"] für das Quellvolume und wählen Sie *Volumedetails anzeigen*.
@@ -362,7 +366,7 @@ Diese Funktion ist nur verfügbar, wenn auf Ihrem System ONTAP 9.12.1 oder höhe
 Sie können das Quellvolume nicht aus der Benutzeroberfläche von NetApp Backup and Recovery löschen.  Sie können jedoch die Seite „Volume-Details“ auf der Seite „Konsole *Systeme*“ öffnen und https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-volumes.html#manage-volumes["Löschen Sie das Volume von dort"] .
 
 
-NOTE: Sie können einzelne Volume-Sicherungsdateien nicht löschen, nachdem die Beziehung gelöscht wurde.  Sie können jedoch alle Sicherungen für das Volume löschen.
+NOTE: Einzelne Volume-Sicherungsdateien können nicht mehr gelöscht werden, sobald die Sicherungsbeziehung gelöscht wurde. Sie können jedoch <<Löschen aller Sicherungsdateien für ein Volume,Löschen Sie alle Sicherungsdateien für das Volume>>. Wenn Sie eine Sicherungsbeziehung für ein Volume löschen müssen, stellen Sie sicher, dass Sie zuerst die Sicherungen des Volumes löschen und dann die Sicherungsbeziehung.
 
 .Schritte
 . Wählen Sie auf der Registerkarte *Volumes*image:icon-actions-horizontal.gif["Symbol „Aktionen“"] für das Quellvolume und wählen Sie *Backup* > *Beziehung löschen*.
@@ -372,7 +376,7 @@ NOTE: Sie können einzelne Volume-Sicherungsdateien nicht löschen, nachdem die 
 
 == NetApp Backup and Recovery für ein System deaktivieren
 
-Durch die Deaktivierung von NetApp Backup and Recovery für ein System werden die Sicherungen aller Volumes auf dem System deaktiviert und auch die Möglichkeit zur Wiederherstellung eines Volumes wird deaktiviert.  Eventuell vorhandene Backups werden nicht gelöscht.  Dadurch wird der Sicherungsdienst nicht von diesem System abgemeldet. Im Grunde können Sie damit alle Sicherungs- und Wiederherstellungsaktivitäten für einen bestimmten Zeitraum anhalten.
+Das Deaktivieren von NetApp Backup and Recovery für ein System pausiert Backups und Wiederherstellungen für alle seine Volumes, ohne vorhandene Backups zu löschen. So können Sie alle Backup- und Wiederherstellungsaktivitäten für einen bestimmten Zeitraum anhalten, ohne den Backup-Dienst von diesem System abzumelden.
 
 Beachten Sie, dass Ihnen Ihr Cloud-Anbieter weiterhin die Kosten für die Objektspeicherung für die Kapazität berechnet, die Ihre Backups nutzen, es sei denn, Sie<<Backups löschen,Löschen Sie die Backups>> .
 
