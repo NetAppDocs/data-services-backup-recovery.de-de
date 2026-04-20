@@ -113,6 +113,7 @@ Sie benötigen bestimmte Anforderungen, um Ihre VMware-Workloads zu erkennen und
 | Vernetzter Speicher  a| 
 * ONTAP 9.13.1 oder höher
 * Amazon FSx for NetApp ONTAP-Speichersysteme mit Version 9.13.1 oder höher
+* ASA r2 SAN-only-Systeme (ONTAP 9.17.1 oder höher erforderlich)
 
 
 |===
