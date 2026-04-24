@@ -28,8 +28,7 @@ Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 
 In dieser Version führt VMware Workloads die folgende Verbesserung ein:
 
-* *ASA r2 SAN-Unterstützung*: VMware-Workloads unterstützen jetzt den Schutz von VMs auf VMFS-Datenspeichern, die in NetApp ASA r2 SAN-only-Umgebungen gehostet werden.
-
+*ASA r2 SAN-Unterstützung*: VMware-Workloads unterstützen jetzt den Schutz von VMs auf VMFS-Datenspeichern, die in NetApp ASA r2 SAN-only-Umgebungen gehostet werden.
 
 Weitere Informationen zum Schutz von VMware-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["Übersicht zum Schützen von VMware-Workloads"] .
 

@@ -1,0 +1,181 @@
+---
+sidebar: sidebar 
+permalink: enable-preview-features.html 
+keywords: preview features, preview, Backup and Recovery, configuration, NetApp Backup and Recovery 
+summary: Vorschau- und versteckte Funktionen für NetApp Backup and Recovery aktivieren. 
+---
+= Vorschau- und versteckte Funktionen für NetApp Backup and Recovery aktivieren
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vorschau- und versteckte Funktionen für NetApp Backup and Recovery aktivieren.
+
+*Erforderliche NetApp Console * Superadministrator für Backup und Wiederherstellung.  Erfahren Sie mehr überlink:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
+
+
+
+== Verfügbare Vorschaufunktionen
+
+Sie können die folgenden Vorschaufunktionen für NetApp Backup und Recovery aktivieren.
+
+[cols="50,50"]
+|===
+| Feature-Flag | Funktionsbeschreibung 
+
+
+| `"folder-restore-from-local": true` | Ermöglicht die Wiederherstellung auf Ordnerebene aus lokalen ONTAP-Volume-Snapshots. Standardmäßig unterstützt ONTAP nur die Wiederherstellung von Ordnern aus Objektspeicher-Backups. Mit dieser Option können Sie auch ganze Verzeichnisse aus lokalen und replizierten Snapshots wiederherstellen. 
+
+
+| `"prioritize-restore": true` | Ermöglicht die Auswahl der Option „Wiederherstellung gegenüber bestehender Auftragswarteschlange priorisieren“ während des Wiederherstellungs-Workflows in der NetApp Backup and Recovery Web-Benutzeroberfläche. Wenn Sie diese Option während des Wiederherstellungs-Workflows auswählen, werden Wiederherstellungsvorgänge gegenüber anderen Aufträgen in der Warteschlange priorisiert und somit auch dann ausgeführt, wenn die Warteschlange ausgelastet ist. 
+|===
+
+
+== Vorschaufunktionen aktivieren
+
+Aktivieren Sie die Optionen für Vorschau-Features, um Funktionen zu nutzen, die noch nicht allgemein verfügbar sind. Verwenden Sie Vorschau-Features in Produktionsumgebungen mit Vorsicht.
+
+.Schritte
+. Verwenden Sie SSH, um sich beim Console-Agenten anzumelden.
+. Wechseln Sie zum Root-Benutzer:
++
+[source, console]
+----
+sudo su
+----
+. Suchen Sie das Backup- und Wiederherstellungsvolume in Docker:
++
+[source, console]
+----
+docker volume ls | grep cbs
+----
++
+Die Ausgabe sollte in etwa wie folgt aussehen:
+
++
+[listing]
+----
+local service-manager-2_cloudmanager_cbs_volume
+----
+. Ermitteln Sie den Mountpunkt für das Volume:
++
+[source, console]
+----
+docker volume inspect service-manager-2_cloudmanager_cbs_volume | grep Mountpoint
+----
++
+Der Mountpunkt unterscheidet sich zwischen Cloud- und privaten Bereitstellungen. Dieses Ausgabebeispiel zeigt eine Cloud-Bereitstellung:
+
++
+[listing]
+----
+/var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data
+----
+. Wechseln Sie in das Docker-Volume-Konfigurationsverzeichnis, das sich im Mountpoint-Verzeichnis befindet. Zum Beispiel:
++
+[source, console]
+----
+cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data/cbs_config
+----
+. Erstellen Sie eine Datei, die die folgende JSON-Struktur und ein Schlüssel-Wert-Paar für jedes zu aktivierende Feature-Flag enthält. Benennen Sie die Datei entsprechend Ihrem Bereitstellungstyp:
++
+** Cloud-Bereitstellung: `production-customer.json`
+** Private / Dark-Site-Bereitstellung: `darksite-customer.json`
++
+Siehe <<anchor-flags,verfügbare Flags>> für Informationen zu Feature-Flags. Zum Beispiel:
+
++
+[source, json]
+----
+{
+  "feature-flags": {
+    "folder-restore-from-local": true,
+    "prioritize-restore": true
+  }
+}
+----
+
+
+. Starten Sie den Backup- und Recovery-Container neu:
++
+[source, console]
+----
+docker restart cloudmanager_cbs
+----
+. Laden Sie die Benutzeroberfläche für Backup and Recovery in Ihrem Webbrowser neu.
++
+
+NOTE: Um eine Vorschaufunktion zu deaktivieren, führen Sie die gleichen Schritte aus, setzen Sie jedoch den Wert des Feature-Flags auf  `false`.
+
+
+
+
+
+== Deaktivieren Sie die Indizierung für alle Volumes, die zu einer Speicher-VM gehören.
+
+Befolgen Sie diese Schritte, um die Indizierung für alle Volumes, die zu einer bestimmten Storage-VM gehören, zu deaktivieren, anstatt die Indizierung für jedes einzelne Volume zu deaktivieren.
+
+.Schritte
+. Verwenden Sie SSH, um sich beim Console-Agenten anzumelden.
+. Wechseln Sie zum Root-Benutzer:
++
+[source, console]
+----
+sudo su
+----
+. Suchen Sie das Backup- und Wiederherstellungsvolume in Docker:
++
+[source, console]
+----
+docker volume ls | grep cbs
+----
++
+Die Ausgabe sollte in etwa wie folgt aussehen:
+
++
+[listing]
+----
+local service-manager-2_cloudmanager_cbs_volume
+----
+. Ermitteln Sie den Mountpunkt für das Volume:
++
+[source, console]
+----
+docker volume inspect service-manager-2_cloudmanager_cbs_volume | grep Mountpoint
+----
++
+Der Mountpunkt unterscheidet sich zwischen Cloud- und privaten Bereitstellungen. Dieses Ausgabebeispiel zeigt eine Cloud-Bereitstellung:
+
++
+[listing]
+----
+/var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data
+----
+. Wechseln Sie in das Docker-Volume-Konfigurationsverzeichnis, das sich im Mountpoint-Verzeichnis befindet. Zum Beispiel:
++
+[source, console]
+----
+cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data/cbs_catalog_config
+----
+. Erstellen Sie eine Datei namens `production-customer.json` mit folgendem Inhalt. Ersetzen Sie die Namen der Speicher-VMs im Beispiel durch die Namen der Speicher-VMs in Ihrer Umgebung:
++
+[source, json]
+----
+{
+  "indexing": {
+    "svms-not-to-index": "storage_vm_1,storage_vm_2,storage_vm_3"
+  }
+}
+----
+. Starten Sie den Indizierungskatalog-Container für NetApp Backup and Recovery neu:
++
+[source, console]
+----
+docker restart cloudmanager_cbs_catalog
+----
+
