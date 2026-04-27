@@ -133,7 +133,7 @@ Da NetApp Backup and Recovery die Speichereffizienz des Quellvolumes beibehält,
 
 
 * Wenn Sie Volumedaten aus einer Sicherungsdatei wiederherstellen möchten, die in einen Archivobjektspeicher verschoben wurde, fällt beim Cloud-Anbieter eine zusätzliche Abrufgebühr pro GiB und pro Anforderung an.
-* Wenn Sie während der Wiederherstellung von Volumedaten eine Sicherungsdatei auf Ransomware scannen möchten (wenn Sie DataLock und Ransomware Resilience für Ihre Cloud-Sicherungen aktiviert haben), entstehen Ihnen auch bei Ihrem Cloud-Anbieter zusätzliche Kosten für den ausgehenden Datenverkehr.
+* Wenn Sie planen, während der Wiederherstellung von Volume-Daten eine Sicherungsdatei auf Ransomware zu scannen (wenn Sie Datalock und Ransomware-Schutz für Ihre Cloud-Backups aktiviert haben), dann fallen zusätzliche Egress-Kosten von Ihrem Cloud-Anbieter an.
 
 
 *Servicegebühren*

@@ -57,7 +57,7 @@ Jährliche Backups werden nach der Übertragung in den Objektspeicher automatisc
 
 NetApp Backup and Recovery bietet Unterstützung für DataLock- und Ransomware-Schutz für Ihre Volume-Backups.  Mit diesen Funktionen können Sie Ihre Sicherungsdateien sperren und scannen, um mögliche Ransomware in den Sicherungsdateien zu erkennen.  Dies ist eine optionale Einstellung, die Sie in Ihren Sicherungsrichtlinien definieren können, wenn Sie zusätzlichen Schutz für Ihre Volumesicherungen für einen Cluster wünschen.
 
-Beide Funktionen schützen Ihre Sicherungsdateien, sodass Sie im Falle eines Ransomware-Angriffs auf Ihre Sicherungen immer über eine gültige Sicherungsdatei verfügen, aus der Sie Daten wiederherstellen können.  Es ist auch hilfreich, bestimmte gesetzliche Anforderungen zu erfüllen, wenn Backups gesperrt und für einen bestimmten Zeitraum aufbewahrt werden müssen.  Wenn die Option „DataLock und Ransomware-Resilienz“ aktiviert ist, sind für den Cloud-Bucket, der im Rahmen der Aktivierung von NetApp Backup and Recovery bereitgestellt wird, die Objektsperre und die Objektversionierung aktiviert.
+Beide Funktionen schützen Ihre Sicherungsdateien, sodass Sie im Falle eines Ransomware-Angriffs stets über eine gültige Sicherungsdatei zur Datenwiederherstellung verfügen. Dies ist auch hilfreich, um bestimmte regulatorische Anforderungen zu erfüllen, bei denen Sicherungen für einen bestimmten Zeitraum gesperrt und aufbewahrt werden müssen. Wenn die Option *Datalock and Ransomware protection* aktiviert ist, wird für den im Rahmen der NetApp Backup and Recovery-Aktivierung bereitgestellten Cloud-Bucket die Objektsperrung und Objektversionierung aktiviert.
 
 Diese Funktion bietet keinen Schutz für Ihre Quellvolumes, sondern nur für die Sicherungen dieser Quellvolumes.  Verwenden Sie einige der https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html["Anti-Ransomware-Schutz von ONTAP"^] um Ihre Quellvolumes zu schützen.
 
@@ -120,12 +120,12 @@ Die DataLock-Aufbewahrungseinstellung überschreibt die Richtlinienaufbewahrungs
 
 Sie können DataLock und Ransomware-Schutz aktivieren, wenn Sie eine Richtlinie erstellen.  Sie können dies nach der Erstellung der Richtlinie nicht mehr aktivieren, ändern oder deaktivieren.
 
-. Erweitern Sie beim Erstellen einer Richtlinie den Abschnitt *DataLock and Ransomware Resilience*.
+. Wenn Sie eine Richtlinie erstellen, erweitern Sie den Abschnitt *Datalock and Ransomware protection*.
 . Wählen Sie eine der folgenden Optionen:
 +
-** *Keine*: DataLock-Schutz und Ransomware-Resilienz sind deaktiviert.
-** *Entsperrt*: DataLock-Schutz und Ransomware-Resilienz sind aktiviert.  Benutzer mit bestimmten Berechtigungen können geschützte Sicherungsdateien während der Aufbewahrungsfrist überschreiben oder löschen.
-** *Gesperrt*: DataLock-Schutz und Ransomware-Resilienz sind aktiviert.  Während der Aufbewahrungsfrist können keine Benutzer geschützte Sicherungsdateien überschreiben oder löschen.  Damit wird die Einhaltung aller gesetzlichen Vorschriften gewährleistet.
+** *Keine*: DataLock protection und Ransomware-Schutz sind deaktiviert.
+** *Freigeschaltet*: DataLock-Schutz und Ransomware-Schutz sind aktiviert. Benutzer mit entsprechenden Berechtigungen können geschützte Sicherungsdateien während des Aufbewahrungszeitraums überschreiben oder löschen.
+** *Gesperrt*: DataLock-Schutz und Ransomware-Schutz sind aktiviert. Keine Benutzer können während der Aufbewahrungsfrist geschützte Sicherungsdateien überschreiben oder löschen. Dies erfüllt die vollständige regulatorische Compliance.
 
 
 

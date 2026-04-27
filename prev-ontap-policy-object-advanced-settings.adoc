@@ -102,7 +102,7 @@ Wenn Sie für eine Sicherungsrichtlinie eines Ihrer Volumes die Bezeichnung „j
 
 Ransomware-Schutzscans sind standardmäßig aktiviert. Die Standardeinstellung für die Scanhäufigkeit beträgt 7 Tage. Der Scan erfolgt nur für den neuesten Snapshot.
 
-Weitere Informationen zu den Optionen DataLock und Ransomware Resilience finden Sie unterlink:prev-ontap-policy-object-options.html["DataLock- und Ransomware-Resilienzoptionen"] .
+Weitere Informationen zu Datalock und den Ransomware-Schutzoptionen finden Sie unter link:prev-ontap-policy-object-options.html["Optionen für Datalock und Ransomware-Schutz"].
 
 Sie können diesen Zeitplan auf Tage oder Wochen ändern oder ihn deaktivieren, um Kosten zu sparen.
 

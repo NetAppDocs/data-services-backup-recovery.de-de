@@ -185,12 +185,12 @@ Da Sie auf Cloud Volumes ONTAP oder lokale Systeme replizieren können, überpr�
 
 StorageGRID muss die folgenden Anforderungen erfüllen. Siehe die https://docs.netapp.com/us-en/storagegrid-117/["StorageGRID -Dokumentation"^] für weitere Informationen.
 
-Weitere Informationen zu den DataLock- und Ransomware-Resilienzanforderungen für StorageGRID finden Sie unterlink:prev-ontap-policy-object-options.html["Optionen für die Backup-to-Object-Richtlinie"] .
+Weitere Informationen zu den Anforderungen an Datalock und Ransomware-Schutz für StorageGRID finden Sie unter link:prev-ontap-policy-object-options.html["Optionen für die Backup-to-Object-Richtlinie"].
 
 Unterstützte StorageGRID Versionen:: StorageGRID 10.3 und höher wird unterstützt.
 +
 --
-Um DataLock & Ransomware Resilience für Ihre Backups zu verwenden, müssen Ihre StorageGRID -Systeme in der Version 11.6.0.3 oder höher ausgeführt werden.
+Um DataLock & Ransomware-Schutz für Ihre Backups nutzen zu können, müssen Ihre StorageGRID-Systeme mindestens Version 11.6.0.3 oder höher ausführen.
 
 Um ältere Backups in den Cloud-Archivspeicher zu verschieben, müssen Ihre StorageGRID -Systeme mit Version 11.3 oder höher laufen.  Darüber hinaus müssen Ihre StorageGRID -Systeme auf der Konsolenseite *Systeme* erkannt werden.
 
@@ -430,9 +430,9 @@ Um eine Richtlinie zu erstellen, wählen Sie *Neue Richtlinie erstellen* und geh
 +
 *** Geben Sie den Namen der Richtlinie ein.
 *** Wählen Sie bis zu fünf Zeitpläne aus, normalerweise mit unterschiedlicher Häufigkeit.
-*** Legen Sie für Backup-to-Object-Richtlinien die Einstellungen „DataLock“ und „Ransomware Resilience“ fest.  Weitere Informationen zu DataLock und Ransomware Resilience finden Sie unterlink:prev-ontap-policy-object-options.html["Einstellungen der Backup-to-Object-Richtlinie"] .
+*** Für Backup-to-Object-Richtlinien müssen die Einstellungen für Datalock und Ransomware-Schutz konfiguriert werden. Weitere Informationen zu Datalock und Ransomware-Schutz finden Sie unter link:prev-ontap-policy-object-options.html["Einstellungen der Backup-to-Object-Richtlinie"].
 +
-Wenn Ihr Cluster ONTAP 9.11.1 oder höher verwendet, können Sie Ihre Backups vor Löschung und Ransomware-Angriffen schützen, indem Sie _DataLock und Ransomware Resilience_ konfigurieren.  _DataLock_ schützt Ihre Sicherungsdateien vor Änderungen oder Löschungen und _Ransomware Resilience_ durchsucht Ihre Sicherungsdateien nach Hinweisen auf einen Ransomware-Angriff.
+Wenn Ihr Cluster ONTAP 9.11.1 oder höher verwendet, können Sie Ihre Backups vor Löschung und Ransomware-Angriffen schützen, indem Sie _DataLock und Ransomware-Schutz_ konfigurieren. _DataLock_ schützt Ihre Backup-Dateien davor, geändert oder gelöscht zu werden, und _Ransomware-Schutz_ scannt Ihre Backup-Dateien, um Hinweise auf einen Ransomware-Angriff in Ihren Backup-Dateien zu finden.
 
 *** Wählen Sie *Erstellen*.
 

@@ -32,7 +32,7 @@ Sie können Daten bis zu diesen Punkten wiederherstellen:
 
 
 .Überlegungen zur Wiederherstellung aus dem Objektspeicher
-Wenn Ransomware Resilience für eine Sicherungsdatei im Objektspeicher aktiviert ist, werden Sie aufgefordert, vor der Wiederherstellung eine zusätzliche Prüfung durchzuführen.  Wir empfehlen, den Scan durchzuführen.
+Wenn für eine Sicherungsdatei im Objektspeicher ein Ransomware-Schutz aktiviert ist, werden Sie aufgefordert, vor der Wiederherstellung eine zusätzliche Prüfung durchzuführen. Wir empfehlen, die Prüfung durchzuführen.
 
 
 TIP: Möglicherweise zahlen Sie Ihrem Cloud-Anbieter zusätzliche Gebühren für den Zugriff auf die Sicherungsdatei.
