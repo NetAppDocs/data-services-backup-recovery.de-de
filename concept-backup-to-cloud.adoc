@@ -18,7 +18,7 @@ NetApp Backup and Recovery ist ein Datenservice, der effizienten, sicheren und k
 
 Eine Workload ist eine logische Gruppierung von Ressourcen innerhalb eines Systems, die als Einheit für Schutz, Verwaltung, Erkennung und Wiederherstellung verwaltet wird. Im Bereich Backup und Recovery ist eine Workload die zu schützende Einheit. Ihre Bedeutung hängt von der Datenquelle ab: In Kubernetes ist eine Workload eine Anwendung, in VM-Umgebungen eine virtuelle Maschine und in Datenbankumgebungen eine Datenbank.
 
-Die Unterstützung für Backup und Recovery ist bereits in alle ONTAP -Systeme integriert, sodass keine zusätzliche Hardware, Softwarelizenzen oder Medien-Gateways erforderlich sind. Dadurch werden Sicherungsvorgänge einfach und kostengünstig. Die NetApp Console vereinfacht die Implementierung jeder Backup-Strategie, einschließlich des gesamten Spektrums an 3-2-1-Backup-Varianten, ohne dass mehrere Ressourcenmanager oder spezialisiertes Personal erforderlich sind.
+Die Unterstützung für Backup und Recovery ist in allen ONTAP-Systemen bereits integriert, sodass keine zusätzliche Hardware oder Mediengateways benötigt werden. Dies macht Backup-Operationen einfach und kosteneffektiv. Die NetApp Console vereinfacht die Implementierung jeder Backup-Strategie, einschließlich des gesamten Spektrums der 3-2-1-Backup-Varianten, ohne dass mehrere Ressourcenmanager oder spezialisiertes Personal erforderlich sind.
 
 
 
