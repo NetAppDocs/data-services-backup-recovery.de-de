@@ -97,8 +97,7 @@ Stellen Sie sicher, dass Ihre Umgebung diese Anforderungen erfüllt, bevor Sie d
 * Clusteranforderungen:
 +
 ** Die ONTAP -Version muss 9.8 oder höher sein.
-** Die Speicher-VM (SVM), auf der sich das Volume befindet, muss über ein konfiguriertes Daten-LIF verfügen.
-** NFS muss auf dem Volume aktiviert sein (sowohl NFS- als auch SMB/CIFS-Volumes werden unterstützt).
+** Sie müssen eine IPv4-NFS-Daten-LIF auf der Speicher-VM und einen NFS-Export für das Volume konfigurieren. Search & Restore unterstützt sowohl NFS- als auch SMB/CIFS-Volumes.
 ** Der SnapDiff RPC-Server muss auf der SVM aktiviert werden. Die Konsole führt dies automatisch aus, wenn Sie die Indizierung auf dem System aktivieren. (SnapDiff ist die Technologie, die schnell die Datei- und Verzeichnisunterschiede zwischen Snapshots identifiziert.)
 
 
