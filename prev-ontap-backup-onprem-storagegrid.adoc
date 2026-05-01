@@ -151,7 +151,7 @@ Wenn Sie NetApp Backup and Recovery einrichten, werden Sie nach dem zu verwenden
 
 * Die Intercluster-LIFs der Knoten können auf den Objektspeicher zugreifen (nicht erforderlich, wenn der Konsolenagent an einem „dunklen“ Standort installiert ist).
 * Für die Speicher-VM, auf der sich die Volumes befinden, wurden DNS-Server konfiguriert.  Erfahren Sie, wie Sie https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html["Konfigurieren Sie DNS-Dienste für die SVM"^] .
-* Wenn Sie einen anderen IP-Bereich als den Standard verwenden, müssen Sie möglicherweise eine statische Route erstellen, um Zugriff auf den Objektspeicher zu erhalten.
+* Wenn Sie einen anderen IPspace als den Default verwenden, müssen Sie möglicherweise eine statische Route erstellen, um Zugriff auf den Objektspeicher zu erhalten.
 * Aktualisieren Sie bei Bedarf die Firewall-Regeln, um Verbindungen des NetApp Backup and Recovery -Dienstes von ONTAP zum Objektspeicher über den von Ihnen angegebenen Port (normalerweise Port 443) und Namensauflösungsdatenverkehr von der Speicher-VM zum DNS-Server über Port 53 (TCP/UDP) zuzulassen.
 
 
@@ -194,7 +194,7 @@ Um DataLock & Ransomware-Schutz für Ihre Backups nutzen zu können, müssen Ihr
 
 Um ältere Backups in den Cloud-Archivspeicher zu verschieben, müssen Ihre StorageGRID -Systeme mit Version 11.3 oder höher laufen.  Darüber hinaus müssen Ihre StorageGRID -Systeme auf der Konsolenseite *Systeme* erkannt werden.
 
-Zur Nutzung des Archivspeichers ist ein IP-Zugriff auf den Admin-Knoten erforderlich.
+Für die Nutzung des Archivspeichers ist ein IP-Zugriff auf den Administratorknoten erforderlich.
 
 Gateway-IP-Zugriff ist immer erforderlich.
 

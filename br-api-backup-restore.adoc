@@ -48,9 +48,9 @@ Wenn Sie API-Aufrufe tätigen, fügen Sie das Benutzertoken im Autorisierungshea
 NOTE: Wenn Sie ein Dienstkonto verwenden, sollten Sie anstelle eines Benutzertokens das Dienstzugriffstoken verwenden. Der Wert für „client_id“ („Mu0V1ywgYteI6w1MbD15fKfVIUrNXGWC“) ist ein fester Wert und kann nicht geändert werden. Befolgen Sie in diesem Fall die Anweisungen hier: https://docs.netapp.com/us-en/console-automation/platform/create_service_token.html["Erstellen eines Dienstzugriffstokens"^] .
 
 .Schritte
-. Besorgen Sie sich ein Benutzertoken von der NetApp NetApp Console -Website.
+. Besorgen Sie sich ein Benutzertoken von der NetApp Console-Webseite.
 +
-Stellen Sie sicher, dass Sie das Aktualisierungstoken über den folgenden Link generieren: https://services.cloud.netapp.com/refresh-token/.  Das Aktualisierungstoken ist eine alphanumerische Zeichenfolge, die Sie zum Generieren eines Benutzertokens verwenden.
+Generieren Sie das Aktualisierungstoken unbedingt über den folgenden Link: https://services.cloud.netapp.com/refresh-token/. Das Aktualisierungstoken ist eine alphanumerische Zeichenfolge, die Sie zur Generierung eines Benutzertokens verwenden.
 
 +
 [source, console]

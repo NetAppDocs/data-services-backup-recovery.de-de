@@ -47,7 +47,7 @@ Organisation-Admins oder Ordner- oder Projekt-Admins entdecken die verfügbaren 
 
 . Fügen Sie Benutzer zu Projekten hinzu.
 +
-Organisation-Admins oder Ordner-/Projekt-Admins fügen Console-Benutzer zu Projekten mit Workloads hinzu. Weisen Sie Benutzern die Rolle Organization viewer und eine Backup and Recovery-Rolle entsprechend ihren Zugriffsanforderungen zu. Benutzer mit der richtigen Backup and Recovery-Rolle erhalten automatisch Zugriff auf neue Workloads in diesen Projekten.
+Organisations- oder Ordner-/Projektadministratoren fügen Console-Benutzer zu Projekten mit Workloads hinzu. Weisen Sie Benutzern die Rolle „Organization viewer“ und eine Backup and Recovery-Rolle entsprechend ihren Zugriffsanforderungen zu. Benutzer mit der entsprechenden Backup and Recovery-Rolle erhalten automatisch Zugriff auf neue Workloads in diesen Projekten.
 
 
 

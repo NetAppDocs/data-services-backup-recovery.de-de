@@ -67,7 +67,7 @@ Diese Datei befindet sich am folgenden Speicherort im Bucket `netapp-backup-<GUI
 
 === Installieren Sie einen neuen Konsolen-Agenten auf einem neuen lokalen Linux-Host
 
-Laden Sie beim Installieren eines neuen Konsolenagenten dieselbe Softwareversion herunter wie beim ursprünglichen Agenten.  Änderungen an der NetApp Backup and Recovery -Datenbank können dazu führen, dass neuere Softwareversionen nicht mit alten Datenbanksicherungen funktionieren. Du kannst https://docs.netapp.com/us-en/console-setup-admin/task-upgrade-connector.html["Aktualisieren Sie die Konsolen-Agent-Software auf die neueste Version, nachdem Sie die Backup-Datenbank wiederhergestellt haben."^] .
+Laden Sie beim Installieren eines neuen Konsolenagenten dieselbe Softwareversion wie den ursprünglichen Agenten herunter. Änderungen an der NetApp Backup and Recovery Datenbank können dazu führen, dass neuere Softwareversionen nicht mit alten Datenbanksicherungen funktionieren. Sie können https://docs.netapp.com/us-en/console-setup-admin/task-upgrade-connector.html["Aktualisieren Sie die Konsolen-Agent-Software auf die neueste Version, nachdem Sie die Backup-Datenbank wiederhergestellt haben."^].
 
 . https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-private-mode.html["Installieren Sie den Konsolen-Agenten auf einem neuen lokalen Linux-Host"^]
 . Melden Sie sich mit den soeben erstellten Administrator-Benutzeranmeldeinformationen bei der Konsole an.

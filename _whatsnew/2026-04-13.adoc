@@ -18,7 +18,7 @@ Weitere Informationen zum Schutz von ONTAP Volumes-Workloads finden Sie unter  h
 
 In dieser Version führt Kubernetes-Workloads die folgenden Verbesserungen der Datensicherungsstrategie ein:
 
-* *Schutzrichtlinien bearbeiten*: Sie können jetzt die Kubernetes-Workload-Schutzrichtlinien bearbeiten, falls Sie Änderungen vornehmen müssen.
+* *Bearbeitung der Schutzrichtlinien*: Sie können jetzt die Kubernetes-Workload-Schutzrichtlinien bearbeiten, falls Sie sie ändern müssen.
 * *Disk-to-Disk-Unterstützung*: Sie können jetzt Kubernetes-Schutzrichtlinien mit einer Disk-to-Disk-Backup-Architektur konfigurieren.
 * *Unterstützung für Google Cloud Platform storage bucket*: Sie können jetzt Kubernetes-Datensicherungsstrategien so konfigurieren, dass Backups in Google Cloud Platform storage buckets gespeichert werden.
 

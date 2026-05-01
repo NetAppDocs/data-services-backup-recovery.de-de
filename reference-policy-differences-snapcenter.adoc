@@ -53,7 +53,7 @@ NetApp Backup and Recovery passt die SnapCenter -Zeitpläne wie folgt an:
 +
 *Beispiel*: Wenn Sie über eine SnapCenter -Tagesrichtlinie mit einem Wiederholungsintervall von drei Tagen ab Montag verfügen, legt NetApp Backup and Recovery den Zeitplan auf wöchentlich am Montag, Donnerstag und Sonntag fest.  Einige Tage werden übersprungen, da es nicht genau alle 3 Tage ist.
 
-* Wenn der SnapCenter -Zeitplan auf mehr als 7 Tage eingestellt ist, legt NetApp Backup and Recovery den Zeitplan auf monatlich fest.  Einige Schnappschüsse werden im Laufe des Monats übersprungen.
+* Wenn der SnapCenter-Zeitplan auf mehr als 7 Tage eingestellt ist, setzt NetApp Backup and Recovery den Zeitplan auf monatlich. Einige Snapshots werden im Laufe des Monats übersprungen.
 +
 *Beispiel*: Wenn Sie über eine SnapCenter -Tagesrichtlinie mit einem Wiederholungsintervall von 10 Tagen ab dem 2. des Monats verfügen, legt NetApp Backup and Recovery den Zeitplan nach der Migration am 2., 12. und 22. Tag des Monats auf monatlich fest.  Bei NetApp Backup and Recovery werden im nächsten Monat einige Tage ausgelassen.
 
@@ -67,7 +67,7 @@ Stündliche SnapCenter -Richtlinien mit Wiederholungsintervallen von mehr als ei
 
 Bei jeder stündlichen Richtlinie mit Wiederholungsintervallen, die kein Faktor von 24 sind (z. B. 5, 7 usw.), werden einige Snapshots an einem Tag übersprungen.
 
-*Beispiel*: Wenn Sie über eine stündliche SnapCenter -Richtlinie mit einem Wiederholungsintervall alle 5 Stunden ab 1:00 Uhr verfügen, legt NetApp Backup and Recovery (nach der Migration) den Zeitplan auf täglich mit 5-Stunden-Intervallen um 1:00 Uhr, 6:00 Uhr, 11:00 Uhr, 16:00 Uhr und 21:00 Uhr fest.  Einige Stunden werden übersprungen. Nach 21:00 Uhr sollte es 2:00 Uhr sein, um es alle 5 Stunden zu wiederholen, aber es wird immer 1:00 Uhr sein.
+*Beispiel*: Wenn Sie eine SnapCenter stündliche Richtlinie mit einem Wiederholungsintervall alle 5 Stunden ab 1:00 Uhr haben, stellt NetApp Backup and Recovery (nach der Migration) den Zeitplan auf täglich mit 5-Stunden-Intervallen um 1:00 Uhr, 6:00 Uhr, 11:00 Uhr, 16:00 Uhr und 21:00 Uhr ein. Einige Stunden werden übersprungen – nach 21:00 Uhr sollte es um 2:00 Uhr weitergehen, um alle 5 Stunden zu wiederholen, tatsächlich ist es aber immer 1:00 Uhr.
 
 
 

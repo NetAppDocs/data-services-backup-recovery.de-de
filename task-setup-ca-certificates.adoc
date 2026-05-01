@@ -20,7 +20,7 @@ Erstellen Sie ein Sicherheitszertifikat, um die Kommunikation zwischen NetApp Ba
 
 == Erstellen Sie ein Sicherheitszertifikat für StorageGRID
 
-Wenn die Kommunikation zwischen NetApp Backup and Recovery Containern und StorageGRID das StorageGRID -Zertifikat überprüfen soll, führen Sie die folgenden Schritte aus.
+Wenn die Kommunikation zwischen NetApp Backup and Recovery-Containern und StorageGRID das StorageGRID-Zertifikat überprüfen soll, führen Sie die folgenden Schritte aus.
 
 Das generierte Zertifikat sollte CN und Subject Alternative Name als den Namen enthalten, der in NetApp Backup and Recovery angegeben wurde, als Sie die Sicherung aktiviert haben.
 
@@ -72,7 +72,7 @@ Ausgabebeispiel:
 
 NOTE: Der Einhängepunkt ist in den Bereitstellungsmodi „Standard“, „Privat“ und „Eingeschränkt“ unterschiedlich. Dieses Beispiel zeigt eine Standard-Cloud-Bereitstellung. Siehe https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Bereitstellungsmodi der NetApp Console"] .
 
-. Wechseln Sie in das MountPoint-Verzeichnis. Laufen:
+. Wechseln Sie in das Mount-Verzeichnis. Führen Sie Folgendes aus:
 +
 [source, console]
 ----
@@ -265,7 +265,7 @@ Verwenden Sie die System Manager-Dokumentation, um ein neues CA-Zertifikat für 
 
 
 .Schritte
-. Melden Sie sich als Root beim Konsolenagenten an. Laufen:
+. Melden Sie sich als Root beim Console-Agenten an. Führen Sie Folgendes aus:
 +
 [source, console]
 ----

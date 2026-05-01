@@ -8,7 +8,7 @@
 
 NetApp Backup and Recovery unterstützt jetzt die Wiederherstellung von Dateien und Ordnern unter Red Hat Enterprise Linux (RHEL) Version 8 und 9 mithilfe der Podman-Engine.  Dies gilt für die Durchsuchen- und Wiederherstellungsmethode von NetApp Backup and Recovery .
 
-Der Konsolenagent Version 3.9.40 unterstützt bestimmte Versionen von Red Hat Enterprise Linux Version 8 und 9 für jede manuelle Installation der Konsolenagent-Software auf einem RHEL 8- oder 9-Host, unabhängig vom Standort zusätzlich zu den im https://docs.netapp.com/us-en/console-setup-admin/task-prepare-private-mode.html#step-3-review-host-requirements["Hostanforderungen"^] .  Diese neueren RHEL-Versionen erfordern die Podman-Engine anstelle der Docker-Engine.  Bisher gab es bei NetApp Backup and Recovery zwei Einschränkungen bei der Verwendung der Podman-Engine.  Diese Einschränkungen wurden aufgehoben.
+Die Console-Agent-Version 3.9.40 unterstützt bestimmte Red Hat Enterprise Linux 8- und 9-Versionen für manuelle Console-Agent-Installationen auf RHEL-Hosts, zusätzlich zu den in der  https://docs.netapp.com/us-en/console-setup-admin/task-prepare-private-mode.html#step-3-review-host-requirements["Hostanforderungen"^] aufgeführten Betriebssystemen. Diese neueren RHEL-Versionen benötigen die Podman-Engine anstelle der Docker-Engine. Früher hatte NetApp Backup and Recovery zwei Einschränkungen bei der Verwendung der Podman-Engine; diese Einschränkungen wurden entfernt.
 
 https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-restore.html["Erfahren Sie mehr über die Wiederherstellung von ONTAP -Daten aus Sicherungsdateien"].
 

@@ -59,7 +59,7 @@ Dies ist ein zweiteiliger Prozess:
 
 ==== Importieren Sie SnapCenter Server-Anwendungs- und Hostressourcen
 
-Dieser erste Schritt importiert Host-Ressourcen aus SnapCenter und zeigt diese Ressourcen auf der NetApp Backup and Recovery Inventory-Seite an. Zu diesem Zeitpunkt werden die Ressourcen noch nicht von NetApp Backup and Recovery verwaltet.
+Dieser erste Schritt importiert Hostressourcen aus SnapCenter und zeigt diese Ressourcen auf der Inventarseite von NetApp Backup and Recovery an.  Zu diesem Zeitpunkt werden die Ressourcen noch nicht von NetApp Backup and Recovery verwaltet.
 
 
 TIP: Nachdem Sie SnapCenter -Hostressourcen importiert haben, übernimmt NetApp Backup and Recovery die Schutzverwaltung nicht automatisch.  Dazu müssen Sie explizit auswählen, dass die importierten Ressourcen in NetApp Backup and Recovery verwaltet werden sollen.  Dadurch wird sichergestellt, dass Sie bereit sind, diese Ressourcen durch NetApp Backup and Recovery sichern zu lassen.
@@ -86,7 +86,7 @@ TIP: Nachdem Sie SnapCenter -Hostressourcen importiert haben, übernimmt NetApp 
 . Wählen Sie *Importieren*, um Ihre Eingaben zu bestätigen und den SnapCenter -Server zu registrieren.
 +
 
-NOTE: Wenn der SnapCenter -Server bereits registriert ist, können Sie die vorhandenen Registrierungsdetails aktualisieren.
+NOTE: Falls der SnapCenter Server bereits registriert ist, können Sie die bestehenden Registrierungsdaten aktualisieren.
 
 
 

@@ -39,4 +39,4 @@ Obwohl sich diese Funktion in der Vorschauphase befindet, gelten bestimmte Einsc
 
 *Erste Schritte*
 
-Um diese Vorschaufunktion zu verwenden, müssen Sie ein Flag auf dem Konsolenagenten aktivieren.  Sie können dann die Verbindungsdetails Ihres MinIO-Objektspeichers von Drittanbietern in den Schutz-Workflow eingeben, indem Sie im Abschnitt „Backup“ die Option „*Drittanbieterkompatibler* Objektspeicher“ auswählen.
+Um diese Vorschaufunktion zu nutzen, müssen Sie ein Flag im Console-Agent aktivieren. Anschließend können Sie die Verbindungsdetails Ihres MinIO-Objektspeichers im Schutz-Workflow eingeben, indem Sie im Sicherungsbereich *Third party Compatible* Objektspeicher auswählen.

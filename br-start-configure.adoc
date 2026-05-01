@@ -193,7 +193,7 @@ TIP: Nachdem Sie SnapCenter -Hostressourcen importiert haben, übernimmt NetApp 
 . Wählen Sie *Importieren*, um Ihre Eingaben zu bestätigen und den SnapCenter -Server zu registrieren.
 +
 
-NOTE: Wenn der SnapCenter -Server bereits registriert ist, können Sie die vorhandenen Registrierungsdetails aktualisieren.
+NOTE: Falls der SnapCenter Server bereits registriert ist, können Sie die bestehenden Registrierungsdaten aktualisieren.
 
 
 
@@ -219,7 +219,7 @@ Auf der Inventarseite wird unter dem Hostnamen *Verwaltet* angezeigt, um anzuzei
 
 === Importierte SnapCenter -Ressourcen bearbeiten
 
-Sie können SnapCenter -Ressourcen später erneut importieren oder die importierten SnapCenter -Ressourcen bearbeiten, um die Registrierungsdetails zu aktualisieren.
+Sie können SnapCenter-Ressourcen später erneut importieren oder die importierten SnapCenter-Ressourcen bearbeiten, um die Registrierungsdetails zu aktualisieren.
 
 Sie können nur die Port- und Kennwortdetails für den SnapCenter -Server ändern.
 
