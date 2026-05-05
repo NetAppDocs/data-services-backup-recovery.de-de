@@ -14,7 +14,7 @@ summary: Sie können Kubernetes-Anwendungen und Anwendungsdaten von lokalen ONTA
 
 
 [role="lead"]
-Durch die Verwaltung von Kubernetes-Workloads in NetApp Backup and Recovery können Sie Ihre Kubernetes-Cluster und -Anwendungen an einem Ort erkennen, verwalten und schützen. Sie können die auf Ihren Kubernetes-Clustern gehosteten Ressourcen und Anwendungen verwalten. Außerdem können Sie Schutzrichtlinien erstellen und Ihren Kubernetes-Workloads zuordnen – alles über eine einzige Oberfläche.
+Die Verwaltung von Kubernetes-Workloads in NetApp Backup and Recovery ermöglicht es Ihnen, Ihre Kubernetes-Cluster und Anwendungen zentral zu erkennen, zu verwalten und zu schützen. Sie können Ressourcen und Anwendungen verwalten, die auf Ihren Kubernetes-Clustern gehostet werden. Sie können außerdem Schutzrichtlinien erstellen und Ihren Kubernetes-Anwendungen zuordnen, und das alles über eine einzige Benutzeroberfläche.
 
 Das folgende Diagramm zeigt die Komponenten und die grundlegende Architektur der Sicherung und Wiederherstellung für Kubernetes-Workloads und wie verschiedene Kopien Ihrer Daten an unterschiedlichen Orten gespeichert werden können:
 

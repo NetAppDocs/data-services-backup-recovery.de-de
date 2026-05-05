@@ -440,6 +440,9 @@ kubectl apply -f trident-protect-snapshot-restore-cr.yaml
 
 Sie können einen Snapshot jederzeit im ursprünglichen Namensraum wiederherstellen.
 
+
+NOTE: Die In-Place-Wiederherstellung (Wiederherstellung im ursprünglichen Namespace und ursprünglichen Cluster) von VM-basierten Anwendungen aus lokalen Snapshots wird derzeit nicht unterstützt.
+
 .Bevor Sie beginnen
 Stellen Sie sicher, dass die Gültigkeitsdauer des AWS-Sitzungstokens für alle länger dauernden s3-Wiederherstellungsvorgänge ausreichend ist. Wenn das Token während des Wiederherstellungsvorgangs abläuft, kann der Vorgang fehlschlagen.
 

@@ -1,0 +1,17 @@
+= Kubernetes-Workloads-Erweiterungen
+:allow-uri-read: 
+
+
+
+
+=== Kubernetes-Workloads-Erweiterungen
+
+In dieser Version werden für Kubernetes-Workloads die folgenden Verbesserungen eingeführt:
+
+* *Native Unterstützung für den Schutz von VMs*: Sie können jetzt VM-basierte Anwendungen erstellen, mit denen Sie virtuelle Maschinen genauso schützen können wie jede andere Anwendung.
+* *Ressourcentransformationen*: Sie können jetzt Ressourcentransformationen und Ressourcentransformationsvorlagen verwenden, um während des Wiederherstellungsprozesses Ressourcenattribute hinzuzufügen, zu entfernen und zu ändern.
+* *Upgrade Trident Protect from Backup and Recovery*: Sie können Trident Protect für einen Kubernetes-Cluster jetzt direkt aus Backup and Recovery aktualisieren.
+* *Geschützte Ressourcen anzeigen*: Sie können nun die in jedem Wiederherstellungspunkt einer Anwendung enthaltenen Ressourcen anzeigen und einen detaillierten JSON-Bericht herunterladen. Dies gibt Ihnen vollständige Transparenz über Ihre Wiederherstellungspunkte und vereinfacht die Audit-Compliance.
+
+
+Weitere Informationen zum Schutz von Kubernetes-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Übersicht zum Schützen von Kubernetes-Workloads"] .

@@ -31,3 +31,9 @@ Wenn Sie die zugehörige Datensicherungsstrategie für eine Anwendung ändern, u
 Wenn Sie eine 3-2-1-Datensicherungsstrategie erstellen, bei der keine Objektspeichersicherungen gleichzeitig mit der Replikation auf den Sekundärspeicher erfolgen, hängt sich die Datensicherungsstrategie beim Schutz der Anwendung auf.
 
 *Abhilfe*: Entfernen Sie die Anwendung, fügen Sie sie erneut hinzu und schützen Sie sie mit einer anderen Datensicherungsstrategie.
+
+
+
+== Die Wiederherstellung von VM-basierten Anwendungen aus lokalen Snapshots am Speicherort wird nicht unterstützt
+
+Die In-Place-Wiederherstellung (Wiederherstellung im ursprünglichen Namespace und ursprünglichen Cluster) von VM-basierten Anwendungen aus lokalen Snapshots wird derzeit nicht unterstützt.

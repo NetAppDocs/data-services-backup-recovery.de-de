@@ -211,6 +211,9 @@ sidebar:
         - title: Erweiterte benutzerdefinierte Ressourcenwiederherstellungseinstellungen
             verwenden
           url: "/br-use-kubernetes-advanced-restore-settings.html"
+        - title: Ressourcen während Wiederherstellungsvorgängen mithilfe benutzerdefinierter
+            Ressourcen ändern
+          url: "/br-use-modify-resources-kubernetes-cr.html"
       - title: Verwalten von Kubernetes-Clustern
         url: "/br-use-manage-kubernetes-clusters.html"
       - title: Verwalten von Kubernetes-Anwendungen

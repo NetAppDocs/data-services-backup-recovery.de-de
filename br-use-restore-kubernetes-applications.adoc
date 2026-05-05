@@ -16,11 +16,36 @@ summary: Mit NetApp Backup and Recovery können Sie Anwendungen wiederherstellen
 [role="lead"]
 Mit NetApp Backup and Recovery können Sie Anwendungen wiederherstellen, die Sie mit einer Schutzrichtlinie geschützt haben. Zur Wiederherstellung einer Anwendung muss mindestens ein Wiederherstellungspunkt verfügbar sein. Ein Wiederherstellungspunkt besteht entweder aus dem lokalen Snapshot oder der Sicherung im Objektspeicher (oder beidem). Sie können eine Anwendung mithilfe des lokalen, sekundären oder Objektspeicherarchivs wiederherstellen.
 
+
+
+== Geschützte Ressourcen für einen Anwendungswiederherstellungspunkt anzeigen
+
+Für jede Anwendung, die Sie mit Backup and Recovery schützen, können Sie die Ressourcen anzeigen, die für einen bestimmten Wiederherstellungspunkt gesichert wurden.
+
+.Erforderliche NetApp Console
+Backup- und Wiederherstellungsanzeige. link:reference-roles.html["Erfahren Sie mehr über die Zugriffsrollen für NetApp Backup and Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
+
+.Schritte
+. In NetApp Backup and Recovery wählen Sie *Inventar* > *Anwendungen*.
+. Wählen Sie in der Anwendungsliste eine Anwendung aus und klicken Sie auf das Symbol „Aktionen“ image:../media/icon-action.png["Aktionsoption"] > *Anzeigen und Wiederherstellen*.
+. Wählen Sie in der Liste der Wiederherstellungspunkte einen Wiederherstellungspunkt aus und klicken Sie auf das Symbol „Aktionen“ image:../media/icon-action.png["Aktionsoption"] > *Ressourcen anzeigen*.
++
+Es wird eine Liste der Ressourcen und ihrer Details angezeigt. Sie können die Ressourcen nach Namensraum oder Clusterbereich anzeigen und die Liste als JSON-Datei für zukünftige Audits herunterladen.
+
+. Wenn Sie fertig sind, wählen Sie *Schließen*.
+
+
+
+
+== Wiederherstellen von Kubernetes-Anwendungen
+
+Sie können Namespace-basierte oder VM-basierte Anwendungen von einem Wiederherstellungspunkt wiederherstellen, indem Sie entweder alle Ressourcen wiederherstellen oder eine Teilmenge der wiederherzustellenden Ressourcen auswählen.
+
 .Bevor Sie beginnen
 Wenn Sie eine Anwendung wiederherstellen, die mit Trident Protect gesichert wurde, stellen Sie sicher, dass Trident Protect sowohl auf dem Quell-Cluster als auch auf dem Ziel-Cluster installiert ist.
 
 .Erforderliche NetApp Console
-Organisationsadministrator oder SnapCenter Administrator. link:reference-roles.html["Erfahren Sie mehr über die Zugriffsrollen für NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
+Superadministrator für Backup und Recovery oder Restore-Administrator für Backup und Recovery. link:reference-roles.html["Erfahren Sie mehr über die Zugriffsrollen für NetApp Backup and Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
 .Schritte
 . Wählen Sie im NetApp Backup und Recovery-Menü *Wiederherstellen* aus.
@@ -29,58 +54,88 @@ Organisationsadministrator oder SnapCenter Administrator. link:reference-roles.h
 Die Liste der Wiederherstellungspunkte wird angezeigt.
 
 . Wählen Sie die Schaltfläche *Restore* für den Wiederherstellungspunkt aus, den Sie verwenden möchten.
-
-
-[discrete]
-===== Allgemeine Einstellungen
++
+Der Assistent zum Wiederherstellen von Daten wird gestartet und die Seite _Allgemeine Einstellungen_ wird angezeigt.
 
 . Wählen Sie den Quellspeicherort aus, von dem wiederhergestellt werden soll.
 . Wählen Sie den Zielcluster aus der Liste *Cluster* aus.
+. Wählen Sie, ob Sie in die ursprünglichen Namensräume oder in neue Namensräume wiederherstellen möchten.
 +
 
-NOTE: Das Wiederherstellen eines von Trident Protect erstellten lokalen Snapshots auf einem anderen Cluster wird derzeit nicht unterstützt.
+NOTE: Die In-Place-Wiederherstellung (Wiederherstellung im ursprünglichen Namespace und ursprünglichen Cluster) von VM-basierten Anwendungen aus lokalen Snapshots wird derzeit nicht unterstützt.
 
-. Wählen Sie, ob Sie in die ursprünglichen Namensräume oder in neue Namensräume wiederherstellen möchten.
 . Wenn Sie die Wiederherstellung in neuen Namensräumen gewählt haben, geben Sie den Ziel-Namespace oder die Ziel-Namensräume an, die verwendet werden sollen.
 . Wählen Sie *Weiter*.
-
-
-[discrete]
-===== Ressourcenauswahl
++
+Die Seite „Ressourcenauswahl“ wird angezeigt.
 
 . Wählen Sie aus, ob Sie alle mit der Anwendung verknüpften Ressourcen wiederherstellen möchten, oder verwenden Sie einen Filter, um bestimmte wiederherzustellende Ressourcen auszuwählen:
-
-
++
 [role="tabbed-block"]
 ====
-.Alle Ressourcen wiederherstellen
+.Alle Ressourcen
 --
-. Wählen Sie *Alle Ressourcen wiederherstellen*.
-. Wählen Sie *Weiter*.
+.. Wählen Sie *Alle Ressourcen wiederherstellen*.
++
+Bei der Wiederherstellung einer VM-basierten Anwendung listet Backup and Recovery alle virtuellen Maschinen im Wiederherstellungspunkt auf.
+
+.. Wählen Sie *Weiter*.
 
 
 --
-.Wiederherstellen bestimmter Ressourcen
+.Spezifische namensraumbasierte App-Ressourcen
 --
-. Wählen Sie *Selektive Ressourcen* aus.
-. Wählen Sie das Verhalten des Ressourcenfilters.  Wenn Sie *Einschließen* wählen, werden die von Ihnen ausgewählten Ressourcen wiederhergestellt.  Wenn Sie *Ausschließen* wählen, werden die ausgewählten Ressourcen nicht wiederhergestellt.
-. Wählen Sie *Regeln hinzufügen* aus, um Regeln hinzuzufügen, die Filter für die Auswahl von Ressourcen definieren.  Sie benötigen mindestens eine Regel zum Filtern von Ressourcen.
+.. Wählen Sie *Selektive Ressourcen* aus und entscheiden Sie, ob Sie die Ressourcen, die Sie auswählen, anhand von Regeln oder anhand des Namensraums filtern möchten.
++
+[cols="1,1"]
+|===
+| Methode zur Ressourcenauswahl | Schritte 
+
+
+| Ressourcen mithilfe von Regeln filtern  a| 
+... Wählen Sie die Registerkarte *Regeln* aus.
+... Wählen Sie das Verhalten des Ressourcenfilters.  Wenn Sie *Einschließen* wählen, werden die von Ihnen ausgewählten Ressourcen wiederhergestellt.  Wenn Sie *Ausschließen* wählen, werden die ausgewählten Ressourcen nicht wiederhergestellt.
+... Wählen Sie *Regeln hinzufügen* aus, um Regeln hinzuzufügen, die Filter für die Auswahl von Ressourcen definieren.  Sie benötigen mindestens eine Regel zum Filtern von Ressourcen.
 +
 Jede Regel kann nach Kriterien wie Ressourcennamespace, Bezeichnungen, Gruppe, Version und Art filtern.
 
-. Wählen Sie *Speichern*, um jede Regel zu speichern.
-. Wenn Sie alle benötigten Regeln hinzugefügt haben, wählen Sie *Suchen*, um die im Sicherungsarchiv verfügbaren Ressourcen anzuzeigen, die Ihren Filterkriterien entsprechen.
+... Wählen Sie *Speichern*, um jede Regel zu speichern.
+... Wenn Sie alle benötigten Regeln hinzugefügt haben, wählen Sie *Ressourcen anzeigen*, um die im Sicherungsarchiv verfügbaren Ressourcen anzuzeigen, die Ihren Filterkriterien entsprechen.
+
+
+
+
+| Ressourcen manuell aus einer Liste auswählen  a| 
+... Wählen Sie die Registerkarte *Benutzerdefiniert* aus.
+... Wählen Sie *Namespace-bezogen* oder *Cluster-bezogen*, um die entsprechenden Ressourcen anzuzeigen.
++
+Backup and Recovery listet alle Ressourcen im Wiederherstellungspunkt auf.
+
+... Wählen Sie die Ressourcen aus, die in den Wiederherstellungsvorgang einbezogen werden sollen.
+
+
+|===
 +
 
 NOTE: Bei den angezeigten Ressourcen handelt es sich um die Ressourcen, die derzeit im Cluster vorhanden sind.
 
-. Wenn Sie mit den Ergebnissen zufrieden sind, wählen Sie *Weiter*.
+.. Wenn Sie fertig sind, wählen Sie *Weiter*.
+
+
+--
+.Spezifische VM-basierte Anwendungsressourcen
+--
+.. Wählen Sie *Selektive Ressourcen* aus.
++
+Backup and Recovery listet alle virtuellen Maschinen im Wiederherstellungspunkt auf. Sie können auswählen, welche VMs in den Wiederherstellungsvorgang einbezogen werden sollen.
+
+.. Wenn Sie fertig sind, wählen Sie *Weiter*.
 
 
 --
 ====
-[discrete]
-===== Zieleinstellungen
++
+Die Seite „Zieleinstellungen“ wird angezeigt.
 
 . Erweitern Sie den Abschnitt *Destination settings* und wählen Sie aus, ob Sie entweder in der Standard-Speicherklasse, in einer anderen Speicherklasse wiederherstellen möchten oder, wenn Sie in einem anderen Cluster wiederherstellen, die Speicherklassen dem Ziel-Cluster zuordnen möchten.
 . Wenn Sie die Wiederherstellung in einer anderen Speicherklasse gewählt haben, wählen Sie eine Zielspeicherklasse aus, die zu jeder Quellspeicherklasse passt.
@@ -90,5 +145,24 @@ NOTE: Bei den angezeigten Ressourcen handelt es sich um die Ressourcen, die derz
 NOTE: Wenn Sie einen AppVault auf einem Kubernetes-Cluster erstellen müssen, um die Wiederherstellung eines mit Trident Protect erstellten Backups oder Snapshots zu erleichtern, lesen Sie  https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-appvault-custom-resources.html["Verwenden Sie Trident Protect AppVault-Objekte, um Buckets zu verwalten"].
 
 . Optional können Sie den Abschnitt *Wiederherstellungsskripte* erweitern und die Option *Postscript* aktivieren, um eine Ausführungs-Hook-Vorlage auszuwählen, die nach Abschluss des Wiederherstellungsvorgangs ausgeführt wird. Geben Sie bei Bedarf alle Argumente ein, die das Skript benötigt, und fügen Sie Label-Selektoren hinzu, um Ressourcen anhand von Ressourcen-Labels zu filtern.
-. Wählen Sie *Wiederherstellen*.
+. Optional können Sie den Abschnitt *Ressourcentransformationen* erweitern, um während des Wiederherstellungsprozesses Ressourcenattribute hinzuzufügen, zu entfernen oder zu ändern. Gehen Sie dann wie folgt vor:
++
+
+NOTE: Die Modifizierung von PersistentVolumeClaims und Namespaces wird derzeit nicht unterstützt.
+
++
+.. Aktivieren Sie die Option *Ressourcentransformation*, um Änderungen am Modifikator vorzunehmen.
+.. Wählen Sie eine Vorlage aus der *Vorlagen*-Liste, um häufig verwendete Modifikatoreinstellungen schnell anzuwenden. Diese Liste enthält vordefinierte Vorlagen für gängige Anwendungsfälle sowie von Ihnen erstellte benutzerdefinierte Vorlagen.
++
+
+NOTE: Erstellen Sie Ressourcentransformationsvorlagen im globalen link:br-start-configure.html#create-a-resource-modifier-template["Einstellungen"^] Bereich.
+
+.. Geben Sie an, welche Ressource Sie ändern möchten, indem Sie die Ressourcengruppe, die Version, den Kind und den Namen eingeben.
+.. Geben Sie die Operation an, die Sie an der Ressource ausführen möchten, indem Sie eine Operation aus der Liste *Operation* auswählen.
+.. Geben Sie einen JSON-Pfad für den spezifischen Schlüssel ein, den Sie ändern möchten.
+.. Geben Sie gegebenenfalls einen neuen Wert ein. Das Feld *Wert* wird nur bei bestimmten Operationen angezeigt (z. B. *Hinzufügen* oder *Ersetzen*).
+.. Optional können bei Bedarf weitere Ressourcentransformationen hinzugefügt werden.
+
+
+. Wenn Sie fertig sind, wählen Sie *Wiederherstellen*.
 

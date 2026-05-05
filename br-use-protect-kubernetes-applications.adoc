@@ -14,7 +14,7 @@ summary: Mit NetApp Backup and Recovery können Sie Ihre Workload-Host-Informati
 
 
 [role="lead"]
-Mit NetApp Backup and Recovery können Sie Ihre Kubernetes-Cluster einfach erkennen, ohne Kubeconfig-Dateien generieren und hochladen zu müssen.  Sie können Kubernetes-Cluster verbinden und die erforderliche Software mithilfe einfacher Befehle installieren, die Sie aus der Benutzeroberfläche der NetApp Console kopiert haben.
+NetApp Backup and Recovery ermöglicht das Hinzufügen von Kubernetes-Anwendungen über die Web-Oberfläche oder durch Anwenden benutzerdefinierter Ressourcendateien. Anwendungen können Namespace-basiert sein, aus Standard-Kubernetes-Ressourcen bestehen, oder VM-basiert sein und aus einer oder mehreren virtuellen Maschinen bestehen.
 
 .Erforderliche NetApp Console
 Organisationsadministrator oder SnapCenter Administrator. link:reference-roles.html["Erfahren Sie mehr über die Zugriffsrollen für NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
@@ -23,14 +23,14 @@ Organisationsadministrator oder SnapCenter Administrator. link:reference-roles.h
 
 == Hinzufügen und Schützen einer neuen Kubernetes-Anwendung
 
-Der erste Schritt zum Schutz von Kubernetes-Anwendungen besteht darin, eine Anwendung innerhalb von NetApp Backup and Recovery zu erstellen.  Wenn Sie eine Anwendung erstellen, machen Sie die Konsole auf die laufende Anwendung im Kubernetes-Cluster aufmerksam.
+Der erste Schritt zum Schutz von Kubernetes-Anwendungen besteht darin, eine Anwendung innerhalb von NetApp Backup and Recovery zu erstellen. Wenn Sie eine Anwendung erstellen, machen Sie Backup and Recovery auf die auf dem Kubernetes-Cluster laufende Anwendung aufmerksam.
 
 .Bevor Sie beginnen
 Bevor Sie eine Kubernetes-Anwendung hinzufügen und schützen können, müssen Sielink:br-start-discover.html["Kubernetes-Workloads entdecken"] .
 
 [role="tabbed-block"]
 ====
-.Fügen Sie eine Anwendung über die Web-Benutzeroberfläche hinzu
+.Eine Namespace-basierte App (Web-UI) hinzufügen
 --
 .Schritte
 . Wählen Sie in NetApp Backup and Recovery*Inventar* aus.
@@ -38,22 +38,54 @@ Bevor Sie eine Kubernetes-Anwendung hinzufügen und schützen können, müssen S
 . Wählen Sie die Registerkarte *Anwendungen*.
 . Wählen Sie *Anwendung erstellen*.
 . Geben Sie einen Namen für die Anwendung ein.
+. Wählen Sie in der *Cluster*-Liste den Cluster aus, der die Anwendung hostet.
+. Unter *Filter* wählen Sie *Namespace* aus, um Anwendungen nach Namespace zu filtern.
 . Wählen Sie optional eines der folgenden Felder aus, um nach den Ressourcen zu suchen, die Sie schützen möchten:
 +
-** Zugehöriger Cluster
 ** Zugehörige Namespaces
 ** Ressourcentypen
 ** Beschriftungsselektoren
-
-
-. Wählen Sie optional *Cluster Scoped Resources* aus, um Ressourcen auszuwählen, die auf Clusterebene liegen. Wenn Sie diese einschließen, werden sie der Anwendung beim Erstellen hinzugefügt.
-. Wählen Sie optional *Suchen* aus, um die Ressourcen basierend auf Ihren Suchkriterien zu finden.
++
+... Wählen Sie *Clusterbezogene Ressourcen hinzufügen*, um Ressourcen hinzuzufügen, die auf Clusterebene gelten. Wenn Sie diese einschließen, werden sie der Anwendung beim Erstellen hinzugefügt.
+... Wählen Sie optional *Suchen* aus, um die Ressourcen basierend auf Ihren Suchkriterien zu finden.
 +
 
-NOTE: Die Konsole speichert die Suchparameter oder Ergebnisse nicht. Die Parameter werden verwendet, um im ausgewählten Kubernetes-Cluster nach Ressourcen zu suchen, die in die Anwendung integriert werden können.
+NOTE: Backup and Recovery speichert weder die Suchparameter noch die Ergebnisse; die Parameter werden verwendet, um den ausgewählten Kubernetes-Cluster nach Ressourcen zu durchsuchen, die in die Anwendung aufgenommen werden können.
 
-. Die Konsole zeigt eine Liste der Ressourcen an, die Ihren Suchkriterien entsprechen.
+
+
+
+
+. Backup and Recovery zeigt eine Liste der Ressourcen an, die Ihren Suchkriterien entsprechen.
 . Wenn die Liste die Ressourcen enthält, die Sie schützen möchten, wählen Sie *Weiter*.
+. Wählen Sie im Bereich *Richtlinie* optional eine vorhandene Schutzrichtlinie zum Schutz der Anwendung aus oder erstellen Sie eine neue Richtlinie. Wenn Sie keine Richtlinie auswählen, wird die Anwendung ohne Schutzrichtlinie erstellt. Du kannstlink:br-use-policies-create.html#create-a-policy["Fügen Sie eine Schutzrichtlinie hinzu"] später.
+. Aktivieren und konfigurieren Sie im Bereich *Prescripts und Postscripts* alle Prescript- oder Postscript-Ausführungs-Hooks, die Sie vor oder nach Sicherungsvorgängen ausführen möchten.  Um Präskripte oder Postskripte zu aktivieren, müssen Sie bereits mindestens einlink:br-use-manage-execution-hook-templates.html["Ausführungs-Hook-Vorlage"] .
+. Wählen Sie *Erstellen*.
+
+
+.Ergebnis
+Die Anwendung wurde erstellt und erscheint in der Liste der Anwendungen auf der Registerkarte *Applications* des Kubernetes-Inventars. Backup and Recovery ermöglicht den Schutz der Anwendung gemäß Ihren Einstellungen, und Sie können den Fortschritt im Bereich *Monitoring* überwachen.
+
+--
+.VM-basierte App hinzufügen (Web-UI)
+--
+.Schritte
+. Wählen Sie in NetApp Backup and Recovery*Inventar* aus.
+. Wählen Sie eine Kubernetes-Instanz und wählen Sie *Anzeigen*, um die mit dieser Instanz verknüpften Ressourcen anzuzeigen.
+. Wählen Sie die Registerkarte *Anwendungen*.
+. Wählen Sie *Anwendung erstellen*.
+. Geben Sie einen Namen für die Anwendung ein.
+. Wählen Sie in der *Cluster*-Liste den Cluster aus, der die Anwendung hostet.
+. Wählen Sie unter *Filter* die Option *Virtuelle Maschinen*, um eine VM-basierte Anwendung zu erstellen.
+. Suchen Sie nach virtuellen Maschinen, die Sie der Anwendung hinzufügen möchten, indem Sie einen Namespace auswählen und optional Label-Selektoren angeben.
++
+
+NOTE: Wenn Sie VMs aus der Liste auswählen, ist die Anwendungsdefinition statisch — neue VMs werden der Anwendung nicht nachträglich hinzugefügt (Sie müssen die Anwendung bearbeiten, um sie hinzuzufügen und zu schützen). Wenn Sie Label-Selektoren verwenden, können Sie keine einzelnen VMs auswählen oder die generierte Liste bearbeiten, aber jede VM, die später dem Selektor entspricht, wird automatisch hinzugefügt und geschützt.
+
++
+Die ausgewählten virtuellen Maschinen werden in der Liste auf der rechten Seite angezeigt.
+
+. Wenn die Liste die VMs enthält, die Sie schützen möchten, wählen Sie *Weiter*.
 . Wählen Sie im Bereich *Richtlinie* optional eine vorhandene Schutzrichtlinie zum Schutz der Anwendung aus oder erstellen Sie eine neue Richtlinie. Wenn Sie keine Richtlinie auswählen, wird die Anwendung ohne Schutzrichtlinie erstellt. Du kannstlink:br-use-policies-create.html#create-a-policy["Fügen Sie eine Schutzrichtlinie hinzu"] später.
 . Aktivieren und konfigurieren Sie im Bereich *Prescripts und Postscripts* alle Prescript- oder Postscript-Ausführungs-Hooks, die Sie vor oder nach Sicherungsvorgängen ausführen möchten.  Um Präskripte oder Postskripte zu aktivieren, müssen Sie bereits mindestens einlink:br-use-manage-execution-hook-templates.html["Ausführungs-Hook-Vorlage"] .
 . Wählen Sie *Erstellen*.
@@ -63,7 +95,7 @@ NOTE: Die Konsole speichert die Suchparameter oder Ergebnisse nicht. Die Paramet
 Die Anwendung wird erstellt und in der Liste der Anwendungen auf der Registerkarte *Anwendungen* des Kubernetes-Inventars angezeigt.  Die NetApp Console ermöglicht den Schutz der Anwendung basierend auf Ihren Einstellungen und Sie können den Fortschritt im Bereich *Überwachung* der Sicherung und Wiederherstellung überwachen.
 
 --
-.Fügen Sie eine Anwendung mithilfe eines CR hinzu
+.Fügen Sie eine Namespace-basierte App (CR) hinzu
 --
 .Schritte
 . Erstellen Sie die CR-Datei der Zielanwendung:

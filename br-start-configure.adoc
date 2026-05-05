@@ -16,12 +16,13 @@ summary: Führen Sie einige Schritte aus, um NetApp Backup and Recovery zu konfi
 [role="lead"]
 Nachdem Sie die NetApp Console eingerichtet haben, konfigurieren Sie die Sicherungs- und Wiederherstellungseinstellungen.  Fügen Sie Anmeldeinformationen für Hostressourcen hinzu, importieren Sie SnapCenter -Ressourcen, konfigurieren Sie Protokollverzeichnisse und legen Sie VMware vCenter-Einstellungen fest.  Führen Sie diese Schritte aus, bevor Sie Daten sichern oder wiederherstellen.
 
-* <<Anmeldeinformationen für Hostressourcen hinzufügen>> für alle Windows-, Microsoft SQL Server-, Oracle Database- oder Linux-Hosts, bei denen NetApp Backup and Recovery eine Authentifizierung durchführen muss. Dies umfasst die Anmeldeinformationen des Windows-Gastbetriebssystems, die beim Wiederherstellen von Gastdateien oder -ordnern verwendet werden.
+* <<Anmeldeinformationen für Hostressourcen hinzufügen>> für alle Windows-, Microsoft SQL Server-, Oracle Database- oder Linux-Hosts, mit denen sich NetApp Backup and Recovery authentifizieren muss. Dies umfasst auch die Anmeldeinformationen des Gastbetriebssystems, die beim Wiederherstellen von Dateien oder Ordnern verwendet werden.
 * <<Verwalten der VMware vCenter-Einstellungen>>.
 * <<Importieren und Verwalten von SnapCenter -Hostressourcen>>. (Nur Microsoft SQL Server-Workloads)
 * <<Fügen Sie eine KVM-Managementplattform hinzu.>>Die (Nur KVM-Workloads)
 * <<Konfigurieren von Protokollverzeichnissen in Snapshots für Windows-Hosts>>.
 * <<Erstellen einer Ausführungs-Hook-Vorlage>> zum Ausführen von Skripten vor und nach Backup-Jobs. (Nur Kubernetes-Workloads)
+* <<Erstellen Sie eine Vorlage für die Ressourcentransformation>>Ressourcen beim Wiederherstellen modifizieren.
 
 
 *Erforderliche NetApp Console * Superadministrator für Backup und Wiederherstellung, Backup-Administrator für Backup und Wiederherstellung, Wiederherstellungsadministrator für Backup und Wiederherstellung.  Erfahren Sie mehr überlink:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
@@ -292,4 +293,36 @@ NOTE: Vorlagen, die Sie hier erstellen, sind nur beim Schutz von Kubernetes-Work
 +
 Nachdem Sie die Vorlage erstellt haben, wird sie in der Vorlagenliste im Abschnitt *Ausführungs-Hook-Vorlage* angezeigt.
 
+
+
+
+
+== Erstellen Sie eine Vorlage für die Ressourcentransformation
+
+Erstellen Sie Vorlagen für Ressourcentransformationen, um häufige Transformationen zu speichern, die Sie an Ressourcen vornehmen, während Sie diese wiederherstellen.
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery -Menü *Einstellungen* aus.
+. Klicken Sie auf den Abwärtspfeil, um den Abschnitt *Resource modifer template* zu erweitern.
+. Wählen Sie *Vorlage erstellen*.
+. Geben Sie einen Namen für die Ressourcentransformationsvorlage ein.
+. Optional können Sie eine Vorlagenbeschreibung eingeben.
+. Beschreiben Sie die Zielressource:
++
+.. Geben Sie den Ressourcentyp an (z. B. Pod oder Deployment). Dieses Feld ist erforderlich.
+.. Optional können Sie eine Ressourcengruppe, Version, Namen eingeben.
+
+
+. Einen Vorgang erstellen:
++
+.. Wählen Sie eine Operation aus der Liste *Operation*.
+.. Geben Sie den JSON-Pfad ein, auf den sich die Operation bezieht.
+.. Geben Sie gegebenenfalls einen Wert ein, der hinzugefügt oder aktualisiert werden soll, oder einen JSON-Pfad, von dem aus verschoben werden soll.
++
+Diese Felder werden nur bei Operationen angezeigt, die sie erfordern.
+
+.. Um dieser Vorlage einen weiteren Vorgang hinzuzufügen, wählen Sie *Vorgang hinzufügen*.
+
+
+. Wenn Sie fertig sind, wählen Sie *Hinzufügen*.
 
