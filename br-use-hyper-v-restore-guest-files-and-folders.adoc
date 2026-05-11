@@ -1,0 +1,118 @@
+---
+sidebar: sidebar 
+permalink: br-use-hyper-v-restore-guest-files-and-folders.html 
+keywords: restore, guest, files, folders, files and folders, Windows, VM, virtual machine, browse, mount, virtual disk, session, snapshot, backup 
+summary: Sie können eine oder mehrere Dateien oder Ordner aus einem Hyper-V-VM-Snapshot in eine Windows-Gast-VM wiederherstellen. 
+---
+= Dateien und Ordner aus Hyper-V-VM-Backups wiederherstellen
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Stellen Sie Dateien und Ordner aus Hyper-V-VM-Backups auf dem primären Speicher in einer Windows-Gast-VM wieder her.
+
+
+
+== Dateien und Ordner wiederherstellen
+
+Eine virtuelle Festplatte aus einem Snapshot einbinden und Dateien und Ordner von dort in die ursprüngliche (Quell-)Windows-VM wiederherstellen.
+
+.Bevor Sie beginnen
+Bevor Sie Dateien und Ordner wiederherstellen können, müssen Sie in NetApp Backup und Recovery Anmeldeinformationen für die Quell-VM erstellen. Diese Anmeldeinformationen werden zur Authentifizierung bei der VM während des Wiederherstellungsprozesses verwendet.
+
+.Informationen zu diesem Vorgang
+Wenn Sie eine Datei- und Ordnerwiederherstellungssitzung durch Einbinden eines virtuellen Laufwerks öffnen, bleibt die Sitzung 48 Stunden lang aktiv.
+
+Die Wiederherstellungsleistung hängt sowohl von der Größe als auch von der Anzahl der wiederherzustellenden Dateien oder Ordner ab. Bei gleicher Datensatzgröße dauert die Wiederherstellung einer großen Anzahl kleiner Dateien in der Regel länger als die Wiederherstellung einer kleinen Anzahl großer Dateien.
+
+Beachten Sie beim Wiederherstellen von Dateien und Ordnern Folgendes:
+
+[NOTE]
+====
+* Derzeit ist es nicht möglich, Dateien und Ordner auf Linux-Gast-VMs wiederherzustellen.
+* Das Wiederherstellen von Dateien und Ordnern aus Sicherungen, die auf Sekundärspeicher oder Objektspeicher abgelegt sind, wird nicht unterstützt.
+* Dateien oder Ordner können nicht auf VMs wiederhergestellt werden, die sich auf SAN-Speicher befinden.
+* Auf einer VM kann gleichzeitig nur ein Anfüge- oder Wiederherstellungsvorgang ausgeführt werden. Sie können auf derselben VM keine parallelen Anfüge- oder Wiederherstellungsvorgänge ausführen.
+* Das Anzeigen oder Durchsuchen reservierter Partitionen kann zu einem Fehler führen.
+* Während des Wiederherstellungsvorgangs werden die Attribute „Versteckt“, „System“ und „Verschlüsselt“ von Gastdateien in der wiederhergestellten Datei nicht beibehalten.
+* Sie können Systemdateien und versteckte Dateien anzeigen und wiederherstellen sowie verschlüsselte Dateien anzeigen.
+* Überschreiben Sie keine vorhandene Systemdatei und stellen Sie verschlüsselte Dateien nicht in einem verschlüsselten Ordner wieder her.
+
+
+====
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery -Menü *Wiederherstellen* aus.
+. Wählen Sie *Hyper-V* aus der Liste der Workloads oben rechts auf der Seite aus.
+. Wählen Sie in der Liste der virtuellen Maschinen die Aktion *Wiederherstellen* für eine VM aus, die Dateien oder Ordner enthält, die Sie wiederherstellen möchten.
+. Wählen Sie *Dateien und Ordner* aus.
+. Gehen Sie auf der Seite *Aus Snapshots wiederherstellen* wie folgt vor:
++
+.. Optional können Sie einen Zeitraum auswählen, um die Liste der Snapshots nach Erstellungszeit zu filtern.
+.. Wählen Sie einen Snapshot auf dem primären Speicher aus, von dem die Wiederherstellung erfolgen soll, und klicken Sie dann auf *Weiter*.
+
+
+. Wählen Sie in der Liste eine virtuelle Festplatte aus, die die Dateien und Ordner enthält, die Sie wiederherstellen müssen, und wählen Sie dann *Weiter* aus.
+. Führen Sie auf der Seite _Details zur Gast-VM_ die folgenden Schritte aus:
++
+.. Im Abschnitt *Details zur Gast-VM* hängen Sie die virtuelle Festplatte an die ursprüngliche VM an, indem Sie *Original virtual machine* auswählen.
+.. Optional können Sie im Abschnitt *Anmeldeinformationen der Gast-VM*, falls Sie noch keine Anmeldeinformationen für die Quell-VM-Festplatte und die Ziel-VM gespeichert haben, *Anmeldeinformationen hinzufügen* auswählen, die Windows-Anmeldeinformationen eingeben und *Hinzufügen* auswählen.
+.. Wählen Sie aus der Liste die Anmeldeinformationen für die virtuelle Maschine aus.
+.. Wählen Sie *Weiter*.
++
+NetApp Backup und Recovery verbindet die virtuelle Festplatte mit der ursprünglichen VM und zeigt alle Dateien und Ordner an, einschließlich der versteckten. Jedem Partition, einschließlich der systemreservierten Partitionen, wird ein Laufwerksbuchstabe zugewiesen.
+
++
+Sie können das Lupensymbol (Suchsymbol) neben dem Dateibrowser verwenden, um nach Dateien und Ordnern zu suchen. Die Mustererkennung wird nicht unterstützt, aber Sie können nach Dateien oder Ordnern anhand eines Teils des Namens oder der Erweiterung suchen.
+
+
+
+. Gehen Sie auf der Seite „Dateien oder Ordner zum Wiederherstellen auswählen“ wie folgt vor:
++
+.. Wählen Sie die wiederherzustellenden Dateien oder Ordner aus.
++
+Die zur Wiederherstellung ausgewählten Dateien und Ordner werden im Bereich *Ausgewählte Dateien und Ordner* aufgelistet.
+
+.. Wählen Sie *Weiter*.
+
+
+. Führen Sie auf der Seite „Gastdatei wiederherstellen – Ziel“ folgende Schritte aus:
++
+.. Geben Sie im Abschnitt „Wiederherstellen unter Pfad“ den UNC-Pfad zum Ziel-VM- und Dateisystemspeicherort ein, an dem die ausgewählten Dateien wiederhergestellt werden sollen:
++
+*** IPv4-Pfadbeispiel: `\\10.60.136.65\c$`
+*** IPv6-Pfadbeispiel: `\\fd20-8b1e-b255-832e--61.ipv6-literal.net\C\restore`
+
+
+
+
++
+Falls bereits Dateien mit demselben Namen existieren, können Sie diese überschreiben oder überspringen.
+
+. Im Abschnitt „Optionen nach der Wiederherstellung“ können Sie die Gastsitzung nach Abschluss der Wiederherstellung optional trennen, indem Sie die Einstellung *Gastsitzung nach Abschluss der Wiederherstellung trennen* aktivieren. Dadurch wird die virtuelle Festplatte getrennt und der Datenspeicher ausgehängt. Das bedeutet, dass Sie die Gastsitzung erneut verbinden müssen, bevor Sie weitere Datei- und Ordnerwiederherstellungsvorgänge durchführen können.
+. Wählen Sie *Wiederherstellen*.
++
+Den Fortschritt der Wiederherstellung können Sie auf der Seite „Auftragsüberwachung“ einsehen.
+
+
+
+
+
+== Aktive Live-Disk-Mount-Sitzungen verwalten
+
+Zeigen Sie die aktiven Hyper-V-Datei- und Ordnerwiederherstellungssitzungen in Backup und Recovery an, verwenden Sie sie und löschen Sie sie.
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery -Menü *Klonen* aus.
+. Wählen Sie *Hyper-V* aus der Liste der Workloads oben rechts auf der Seite aus.
+. Wählen Sie das Menü *Live-Disk-Mount-Sitzungen*.
++
+Es wird die Liste der offenen virtuellen Festplatten-Mount-Sitzungen angezeigt.
+
+. Optional können Sie eine Sitzung nutzen, um Dateien und Ordner auf einer Gast-VM wiederherzustellen. Öffnen Sie dazu das Menü image:../media/icon-action.png["Aktionsoption"] „Aktionen“ der Sitzung und wählen Sie *Dateien und Ordner wiederherstellen*.
+. Optional können Sie eine Sitzung löschen, indem Sie das Menü image:../media/icon-action.png["Aktionsoption"] „Aktionen“ für die jeweilige Sitzung öffnen und *Löschen* auswählen.
+

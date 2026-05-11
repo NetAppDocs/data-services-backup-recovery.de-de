@@ -18,6 +18,59 @@ Erfahren Sie, was es Neues bei NetApp Backup and Recovery gibt.
 
 
 
+== 11. Mai 2026
+
+Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
+
+
+
+=== Hyper-V-Workload-Verbesserungen
+
+In dieser Version werden für Hyper-V-Workloads die folgenden Verbesserungen eingeführt:
+
+* *VMs auf SAN-Speicher schützen*: Sie können jetzt VMs auf SAN-Objektspeicher schützen.
+* *Verbesserungen bei der Wiederherstellung an alternativen Speicherorten*: Sie können jetzt von primären und sekundären Speicherorten für VMs auf SAN-Speicher an einem alternativen Speicherort wiederherstellen.
+* *Dateien und Ordner in einer Gast-VM*: Sie können jetzt Dateien und Ordner aus einem Snapshot auf dem primären Speicher in einer Gast-Windows-VM wiederherstellen. Diese Funktion wird nur für CIFS-VMs unterstützt.
+
+
+Weitere Informationen zum Schutz von Hyper-V-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Übersicht zum Schützen von Hyper-V-Workloads"] .
+
+
+
+=== Verbesserungen für KVM-Workloads
+
+In dieser Version wird für KVM-Workloads die folgende Verbesserung eingeführt:
+
+*Wiederherstellung an alternativem Speicherort*: Sie können KVM-VMs jetzt an einem alternativen Zielort wiederherstellen (diese Funktion ist jetzt allgemein verfügbar).
+
+Weitere Informationen zum Schutz von KVM-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Übersicht über den Schutz von KVM-Workloads"] .
+
+
+
+=== Verbesserungen der Oracle Database Workloads
+
+In dieser Version werden die folgenden Verbesserungen für Oracle Database workloads eingeführt:
+
+* *Unterstützung für Oracle AI Database 26ai*: Backup und Recovery unterstützen jetzt Oracle AI Database 26ai.
+* *Unterstützung für die Backup-Verifizierung*: Sie können jetzt Backup-Richtlinien konfigurieren, um die Integrität Ihrer Oracle Datenbank-Backups automatisch zu überprüfen.
+
+
+Weitere Informationen zum Schutz von Oracle Database-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Übersicht über den Schutz von Oracle Database-Workloads"].
+
+
+
+=== VMware-Workload-Verbesserungen
+
+In dieser Version führt VMware workloads die folgenden Verbesserungen ein:
+
+* *Unterstützung für datenspeicherübergreifende Schutzgruppen*: Sie können nun das Verhalten von Schutzgruppen beim Schutz virtueller Maschinen auswählen, deren virtuelle Festplatten sich über mehrere Datenspeicher erstrecken.
+* *Klonunterstützung*: Sie können jetzt Klone von Snapshots virtueller Maschinen aus dem primären und sekundären Speicher erstellen.
+
+
+Weitere Informationen zum Schutz von VMware-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["Übersicht zum Schützen von VMware-Workloads"] .
+
+
+
 == 05. Mai 2026
 
 Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.

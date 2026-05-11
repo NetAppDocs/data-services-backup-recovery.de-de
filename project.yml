@@ -58,8 +58,6 @@ sidebar:
       url: "/br-start-login.html"
     - title: Anzeigen des Schutzstatus im Dashboard
       url: "/br-use-dashboard.html"
-    - title: Erstellen Sie Richtlinien zur Steuerung von Backups und Wiederherstellungen
-      url: "/br-use-policies-create.html"
     - title: Schützen Sie ONTAP Volume-Workloads
       entries:
       - title: Übersicht über Protect ONTAP Volume-Workloads
@@ -108,6 +106,8 @@ sidebar:
         url: "/concept-start-prereq-snapcenter-import.html"
       - title: Entdecken Sie Microsoft SQL Server-Workloads
         url: "/br-start-discover.html"
+      - title: Erstellen und Verwalten von Microsoft SQL Server-Workload-Sicherungsrichtlinien
+        url: "/br-use-policies-mssql-create.html"
       - title: Sichern Sie Microsoft SQL Server-Workloads
         url: "/br-use-mssql-backup.html"
       - title: Wiederherstellen von Microsoft SQL Server-Workloads
@@ -128,8 +128,12 @@ sidebar:
         url: "/br-use-vmware-discovery.html"
       - title: Erstellen und Verwalten von Schutzgruppen für VMware-Workloads
         url: "/br-use-vmware-protection-groups.html"
+      - title: VMware-Workload-Backup-Richtlinien erstellen und verwalten
+        url: "/br-use-policies-vmware-create.html"
       - title: Sichern Sie VMware-Workloads
         url: "/br-use-vmware-backup.html"
+      - title: VMware-Workloads klonen
+        url: "/br-use-vmware-clone.html"
       - title: Wiederherstellen von VMware-Workloads
         entries:
         - title: Wiederherstellen von VMware-VMs
@@ -152,6 +156,8 @@ sidebar:
         url: "/br-start-discover-kvm.html"
       - title: Erstellen und Verwalten von Schutzgruppen für KVM-Workloads
         url: "/br-use-kvm-protection-groups.html"
+      - title: KVM-Workload-Backup-Richtlinien erstellen und verwalten
+        url: "/br-use-policies-kvm-create.html"
       - title: KVM-Workloads sichern
         url: "/br-use-kvm-backup.html"
       - title: KVM-Workloads wiederherstellen
@@ -164,10 +170,16 @@ sidebar:
         url: "/br-start-discover-hyperv.html"
       - title: Erstellen und Verwalten von Schutzgruppen für Hyper-V-Workloads
         url: "/br-use-hyperv-protection-groups.html"
+      - title: Erstellen und Verwalten von Hyper-V-Workload-Sicherungsrichtlinien
+        url: "/br-use-policies-hyper-v-create.html"
       - title: Sichern Sie Hyper-V-Workloads
         url: "/br-use-hyperv-backup.html"
       - title: Wiederherstellen von Hyper-V-Workloads
-        url: "/br-use-hyperv-restore.html"
+        entries:
+        - title: Wiederherstellen von Hyper-V-Workloads
+          url: "/br-use-hyperv-restore.html"
+        - title: Dateien und Ordner wiederherstellen
+          url: "/br-use-hyper-v-restore-guest-files-and-folders.html"
     - title: Oracle Database-Workloads schützen (Preview)
       entries:
       - title: Übersicht über den Schutz von Oracle Database-Workloads
@@ -178,6 +190,8 @@ sidebar:
         url: "/br-start-configure-oracle-database.html"
       - title: Erstellen und Verwalten von Schutzgruppen für Oracle Database-Workloads
         url: "/br-use-oracle-protection-groups.html"
+      - title: Oracle Database-Workload-Backup-Richtlinien erstellen und verwalten
+        url: "/br-use-policies-oracle-create.html"
       - title: Oracle-Datenbank-Workloads sichern
         url: "/br-use-oracle-backup.html"
       - title: Oracle-Datenbank-Workloads klonen
@@ -196,6 +210,8 @@ sidebar:
         entries:
         - title: Kubernetes-Anwendungen hinzufügen und schützen
           url: "/br-use-protect-kubernetes-applications.html"
+        - title: Kubernetes-Workload-Backup-Richtlinien erstellen und verwalten
+          url: "/br-use-policies-kubernetes-create.html"
         - title: Sichern Sie jetzt eine Kubernetes-Anwendung über die Web-Oberfläche
           url: "/br-use-back-up-now-kubernetes-applications-web-ui.html"
         - title: Sichern Sie jetzt eine Kubernetes-Anwendung mithilfe benutzerdefinierter

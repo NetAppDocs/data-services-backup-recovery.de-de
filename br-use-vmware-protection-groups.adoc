@@ -27,37 +27,13 @@ Sie können die folgenden Aufgaben im Zusammenhang mit Schutzgruppen ausführen:
 
 
 
-== Erstellen einer Schutzgruppe
+== Tag-basierte Schutzgruppen
 
-Gruppieren Sie Workloads, die Sie schützen möchten, in einer Schutzgruppe, um sie gemeinsam zu sichern und wiederherzustellen.
+Bei der Auswahl von Ressourcen, die einer Schutzgruppe hinzugefügt werden sollen, können Sie diese nach Datenspeichern, virtuellen Maschinen oder nach vSphere Tags organisieren.
 
-*Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung oder Backupadministratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
+Der tagbasierte Schutz (mittels vSphere Tags) vereinfacht die Verwaltung von Schutzgruppen in Backup und Recovery.
 
-.Schritte
-. Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
-. Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.
-. Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*.
-. Wählen Sie die Registerkarte *Schutzgruppen*.
-. Wählen Sie *Schutzgruppe erstellen*.
-. Geben Sie einen Namen für die Schutzgruppe ein.
-. Wählen Sie die VMs oder Datenbanken aus, die Sie in die Schutzgruppe aufnehmen möchten.
-. Wählen Sie *Weiter*.
-. Wählen Sie die Datensicherungsstrategie, die Sie auf die Schutzgruppe anwenden möchten.
-+
-Wenn Sie eine Richtlinie erstellen möchten, wählen Sie *Neue Richtlinie erstellen* und folgen Sie den Anweisungen zum Erstellen einer Richtlinie.  Sehenlink:br-use-policies-create.html["Erstellen von Richtlinien"] für weitere Informationen.
-
-. Wählen Sie *Weiter*.
-. Überprüfen Sie die Konfiguration.
-. Wählen Sie *Erstellen* aus, um die Schutzgruppe zu erstellen.
-
-
-
-
-== Erstellen Sie eine Schutzgruppe mithilfe von vSphere-Tags
-
-Verwenden Sie tagbasierte Schutzmaßnahmen, um die Verwaltung von Schutzgruppen in NetApp Backup and Recovery zu vereinfachen.
-
-Hier sind die Vorteile des tagbasierten Schutzes:
+Die Verwendung von tagbasiertem Schutz bietet einige Vorteile:
 
 * Wenn Sie einem VM oder Datastore in vCenter ein vSphere-Tag hinzufügen, wird dieses Objekt automatisch in das nächste Backup für jede NetApp Backup and Recovery-Schutzgruppe aufgenommen, die auf dieses Tag verweist.
 * Wenn Sie einen vSphere-Tag von einer VM oder einem Datenspeicher entfernen, wird dieses Objekt automatisch von nachfolgenden Backups für diese tagbasierte Schutzgruppe ausgeschlossen.
@@ -65,51 +41,52 @@ Hier sind die Vorteile des tagbasierten Schutzes:
 * Wird eine VM in einen anderen Datenspeicher migriert, bleibt sie so lange geschützt, wie sie noch das Tag besitzt, das Teil einer tagbasierten Schutzgruppe ist.
 
 
+Die Tag-Zugehörigkeit wird zum Zeitpunkt der Sicherung von vCenter aufgelöst. Alle Änderungen, die Sie an Tags in vCenter vornehmen (Hinzufügen/Entfernen von Tags, Löschen von Tags, Hinzufügen/Entfernen von VMs), werden automatisch in der nächsten Sicherung berücksichtigt.
 
-IMPORTANT: Das Mischen von Ressourcentypen (z. B. das Kombinieren von Tags mit einzelnen VMs oder Datenspeichern in derselben Schutzgruppe) wird nicht unterstützt.
+
+
+== Erstellen einer Schutzgruppe
+
+Erstellen Sie eine Schutzgruppe, um die Ressourcen zu organisieren, die Sie gemeinsam sichern und wiederherstellen möchten.
+
+*Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung oder Backupadministratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
 .Bevor Sie beginnen
 * Stellen Sie sicher, dass in Ihrer Umgebung unterstützte Versionen von VMware vSphere verwendet werden.
-* Stellen Sie in vCenter sicher, dass die virtuellen Maschinen und Datenspeicher, die Sie schützen möchten, bereits mit einem oder mehreren vSphere Tags verknüpft sind.
+* Beim Erstellen einer tagbasierten Schutzgruppe stellen Sie sicher, dass die virtuellen Maschinen und Datenspeicher, die Sie schützen möchten, bereits einem oder mehreren vSphere-Tags in vCenter zugeordnet sind.
 
-
-
-NOTE: Die Tag-Zugehörigkeit wird zum Zeitpunkt der Sicherung von vCenter aufgelöst. Alle Änderungen, die Sie an Tags in vCenter vornehmen (Hinzufügen/Entfernen von Tags, Löschen von Tags, Hinzufügen/Entfernen von VMs), werden automatisch in der nächsten Sicherung berücksichtigt.
 
 .Schritte
-. Sign in bei NetApp Backup and Recovery.
-. Navigieren Sie zur Ansicht *Schutzgruppen*.
+. Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
+. Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.
+. Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*.
+. Wählen Sie die Registerkarte *Schutzgruppen*.
 . Wählen Sie *Schutzgruppe erstellen*.
-. Unter *Allgemeine Details > Name der Schutzgruppe* geben Sie einen Namen für die Schutzgruppe ein.
-. Im Abschnitt *Allgemeine Details > Ressourcen der Schutzgruppe* wählen Sie *Tags* aus.
-. Wenn mehrere vCenters konfiguriert sind, wählen Sie das entsprechende vCenter aus der Liste aus, um die für dieses vCenter verfügbaren Tags anzuzeigen.
-. Im Abschnitt *Tags auswählen*:
+. Geben Sie einen Namen für die Schutzgruppe an und wählen Sie aus, wie Sie Ressourcen zur Schutzgruppe hinzufügen möchten. Sie können Ressourcen nach *Datenspeichern*, *Virtuellen Maschinen* oder *Tags* hinzufügen.
 +
-.. Auf der linken Seite:
+
+IMPORTANT: Das Mischen von Ressourcentypen (z. B. das Kombinieren von Tags mit einzelnen VMs oder Datenspeichern in derselben Schutzgruppe) wird nicht unterstützt.
+
+. Wählen Sie aus der angezeigten Liste die Ressourcen aus, die Sie in die Schutzgruppe aufnehmen möchten.
 +
-... Wählen Sie ein vCenter aus der Liste aus.
-... Wählen Sie die Kontrollkästchen für ein oder mehrere Tags innerhalb dieses vCenter aus.
+Sie können die verfügbaren Ressourcen in der Liste filtern, indem Sie ein bestimmtes vCenter oder Rechenzentrum auswählen. Die ausgewählten Ressourcen werden rechts in der Liste angezeigt.
 
-
-.. Auf der rechten Seite:
+. Wenn Sie fertig sind, wählen Sie *Weiter*.
+. Wählen Sie aus, wie die Schutzgruppe mit VMs umgeht, deren virtuelle Festplatten sich über mehrere Datenspeicher erstrecken:
 +
-... Überprüfen Sie die Liste der ausgewählten Schlagwörter, gruppiert nach vCenter.
-... Entfernen Sie alle Tags, die Sie nicht in der Schutzgruppe haben möchten.
-
-
+** *Alle übergeordneten Datenspeicher immer ausschließen*: Die Schutzgruppe umfasst nur Datenspeicher, die ihr direkt hinzugefügt werden, sowie den primären Datenspeicher aller VMs, die direkt der Schutzgruppe hinzugefügt wurden.
+** *Alle übergreifenden Datenspeicher immer einbeziehen*: Die Schutzgruppe umfasst alle Datenspeicher, die von den einbezogenen VMs übergreifend genutzt werden.
+** *Manuelle Auswahl der einzuschließenden übergreifenden Datenspeicher*: Wenn Sie diese Option wählen, müssen Sie die übergreifenden Datenspeicher, die in die Schutzgruppe aufgenommen werden sollen, manuell aus der angezeigten Liste auswählen. Diese Auswahl ist statisch; Sie müssen die Liste der übergreifenden Datenspeicher jedes Mal aktualisieren, wenn neue VMs zur Gruppe hinzugefügt werden.
 
 
 . Wählen Sie *Weiter*.
 . Wählen Sie die Datensicherungsstrategie, die Sie auf die Schutzgruppe anwenden möchten.
 +
-Wenn Sie eine Richtlinie erstellen möchten, wählen Sie *Neue Richtlinie erstellen* und folgen Sie den Anweisungen zum Erstellen einer Richtlinie.  Sehenlink:br-use-policies-create.html["Erstellen von Richtlinien"] für weitere Informationen.
+Um eine neue Richtlinie zu erstellen, wählen Sie *Neue Richtlinie erstellen* und folgen Sie den Anweisungen. Weitere Informationen finden Sie unter link:br-use-policies-create.html["Erstellen von Richtlinien"].
 
 . Wählen Sie *Weiter*.
-. Überprüfen Sie die Tag-Einstellungen im Schritt *Review*.
+. Überprüfen Sie die Konfiguration.
 . Wählen Sie *Erstellen* aus, um die Schutzgruppe zu erstellen.
-+
-Die neue tagbasierte Schutzgruppe erscheint in der Liste, gekennzeichnet durch ein Tag-Symbol.
-
 
 
 

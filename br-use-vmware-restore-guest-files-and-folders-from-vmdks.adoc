@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: br-use-vmware-restore-guest-files-and-folders-from-vmdks.html 
-keywords:  
-summary: Sie können eine oder mehrere Dateien oder Ordner aus einem VMDK auf einem Windows-Gastbetriebssystem wiederherstellen. 
+keywords: restore, guest, files, folders, files and folders, guest VM, windows, linux, VMDK, attach 
+summary: Sie können eine oder mehrere Dateien oder Ordner aus einer VMDK in eine Gast-VM wiederherstellen. 
 ---
 = Dateien und Ordner von virtuellen Festplatten wiederherstellen
 :hardbreaks:
@@ -14,6 +14,12 @@ summary: Sie können eine oder mehrere Dateien oder Ordner aus einem VMDK auf ei
 
 
 [role="lead"]
+Einzelne Dateien oder Ordner einer virtuellen Festplatte lassen sich auf der ursprünglichen VM oder einer anderen VM wiederherstellen. Dies ist nützlich, wenn Sie nicht die gesamte VM wiederherstellen müssen, sondern nur bestimmte Dateien oder Ordner benötigen.
+
+
+
+== Dateien und Ordner von virtuellen Festplatten wiederherstellen
+
 Stellen Sie Dateien oder Ordner von einer virtuellen Festplatte auf der ursprünglichen VM oder auf einer anderen VM wieder her. Wenn Sie die virtuelle Festplatte nicht an die ursprüngliche VM anbinden möchten, können Sie sie stattdessen an eine Proxy-VM anbinden.
 
 .Bevor Sie beginnen
@@ -170,3 +176,17 @@ Den Fortschritt der Wiederherstellung können Sie auf der Seite „Auftragsüber
 
 --
 ====
+
+
+== Aktive VMDK-Mountsitzungen anzeigen
+
+Aktive Gast-VM-Sitzungen werden beim Wiederherstellen von Dateien oder Ordnern angezeigt. Hier sehen Sie die VMDKs, die aktuell mit offenen Sitzungen verbunden sind.
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery -Menü *Klonen* aus.
+. Wählen Sie *VMware* aus der Workload-Liste oben rechts auf der Seite aus.
+. Wählen Sie das Menü *Live-Disk-Mount-Sitzungen*.
++
+Es wird eine Liste der offenen VMDK-Mount-Sitzungen angezeigt. Sie können die zugehörige Sicherung, die Quell-VM, den Mount-Pfad und weitere Informationen einsehen.
+
+

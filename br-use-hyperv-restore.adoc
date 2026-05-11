@@ -21,14 +21,17 @@ Sie können Workloads von verschiedenen Startorten wiederherstellen:
 
 * Wiederherstellung von einem primären Standort (lokaler Snapshot)
 * Wiederherstellen von einer replizierten Ressource auf einem sekundären Speicher
-* Wiederherstellung aus einer Objektspeichersicherung
+* Wiederherstellung aus einem Objektspeicher-Backup (nur am ursprünglichen Speicherort)
 
+
+
+NOTE: Die Wiederherstellung aus Objektspeicher-Backup wird für VMs, die sich auf SAN-Speicher befinden, nicht unterstützt.
 
 .Stellen Sie diese Punkte wieder her
 Sie können Daten bis zu diesen Punkten wiederherstellen:
 
-* Am ursprünglichen Speicherort wiederherstellen
-* An einem alternativen Speicherort wiederherstellen
+* Wiederherstellung am ursprünglichen Speicherort (vom primären, sekundären und Objektspeicher)
+* Wiederherstellung an einem alternativen Speicherort (vom primären und sekundären Speicher)
 
 
 .Überlegungen zur Wiederherstellung aus dem Objektspeicher

@@ -73,7 +73,7 @@ Weisen Sie ausreichend Speicherplatz zu und überwachen Sie den Speicherverbrauc
 
 
 | Erforderliche Softwarepakete  a| 
-* ASP.NET Core Runtime 8.0.23 Hosting Bundle (und alle nachfolgenden 8.0.x Patches)
+* ASP.NET Core Runtime 8.0.24 Hosting Bundle (und alle nachfolgenden 8.0.x Patches)
 * PowerShell 7.4.13
 
 
@@ -202,6 +202,7 @@ Stellen Sie sicher, dass Ihre Umgebung bestimmte Anforderungen erfüllt, um Orac
 | Oracle Database-Versionen  a| 
 * Oracle Database 19c
 * Oracle Database 21c
+* Oracle AI Database 26ai
 
 
 
@@ -260,7 +261,7 @@ Stellen Sie sicher, dass Ihre Hyper-V-Instanz bestimmte Anforderungen zum Erkenn
 | Microsoft Hyper-V | 2019, 2022 & 2025 Ausgaben 
 
 
-| ASP.NET Core Runtime | 8.0.23 Hosting Bundle (und alle nachfolgenden 8.0.x-Patches) 
+| ASP.NET Core Runtime | 8.0.24 Hosting Bundle (und alle nachfolgenden 8.0.x-Patches) 
 
 
 | PowerShell | 7.4.13 oder später 
@@ -283,7 +284,7 @@ Stellen Sie sicher, dass Ihre Hyper-V-Instanz bestimmte Anforderungen zum Erkenn
 | Vernetzter Speicher  a| 
 * ONTAP 9.13.1 oder höher
 * Amazon FSx for NetApp ONTAP-Speichersysteme mit Version 9.13.1 oder höher
-* SAN-Speicher (Vorschau) (unterstützt für Backups und Wiederherstellung am ursprünglichen Speicherort vom primären und sekundären Speicher)
+* SAN-Speicher (unterstützt für Backups und für die Wiederherstellung am ursprünglichen Speicherort vom primären oder sekundären Speicher)
 
 
 |===
