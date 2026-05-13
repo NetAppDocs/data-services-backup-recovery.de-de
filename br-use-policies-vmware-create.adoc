@@ -86,7 +86,7 @@ Für VMware-Workloads wird dadurch der lokale Snapshot auf den Datenspeichern od
 +
 Bei VMware-Workloads wird dadurch der lokale Snapshot auf den Datenspeichern oder VMwares auf dem primären Speichersystem konfiguriert und anschließend werden die Daten vom primären Festplattenspeichersystem auf das sekundäre Festplattenspeichersystem repliziert.
 
-** *Disk-to-object storage*: Primärspeicher (Festplatte) zu Cloud (Objektspeicher). Dabei werden Daten von einem ONTAP System zu einem Objektspeichersystem repliziert. Dies kann ein Cloud-Hyperscaler-Objektspeicher oder ein privater Objektspeicher wie StorageGRID sein. Diese Methode ist ideal für die langfristige Datenaufbewahrung und Archivierung.
+** *Disk-to-object storage*: Primärspeicher (Festplatte) zu Cloud (Objektspeicher). Dabei werden Daten von einem ONTAP System zu einem Objektspeichersystem repliziert. Dies kann ein Cloud-Hyperscaler-Objektspeicher oder ein privater Objektspeicher wie StorageGRID sein. Diese Methode ist ideal für die langfristige Datenaufbewahrung und Archivierung. Diese Option ist für Amazon FSx for NetApp ONTAP nicht verfügbar.
 +
 Für VMWare-Workloads wird hierdurch der lokale Snapshot auf den Datenspeichern oder VMs auf dem primären Server und die Replikation vom primären Festplattenspeicher zum Cloud-Objektspeicher konfiguriert.
 
