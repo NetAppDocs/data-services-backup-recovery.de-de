@@ -205,6 +205,9 @@ Sie können den Bucket über die Konsole oder Ihren Cloud-Anbieter erstellen.
 
 Wenn Sie ein anderes Bucket-Präfix als „netapp-backup-xxxxxx“ verwenden möchten, müssen Sie die S3-Berechtigungen für die IAM-Rolle des Konsolenagenten ändern.
 
+
+NOTE: Wenn Sie einen Container erstellen, der als Sicherungsziel in Azure verwendet werden soll, stellen Sie sicher, dass der erstellte Container denselben Namen wie das Azure-Speicherkonto hat.
+
 *Erweiterte Bucket-Einstellungen*
 
 Wenn Sie ältere Sicherungsdateien in einen Archivspeicher verschieben oder DataLock und Ransomware-Schutz aktivieren möchten, um Ihre Sicherungsdateien zu sperren und auf mögliche Ransomware zu scannen, müssen Sie den Container mit bestimmten Konfigurationseinstellungen erstellen:

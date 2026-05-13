@@ -138,13 +138,13 @@ sidebar:
         entries:
         - title: Wiederherstellen von VMware-VMs
           url: "/br-use-vmware-restore.html"
-        - title: Bestimmte virtuelle Festplatten wiederherstellen
+        - title: VMware virtuelle Festplatten wiederherstellen
           url: "/br-use-vmware-restore-vmdks-from-backups.html"
-        - title: Dateien und Ordner wiederherstellen
+        - title: VMware-Dateien und -Ordner wiederherstellen
           entries:
           - title: Arbeitsablauf, Voraussetzungen und Einschränkungen
             url: "/br-use-vmware-restore-guest-files-and-folders-overview.html"
-          - title: Dateien und Ordner aus VMDKs wiederherstellen
+          - title: VMware-Dateien und -Ordner aus VMDKs wiederherstellen
             url: "/br-use-vmware-restore-guest-files-and-folders-from-vmdks.html"
           - title: Fehlerbehebung bei der Wiederherstellung von Dateien und Ordnern
             url: "/br-use-vmware-guest-file-restore-scenarios-you-might-encounter.html"
@@ -178,7 +178,7 @@ sidebar:
         entries:
         - title: Wiederherstellen von Hyper-V-Workloads
           url: "/br-use-hyperv-restore.html"
-        - title: Dateien und Ordner wiederherstellen
+        - title: Hyper-V-Dateien und -Ordner wiederherstellen
           url: "/br-use-hyper-v-restore-guest-files-and-folders.html"
     - title: Oracle Database-Workloads schützen (Preview)
       entries:

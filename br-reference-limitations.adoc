@@ -57,7 +57,7 @@ Für FlexVol -Volumes gibt es keine Einschränkung – Sie können alle FlexVol 
 +
 Eine Erklärung zu diesen Verschlüsselungsarten finden Sie unterhttps://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["Übersicht über die Konfiguration der NetApp Volume-Verschlüsselung"^] .
 
-* Wenn Snapshots mit langfristiger Aufbewahrung auf einem SnapMirror Zielvolume mithilfe des Zeitplans in der SnapMirror -Richtlinie aktiviert sind, werden Snapshots direkt auf dem Zielvolume erstellt.  In diesem Fall sollten Sie diese Volumes nicht mit NetApp Backup and Recovery sichern, da diese Snapshots nicht in den Objektspeicher verschoben werden.
+* Sichern Sie keine SnapMirror Zielvolumes, für die Langzeitaufbewahrungs-Snapshots aktiviert sind. Diese Snapshots werden direkt auf dem Ziel erstellt und nicht in den Objektspeicher verschoben. Diese Einschränkung gilt auch dann, wenn die SnapMirror Richtlinie später geändert wird, um die Langzeitaufbewahrung zu deaktivieren.
 * Wenn Sie eine Sicherungsrichtlinie erstellen oder bearbeiten und der Richtlinie keine Volumes zugewiesen sind, kann die Anzahl der aufbewahrten Sicherungen maximal 1018 betragen.  Nachdem Sie der Richtlinie Volumes zugewiesen haben, können Sie die Richtlinie bearbeiten, um bis zu 4.000 Sicherungen zu erstellen.
 * Beim Sichern von Datensicherungsvolumes (DP):
 +

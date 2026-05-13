@@ -415,7 +415,6 @@
   <block id="baab0bf328a764b384d4ecab2375f4fa" category="list-text">Beim Sichern von Daten behält NetApp Backup and Recovery die NetApp Volume Encryption (NVE) nicht bei.  Dies bedeutet, dass verschlüsselte Daten auf dem NVE-Volume während der Datenübertragung zum Ziel entschlüsselt werden und die Verschlüsselung nicht aufrechterhalten wird.</block>
   <block id="c638f77e97a62d0d11f775816222d62a" category="inline-link">Übersicht über die Konfiguration der NetApp Volume-Verschlüsselung</block>
   <block id="3553f96cf9281793975488d9cea2ab17" category="paragraph">Eine Erklärung zu diesen Verschlüsselungsarten finden Sie unter<block ref="4e5be28408ee7dfd001133bf87f0a28f" category="inline-link-rx"></block> .</block>
-  <block id="d13da1ef1c5dbdc58b74265b9363e815" category="list-text">Wenn Snapshots mit langfristiger Aufbewahrung auf einem SnapMirror Zielvolume mithilfe des Zeitplans in der SnapMirror -Richtlinie aktiviert sind, werden Snapshots direkt auf dem Zielvolume erstellt.  In diesem Fall sollten Sie diese Volumes nicht mit NetApp Backup and Recovery sichern, da diese Snapshots nicht in den Objektspeicher verschoben werden.</block>
   <block id="3a3d9f6ee5fa05f3aa042e0258eebf58" category="list-text">Wenn Sie eine Sicherungsrichtlinie erstellen oder bearbeiten und der Richtlinie keine Volumes zugewiesen sind, kann die Anzahl der aufbewahrten Sicherungen maximal 1018 betragen.  Nachdem Sie der Richtlinie Volumes zugewiesen haben, können Sie die Richtlinie bearbeiten, um bis zu 4.000 Sicherungen zu erstellen.</block>
   <block id="dd717dd6a5197fd72bf9aae1e454dd3e" category="list-text">Beim Sichern von Datensicherungsvolumes (DP):</block>
   <block id="c73aeadbe74d06b3eebf4d0a5f283344" category="list-text">Beziehungen zu den SnapMirror -Labels<block ref="b17c9a947d4e38d7975718380fab6b7a" prefix=" " category="inline-code"></block> Und<block ref="02d69a40f5f4cdc817176fabd085b511" prefix=" " category="inline-code"></block> wird nicht in der Cloud gesichert.</block>
@@ -4436,7 +4435,6 @@
   <block id="9255ea030351a8ee8402a7708baf0223" category="list-text">Erweitern Sie den Abschnitt *Ransomware-Scan*.</block>
   <block id="194a29c3464a05de3c32434145c0b5d6" category="section-title">19. Januar 2026</block>
   <block id="88009dbb638181324526010a9eff3c19" category="sidebar">Wiederherstellen von VMware-VMs</block>
-  <block id="9b7e5fddcf3e2a7a93fe6669de87fbc2" category="sidebar">Bestimmte virtuelle Festplatten wiederherstellen</block>
   <block id="3a4d751e404219df1dc6de0a13c8db55" category="sidebar">Arbeitsablauf, Voraussetzungen und Einschränkungen</block>
   <block id="b2c5a3b35bd8f72bf653aa42e54cc06c" category="list-text">Als Gastbetriebssystem muss Windows Server 2008 R2 oder höher ausgeführt werden.</block>
   <block id="367aa9be05b109b226ffbefe3981ac88" category="list-text">Wenn Sie eine verschlüsselte Datei oder einen verschlüsselten Ordner wiederherstellen, bleibt das Verschlüsselungsattribut nicht erhalten.</block>
@@ -5055,7 +5053,6 @@
   <block id="6cbd33d5e36fc1cca8f70b65396de2b0" category="admonition">Das Mischen von Ressourcentypen (z. B. das Kombinieren von Tags mit einzelnen VMs oder Datenspeichern in derselben Schutzgruppe) wird nicht unterstützt.</block>
   <block id="6ad4cf5fcdb7c67f52ade5e3f8eeb6ad" category="list-text">Stellen Sie sicher, dass in Ihrer Umgebung unterstützte Versionen von VMware vSphere verwendet werden.</block>
   <block id="735df7f2e37c9dd264e94c878ea7d619" category="admonition">Die Tag-Zugehörigkeit wird zum Zeitpunkt der Sicherung von vCenter aufgelöst. Alle Änderungen, die Sie an Tags in vCenter vornehmen (Hinzufügen/Entfernen von Tags, Löschen von Tags, Hinzufügen/Entfernen von VMs), werden automatisch in der nächsten Sicherung berücksichtigt.</block>
-  <block id="a22504a40a8afdfa908ab0544ecc4178" category="doc">Dateien und Ordner aus VMDKs wiederherstellen</block>
   <block id="32de0b1da4ab4b8f52bfe3ce1811b043" category="list-text">Überprüfen Sie die Voraussetzungen und Einschränkungen in <block ref="538cee55729c515ab8aab7ca0ccd040a" category="inline-link-macro-rx"></block>.</block>
   <block id="7b7824cad48305f033e7a7b04105000a" category="paragraph">Die Leistungsfähigkeit beim Wiederherstellen von Dateien oder Ordnern hängt von zwei Faktoren ab: der Größe der wiederherzustellenden Dateien oder Ordner und der Anzahl der wiederherzustellenden Dateien oder Ordner. Die Wiederherstellung einer großen Anzahl kleiner Dateien kann länger dauern als erwartet, verglichen mit der Wiederherstellung einer kleinen Anzahl großer Dateien, wenn die wiederherzustellenden Datenmengen die gleiche Größe haben.</block>
   <block id="ec4a88c3778360f79e6ff325a92a3d17" category="paragraph">Sie können eine Wiederherstellung auf einer entfernten VM durchführen (bekannt als Cross-VM-Wiederherstellung), aber Quell- und Zielbetriebssystem müssen identisch sein.</block>
@@ -5549,4 +5546,10 @@
   <block id="d4989fe657e38f56766b05260a139da1" category="sidebar">Erstellen und Verwalten von Hyper-V-Workload-Sicherungsrichtlinien</block>
   <block id="4cd8801cdee679bb024e188753022546" category="sidebar">Oracle Database-Workload-Backup-Richtlinien erstellen und verwalten</block>
   <block id="9bb7a57e0f15167076e59ed085570cb6" category="sidebar">Kubernetes-Workload-Backup-Richtlinien erstellen und verwalten</block>
+  <block id="2a09eaa4306f964591fbfdee1bad3329" category="list-text">Sichern Sie keine SnapMirror Zielvolumes, für die Langzeitaufbewahrungs-Snapshots aktiviert sind. Diese Snapshots werden direkt auf dem Ziel erstellt und nicht in den Objektspeicher verschoben. Diese Einschränkung gilt auch dann, wenn die SnapMirror Richtlinie später geändert wird, um die Langzeitaufbewahrung zu deaktivieren.</block>
+  <block id="cb7e1594adc03f9d88413ab9198e9c43" category="admonition">Wenn Sie einen Container erstellen, der als Sicherungsziel in Azure verwendet werden soll, stellen Sie sicher, dass der erstellte Container denselben Namen wie das Azure-Speicherkonto hat.</block>
+  <block id="76382b5bdb7a0a65db2779738439703c" category="sidebar">VMware virtuelle Festplatten wiederherstellen</block>
+  <block id="160bf2703f3a2319b3965b541340256a" category="sidebar">VMware-Dateien und -Ordner wiederherstellen</block>
+  <block id="b5c91904decad9b84ae436053f327229" category="sidebar">VMware-Dateien und -Ordner aus VMDKs wiederherstellen</block>
+  <block id="d68e9c9c6cd6479fbac7751c3f91f5a3" category="sidebar">Hyper-V-Dateien und -Ordner wiederherstellen</block>
 </blocks>
