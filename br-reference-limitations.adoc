@@ -116,3 +116,11 @@ Bei Verwendung einer ONTAP -Version vor 9.11.1 wird die Ordnerwiederherstellung 
 
 
 
+
+
+
+== Aktivieren der Indizierung in einer Disaster-Recovery-Konfiguration
+
+Beim Aktivieren der Indizierung auf einem Storage-VM-Cluster in einer Disaster-Recovery-(DR)-Konfiguration erscheint eine Fehlermeldung, die besagt, dass der Vorgang auf einem als Ziel für die Vserver-DR konfigurierten Vserver nicht zulässig ist. Trotz dieser Fehlermeldung setzt der Backend-Prozess den  `snapdiff-rpc-server` Status für die Quell-Storage-VMs auf „Ein“. Nachdem der Storage-VM-DR-Richtlinienzeitplan ausgeführt wurde, wird dieser Status an die Ziel-Storage-VMs weitergegeben.
+
+*Problemumgehung*: Warten Sie, bis der Zeitplan der Speicher-VM-DR-Richtlinie nach dem ersten Fehler ausgeführt wurde, und versuchen Sie dann erneut, die Indizierung zu aktivieren.

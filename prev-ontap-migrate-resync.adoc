@@ -18,9 +18,6 @@ Die SnapMirror to Cloud Resync-Funktion in NetApp Backup and Recovery optimiert 
 
 Diese Funktion macht einen erneuten Baseline-Prozess überflüssig und ermöglicht die Fortsetzung der Backups nach der Migration. Diese Funktion ist in Workload-Migrationsszenarien wertvoll, unterstützt sowohl FlexVols als auch FlexGroups und ist ab ONTAP Version 9.16.1 verfügbar.
 
-
-NOTE: Diese Funktion ist ab NetApp Backup and Recovery Version 4.0.3 verfügbar, die im Mai 2025 veröffentlicht wurde.
-
 SnapMirror to Cloud Resync gewährleistet die Kontinuität der Datensicherung über verschiedene Umgebungen hinweg und erleichtert so die Datenverwaltung in Hybrid- und Multi-Cloud-Setups.
 
 
