@@ -116,9 +116,13 @@ NOTE: Um eine Vorschaufunktion zu deaktivieren, führen Sie die gleichen Schritt
 
 
 
-== Deaktivieren Sie die Indizierung für alle Volumes, die zu einer Speicher-VM gehören.
+== Indizierung für Volumes deaktivieren
 
-Befolgen Sie diese Schritte, um die Indizierung für alle Volumes, die zu einer bestimmten Storage-VM gehören, zu deaktivieren, anstatt die Indizierung für jedes einzelne Volume zu deaktivieren.
+Deaktivieren Sie die Indizierung für bestimmte Volumes oder für alle Volumes, die zu einer oder mehreren Storage-VMs gehören, indem Sie die folgenden Optionsflags verwenden:
+
+* `svms-not-to-index`: Eine durch Kommas getrennte Liste von Speicher-VMs, deren Volumes nicht indiziert werden sollen
+* `volumes-not-to-index`: Eine durch Kommas getrennte Liste einzelner Bände, die nicht indiziert werden sollen
+
 
 .Schritte
 . Verwenden Sie SSH, um sich beim Console-Agenten anzumelden.
@@ -162,13 +166,14 @@ Der Mountpunkt unterscheidet sich zwischen Cloud- und privaten Bereitstellungen.
 ----
 cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data/cbs_catalog_config
 ----
-. Erstellen Sie eine Datei namens `production-customer.json` mit folgendem Inhalt. Ersetzen Sie die Namen der Speicher-VMs im Beispiel durch die Namen der Speicher-VMs in Ihrer Umgebung:
+. Erstellen Sie eine Datei mit dem Namen  `production-customer.json` und passen Sie die Namen der Storage-VM und Volumes an Ihre Umgebung an:
 +
 [source, json]
 ----
 {
   "indexing": {
-    "svms-not-to-index": "storage_vm_1,storage_vm_2,storage_vm_3"
+    "svms-not-to-index": "storage_vm_1,storage_vm_2,storage_vm_3",
+    "volumes-not-to-index": "volume_1,volume_2,volume_3"
   }
 }
 ----
