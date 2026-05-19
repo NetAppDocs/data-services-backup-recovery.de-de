@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference-backup-cbs-db-in-dark-site.html 
 keywords: backup database, recover database, dark site, private mode, restore database, backup and recovery, Console agent 
-summary: 'Wenn Sie NetApp Backup and Recovery an einem Standort ohne Internetzugang verwenden (bekannt als „privater Modus“), werden die Konfigurationsdaten von NetApp Backup and Recovery im StorageGRID oder ONTAP S3-Bucket gesichert, in dem Ihre Backups gespeichert werden.  Wenn in Zukunft ein Problem mit dem Hostsystem des Konsolenagenten auftritt, können Sie einen neuen Konsolenagenten bereitstellen und die kritischen NetApp Backup and Recovery -Daten wiederherstellen.' 
+summary: 'Im privaten Modus (ohne Internetzugang) speichert NetApp Backup and Recovery seine Konfigurationsdaten im selben StorageGRID- oder ONTAP-S3-Bucket, der auch für Ihre Backups verwendet wird. Sollte das Hostsystem des Console-Agenten ausfallen, können Sie einen neuen Console-Agenten bereitstellen und diese Daten wiederherstellen.' 
 ---
 = Wiederherstellen der NetApp Backup and Recovery -Konfigurationsdaten in einer Dark Site
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 'Wenn Sie NetApp Backup and Recovery an einem Standort ohne Internetzug
 
 
 [role="lead"]
-Wenn Sie NetApp Backup and Recovery an einem Standort ohne Internetzugang verwenden (bekannt als _privater Modus_), werden die Konfigurationsdaten von NetApp Backup and Recovery im StorageGRID oder ONTAP S3-Bucket gesichert, in dem Ihre Backups gespeichert werden.  Wenn Sie ein Problem mit dem Hostsystem des Konsolenagenten haben, können Sie einen neuen Konsolenagenten bereitstellen und die kritischen NetApp Backup and Recovery -Daten wiederherstellen.
+Im privaten Modus (ohne Internetzugang) speichert NetApp Backup and Recovery seine Konfigurationsdaten im selben StorageGRID- oder ONTAP-S3-Bucket, der auch für Ihre Backups verwendet wird. Sollte das Hostsystem des Console-Agenten ausfallen, können Sie einen neuen Console-Agenten bereitstellen und diese Daten wiederherstellen.
 
 Sie können diese Schritte auch befolgen, um den Console-Agenten zu ersetzen und Konfigurationsdaten wiederherzustellen, die darauf gespeichert waren, wenn Sie Backup and Recovery im _Standardmodus_ lokal verwenden und keine Cloud-Konten beteiligt sind (zum Beispiel, wenn Sie NetApp StorageGrid als Backup-Ziel verwenden).
 

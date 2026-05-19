@@ -3606,9 +3606,7 @@
   <block id="fd161debce2c53100b7c61aa8b2d7c6b" category="list-text">Wie lange dauert die Wiederherstellung meiner im Google-Archiv archivierten Objekte?</block>
   <block id="efce98c74b9fc5fb1711b2f3d4da8f34" category="list-text">*Abrufzeit*: Die Zeit, die zum Abrufen der Sicherungsdatei aus dem Archiv und zum Platzieren im Standardspeicher benötigt wird.  Dies wird manchmal als „Rehydratationszeit“ bezeichnet.  Im Gegensatz zu den „kältesten“ Speicherlösungen anderer Cloud-Anbieter sind Ihre Daten innerhalb von Millisekunden zugänglich.</block>
   <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">Informationen zu diesem Vorgang</block>
-  <block id="b92e6028af16604f3b6fd4eade9dfec6" category="summary">Wenn Sie NetApp Backup and Recovery an einem Standort ohne Internetzugang verwenden (bekannt als „privater Modus“), werden die Konfigurationsdaten von NetApp Backup and Recovery im StorageGRID oder ONTAP S3-Bucket gesichert, in dem Ihre Backups gespeichert werden.  Wenn in Zukunft ein Problem mit dem Hostsystem des Konsolenagenten auftritt, können Sie einen neuen Konsolenagenten bereitstellen und die kritischen NetApp Backup and Recovery -Daten wiederherstellen.</block>
   <block id="a215e32a572a4f73138eb57df3fb494d" category="doc">Wiederherstellen der NetApp Backup and Recovery -Konfigurationsdaten in einer Dark Site</block>
-  <block id="e49ea1690cc473e646cdffd861381cbc" category="paragraph">Wenn Sie NetApp Backup and Recovery an einem Standort ohne Internetzugang verwenden (bekannt als _privater Modus_), werden die Konfigurationsdaten von NetApp Backup and Recovery im StorageGRID oder ONTAP S3-Bucket gesichert, in dem Ihre Backups gespeichert werden.  Wenn Sie ein Problem mit dem Hostsystem des Konsolenagenten haben, können Sie einen neuen Konsolenagenten bereitstellen und die kritischen NetApp Backup and Recovery -Daten wiederherstellen.</block>
   <block id="701ba6e125e8ce791098165f107eb472" category="admonition">Dieses Verfahren gilt nur für ONTAP Volume-Daten.</block>
   <block id="28f81c5bbd7730901f36546c0e51e06f" category="paragraph">Es werden zwei Arten von Daten gesichert:</block>
   <block id="8ad7c680cb0d9e95e7294cf3e192be1f" category="list-text">NetApp Backup and Recovery -Datenbank – enthält eine Liste aller Volumes, Sicherungsdateien, Sicherungsrichtlinien und Konfigurationsinformationen.</block>
@@ -3843,7 +3841,6 @@
   <block id="f5b61ddaf24256f9a32421bae22a1e21" category="sidebar">Sichern Sie lokales ONTAP in Azure Blob</block>
   <block id="e8f201c141a8ad9fbe4ea92510b4ca30" category="sidebar">Sichern Sie Ihr lokales ONTAP in der Google Cloud</block>
   <block id="6a2941303bd6f981e2724af76bf3da2e" category="sidebar">Sichern Sie Ihr lokales ONTAP auf StorageGRID</block>
-  <block id="14873f48c9db88415c7c75e61a0ddd00" category="sidebar">Wiederherstellen von Konfigurationsdaten in einer Dark Site</block>
   <block id="5ee1bd11e1cae9e48854c491affa72a6" category="sidebar">Verwalten von ONTAP -Backups</block>
   <block id="0f18ca4c27c34246c6bc09d2bbf775c6" category="sidebar">Wiederherstellung aus ONTAP -Backups</block>
   <block id="c00b274754a2d13242a61b1534660a37" category="sidebar">Verwalten des Microsoft SQL Server-Inventars</block>
@@ -5557,4 +5554,6 @@
   <block id="2e7ba7a2addeb2881d5673ae4329306b" category="list-text">Erstellen Sie eine Datei mit dem Namen <block ref="f75ec94858c3cb7483e22bf2aca20589" prefix=" " category="inline-code"></block> und passen Sie die Namen der Storage-VM und Volumes an Ihre Umgebung an:</block>
   <block id="48be46e5153e88189d804da13793e42d" category="list-text">Das Wiederherstellen von Ordnern aus lokalen Snapshots wird nicht unterstützt.</block>
   <block id="dfad9bc0d0d8b9068168d9197cc59866" category="list-text">Sie können einen *Ordner* aus replizierten oder Objektspeicher-Snapshots auf ein Volume im ursprünglichen System, auf ein Volume in einem anderen System mit demselben Cloud-Konto oder auf ein Volume in einem lokalen ONTAP System wiederherstellen. Die Wiederherstellung von Ordnern aus lokalen Snapshots wird nicht unterstützt.</block>
+  <block id="637d209786fc6476ac3ed36c800de343" category="summary">Im privaten Modus (ohne Internetzugang) speichert NetApp Backup and Recovery seine Konfigurationsdaten im selben StorageGRID- oder ONTAP-S3-Bucket, der auch für Ihre Backups verwendet wird. Sollte das Hostsystem des Console-Agenten ausfallen, können Sie einen neuen Console-Agenten bereitstellen und diese Daten wiederherstellen.</block>
+  <block id="7bc0231d1aacc728e66087d46a205aab" category="paragraph">Im privaten Modus (ohne Internetzugang) speichert NetApp Backup and Recovery seine Konfigurationsdaten im selben StorageGRID- oder ONTAP-S3-Bucket, der auch für Ihre Backups verwendet wird. Sollte das Hostsystem des Console-Agenten ausfallen, können Sie einen neuen Console-Agenten bereitstellen und diese Daten wiederherstellen.</block>
 </blocks>

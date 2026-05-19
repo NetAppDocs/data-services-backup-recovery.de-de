@@ -261,8 +261,6 @@ sidebar:
       url: "/prev-reference-azure-archive-storage-tiers.html"
     - title: Unterstützte Google Cloud-Archivspeicherebenen
       url: "/prev-reference-gcp-archive-storage-tiers.html"
-    - title: Wiederherstellen von Konfigurationsdaten in einer Dark Site
-      url: "/reference-backup-cbs-db-in-dark-site.html"
   - title: Rechtliche Hinweise
     url: "/legal-notices.html"
 product-family:
