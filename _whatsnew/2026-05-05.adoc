@@ -8,9 +8,10 @@
 
 In dieser Version werden für Kubernetes-Workloads die folgenden Verbesserungen eingeführt:
 
+* *Trident Protect 26.05*: Diese Version enthält Trident Protect 26.05.
+* *Upgrade Trident Protect von Backup und Recovery*: Wenn auf Ihrem Kubernetes-Cluster Trident Protect 26.05 oder neuer ausgeführt wird, können Sie Trident Protect jetzt direkt von Backup und Recovery aus aktualisieren.
 * *Native Unterstützung für den Schutz von VMs*: Sie können jetzt VM-basierte Anwendungen erstellen, mit denen Sie virtuelle Maschinen genauso schützen können wie jede andere Anwendung.
 * *Ressourcentransformationen*: Sie können jetzt Ressourcentransformationen und Ressourcentransformationsvorlagen verwenden, um während des Wiederherstellungsprozesses Ressourcenattribute hinzuzufügen, zu entfernen und zu ändern.
-* *Upgrade Trident Protect from Backup and Recovery*: Sie können Trident Protect für einen Kubernetes-Cluster jetzt direkt aus Backup and Recovery aktualisieren.
 * *Geschützte Ressourcen anzeigen*: Sie können nun die in jedem Wiederherstellungspunkt einer Anwendung enthaltenen Ressourcen anzeigen und einen detaillierten JSON-Bericht herunterladen. Dies gibt Ihnen vollständige Transparenz über Ihre Wiederherstellungspunkte und vereinfacht die Audit-Compliance.
 
 

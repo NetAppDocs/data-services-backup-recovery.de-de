@@ -60,10 +60,6 @@ Der Assistent zum Wiederherstellen von Daten wird gestartet und die Seite _Allge
 . Wählen Sie den Quellspeicherort aus, von dem wiederhergestellt werden soll.
 . Wählen Sie den Zielcluster aus der Liste *Cluster* aus.
 . Wählen Sie, ob Sie in die ursprünglichen Namensräume oder in neue Namensräume wiederherstellen möchten.
-+
-
-NOTE: Die In-Place-Wiederherstellung (Wiederherstellung im ursprünglichen Namespace und ursprünglichen Cluster) von VM-basierten Anwendungen aus lokalen Snapshots wird derzeit nicht unterstützt.
-
 . Wenn Sie die Wiederherstellung in neuen Namensräumen gewählt haben, geben Sie den Ziel-Namespace oder die Ziel-Namensräume an, die verwendet werden sollen.
 . Wählen Sie *Weiter*.
 +
