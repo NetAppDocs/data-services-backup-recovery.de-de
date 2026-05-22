@@ -23,9 +23,6 @@ Verwenden Sie NetApp Backup and Recovery , um eine 3-2-1-Schutzstrategie zu impl
 * Sie können die Wiederherstellung schnell von der Vor-Ort-Kopie durchführen und die Offsite-Kopien verwenden, wenn die Vor-Ort-Kopie kompromittiert ist.
 
 
-
-NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -UI-Versionen finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zur vorherigen NetApp Backup and Recovery -Benutzeroberfläche"] .
-
 Sie können NetApp Backup und Recovery verwenden, um die folgenden Aufgaben im Zusammenhang mit Oracle Database-Workloads durchzuführen:
 
 * link:br-start-discover-oracle.html["Oracle Database-Workloads entdecken"]

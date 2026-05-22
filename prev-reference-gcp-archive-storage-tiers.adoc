@@ -16,12 +16,6 @@ summary: NetApp Backup and Recovery unterstützt eine Archivspeicherklasse von G
 [role="lead"]
 NetApp Backup and Recovery unterstützt eine Archivspeicherklasse von Google und die meisten Regionen.
 
-[]
-====
-
-NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -UI-Versionen finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zur vorherigen NetApp Backup and Recovery -Benutzeroberfläche"] .
-
-====
 
 
 == Unterstützte Google-Archivspeicherklassen für NetApp Backup and Recovery

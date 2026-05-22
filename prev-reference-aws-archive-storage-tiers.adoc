@@ -16,12 +16,6 @@ summary: NetApp Backup and Recovery unterstützt zwei S3-Archivspeicherklassen u
 [role="lead"]
 NetApp Backup and Recovery unterstützt zwei S3-Archivspeicherklassen und die meisten Regionen.
 
-[]
-====
-
-NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -UI-Versionen finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zur vorherigen NetApp Backup and Recovery -Benutzeroberfläche"] .
-
-====
 
 
 == Unterstützte S3-Archivspeicherklassen für NetApp Backup and Recovery
