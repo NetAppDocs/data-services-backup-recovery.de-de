@@ -151,7 +151,7 @@ NOTE: Die Modifizierung von PersistentVolumeClaims und Namespaces wird derzeit n
 .. Wählen Sie eine Vorlage aus der *Vorlagen*-Liste, um häufig verwendete Modifikatoreinstellungen schnell anzuwenden. Diese Liste enthält vordefinierte Vorlagen für gängige Anwendungsfälle sowie von Ihnen erstellte benutzerdefinierte Vorlagen.
 +
 
-NOTE: Erstellen Sie Ressourcentransformationsvorlagen im globalen link:br-start-configure.html#create-a-resource-modifier-template["Einstellungen"^] Bereich.
+NOTE: Erstellen Sie Ressourcentransformationsvorlagen im globalen link:br-start-configure.html#create-a-resource-transformation-template["Einstellungen"^] Bereich.
 
 .. Geben Sie an, welche Ressource Sie ändern möchten, indem Sie die Ressourcengruppe, die Version, den Kind und den Namen eingeben.
 .. Geben Sie die Operation an, die Sie an der Ressource ausführen möchten, indem Sie eine Operation aus der Liste *Operation* auswählen.

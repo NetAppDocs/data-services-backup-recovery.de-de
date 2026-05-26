@@ -343,14 +343,9 @@
   <block id="def5bb1c4fff047ce52153ac1f2ef9b5" category="list-text">Andere Speicherpooltypen als NetFS (nur NetFS wird unterstützt)</block>
   <block id="203b3a4b594fb28b853f0cb7e5561c26" category="list-text">Offline-Backup</block>
   <block id="11750133b5aeccdb05ec0c5b1027ace4" category="doc">Bekannte Einschränkungen bei NetApp Backup and Recovery für VMware-Workloads</block>
-  <block id="eace16d66cdd93ad876c620db7456077" category="list-text">Montieren</block>
-  <block id="1281764038ea27ade56d7d2b8be22798" category="list-text">Aushängen</block>
   <block id="25e66e51214e8342374fa891a42988b3" category="list-text">An einem anderen Speicherort wiederherstellen</block>
   <block id="ef18d76ed6c710e78abb28c0e09b3e30" category="list-text">vVol-Unterstützung</block>
-  <block id="2cc658d562a11cd1528c2219f2d25da7" category="list-text">NVMe-Unterstützung</block>
   <block id="98dc7ecfe4c87955d5fb8b98b895eac7" category="list-text">E-Mail-Integration</block>
-  <block id="7c007efb4505aa1063c750565e9e0eac" category="list-text">Richtlinie bearbeiten</block>
-  <block id="2af86af91c3987a4d2353d4ec7912d76" category="list-text">Schutzgruppe bearbeiten</block>
   <block id="eaaed5c467c733cb37141573cd1396cf" category="doc">Bekannte Einschränkungen bei NetApp Backup and Recovery für Microsoft SQL Server-Workloads</block>
   <block id="84c88b39fd4f46203da512886dfca56b" category="section-title">Unterstützung des Klon-Lebenszyklus</block>
   <block id="3c068270aa0287f7c64a3c9c3a4f89a7" category="list-text">Das Klonen aus dem Objektspeicher wird nicht unterstützt.</block>
@@ -877,8 +872,6 @@
   <block id="9772979b1b90e72fc3981d222d55243a" category="paragraph">Sie können Hyper-V-Workloads auf Amazon Web Services S3 oder StorageGRID sichern und Hyper-V-Workloads auf einem lokalen Hyper-V-Host wiederherstellen.</block>
   <block id="b7bf580752a61d71227184a60f0fbfd3" category="paragraph">Verwenden Sie NetApp Backup and Recovery , um eine 3-2-1-Schutzstrategie zu implementieren, bei der Sie 3 Kopien Ihrer Quelldaten auf 2 verschiedenen Speichersystemen sowie 1 Kopie in der Cloud haben. Zu den Vorteilen des 3-2-1-Ansatzes gehören:</block>
   <block id="79c28420811a3b277df19fdd38cd10e0" category="list-text">Mehrere Medientypen gewährleisten die Failover-Funktionalität im Falle eines physischen oder logischen Ausfalls eines Medientyps.</block>
-  <block id="532ee325506687dccb969b2e88d92b32" category="inline-link-macro">Wechseln Sie zur vorherigen NetApp Backup and Recovery -Benutzeroberfläche</block>
-  <block id="9847581c7ebe97c62f71ab1d90ed1696" category="admonition">Informationen zum Wechseln zwischen NetApp Backup and Recovery -UI-Versionen finden Sie unter<block ref="3a517a59babeb4a2a4c0dc21bafb9259" category="inline-link-macro-rx"></block> .</block>
   <block id="124a0ee1a6efcb80b27fc999fe308e62" category="paragraph">Mit NetApp Backup and Recovery können Sie die folgenden Aufgaben im Zusammenhang mit Hyper-V-Workloads ausführen:</block>
   <block id="e853aa4eb98908dd4b95a8cc80d9972f" category="list-text"><block ref="e853aa4eb98908dd4b95a8cc80d9972f" category="inline-link-macro-rx"></block></block>
   <block id="17eed7efdf891efe01a3f9078fc5227d" category="inline-link-macro">Erstellen und Verwalten von Schutzgruppen für Hyper-V-Workloads</block>
@@ -1573,7 +1566,6 @@
   <block id="812f9cbafb4aa2378e7470b20baa1fef" category="list-text">Wählen Sie optional *Suchen* aus, um die Ressourcen basierend auf Ihren Suchkriterien zu finden.</block>
   <block id="aa49cc3a36d2c16ec191533800daa634" category="list-text">Wenn die Liste die Ressourcen enthält, die Sie schützen möchten, wählen Sie *Weiter*.</block>
   <block id="4d3ca3588667d04ddbd4f318cdd7677e" category="inline-link-macro">Fügen Sie eine Schutzrichtlinie hinzu</block>
-  <block id="2769be0838f5e6f63e01200eeeec1910" category="list-text">Wählen Sie im Bereich *Richtlinie* optional eine vorhandene Schutzrichtlinie zum Schutz der Anwendung aus oder erstellen Sie eine neue Richtlinie. Wenn Sie keine Richtlinie auswählen, wird die Anwendung ohne Schutzrichtlinie erstellt. Du kannst<block ref="99c823f28a98717f81cda4eb0c448db5" category="inline-link-macro-rx"></block> später.</block>
   <block id="4049c9e3b9c424f5991c5f917ad92c40" category="inline-link-macro">Ausführungs-Hook-Vorlage</block>
   <block id="5e97a71c79e2f24deabf91daa3d20cd1" category="list-text">Aktivieren und konfigurieren Sie im Bereich *Prescripts und Postscripts* alle Prescript- oder Postscript-Ausführungs-Hooks, die Sie vor oder nach Sicherungsvorgängen ausführen möchten.  Um Präskripte oder Postskripte zu aktivieren, müssen Sie bereits mindestens ein<block ref="3059f3d40a47ddab4d322199b8601d95" category="inline-link-macro-rx"></block> .</block>
   <block id="9f77aac915c7dddb04d022bff72e881d" category="paragraph">Die Anwendung wird erstellt und in der Liste der Anwendungen auf der Registerkarte *Anwendungen* des Kubernetes-Inventars angezeigt.  Die NetApp Console ermöglicht den Schutz der Anwendung basierend auf Ihren Einstellungen und Sie können den Fortschritt im Bereich *Überwachung* der Sicherung und Wiederherstellung überwachen.</block>
@@ -5354,7 +5346,6 @@
   <block id="4068d5ec1a7b4b267d864b4ad09e26cf" category="list-text">Aktivieren Sie die Option *Ressourcentransformation*, um Änderungen am Modifikator vorzunehmen.</block>
   <block id="58277b3a38eb38eb305ae4faa19d846d" category="list-text">Wählen Sie eine Vorlage aus der *Vorlagen*-Liste, um häufig verwendete Modifikatoreinstellungen schnell anzuwenden. Diese Liste enthält vordefinierte Vorlagen für gängige Anwendungsfälle sowie von Ihnen erstellte benutzerdefinierte Vorlagen.</block>
   <block id="f4f70727dc34561dfde1a3c529b6205c" category="inline-link-macro">Einstellungen</block>
-  <block id="632317b2bb237c1d7d24b46218476569" category="admonition">Erstellen Sie Ressourcentransformationsvorlagen im globalen <block ref="676a0eaa3ab155e3d0da7696107f049f" category="inline-link-macro-rx"></block> Bereich.</block>
   <block id="4f92a8032a0def18d5e7cfbe7fc6b465" category="list-text">Geben Sie an, welche Ressource Sie ändern möchten, indem Sie die Ressourcengruppe, die Version, den Kind und den Namen eingeben.</block>
   <block id="0be96bf87a216fa4424d9b22e1624c4c" category="list-text">Geben Sie die Operation an, die Sie an der Ressource ausführen möchten, indem Sie eine Operation aus der Liste *Operation* auswählen.</block>
   <block id="526aad7c01abce8bd37b72aea1adf9a2" category="list-text">Geben Sie einen JSON-Pfad für den spezifischen Schlüssel ein, den Sie ändern möchten.</block>
@@ -5558,4 +5549,6 @@
   <block id="54f8a7826ae5101b3374158dadb22dbe" category="list-text">*Upgrade Trident Protect von Backup und Recovery*: Wenn auf Ihrem Kubernetes-Cluster Trident Protect 26.05 oder neuer ausgeführt wird, können Sie Trident Protect jetzt direkt von Backup und Recovery aus aktualisieren.</block>
   <block id="482d8dda04ea30da4fa480c529cb09b0" category="list-text">*Trident Protect 26.05.1*: Diese Version enthält Trident Protect 26.05.1.</block>
   <block id="d0426b89e832dc9c7bd7771552d69499" category="list-text">*Wiederherstellung direkt am Ort für VM-basierte Anwendungen*: Sie können VM-basierte Anwendungen jetzt im ursprünglichen Namespace und ursprünglichen Cluster wiederherstellen.</block>
+  <block id="b53801e3c4b30277c5f2975ffed7720c" category="list-text">Optional können Sie im Bereich *Richtlinie* eine vorhandene Datensicherungsstrategie auswählen, um die Anwendung zu schützen, oder eine neue Strategie erstellen. Wenn Sie keine Strategie auswählen, wird die Anwendung ohne Datensicherungsstrategie erstellt. Sie können <block ref="ee6916d2984f9ce63f3c3b8b1b4f14f9" category="inline-link-macro-rx"></block> dies später nachholen.</block>
+  <block id="fefcfa5dbc8a28e96b9d098440cd7d4a" category="admonition">Erstellen Sie Ressourcentransformationsvorlagen im globalen <block ref="3ce10431a19a41e956e68fb70b49b83e" category="inline-link-macro-rx"></block> Bereich.</block>
 </blocks>
