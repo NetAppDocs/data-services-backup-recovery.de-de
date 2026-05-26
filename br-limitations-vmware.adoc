@@ -18,12 +18,7 @@ Plattformen, Geräte oder Funktionen, die mit dieser Version nicht oder nicht gu
 
 Die folgenden Aktionen werden in VMware-Workloads in NetApp Backup and Recovery nicht unterstützt:
 
-* Montieren
-* Aushängen
 * vVol-Unterstützung
-* NVMe-Unterstützung
 * E-Mail-Integration
-* Richtlinie bearbeiten
-* Schutzgruppe bearbeiten
 * Unterstützung der rollenbasierten Zugriffskontrolle (RBAC)
 
