@@ -17,7 +17,7 @@ summary: Mit der Such- und Wiederherstellungsfunktion können Sie Volumes, Ordne
 Backups Ihrer ONTAP -Volume-Daten werden als Snapshots, auf replizierten Volumes oder im Objektspeicher gespeichert.  Sie können Daten von jedem dieser Speicherorte zu einem bestimmten Zeitpunkt wiederherstellen.  Mit NetApp Backup and Recovery können Sie je nach Bedarf ein gesamtes Volume, einen Ordner oder einzelne Dateien wiederherstellen.
 
 
-NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
+NOTE: Wenn Sie ein SnapLock-fähiges Volume wiederherstellen, bleibt der SnapLock-Schutz nur erhalten, wenn der Zielspeicher WORM-fähig ist. Wenn Sie auf einen nicht-WORM-fähigen Zielspeicher wiederherstellen, wird der SnapLock-Status vom wiederhergestellten Volume entfernt.
 
 * Sie können ein *Volume* (als neues Volume) auf dem ursprünglichen System, auf einem anderen System, das dasselbe Cloud-Konto verwendet, oder auf einem lokalen ONTAP -System wiederherstellen.
 * Sie können einen *Ordner* aus replizierten oder Objektspeicher-Snapshots auf ein Volume im ursprünglichen System, auf ein Volume in einem anderen System mit demselben Cloud-Konto oder auf ein Volume in einem lokalen ONTAP System wiederherstellen. Die Wiederherstellung von Ordnern aus lokalen Snapshots wird nicht unterstützt.

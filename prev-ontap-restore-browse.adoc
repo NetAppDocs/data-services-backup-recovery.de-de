@@ -79,6 +79,9 @@ NOTE: Wenn die ONTAP Version auf Ihrem System niedriger als 9.13.1 ist, können 
 
 Wenn Sie ein Volume aus einer Sicherungsdatei wiederherstellen, erstellt NetApp Backup and Recovery mithilfe der Daten aus der Sicherung ein _neues_ Volume.  Wenn Sie ein Backup aus dem Objektspeicher verwenden, können Sie die Daten auf einem Volume im Originalsystem, auf einem anderen System, das sich im selben Cloud-Konto wie das Quellsystem befindet, oder auf einem lokalen ONTAP -System wiederherstellen.
 
+
+NOTE: Wenn Sie ein SnapLock-fähiges Volume wiederherstellen, bleibt der SnapLock-Schutz nur erhalten, wenn der Zielspeicher WORM-fähig ist. Wenn Sie auf einen nicht-WORM-fähigen Zielspeicher wiederherstellen, wird der SnapLock-Status vom wiederhergestellten Volume entfernt.
+
 Wenn Sie ein Cloud-Backup auf einem Cloud Volumes ONTAP -System mit ONTAP 9.13.0 oder höher oder auf einem lokalen ONTAP System mit ONTAP 9.14.1 wiederherstellen, haben Sie die Möglichkeit, eine _schnelle Wiederherstellung_ durchzuführen. Die schnelle Wiederherstellung ist ideal für Notfallwiederherstellungssituationen, in denen Sie so schnell wie möglich Zugriff auf ein Volume bereitstellen müssen. Bei einer schnellen Wiederherstellung werden die Metadaten aus der Sicherungsdatei auf einem Volume wiederhergestellt, anstatt die gesamte Sicherungsdatei wiederherzustellen.  Die schnelle Wiederherstellung wird für leistungs- oder latenzempfindliche Anwendungen nicht empfohlen und wird bei Sicherungen im Archivspeicher nicht unterstützt.
 
 

@@ -42,6 +42,7 @@ link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über die 
 * Wenn sich die Sicherungsdatei im Objektspeicher im Archivspeicher befindet, wird die Wiederherstellung auf Ordnerebene nur unterstützt, wenn die ONTAP -Version 9.13.1 oder höher ist.  Wenn Sie eine frühere Version von ONTAP verwenden, können Sie den Ordner aus einer neueren, nicht archivierten Sicherungsdatei wiederherstellen oder das gesamte Volume aus der archivierten Sicherung wiederherstellen und dann auf den benötigten Ordner und die benötigten Dateien zugreifen.
 * Die Wiederherstellungspriorität „Hoch“ wird beim Wiederherstellen von Daten aus dem Azure-Archivspeicher auf StorageGRID -Systemen nicht unterstützt.
 * Das Wiederherstellen von Ordnern aus Volumes im ONTAP S3-Objektspeicher wird derzeit nicht unterstützt.
+* Wenn Sie ein SnapLock-fähiges Volume wiederherstellen, bleibt der SnapLock-Schutz nur erhalten, wenn der Zielspeicher WORM-fähig ist. Wenn Sie auf einen nicht-WORM-fähigen Zielspeicher wiederherstellen, wird der SnapLock-Status vom wiederhergestellten Volume entfernt.
 
 
 ====
