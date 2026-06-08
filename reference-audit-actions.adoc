@@ -1,0 +1,64 @@
+---
+sidebar: sidebar 
+permalink: reference-audit-actions.html 
+keywords: audit, audit actions, NetApp Console, Backup and Recovery, audit log 
+summary: Referenz der von der NetApp Console-Überwachung unterstützten Backup- und Recovery-Aktionen. 
+---
+= Geprüfte Sicherungs- und Wiederherstellungsaktionen
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Die NetApp Console Audit-Seite protokolliert die folgenden Aktionen, die Benutzer in Backup and Recovery im Rahmen der Auditierungsfunktion ausführen. Details zum Anzeigen und Filtern von Audit-Ereignissen finden Sie in https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html#audit-user-activity-from-the-audit-page["Benutzeraktivitäten auf der Seite „Audit“ prüfen"^] der Konsolendokumentation.
+
+Für jede überwachte Aktion protokolliert die Konsole den Dienstnamen, den Agenten, die Ressource, den Benutzer und den Aktionsstatus.
+
+.Geprüfte Sicherungs- und Wiederherstellungsaktionen
+* Volume oder Dateien aus Backup wiederherstellen
+* Volume auf Snapshot zurücksetzen
+* Dateiexplorer starten
+* Dateien aus Snapshot wiederherstellen
+* Cloud-Anmeldeinformationen registrieren
+* Cloud-Zugangsdaten aktualisieren
+* Cloud-Anmeldeinformationen löschen
+* Objektspeicher-Bucket erstellen
+* Objektspeicher-Bucket ändern
+* Backup-Migration validieren
+* Backups zwischen ONTAP Systemen migrieren
+* Quellschutz initialisieren
+* Peer-Cluster zum Schutz
+* Zielschutz initialisieren
+* Volume-Replikation starten
+* Cyber Vault-System erstellen
+* Cyber Vault-System löschen
+* Cyber Vault-Zugriff aktivieren
+* Cyber Vault-Zugriff deaktivieren
+* Ad-hoc-Snapshot erstellen
+* Entdecken Sie Volumes und Beziehungen
+* Anwendungskonfiguration aktualisieren
+* Panoramaschutz für Volumes aktivieren
+* Panoramaschutz für Volumes anpassen
+* Objektspeicher für das System modifizieren
+* Ad-hoc-Cloud-Backup erstellen
+* Schutz für das System initialisieren
+* Panoramaschutz für Volumes aktivieren
+* Panoramaschutz für Volumes anpassen
+* Aktualisierung der Metadaten der Volume-Sicherung (geplant)
+* Sicherung in einem Volume aktivieren
+* Panoramaschutz für Volumes anpassen
+* ANF-Snapshot-Richtlinie löschen
+* Panoramaschutz in einem System aktivieren
+* Modifizieren Sie den Panoramaschutz in einem System
+
+
+
+
+== Weitere Informationen
+
+* https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html#audit-user-activity-from-the-audit-page["Benutzeraktivitäten auf der Seite „Audit“ prüfen"^]
+

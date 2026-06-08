@@ -1,0 +1,24 @@
+= ONTAP Volumes Workloads-Verbesserungen
+:allow-uri-read: 
+
+
+
+
+=== ONTAP Volumes Workloads-Verbesserungen
+
+In dieser Version führt ONTAP Volumes-Workloads die folgende Verbesserung ein:
+
+*Unterstützung für S3-kompatiblen Cloud-Speicher*: NetApp Backup and Recovery für Volumes-Workloads unterstützt jetzt das Sichern in S3-kompatiblen Cloud-Speicher.
+
+Weitere Informationen zum Schutz von ONTAP Volumes-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["Überblick über den Schutz von ONTAP Volumes Workloads"].
+
+
+
+=== Hyper-V-Workload-Verbesserungen
+
+In dieser Version werden für Hyper-V-Workloads die folgenden Verbesserungen eingeführt:
+
+* *Wiederherstellen von Dateien und Ordnern in einer Gast-VM – Verbesserungen*: Sie können jetzt Dateien und Ordner aus einem Snapshot auf primärem oder sekundärem Speicher in einer Gast-Windows-VM wiederherstellen. Diese Funktion wird nun für CIFS- und SAN-VMs unterstützt.
+
+
+Weitere Informationen zum Schutz von Hyper-V-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Übersicht zum Schützen von Hyper-V-Workloads"] .

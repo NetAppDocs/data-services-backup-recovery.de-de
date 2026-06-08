@@ -105,27 +105,64 @@ https://bluexp.netapp.com/cloud-volumes-global-regions["Erfahren Sie mehr mit de
 
 NetApp Backup and Recovery ermöglicht die Sicherung von ONTAP Volumes von den folgenden Quellsystemen auf die folgenden Sekundärsysteme und Objektspeicher bei öffentlichen und privaten Cloud-Anbietern. Die Snapshots werden auf dem Quellsystem gespeichert.
 
+
+NOTE: Wasabi ist derzeit der einzige qualifizierte S3-kompatible Objektspeicheranbieter. Andere S3-kompatible Anbieter wurden noch nicht validiert.
+
 [cols="33,33,33"]
 |===
 | Quellsystem | Sekundärsystem (Replikation) | Zielobjektspeicher (Backup) 
 
 
-| Cloud Volumes ONTAP in AWS | Cloud Volumes ONTAP in AWS On-Premises- ONTAP -System | Amazon S3 
+| Cloud Volumes ONTAP in AWS  a| 
+* Cloud Volumes ONTAP in AWS
+* On-Premises- ONTAP -System
+
+| Amazon S3 
 
 
-| Cloud Volumes ONTAP in Azure | Cloud Volumes ONTAP in Azure On-Premises- ONTAP -System | Azure-Blob 
+| Cloud Volumes ONTAP in Azure  a| 
+* Cloud Volumes ONTAP in Azure
+* On-Premises- ONTAP -System
+
+| Azure-Blob 
 
 
-| Cloud Volumes ONTAP in Google | Cloud Volumes ONTAP im lokalen ONTAP -System von Google | Google Cloud-Speicher 
+| Cloud Volumes ONTAP in Google  a| 
+* Cloud Volumes ONTAP in Google
+* On-Premises- ONTAP -System
+
+| Google Cloud-Speicher 
 
 
-| On-Premises- ONTAP -System | Cloud Volumes ONTAP On-Premises ONTAP -System | Amazon S3, Azure Blob, Google Cloud Storage, NetApp StorageGRID ONTAP S3 
+| On-Premises- ONTAP -System  a| 
+* Cloud Volumes ONTAP
+* On-Premises- ONTAP -System
+
+ a| 
+* Amazon S3
+* S3-kompatibler Speicher
+* Azure-Blob
+* Google Cloud-Speicher
+* NetApp StorageGRID
+* ONTAP S3
+
+
+
+
+| Cloud Volumes ONTAP in S3-kompatiblem Objektspeicher  a| 
+* Cloud Volumes ONTAP in S3-kompatiblem Objektspeicher
+* On-Premises- ONTAP -System
+
+| S3-kompatibler Objektspeicher 
 |===
 
 
 === Unterstützte Wiederherstellungsziele
 
 ONTAP Daten können aus einer Sicherungsdatei, die sich auf einem sekundären System (einem replizierten Volume) oder im Objektspeicher (einer Sicherungsdatei) befindet, auf den folgenden Systemen wiederhergestellt werden. Snapshots befinden sich auf dem Quellsystem und können nur auf demselben System wiederhergestellt werden.
+
+
+NOTE: Wasabi ist derzeit der einzige qualifizierte S3-kompatible Objektspeicheranbieter. Andere S3-kompatible Anbieter wurden noch nicht validiert.
 
 [cols="33,33,33"]
 |===
@@ -135,19 +172,62 @@ ONTAP Daten können aus einer Sicherungsdatei, die sich auf einem sekundären Sy
 | *Objektspeicher (Backup)* | *Sekundäres System (Replikation)* |  
 
 
-| Amazon S3 | Cloud Volumes ONTAP in AWS On-Premises- ONTAP -System | Cloud Volumes ONTAP in AWS On-Premises- ONTAP -System 
+| Amazon S3  a| 
+* Cloud Volumes ONTAP in AWS
+* On-Premises- ONTAP -System
+
+ a| 
+* Cloud Volumes ONTAP in AWS
+* On-Premises- ONTAP -System
 
 
-| Azure-Blob | Cloud Volumes ONTAP in Azure On-Premises- ONTAP -System | Cloud Volumes ONTAP in Azure On-Premises- ONTAP -System 
 
 
-| Google Cloud-Speicher | Cloud Volumes ONTAP im lokalen ONTAP -System von Google | Cloud Volumes ONTAP im lokalen ONTAP -System von Google 
+| Azure-Blob  a| 
+* Cloud Volumes ONTAP in Azure
+* On-Premises- ONTAP -System
+
+ a| 
+* Cloud Volumes ONTAP in Azure
+* On-Premises- ONTAP -System
 
 
-| NetApp StorageGRID | On-Premises- ONTAP -System Cloud Volumes ONTAP | On-Premises- ONTAP -System 
 
 
-| ONTAP S3 | On-Premises- ONTAP -System Cloud Volumes ONTAP | On-Premises- ONTAP -System 
+| Google Cloud-Speicher  a| 
+* Cloud Volumes ONTAP in Google
+* On-Premises- ONTAP -System
+
+ a| 
+* Cloud Volumes ONTAP in Google
+* On-Premises- ONTAP -System
+
+
+
+
+| NetApp StorageGRID  a| 
+* On-Premises- ONTAP -System
+* Cloud Volumes ONTAP
+
+| On-Premises- ONTAP -System 
+
+
+| ONTAP S3  a| 
+* On-Premises- ONTAP -System
+* Cloud Volumes ONTAP
+
+| On-Premises- ONTAP -System 
+
+
+| S3-kompatibler Objektspeicher  a| 
+* Cloud Volumes ONTAP in S3-kompatiblem Objektspeicher
+* On-Premises- ONTAP -System
+
+ a| 
+* Cloud Volumes ONTAP in S3-kompatiblem Objektspeicher
+* On-Premises- ONTAP -System
+
+
 |===
 Beachten Sie, dass Verweise auf „On-Premises ONTAP Systeme“ FAS, AFF und ONTAP Select Systeme umfassen.
 

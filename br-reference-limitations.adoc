@@ -94,6 +94,7 @@ Eine Erklärung zu diesen Verschlüsselungsarten finden Sie unterhttps://docs.ne
 Diese Einschränkungen gelten sowohl für die Methoden „Suchen und Wiederherstellen“ als auch „Durchsuchen und Wiederherstellen“ zum Wiederherstellen von Dateien und Ordnern, sofern nicht ausdrücklich darauf hingewiesen wird.
 
 * Das Wiederherstellen von Ordnern aus lokalen Snapshots wird nicht unterstützt.
+* Wiederherstellung von Dateien und Ordnern in einer Disaster-Recovery-Konfiguration (DR): Nach einem Failover behalten Volumes auf einer für DR konfigurierten Storage-VM ihre bestehenden SnapMirror-Beziehungen in einem getrennten Zustand bei. Versuche, Dateien oder Ordner wiederherzustellen, die temporäre SnapMirror-RST-Beziehungen erstellen, werden von ONTAP blockiert, da das Zielvolume bereits eine Beziehung aufweist.
 * Mit „Durchsuchen und Wiederherstellen“ können bis zu 100 einzelne Dateien gleichzeitig wiederhergestellt werden.
 * Mit „Suchen und Wiederherstellen“ kann jeweils eine Datei wiederhergestellt werden.
 * Bei Verwendung von ONTAP 9.13.0 oder höher können „Browse & Restore“ und „Search & Restore“ einen Ordner zusammen mit allen darin enthaltenen Dateien und Unterordnern wiederherstellen.

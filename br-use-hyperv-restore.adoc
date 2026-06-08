@@ -24,9 +24,6 @@ Sie können Workloads von verschiedenen Startorten wiederherstellen:
 * Wiederherstellung aus einem Objektspeicher-Backup (nur am ursprünglichen Speicherort)
 
 
-
-NOTE: Die Wiederherstellung aus Objektspeicher-Backup wird für VMs, die sich auf SAN-Speicher befinden, nicht unterstützt.
-
 .Stellen Sie diese Punkte wieder her
 Sie können Daten bis zu diesen Punkten wiederherstellen:
 

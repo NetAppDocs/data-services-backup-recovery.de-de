@@ -14,7 +14,7 @@ summary: Sie können eine oder mehrere Dateien oder Ordner aus einem Hyper-V-VM-
 
 
 [role="lead"]
-Stellen Sie Dateien und Ordner aus Hyper-V-VM-Backups auf dem primären Speicher in einer Windows-Gast-VM wieder her.
+Stellen Sie Dateien und Ordner aus Hyper-V-VM-Backups auf primärem oder sekundärem Speicher in einer Windows-Gast-VM wieder her.
 
 
 
@@ -35,8 +35,7 @@ Beachten Sie beim Wiederherstellen von Dateien und Ordnern Folgendes:
 [NOTE]
 ====
 * Derzeit ist es nicht möglich, Dateien und Ordner auf Linux-Gast-VMs wiederherzustellen.
-* Das Wiederherstellen von Dateien und Ordnern aus Sicherungen, die auf Sekundärspeicher oder Objektspeicher abgelegt sind, wird nicht unterstützt.
-* Dateien oder Ordner können nicht auf VMs wiederhergestellt werden, die sich auf SAN-Speicher befinden.
+* Das Wiederherstellen von Dateien und Ordnern aus auf Objektspeicher abgelegten Backups wird nicht unterstützt.
 * Auf einer VM kann gleichzeitig nur ein Anfüge- oder Wiederherstellungsvorgang ausgeführt werden. Sie können auf derselben VM keine parallelen Anfüge- oder Wiederherstellungsvorgänge ausführen.
 * Das Anzeigen oder Durchsuchen reservierter Partitionen kann zu einem Fehler führen.
 * Während des Wiederherstellungsvorgangs werden die Attribute „Versteckt“, „System“ und „Verschlüsselt“ von Gastdateien in der wiederhergestellten Datei nicht beibehalten.
@@ -53,7 +52,7 @@ Beachten Sie beim Wiederherstellen von Dateien und Ordnern Folgendes:
 . Gehen Sie auf der Seite *Aus Snapshots wiederherstellen* wie folgt vor:
 +
 .. Optional können Sie einen Zeitraum auswählen, um die Liste der Snapshots nach Erstellungszeit zu filtern.
-.. Wählen Sie einen Snapshot auf dem primären Speicher aus, von dem die Wiederherstellung erfolgen soll, und klicken Sie dann auf *Weiter*.
+.. Wählen Sie einen Snapshot auf dem primären oder sekundären Speicher aus, von dem die Wiederherstellung erfolgen soll, und klicken Sie dann auf *Weiter*.
 
 
 . Wählen Sie in der Liste eine virtuelle Festplatte aus, die die Dateien und Ordner enthält, die Sie wiederherstellen müssen, und wählen Sie dann *Weiter* aus.
