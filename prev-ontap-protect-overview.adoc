@@ -147,13 +147,6 @@ NOTE: Wasabi ist derzeit der einzige qualifizierte S3-kompatible Objektspeichera
 * ONTAP S3
 
 
-
-
-| Cloud Volumes ONTAP in S3-kompatiblem Objektspeicher  a| 
-* Cloud Volumes ONTAP in S3-kompatiblem Objektspeicher
-* On-Premises- ONTAP -System
-
-| S3-kompatibler Objektspeicher 
 |===
 
 
@@ -219,17 +212,10 @@ NOTE: Wasabi ist derzeit der einzige qualifizierte S3-kompatible Objektspeichera
 | On-Premises- ONTAP -System 
 
 
-| S3-kompatibler Objektspeicher  a| 
-* Cloud Volumes ONTAP in S3-kompatiblem Objektspeicher
-* On-Premises- ONTAP -System
-
- a| 
-* Cloud Volumes ONTAP in S3-kompatiblem Objektspeicher
-* On-Premises- ONTAP -System
-
-
+| S3-kompatibler Objektspeicher | On-Premises- ONTAP -System | On-Premises- ONTAP -System 
 |===
-Beachten Sie, dass Verweise auf „On-Premises ONTAP Systeme“ FAS, AFF und ONTAP Select Systeme umfassen.
+
+NOTE: Verweise auf „on-premises ONTAP system“ umfassen FAS, AFF und ONTAP Select Systeme.
 
 
 
