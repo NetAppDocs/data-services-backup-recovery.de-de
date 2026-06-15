@@ -45,7 +45,7 @@ Folgende Aktionen werden beim Sichern auf S3-kompatiblem Speicher unterstützt:
 
 * Sicherung von absturzkonsistenten und anwendungskonsistenten Snapshots von lokalem ONTAP in S3-kompatible Objektspeicher von Drittanbietern
 * Kernprozesse für den Datenschutz: Backup, Wiederherstellung und Backup-Löschung
-* Validiert anhand von S3-kompatiblen Anbietern wie Wasabi, MinIO, IBM Object Store und Apple Object Store
+* Getestet und validiert mit Wasabi Object Storage, zudem wurden erfolgreiche Implementierungen mit MinIO, IBM Cloud Object Storage und Apple Object Store von Kunden berichtet.
 * NetApp Support nimmt alle Supportanfragen im Zusammenhang mit S3-kompatiblen Objektspeichern von Drittanbietern entgegen und triagiert sie.
 
 
