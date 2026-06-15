@@ -60,7 +60,13 @@ Der Assistent zum Wiederherstellen von Daten wird gestartet und die Seite _Allge
 . Wählen Sie den Quellspeicherort aus, von dem wiederhergestellt werden soll.
 . Wählen Sie den Zielcluster aus der Liste *Cluster* aus.
 . Wählen Sie, ob Sie in die ursprünglichen Namensräume oder in neue Namensräume wiederherstellen möchten.
-. Wenn Sie die Wiederherstellung in neuen Namensräumen gewählt haben, geben Sie den Ziel-Namespace oder die Ziel-Namensräume an, die verwendet werden sollen.
+. Wenn Sie die Wiederherstellung in neuen Namensräumen gewählt haben, sind folgende Schritte erforderlich:
++
+.. Geben Sie den oder die Ziel-Namespaces ein, die verwendet werden.
+.. Den Namen der Zielanwendung eingeben.
+.. Optional kann die Option *Keine Anwendung für wiederhergestellte Ressourcen erstellen* ausgewählt werden, um Ressourcen wiederherzustellen, ohne ein benutzerdefiniertes Anwendungsressourcenobjekt zu erstellen. Dies reduziert unnötige Einträge im Anwendungsinventar.
+
+
 . Wählen Sie *Weiter*.
 +
 Die Seite „Ressourcenauswahl“ wird angezeigt.
@@ -122,8 +128,17 @@ NOTE: Bei den angezeigten Ressourcen handelt es sich um die Ressourcen, die derz
 .Spezifische VM-basierte Anwendungsressourcen
 --
 .. Wählen Sie *Selektive Ressourcen* aus.
+.. Führen Sie einen der folgenden Schritte aus:
++
+*** Zur Wiederherstellung ganzer virtueller Maschinen die Registerkarte *Virtuelle Maschinen* auswählen.
 +
 Backup and Recovery listet alle virtuellen Maschinen im Wiederherstellungspunkt auf. Sie können auswählen, welche VMs in den Wiederherstellungsvorgang einbezogen werden sollen.
+
+*** Zum Wiederherstellen einzelner persistenter Volume-Ansprüche die Registerkarte *Persistente Volume-Ansprüche* auswählen.
++
+Backup and Recovery listet alle Persistent Volume Claims im Wiederherstellungspunkt auf. Es kann ausgewählt werden, welche Persistent Volume Claims in die Wiederherstellungsoperation einbezogen werden.
+
+
 
 .. Wenn Sie fertig sind, wählen Sie *Weiter*.
 

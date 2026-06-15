@@ -18,6 +18,26 @@ Erfahren Sie, was es Neues bei NetApp Backup and Recovery gibt.
 
 
 
+== 15. Juni 2026
+
+Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
+
+
+
+=== Kubernetes-Workloads-Erweiterungen
+
+In dieser Version werden für Kubernetes-Workloads die folgenden Verbesserungen eingeführt:
+
+* *Trident Protect 26.06*: Diese Version enthält Trident Protect 26.06.
+* *Anwendungserstellung bei Wiederherstellung überspringen*: Die automatische Erstellung benutzerdefinierter Anwendungsressourcenobjekte kann während Wiederherstellungsvorgängen nun übersprungen werden. Dies reduziert unnötige Einträge im Anwendungsinventar.
+* *Wiederherstellung persistenter Volume Claims in VMs*: Bei der Wiederherstellung von VM-basierten Anwendungen ist es jetzt möglich, einzelne persistente Volume Claims wiederherzustellen, ohne die gesamte virtuelle Maschine wiederherstellen zu müssen, was die Wiederherstellung beschleunigt, wenn bestimmte Festplatten oder Volumes von Beschädigungen oder Datenverlust betroffen sind.
+* *Verbesserungen im Jobmonitor*: Die Überwachung von Jobs bietet jetzt eine verbesserte Transparenz bei Kubernetes-Schutzjobs. Detaillierte Statusinformationen zu Jobs und Subjobs sowie der jeweils verwendete Zielspeicher sind einsehbar.
+
+
+Weitere Informationen zum Schutz von Kubernetes-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Übersicht zum Schützen von Kubernetes-Workloads"] .
+
+
+
 == 08. Juni 2026
 
 Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
