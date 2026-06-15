@@ -27,6 +27,9 @@ Sie können die folgenden Ziele im Zusammenhang mit Richtlinien erreichen:
 
 
 
+NOTE: Bei Hyper-V-Workloads verwenden Sicherungszeitpläne die Zeitzone des Hyper-V-Hosts, nicht UTC oder die lokale Zeit Ihres Browsers. Diese Zeitzone wird beim Erstellen des Zeitplans festgelegt. Wenn sich die Zeitzone des Hosts ändert, ist es erforderlich, den Host zu aktualisieren und den Zeitplan neu zu erstellen, damit die neue Zeitzone wirksam wird. Weitere Informationen sind unter link:br-use-hyperv-protection-groups.html["Erstellen und Verwalten von Schutzgruppen für Hyper-V-Workloads"] verfügbar.
+
+
 
 == Richtlinien anzeigen
 

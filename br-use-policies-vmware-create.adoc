@@ -29,6 +29,9 @@ Sie können die folgenden Ziele im Zusammenhang mit Richtlinien erreichen:
 
 
 
+NOTE: Für VMware-Workloads verwenden Sicherungspläne die Zeitzone des VMware vCenter Servers, nicht UTC oder die lokale Zeit Ihres Browsers. Diese Zeitzone wird beim Erstellen des Zeitplans festgelegt. Wenn sich die Zeitzone des Hosts ändert, ist eine Aktualisierung des Hosts und eine Neuerstellung des Zeitplans erforderlich, damit die neue Zeitzone wirksam wird. Weitere Informationen sind unter link:br-use-vmware-protection-groups.html["Erstellen und Verwalten von Schutzgruppen für VMware-Workloads"] verfügbar.
+
+
 
 == Richtlinien anzeigen
 

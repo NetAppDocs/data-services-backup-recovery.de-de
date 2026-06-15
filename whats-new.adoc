@@ -59,9 +59,21 @@ Weitere Informationen zum Schutz von ONTAP Volumes-Workloads finden Sie unter  h
 In dieser Version werden für Hyper-V-Workloads die folgenden Verbesserungen eingeführt:
 
 * *Wiederherstellen von Dateien und Ordnern in einer Gast-VM – Verbesserungen*: Sie können jetzt Dateien und Ordner aus einem Snapshot auf primärem oder sekundärem Speicher in einer Gast-Windows-VM wiederherstellen. Diese Funktion wird nun für CIFS- und SAN-VMs unterstützt.
+* *Schutzgruppen verwenden jetzt die Zeitzone des Hyper-V-Hosts*: Schutzgruppen verwenden nun die Zeitzone des Hyper-V-Hosts. Schutzgruppen, die vor der Einführung der Host-Zeitzonenplanung erstellt wurden, verwenden weiterhin ihre zuvor konfigurierte Zeit (typischerweise UTC). Damit diese Schutzgruppen die Zeitzone des Hyper-V-Hosts verwenden, ist es erforderlich, die Zeitpläne neu zu erstellen. Weitere Informationen sind unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protection-groups.html["Erstellen und Verwalten von Schutzgruppen für Hyper-V-Workloads"] verfügbar.
 
 
 Weitere Informationen zum Schutz von Hyper-V-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Übersicht zum Schützen von Hyper-V-Workloads"] .
+
+
+
+=== VMware-Workload-Verbesserungen
+
+In dieser Version führt VMware Workloads die folgende Verbesserung ein:
+
+* *Schutzgruppen verwenden jetzt die Zeitzonenplanung des Hosts*: Schutzgruppen verwenden nun die Zeitzone des VMware vCenter Servers. Schutzgruppen, die vor der Einführung der Host-Zeitzonenplanung erstellt wurden, laufen weiterhin in ihrer zuvor konfigurierten Zeitzone (typischerweise UTC). Um die vCenter-Zeitzone zu nutzen, ist es erforderlich, die Zeitpläne neu zu erstellen. Weitere Informationen sind unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protection-groups.html["Erstellen und Verwalten von Schutzgruppen für VMware-Workloads"] verfügbar.
+
+
+Weitere Informationen zum Schutz von VMware-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["Übersicht zum Schützen von VMware-Workloads"] .
 
 
 

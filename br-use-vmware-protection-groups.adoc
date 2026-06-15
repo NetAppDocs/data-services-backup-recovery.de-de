@@ -54,6 +54,7 @@ Erstellen Sie eine Schutzgruppe, um die Ressourcen zu organisieren, die Sie geme
 .Bevor Sie beginnen
 * Stellen Sie sicher, dass in Ihrer Umgebung unterstützte Versionen von VMware vSphere verwendet werden.
 * Beim Erstellen einer tagbasierten Schutzgruppe stellen Sie sicher, dass die virtuellen Maschinen und Datenspeicher, die Sie schützen möchten, bereits einem oder mehreren vSphere-Tags in vCenter zugeordnet sind.
+* Beachten Sie, dass bei VMware Workloads die geplante Sicherungszeit in der Zeitzone des Verwaltungshosts interpretiert wird. Weitere Informationen finden Sie unter link:br-use-policies-vmware-create.html["Erstellen und Verwalten von VMware-Sicherungsrichtlinien in NetApp Backup und Recovery"].
 
 
 .Schritte
@@ -125,6 +126,40 @@ Der Schutzstatus ändert sich von „In Wartung“, wenn Sie eine Schutzgruppe a
 
 .Ergebnis
 Das System validiert die Zeitpläne und ändert den Schutzstatus auf „Geschützt“, wenn die Zeitpläne gültig sind. Wenn die Zeitpläne ungültig sind, zeigt das System eine Fehlermeldung an und nimmt die Schutzgruppe nicht wieder auf.
+
+
+
+== Bearbeiten Sie eine Schutzgruppe
+
+Bearbeiten Sie eine Schutzgruppe, um deren Namen oder Einstellungen zu ändern. Möglicherweise möchten Sie eine Schutzgruppe bearbeiten, wenn sich die Ressourcen in der Gruppe geändert haben.
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
+. Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.
+. Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*.
+. Wählen Sie die Registerkarte *Schutzgruppen*.
+. Wählen Sie die Schutzgruppe aus, die Sie bearbeiten möchten.
+. Wählen Sie das Symbol „Aktionen“ aus. image:../media/icon-action.png["Aktionsoption"] > *Bearbeiten*.
++
+Der Assistent zum Bearbeiten der Schutzgruppe führt Sie durch die Einstellungen in der Schutzgruppe.
+
+. Auf jedem Bildschirm des Assistenten sind die erforderlichen Änderungen vorzunehmen.
+. Nach Abschluss *Absenden* auswählen.
+
+
+
+
+=== Eine aktualisierte vCenter-Zeitzone auf eine bestehende Schutzgruppe anwenden
+
+Geplante Backups verwenden die vCenter Server-Zeitzone, die beim Erstellen des Zeitplans der Schutzgruppe festgelegt wird. Wenn die vCenter Server-Zeitzone geändert wird, laufen bestehende Schutzgruppen weiterhin in ihrer ursprünglichen Zeitzone (typischerweise UTC), bis deren Zeitpläne aktualisiert werden.
+
+
+NOTE: Zeitpläne werden nur neu erstellt, wenn der Name der Schutzgruppe geändert, eine VM hinzugefügt oder entfernt, die zugewiesene Richtlinie geändert oder Vor-/Nachbearbeitungsskripte aktualisiert werden. Das Speichern ohne Änderungen aktualisiert die Zeitpläne nicht. Diese Aktualisierung des Zeitplans ist eine einmalige Aktion pro Schutzgruppe und startet keine sofortige Sicherung.
+
+.Schritte
+. Aktualisieren Sie den vCenter Server, damit seine aktuelle Zeitzone abgerufen wird.
+. Die Schutzgruppe kann bearbeitet und ihr Name auf einen anderen Wert geändert werden, anschließend wird gespeichert.
+
 
 
 

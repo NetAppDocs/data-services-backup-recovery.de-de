@@ -32,6 +32,10 @@ Gruppieren Sie Workloads, die Sie gemeinsam schützen möchten, in einer Schutzg
 
 *Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung oder Backupadministratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
+.Bevor Sie beginnen
+* Beachten Sie, dass bei Hyper-V-Workloads die geplante Sicherungszeit in der Zeitzone des Verwaltungshosts interpretiert wird. Weitere Informationen finden Sie unter link:br-use-policies-hyper-v-create.html["Erstellen und Verwalten von Hyper-V-Backup-Richtlinien in NetApp Backup und Recovery"].
+
+
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
 . Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.
@@ -60,10 +64,25 @@ Bearbeiten Sie eine Schutzgruppe, um deren Namen oder Einstellungen zu ändern. 
 . Wählen Sie die Registerkarte *Schutzgruppen*.
 . Wählen Sie die Schutzgruppe aus, die Sie bearbeiten möchten.
 . Wählen Sie das Symbol „Aktionen“ aus. image:../media/icon-action.png["Aktionsoption"] > *Bearbeiten*.
-. Ändern Sie beliebige Einstellungen für die Schutzgruppe, wie z. B. den Namen oder die in der Gruppe enthaltenen virtuellen Maschinen.
-. Wählen Sie *Weiter*.
-. Ändern Sie die Schutzrichtlinie gegebenenfalls. Wenn Sie fertig sind, wählen Sie *Weiter*.
-. Überprüfen Sie die Konfiguration und wählen Sie *Absenden*.
++
+Der Assistent zum Bearbeiten der Schutzgruppe führt Sie durch die Einstellungen in der Schutzgruppe.
+
+. Auf jedem Bildschirm des Assistenten sind die erforderlichen Änderungen vorzunehmen.
+. Nach Abschluss *Absenden* auswählen.
+
+
+
+
+=== Eine aktualisierte Host-Zeitzone auf eine bestehende Schutzgruppe anwenden
+
+Geplante Backups verwenden die Zeitzone des Hyper-V-Hosts, die beim Erstellen des Zeitplans der Schutzgruppe festgelegt wurde. Wenn die Zeitzone des Hosts geändert wird, laufen bestehende Schutzgruppen weiterhin in ihrer ursprünglichen Zeitzone (in der Regel UTC), bis deren Zeitpläne aktualisiert werden.
+
+
+NOTE: Zeitpläne werden nur neu erstellt, wenn der Name der Schutzgruppe geändert, eine VM hinzugefügt oder entfernt, die zugewiesene Richtlinie geändert oder Vor-/Nachbearbeitungsskripte aktualisiert werden. Das Speichern ohne Änderungen aktualisiert die Zeitpläne nicht. Diese Aktualisierung des Zeitplans ist eine einmalige Aktion pro Schutzgruppe und startet keine sofortige Sicherung.
+
+.Schritte
+. Der Hyper-V-Host wird aktualisiert, sodass seine aktuelle Zeitzone abgerufen wird.
+. Die Schutzgruppe kann bearbeitet und ihr Name auf einen anderen Wert geändert werden, anschließend wird gespeichert.
 
 
 
