@@ -5641,4 +5641,5 @@
   <block id="ee19d16e1df2ea16cdf0906f9c62e70b" category="paragraph">Geplante Backups verwenden die vCenter Server-Zeitzone, die beim Erstellen des Zeitplans der Schutzgruppe festgelegt wird. Wenn die vCenter Server-Zeitzone geändert wird, laufen bestehende Schutzgruppen weiterhin in ihrer ursprünglichen Zeitzone (typischerweise UTC), bis deren Zeitpläne aktualisiert werden.</block>
   <block id="2b33678c8eba4dacaa294cad350a79f8" category="list-text">Aktualisieren Sie den vCenter Server, damit seine aktuelle Zeitzone abgerufen wird.</block>
   <block id="746c4e9758e4e986d2c5f289c1d7e4ed" category="list-text">Getestet und validiert mit Wasabi Object Storage; Kunden haben auch erfolgreiche Implementierungen mit MinIO und IBM Cloud Object Storage gemeldet.</block>
+  <block id="9044dfb75ff38841e5c3112d327e52cf" category="admonition">Die Skripte im Verda GitHub Repository werden wie bereitgestellt und sind nicht offiziell von NetApp unterstützt. Nur das Execution Hooks Framework innerhalb von Trident Protect und Backup and Recovery wird offiziell von NetApp unterstützt.</block>
 </blocks>

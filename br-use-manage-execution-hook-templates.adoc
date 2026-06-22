@@ -101,6 +101,9 @@ NOTE: Wenn Sie einem Ausführungs-Hook, der nach einem Wiederherstellungs- oder 
 Besuchen Sie die https://github.com/NetApp/Verda["NetApp Verda GitHub-Projekt"] um echte Ausführungs-Hooks für beliebte Apps wie Apache Cassandra und Elasticsearch herunterzuladen.  Sie können sich auch Beispiele ansehen und Ideen für die Strukturierung Ihrer eigenen benutzerdefinierten Ausführungs-Hooks holen.
 
 
+NOTE: Die Skripte im Verda GitHub Repository werden wie bereitgestellt und sind nicht offiziell von NetApp unterstützt. Nur das Execution Hooks Framework innerhalb von Trident Protect und Backup and Recovery wird offiziell von NetApp unterstützt.
+
+
 
 == Erstellen einer Ausführungs-Hook-Vorlage
 
