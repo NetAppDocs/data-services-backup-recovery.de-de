@@ -78,8 +78,9 @@ Um Objektspeicher als Backup-Ziel zu verwenden, benötigen Sie ein Konto bei AWS
 Um NetApp Backup and Recovery für ONTAP-Volume-Workloads zu verwenden, benötigen Sie die folgenden Voraussetzungen hinsichtlich Hostsystem, Speicherplatz und Dimensionierung.
 
 * ONTAP 9.8 oder höher ist erforderlich.
+* Für den Schutz von FlexGroup Volumes ist ONTAP 9.12.1 oder höher erforderlich. Weitere Informationen sind unter link:br-reference-limitations.html["Bekannte Einschränkungen bei NetApp Backup and Recovery für ONTAP -Volumes"] verfügbar.
+* Für die Sicherung oder Wiederherstellung auf S3-kompatiblem Objektspeicher ist ONTAP 9.17.1 oder höher erforderlich.
 * Auf der lokalen ONTAP Instanz muss eine ONTAP One License aktiviert sein.
-* Für das Sichern oder Wiederherstellen auf S3-kompatiblen Objektspeicher ist ONTAP 9.17.1 oder höher erforderlich.
 
 
 Weitere Informationen zu unterstützten Funktionen, Volumentypen, Sicherungs- und Wiederherstellungszielen und mehr finden Sie unter link:prev-ontap-protect-overview.html["Schützen Sie Ihre ONTAP Volume-Daten"].
