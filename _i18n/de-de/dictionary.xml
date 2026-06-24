@@ -384,8 +384,6 @@
   <block id="b76fe15e5efb181107a884a8a169710c" category="section-title">Fahrpläne nicht im 15-Minuten-Takt</block>
   <block id="150bc9b32553d2cdbf1033715f83d268" category="paragraph">Wenn Sie über einen SnapCenter -Richtlinienzeitplan verfügen, der zu einer bestimmten Zeit beginnt und in anderen Intervallen als 15 Minuten wiederholt wird, importiert NetApp Backup and Recovery den Zeitplan nicht.</block>
   <block id="da5c7a32fb1f34042f2d0d433f50328c" category="paragraph">*Problemumgehung*: Passen Sie die Richtlinie mithilfe von SnapCenter so an, dass sie in 15-Minuten-Intervallen wiederholt wird.</block>
-  <block id="2d9cb3f69beb79a3c5b8d0153c88c2db" category="section-title">Eingeschränkter Support für Virtualisierungsverwaltungssoftware</block>
-  <block id="cb6fc7dd7b45612ba1f18392811f988b" category="paragraph">Wenn Sie KVM-Workloads schützen, unterstützt NetApp Backup and Recovery die Erkennung von KVM-Workloads nicht, wenn Virtualisierungsverwaltungssoftware wie Apache CloudStack oder Red Hat OpenShift Virtualization verwendet wird.</block>
   <block id="5d8aef9555e5438ddeff623786db2956" category="summary">Bekannte Einschränkungen kennzeichnen Funktionen, die von dieser Produktversion nicht unterstützt werden oder nicht ordnungsgemäß mit ihr zusammenarbeiten. Lesen Sie diese Einschränkungen sorgfältig durch.</block>
   <block id="23eb49de2f5ba6e24c6af10a73585797" category="doc">Bekannte Einschränkungen bei NetApp Backup and Recovery für ONTAP -Volumes</block>
   <block id="32c27a5a3b9d3ca4a4a83c91adb6b781" category="list-text">NetApp Backup and Recovery kann Cloud Volumes ONTAP in einem Objektspeicher in den AWS-Regionen China (einschließlich Peking und Ningxia) sichern. Möglicherweise müssen Sie jedoch zunächst die Identitäts- und Zugriffsrichtlinien manuell ändern.</block>
@@ -1648,7 +1646,6 @@
   <block id="4513150785c046bfbcd37a0b9dcb7a35" category="list-text">Aktivieren Sie das Kontrollkästchen „Möchten Sie mit der Migration fortfahren?“ und wählen Sie *Migrieren*.</block>
   <block id="13be03aaa1d065e4e2a3d1cb64d9f254" category="paragraph">Auf der Inventarseite werden die neu verwalteten vCenter-Ressourcen angezeigt.</block>
   <block id="9f292a76282f4f6731d03460bcd3b924" category="doc">Überblick zum Schutz von VMware-Workloads mit NetApp Backup and Recovery</block>
-  <block id="c59e55a8f797ea977bb075c0da4e3733" category="paragraph">Schützen Sie Ihre VMware-VMs und Datenspeicher mit NetApp Backup and Recovery.  NetApp Backup and Recovery bietet schnelle, platzsparende, absturzkonsistente und VM-konsistente Sicherungs- und Wiederherstellungsvorgänge. Sie können VMware-Workloads auf Amazon Web Services S3 oder StorageGRID sichern und VMware-Workloads auf einem lokalen VMware-Host wiederherstellen.</block>
   <block id="13a7ab00fe9ae146021f5c5ab40ca443" category="paragraph">Verwenden Sie NetApp Backup and Recovery , um eine 3-2-1-Strategie zu implementieren, bei der Sie 3 Kopien Ihrer Quelldaten auf 2 verschiedenen Speichersystemen sowie 1 Kopie in der Cloud haben. Zu den Vorteilen des 3-2-1-Ansatzes gehören:</block>
   <block id="eb2d112b017e683992cc9b9b338c90a1" category="paragraph">Mit NetApp Backup and Recovery können Sie die folgenden Aufgaben im Zusammenhang mit VMware-Workloads ausführen:</block>
   <block id="4c90ef6c5dc037251bf65afdeeb1ee6c" category="list-text"><block ref="4c90ef6c5dc037251bf65afdeeb1ee6c" category="inline-link-macro-rx"></block></block>
@@ -4736,7 +4733,6 @@
   <block id="b46d8ca76f6fb8083d6d1c87abd6ef50" category="list-text">KVM-Workloads</block>
   <block id="5c4a8ce913e27612e0af180d6ef12ee6" category="list-text">Hyper-V-Workloads</block>
   <block id="49396edcdc3d3d7e4bec42adc037a5ef" category="list-text">Kubernetes-Workloads</block>
-  <block id="2432a396f38937322a4e606bf0aa7f0a" category="list-text">Microsoft Azure Blob (nicht verfügbar für VMware workloads)</block>
   <block id="1d57820923cf47d0bb8ab74db80344ab" category="list-text">Mit ONTAP 9.15.1 können Sie FlexGroup Ordner mit der Option „Durchsuchen und wiederherstellen“ wiederherstellen.</block>
   <block id="5bc860fb25e08cbdf4fb6e1eb9fa16c9" category="paragraph">Die Erkennung von Oracle-Datenbanken ermöglicht es NetApp Backup and Recovery, diese durch das Erstellen und Wiederherstellen von Backups und Snapshots zu schützen.</block>
   <block id="e82e6b5a702d1fc223d9ea698359376e" category="section-title">Fügen Sie einen Oracle Database-Host hinzu und entdecken Sie Ressourcen</block>
@@ -5068,7 +5064,6 @@
   <block id="238d7a2bebc2cf898422ec1dbda4a73b" category="paragraph">Eine Workload ist eine logische Gruppierung von Ressourcen innerhalb eines Systems, die als Einheit für Schutz, Verwaltung, Erkennung und Wiederherstellung verwaltet wird. Im Bereich Backup und Recovery ist eine Workload die zu schützende Einheit. Ihre Bedeutung hängt von der Datenquelle ab: In Kubernetes ist eine Workload eine Anwendung, in VM-Umgebungen eine virtuelle Maschine und in Datenbankumgebungen eine Datenbank.</block>
   <block id="eb0aff97ddec7b6894c0ea9cc7a6b66c" category="list-text">In Google Cloud wird ein neuer Bucket bereitgestellt, und die <block ref="7c8e47e4f5e61b3b1d7f7769baa8100f" category="inline-link-rx"></block> werden auf Konto-/Projektebene bereitgestellt.</block>
   <block id="3addfc338787d5dc6d9709962161e00d" category="list-text">Die dritte Möglichkeit besteht darin, Lizenzen direkt von NetApp zu erwerben. Weitere Informationen finden Sie im <block ref="ba0ccbd18ea5b5cc8b06635e1ea19aa1" category="inline-xref-macro-rx"></block> Abschnitt.</block>
-  <block id="09e249805f01ac51656bbbc88c3f5e37" category="list-text">ONTAP S3 (nicht verfügbar für VMware-Workloads)</block>
   <block id="e9ebab79f1c4e6f0b2fa9bfe92e9381d" category="summary">Vorschau- und versteckte Funktionen für NetApp Backup and Recovery aktivieren.</block>
   <block id="145966dcf8392a62159a1226e54e749e" category="doc">Vorschau- und versteckte Funktionen für NetApp Backup and Recovery aktivieren</block>
   <block id="5737194cdc99152eb3d54bca68703776" category="section-title">Verfügbare Vorschaufunktionen</block>
@@ -5642,4 +5637,9 @@
   <block id="2b33678c8eba4dacaa294cad350a79f8" category="list-text">Aktualisieren Sie den vCenter Server, damit seine aktuelle Zeitzone abgerufen wird.</block>
   <block id="746c4e9758e4e986d2c5f289c1d7e4ed" category="list-text">Getestet und validiert mit Wasabi Object Storage; Kunden haben auch erfolgreiche Implementierungen mit MinIO und IBM Cloud Object Storage gemeldet.</block>
   <block id="9044dfb75ff38841e5c3112d327e52cf" category="admonition">Die Skripte im Verda GitHub Repository werden wie bereitgestellt und sind nicht offiziell von NetApp unterstützt. Nur das Execution Hooks Framework innerhalb von Trident Protect und Backup and Recovery wird offiziell von NetApp unterstützt.</block>
+  <block id="0ea4d3ea6dde327be7585dd707c798c5" category="list-text">Oben rechts auf der Seite muss *Kubernetes* in der Liste der Workloads ausgewählt sein.</block>
+  <block id="ea5b48c7d3f8b0a9e0a12672ffc2b29a" category="list-text">Für den Workload-Eintrag kann *Ansicht* ausgewählt werden, um die Kubernetes-Ressourcen anzuzeigen.</block>
+  <block id="9a6733678bfc1a6a630c61271f174949" category="paragraph">VMware-VMs und Datenspeicher lassen sich mit NetApp Backup and Recovery schützen. NetApp Backup and Recovery bietet schnelle, platzsparende, absturzkonsistente und VM-konsistente Backup- und Wiederherstellungsvorgänge. VMware-Workloads können auf unterstützte Backup-Ziele gesichert und auf einen lokalen VMware-Host wiederhergestellt werden.</block>
+  <block id="a7ffc4809e4a33a20f30769fc3e62703" category="list-text">S3-kompatibler Speicher (nur ONTAP Volumes Workloads)</block>
+  <block id="7229e78ecf33d07a5618d54695f22e2b" category="list-text">Microsoft Azure Blob Storage</block>
 </blocks>

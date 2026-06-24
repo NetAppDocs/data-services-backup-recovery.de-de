@@ -34,7 +34,8 @@ Bevor Sie eine Kubernetes-Anwendung hinzufügen und schützen können, müssen S
 --
 .Schritte
 . Wählen Sie in NetApp Backup and Recovery*Inventar* aus.
-. Wählen Sie eine Kubernetes-Instanz und wählen Sie *Anzeigen*, um die mit dieser Instanz verknüpften Ressourcen anzuzeigen.
+. Oben rechts auf der Seite muss *Kubernetes* in der Liste der Workloads ausgewählt sein.
+. Für den Workload-Eintrag kann *Ansicht* ausgewählt werden, um die Kubernetes-Ressourcen anzuzeigen.
 . Wählen Sie die Registerkarte *Anwendungen*.
 . Wählen Sie *Anwendung erstellen*.
 . Geben Sie einen Namen für die Anwendung ein.
@@ -71,7 +72,8 @@ Die Anwendung wurde erstellt und erscheint in der Liste der Anwendungen auf der 
 --
 .Schritte
 . Wählen Sie in NetApp Backup and Recovery*Inventar* aus.
-. Wählen Sie eine Kubernetes-Instanz und wählen Sie *Anzeigen*, um die mit dieser Instanz verknüpften Ressourcen anzuzeigen.
+. Oben rechts auf der Seite muss *Kubernetes* in der Liste der Workloads ausgewählt sein.
+. Für den Workload-Eintrag kann *Ansicht* ausgewählt werden, um die Kubernetes-Ressourcen anzuzeigen.
 . Wählen Sie die Registerkarte *Anwendungen*.
 . Wählen Sie *Anwendung erstellen*.
 . Geben Sie einen Namen für die Anwendung ein.

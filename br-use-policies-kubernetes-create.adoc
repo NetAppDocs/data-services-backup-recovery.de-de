@@ -94,15 +94,6 @@ Die Seite „Richtlinien“ wird angezeigt.
 ** *Sicherung*: Wählen Sie die Häufigkeit stündlich, täglich, wöchentlich, monatlich oder jährlich.
 ** *Sicherungsziel*: Wählen Sie das Zielsystem auf dem Sekundärspeicher für die Sicherung aus.
 ** *Aufbewahrung*: Geben Sie die Anzahl der aufzubewahrenden Snapshots ein.
-** *Snapshot-Sperre aktivieren*: Wählen Sie aus, ob Sie manipulationssichere Snapshots aktivieren möchten.
-** *Sperrzeitraum für Snapshots*: Geben Sie die Anzahl der Tage, Monate oder Jahre ein, für die Sie den Snapshot sperren möchten.
-** *Wechsel zur weiterführenden Schule*:
-+
-*** Die Option * ONTAP Übertragungsplan – Inline* ist standardmäßig ausgewählt und gibt an, dass Snapshots sofort auf das sekundäre Speichersystem übertragen werden.  Sie müssen die Sicherung nicht planen.
-*** Weitere Optionen: Wenn Sie eine aufgeschobene Überweisung wählen, erfolgen die Überweisungen nicht sofort und Sie können einen Zeitplan festlegen.
-
-
-** * Sekundäre Beziehung zwischen SnapMirror und SnapVault SMAS*: Verwenden Sie sekundäre Beziehungen zwischen SnapMirror und SnapVault SMAS für SQL Server-Workloads.
 ** *Anbieter*: Wählen Sie den Speicheranbieter aus, der die Kubernetes-Anwendungsressourcen hostet, und geben Sie die Anmeldeinformationen zur Authentifizierung beim Anbieter ein.
 
 

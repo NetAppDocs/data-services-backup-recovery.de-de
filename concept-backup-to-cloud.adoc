@@ -210,10 +210,11 @@ NetApp Backup and Recovery schützt die folgenden Arten von Workloads:
 
 .Unterstützte Sicherungsziele
 * Amazon Web Services (AWS) S3
+* S3-kompatibler Speicher (nur ONTAP Volumes Workloads)
 * Google Cloud-Speicher
-* Microsoft Azure Blob (nicht verfügbar für VMware workloads)
+* Microsoft Azure Blob Storage
 * StorageGRID
-* ONTAP S3 (nicht verfügbar für VMware-Workloads)
+* ONTAP S3
 
 
 

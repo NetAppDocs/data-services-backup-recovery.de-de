@@ -109,9 +109,3 @@ SnapCenter verfügt nicht über die Möglichkeit, Speichercluster oder SVMs für
 Wenn Sie über einen SnapCenter -Richtlinienzeitplan verfügen, der zu einer bestimmten Zeit beginnt und in anderen Intervallen als 15 Minuten wiederholt wird, importiert NetApp Backup and Recovery den Zeitplan nicht.
 
 *Problemumgehung*: Passen Sie die Richtlinie mithilfe von SnapCenter so an, dass sie in 15-Minuten-Intervallen wiederholt wird.
-
-
-
-== Eingeschränkter Support für Virtualisierungsverwaltungssoftware
-
-Wenn Sie KVM-Workloads schützen, unterstützt NetApp Backup and Recovery die Erkennung von KVM-Workloads nicht, wenn Virtualisierungsverwaltungssoftware wie Apache CloudStack oder Red Hat OpenShift Virtualization verwendet wird.

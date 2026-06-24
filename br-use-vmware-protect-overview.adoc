@@ -14,7 +14,7 @@ summary: Schützen Sie Ihre VMware-Workloads mit NetApp Backup and Recovery.
 
 
 [role="lead"]
-Schützen Sie Ihre VMware-VMs und Datenspeicher mit NetApp Backup and Recovery.  NetApp Backup and Recovery bietet schnelle, platzsparende, absturzkonsistente und VM-konsistente Sicherungs- und Wiederherstellungsvorgänge. Sie können VMware-Workloads auf Amazon Web Services S3 oder StorageGRID sichern und VMware-Workloads auf einem lokalen VMware-Host wiederherstellen.
+VMware-VMs und Datenspeicher lassen sich mit NetApp Backup and Recovery schützen. NetApp Backup and Recovery bietet schnelle, platzsparende, absturzkonsistente und VM-konsistente Backup- und Wiederherstellungsvorgänge. VMware-Workloads können auf unterstützte Backup-Ziele gesichert und auf einen lokalen VMware-Host wiederhergestellt werden.
 
 
 NOTE: Diese Version von NetApp Backup and Recovery unterstützt nur VMware vCenter und erkennt keine vVols oder VMs auf vVols.
