@@ -23,7 +23,7 @@ Stellen Sie Dateien und Ordner aus Hyper-V-VM-Backups auf primärem oder sekund�
 Eine virtuelle Festplatte aus einem Snapshot einbinden und Dateien und Ordner von dort in die ursprüngliche (Quell-)Windows-VM wiederherstellen.
 
 .Bevor Sie beginnen
-Bevor Sie Dateien und Ordner wiederherstellen können, müssen Sie in NetApp Backup und Recovery Anmeldeinformationen für die Quell-VM erstellen. Diese Anmeldeinformationen werden zur Authentifizierung bei der VM während des Wiederherstellungsprozesses verwendet.
+Bevor Sie Dateien und Ordner wiederherstellen können, müssen Sie eine Anmeldeinformation für die Quell-VM in NetApp Backup and Recovery erstellen. Diese Anmeldeinformation wird zur Authentifizierung bei der VM während des Wiederherstellungsprozesses verwendet.
 
 .Informationen zu diesem Vorgang
 Wenn Sie eine Datei- und Ordnerwiederherstellungssitzung durch Einbinden eines virtuellen Laufwerks öffnen, bleibt die Sitzung 48 Stunden lang aktiv.

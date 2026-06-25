@@ -170,7 +170,7 @@ NOTE: Diese Option wird automatisch deaktiviert, wenn diese Richtlinie *Lokale S
 +
 **** Haben Sie das NetApp Plug-in installiert
 **** Die Oracle-Datenbank-Binärdateien müssen installiert sein.
-**** Verwenden Sie dieselbe Oracle-Datenbankversion wie die Quelldatenbank
+**** Die gleiche Oracle Database Version wie die Quelldatenbank verwenden
 **** Netzwerkzugriff auf den Speicher mit dem Snapshot haben (primär oder sekundär)
 **** Sie müssen in der Lage sein, das geklonte Volume einzubinden und das Oracle Database DBVERIFY-Dienstprogramm auszuführen.
 
