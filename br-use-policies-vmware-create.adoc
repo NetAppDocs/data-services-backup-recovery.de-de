@@ -123,7 +123,7 @@ Für VMware-Workloads wird hierdurch der lokale Snapshot auf den Datenspeichern 
 *** Weitere Optionen: Wenn Sie eine aufgeschobene Überweisung wählen, erfolgen die Überweisungen nicht sofort und Sie können einen Zeitplan festlegen.
 
 
-** * Sekundäre Beziehung zwischen SnapMirror und SnapVault SMAS*: Verwenden Sie sekundäre Beziehungen zwischen SnapMirror und SnapVault SMAS für SQL Server-Workloads.
+** *Vorhandene SnapMirror und SyncMirror sekundäre Beziehung verwenden*: Mit dieser Option wird die vorhandene SnapMirror oder SyncMirror Beziehung genutzt, um Snapshots an den festgelegten Ziel-Cluster zu übertragen.
 
 
 . Geben Sie Informationen für den Abschnitt *Objektspeichereinstellungen* (Sicherung im Objektspeicher) an:

@@ -1513,7 +1513,6 @@
   <block id="b46669fe80ca2a5b9a2d07aed9bdb568" category="list-text">*Wechsel zur weiterführenden Schule*:</block>
   <block id="c6b1efb6a3381715b935aaf64195be83" category="list-text">Die Option * ONTAP Übertragungsplan – Inline* ist standardmäßig ausgewählt und gibt an, dass Snapshots sofort auf das sekundäre Speichersystem übertragen werden.  Sie müssen die Sicherung nicht planen.</block>
   <block id="ea593eb0ffc75f929e0088d1e36356cf" category="list-text">Weitere Optionen: Wenn Sie eine aufgeschobene Überweisung wählen, erfolgen die Überweisungen nicht sofort und Sie können einen Zeitplan festlegen.</block>
-  <block id="cc7a1e67eff230a3c65fb315a1c8d1f0" category="list-text">* Sekundäre Beziehung zwischen SnapMirror und SnapVault SMAS*: Verwenden Sie sekundäre Beziehungen zwischen SnapMirror und SnapVault SMAS für SQL Server-Workloads.</block>
   <block id="5d53f1521f3c11d2c706909ba7322fd1" category="admonition">Die angezeigten Felder unterscheiden sich je nach ausgewähltem Anbieter und Architektur.</block>
   <block id="aea6f666cce57b356fb2085a81658754" category="list-text">*IPspace*: Wählen Sie den IPspace aus, der für die Sicherungsvorgänge verwendet werden soll.  Dies ist nützlich, wenn Sie über mehrere IP-Bereiche verfügen und steuern möchten, welcher für Sicherungen verwendet wird.</block>
   <block id="61c7ccb12ec5421abd7bf85769ede78b" category="list-text">*Zeitplaneinstellungen*: Wählen Sie den Zeitplan aus, der für die lokalen Snapshots festgelegt wurde.  Sie können einen Zeitplan entfernen, aber keinen hinzufügen, da die Zeitpläne entsprechend den lokalen Snapshot-Zeitplänen festgelegt werden.</block>
@@ -4724,8 +4723,6 @@
   <block id="5a7772dd6a45520c18defbce09d0dedf" category="paragraph">Die folgende Aktion wird in der Vorschauversion von Oracle Database-Workloads in NetApp Backup and Recovery nicht unterstützt:</block>
   <block id="fffe6dab1367a6da9b1ff43e10e3c12a" category="paragraph">Die folgenden Aktionen werden in VMware-Workloads in NetApp Backup and Recovery nicht unterstützt:</block>
   <block id="97c13d527bcfec5ed7f29badd43016d8" category="list-text">Richtlinien bearbeiten (nicht verfügbar für VMware workloads)</block>
-  <block id="332f36926e04f03459b83b7c8da214a6" category="list-text">*VMware-Workloads (mit neuer Benutzeroberfläche ohne SnapCenter Plug-in für VMware vSphere)*:</block>
-  <block id="66484fcd4199c3f1b40e50c680ad4e56" category="list-text">Sichern Sie VMware-Workloads auf Amazon Web Services S3 oder StorageGRID.</block>
   <block id="6a4470b3ca7a52803928f40d397b0521" category="list-text">*KVM-Workloads*:</block>
   <block id="c4d36d8f4f3b72c9d5cac59995049781" category="list-text">*Hyper-V-Workloads*:</block>
   <block id="b6178e1ff85723d95932c36399cc61c2" category="list-text">*Kubernetes-Workloads*:</block>
@@ -4835,7 +4832,6 @@
   <block id="4698b69bed4ee276f187d88f25644b08" category="cell">Stellen Sie sicher, dass in den Windows-Firewall-Einstellungen bidirektionaler HTTPS-Datenverkehr für die folgenden Ports zugelassen ist</block>
   <block id="d213948679817ac06e8c20f73a6d5e50" category="list-text">TCP 8144 (NetApp Plugin für Hyper-V)</block>
   <block id="eb24ddd0422049219f581858a9ae2714" category="list-text">TCP 8145 (NetApp Plugin für Windows)</block>
-  <block id="86a1075e6640849bd364878900fd5412" category="paragraph">Sie können diese Schritte auch befolgen, um den Console-Agenten zu ersetzen und Konfigurationsdaten wiederherzustellen, die darauf gespeichert waren, wenn Sie Backup and Recovery im _Standardmodus_ lokal verwenden und keine Cloud-Konten beteiligt sind (zum Beispiel, wenn Sie NetApp StorageGrid als Backup-Ziel verwenden).</block>
   <block id="72edcbdd4436f32d101a83a36dd2d1db" category="list-text">Führen Sie den Befehl *ls* aus, um sicherzustellen, dass der Ordner "catalogdb1" erstellt wurde und dass er die Unterordner <block ref="45b963397aa40d4a0063e0d85e4fe7a1" prefix=" " category="inline-code"></block>,<block ref="b17be6650251f2e6c7d4e90209beb4e0" prefix=" " category="inline-code"></block> und <block ref="695633290d050f31cec0c9d4bd4a57fe" prefix=" " category="inline-code"></block> enthält.</block>
   <block id="69b1a964078d5301a2aa9822cb2304f2" category="section-title">16. März 2026</block>
   <block id="5896522d63454009d1844a27f9e16972" category="cell">7.4.13 oder später</block>
@@ -5643,4 +5639,9 @@
   <block id="df9ce829d97bcaaccefd13ad9443c5fe" category="list-text">Für den Schutz von FlexGroup Volumes ist ONTAP 9.12.1 oder höher erforderlich. Weitere Informationen sind unter <block ref="a1845bf1ef98236015caabc5bbd8f351" category="inline-link-macro-rx"></block> verfügbar.</block>
   <block id="bc75b0ab08d9eba6d835f75a9dc3780f" category="list-text">Für die Sicherung oder Wiederherstellung auf S3-kompatiblem Objektspeicher ist ONTAP 9.17.1 oder höher erforderlich.</block>
   <block id="6e61da6259c2e5766003325feb7a477a" category="list-text">Bei der Auswahl der zu schützenden Quellvolumes können nur Volumes mit übereinstimmenden SnapLock-Einstellungen ausgewählt werden. Die ausgewählten Volumes müssen entweder alle die SnapLock-Funktion aktiviert haben oder bei allen muss die SnapLock-Funktion deaktiviert sein.</block>
+  <block id="fa428977bbfd079a1a152d734ac0da9a" category="list-text">*Vorhandene SnapMirror und SyncMirror sekundäre Beziehung verwenden*: Mit dieser Option wird die vorhandene SnapMirror oder SyncMirror Beziehung genutzt, um Snapshots an den festgelegten Ziel-Cluster zu übertragen.</block>
+  <block id="2d86afc1dea874d04cb6b44f9329cb39" category="list-text">*VMware Workloads*:</block>
+  <block id="2b4ccece5f6493a03ab0eed818dd5e54" category="list-text">VMware-Workloads werden bei unterstützten Speicheranbietern gesichert.</block>
+  <block id="947289c8d4497907d6f4aedc1502dce8" category="list-text">Google Cloud Storage (nur ONTAP Volumes und Kubernetes Workloads)</block>
+  <block id="0692ea49da3133a6dc624be3e9654369" category="paragraph">Es besteht auch die Möglichkeit, diese Schritte auszuführen, um den Console Agent zu ersetzen und Konfigurationsdaten wiederherzustellen, die darauf gespeichert waren, wenn Backup and Recovery im _Standardmodus_ lokal genutzt wurde und keine Cloud-Konten beteiligt sind (zum Beispiel wenn NetApp StorageGRID als Backup-Ziel verwendet wird).</block>
 </blocks>

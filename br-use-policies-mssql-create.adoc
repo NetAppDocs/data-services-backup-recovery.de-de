@@ -99,9 +99,9 @@ Die Seite „Richtlinien“ wird angezeigt.
 ** *Übertragung auf Sekundärspeicher*: Wählen Sie aus, wann Snapshots auf den Sekundärspeicher übertragen werden sollen.
 +
 *** Die Option * ONTAP Übertragungsplan – Inline* ist standardmäßig ausgewählt und gibt an, dass Snapshots sofort auf das sekundäre Speichersystem übertragen werden.  Sie müssen die Sicherung nicht planen.
-*** Weitere Optionen: Wenn Sie eine aufgeschobene Überweisung wählen, erfolgen die Überweisungen nicht sofort und Sie können einen Zeitplan festlegen.
 
 
+** *Vorhandene SnapMirror und SyncMirror sekundäre Beziehung verwenden*: Mit dieser Option wird die vorhandene SnapMirror oder SyncMirror Beziehung genutzt, um Snapshots an den festgelegten Ziel-Cluster zu übertragen.
 
 
 . Geben Sie Informationen für den Abschnitt *Objektspeichereinstellungen* (Sicherung im Objektspeicher) an:
