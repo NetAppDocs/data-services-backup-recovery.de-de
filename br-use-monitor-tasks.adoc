@@ -146,6 +146,9 @@ Das Benachrichtigungscenter zeigt zahlreiche Ereignisse im Zusammenhang mit Snap
 | Aktivierung | Die Aktivierung von Backup und Recovery für das System ist fehlgeschlagen | Ja | Ja 
 
 
+| Aktivierung | Sicherung und Wiederherstellung wurden für das System erfolgreich aktiviert. | Ja | Ja 
+
+
 | Aktivierung | Bearbeitung von Sicherung und Wiederherstellung für System fehlgeschlagen | Ja | Ja 
 
 
@@ -153,9 +156,6 @@ Das Benachrichtigungscenter zeigt zahlreiche Ereignisse im Zusammenhang mit Snap
 
 
 | Aktivierung | Datensicherung oder Statusänderung | Ja | Ja 
-
-
-| Aktivierung | Sicherung und Wiederherstellung wurden für das System erfolgreich aktiviert. | Ja | Ja 
 
 
 | Aktivierung | Ad-hoc-Volume-Backup fehlgeschlagen | Ja | Ja 
@@ -167,10 +167,10 @@ Das Benachrichtigungscenter zeigt zahlreiche Ereignisse im Zusammenhang mit Snap
 | Aktivierung | Datensicherung über mehrere Volumes fehlgeschlagen | Ja | Ja 
 
 
-| Cron-Operationen | Überprüfung auf fehlende Snapshot-Labels | Ja | Ja 
+| Cron-Operationen | Bezeichnungsinkonsistenz zwischen Snapshot-Richtlinie und Backup-Richtlinie | Ja | Ja 
 
 
-| Cron-Operationen | Das Senden des Sicherheitstokens an ONTAP für dieses System ist fehlgeschlagen. | Ja | Ja 
+| Cron-Operationen | Aktualisieren der Objektspeicher-Anmeldeinformationen in ONTAP für dieses System fehlgeschlagen | Ja | Ja 
 
 
 | Pub/Sub-Veranstaltungen | Verbindungsfehler | Ja | Nein 
@@ -203,22 +203,22 @@ Das Benachrichtigungscenter zeigt zahlreiche Ereignisse im Zusammenhang mit Snap
 | Replikation | Fehler beim Ad-hoc-Replikationsjob von NetApp Backup and Recovery | Ja | Ja 
 
 
-| Replikation | Fehler beim Anhalten des Replikationsjobs bei NetApp Backup and Recovery | Ja | Nein 
+| Replikation | NetApp Backup and Recovery Replikationsbeziehungs-Pausierungsjobfehler | Ja | Nein 
 
 
-| Replikation | Fehler beim Abbrechen des Replikationsjobs bei NetApp Backup and Recovery | Ja | Nein 
+| Replikation | NetApp Backup and Recovery Replikationsbeziehungsunterbrechungs-Jobfehler | Ja | Nein 
 
 
-| Replikation | Fehler beim Resynchronisierungsjob für NetApp Backup and Recovery -Replikation | Ja | Nein 
+| Replikation | NetApp Backup and Recovery-Fehler bei der Resynchronisierung des Replikationsbeziehungsjobs | Ja | Nein 
 
 
 | Replikation | Fehler beim Stoppen des Replikationsjobs bei NetApp Backup and Recovery | Ja | Nein 
 
 
-| Replikation | Fehler beim Reverse-Resync-Job für die Replikation von NetApp Backup and Recovery | Ja | Ja 
+| Replikation | NetApp Backup and Recovery Replikationsbeziehungs-Rückresynchronisierungsjob-Fehler | Ja | Ja 
 
 
-| Replikation | Fehler beim Löschen des Replikationsjobs bei NetApp Backup and Recovery | Ja | Ja 
+| Replikation | NetApp Backup and Recovery Replikationsbeziehungs-Löschauftrag fehlgeschlagen | Ja | Ja 
 
 
 | Zieloperationen | Wiederherstellung am lokalen oder Cloud-Ziel fehlgeschlagen | Ja | Ja 
@@ -228,6 +228,9 @@ Das Benachrichtigungscenter zeigt zahlreiche Ereignisse im Zusammenhang mit Snap
 
 
 | Systembetrieb | Fehler bei der Erstellung eines Ad-hoc-Volume-Snapshots | Ja | Ja 
+
+
+| Systembetrieb | Die Indizierung der Volume-Backup ist fehlgeschlagen. | Ja | Ja 
 |===
 
 NOTE: Ab ONTAP 9.13.0 werden alle Warnungen für Cloud Volumes ONTAP und lokale ONTAP -Systeme angezeigt.  Bei Systemen mit Cloud Volumes ONTAP 9.13.0 und lokalem ONTAP wird nur die Warnmeldung „Wiederherstellungsauftrag abgeschlossen, aber mit Warnungen“ angezeigt.
