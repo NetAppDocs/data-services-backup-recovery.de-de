@@ -336,9 +336,10 @@ Wenn Sie die standardmäßigen Amazon S3-Verschlüsselungsschlüssel zum Verschl
 
 Wenn Sie stattdessen Ihre eigenen, vom Kunden verwalteten Schlüssel zur Datenverschlüsselung verwenden möchten, anstatt die Standardschlüssel zu verwenden, müssen Sie die verwalteten Verschlüsselungsschlüssel bereits eingerichtet haben, bevor Sie den NetApp Backup and Recovery -Assistenten starten.
 
-https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-setting-up-kms.html["Informieren Sie sich, wie Sie Ihre eigenen Amazon-Verschlüsselungsschlüssel mit Cloud Volumes ONTAP verwenden."^].
 
-https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-aws-bluexp.html#configure-encryption-settings["Informieren Sie sich darüber, wie Sie Ihre eigenen Amazon-Verschlüsselungsschlüssel mit NetApp Backup and Recovery verwenden."^].
+NOTE: Die vom Kunden verwaltete Schlüsselverschlüsselung wird nur für Amazon FSx for NetApp ONTAP unterstützt. Für Cloud Volumes ONTAP for AWS wird sie nicht unterstützt.
+
+Siehe  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-setting-up-kms.html["Einrichten der vom Kunden verwalteten Schlüsselverschlüsselung in AWS"^].
 
 
 
