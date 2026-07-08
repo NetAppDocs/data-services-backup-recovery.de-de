@@ -729,7 +729,6 @@
   <block id="782af9afc0728a9389fd837476a88107" category="inline-link">Preisdetails finden Sie im Marketplace-Angebot für NetApp Intelligent Services.</block>
   <block id="66145e361f72b54aa011f59d543dfb08" category="section-title">Verwenden Sie einen Jahresvertrag</block>
   <block id="e8081693b5a02447f0b48df91b9f65d8" category="paragraph">Bezahlen Sie jährlich für NetApp Backup and Recovery , indem Sie einen Jahresvertrag abschließen.  Sie sind mit einer Laufzeit von 1, 2 oder 3 Jahren erhältlich.</block>
-  <block id="ba3a3b81b7867cbfec5cb03d1bbc6d9a" category="paragraph">Wenn Sie einen Jahresvertrag von einem Marktplatz haben, wird der gesamte Verbrauch von NetApp Backup and Recovery über diesen Vertrag abgerechnet.  Sie können einen jährlichen Marktplatzvertrag nicht mit einem BYOL kombinieren.</block>
   <block id="2351127acb653fd60dafc73c8efcb79d" category="inline-link">AWS Marketplace-Seite</block>
   <block id="dda622e647d2d5d64503c046c508cc10" category="paragraph">Wenn Sie AWS verwenden, stehen Ihnen zwei Jahresverträge zur Verfügung:<block ref="85c21eb306ec4bcbda7252ca6117fc5c" category="inline-link-rx"></block> für Cloud Volumes ONTAP und lokale ONTAP Systeme:</block>
   <block id="c776759ca58ab152a9abc5e0b4f7ae66" category="list-text">Ein „Cloud Backup“-Plan, mit dem Sie Cloud Volumes ONTAP -Daten und lokale ONTAP -Daten sichern können.</block>
@@ -5644,4 +5643,5 @@
   <block id="9823593ea29f31b6d988e92cd15483f6" category="list-text">SMB Shares</block>
   <block id="e3438f0f5d63a3c8de989b98d3095c8d" category="list-text">SAN Storage, verbunden über iSCSI oder Fibre Channel</block>
   <block id="81bdc0623ea533b24d0e11cb1d26ba25" category="list-text">Für Hyper-V-Bereitstellungen, bei denen SMB-Freigaben zur Speicherung von virtuellen Maschinendaten verwendet werden, muss die Eigenschaft „Kontinuierliche Verfügbarkeit“ der Freigabe auf dem ONTAP System aktiviert sein. Siehe <block ref="5c340db4eb0fc64db199962e418ffbd0" category="inline-link-rx"></block> für Anweisungen.</block>
+  <block id="09e4a6980ec8e49e9c338d71a078b029" category="paragraph">Wenn Sie einen Jahresvertrag von einem Marktplatz haben, wird der gesamte Verbrauch von NetApp Backup and Recovery über diesen Vertrag abgerechnet.</block>
 </blocks>
