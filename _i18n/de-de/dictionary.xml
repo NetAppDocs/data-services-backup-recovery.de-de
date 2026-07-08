@@ -617,7 +617,6 @@
   <block id="365d382b2d9ecca9b0d40171c69b38ff" category="list-text">Führen Sie einen der folgenden Schritte aus:</block>
   <block id="6226950d1b144f972ce9b5d3caea9b42" category="list-text">Wenn Sie Kubernetes-Workloads bereits erkannt haben, wählen Sie in NetApp Backup and Recovery*Inventar* &gt; *Workloads* und dann *Ressourcen erkennen*.</block>
   <block id="e7c444e4a1d2f156d71a907145c8a598" category="list-text">Wählen Sie den Workloadtyp *Kubernetes* aus.</block>
-  <block id="96c35fcba67cbf6710845bcca4668cc2" category="list-text">Geben Sie einen Clusternamen ein und wählen Sie einen Connector zur Verwendung mit dem Cluster aus.</block>
   <block id="39b0136210d9abd099b81781cc0a17db" category="list-text">Befolgen Sie die angezeigten Befehlszeilenanweisungen:</block>
   <block id="ed6eabebedff09350cdabab556887c62" category="list-text">Erstellen eines Kubernetes-Geheimnisses</block>
   <block id="6c27e11d1144953d7877449d5adc966d" category="list-text">Hinzufügen eines Helm-Repositorys</block>
@@ -5644,4 +5643,5 @@
   <block id="e3438f0f5d63a3c8de989b98d3095c8d" category="list-text">SAN Storage, verbunden über iSCSI oder Fibre Channel</block>
   <block id="81bdc0623ea533b24d0e11cb1d26ba25" category="list-text">Für Hyper-V-Bereitstellungen, bei denen SMB-Freigaben zur Speicherung von virtuellen Maschinendaten verwendet werden, muss die Eigenschaft „Kontinuierliche Verfügbarkeit“ der Freigabe auf dem ONTAP System aktiviert sein. Siehe <block ref="5c340db4eb0fc64db199962e418ffbd0" category="inline-link-rx"></block> für Anweisungen.</block>
   <block id="09e4a6980ec8e49e9c338d71a078b029" category="paragraph">Wenn Sie einen Jahresvertrag von einem Marktplatz haben, wird der gesamte Verbrauch von NetApp Backup and Recovery über diesen Vertrag abgerechnet.</block>
+  <block id="fe336167ccf46f9fb348006254d0f3ee" category="list-text">Geben Sie einen Clusternamen ein und wählen Sie einen Konsolenagenten aus, der mit dem Cluster verwendet wird.</block>
 </blocks>
