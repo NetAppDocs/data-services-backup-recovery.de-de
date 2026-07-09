@@ -18,6 +18,7 @@ Sie können Dateien oder Ordner von einer virtuellen Maschinenfestplatte (VMDK) 
 
 
 
+[[guest-restore-workflow]]
 == Workflow zur Gastwiederherstellung
 
 Die Wiederherstellungsvorgänge des Gastbetriebssystems umfassen die folgenden Schritte:
@@ -42,6 +43,7 @@ Stellen Sie die ausgewählten Dateien oder Ordner an einem angegebenen Speichero
 
 
 
+[[prerequisites-for-restoring-guest-files-and-folders]]
 == Voraussetzungen für die Wiederherstellung von Gastdateien und -ordnern
 
 Prüfen Sie alle Voraussetzungen, bevor Sie Dateien oder Ordner aus einer VMDK wiederherstellen.
@@ -69,6 +71,7 @@ Für die aktuellsten Informationen zur Unterstützung von Gastbetriebssystemen k
 
 
 
+[[windows-guests]]
 === Windows-Gäste
 
 * Als Gastbetriebssystem muss Windows Server 2008 R2 oder höher ausgeführt werden.
@@ -84,6 +87,7 @@ IMPORTANT: Wenn Sie ein Konto verwenden müssen, das nicht das integrierte Admin
 
 
 
+[[linux-guests]]
 === Linux-Gastsysteme
 
 * Folgende Gastbetriebssystemdistributionen werden unterstützt:
@@ -99,6 +103,7 @@ IMPORTANT: Wenn Sie ein Konto verwenden müssen, das nicht das integrierte Admin
 
 
 
+[[guest-file-restore-limitations]]
 == Einschränkungen bei der Wiederherstellung von Gastdateien
 
 Bevor Sie eine Datei oder einen Ordner aus einem Gastbetriebssystem wiederherstellen, sollten Sie sich über die Funktionsbeschränkungen im Klaren sein.

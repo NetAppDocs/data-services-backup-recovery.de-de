@@ -44,6 +44,7 @@ Sie können die folgenden Aufgaben im Zusammenhang mit der Verwaltung Ihres Inve
 
 
 
+[[manage-host-information]]
 == Hostinformationen verwalten
 
 Sie können Hostinformationen verwalten, um sicherzustellen, dass die richtigen Hosts geschützt sind.  Sie können Hostinformationen anzeigen, bearbeiten und löschen.
@@ -58,6 +59,7 @@ Sie können Hostinformationen verwalten, um sicherzustellen, dass die richtigen 
 
 
 
+[[manage-hosts]]
 === Hosts verwalten
 
 Sie können die in Ihrem System erkannten Hosts verwalten.  Sie können sie einzeln oder als Gruppe verwalten.
@@ -88,6 +90,7 @@ Nachdem Sie die Hosts in NetApp Backup and Recovery verwaltet haben, verwaltet S
 
 
 
+[[suspend-schedules]]
 === Zeitpläne aussetzen
 
 Unterbrechen Sie Zeitpläne, um Sicherungs- und Wiederherstellungsvorgänge während der Hostwartung zu stoppen.
@@ -101,6 +104,7 @@ Unterbrechen Sie Zeitpläne, um Sicherungs- und Wiederherstellungsvorgänge wäh
 
 
 
+[[edit-a-host]]
 === Einen Host bearbeiten
 
 Sie können die vCenter-Serverinformationen, die Anmeldeinformationen für die Hostregistrierung und die erweiterten Einstellungsoptionen ändern.
@@ -115,6 +119,7 @@ Sie können die vCenter-Serverinformationen, die Anmeldeinformationen für die H
 
 
 
+[[delete-a-host]]
 === Löschen eines Hosts
 
 Sie können die Host-Informationen löschen, um die Servicegebühren zu stoppen.
@@ -128,6 +133,7 @@ Sie können die Host-Informationen löschen, um die Servicegebühren zu stoppen.
 
 
 
+[[manage-instances-information]]
 == Verwalten von Instanzinformationen
 
 Sie können Instanzinformationen verwalten, um die entsprechenden Anmeldeinformationen für den Ressourcenschutz zuzuweisen und Ressourcen auf folgende Weise zu sichern:
@@ -143,6 +149,7 @@ Sie können Instanzinformationen verwalten, um die entsprechenden Anmeldeinforma
 
 
 
+[[protect-database-instances]]
 === Schützen Sie Datenbankinstanzen
 
 Sie können einer Datenbankinstanz eine Richtlinie zuweisen, indem Sie Richtlinien verwenden, die die Zeitpläne und die Beibehaltung des Ressourcenschutzes regeln.
@@ -174,6 +181,7 @@ Einzelheiten zum Erstellen einer Richtlinie finden Sie unterlink:br-use-policies
 
 
 
+[[associate-credentials-with-a-resource]]
 === Anmeldeinformationen einer Ressource zuordnen
 
 Sie können Anmeldeinformationen mit einer Ressource verknüpfen, um Schutz zu gewährleisten.
@@ -191,6 +199,7 @@ Weitere Einzelheiten finden Sie unterlink:br-start-configure.html["Konfigurieren
 
 
 
+[[edit-protection-settings]]
 === Schutzeinstellungen bearbeiten
 
 Sie können die Richtlinie ändern, eine neue Richtlinie erstellen, einen Zeitplan festlegen und Aufbewahrungseinstellungen festlegen.
@@ -208,6 +217,7 @@ Einzelheiten zum Erstellen einer Richtlinie finden Sie unterlink:br-use-policies
 
 
 
+[[back-up-now]]
 === Jetzt sichern
 
 Sichern Sie Ihre Daten jetzt, um sie sofort zu schützen.
@@ -226,6 +236,7 @@ Einzelheiten zum Erstellen einer Ad-hoc-Sicherung finden Sie unterlink:br-use-ms
 
 
 
+[[manage-database-information]]
 == Verwalten von Datenbankinformationen
 
 Sie können Datenbankinformationen auf folgende Weise verwalten:
@@ -239,6 +250,7 @@ Sie können Datenbankinformationen auf folgende Weise verwalten:
 
 
 
+[[protect-databases]]
 === Schützen Sie Datenbanken
 
 Sie können die Richtlinie ändern, eine neue Richtlinie erstellen, einen Zeitplan festlegen und Aufbewahrungseinstellungen festlegen.
@@ -258,6 +270,7 @@ Einzelheiten zum Erstellen einer Richtlinie finden Sie unterlink:br-use-policies
 
 
 
+[[restore-databases]]
 === Datenbanken wiederherstellen
 
 Stellen Sie eine Datenbank wieder her, um Ihre Daten zu schützen.
@@ -274,6 +287,7 @@ Informationen zum Wiederherstellen von Workloads finden Sie unterlink:br-use-mss
 
 
 
+[[edit-protection-settings]]
 === Schutzeinstellungen bearbeiten
 
 Sie können die Richtlinie ändern, eine neue Richtlinie erstellen, einen Zeitplan festlegen und Aufbewahrungseinstellungen festlegen.
@@ -293,6 +307,7 @@ Einzelheiten zum Erstellen einer Richtlinie finden Sie unterlink:br-use-policies
 
 
 
+[[back-up-now]]
 === Jetzt sichern
 
 Sie können Ihre Microsoft SQL Server-Instanzen und -Datenbanken jetzt sichern, um Ihre Daten sofort zu schützen.

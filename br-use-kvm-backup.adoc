@@ -24,6 +24,7 @@ NOTE: Um Schutzgruppen nach einem Zeitplan zu sichern, erstellen Sie Richtlinien
 
 
 
+[[back-up-protection-groups-now-with-an-on-demand-backup]]
 == Sichern Sie Schutzgruppen jetzt mit einem On-Demand-Backup
 
 Sie können sofort eine On-Demand-Sicherung ausführen.  Dies ist hilfreich, wenn Sie Änderungen an Ihrem System vornehmen und sicherstellen möchten, dass Sie vor dem Start über eine Sicherungskopie verfügen.

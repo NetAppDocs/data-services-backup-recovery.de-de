@@ -27,6 +27,7 @@ Sie können die folgenden Aufgaben im Zusammenhang mit Schutzgruppen ausführen:
 
 
 
+[[tag-based-protection-groups]]
 == Tag-basierte Schutzgruppen
 
 Bei der Auswahl von Ressourcen, die einer Schutzgruppe hinzugefügt werden sollen, können Sie diese nach Datenspeichern, virtuellen Maschinen oder nach vSphere Tags organisieren.
@@ -45,6 +46,7 @@ Die Tag-Zugehörigkeit wird zum Zeitpunkt der Sicherung von vCenter aufgelöst. 
 
 
 
+[[create-a-protection-group]]
 == Erstellen einer Schutzgruppe
 
 Erstellen Sie eine Schutzgruppe, um die Ressourcen zu organisieren, die Sie gemeinsam sichern und wiederherstellen möchten.
@@ -92,6 +94,7 @@ Um eine neue Richtlinie zu erstellen, wählen Sie *Neue Richtlinie erstellen* un
 
 
 
+[[suspend-a-protection-groups-backup-schedule]]
 == Aussetzen des Sicherungszeitplans einer Schutzgruppe
 
 Setzen Sie eine Schutzgruppe aus, um ihre geplanten Sicherungen anzuhalten.
@@ -109,6 +112,7 @@ Wenn Sie eine Schutzgruppe aussetzen, ändert sich der Schutzstatus in „In War
 
 
 
+[[resume-a-protection-groups-backup-schedule]]
 == Fortsetzen des Sicherungszeitplans einer Schutzgruppe
 
 Durch die Wiederaufnahme einer angehaltenen Schutzgruppe werden die geplanten Sicherungen für die Schutzgruppe neu gestartet.
@@ -129,6 +133,7 @@ Das System validiert die Zeitpläne und ändert den Schutzstatus auf „Geschüt
 
 
 
+[[edit-a-protection-group]]
 == Bearbeiten Sie eine Schutzgruppe
 
 Bearbeiten Sie eine Schutzgruppe, um deren Namen oder Einstellungen zu ändern. Möglicherweise möchten Sie eine Schutzgruppe bearbeiten, wenn sich die Ressourcen in der Gruppe geändert haben.
@@ -149,6 +154,7 @@ Der Assistent zum Bearbeiten der Schutzgruppe führt Sie durch die Einstellungen
 
 
 
+[[apply-an-updated-vcenter-time-zone-to-an-existing-protection-group]]
 === Eine aktualisierte vCenter-Zeitzone auf eine bestehende Schutzgruppe anwenden
 
 Geplante Backups verwenden die vCenter Server-Zeitzone, die beim Erstellen des Zeitplans der Schutzgruppe festgelegt wird. Wenn die vCenter Server-Zeitzone geändert wird, laufen bestehende Schutzgruppen weiterhin in ihrer ursprünglichen Zeitzone (typischerweise UTC), bis deren Zeitpläne aktualisiert werden.
@@ -163,6 +169,7 @@ NOTE: Zeitpläne werden nur neu erstellt, wenn der Name der Schutzgruppe geände
 
 
 
+[[delete-a-protection-group]]
 == Löschen einer Schutzgruppe
 
 Wenn Sie eine Schutzgruppe löschen, entfernen Sie diese und alle Sicherungszeitpläne für die Gruppe.  Löschen Sie eine Schutzgruppe, wenn Sie sie nicht mehr benötigen.

@@ -40,6 +40,7 @@ TIP: Für den Zugriff auf die Sicherungsdatei zahlen Sie Ihrem Cloud-Anbieter zu
 
 
 
+[[how-restoring-workloads-works]]
 == So funktioniert die Wiederherstellung von Workloads
 
 Beim Wiederherstellen von Workloads geschieht Folgendes:
@@ -54,6 +55,7 @@ image:diagram_browse_restore_volume-unified.png["Ein Diagramm, das den Ablauf zu
 
 
 
+[[restore-methods]]
 == Wiederherstellungsmethoden
 
 Stellen Sie Workloads mit einer der folgenden Methoden wieder her:
@@ -66,6 +68,7 @@ Stellen Sie Workloads mit einer der folgenden Methoden wieder her:
 
 
 
+[[restore-workload-data-from-the-restore-option]]
 == Wiederherstellen von Workload-Daten über die Option „Wiederherstellen“
 
 Stellen Sie Datenbank-Workloads mithilfe der Option „Wiederherstellen“ wieder her.
@@ -84,6 +87,7 @@ Stellen Sie Datenbank-Workloads mithilfe der Option „Wiederherstellen“ wiede
 
 
 
+[[restore-workloads-from-snapshots]]
 === Wiederherstellen von Workloads aus Snapshots
 
 . Wählen Sie auf der Seite „Wiederherstellungsoptionen“ die Option „Aus Snapshots wiederherstellen“ aus.
@@ -121,6 +125,7 @@ Als Nächstes werden die Zieloptionen angezeigt.
 
 
 
+[[restore-to-specific-point-in-time]]
 === Wiederherstellung zu einem bestimmten Zeitpunkt
 
 NetApp Backup and Recovery verwendet Protokolle und die aktuellsten Snapshots, um eine zeitpunktbezogene Wiederherstellung Ihrer Daten zu erstellen.
@@ -160,6 +165,7 @@ NetApp Backup and Recovery verwendet Protokolle und die aktuellsten Snapshots, u
 
 
 
+[[restore-to-the-latest-backup]]
 === Wiederherstellen der neuesten Sicherung
 
 Diese Option verwendet die neuesten vollständigen und Protokollsicherungen, um Ihre Daten in den letzten fehlerfreien Zustand zurückzusetzen.  Das System scannt Protokolle vom letzten Snapshot bis zur Gegenwart.  Der Prozess verfolgt Änderungen und Aktivitäten, um die aktuellste und genaueste Version Ihrer Daten wiederherzustellen.
@@ -197,6 +203,7 @@ NetApp Backup and Recovery zeigt Ihnen die Snapshots, die für den Wiederherstel
 
 
 
+[[restore-workload-data-from-the-inventory-option]]
 == Wiederherstellen von Workload-Daten aus der Inventaroption
 
 Stellen Sie Datenbank-Workloads von der Inventarseite aus wieder her.  Mit der Inventaroption können Sie nur Datenbanken, keine Instanzen wiederherstellen.

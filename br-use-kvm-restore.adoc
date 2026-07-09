@@ -39,6 +39,7 @@ TIP: Für den Zugriff auf den Inhalt der Sicherungsdatei fallen bei Ihrem Cloud-
 
 
 
+[[how-restoring-virtual-machines-works]]
 == So funktioniert die Wiederherstellung virtueller Maschinen
 
 Wenn Sie virtuelle Maschinen wiederherstellen, geschieht Folgendes:
@@ -52,6 +53,7 @@ Auf der Seite „Wiederherstellen“ können Sie eine VM wiederherstellen, selbs
 
 
 
+[[restore-kvm-virtual-machines]]
 == Wiederherstellen von KVM-VMs
 
 Stellen Sie KVM-VMs über das Menü „Wiederherstellen“ wieder her. Sie können den Snapshot anhand seines Namens oder mithilfe von Filtern suchen.

@@ -37,6 +37,7 @@ NOTE: Die hohe Priorität wird beim Wiederherstellen von Daten aus dem Azure-Arc
 
 
 
+[[browse-restore-supported-systems-and-object-storage-providers]]
 == Durchsuchen und Wiederherstellen unterstützter Systeme und Objektspeicheranbieter
 
 Sie können ONTAP Daten aus einer Sicherungsdatei, die sich in einem sekundären System (einem replizierten Volume) oder im Objektspeicher (einer Sicherungsdatei) befindet, auf den folgenden Systemen wiederherstellen. Snapshots befinden sich auf dem Quellsystem und können nur auf demselben System wiederhergestellt werden.
@@ -75,6 +76,7 @@ NOTE: Wenn die ONTAP Version auf Ihrem System niedriger als 9.13.1 ist, können 
 
 
 
+[[restore-volumes-using-browse-restore]]
 == Wiederherstellen von Volumes mithilfe von „Durchsuchen und Wiederherstellen“
 
 Wenn Sie ein Volume aus einer Sicherungsdatei wiederherstellen, erstellt NetApp Backup and Recovery mithilfe der Daten aus der Sicherung ein _neues_ Volume.  Wenn Sie ein Backup aus dem Objektspeicher verwenden, können Sie die Daten auf einem Volume im Originalsystem, auf einem anderen System, das sich im selben Cloud-Konto wie das Quellsystem befindet, oder auf einem lokalen ONTAP -System wiederherstellen.
@@ -141,6 +143,7 @@ Beachten Sie, dass die Wiederherstellung eines Volumes aus einer Sicherungsdatei
 
 
 
+[[restore-folders-and-files-using-browse-restore]]
 == Stellen Sie Ordner und Dateien mit „Durchsuchen und Wiederherstellen“ wieder her
 
 Wenn Sie nur einige Dateien aus einer ONTAP Volume-Sicherung wiederherstellen müssen, können Sie anstelle der Wiederherstellung des gesamten Volumes einen Ordner oder einzelne Dateien wiederherstellen.  Sie können Ordner und Dateien auf einem vorhandenen Volume im ursprünglichen System oder auf einem anderen System wiederherstellen, das dasselbe Cloud-Konto verwendet.  Sie können Ordner und Dateien auch auf einem Volume auf einem lokalen ONTAP System wiederherstellen.
@@ -165,6 +168,7 @@ Sie können es mit einem speziellen Flag testen, das im https://community.netapp
 ====
 
 
+[[restore-folders-and-files]]
 === Ordner und Dateien wiederherstellen
 
 Befolgen Sie diese Schritte, um Ordner oder Dateien aus einer ONTAP Volume-Sicherung auf einem Volume wiederherzustellen.  Sie sollten den Namen des Datenträgers und das Datum der Sicherungsdatei kennen, die Sie zum Wiederherstellen des Ordners oder der Datei(en) verwenden möchten.  Diese Funktion verwendet Live Browsing, sodass Sie die Liste der Verzeichnisse und Dateien in jeder Sicherungsdatei anzeigen können.

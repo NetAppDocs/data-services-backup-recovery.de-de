@@ -24,6 +24,7 @@ NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads 
 
 
 
+[[identify-the-connection-method]]
 == Identifizieren Sie die Verbindungsmethode
 
 Wählen Sie aus, welche der beiden Verbindungsmethoden Sie beim Konfigurieren von Backups von lokalen ONTAP -Systemen zu AWS S3 verwenden möchten.
@@ -44,12 +45,14 @@ image:diagram_cloud_backup_onprem_aws_private.png["Ein Diagramm, das zeigt, wie 
 
 
 
+[[prepare-your-console-agent]]
 == Vorbereiten Ihres Konsolenagenten
 
 Der Konsolenagent ist die Hauptsoftware für die NetApp Console .  Zum Sichern und Wiederherstellen Ihrer ONTAP Daten ist ein Konsolenagent erforderlich.
 
 
 
+[[create-or-switch-console-agents]]
 === Erstellen oder Wechseln von Konsolenagenten
 
 Wenn Sie bereits einen Konsolenagenten in Ihrem AWS VPC oder vor Ort bereitgestellt haben, sind Sie startklar.
@@ -67,6 +70,7 @@ NetApp Backup and Recovery wird in GovCloud-Regionen unterstützt, wenn der Kons
 
 
 
+[[prepare-console-agent-networking-requirements]]
 === Netzwerkanforderungen für den Konsolenagenten vorbereiten
 
 Stellen Sie sicher, dass die folgenden Netzwerkanforderungen erfüllt sind:
@@ -83,6 +87,7 @@ Stellen Sie sicher, dass die folgenden Netzwerkanforderungen erfüllt sind:
 
 
 
+[[verify-license-requirements]]
 == Überprüfen der Lizenzanforderungen
 
 Sie müssen die Lizenzanforderungen sowohl für AWS als auch für die NetApp Console überprüfen:
@@ -102,6 +107,7 @@ Sie können in allen Regionen, einschließlich der AWS GovCloud-Regionen, Backup
 
 
 
+[[prepare-your-ontap-clusters]]
 == Bereiten Sie Ihre ONTAP -Cluster vor
 
 Bereiten Sie Ihr lokales ONTAP -Quellsystem und alle sekundären lokalen ONTAP oder Cloud Volumes ONTAP Systeme vor.
@@ -116,6 +122,7 @@ Die Vorbereitung Ihrer ONTAP Cluster umfasst die folgenden Schritte:
 
 
 
+[[discover-your-ontap-systems-in-netapp-console]]
 === Entdecken Sie Ihre ONTAP -Systeme in der NetApp Console
 
 Sowohl Ihr lokales ONTAP Quellsystem als auch alle sekundären lokalen ONTAP oder Cloud Volumes ONTAP -Systeme müssen auf der Seite *Systeme* der NetApp Console verfügbar sein.
@@ -124,6 +131,7 @@ Sie müssen die IP-Adresse der Clusterverwaltung und das Kennwort für das Admin
 
 
 
+[[verify-ontap-system-requirements]]
 === Überprüfen der ONTAP Systemanforderungen
 
 Stellen Sie sicher, dass Ihr ONTAP -System die folgenden Anforderungen erfüllt:
@@ -145,6 +153,7 @@ https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-sn
 
 
 
+[[verify-ontap-networking-requirements-for-backing-up-data-to-object-storage]]
 === Überprüfen Sie die ONTAP Netzwerkanforderungen für die Datensicherung im Objektspeicher
 
 Sie müssen die folgenden Anforderungen auf dem System konfigurieren, das eine Verbindung zum Objektspeicher herstellt.
@@ -178,6 +187,7 @@ Alle Intercluster-LIFs innerhalb des IPspace müssen Zugriff auf den Objektspeic
 
 
 
+[[verify-ontap-networking-requirements-for-replicating-volumes]]
 === Überprüfen Sie die ONTAP Netzwerkanforderungen für die Replikation von Volumes
 
 Wenn Sie mit NetApp Backup and Recovery replizierte Volumes auf einem sekundären ONTAP System erstellen möchten, stellen Sie sicher, dass die Quell- und Zielsysteme die folgenden Netzwerkanforderungen erfüllen.
@@ -202,6 +212,7 @@ Da Sie auf Cloud Volumes ONTAP oder lokale Systeme replizieren können, überpr�
 
 
 
+[[prepare-amazon-s3-as-your-backup-target]]
 == Bereiten Sie Amazon S3 als Ihr Sicherungsziel vor
 
 Die Vorbereitung von Amazon S3 als Sicherungsziel umfasst die folgenden Schritte:
@@ -214,6 +225,7 @@ Die Vorbereitung von Amazon S3 als Sicherungsziel umfasst die folgenden Schritte
 
 
 
+[[set-up-s3-permissions]]
 === S3-Berechtigungen einrichten
 
 Sie müssen zwei Berechtigungssätze konfigurieren:
@@ -287,6 +299,7 @@ Weitere Informationen finden Sie im https://docs.aws.amazon.com/IAM/latest/UserG
 
 
 
+[[create-your-own-buckets]]
 === Erstellen Sie Ihre eigenen Eimer
 
 Standardmäßig erstellt der Dienst Buckets für Sie.  Wenn Sie Ihre eigenen Buckets verwenden möchten, können Sie diese auch erstellen, bevor Sie den Backup-Aktivierungsassistenten starten, und diese Buckets dann im Assistenten auswählen.
@@ -330,6 +343,7 @@ Wenn Sie Ihre eigenen Buckets erstellen, sollten Sie den Bucket-Namen „netapp-
 ====
 
 
+[[set-up-customer-managed-aws-keys-for-data-encryption]]
 === Einrichten von kundenverwalteten AWS-Schlüsseln zur Datenverschlüsselung
 
 Wenn Sie die standardmäßigen Amazon S3-Verschlüsselungsschlüssel zum Verschlüsseln der zwischen Ihrem lokalen Cluster und dem S3-Bucket übertragenen Daten verwenden möchten, sind Sie bestens gerüstet, da die Standardinstallation diese Art der Verschlüsselung verwendet.
@@ -343,6 +357,7 @@ Siehe  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task
 
 
 
+[[configure-your-system-for-a-private-connection-using-a-vpc-endpoint-interface]]
 === Konfigurieren Sie Ihr System für eine private Verbindung mithilfe einer VPC-Endpunktschnittstelle
 
 Wenn Sie eine standardmäßige öffentliche Internetverbindung verwenden möchten, werden alle Berechtigungen vom Konsolenagenten festgelegt und Sie müssen nichts weiter tun.
@@ -390,6 +405,7 @@ Please enter Certificate: Press <Enter> when done
 
 
 
+[[activate-backups-on-your-ontap-volumes]]
 == Aktivieren Sie Backups auf Ihren ONTAP -Volumes
 
 Aktivieren Sie Backups jederzeit direkt von Ihrem lokalen System aus.
@@ -405,6 +421,7 @@ Sie können auch<<API-Befehle anzeigen>> im Überprüfungsschritt, damit Sie den
 
 
 
+[[start-the-wizard]]
 === Starten des Assistenten
 
 .Schritte
@@ -430,6 +447,7 @@ Auf der Einführungsseite des Assistenten werden die Schutzoptionen angezeigt, d
 
 
 
+[[select-the-volumes-that-you-want-to-back-up]]
 === Wählen Sie die Volumes aus, die Sie sichern möchten
 
 Wählen Sie die Volumes aus, die Sie schützen möchten.  Ein geschütztes Volume verfügt über eine oder mehrere der folgenden Optionen: Snapshot-Richtlinie, Replikationsrichtlinie, Backup-to-Object-Richtlinie.
@@ -458,6 +476,7 @@ Wenn auf die von Ihnen ausgewählten Volumes bereits Snapshot- oder Replikations
 
 
 
+[[define-the-backup-strategy]]
 === Definieren Sie die Sicherungsstrategie
 
 Zum Definieren der Sicherungsstrategie müssen die folgenden Optionen festgelegt werden:
@@ -569,6 +588,7 @@ Um eine Richtlinie zu erstellen, wählen Sie *Neue Richtlinie erstellen* und geh
 
 
 
+[[review-your-selections]]
 === Überprüfen Sie Ihre Auswahl
 
 Dies ist die Gelegenheit, Ihre Auswahl zu überprüfen und gegebenenfalls Anpassungen vorzunehmen.
@@ -590,6 +610,7 @@ Sie können den Status von Sicherungs- und Wiederherstellungsaufträgen auch mit
 
 
 
+[[show-the-api-commands]]
 === API-Befehle anzeigen
 
 Möglicherweise möchten Sie die im Assistenten „Sicherung und Wiederherstellung aktivieren“ verwendeten API-Befehle anzeigen und optional kopieren.  Möglicherweise möchten Sie dies tun, um die Sicherungsaktivierung in zukünftigen Systemen zu automatisieren.

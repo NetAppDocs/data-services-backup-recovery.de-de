@@ -41,6 +41,7 @@ NOTE: Informationen zu Einschränkungen im Zusammenhang mit der Wiederherstellun
 
 
 
+[[the-restore-dashboard]]
 == Das Wiederherstellungs-Dashboard
 
 Sie verwenden das Wiederherstellungs-Dashboard, um Volume-, Ordner- und Dateiwiederherstellungsvorgänge durchzuführen. Um auf das Wiederherstellungs-Dashboard zuzugreifen, wählen Sie im Konsolenmenü *Sicherung und Wiederherstellung* und anschließend die Registerkarte *Wiederherstellung*.  Sie können auch auswählenimage:icon-options-vertical.gif["Schaltfläche „Mehr“"] > *Wiederherstellungs-Dashboard anzeigen* Sie können es über den Sicherungs- und Wiederherstellungsdienst im Dienstebereich aufrufen.
@@ -52,6 +53,7 @@ Das Wiederherstellungs-Dashboard bietet zwei verschiedene Möglichkeiten zum Wie
 
 
 
+[[comparing-browse-restore-and-search-restore]]
 == Vergleich von „Browse & Restore“ und „Search & Restore“
 
 Im Großen und Ganzen ist „Durchsuchen und Wiederherstellen“ normalerweise besser geeignet, wenn Sie ein bestimmtes Volume, einen bestimmten Ordner oder eine bestimmte Datei aus der letzten Woche oder dem letzten Monat wiederherstellen müssen – und Sie den Namen und Speicherort der Datei sowie das Datum kennen, an dem sie zuletzt in gutem Zustand war.  „Suchen und Wiederherstellen“ ist normalerweise besser, wenn Sie ein Volume, einen Ordner oder eine Datei wiederherstellen müssen, sich aber nicht an den genauen Namen, das Volume, auf dem es sich befindet, oder das Datum erinnern, an dem es zuletzt in gutem Zustand war.

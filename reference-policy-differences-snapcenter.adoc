@@ -16,6 +16,7 @@ Es gibt einige Unterschiede zwischen den in SnapCenter und den in NetApp Backup 
 
 
 
+[[schedule-tiers]]
 == Zeitplanstufen
 
 SnapCenter verwendet die folgenden Zeitplanebenen:
@@ -37,6 +38,7 @@ NetApp Backup and Recovery verwendet die folgenden Zeitplanebenen, die sich leic
 
 
 
+[[multiple-policies-in-snapcenter-with-the-same-schedule-tier]]
 == Mehrere Richtlinien in SnapCenter mit derselben Zeitplanebene
 
 Sie können einer Ressource in SnapCenter mehrere Richtlinien mit derselben Zeitplanebene zuweisen.  NetApp Backup and Recovery unterstützt jedoch nicht mehrere Richtlinien für eine Ressource, die dieselbe Zeitplanebene verwendet.
@@ -45,6 +47,7 @@ Sie können einer Ressource in SnapCenter mehrere Richtlinien mit derselben Zeit
 
 
 
+[[imported-snapcenter-daily-schedules]]
 == Importierte SnapCenter -Tagespläne
 
 NetApp Backup and Recovery passt die SnapCenter -Zeitpläne wie folgt an:
@@ -61,6 +64,7 @@ NetApp Backup and Recovery passt die SnapCenter -Zeitpläne wie folgt an:
 
 
 
+[[imported-snapcenter-hourly-schedules]]
 == Importierte SnapCenter -Stundenpläne
 
 Stündliche SnapCenter -Richtlinien mit Wiederholungsintervallen von mehr als einer Stunde werden in NetApp Backup and Recovery in eine tägliche Richtlinie umgewandelt.
@@ -71,6 +75,7 @@ Bei jeder stündlichen Richtlinie mit Wiederholungsintervallen, die kein Faktor 
 
 
 
+[[log-retention-from-snapcenter-policies]]
 == Protokollaufbewahrung aus SnapCenter -Richtlinien
 
 Wenn Sie in SnapCenter über eine Ressource mit mehreren Richtlinien verfügen, verwendet NetApp Backup and Recovery die folgende Prioritätsreihenfolge, um den Protokollaufbewahrungswert zuzuweisen:
@@ -83,12 +88,14 @@ Wenn Sie in SnapCenter über eine Ressource mit mehreren Richtlinien verfügen, 
 
 
 
+[[log-backup-retention]]
 == Aufbewahrungsdauer der Protokollsicherung
 
 SnapCenter unterstützt mehrere Aufbewahrungswerte für Richtlinien für eine Ressource.  NetApp Backup and Recovery unterstützt nur einen Aufbewahrungswert pro Ressource.
 
 
 
+[[retention-count-from-snapcenter-policies]]
 == Aufbewahrungsanzahl aus SnapCenter -Richtlinien
 
 Wenn Sie über eine Ressource mit aktiviertem sekundärem Schutz in SnapCenter mit mehreren Quellvolumes, mehreren Zielvolumes und mehreren SnapMirror -Beziehungen verfügen, verwendet NetApp Backup and Recovery nur die Aufbewahrungsanzahl der ersten Richtlinie.
@@ -97,6 +104,7 @@ Wenn Sie über eine Ressource mit aktiviertem sekundärem Schutz in SnapCenter m
 
 
 
+[[snapmirror-labels-from-snapcenter-policies]]
 == SnapMirror -Labels aus SnapCenter -Richtlinien
 
 SnapCenter behält nach der Migration SnapMirror -Beschriftungen für jede Richtlinie bei, auch wenn sich die Ebene ändert.

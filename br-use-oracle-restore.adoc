@@ -32,6 +32,7 @@ Sie können Daten am ursprünglichen Speicherort wiederherstellen. Die Wiederher
 
 
 
+[[how-restoring-oracle-databases-works]]
 == So funktioniert die Wiederherstellung von Oracle-Datenbanken
 
 Wenn Sie Oracle-Datenbanken wiederherstellen, geschieht Folgendes:
@@ -45,6 +46,7 @@ Auf der Seite „Wiederherstellen“ (auch als „Suchen und Wiederherstellen“
 
 
 
+[[restore-an-oracle-database]]
 == Wiederherstellen einer Oracle-Datenbank
 
 Stellen Sie je nach Bedarf eine Oracle-Datenbank zu einem bestimmten Zeitpunkt, zu einer bestimmten Systemänderungsnummer (SCN) oder zum letzten fehlerfreien Zustand wieder her.  Sie können die Datenbank auch einfach aus Snapshots wiederherstellen und den automatisierten Wiederherstellungsprozess überspringen.  Wenn Sie die Wiederherstellung manuell durchführen möchten, können Sie den automatisierten Wiederherstellungsprozess überspringen.  Sie können die Datenbank anhand ihres Namens oder mit bestimmten Filtern suchen.

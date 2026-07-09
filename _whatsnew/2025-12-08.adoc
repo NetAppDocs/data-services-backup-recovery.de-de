@@ -4,6 +4,7 @@
 
 
 
+[[vmware-workloads-preview-enhancements]]
 === VMware Workloads Vorschau-Verbesserungen
 
 Die Vorschauversion von VMware-Workloads führt die folgenden erweiterten Funktionen ein:

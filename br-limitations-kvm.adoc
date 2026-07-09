@@ -20,6 +20,7 @@ Die folgenden Aktionen und Konfigurationen werden in KVM-Workloads in NetApp Bac
 
 
 
+[[unsupported-actions]]
 == Nicht unterstützte Aktionen
 
 Folgende Aktionen werden nicht unterstützt:
@@ -32,6 +33,7 @@ Folgende Aktionen werden nicht unterstützt:
 
 
 
+[[unsupported-configurations]]
 == Nicht unterstützte Konfigurationen
 
 Die folgenden Konfigurationen werden nicht unterstützt:
@@ -45,6 +47,7 @@ Die folgenden Konfigurationen werden nicht unterstützt:
 
 
 
+[[troubleshooting-notes]]
 == Hinweise zur Fehlerbehebung
 
 Beachten Sie Folgendes bei der Verwendung von KVM-Workloads mit NetApp Backup and Recovery.

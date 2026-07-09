@@ -18,6 +18,7 @@ Sie können Microsoft SQL Server-Snapshots verwalten, indem Sie sie aus NetApp B
 
 
 
+[[delete-a-snapshot]]
 == Löschen eines Snapshots
 
 Sie können nur lokale Snapshots löschen.

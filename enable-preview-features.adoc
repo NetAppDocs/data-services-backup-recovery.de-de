@@ -20,10 +20,12 @@ Vorschau- und versteckte Funktionen für NetApp Backup and Recovery aktivieren.
 
 
 
+[[available-preview-features]]
 == Verfügbare Vorschaufunktionen
 
 Sie können die folgenden Vorschaufunktionen für NetApp Backup und Recovery aktivieren.
 
+[[anchor-flags]]
 [cols="50,50"]
 |===
 | Feature-Flag | Funktionsbeschreibung 
@@ -36,6 +38,7 @@ Sie können die folgenden Vorschaufunktionen für NetApp Backup und Recovery akt
 |===
 
 
+[[enable-preview-features]]
 == Vorschaufunktionen aktivieren
 
 Aktivieren Sie die Optionen für Vorschau-Features, um Funktionen zu nutzen, die noch nicht allgemein verfügbar sind. Verwenden Sie Vorschau-Features in Produktionsumgebungen mit Vorsicht.
@@ -116,6 +119,7 @@ NOTE: Um eine Vorschaufunktion zu deaktivieren, führen Sie die gleichen Schritt
 
 
 
+[[disable-indexing-for-volumes]]
 == Indizierung für Volumes deaktivieren
 
 Deaktivieren Sie die Indizierung für bestimmte Volumes oder für alle Volumes, die zu einer oder mehreren Storage-VMs gehören, indem Sie die folgenden Optionsflags verwenden:

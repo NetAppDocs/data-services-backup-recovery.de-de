@@ -31,6 +31,7 @@ Sie können die folgenden Ziele im Zusammenhang mit Richtlinien erreichen:
 
 
 
+[[view-policies]]
 == Richtlinien anzeigen
 
 . Wählen Sie im NetApp Backup and Recovery -Menü *Richtlinien* aus.
@@ -47,6 +48,7 @@ Sie können die folgenden Ziele im Zusammenhang mit Richtlinien erreichen:
 
 
 
+[[create-a-policy]]
 == Erstellen einer Richtlinie
 
 Sie können Richtlinien erstellen, die Ihre lokalen Snapshots, Replikationen auf sekundären Speicher und Backups auf Objektspeicher regeln. Ein Teil Ihrer 3-2-1-Strategie besteht darin, einen Snapshot der Instanzen, Datenbanken, Anwendungen oder VMs auf dem *primären* Speichersystem zu erstellen.
@@ -131,6 +133,7 @@ NOTE: Die angezeigten Felder unterscheiden sich je nach ausgewähltem Anbieter u
 
 
 
+[[configure-advanced-settings-in-the-policy]]
 === Konfigurieren Sie erweiterte Einstellungen in der Richtlinie
 
 [%collapsible]
@@ -198,6 +201,7 @@ TIP: Wenn die Snapshot-Frequenz auf 1 Stunde eingestellt ist, sollte die maximal
 ====
 
 
+[[edit-a-policy]]
 == Bearbeiten einer Richtlinie
 
 Sie können die Backup-Architektur, die Backup-Frequenz, die Aufbewahrungsrichtlinie und weitere Einstellungen einer Richtlinie bearbeiten. Für Kubernetes-Workload-Richtlinien können Sie nur die Zeitplan- und Aufbewahrungseinstellungen bearbeiten.
@@ -220,6 +224,7 @@ Superadministrator für Backup und Wiederherstellung. https://docs.netapp.com/us
 
 
 
+[[delete-a-policy]]
 == Löschen einer Richtlinie
 
 Sie können eine Richtlinie löschen, wenn Sie sie nicht mehr benötigen.

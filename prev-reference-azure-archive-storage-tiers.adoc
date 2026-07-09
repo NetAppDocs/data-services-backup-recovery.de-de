@@ -18,6 +18,7 @@ NetApp Backup and Recovery unterstützt eine Azure-Archivzugriffsebene und die m
 
 
 
+[[supported-azure-blob-access-tiers-for-netapp-backup-and-recovery]]
 == Unterstützte Azure Blob-Zugriffsebenen für NetApp Backup and Recovery
 
 Wenn Sicherungsdateien zunächst erstellt werden, werden sie in der Zugriffsebene _Cool_ gespeichert.  Diese Ebene ist für die Speicherung von Daten optimiert, auf die selten zugegriffen wird, auf die bei Bedarf jedoch sofort zugegriffen werden kann.
@@ -30,6 +31,7 @@ https://docs.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview["Info
 
 
 
+[[restore-data-from-archival-storage]]
 == Daten aus dem Archivspeicher wiederherstellen
 
 Während das Speichern älterer Sicherungsdateien im Archivspeicher wesentlich weniger kostspielig ist als die Speicherung im Cool-Speicher, dauert der Zugriff auf Daten aus einer Sicherungsdatei im Azure-Archiv für Wiederherstellungsvorgänge länger und ist teurer.

@@ -21,6 +21,7 @@ Organisationsadministrator oder SnapCenter Administrator. link:reference-roles.h
 
 
 
+[[unprotect-a-kubernetes-application]]
 == Aufheben des Schutzes einer Kubernetes-Anwendung
 
 Sie können den Schutz einer Anwendung aufheben, wenn Sie sie nicht mehr schützen möchten. Wenn Sie den Schutz einer Anwendung aufheben, beendet NetApp Backup and Recovery den Schutz der Anwendung, behält jedoch alle zugehörigen Backups und Snapshots bei.
@@ -39,6 +40,7 @@ NOTE: Sie können den Schutz einer Anwendung nicht aufheben, solange noch Schutz
 
 
 
+[[delete-a-kubernetes-application]]
 == Löschen einer Kubernetes-Anwendung
 
 Löschen Sie eine Anwendung, die Sie nicht mehr benötigen.  NetApp Backup and Recovery beendet den Schutz und entfernt alle Backups und Snapshots für gelöschte Anwendungen.
@@ -59,6 +61,7 @@ CAUTION: Sie können die Anwendung mithilfe dieser Snapshots und Backups nicht m
 
 
 
+[[remove-a-restore-point-for-a-kubernetes-application]]
 == Einen Wiederherstellungspunkt für eine Kubernetes-Anwendung entfernen
 
 Möglicherweise müssen Sie einen Wiederherstellungspunkt für eine Anwendung entfernen, wenn Sie den Schutz aufheben müssen und derzeit Schutzvorgänge ausgeführt werden.

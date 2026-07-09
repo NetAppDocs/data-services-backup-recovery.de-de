@@ -34,6 +34,7 @@ Auf der Seite „Erweiterte Einstellungen“ können Sie die folgenden Optionen 
 
 
 
+[[view-cluster-level-backup-settings]]
 == Anzeigen der Sicherungseinstellungen auf Clusterebene
 
 Sie können die Systemeinstellungen auf Clusterebene und die Provider-Einstellungen für jedes System anzeigen.
@@ -51,6 +52,7 @@ Beachten Sie, dass einige Optionen je nach ONTAP -Version auf dem Quellcluster u
 
 
 
+[[change-the-network-bandwidth-available-to-upload-backups-to-object-storage]]
 == Ändern Sie die zum Hochladen von Backups in den Objektspeicher verfügbare Netzwerkbandbreite
 
 Wenn Sie NetApp Backup and Recovery für ein System aktivieren, kann ONTAP standardmäßig eine unbegrenzte Bandbreite nutzen, um die Sicherungsdaten von Volumes im System in den Objektspeicher zu übertragen.  Wenn Sie feststellen, dass der Sicherungsverkehr die normale Arbeitslast der Benutzer beeinträchtigt, können Sie die während der Übertragung verwendete Netzwerkbandbreite mithilfe der Option „Maximale Übertragungsrate“ auf der Seite „Erweiterte Einstellungen“ drosseln.
@@ -68,6 +70,7 @@ Diese Einstellung hat keine Auswirkungen auf die Bandbreite, die anderen Replika
 
 
 
+[[change-whether-historical-snapshots-are-exported-as-backup-files]]
 == Ändern Sie, ob historische Snapshots als Sicherungsdateien exportiert werden.
 
 Falls lokale Snapshots für Volumes existieren, die mit der in diesem System verwendeten Backup-Zeitplanbezeichnung übereinstimmen (z. B. täglich, wöchentlich usw.), können Sie diese historischen Snapshots als Sicherungsdateien in den Objektspeicher exportieren.  Dies ermöglicht es Ihnen, Ihre Backups in der Cloud zu initialisieren, indem ältere Snapshots in die Basis-Backup-Kopie verschoben werden.
@@ -84,6 +87,7 @@ Beachten Sie, dass diese Option nur für neue Sicherungsdateien für neue Lese-/
 
 
 
+[[change-whether-yearly-snapshots-are-removed-from-the-source-system]]
 == Ändern, ob „jährliche“ Snapshots aus dem Quellsystem entfernt werden
 
 Wenn Sie für eine Sicherungsrichtlinie eines Ihrer Volumes die Bezeichnung „jährlich“ auswählen, wird ein sehr großer Snapshot erstellt. Standardmäßig werden diese jährlichen Snapshots nach der Übertragung in den Objektspeicher automatisch aus dem Quellsystem gelöscht. Sie können dieses Standardverhalten im Abschnitt „Jährliche Löschung von Snapshots“ ändern.
@@ -98,6 +102,7 @@ Wenn Sie für eine Sicherungsrichtlinie eines Ihrer Volumes die Bezeichnung „j
 
 
 
+[[enable-or-disable-ransomware-scans]]
 == Aktivieren oder Deaktivieren von Ransomware-Scans
 
 Ransomware-Schutzscans sind standardmäßig aktiviert. Die Standardeinstellung für die Scanhäufigkeit beträgt 7 Tage. Der Scan erfolgt nur für den neuesten Snapshot.
@@ -115,6 +120,7 @@ Siehelink:prev-ontap-policy-manage.html["Richtlinien verwalten"] Weitere Informa
 
 
 
+[[enable-or-disable-ransomware-scans-for-a-system]]
 === Aktivieren oder deaktivieren Sie Ransomware-Scans für ein System
 
 Sie können Ransomware-Scans für einen Cluster aktivieren oder deaktivieren.
@@ -132,6 +138,7 @@ Sie können Ransomware-Scans für einen Cluster aktivieren oder deaktivieren.
 
 
 
+[[enable-or-disable-ransomware-scans-for-a-provider]]
 === Aktivieren oder deaktivieren Sie Ransomware-Scans für einen Anbieter.
 
 Sie können Ransomware-Scans auf Anbieterebene über die Anbietereinstellungsseite aktivieren oder deaktivieren. Die Einstellungen auf dieser Seite beziehen sich auf den Bucket, den Sie oben auf der Seite auswählen.

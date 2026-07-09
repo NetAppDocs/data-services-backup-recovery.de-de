@@ -21,6 +21,7 @@ NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads 
 
 
 
+[[verify-support-for-your-configuration]]
 == Überprüfen der Unterstützung für Ihre Konfiguration
 
 Lesen Sie die folgenden Anforderungen, um sicherzustellen, dass Sie über eine unterstützte Konfiguration verfügen, bevor Sie mit dem Sichern von Volumes auf S3-kompatiblen Speicher beginnen.
@@ -39,6 +40,7 @@ Erforderliche Informationen zur Verwendung von kundenverwalteten Schlüsseln zur
 
 
 
+[[supported-actions]]
 === Unterstützte Aktionen
 
 Folgende Aktionen werden beim Sichern auf S3-kompatiblem Speicher unterstützt:
@@ -51,6 +53,7 @@ Folgende Aktionen werden beim Sichern auf S3-kompatiblem Speicher unterstützt:
 
 
 
+[[unsupported-features-and-configurations]]
 === Nicht unterstützte Funktionen und Konfigurationen
 
 Die folgenden Funktionen und Konfigurationen werden bei der Datensicherung auf S3-kompatiblem Speicher nicht unterstützt:
@@ -65,6 +68,7 @@ Die folgenden Funktionen und Konfigurationen werden bei der Datensicherung auf S
 
 
 
+[[caveats]]
 === Vorbehalte
 
 Beachten Sie beim Sichern auf S3-kompatiblem Speicher die folgenden Punkte:
@@ -76,6 +80,7 @@ Beachten Sie beim Sichern auf S3-kompatiblem Speicher die folgenden Punkte:
 
 
 
+[[verify-license-requirements]]
 == Überprüfen der Lizenzanforderungen
 
 Für die NetApp Backup and Recovery PAYGO-Lizenzierung ist im AWS Marketplace ein Konsolenabonnement verfügbar, das die Bereitstellung von Cloud Volumes ONTAP und NetApp Backup and Recovery ermöglicht.  Sie müssen https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["dieses NetApp Console Abonnement abonnieren"^] bevor Sie NetApp Backup and Recovery aktivieren.  Die Abrechnung für NetApp Backup and Recovery erfolgt über dieses Abonnement.
@@ -90,6 +95,7 @@ Und Sie benötigen ein AWS-Konto für den Speicherplatz, auf dem Ihre Backups ge
 
 
 
+[[prepare-your-console-agent]]
 == Vorbereiten Ihres Konsolenagenten
 
 Der Konsolenagent muss in einer AWS-Region mit vollständigem oder eingeschränktem Internetzugang („Standard“- oder „eingeschränkter“ Modus) installiert werden. https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Weitere Informationen finden Sie unter Bereitstellungsmodi der NetApp Console."^] .
@@ -101,6 +107,7 @@ Der Konsolenagent muss in einer AWS-Region mit vollständigem oder eingeschränk
 
 
 
+[[verify-or-add-permissions-to-the-console-agent]]
 === Überprüfen oder Hinzufügen von Berechtigungen für den Konsolenagenten
 
 Die IAM-Rolle, die der Konsole Berechtigungen erteilt, muss S3-Berechtigungen der neuesten Version enthalten. https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["Konsolenrichtlinie"^] .  Wenn die Richtlinie nicht alle diese Berechtigungen enthält, lesen Sie die https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html["AWS-Dokumentation: Bearbeiten von IAM-Richtlinien"^] .
@@ -210,6 +217,7 @@ link:prev-ontap-protect-journey.html["Erfahren Sie mehr über das Erstellen eige
 
 
 
+[[verify-ontap-networking-requirements-for-replicating-volumes]]
 == Überprüfen Sie die ONTAP Netzwerkanforderungen für die Replikation von Volumes
 
 Wenn Sie mit NetApp Backup and Recovery replizierte Volumes auf einem sekundären ONTAP System erstellen möchten, stellen Sie sicher, dass die Quell- und Zielsysteme die folgenden Netzwerkanforderungen erfüllen.
@@ -237,6 +245,7 @@ Da Sie auf Cloud Volumes ONTAP oder lokale Systeme replizieren können, überpr�
 
 
 
+[[enable-netapp-backup-and-recovery-on-cloud-volumes-ontap]]
 == Aktivieren Sie NetApp Backup and Recovery auf Cloud Volumes ONTAP
 
 Die Aktivierung von NetApp Backup and Recovery ist einfach.  Die Schritte unterscheiden sich geringfügig, je nachdem, ob Sie über ein vorhandenes oder ein neues Cloud Volumes ONTAP System verfügen.
@@ -271,6 +280,7 @@ Wenn das S3-kompatible Ziel für Ihre Backups als Cluster auf der Seite *Systeme
 
 
 
+[[activate-backups-on-your-ontap-volumes]]
 == Aktivieren Sie Backups auf Ihren ONTAP -Volumes
 
 Aktivieren Sie Backups jederzeit direkt von Ihrem lokalen System aus.
@@ -286,6 +296,7 @@ Sie können auch<<API-Befehle anzeigen>> im Überprüfungsschritt, damit Sie den
 
 
 
+[[start-the-wizard]]
 === Starten des Assistenten
 
 .Schritte
@@ -311,6 +322,7 @@ Auf der Einführungsseite des Assistenten werden die Schutzoptionen angezeigt, d
 
 
 
+[[select-the-volumes-that-you-want-to-back-up]]
 === Wählen Sie die Volumes aus, die Sie sichern möchten
 
 Wählen Sie die Volumes aus, die Sie schützen möchten.  Ein geschütztes Volume verfügt über eine oder mehrere der folgenden Optionen: Snapshot-Richtlinie, Replikationsrichtlinie, Backup-to-Object-Richtlinie.
@@ -339,6 +351,7 @@ Wenn auf die von Ihnen ausgewählten Volumes bereits Snapshot- oder Replikations
 
 
 
+[[define-the-backup-strategy]]
 === Definieren Sie die Sicherungsstrategie
 
 Zum Definieren der Sicherungsstrategie müssen die folgenden Optionen festgelegt werden:
@@ -452,6 +465,7 @@ Um eine Richtlinie zu erstellen, wählen Sie *Neue Richtlinie erstellen* und geh
 
 
 
+[[review-your-selections]]
 === Überprüfen Sie Ihre Auswahl
 
 Dies ist die Gelegenheit, Ihre Auswahl zu überprüfen und gegebenenfalls Anpassungen vorzunehmen.
@@ -475,6 +489,7 @@ Sie können den Status von Sicherungs- und Wiederherstellungsaufträgen auch mit
 
 
 
+[[show-the-api-commands]]
 === API-Befehle anzeigen
 
 Möglicherweise möchten Sie die im Assistenten „Sicherung und Wiederherstellung aktivieren“ verwendeten API-Befehle anzeigen und optional kopieren.  Möglicherweise möchten Sie dies tun, um die Sicherungsaktivierung in zukünftigen Systemen zu automatisieren.

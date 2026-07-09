@@ -21,6 +21,7 @@ Organisationsadministrator oder SnapCenter Administrator. link:reference-roles.h
 
 
 
+[[back-up-a-kubernetes-application-now-using-the-web-ui]]
 == Sichern Sie jetzt eine Kubernetes-Anwendung über die Web-Oberfläche
 
 Erstellen Sie manuell ein Backup einer Kubernetes-Anwendung, um eine Basis für zukünftige Backups und Snapshots zu schaffen oder um sicherzustellen, dass die aktuellsten Daten geschützt sind.

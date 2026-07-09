@@ -4,6 +4,7 @@
 
 
 
+[[microsoft-sql-server-workload-supported-in-general-availability-ga]]
 === Microsoft SQL Server-Workload wird in der allgemeinen Verfügbarkeit (GA) unterstützt
 
 Die Workload-Unterstützung für Microsoft SQL Server ist jetzt in NetApp Backup and Recovery allgemein verfügbar (GA). Organisationen, die eine MSSQL-Umgebung auf ONTAP, Cloud Volumes ONTAP und Amazon FSx for NetApp ONTAP -Speicher verwenden, können jetzt diesen neuen Backup- und Wiederherstellungsdienst zum Schutz ihrer Daten nutzen.
@@ -44,6 +45,7 @@ image:../media/screen-br-dashboard3.png["NetApp Backup and Recovery -Dashboard"]
 
 
 
+[[ontap-volume-workload-enhancements]]
 === Verbesserungen der ONTAP Volume-Workload
 
 * *Wiederherstellung mehrerer Ordner für ONTAP -Volumes*: Bisher konnten Sie mit der Funktion „Durchsuchen und Wiederherstellen“ entweder einen Ordner oder mehrere Dateien gleichzeitig wiederherstellen. NetApp Backup and Recovery bietet jetzt die Möglichkeit, mithilfe der Funktion „Durchsuchen und Wiederherstellen“ mehrere Ordner gleichzeitig auszuwählen.

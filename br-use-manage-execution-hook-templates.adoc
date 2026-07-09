@@ -30,6 +30,7 @@ Organisationsadministrator oder SnapCenter Administrator. link:reference-roles.h
 
 
 
+[[types-of-execution-hooks]]
 == Arten von Ausführungs-Hooks
 
 NetApp Backup and Recovery unterstützt die folgenden Typen von Ausführungs-Hooks, je nachdem, wann sie ausgeführt werden können:
@@ -43,6 +44,7 @@ NetApp Backup and Recovery unterstützt die folgenden Typen von Ausführungs-Hoo
 
 
 
+[[order-of-execution]]
 === Reihenfolge der Ausführung
 
 Wenn ein Datenschutzvorgang ausgeführt wird, finden Ausführungs-Hook-Ereignisse in der folgenden Reihenfolge statt:
@@ -70,6 +72,7 @@ NOTE: Wenn ein Pre-Snapshot-Ausführungs-Hook Kubernetes-Ressourcen hinzufügt, 
 
 
 
+[[important-notes-about-custom-execution-hooks]]
 == Wichtige Hinweise zu benutzerdefinierten Ausführungs-Hooks
 
 Berücksichtigen Sie Folgendes, wenn Sie Ausführungs-Hooks für Ihre Apps planen.
@@ -85,6 +88,7 @@ NOTE: Ausführungs-Hooks können die Anwendungsfunktionalität einschränken ode
 
 
 
+[[execution-hook-filters]]
 == Ausführungs-Hook-Filter
 
 Wenn Sie einen Ausführungs-Hook für eine Anwendung hinzufügen oder bearbeiten, können Sie dem Ausführungs-Hook Filter hinzufügen, um zu verwalten, mit welchen Containern der Hook übereinstimmt.  Filter sind nützlich für Anwendungen, die auf allen Containern dasselbe Container-Image verwenden, aber jedes Image möglicherweise für einen anderen Zweck verwenden (z. B. Elasticsearch).  Mithilfe von Filtern können Sie Szenarien erstellen, in denen Ausführungs-Hooks auf einigen, aber nicht unbedingt allen identischen Containern ausgeführt werden.  Wenn Sie mehrere Filter für einen einzelnen Ausführungs-Hook erstellen, werden diese mit einem logischen UND-Operator kombiniert.  Sie können bis zu 10 aktive Filter pro Ausführungs-Hook haben.
@@ -96,6 +100,7 @@ NOTE: Wenn Sie einem Ausführungs-Hook, der nach einem Wiederherstellungs- oder 
 
 
 
+[[execution-hook-examples]]
 == Beispiele für Ausführungs-Hooks
 
 Besuchen Sie die https://github.com/NetApp/Verda["NetApp Verda GitHub-Projekt"] um echte Ausführungs-Hooks für beliebte Apps wie Apache Cassandra und Elasticsearch herunterzuladen.  Sie können sich auch Beispiele ansehen und Ideen für die Strukturierung Ihrer eigenen benutzerdefinierten Ausführungs-Hooks holen.
@@ -105,6 +110,7 @@ NOTE: Die Skripte im Verda GitHub Repository werden wie bereitgestellt und sind 
 
 
 
+[[create-an-execution-hook-template]]
 == Erstellen einer Ausführungs-Hook-Vorlage
 
 Sie können eine benutzerdefinierte Ausführungs-Hook-Vorlage erstellen, mit der Sie Aktionen vor oder nach einem Datenschutzvorgang für eine Anwendung ausführen können.

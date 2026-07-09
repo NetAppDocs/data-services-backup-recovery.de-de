@@ -18,6 +18,7 @@ NetApp Backup and Recovery unterstützt eine Archivspeicherklasse von Google und
 
 
 
+[[supported-google-archival-storage-classes-for-netapp-backup-and-recovery]]
 == Unterstützte Google-Archivspeicherklassen für NetApp Backup and Recovery
 
 Wenn Sicherungsdateien zunächst erstellt werden, werden sie im _Standard_-Speicher gespeichert.  Diese Ebene ist für die Speicherung selten abgerufener Daten optimiert, ermöglicht Ihnen aber auch den sofortigen Zugriff darauf.
@@ -30,6 +31,7 @@ https://cloud.google.com/storage/docs/storage-classes["Informationen zu Google-S
 
 
 
+[[restore-data-from-archival-storage]]
 == Daten aus dem Archivspeicher wiederherstellen
 
 Während die Speicherung älterer Sicherungsdateien im Archivspeicher wesentlich günstiger ist als die Speicherung im Standardspeicher, dauert der Zugriff auf Daten aus einer Sicherungsdatei im Archivspeicher für Wiederherstellungsvorgänge etwas länger und ist teurer.

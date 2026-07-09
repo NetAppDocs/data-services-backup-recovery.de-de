@@ -18,6 +18,7 @@ Stellen Sie Dateien und Ordner aus Hyper-V-VM-Backups auf primärem oder sekund�
 
 
 
+[[restore-files-and-folders]]
 == Dateien und Ordner wiederherstellen
 
 Eine virtuelle Festplatte aus einem Snapshot einbinden und Dateien und Ordner von dort in die ursprüngliche (Quell-)Windows-VM wiederherstellen.
@@ -101,6 +102,7 @@ Den Fortschritt der Wiederherstellung können Sie auf der Seite „Auftragsüber
 
 
 
+[[manage-active-live-disk-mount-sessions]]
 == Aktive Live-Disk-Mount-Sitzungen verwalten
 
 Zeigen Sie die aktiven Hyper-V-Datei- und Ordnerwiederherstellungssitzungen in Backup und Recovery an, verwenden Sie sie und löschen Sie sie.

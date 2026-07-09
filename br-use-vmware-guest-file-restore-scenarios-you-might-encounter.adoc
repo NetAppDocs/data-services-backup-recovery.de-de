@@ -18,6 +18,7 @@ Beim Versuch, eine Gastdatei wiederherzustellen, können die folgenden Szenarien
 
 
 
+[[guest-file-restore-session-is-blank]]
 == Die Gastdateiwiederherstellungssitzung ist leer
 
 Dieses Problem tritt auf, wenn Sie eine Gastdatei-Wiederherstellungssitzung erstellen und das Gastbetriebssystem während der Sitzung neu startet. VMDKs im Gastbetriebssystem könnten offline bleiben, sodass die Liste der Wiederherstellungssitzungen für Gastdateien leer ist.
@@ -26,6 +27,7 @@ Um das Problem zu beheben, schalten Sie die VMDKs im Gastbetriebssystem manuell 
 
 
 
+[[guest-file-restore-attach-disk-operation-fails]]
 == Der Vorgang zum Anhängen der Festplatte beim Wiederherstellen der Gastdatei schlägt fehl
 
 Dieses Problem tritt auf, wenn Sie einen Gastdateiwiederherstellungsvorgang starten, der Vorgang zum Anschließen der Festplatte jedoch fehlschlägt, obwohl VMware Tools ausgeführt wird und die Anmeldeinformationen des Gastbetriebssystems korrekt sind. In diesem Fall wird der folgende Fehler zurückgegeben:
@@ -36,6 +38,7 @@ Um das Problem zu beheben, starten Sie den VMware Tools-Windows-Dienst auf dem G
 
 
 
+[[backups-are-not-detached-after-guest-file-restore-session-is-discontinued]]
 == Sicherungen werden nicht getrennt, nachdem die Gastdateiwiederherstellungssitzung abgebrochen wurde
 
 Dieses Problem tritt auf, wenn Sie einen Gastdateiwiederherstellungsvorgang aus einer VM-konsistenten Sicherung durchführen. Während die Gastdateiwiederherstellungssitzung aktiv ist, wird eine weitere VM-konsistente Sicherung für dieselbe VM durchgeführt. Wenn die Gastdateiwiederherstellungssitzung entweder manuell oder automatisch nach 24 Stunden getrennt wird, werden die Sicherungen für die Sitzung nicht getrennt.

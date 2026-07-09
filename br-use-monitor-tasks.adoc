@@ -22,6 +22,7 @@ NetApp Backup and Recovery speichert Jobinformationen 15 Tage lang, löscht sie 
 
 
 
+[[view-job-status-on-the-job-monitor]]
 == Anzeigen des Auftragsstatus im Auftragsmonitor
 
 Sie können eine Liste aller Snapshot-, Replikations-, Backup-to-Object-Storage- und Wiederherstellungsvorgänge sowie deren aktuellen Status auf der Registerkarte *Jobüberwachung* anzeigen.  Dies umfasst Vorgänge von Ihrem Cloud Volumes ONTAP, Ihrem lokalen ONTAP, Ihren Anwendungen und virtuellen Maschinen.  Jeder Vorgang oder Auftrag hat eine eindeutige ID und einen Status.
@@ -47,6 +48,7 @@ NOTE: Wenn Sie Ihre ONTAP -Systeme auf 9.13.x aktualisiert haben und im Job Moni
 
 
 
+[[search-and-filter-the-list-of-jobs]]
 === Suchen und filtern Sie die Liste der Jobs
 
 Sie können die Vorgänge auf der Seite „Auftragsüberwachung“ mithilfe verschiedener Filter filtern, z. B. nach Richtlinie, Snapshot-Bezeichnung, Art des Vorgangs (Schutz, Wiederherstellung, Aufbewahrung oder Sonstiges) und Schutztyp (lokaler Snapshot, Replikation oder Sicherung in die Cloud).
@@ -83,6 +85,7 @@ Die meisten Filter sind selbsterklärend. Mit dem Filter „Arbeitsbelastung“ 
 
 
 
+[[view-job-details]]
 === Jobdetails anzeigen
 
 Sie können Details zu einem bestimmten abgeschlossenen Auftrag anzeigen.  Sie können Details für einen bestimmten Job in einem JSON-Format exportieren.
@@ -100,6 +103,7 @@ Wiederherstellungsaufträge zeigen Details wie den Sicherungszielanbieter (Amazo
 
 
 
+[[download-job-monitoring-results-as-a-report]]
 === Ergebnisse der Jobüberwachung als Bericht herunterladen
 
 Sie können den Inhalt der Hauptseite zur Jobüberwachung als Bericht herunterladen, nachdem Sie die Ergebnisse gefiltert oder sortiert haben. NetApp Backup and Recovery generiert und lädt eine CSV-Datei herunter, die Sie überprüfen und bei Bedarf an andere Gruppen senden können. Die CSV-Datei enthält bis zu 10.000 Datenzeilen.
@@ -114,6 +118,7 @@ Aus den Informationen zu den Jobüberwachungsdetails können Sie eine JSON-Datei
 
 
 
+[[review-retention-backup-lifecycle-jobs]]
 == Aufbewahrungsaufträge (Sicherungslebenszyklus) überprüfen
 
 Überwachen Sie Aufbewahrungsflüsse (_Backup-Lebenszyklus_), um Backups zu überprüfen, sie zu schützen und Audits zu unterstützen.  Ermitteln Sie, wann Sicherungskopien ablaufen, um den Lebenszyklus zu verfolgen.
@@ -130,6 +135,7 @@ Der Auftragstyp „Aufbewahrung“ erfasst alle Snapshot-Löschaufträge, die au
 
 
 
+[[review-backup-and-restore-alerts-in-the-netapp-console-notification-center]]
 == Überprüfen Sie Sicherungs- und Wiederherstellungswarnungen im Benachrichtigungscenter der NetApp Console
 
 Das Benachrichtigungscenter der NetApp Console verfolgt den Fortschritt der von Ihnen initiierten Sicherungs- und Wiederherstellungsaufträge, sodass Sie überprüfen können, ob der Vorgang erfolgreich war oder nicht.
@@ -248,6 +254,7 @@ https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.htm
 
 
 
+[[review-operation-activity-in-console-timeline]]
 == Überprüfen der Vorgangsaktivität in der Konsolenzeitleiste
 
 Sie können Details zu Sicherungs- und Wiederherstellungsvorgängen zur weiteren Untersuchung in der Konsolenzeitleiste anzeigen.  Die Konsolenzeitleiste bietet Details zu jedem Ereignis, unabhängig davon, ob es vom Benutzer oder vom System initiiert wurde, und zeigt Aktionen an, die in der Benutzeroberfläche oder über die API initiiert wurden.

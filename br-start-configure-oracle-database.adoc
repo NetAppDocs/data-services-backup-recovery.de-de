@@ -20,6 +20,7 @@ Sie können Authentifizierung und Knoteneinstellungen für eine neue eigenständ
 
 
 
+[[configure-an-oracle-database]]
 == Konfigurieren einer Oracle-Datenbank
 
 Ändern Sie die Konfiguration für eine eigenständige oder geclusterte Oracle-Datenbank.

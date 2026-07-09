@@ -18,6 +18,7 @@ Plattformen, Geräte oder Funktionen, die mit dieser Version nicht oder nicht gu
 
 
 
+[[changing-the-protection-policy-for-an-application]]
 == Ändern der Datensicherungsstrategie für eine Anwendung
 
 Wenn Sie die zugehörige Datensicherungsstrategie für eine Anwendung ändern, um einen anderen Bucket oder ein anderes sekundäres Replikationsziel zu verwenden, kann die Datensicherungsstrategie fehlschlagen.
@@ -26,6 +27,7 @@ Wenn Sie die zugehörige Datensicherungsstrategie für eine Anwendung ändern, u
 
 
 
+[[3-2-1-protection-policy-configuration-limitation]]
 == Konfigurationsbeschränkung der 3-2-1-Datensicherungsstrategie
 
 Wenn Sie eine 3-2-1-Datensicherungsstrategie erstellen, bei der keine Objektspeichersicherungen gleichzeitig mit der Replikation auf den Sekundärspeicher erfolgen, hängt sich die Datensicherungsstrategie beim Schutz der Anwendung auf.

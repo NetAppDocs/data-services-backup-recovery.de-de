@@ -4,6 +4,7 @@
 
 
 
+[[indexed-catalog-support-updates]]
 === Aktualisierungen der Unterstützung für indizierte Kataloge
 
 Im Februar 2025 haben wir die aktualisierte Indizierungsfunktion (Indexed Catalog v2) eingeführt, die Sie während der Such- und Wiederherstellungsmethode zum Wiederherstellen von Daten verwenden. Die vorherige Version hat die Leistung der Datenindizierung in lokalen Umgebungen erheblich verbessert. Mit dieser Version ist der Indexierungskatalog jetzt in den Umgebungen Amazon Web Services, Microsoft Azure und Google Cloud Platform (GCP) verfügbar.
@@ -19,6 +20,7 @@ Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/data-servic
 
 
 
+[[azure-private-link-endpoints-and-service-endpoints]]
 === Azure Private Link-Endpunkte und Dienstendpunkte
 
 Normalerweise richtet NetApp Backup and Recovery einen privaten Endpunkt beim Cloud-Anbieter ein, um Schutzaufgaben zu übernehmen. Diese Version führt eine optionale Einstellung ein, mit der Sie die automatische Erstellung eines privaten Endpunkts durch NetApp Backup and Recovery aktivieren oder deaktivieren können. Dies kann für Sie nützlich sein, wenn Sie mehr Kontrolle über den Prozess der Erstellung privater Endpunkte wünschen.
@@ -29,12 +31,14 @@ Wenn Sie diese Einstellung deaktivieren, müssen Sie den privaten Endpunkt manue
 
 
 
+[[support-for-snapmirror-to-cloud-resync-on-ontap-s3]]
 === Unterstützung für SnapMirror to Cloud Resync auf ONTAP S3
 
 Die vorherige Version führte die Unterstützung für SnapMirror zu Cloud Resync (SM-C Resync) ein. Diese Funktion vereinfacht den Datenschutz bei der Volume-Migration in NetApp-Umgebungen. Diese Version erweitert die Unterstützung um SM-C Resync für ONTAP S3 sowie weitere S3-kompatible Anbieter wie Wasabi und MinIO.
 
 
 
+[[bring-your-own-bucket-for-storagegrid]]
 === Bringen Sie Ihren eigenen Bucket für StorageGRID mit
 
 Wenn Sie Sicherungsdateien im Objektspeicher für eine Arbeitsumgebung erstellen, erstellt NetApp Backup and Recovery standardmäßig den Container (Bucket oder Speicherkonto) für die Sicherungsdateien im von Ihnen konfigurierten Objektspeicherkonto. Bisher konnten Sie dies überschreiben und Ihren eigenen Container für Amazon S3, Azure Blob Storage und Google Cloud Storage angeben. Mit dieser Version können Sie jetzt Ihren eigenen StorageGRID Objektspeichercontainer mitbringen.

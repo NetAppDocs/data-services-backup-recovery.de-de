@@ -23,6 +23,7 @@ Stellen Sie sicher, dass alle VMs, deren Snapshots Sie klonen möchten, einer Sc
 
 
 
+[[create-a-clone-of-a-vmware-vm]]
 == Erstellen Sie einen Klon einer VMware-VM
 
 Erstellen Sie sofort einen Klon aus einem vorhandenen Snapshot.
@@ -57,6 +58,7 @@ Die Option *Speicherort für Snapshots auswählen* erscheint, wenn der Snapshot 
 
 
 
+[[split-a-clone]]
 == Einen Klon teilen
 
 Sie können einen Klon einer VMware-VM aufteilen, um ihn vom übergeordneten Volume zu trennen. Nach der Aufteilung wird der Klon zu einem unabhängigen Volume, das nicht mehr vom übergeordneten Volume abhängig ist.
@@ -73,6 +75,7 @@ Nach der Aufteilung werden die mit der geklonten VM verbundenen Datenspeicher zu
 
 
 
+[[remove-a-clone]]
 == Einen Klon entfernen
 
 Sie können einen VMware-VM-Klon entfernen. Wenn Sie einen VM-Klon entfernen, wird der Klon aus vCenter entfernt, und die mit der VM verbundenen Datastores werden ausgehängt und vom Speichersystem gelöscht.

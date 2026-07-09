@@ -27,6 +27,7 @@ Sie können die folgenden Aufgaben im Zusammenhang mit Schutzgruppen ausführen:
 
 
 
+[[create-a-protection-group]]
 == Erstellen einer Schutzgruppe
 
 Gruppieren Sie VMs und Speicherpools, die Sie gemeinsam schützen möchten, in einer Schutzgruppe.
@@ -57,6 +58,7 @@ Weitere Informationen zum Erstellen einer Sicherungsrichtlinie finden Sie unterl
 
 
 
+[[edit-a-protection-group]]
 == Bearbeiten Sie eine Schutzgruppe
 
 Bearbeiten Sie eine Datensicherungsgruppe, wenn Sie Details der Datensicherungsgruppe ändern müssen, ohne sie zu löschen und neu zu erstellen.
@@ -77,6 +79,7 @@ Bearbeiten Sie eine Datensicherungsgruppe, wenn Sie Details der Datensicherungsg
 
 
 
+[[delete-a-protection-group]]
 == Löschen einer Schutzgruppe
 
 Durch das Löschen einer Schutzgruppe werden diese und alle zugehörigen Sicherungszeitpläne entfernt. Möglicherweise möchten Sie eine Schutzgruppe löschen, wenn sie nicht mehr benötigt wird.

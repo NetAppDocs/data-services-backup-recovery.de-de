@@ -21,6 +21,7 @@ Organisationsadministrator oder SnapCenter Administrator. link:reference-roles.h
 
 
 
+[[add-and-protect-a-new-kubernetes-application]]
 == Hinzufügen und Schützen einer neuen Kubernetes-Anwendung
 
 Der erste Schritt zum Schutz von Kubernetes-Anwendungen besteht darin, eine Anwendung innerhalb von NetApp Backup and Recovery zu erstellen. Wenn Sie eine Anwendung erstellen, machen Sie Backup and Recovery auf die auf dem Kubernetes-Cluster laufende Anwendung aufmerksam.

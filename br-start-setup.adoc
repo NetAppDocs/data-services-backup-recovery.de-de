@@ -18,6 +18,7 @@ Bevor Sie beginnen, überprüfen Sielink:concept-start-prereq.html["Voraussetzun
 
 
 
+[[prepare-the-backup-destination]]
 == Vorbereiten des Sicherungsziels
 
 Bereiten Sie eines oder mehrere der folgenden Sicherungsziele vor:
@@ -53,6 +54,7 @@ Nachdem Sie Optionen im Sicherungsziel selbst konfiguriert haben, konfigurieren 
 
 
 
+[[set-up-s3-permissions]]
 == S3-Berechtigungen einrichten
 
 Sie müssen zwei Sätze von AWS S3-Berechtigungen konfigurieren:

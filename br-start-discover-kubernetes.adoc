@@ -20,6 +20,7 @@ NetApp Backup and Recovery muss Kubernetes-Workloads erkennen, bevor sie geschü
 
 
 
+[[discover-kubernetes-workloads]]
 == Entdecken Sie Kubernetes-Workloads
 
 Ermitteln Sie im Sicherungs- und Wiederherstellungsinventar die Kubernetes-Workloads in Ihrer Umgebung.  Durch das Hinzufügen einer Workload wird NetApp Backup and Recovery ein Kubernetes-Cluster hinzugefügt.  Anschließend können Sie Anwendungen hinzufügen und Clusterressourcen schützen.
@@ -58,6 +59,7 @@ Der Cluster wird zum Inventar hinzugefügt.
 
 
 
+[[continue-to-the-netapp-backup-and-recovery-dashboard]]
 == Weiter zum NetApp Backup and Recovery Dashboard
 
 Führen Sie die folgenden Schritte aus, um das NetApp Backup and Recovery Dashboard anzuzeigen.

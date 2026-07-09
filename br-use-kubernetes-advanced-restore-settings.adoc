@@ -18,6 +18,7 @@ Sie können Wiederherstellungsvorgänge mithilfe erweiterter Einstellungen wie A
 
 
 
+[[namespace-annotations-and-labels-during-restore-and-failover-operations]]
 == Namespace-Annotationen und -Labels während Wiederherstellungs- und Failover-Operationen
 
 Bei Wiederherstellung und Failover werden die Namespace-Bezeichnungen und -Annotationen des Ziels aktualisiert, um mit denen der Quelle übereinzustimmen: Schlüssel aus der Quelle werden zu den Zielschlüsseln hinzugefügt oder überschrieben, während Schlüssel, die nur im Ziel existieren, unverändert bleiben.
@@ -46,6 +47,7 @@ Wenn Sie Helm mit dem  `--create-namespace` Flag zur Installation der Quellanwen
 
 
 
+[[example]]
 === Beispiel
 
 Das folgende Beispiel zeigt Quell- und Ziel-Namensräume mit unterschiedlichen Bezeichnungen und Annotationen und zeigt den Ziel-Namensraum vor und nach der Operation, um zu veranschaulichen, wie Schlüssel hinzugefügt, zusammengeführt oder überschrieben werden.
@@ -108,12 +110,14 @@ Die folgende Tabelle veranschaulicht den Zustand des Beispiel-Ziel-Namespace nac
 |===
 
 
+[[supported-fields]]
 == Unterstützte Felder
 
 In diesem Abschnitt werden zusätzliche Felder beschrieben, die für Wiederherstellungsvorgänge zur Verfügung stehen.
 
 
 
+[[storage-class-mapping]]
 === Speicherklassenzuordnung
 
 Das  `spec.storageClassMapping` Attribut definiert eine Zuordnung von einer Speicherklasse in der Quellanwendung zu einer neuen Speicherklasse im Zielcluster. Sie können dies verwenden, wenn Sie Anwendungen zwischen Clustern mit unterschiedlichen Speicherklassen migrieren oder das Speicher-Backend für BackupRestore-Operationen ändern.
@@ -130,6 +134,7 @@ storageClassMapping:
 ----
 
 
+[[supported-annotations]]
 == Unterstützte Annotationen
 
 Dieser Abschnitt listet die unterstützten Annotationen zur Konfiguration verschiedener Verhaltensweisen im System auf. Wenn eine Annotation nicht explizit vom Benutzer festgelegt wird, verwendet das System den Standardwert.

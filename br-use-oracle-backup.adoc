@@ -26,6 +26,7 @@ NOTE: Um Schutzgruppen oder einzelne Datenbanken nach einem Zeitplan zu sichern,
 
 
 
+[[back-up-protection-groups-now-with-an-on-demand-backup]]
 == Sichern Sie Schutzgruppen jetzt mit einem On-Demand-Backup
 
 Führen Sie vor Systemänderungen eine On-Demand-Sicherung durch, um sicherzustellen, dass Ihre Daten geschützt sind.
@@ -51,6 +52,7 @@ NOTE: NetApp Backup and Recovery verwendet für die Sicherungs- und die Schutzgr
 
 
 
+[[back-up-a-database-now-with-an-on-demand-backup]]
 == Sichern Sie jetzt eine Datenbank mit einem On-Demand-Backup
 
 Sie können bei Bedarf eine Sicherung einer einzelnen Datenbank ausführen.

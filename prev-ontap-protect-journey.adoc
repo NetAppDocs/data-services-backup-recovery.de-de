@@ -30,6 +30,7 @@ Wir gehen die folgenden Optionen durch:
 
 
 
+[[which-protection-features-will-you-use]]
 == Welche Schutzfunktionen werden Sie nutzen?
 
 Bevor Sie die Funktionen auswählen, die Sie verwenden möchten, finden Sie hier eine kurze Erklärung, was die einzelnen Funktionen bewirken und welche Art von Schutz sie bieten.
@@ -84,6 +85,7 @@ Zusätzlich zu diesen Kriterien bietet Cloud-Speicher weitere Sicherheitsoptione
 |===
 
 
+[[which-backup-architecture-will-you-use]]
 == Welche Backup-Architektur werden Sie verwenden?
 
 Wenn Sie sowohl replizierte Volumes als auch Sicherungsdateien erstellen, können Sie zum Sichern Ihrer Volumes eine Fan-Out- oder Kaskadenarchitektur wählen.
@@ -112,6 +114,7 @@ Diese Tabelle bietet einen Vergleich der Fan-Out- und Kaskadenarchitekturen.
 |===
 
 
+[[will-you-use-the-default-policies-for-snapshots-replications-and-backups]]
 == Werden Sie die Standardrichtlinien für Snapshots, Replikationen und Backups verwenden?
 
 Sie können zum Erstellen Ihrer Backups die von NetApp bereitgestellten Standardrichtlinien verwenden oder benutzerdefinierte Richtlinien erstellen.  Wenn Sie den Aktivierungsassistenten verwenden, um den Sicherungs- und Wiederherstellungsdienst für Ihre Volumes zu aktivieren, können Sie aus den Standardrichtlinien und allen anderen Richtlinien auswählen, die bereits im System vorhanden sind (Cloud Volumes ONTAP oder lokales ONTAP System).  Wenn Sie eine andere Richtlinie als die vorhandenen Richtlinien verwenden möchten, können Sie die Richtlinie vor dem Start oder während der Verwendung des Aktivierungsassistenten erstellen.
@@ -163,6 +166,7 @@ NOTE: Für Backup-to-Cloud-Beziehungen können nur Tresorrichtlinien verwendet w
 
 
 
+[[where-do-my-policies-reside]]
 == Wo befinden sich meine Policen?
 
 Sicherungsrichtlinien befinden sich an unterschiedlichen Orten, abhängig von der Sicherungsarchitektur, die Sie verwenden möchten: Fan-Out oder Kaskadierung.  Replikationsrichtlinien und Sicherungsrichtlinien sind nicht auf die gleiche Weise konzipiert, da Replikationen zwei ONTAP Speichersysteme koppeln und die Sicherung auf ein Objekt einen Speicheranbieter als Ziel verwendet.
@@ -190,6 +194,7 @@ Wenn Sie die Standardrichtlinien verwenden, die auf allen ONTAP -Systemen vorhan
 
 
 
+[[do-you-want-to-create-your-own-object-storage-container]]
 == Möchten Sie Ihren eigenen Objektspeichercontainer erstellen
 
 Wenn Sie Sicherungsdateien im Objektspeicher für ein System erstellen, erstellt der Sicherungs- und Wiederherstellungsdienst standardmäßig den Container (Bucket oder Speicherkonto) für die Sicherungsdateien im von Ihnen konfigurierten Objektspeicherkonto.  Der AWS- oder GCP-Bucket heißt standardmäßig „netapp-backup-<uuid>“.  Das Azure Blob-Speicherkonto hat den Namen „netappbackup<uuid>“.
@@ -228,6 +233,7 @@ Wenn Sie ältere Sicherungsdateien in einen Archivspeicher verschieben oder Data
 
 
 
+[[which-console-agent-deployment-mode-are-you-using]]
 == Welchen Bereitstellungsmodus des Konsolenagenten verwenden Sie?
 
 Wenn Sie die Konsole bereits zur Verwaltung Ihres Speichers verwenden, wurde bereits ein Konsolenagent installiert.  Wenn Sie denselben Konsolenagenten mit NetApp Backup and Recovery verwenden möchten, sind Sie startklar.  Wenn Sie einen anderen Konsolenagenten verwenden müssen, müssen Sie ihn installieren, bevor Sie mit der Implementierung Ihrer Sicherung und Wiederherstellung beginnen.
@@ -238,6 +244,7 @@ https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Erfahren S
 
 
 
+[[support-for-sites-with-full-internet-connectivity]]
 === Unterstützung für Sites mit vollständiger Internetkonnektivität
 
 Wenn NetApp Backup and Recovery an einem Standort mit vollständiger Internetkonnektivität (auch als _Standardmodus_ oder _SaaS-Modus_ bezeichnet) verwendet wird, können Sie replizierte Volumes auf allen lokalen ONTAP oder Cloud Volumes ONTAP Systemen erstellen, die von der Konsole verwaltet werden, und Sie können Sicherungsdateien auf Objektspeichern bei jedem der unterstützten Cloud-Anbieter erstellen. link:concept-backup-to-cloud.html["Vollständige Liste der unterstützten Sicherungsziele anzeigen"].
@@ -256,6 +263,7 @@ Eine Liste der gültigen Konsolenagent-Speicherorte finden Sie in einem der folg
 
 
 
+[[support-for-sites-with-limited-internet-connectivity]]
 === Unterstützung für Websites mit eingeschränkter Internetverbindung
 
 NetApp Backup and Recovery kann an einem Standort mit eingeschränkter Internetverbindung (auch als _eingeschränkter Modus_ bezeichnet) zum Sichern von Volumedaten verwendet werden.  In diesem Fall müssen Sie den Konsolenagenten in der Ziel-Cloudregion bereitstellen.
@@ -266,6 +274,7 @@ NetApp Backup and Recovery kann an einem Standort mit eingeschränkter Internetv
 
 
 
+[[support-for-sites-with-no-internet-connectivity]]
 === Unterstützung für Websites ohne Internetverbindung
 
 NetApp Backup and Recovery kann an einem Standort ohne Internetverbindung (auch als _privater Modus_ oder _dark_ Sites bezeichnet) zum Sichern von Volumedaten verwendet werden.  In diesem Fall müssen Sie den Konsolen-Agenten auf einem Linux-Host am selben Standort bereitstellen.

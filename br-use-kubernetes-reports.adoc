@@ -18,6 +18,7 @@ In NetApp Backup and Recovery können Sie Schutzberichte für Kubernetes-Workloa
 
 
 
+[[create-a-protection-report]]
 == Erstellen Sie einen Schutzbericht
 
 Erstellen Sie einen Schutzbericht, um den Schutzstatus Ihrer Cluster anzuzeigen.
@@ -46,6 +47,7 @@ Konfigurieren Sie E-Mail-Benachrichtigungen auf der Seite „Einstellungen“. E
 
 
 
+[[download-a-protection-report]]
 == Laden Sie einen Schutzbericht herunter
 
 Laden Sie einen generierten Schutzbericht entweder als JSON-Datei oder als PDF-Dokument herunter, damit Sie ihn anzeigen und weitergeben können.
@@ -63,6 +65,7 @@ Laden Sie einen generierten Schutzbericht entweder als JSON-Datei oder als PDF-D
 
 
 
+[[view-a-protection-report]]
 == Einen Schutzbericht anzeigen
 
 Schnell interaktive Details eines Schutzberichts innerhalb von NetApp Backup and Recovery anzeigen. Sie können Zusammenfassungsinformationen zum Auftrag, den Status der Datensicherung, Konfigurationsdetails und mehr sehen.
@@ -78,6 +81,7 @@ Die Berichtsdetails werden angezeigt.
 
 
 
+[[delete-a-protection-report]]
 == Einen Schutzbericht löschen
 
 Löschen Sie einen Datensicherungsbericht, wenn Sie ihn nicht mehr benötigen.

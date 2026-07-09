@@ -50,6 +50,7 @@ Bevor Sie beginnen, sollten Sie eine Vorstellung vom Namen oder Speicherort des 
 
 
 
+[[search-restore-supported-systems-and-object-storage-providers]]
 == Von Search & Restore unterstützte Systeme und Objektspeicheranbieter
 
 Sie können ONTAP Daten aus einer Sicherungsdatei, die sich in einem sekundären System (einem replizierten Volume) oder im Objektspeicher (einer Sicherungsdatei) befindet, auf den folgenden Systemen wiederherstellen. Snapshots befinden sich auf dem Quellsystem und können nur auf demselben System wiederhergestellt werden.
@@ -91,6 +92,7 @@ Beachten Sie, dass Verweise auf „On-Premises ONTAP Systeme“ FAS, AFF und ONT
 
 
 
+[[search-restore-prerequisites]]
 == Voraussetzungen suchen und wiederherstellen
 
 Stellen Sie sicher, dass Ihre Umgebung diese Anforderungen erfüllt, bevor Sie die Such- und Wiederherstellungsfunktion aktivieren:
@@ -107,6 +109,7 @@ Stellen Sie sicher, dass Ihre Umgebung diese Anforderungen erfüllt, bevor Sie d
 
 
 
+[[legacy-search-restore-prerequisites-using-indexed-catalog-v1]]
 === Voraussetzungen für die Legacy-Suche und -Wiederherstellung (bei Verwendung von Indexed Catalog v1)
 
 Folgende Anforderungen gelten für die Funktion „Suchen & Wiederherstellen“ bei Verwendung der Legacy-Indexierung:
@@ -160,6 +163,7 @@ Auch wenn Sie einen lokalen Konsolen-Agenten verwenden, müssen die Anforderunge
 ====
 
 
+[[search-restore-process]]
 == Such- und Wiederherstellungsprozess
 
 Der Vorgang läuft folgendermaßen ab:
@@ -185,6 +189,7 @@ Sie müssen nur einen Teil des Namens kennen, und NetApp Backup and Recovery dur
 
 
 
+[[enable-the-indexed-catalog-for-each-system]]
 == Aktivieren Sie den indizierten Katalog für jedes System
 
 Bevor Sie „Suchen und Wiederherstellen“ verwenden können, müssen Sie die „Indizierung“ auf jedem Quellsystem aktivieren, von dem Sie Volumes oder Dateien wiederherstellen möchten.  Dadurch kann der indizierte Katalog jedes Volume und jede Sicherungsdatei verfolgen – und Ihre Suchvorgänge werden dadurch sehr schnell und effizient.
@@ -257,6 +262,7 @@ Abhängig von der Größe der Volumes im System und der Anzahl der Sicherungsdat
 
 
 
+[[restore-volumes-folders-and-files-using-search-restore]]
 == Wiederherstellen von Volumes, Ordnern und Dateien mit „Suchen und Wiederherstellen“
 
 Nachdem Sie<<enable-the-indexed-catalog-for-each-system,Aktivierte Indizierung für Ihr System>> können Sie Volumes, Ordner und Dateien mithilfe von „Suchen und Wiederherstellen“ wiederherstellen. Auf diese Weise können Sie eine breite Palette von Filtern verwenden, um aus allen Sicherungsdateien genau die Datei oder das Volume zu finden, das Sie wiederherstellen möchten.

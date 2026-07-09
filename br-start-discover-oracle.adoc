@@ -20,6 +20,7 @@ Die Erkennung von Oracle-Datenbanken ermöglicht es NetApp Backup and Recovery, 
 
 
 
+[[add-an-oracle-database-host-and-discover-resources]]
 == Fügen Sie einen Oracle Database-Host hinzu und entdecken Sie Ressourcen
 
 Fügen Sie Oracle-Hostinformationen hinzu und lassen Sie NetApp Backup and Recovery die Workloads erkennen. Wählen Sie in jedem Konsolenagenten die Systeme aus, auf denen Sie Workloads ermitteln möchten.
@@ -75,6 +76,7 @@ Die Oracle Database-Workload wird in der Liste der Workloads auf der Inventarsei
 
 
 
+[[continue-to-the-netapp-backup-and-recovery-dashboard]]
 == Weiter zum NetApp Backup and Recovery Dashboard
 
 . Wählen Sie im NetApp Console *Schutz* > *Sicherung und Wiederherstellung*.

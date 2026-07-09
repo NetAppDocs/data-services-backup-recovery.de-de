@@ -34,6 +34,7 @@ Sie können die folgenden Schutzziele erreichen:
 
 
 
+[[create-a-clone]]
 == Erstellen eines Klons
 
 Sie können einen Klon Ihrer Microsoft SQL Server-Workloads erstellen.  Ein Klon ist eine Kopie der Quelldaten, die aus einer Sicherung erstellt wird.  Der Klon wird in einem Objektspeicher in Ihrem öffentlichen oder privaten Cloud-Konto gespeichert.  Sie können den Klon verwenden, um Ihre Workloads im Falle eines Datenverlusts oder einer Datenbeschädigung wiederherzustellen.
@@ -105,6 +106,7 @@ Wählen Sie optional *Suffix* aus der Dropdown-Liste „Zielname“ aus und füg
 
 
 
+[[refresh-a-clone]]
 == Aktualisieren eines Klons
 
 Sie können einen Klon Ihrer Microsoft SQL Server-Workloads aktualisieren.  Durch das Aktualisieren eines Klons wird der Klon mit den neuesten Daten aus dem Quell-Workload aktualisiert.  Dies ist nützlich, wenn Sie den Klon auf dem neuesten Stand der Quell-Workload halten möchten.
@@ -135,6 +137,7 @@ Sie haben die Möglichkeit, den Datenbanknamen zu ändern, den neuesten Sofort-S
 
 
 
+[[skip-a-clone-refresh]]
 == Überspringen einer Klonaktualisierung
 
 Überspringen Sie eine Klonaktualisierung, um den Klon unverändert zu lassen.
@@ -153,6 +156,7 @@ Sie haben die Möglichkeit, den Datenbanknamen zu ändern, den neuesten Sofort-S
 
 
 
+[[split-a-clone]]
 == Einen Klon teilen
 
 Sie können einen Klon Ihrer Microsoft SQL Server-Workloads aufteilen.  Durch das Aufteilen eines Klons wird aus dem Klon ein neues Backup erstellt.  Mit dem neuen Backup können die Workloads wiederhergestellt werden.
@@ -171,6 +175,7 @@ Der Klon-Job wird nicht entfernt und kann für andere Klone erneut verwendet wer
 
 
 
+[[delete-a-clone]]
 == Löschen eines Klons
 
 Sie können einen Klon Ihrer Microsoft SQL Server-Workloads löschen.  Durch das Löschen eines Klons wird der Klon aus dem Objektspeicher entfernt und Speicherplatz freigegeben.

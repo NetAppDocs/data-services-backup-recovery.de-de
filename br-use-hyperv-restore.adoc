@@ -39,6 +39,7 @@ TIP: Für den Zugriff auf den Inhalt der Sicherungsdatei fallen bei Ihrem Cloud-
 
 
 
+[[how-restoring-workloads-works]]
 == So funktioniert die Wiederherstellung von Workloads
 
 Beim Wiederherstellen von Workloads geschieht Folgendes:
@@ -51,6 +52,7 @@ Auf der Seite „Wiederherstellen“ können Sie eine Ressource wiederherstellen
 
 
 
+[[restore-hyper-v-workloads]]
 == Wiederherstellen von Hyper-V-Workloads
 
 Stellen Sie Hyper-V-Workloads über das Menü „Wiederherstellen“ wieder her. Sie können den Snapshot anhand seines Namens oder mithilfe von Filtern suchen.

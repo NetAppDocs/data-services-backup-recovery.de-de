@@ -24,6 +24,7 @@ NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads 
 
 
 
+[[backup-schedule-options]]
 == Optionen für den Sicherungszeitplan
 
 Mit NetApp Backup and Recovery können Sie mehrere Sicherungsrichtlinien mit individuellen Zeitplänen für jedes System (Cluster) erstellen.  Sie können Volumes mit unterschiedlichen Recovery Point Objectives (RPO) unterschiedliche Sicherungsrichtlinien zuweisen.
@@ -53,6 +54,7 @@ Jährliche Backups werden nach der Übertragung in den Objektspeicher automatisc
 
 
 
+[[datalock-and-ransomware-protection-options]]
 == DataLock- und Ransomware-Schutzoptionen
 
 NetApp Backup and Recovery bietet Unterstützung für DataLock- und Ransomware-Schutz für Ihre Volume-Backups.  Mit diesen Funktionen können Sie Ihre Sicherungsdateien sperren und scannen, um mögliche Ransomware in den Sicherungsdateien zu erkennen.  Dies ist eine optionale Einstellung, die Sie in Ihren Sicherungsrichtlinien definieren können, wenn Sie zusätzlichen Schutz für Ihre Volumesicherungen für einen Cluster wünschen.
@@ -70,6 +72,7 @@ Diese Funktion bietet keinen Schutz für Ihre Quellvolumes, sondern nur für die
 ====
 
 
+[[what-is-datalock]]
 === Was ist DataLock
 
 Mit dieser Funktion können Sie die über SnapMirror in die Cloud replizierten Cloud-Snapshots sperren und außerdem die Funktion aktivieren, einen Ransomware-Angriff zu erkennen und eine konsistente Kopie des Snapshots im Objektspeicher wiederherzustellen. Diese Funktion wird auf AWS, Azure, Google Cloud Platform und StorageGRID unterstützt.
@@ -88,6 +91,7 @@ Die Mindestaufbewahrungsdauer für Snapshots beträgt 30 Tage.  Sehen wir uns ei
 
 
 
+[[what-is-retention-until-date-rud-and-how-is-it-calculated]]
 === Was ist das Retention Until Date (RUD) und wie wird es berechnet?
 
 Das Aufbewahrungsdatum (RUD) wird basierend auf der Snapshot-Aufbewahrungsdauer bestimmt.  Das Aufbewahrungsdatum wird durch die Summe der Snapshot-Aufbewahrungsdauer und eines Puffers berechnet.
@@ -116,6 +120,7 @@ Die DataLock-Aufbewahrungseinstellung überschreibt die Richtlinienaufbewahrungs
 
 
 
+[[enable-datalock-and-ransomware-protection]]
 === Aktivieren Sie DataLock und Ransomware-Schutz
 
 Sie können DataLock und Ransomware-Schutz aktivieren, wenn Sie eine Richtlinie erstellen.  Sie können dies nach der Erstellung der Richtlinie nicht mehr aktivieren, ändern oder deaktivieren.
@@ -134,6 +139,7 @@ Siehelink:prev-ontap-policy-object-advanced-settings.html["So aktualisieren Sie 
 
 
 
+[[what-is-ransomware-protection]]
 === Was ist Ransomware-Schutz?
 
 Der Ransomware-Schutz durchsucht Ihre Sicherungsdateien nach Hinweisen auf einen Ransomware-Angriff. Die Erkennung von Ransomware-Angriffen erfolgt über einen Prüfsummenvergleich. Wenn in einer neuen Sicherungsdatei im Vergleich zur vorherigen Sicherungsdatei potenzielle Ransomware identifiziert wird, wird diese neuere Sicherungsdatei durch die neueste Sicherungsdatei ersetzt, die keine Anzeichen eines Ransomware-Angriffs aufweist. (Die Datei, bei der ein Ransomware-Angriff festgestellt wurde, wird 1 Tag nach ihrer Ersetzung gelöscht.)
@@ -159,6 +165,7 @@ Sehen wir uns an, wie das funktioniert:
 
 
 
+[[supported-systems-and-object-storage-providers]]
 === Unterstützte Systeme und Objektspeicheranbieter
 
 Sie können DataLock- und Ransomware-Schutz auf ONTAP -Volumes der folgenden Systeme aktivieren, wenn Sie Objektspeicher bei den folgenden öffentlichen und privaten Cloud-Anbietern verwenden.
@@ -181,6 +188,7 @@ Sie können DataLock- und Ransomware-Schutz auf ONTAP -Volumes der folgenden Sys
 |===
 
 
+[[requirements]]
 === Anforderungen
 
 * Für AWS:
@@ -282,6 +290,7 @@ https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html
 
 
 
+[[restrictions]]
 === Einschränkungen
 
 * Die DataLock- und Ransomware-Schutzfunktion ist nicht verfügbar, wenn Sie in der Sicherungsrichtlinie Archivspeicher konfiguriert haben.
@@ -294,6 +303,7 @@ https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html
 
 
 
+[[tips-on-how-to-mitigate-datalock-costs]]
 === Tipps zur Minimierung der DataLock-Kosten
 
 Sie können die Ransomware-Scan-Funktion aktivieren oder deaktivieren, während die DataLock-Funktion aktiv bleibt.  Um zusätzliche Kosten zu vermeiden, können Sie geplante Ransomware-Scans deaktivieren.  So können Sie Ihre Sicherheitseinstellungen individuell anpassen und Kosten beim Cloud-Anbieter vermeiden.
@@ -321,6 +331,7 @@ Darüber hinaus können Sie Schätzungen für die mit DataLock verbundenen Koste
 
 
 
+[[archival-storage-options]]
 == Archivspeicheroptionen
 
 Wenn Sie AWS-, Azure- oder Google-Cloud-Speicher verwenden, können Sie ältere Sicherungsdateien nach einer bestimmten Anzahl von Tagen in eine weniger teure Archivspeicherklasse oder Zugriffsebene verschieben.  Sie können Ihre Sicherungsdateien auch sofort in den Archivspeicher senden, ohne sie in den Standard-Cloud-Speicher zu schreiben.  Geben Sie einfach *0* als „Archiv nach Tagen“ ein, um Ihre Sicherungsdatei direkt in den Archivspeicher zu senden.  Dies kann besonders für Benutzer hilfreich sein, die selten auf Daten aus Cloud-Backups zugreifen müssen, oder für Benutzer, die eine Backup-to-Tape-Lösung ersetzen.

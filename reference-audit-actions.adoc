@@ -58,6 +58,7 @@ Für jede überwachte Aktion protokolliert die Konsole den Dienstnamen, den Agen
 
 
 
+[[more-information]]
 == Weitere Informationen
 
 * https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html#audit-user-activity-from-the-audit-page["Benutzeraktivitäten auf der Seite „Audit“ prüfen"^]

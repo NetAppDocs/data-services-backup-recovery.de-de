@@ -18,6 +18,7 @@ Sie sollten einen Oracle Database-Wiederherstellungspunkt einbinden, wenn Sie au
 
 
 
+[[mount-an-oracle-database-recovery-point]]
 == Einen Oracle-Datenbank-Recovery-Punkt einbinden
 
 Wenn Sie die Schutzrichtlinie für eine Datenbank so konfigurieren, dass Archivprotokolle aufbewahrt werden, können Sie Wiederherstellungspunkte bereitstellen, um den Änderungsverlauf der Datenbank anzuzeigen.
@@ -50,6 +51,7 @@ Der Wiederherstellungspunkt wird auf dem Oracle-Host bereitgestellt.
 
 
 
+[[unmount-an-oracle-database-recovery-point]]
 == Einen Wiederherstellungspunkt einer Oracle-Datenbank aushängen
 
 Heben Sie die Bereitstellung des Wiederherstellungspunkts auf, wenn Sie die an dieser Datenbank vorgenommenen Änderungen nicht mehr anzeigen müssen.
@@ -70,6 +72,7 @@ Es wird eine Liste mit Wiederherstellungspunkten für diese Datenbank angezeigt.
 
 
 
+[[catalog-an-oracle-database-recovery-point]]
 == Katalogisieren Sie einen Wiederherstellungspunkt einer Oracle-Datenbank
 
 Katalogisieren Sie einen Wiederherstellungspunkt manuell, wenn Sie dessen Backup und Recovery-Betriebsmetadaten erhalten müssen. Die Metadaten werden gemäß den von Ihnen für die Datenbank gewählten Einstellungen für *Configure RMAN catalog* gespeichert (standardmäßig in der Ziel-Kontrolldatei). Sie müssen nur manuell katalogisieren, wenn die automatische Katalogisierung in der zugehörigen Datensicherungsstrategie deaktiviert ist.

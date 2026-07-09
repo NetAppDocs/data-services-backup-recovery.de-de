@@ -18,6 +18,7 @@ Plattformen, Geräte oder Funktionen, die mit dieser Version nicht oder nicht gu
 
 
 
+[[unsupported-actions]]
 == Nicht unterstützte Aktionen
 
 Die folgenden Aktionen werden in Hyper-V-Workloads in NetApp Backup and Recovery nicht unterstützt:

@@ -29,6 +29,7 @@ Nachdem Sie die NetApp Console eingerichtet haben, konfigurieren Sie die Sicheru
 
 
 
+[[add-credentials-for-host-resources]]
 == Anmeldeinformationen für Hostressourcen hinzufügen
 
 Fügen Sie Anmeldeinformationen für Hostressourcen hinzu. NetApp Backup and Recovery verwendet diese Anmeldeinformationen, um Workloads zu erkennen und Backup-Richtlinien anzuwenden.
@@ -116,6 +117,7 @@ TIP: Für Microsoft SQL Server-Workloads müssen Sie Anmeldeinformationen sowohl
 
 
 
+[[edit-credentials-for-host-resources]]
 === Anmeldeinformationen für Hostressourcen bearbeiten
 
 Sie können das Passwort für alle von Ihnen erstellten Zugangsdaten später bearbeiten.
@@ -133,6 +135,7 @@ Sie können das Passwort für alle von Ihnen erstellten Zugangsdaten später bea
 
 
 
+[[maintain-vmware-vcenter-settings]]
 == Verwalten der VMware vCenter-Einstellungen
 
 Geben Sie VMware vCenter-Anmeldeinformationen ein, um Workloads für die Sicherung zu ermitteln.  Wenn Sie keine Anmeldeinformationen haben, erstellen Sie diese mit Berechtigungen für den Zugriff auf und die Verwaltung der VMware vCenter Server-Workloads.
@@ -154,6 +157,7 @@ Geben Sie VMware vCenter-Anmeldeinformationen ein, um Workloads für die Sicheru
 
 
 
+[[import-and-manage-snapcenter-host-resources]]
 == Importieren und Verwalten von SnapCenter -Hostressourcen
 
 Wenn Sie zuvor SnapCenter zum Sichern Ihrer Ressourcen verwendet haben, können Sie diese Ressourcen in NetApp Backup and Recovery importieren und verwalten. Mit dieser Option können Sie SnapCenter -Serverinformationen importieren, um mehrere SnapCenter -Server zu registrieren und Datenbank-Workloads zu ermitteln.
@@ -166,6 +170,7 @@ Dies ist ein zweiteiliger Prozess:
 
 
 
+[[import-snapcenter-server-application-and-host-resources]]
 === Importieren Sie SnapCenter Server-Anwendungs- und Hostressourcen
 
 Dieser erste Schritt importiert Hostressourcen aus SnapCenter und zeigt diese Ressourcen auf der Inventarseite von NetApp Backup and Recovery an.  Zu diesem Zeitpunkt werden die Ressourcen noch nicht von NetApp Backup and Recovery verwaltet.
@@ -203,6 +208,7 @@ Auf der Inventarseite werden die importierten SnapCenter -Ressourcen angezeigt.
 
 
 
+[[manage-snapcenter-host-resources]]
 === Verwalten von SnapCenter -Hostressourcen
 
 Nachdem Sie die SnapCenter -Ressourcen importiert haben, verwalten Sie diese Hostressourcen in NetApp Backup and Recovery.  Nachdem Sie die Verwaltung dieser importierten Ressourcen ausgewählt haben, kann NetApp Backup and Recovery die Ressourcen, die Sie aus SnapCenter importieren, sichern und wiederherstellen.  Sie müssen diese Ressourcen nicht mehr im SnapCenter Server verwalten.
@@ -218,6 +224,7 @@ Auf der Inventarseite wird unter dem Hostnamen *Verwaltet* angezeigt, um anzuzei
 
 
 
+[[edit-imported-snapcenter-resources]]
 === Importierte SnapCenter -Ressourcen bearbeiten
 
 Sie können SnapCenter-Ressourcen später erneut importieren oder die importierten SnapCenter-Ressourcen bearbeiten, um die Registrierungsdetails zu aktualisieren.
@@ -237,6 +244,7 @@ Auf der Seite „Aus SnapCenter importieren“ werden alle vorherigen Importe an
 
 
 
+[[add-a-kvm-management-platform]]
 == Fügen Sie eine KVM-Managementplattform hinzu.
 
 Wenn Sie die Apache CloudStack-Managementplattform zur Verwaltung von KVM-Ressourcen verwenden, müssen Sie diese mit NetApp Backup and Recovery integrieren, damit Backup and Recovery die verwalteten KVM-Hosts und VMs erkennen und schützen kann.
@@ -259,6 +267,7 @@ Wenn Sie die Apache CloudStack-Managementplattform zur Verwaltung von KVM-Ressou
 
 
 
+[[configure-log-directories-in-snapshots-for-windows-hosts]]
 == Konfigurieren von Protokollverzeichnissen in Snapshots für Windows-Hosts
 
 Bevor Sie Richtlinien für Windows-Hosts erstellen, sollten Sie Protokollverzeichnisse in Snapshots für Windows-Hosts konfigurieren.  Protokollverzeichnisse werden zum Speichern der Protokolle verwendet, die während des Sicherungsvorgangs generiert werden.
@@ -274,6 +283,7 @@ Bevor Sie Richtlinien für Windows-Hosts erstellen, sollten Sie Protokollverzeic
 
 
 
+[[create-an-execution-hook-template]]
 == Erstellen einer Ausführungs-Hook-Vorlage
 
 Sie können eine benutzerdefinierte Ausführungs-Hook-Vorlage erstellen, mit der Sie Aktionen vor oder nach einem Datenschutzvorgang für eine Anwendung ausführen können.
@@ -297,6 +307,7 @@ Nachdem Sie die Vorlage erstellt haben, wird sie in der Vorlagenliste im Abschni
 
 
 
+[[create-a-resource-transformation-template]]
 == Erstellen Sie eine Vorlage für die Ressourcentransformation
 
 Erstellen Sie Vorlagen für Ressourcentransformationen, um häufige Transformationen zu speichern, die Sie an Ressourcen vornehmen, während Sie diese wiederherstellen.

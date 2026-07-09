@@ -39,6 +39,7 @@ TIP: Möglicherweise zahlen Sie Ihrem Cloud-Anbieter zusätzliche Gebühren für
 
 
 
+[[how-restoring-workloads-works]]
 == So funktioniert die Wiederherstellung von Workloads
 
 Beim Wiederherstellen von Workloads geschieht Folgendes:
@@ -55,6 +56,7 @@ Auf der Seite „Wiederherstellen“ (Suchen und Wiederherstellen) können Sie e
 
 
 
+[[restore-workload-data-from-the-restore-option-search-restore]]
 == Wiederherstellen von Workload-Daten über die Option „Wiederherstellen“ (Suchen und Wiederherstellen)
 
 Stellen Sie VMware-Workloads mithilfe der Option „Wiederherstellen“ wieder her. Sie können nach dem Snapshot anhand seines Namens oder mithilfe von Filtern suchen.

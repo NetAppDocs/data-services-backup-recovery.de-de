@@ -20,6 +20,7 @@ Damit Sie den Dienst nutzen können, muss der NetApp Backup and Recovery -Dienst
 
 
 
+[[discover-vmware-workloads-and-optionally-import-snapcenter-resources]]
 == Entdecken Sie VMware-Workloads und importieren Sie optional SnapCenter -Ressourcen
 
 Während der Erkennungsphase analysiert NetApp Backup and Recovery die VMware-Workloads innerhalb Ihrer Organisation und bewertet und importiert vorhandene Schutzrichtlinien, Snapshots sowie Backup- und Wiederherstellungsoptionen.
@@ -52,6 +53,7 @@ NOTE: Wenn Sie bereits über das SnapCenter -Plug-in verfügen, stellen Sie sich
 
 
 
+[[if-snapcenter-plug-in-is-not-already-installed-add-a-vcenter-and-discover-resources]]
 === Wenn das SnapCenter Plug-in noch nicht installiert ist, fügen Sie ein vCenter hinzu und ermitteln Sie Ressourcen
 
 Wenn Sie das SnapCenter Plug-in für VMware noch nicht installiert haben, fügen Sie vCenter-Informationen hinzu und lassen Sie NetApp Backup and Recovery die Workloads erkennen. Wählen Sie in jedem Konsolenagenten die Systeme aus, auf denen Sie Workloads ermitteln möchten.
@@ -83,6 +85,7 @@ TIP: Dieser Vorgang kann einige Minuten dauern.
 
 
 
+[[if-snapcenter-plug-in-is-already-installed-import-snapcenter-plug-in-for-vmware-resources-into-netapp-backup-and-recovery]]
 === Wenn das SnapCenter -Plugin bereits installiert ist, importieren Sie das SnapCenter -Plugin für VMware-Ressourcen in NetApp Backup and Recovery
 
 Wenn Sie das SnapCenter Plug-in für VMware bereits installiert haben, importieren Sie die SnapCenter Plug-in-Ressourcen mit diesen Schritten in NetApp Backup and Recovery .  Die Konsole erkennt ESXi-Hosts, Datenspeicher und VMs in vCentern und plant sie vom Plug-in aus. Sie müssen diese Informationen nicht alle neu erstellen.

@@ -23,6 +23,7 @@ NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads 
 
 
 
+[[identify-the-connection-method]]
 == Identifizieren Sie die Verbindungsmethode
 
 Es gibt viele Konfigurationen, in denen Sie Backups in einem S3-Bucket auf einem ONTAP System erstellen können.  Nachfolgend werden zwei Szenarien dargestellt.
@@ -41,12 +42,14 @@ In diesem Szenario sollte der Konsolenagent in derselben Cloud-Provider-Umgebung
 
 
 
+[[prepare-your-console-agent]]
 == Vorbereiten Ihres Konsolenagenten
 
 Der Konsolenagent ist die Hauptsoftware für die Konsolenfunktionalität.  Zum Sichern und Wiederherstellen Ihrer ONTAP Daten ist ein Konsolenagent erforderlich.
 
 
 
+[[create-or-switch-console-agents]]
 === Erstellen oder Wechseln von Konsolenagenten
 
 Wenn Sie Daten auf ONTAP S3 sichern, muss ein Konsolenagent bei Ihnen vor Ort oder in der Cloud verfügbar sein.  Sie müssen entweder einen neuen Konsolenagenten installieren oder sicherstellen, dass sich der aktuell ausgewählte Konsolenagent an einem dieser Speicherorte befindet.  Der lokale Konsolenagent kann an einem Standort mit oder ohne Internetzugang installiert werden.
@@ -60,6 +63,7 @@ Wenn Sie Daten auf ONTAP S3 sichern, muss ein Konsolenagent bei Ihnen vor Ort od
 
 
 
+[[prepare-console-agent-networking-requirements]]
 === Netzwerkanforderungen für den Konsolenagenten vorbereiten
 
 Stellen Sie sicher, dass das Netzwerk, in dem der Konsolenagent installiert ist, die folgenden Verbindungen ermöglicht:
@@ -79,6 +83,7 @@ Wenn Sie NetApp Backup and Recovery in einer Standard-SaaS-Umgebung verwenden, w
 
 
 
+[[verify-license-requirements]]
 == Überprüfen der Lizenzanforderungen
 
 Bevor Sie NetApp Backup and Recovery für Ihren Cluster aktivieren können, müssen Sie eine NetApp Backup and Recovery BYOL-Lizenz von NetApp erwerben und aktivieren. Die Lizenz gilt für die Datensicherung und -wiederherstellung im Objektspeicher – für die Erstellung von Snapshots oder replizierten Volumes ist keine Lizenz erforderlich. Diese Lizenz gilt für das Konto und kann systemübergreifend verwendet werden.
@@ -90,6 +95,7 @@ TIP: Die PAYGO-Lizenzierung wird beim Sichern von Dateien auf ONTAP S3 nicht unt
 
 
 
+[[prepare-your-ontap-clusters]]
 == Bereiten Sie Ihre ONTAP -Cluster vor
 
 Bereiten Sie Ihr lokales ONTAP -Quellsystem und alle sekundären lokalen ONTAP oder Cloud Volumes ONTAP Systeme vor.
@@ -104,6 +110,7 @@ Die Vorbereitung Ihrer ONTAP Cluster umfasst die folgenden Schritte:
 
 
 
+[[discover-your-ontap-systems-in-netapp-console]]
 === Entdecken Sie Ihre ONTAP -Systeme in der NetApp Console
 
 Sowohl Ihr lokales ONTAP Quellsystem als auch alle sekundären lokalen ONTAP oder Cloud Volumes ONTAP -Systeme müssen auf der Seite *Systeme* der NetApp Console verfügbar sein.
@@ -112,6 +119,7 @@ Sie müssen die IP-Adresse der Clusterverwaltung und das Kennwort für das Admin
 
 
 
+[[verify-ontap-system-requirements]]
 === Überprüfen der ONTAP Systemanforderungen
 
 Stellen Sie sicher, dass Ihr ONTAP -System die folgenden Anforderungen erfüllt:
@@ -133,6 +141,7 @@ https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-sn
 
 
 
+[[verify-ontap-networking-requirements-for-backing-up-data-to-object-storage]]
 === Überprüfen Sie die ONTAP Netzwerkanforderungen für die Datensicherung im Objektspeicher
 
 Sie müssen sicherstellen, dass die folgenden Anforderungen auf dem System erfüllt sind, das eine Verbindung zum Objektspeicher herstellt.
@@ -166,6 +175,7 @@ Wenn Sie NetApp Backup and Recovery einrichten, werden Sie nach dem zu verwenden
 
 
 
+[[verify-ontap-networking-requirements-for-replicating-volumes]]
 === Überprüfen Sie die ONTAP Netzwerkanforderungen für die Replikation von Volumes
 
 Wenn Sie mit NetApp Backup and Recovery replizierte Volumes auf einem sekundären ONTAP System erstellen möchten, stellen Sie sicher, dass die Quell- und Zielsysteme die folgenden Netzwerkanforderungen erfüllen.
@@ -190,6 +200,7 @@ Da Sie auf Cloud Volumes ONTAP oder lokale Systeme replizieren können, überpr�
 
 
 
+[[prepare-ontap-s3-as-your-backup-target]]
 == Bereiten Sie ONTAP S3 als Ihr Backup-Ziel vor
 
 Sie müssen einen Simple Storage Service (S3)-Objektspeicherserver im ONTAP Cluster aktivieren, den Sie für Objektspeichersicherungen verwenden möchten. Siehe die https://docs.netapp.com/us-en/ontap/s3-config/index.html["ONTAP S3-Dokumentation"^] für Details.
@@ -221,6 +232,7 @@ Diese Zugriffsschlüssel müssen einem Benutzer zugeordnet sein, der über die f
 
 
 
+[[activate-backups-on-your-ontap-volumes]]
 == Aktivieren Sie Backups auf Ihren ONTAP -Volumes
 
 Aktivieren Sie Backups jederzeit direkt von Ihrem lokalen System aus.
@@ -236,6 +248,7 @@ Sie können auch<<API-Befehle anzeigen>> im Überprüfungsschritt, damit Sie den
 
 
 
+[[start-the-wizard]]
 === Starten des Assistenten
 
 .Schritte
@@ -258,6 +271,7 @@ Auf der Einführungsseite des Assistenten werden die Schutzoptionen angezeigt, d
 
 
 
+[[select-the-volumes-that-you-want-to-back-up]]
 === Wählen Sie die Volumes aus, die Sie sichern möchten
 
 Wählen Sie die Volumes aus, die Sie schützen möchten.  Ein geschütztes Volume ist ein Volume, das über eine oder mehrere der folgenden Optionen verfügt: Snapshot-Richtlinie, Replikationsrichtlinie, Backup-to-Object-Richtlinie.
@@ -286,6 +300,7 @@ Beachten Sie: Wenn auf die von Ihnen ausgewählten Volumes bereits Snapshot- ode
 
 
 
+[[define-the-backup-strategy]]
 === Definieren Sie die Sicherungsstrategie
 
 Zum Definieren der Sicherungsstrategie müssen die folgenden Optionen konfiguriert werden:
@@ -389,6 +404,7 @@ Um eine Richtlinie zu erstellen, wählen Sie *Neue Richtlinie erstellen* und geh
 
 
 
+[[review-your-selections]]
 === Überprüfen Sie Ihre Auswahl
 
 Dies ist die Gelegenheit, Ihre Auswahl zu überprüfen und gegebenenfalls Anpassungen vorzunehmen.
@@ -412,6 +428,7 @@ Sie können den Status von Sicherungs- und Wiederherstellungsaufträgen auch mit
 
 
 
+[[show-the-api-commands]]
 === API-Befehle anzeigen
 
 Möglicherweise möchten Sie die im Assistenten „Sicherung und Wiederherstellung aktivieren“ verwendeten API-Befehle anzeigen und optional kopieren.  Möglicherweise möchten Sie dies tun, um die Sicherungsaktivierung in zukünftigen Systemen zu automatisieren.

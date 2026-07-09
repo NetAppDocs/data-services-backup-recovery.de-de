@@ -18,6 +18,7 @@ Bevor Sie mit der Nutzung von NetApp Backup and Recovery beginnen, stellen Sie s
 
 
 
+[[prepare-netapp-console]]
 == NetApp Console vorbereiten
 
 Sie greifen auf NetApp Backup and Recovery über die NetApp Console zu. Um die Console für Backup and Recovery vorzubereiten, müssen Sie:
@@ -33,6 +34,7 @@ Weitere Informationen zu NetApp Console finden Sie unter https://docs.netapp.com
 
 
 
+[[complete-initial-netapp-console-setup]]
 === Vollständige Ersteinrichtung der NetApp Console
 
 Schließen Sie die Ersteinrichtung für NetApp Console ab, falls Sie dies noch nicht getan haben.
@@ -41,6 +43,7 @@ https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-standard-mode
 
 
 
+[[deploy-a-console-agent]]
 === Einen Console-Agenten bereitstellen
 
 Ein Console-Agent ist eine schlanke Softwarekomponente, die Sie in Ihrem Netzwerk installieren, um Ihre Speicherinfrastruktur mit NetApp Console zu verbinden. Er ermöglicht erweiterte Speicherorchestrierung, Datendienste und sichere Cloud-Integration.
@@ -49,6 +52,7 @@ https://docs.netapp.com/us-en/console-setup-admin/concept-agents.html["Erfahren 
 
 
 
+[[add-a-storage-system]]
 === Fügen Sie ein Speichersystem hinzu
 
 Bevor Sie Workloads in NetApp Backup and Recovery schützen können, müssen Sie ein ONTAP Storage-System zur NetApp Console hinzufügen.
@@ -57,6 +61,7 @@ https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-o
 
 
 
+[[configure-an-organization-and-user-roles]]
 === Konfigurieren einer Organisation und von Benutzerrollen
 
 Machen Sie sich mit Organisationen, Projekten und Benutzerrollen vertraut und konfigurieren Sie anschließend Benutzer mit den entsprechenden Berechtigungen, die sie zur Ausführung ihrer Aufgaben benötigen.
@@ -67,12 +72,14 @@ Weitere Informationen zu den Rollen und Berechtigungen, die für die Durchführu
 
 
 
+[[requirements-for-backups-to-object-storage]]
 == Anforderungen an Backups im Objektspeicher
 
 Um Objektspeicher als Backup-Ziel zu verwenden, benötigen Sie ein Konto bei AWS S3, Google Cloud Storage, Microsoft Azure Blob, StorageGRID oder ONTAP und die entsprechenden Zugriffsberechtigungen.
 
 
 
+[[requirements-for-protecting-ontap-volume-workloads]]
 == Anforderungen zum Schutz von ONTAP-Volume-Workloads
 
 Um NetApp Backup and Recovery für ONTAP-Volume-Workloads zu verwenden, benötigen Sie die folgenden Voraussetzungen hinsichtlich Hostsystem, Speicherplatz und Dimensionierung.
@@ -87,6 +94,7 @@ Weitere Informationen zu unterstützten Funktionen, Volumentypen, Sicherungs- un
 
 
 
+[[requirements-for-protecting-microsoft-sql-server-workloads]]
 == Anforderungen zum Schutz von Microsoft SQL Server-Workloads
 
 Um NetApp Backup and Recovery für Microsoft SQL Server-Workloads zu verwenden, benötigen Sie die folgenden Voraussetzungen hinsichtlich Hostsystem, Speicherplatz und Größe.
@@ -163,6 +171,7 @@ NOTE: Der Schutz von Datenbanken, die auf Passthrough-Disks oder VHD/VHDX-Dateie
 |===
 
 
+[[requirements-for-protecting-vmware-workloads]]
 == Anforderungen zum Schutz von VMware-Workloads
 
 Sie benötigen bestimmte Anforderungen, um Ihre VMware-Workloads zu erkennen und zu schützen.
@@ -219,6 +228,7 @@ Weitere Informationen zu Backup- und Recovery-Rollen finden Sie unter  https://d
 
 
 
+[[requirements-for-protecting-kvm-workloads]]
 == Anforderungen zum Schutz von KVM-Workloads
 
 Sie benötigen bestimmte Anforderungen, um virtuelle KVM-Maschinen zu erkennen und zu schützen.
@@ -260,6 +270,7 @@ chown -R qemu:qemu <kvm_vm_mount_path> & chmod 771 <kvm_vm_mount_path>
 ====
 
 
+[[requirements-for-protecting-oracle-database-workloads]]
 == Anforderungen für den Schutz von Oracle Database Workloads
 
 Stellen Sie sicher, dass Ihre Umgebung bestimmte Anforderungen erfüllt, um Oracle Database-Ressourcen zu erkennen und zu schützen.
@@ -303,6 +314,7 @@ Stellen Sie sicher, dass Ihre Umgebung bestimmte Anforderungen erfüllt, um Orac
 |===
 
 
+[[requirements-for-protecting-kubernetes-applications]]
 == Anforderungen zum Schutz von Kubernetes-Anwendungen
 
 Sie benötigen spezifische Anforderungen, um Kubernetes-Ressourcen zu erkennen und Ihre Kubernetes-Anwendungen zu schützen.
@@ -324,6 +336,7 @@ NOTE: NetApp empfiehlt dringend, dem für Kubernetes-Workloads verwendeten Conso
 
 
 
+[[requirements-for-protecting-hyper-v-workloads]]
 == Anforderungen zum Schutz von Hyper-V-Workloads
 
 Stellen Sie sicher, dass Ihre Hyper-V-Instanz bestimmte Anforderungen zum Erkennen und Schützen virtueller Maschinen erfüllt.

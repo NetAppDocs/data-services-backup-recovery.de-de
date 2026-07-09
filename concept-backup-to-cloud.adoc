@@ -22,6 +22,7 @@ Die Unterstützung für Backup und Recovery ist in allen ONTAP-Systemen bereits 
 
 
 
+[[what-you-can-do-with-netapp-backup-and-recovery]]
 == Was Sie mit NetApp Backup and Recovery tun können
 
 Verwenden Sie NetApp Backup and Recovery, um die folgenden Ziele zu erreichen:
@@ -92,6 +93,7 @@ Verwenden Sie NetApp Backup and Recovery, um die folgenden Ziele zu erreichen:
 
 
 
+[[benefits-of-using-netapp-backup-and-recovery]]
 == Vorteile der Verwendung von NetApp Backup and Recovery
 
 NetApp Backup and Recovery bietet die folgenden Vorteile:
@@ -105,6 +107,7 @@ NetApp Backup and Recovery bietet die folgenden Vorteile:
 
 
 
+[[cost]]
 == Kosten
 
 NetApp berechnet Ihnen für die Nutzung der Testversion keine Gebühren.  Sie sind jedoch für die Kosten verantwortlich, die mit den von Ihnen genutzten Cloud-Ressourcen verbunden sind, beispielsweise für Speicher- und Datenübertragungskosten.
@@ -153,6 +156,7 @@ Es gibt drei Möglichkeiten, für Backup und Wiederherstellung zu bezahlen:
 
 
 
+[[licensing]]
 == Lizenzierung
 
 NetApp Backup and Recovery bietet eine kostenlose Testversion an, mit der Sie es für eine begrenzte Zeit ohne Lizenzschlüssel nutzen können.
@@ -186,6 +190,7 @@ link:br-start-licensing.html["Erfahren Sie, wie Sie Lizenzen einrichten"].
 
 
 
+[[supported-workloads-systems-and-backup-targets]]
 == Unterstützte Workloads, Systeme und Sicherungsziele
 
 .Unterstützte Arbeitslasten
@@ -219,6 +224,7 @@ NetApp Backup and Recovery schützt die folgenden Arten von Workloads:
 
 
 
+[[how-netapp-backup-and-recovery-works]]
 == So funktioniert NetApp Backup and Recovery
 
 Wenn Sie NetApp Backup and Recovery aktivieren, führt der Dienst eine vollständige Sicherung Ihrer Daten durch.  Nach der ersten Sicherung sind alle weiteren Sicherungen inkrementell.  Dadurch wird der Netzwerkverkehr auf ein Minimum reduziert.
@@ -232,6 +238,7 @@ NOTE: Auch die Übertragung vom Primär- zum Objektspeicher wird unterstützt, n
 
 
 
+[[where-backups-reside-in-object-store-locations]]
 === Wo sich Backups in Objektspeicherorten befinden
 
 Sicherungskopien werden in einem Objektspeicher gespeichert, den die NetApp Console in Ihrem Cloud-Konto erstellt.  Es gibt einen Objektspeicher pro Cluster oder System und die Konsole benennt den Objektspeicher wie folgt: `netapp-backup-clusteruuid` .  Denken Sie daran, diesen Objektspeicher nicht zu löschen.
@@ -244,6 +251,7 @@ Sicherungskopien werden in einem Objektspeicher gespeichert, den die NetApp Cons
 
 
 
+[[backup-copies-are-associated-with-your-netapp-console-organization]]
 === Sicherungskopien sind mit Ihrer NetApp Console verknüpft
 
 Sicherungskopien sind mit der NetApp Console verknüpft, in der sich der Konsolenagent befindet. https://docs.netapp.com/us-en/console-setup-admin/concept-identity-and-access-management.html["Erfahren Sie mehr über Identität und Zugriff auf die NetApp Console"^] .
@@ -252,6 +260,7 @@ Wenn Sie mehrere Konsolenagenten in derselben NetApp Console haben, zeigt jeder 
 
 
 
+[[terms-that-might-help-you-with-netapp-backup-and-recovery]]
 == Begriffe, die Ihnen bei NetApp Backup and Recovery helfen könnten
 
 Es kann für Sie von Vorteil sein, einige Begriffe im Zusammenhang mit dem Schutz zu verstehen.

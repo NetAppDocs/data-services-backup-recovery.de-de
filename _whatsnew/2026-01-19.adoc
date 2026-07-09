@@ -4,6 +4,7 @@
 
 
 
+[[ontap-volume-workloads-enhancements]]
 === ONTAP Volume-Workload-Erweiterungen
 
 Diese Version der ONTAP Volume-Workloads führt die folgenden erweiterten Funktionen ein:
@@ -14,6 +15,7 @@ link:https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-back
 
 
 
+[[vmware-workloads-enhancements]]
 === VMware-Workload-Verbesserungen
 
 Diese Version von VMware-Workloads bietet die folgenden erweiterten Funktionen:
@@ -26,6 +28,7 @@ https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-restor
 
 
 
+[[hyper-v-workloads-preview-enhancements]]
 === Vorschau der Verbesserungen für Hyper-V-Workloads
 
 Diese Version von Hyper-V-Workloads bietet die folgenden erweiterten Funktionen:
@@ -42,6 +45,7 @@ https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-restor
 
 
 
+[[kvm-workloads-preview-enhancements]]
 === Vorschau der Verbesserungen für KVM-Workloads
 
 Die KVM-Workload-Vorschau schützt jetzt KVM-Hosts und virtuelle Maschinen, die von Apache CloudStack verwaltet werden.

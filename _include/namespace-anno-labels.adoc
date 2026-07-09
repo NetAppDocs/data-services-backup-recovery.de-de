@@ -4,6 +4,7 @@
 
 
 
+[[namespace-annotations-and-labels-during-restore-and-failover-operations]]
 == Namespace-Annotationen und -Labels während Wiederherstellungs- und Failover-Operationen
 
 Bei Wiederherstellung und Failover werden die Namespace-Bezeichnungen und -Annotationen des Ziels aktualisiert, um mit denen der Quelle übereinzustimmen: Schlüssel aus der Quelle werden zu den Zielschlüsseln hinzugefügt oder überschrieben, während Schlüssel, die nur im Ziel existieren, unverändert bleiben.
@@ -32,6 +33,7 @@ Wenn Sie Helm mit dem  `--create-namespace` Flag zur Installation der Quellanwen
 
 
 
+[[example]]
 === Beispiel
 
 Das folgende Beispiel zeigt Quell- und Ziel-Namensräume mit unterschiedlichen Bezeichnungen und Annotationen und zeigt den Ziel-Namensraum vor und nach der Operation, um zu veranschaulichen, wie Schlüssel hinzugefügt, zusammengeführt oder überschrieben werden.

@@ -20,6 +20,7 @@ NetApp Backup and Recovery muss zunächst Microsoft SQL Server-Workloads erkenne
 
 
 
+[[discover-microsoft-sql-server-workloads-and-optionally-import-snapcenter-resources]]
 == Entdecken Sie Microsoft SQL Server-Workloads und importieren Sie optional SnapCenter -Ressourcen
 
 Während der Erkennung analysiert NetApp Backup and Recovery Microsoft SQL Server-Instanzen und Datenbanken in Systemen innerhalb Ihres Unternehmens.
@@ -38,6 +39,7 @@ NOTE: Wenn Sie bereits über SnapCenter verfügen, überprüfen Sie zunächst, o
 
 
 
+[[if-snapcenter-is-already-installed-import-snapcenter-resources-into-netapp-backup-and-recovery]]
 === Wenn SnapCenter bereits installiert ist, importieren Sie SnapCenter -Ressourcen in NetApp Backup and Recovery
 
 Wenn Sie SnapCenter bereits installiert haben, importieren Sie SnapCenter -Ressourcen mit diesen Schritten in NetApp Backup and Recovery .  NetApp Console erkennt Ressourcen, Hosts, Anmeldeinformationen und Zeitpläne von SnapCenter; Sie müssen diese Informationen nicht alle neu erstellen.
@@ -131,6 +133,7 @@ Wenn Sie bereits Ressourcen entdeckt haben, können Sie SnapCenter -Ressourcen v
 
 
 
+[[if-you-dont-have-snapcenter-installed-add-a-vcenter-and-discover-resources]]
 === Wenn Sie SnapCenter nicht installiert haben, fügen Sie ein vCenter hinzu und ermitteln Sie Ressourcen
 
 Wenn Sie SnapCenter noch nicht installiert haben, können Sie vCenter-Informationen hinzufügen und die Workloads von NetApp Backup and Recovery ermitteln lassen. Wählen Sie in jedem Konsolenagenten die Systeme aus, auf denen Sie Workloads ermitteln möchten.

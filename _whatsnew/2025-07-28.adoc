@@ -4,6 +4,7 @@
 
 
 
+[[kubernetes-workload-support-as-a-preview]]
 === Kubernetes-Workload-Unterstützung als Vorschau
 
 Diese Version von NetApp Backup and Recovery bietet Unterstützung für die Erkennung und Verwaltung von Kubernetes-Workloads:

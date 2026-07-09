@@ -4,6 +4,7 @@
 
 
 
+[[ontap-volumes-workloads-enhancements]]
 === ONTAP Volumes Workloads-Verbesserungen
 
 In dieser Version führt ONTAP Volumes-Workloads die folgende Verbesserung ein:
@@ -14,6 +15,7 @@ Weitere Informationen zum Schutz von ONTAP Volumes-Workloads finden Sie unter  h
 
 
 
+[[kubernetes-workloads-enhancements]]
 === Kubernetes-Workloads-Erweiterungen
 
 In dieser Version führt Kubernetes-Workloads die folgenden Verbesserungen der Datensicherungsstrategie ein:
@@ -29,6 +31,7 @@ Weitere Informationen zum Schutz von Kubernetes-Workloads finden Sie unter https
 
 
 
+[[hyper-v-workloads-enhancements]]
 === Hyper-V-Workload-Verbesserungen
 
 In dieser Version werden für Hyper-V-Workloads die folgenden Verbesserungen eingeführt:
@@ -41,6 +44,7 @@ Weitere Informationen zum Schutz von Hyper-V-Workloads finden Sie unter https://
 
 
 
+[[kvm-workloads-enhancements]]
 === Verbesserungen für KVM-Workloads
 
 In dieser Version werden für KVM-Workloads die folgenden Verbesserungen eingeführt:
@@ -53,6 +57,7 @@ Weitere Informationen zum Schutz von KVM-Workloads finden Sie unter https://docs
 
 
 
+[[vmware-workloads-enhancements]]
 === VMware-Workload-Verbesserungen
 
 In dieser Version führt VMware workloads die folgenden Verbesserungen ein:

@@ -28,6 +28,7 @@ link:concept-backup-to-cloud.html["Erfahren Sie mehr über die Kosten im Zusamme
 
 
 
+[[30-day-free-trial]]
 == 30 Tage kostenlos testen
 
 Eine kostenlose 30-Tage-Testversion von NetApp Backup and Recovery ist verfügbar, wenn Sie sich im Marktplatz Ihres Cloud-Anbieters für ein Pay-as-you-go-Abonnement für * NetApp Intelligent Services* anmelden.  Die kostenlose Testversion beginnt mit der Anmeldung zum Marktplatzeintrag.  Beachten Sie: Wenn Sie beim Bereitstellen eines Cloud Volumes ONTAP -Systems für das Marktplatzabonnement bezahlen und dann 10 Tage später Ihre kostenlose Testversion von NetApp Backup and Recovery starten, haben Sie noch 20 Tage Zeit, die kostenlose Testversion zu nutzen.
@@ -36,6 +37,7 @@ Nach Ablauf der kostenlosen Testphase erfolgt die Umstellung automatisch und ohn
 
 
 
+[[end-the-free-trial]]
 === Kostenlose Testversion beenden
 
 Wenn Sie NetApp Backup and Recovery nach Ablauf der kostenlosen Testversion weiterhin verwenden möchten, müssen Sie ein kostenpflichtiges Abonnement einrichten.  Sie können dies über die NetApp Console tun, indem Sie zum Abschnitt „Abrechnung“ navigieren und einen Abonnementplan auswählen, der Ihren Anforderungen entspricht.  Wenn Sie NetApp Backup and Recovery nicht weiter verwenden möchten, können Sie die kostenlose Testversion beenden.
@@ -52,6 +54,7 @@ Wenn Sie die kostenlose Testversion beenden, ohne einen kostenpflichtigen Plan z
 
 
 
+[[use-a-netapp-backup-and-recovery-paygo-subscription]]
 == Verwenden Sie ein NetApp Backup and Recovery PAYGO-Abonnement
 
 Beim Pay-as-you-go-Modell zahlen Sie Ihrem Cloud-Anbieter die Kosten für die Objektspeicherung und die Lizenzkosten für das NetApp -Backup auf Stundenbasis in einem einzigen Abonnement.  Sie sollten * NetApp Intelligent Services* im Marketplace abonnieren, auch wenn Sie über eine kostenlose Testversion verfügen oder Ihre eigene Lizenz mitbringen (BYOL):
@@ -82,6 +85,7 @@ Verwenden Sie diese Links, um NetApp Backup and Recovery über den Marktplatz Ih
 
 
 
+[[use-an-annual-contract]]
 == Verwenden Sie einen Jahresvertrag
 
 Bezahlen Sie jährlich für NetApp Backup and Recovery , indem Sie einen Jahresvertrag abschließen.  Sie sind mit einer Laufzeit von 1, 2 oder 3 Jahren erhältlich.
@@ -124,6 +128,7 @@ Nachdem NetApp Ihnen das private Angebot mitgeteilt hat, können Sie den Jahresp
 
 
 
+[[use-a-netapp-backup-and-recovery-byol-license]]
 == Verwenden Sie eine NetApp Backup and Recovery BYOL-Lizenz
 
 Bring-Your-Own-Lizenzen von NetApp haben eine Laufzeit von 1, 2 oder 3 Jahren. Sie zahlen nur für die Daten, die Sie schützen, berechnet anhand der logisch genutzten Kapazität (_vor_ jeglicher Effizienz) der Quell- ONTAP -Volumes, die gesichert werden.  Diese Kapazität wird auch als Front-End-Terabyte (FETB) bezeichnet.
@@ -140,6 +145,7 @@ https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-se
 
 
 
+[[exceeding-license-capacity]]
 == Überschreitung der Lizenzkapazität
 
 Wenn Sie Ihr lizenziertes Speicherkontingent überschreiten, fallen PAYGO-Gebühren an; ohne ein PAYGO-Abonnement können Sie keine neuen Backups erstellen, bestehende Backups bleiben jedoch ohne Servicegarantie wiederherstellbar. Erneuern Sie Ihre Lizenz unbedingt, bevor sie abläuft; eine abgelaufene Lizenz verhindert neue Backups und unterbricht den Service.

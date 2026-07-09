@@ -4,6 +4,7 @@
 
 
 
+[[netapp-backup-and-recovery-preview-release]]
 === Vorschauversion von NetApp Backup and Recovery
 
 Diese Vorschauversion von NetApp Backup and Recovery bietet eine aktualisierte Benutzeroberfläche, mit der Sie Microsoft SQL Server-Workloads mithilfe einer 3-2-1-Schutzstrategie verwalten können, die Sie von NetApp Backup and Recovery kennen. Mit dieser neuen Version können Sie diese Workloads im Primärspeicher sichern, sie im Sekundärspeicher replizieren und sie im Cloud-Objektspeicher sichern.

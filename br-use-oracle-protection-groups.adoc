@@ -26,6 +26,7 @@ Sie können die folgenden Aufgaben im Zusammenhang mit Schutzgruppen ausführen:
 
 
 
+[[create-a-protection-group]]
 == Erstellen einer Schutzgruppe
 
 Gruppieren Sie VMs und Speicherpools, die Sie gemeinsam schützen möchten, in einer Schutzgruppe.
@@ -52,6 +53,7 @@ Wenn Sie eine Richtlinie erstellen möchten, wählen Sie *Neue Richtlinie erstel
 
 
 
+[[delete-a-protection-group]]
 == Löschen einer Schutzgruppe
 
 Durch das Löschen einer Schutzgruppe werden diese und alle zugehörigen Sicherungszeitpläne entfernt. Möglicherweise möchten Sie eine Schutzgruppe löschen, wenn sie nicht mehr benötigt wird.

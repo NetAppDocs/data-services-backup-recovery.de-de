@@ -18,6 +18,7 @@ NetApp Backup and Recovery ermöglicht es Ihnen, Kubernetes-Anwendungen mithilfe
 
 
 
+[[back-up-a-kubernetes-application-now-using-custom-resources]]
 == Sichern Sie jetzt eine Kubernetes-Anwendung mithilfe benutzerdefinierter Ressourcen
 
 Erstellen Sie manuell ein Backup einer Kubernetes-Anwendung, um eine Basis für zukünftige Backups und Snapshots zu schaffen oder um sicherzustellen, dass die aktuellsten Daten geschützt sind.
@@ -34,6 +35,7 @@ Stellen Sie sicher, dass die Gültigkeitsdauer des AWS-Sitzungstokens für alle 
 
 
 
+[[create-a-local-snapshot-using-a-custom-resource]]
 === Erstellen Sie einen lokalen Snapshot mithilfe einer benutzerdefinierten Ressource
 
 Um einen Snapshot Ihrer Kubernetes-Anwendung zu erstellen und lokal zu speichern, verwenden Sie die benutzerdefinierte Ressource Snapshot mit spezifischen Attributen.
@@ -76,6 +78,7 @@ kubectl apply -f local-snapshot-cr.yaml
 
 
 
+[[back-up-an-application-to-an-object-store-using-a-custom-resource]]
 === Sichern Sie eine Anwendung in einem Objektspeicher mithilfe einer benutzerdefinierten Ressource
 
 Erstellen Sie eine Backup-CR mit spezifischen Attributen, um Ihre Anwendung in einem Objektspeicher zu sichern.
@@ -144,6 +147,7 @@ kubectl apply -f object-store-backup-cr.yaml
 
 
 
+[[create-a-3-2-1-fanout-backup-using-a-custom-resource]]
 === Erstellen Sie ein 3-2-1-Fanout-Backup mithilfe einer benutzerdefinierten Ressource
 
 Bei der Datensicherung mit einer 3-2-1-Fanout-Architektur wird eine Sicherung sowohl auf einem Sekundärspeicher als auch in einem Objektspeicher erstellt. Um eine 3-2-1-Fanout-Sicherung zu erstellen, erstellen Sie ein Backup CR mit bestimmten Attributen.
@@ -202,6 +206,7 @@ kubectl apply -f 3-2-1-fanout-backup-cr.yaml
 
 
 
+[[supported-backup-annotations]]
 == Unterstützte Sicherungsanmerkungen
 
 Die folgende Tabelle beschreibt die Anmerkungen, die Sie beim Erstellen eines Backup-CR verwenden können.

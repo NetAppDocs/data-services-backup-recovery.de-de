@@ -24,6 +24,7 @@ NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads 
 
 
 
+[[view-the-backup-status-of-volumes-in-your-systems]]
 == Den Sicherungsstatus der Volumes in Ihren Systemen anzeigen
 
 Sie können im Volumes Backup Dashboard eine Liste aller Volumes anzeigen, die derzeit gesichert werden. Dies umfasst alle Arten von Backups, einschließlich Snapshots, replizierter Volumes und Sicherungsdateien im Objektspeicher. Sie können auch die Volumes in den Systemen anzeigen, die derzeit nicht gesichert werden.
@@ -43,6 +44,7 @@ Das jeweilige Symbol leuchtet auf, wenn der entsprechende Sicherungstyp aktivier
 
 
 
+[[activate-backup-on-additional-volumes-in-a-system]]
 == Aktivieren Sie die Sicherung auf zusätzlichen Volumes in einem System
 
 Wenn Sie bei der ersten Aktivierung von NetApp Backup and Recovery die Sicherung nur auf einigen Volumes in einem System aktiviert haben, können Sie später Sicherungen auf weiteren Volumes aktivieren.
@@ -55,12 +57,14 @@ Wenn Sie bei der ersten Aktivierung von NetApp Backup and Recovery die Sicherung
 
 
 
+[[change-the-backup-settings-assigned-to-existing-volumes]]
 == Ändern Sie die Sicherungseinstellungen, die vorhandenen Volumes zugewiesen sind
 
 Sie können die Sicherungsrichtlinien ändern, die Ihren vorhandenen Volumes mit zugewiesenen Richtlinien zugewiesen sind. Sie können die Richtlinien für Ihre lokalen Snapshots, replizierten Volumes und Sicherungsdateien ändern. Alle neuen Snapshot-, Replikations- oder Sicherungsrichtlinien, die Sie auf die Volumes anwenden möchten, müssen bereits vorhanden sein.
 
 
 
+[[edit-backup-settings-on-a-single-volume]]
 === Bearbeiten der Sicherungseinstellungen auf einem einzelnen Volume
 
 .Schritte
@@ -74,6 +78,7 @@ Wenn Sie beim Aktivieren von NetApp Backup and Recovery für diesen Cluster in d
 
 
 
+[[edit-backup-settings-on-multiple-volumes]]
 === Bearbeiten der Sicherungseinstellungen auf mehreren Volumes
 
 Wenn Sie dieselben Sicherungseinstellungen auf mehreren Volumes verwenden möchten, können Sie die Sicherungseinstellungen auf mehreren Volumes gleichzeitig aktivieren oder bearbeiten.  Sie können Volumes auswählen, die keine Sicherungseinstellungen, nur Snapshot-Einstellungen, nur Einstellungen für die Sicherung in der Cloud usw. haben, und Massenänderungen an allen diesen Volumes mit unterschiedlichen Sicherungseinstellungen vornehmen.
@@ -116,6 +121,7 @@ Wenn Sie beim Aktivieren von NetApp Backup and Recovery für diesen Cluster in d
 
 
 
+[[create-a-manual-volume-backup-at-any-time]]
 == Erstellen Sie jederzeit eine manuelle Volume-Sicherung
 
 Sie können jederzeit ein On-Demand-Backup erstellen, um den aktuellen Status des Volumes zu erfassen.  Dies kann nützlich sein, wenn sehr wichtige Änderungen an einem Volume vorgenommen wurden und Sie nicht auf die nächste geplante Sicherung warten möchten, um diese Daten zu schützen.  Sie können diese Funktion auch verwenden, um eine Sicherung für ein Volume zu erstellen, das derzeit nicht gesichert wird und dessen aktuellen Status Sie erfassen möchten.
@@ -139,6 +145,7 @@ In der Spalte „Sicherungsstatus“ für dieses Volume wird „In Bearbeitung�
 
 
 
+[[view-the-list-of-backups-for-each-volume]]
 == Sehen Sie sich die Liste der Backups für jedes Volume an
 
 Sie können die Liste aller Sicherungsdateien anzeigen, die für jedes Volume vorhanden sind.  Auf dieser Seite werden Details zum Quellvolume, zum Zielspeicherort und zu Sicherungsdetails angezeigt, z. B. die zuletzt durchgeführte Sicherung, die aktuelle Sicherungsrichtlinie, die Größe der Sicherungsdatei und mehr.
@@ -153,6 +160,7 @@ Es werden die Details zum Volume und die Liste der Snapshots angezeigt.
 
 
 
+[[run-a-ransomware-scan-on-a-volume-backup-in-object-storage]]
 == Führen Sie einen Ransomware-Scan auf einem Volume-Backup im Objektspeicher durch
 
 NetApp Backup and Recovery durchsucht Ihre Sicherungsdateien nach Hinweisen auf einen Ransomware-Angriff, wenn eine Sicherung in einer Objektdatei erstellt wird und wenn Daten aus einer Sicherungsdatei wiederhergestellt werden.  Sie können auch jederzeit einen On-Demand-Scan ausführen, um die Verwendbarkeit einer bestimmten Sicherungsdatei im Objektspeicher zu überprüfen.  Dies kann nützlich sein, wenn auf einem bestimmten Volume ein Ransomware-Problem aufgetreten ist und Sie überprüfen möchten, ob die Sicherungen für dieses Volume betroffen sind.
@@ -173,6 +181,7 @@ Die Spalte „Ransomware-Schutz“ zeigt an, dass der Scan läuft.
 
 
 
+[[manage-the-replication-relationship-with-the-source-volume]]
 == Verwalten der Replikationsbeziehung mit dem Quellvolume
 
 Nachdem Sie die Datenreplikation zwischen zwei Systemen eingerichtet haben, können Sie die Datenreplikationsbeziehung verwalten.
@@ -216,6 +225,7 @@ Nachdem Sie eine Aktion ausgewählt haben, aktualisiert die Konsole die Beziehun
 
 
 
+[[edit-an-existing-backup-to-cloud-policy]]
 == Bearbeiten einer vorhandenen Backup-to-Cloud-Richtlinie
 
 Sie können die Attribute für eine Sicherungsrichtlinie ändern, die derzeit auf Volumes in einem System angewendet wird.  Das Ändern der Sicherungsrichtlinie wirkt sich auf alle vorhandenen Volumes aus, die die Richtlinie verwenden.
@@ -245,6 +255,7 @@ Beachten Sie, dass alle Sicherungsdateien, die in den Archivspeicher verschoben 
 
 
 
+[[add-a-new-backup-to-cloud-policy]]
 == Hinzufügen einer neuen Backup-to-Cloud-Richtlinie
 
 Wenn Sie NetApp Backup and Recovery für ein System aktivieren, werden alle ursprünglich ausgewählten Volumes mit der von Ihnen definierten Standard-Sicherungsrichtlinie gesichert.  Wenn Sie bestimmten Volumes mit unterschiedlichen Recovery Point Objectives (RPO) unterschiedliche Sicherungsrichtlinien zuweisen möchten, können Sie zusätzliche Richtlinien für diesen Cluster erstellen und diese Richtlinien anderen Volumes zuweisen.
@@ -273,6 +284,7 @@ link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über die 
 
 
 
+[[delete-backups]]
 == Backups löschen
 
 Mit NetApp Backup and Recovery können Sie eine einzelne Sicherungsdatei löschen, alle Sicherungen für ein Volume löschen oder alle Sicherungen aller Volumes in einem System löschen.  Möglicherweise möchten Sie alle Sicherungen löschen, wenn Sie die Sicherungen nicht mehr benötigen oder wenn Sie das Quellvolume gelöscht haben und alle Sicherungen entfernen möchten.
@@ -284,6 +296,7 @@ CAUTION: Wenn Sie ein System oder einen Cluster löschen möchten, das bzw. der 
 
 
 
+[[delete-all-backup-files-for-a-system]]
 === Löschen aller Sicherungsdateien für ein System
 
 Das Löschen aller Sicherungen im Objektspeicher für ein System deaktiviert nicht zukünftige Sicherungen von Volumes in diesem System.  Wenn Sie die Erstellung von Backups aller Volumes in einem System beenden möchten, können Sie Backups deaktivieren<<NetApp Backup and Recovery für ein System deaktivieren,wie hier beschrieben>> .
@@ -308,6 +321,7 @@ CAUTION: Verwenden Sie diese Option mit Vorsicht und nur bei extremem Reinigungs
 
 
 
+[[delete-all-backup-files-for-a-volume]]
 === Löschen aller Sicherungsdateien für ein Volume
 
 Durch das Löschen aller Sicherungen für ein Volume werden auch zukünftige Sicherungen für dieses Volume deaktiviert.
@@ -336,6 +350,7 @@ CAUTION: Verwenden Sie diese Option nur für eine extreme Bereinigung. Nach der 
 
 
 
+[[delete-a-single-backup-file-for-a-volume]]
 === Löschen einer einzelnen Sicherungsdatei für ein Volume
 
 Löschen Sie ein einzelnes Backup, wenn es nicht mehr benötigt wird. Sie können replizierte Volumes (Datensicherungsvolumes) nicht löschen.
@@ -355,6 +370,7 @@ Die Details zum Volume werden angezeigt und Sie können *Snapshot*, *Replikation
 
 
 
+[[delete-volume-backup-relationships]]
 == Löschen von Volume-Sicherungsbeziehungen
 
 Durch das Löschen der Sicherungsbeziehung für ein Volume steht Ihnen ein Archivierungsmechanismus zur Verfügung, wenn Sie die Erstellung neuer Sicherungsdateien stoppen und das Quellvolume löschen, aber alle vorhandenen Sicherungsdateien beibehalten möchten.  Dadurch haben Sie die Möglichkeit, das Volume bei Bedarf in der Zukunft aus der Sicherungsdatei wiederherzustellen und gleichzeitig Speicherplatz auf Ihrem Quellspeichersystem freizugeben.
@@ -374,6 +390,7 @@ NOTE: Einzelne Volume-Sicherungsdateien können nicht mehr gelöscht werden, sob
 
 
 
+[[deactivate-netapp-backup-and-recovery-for-a-system]]
 == NetApp Backup and Recovery für ein System deaktivieren
 
 Das Deaktivieren von NetApp Backup and Recovery für ein System pausiert Backups und Wiederherstellungen für alle seine Volumes, ohne vorhandene Backups zu löschen. So können Sie alle Backup- und Wiederherstellungsaktivitäten für einen bestimmten Zeitraum anhalten, ohne den Backup-Dienst von diesem System abzumelden.
@@ -391,6 +408,7 @@ NOTE: Während die Sicherung deaktiviert ist, wird für dieses System die Schalt
 
 
 
+[[unregister-netapp-backup-and-recovery-for-a-system]]
 == Aufheben der Registrierung von NetApp Backup and Recovery für ein System
 
 Sie können die Registrierung von NetApp Backup and Recovery für ein System aufheben, wenn Sie die Sicherungsfunktion nicht mehr verwenden möchten und für die Sicherungen in diesem System keine Gebühren mehr anfallen sollen.  Normalerweise wird diese Funktion verwendet, wenn Sie ein System löschen möchten und den Sicherungsdienst kündigen möchten.

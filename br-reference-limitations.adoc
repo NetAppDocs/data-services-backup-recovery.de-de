@@ -32,6 +32,7 @@ Weitere Informationen zum Erstellen eines Konsolen-Agenten in Azure finden Sie u
 
 
 
+[[replication-limitations-for-ontap-volumes]]
 == Replikationsbeschränkungen für ONTAP -Volumes
 
 * Sie können jeweils nur ein FlexGroup Volume zur Replikation auswählen.  Sie müssen Backups für jedes FlexGroup Volume separat aktivieren.
@@ -51,6 +52,7 @@ Für FlexVol -Volumes gibt es keine Einschränkung – Sie können alle FlexVol 
 
 
 
+[[backup-to-object-limitations-for-ontap-volumes]]
 == Einschränkungen bei der Sicherung auf Objekte für ONTAP -Volumes
 
 * Beim Sichern von Daten behält NetApp Backup and Recovery die NetApp Volume Encryption (NVE) nicht bei.  Dies bedeutet, dass verschlüsselte Daten auf dem NVE-Volume während der Datenübertragung zum Ziel entschlüsselt werden und die Verschlüsselung nicht aufrechterhalten wird.
@@ -89,6 +91,7 @@ Eine Erklärung zu diesen Verschlüsselungsarten finden Sie unterhttps://docs.ne
 
 
 
+[[restore-limitations-for-ontap-volumes]]
 == Wiederherstellungsbeschränkungen für ONTAP -Volumes
 
 Diese Einschränkungen gelten sowohl für die Methoden „Suchen und Wiederherstellen“ als auch „Durchsuchen und Wiederherstellen“ zum Wiederherstellen von Dateien und Ordnern, sofern nicht ausdrücklich darauf hingewiesen wird.
@@ -121,6 +124,7 @@ Bei Verwendung einer ONTAP -Version vor 9.11.1 wird die Ordnerwiederherstellung 
 
 
 
+[[enabling-indexing-in-a-disaster-recovery-configuration]]
 == Aktivieren der Indizierung in einer Disaster-Recovery-Konfiguration
 
 Beim Aktivieren der Indizierung auf einem Storage-VM-Cluster in einer Disaster-Recovery-(DR)-Konfiguration erscheint eine Fehlermeldung, die besagt, dass der Vorgang auf einem als Ziel für die Vserver-DR konfigurierten Vserver nicht zulässig ist. Trotz dieser Fehlermeldung setzt der Backend-Prozess den  `snapdiff-rpc-server` Status für die Quell-Storage-VMs auf „Ein“. Nachdem der Storage-VM-DR-Richtlinienzeitplan ausgeführt wurde, wird dieser Status an die Ziel-Storage-VMs weitergegeben.

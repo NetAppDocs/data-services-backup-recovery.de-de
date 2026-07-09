@@ -4,6 +4,7 @@
 
 
 
+[[ui-improvements]]
 === Verbesserungen der Benutzeroberfläche
 
 Diese Version verbessert Ihr Erlebnis durch Vereinfachung der Benutzeroberfläche:
@@ -17,12 +18,14 @@ Diese Version verbessert Ihr Erlebnis durch Vereinfachung der Benutzeroberfläch
 
 
 
+[[enhanced-volume-dashboard-preview]]
 === Verbessertes Volume-Dashboard (Vorschau)
 
 Das Volume Dashboard wird jetzt in weniger als 10 Sekunden geladen und bietet eine viel schnellere und effizientere Benutzeroberfläche.  Diese Vorschauversion steht ausgewählten Kunden zur Verfügung und bietet ihnen einen ersten Einblick in diese Verbesserungen.
 
 
 
+[[support-for-third-party-wasabi-object-store-preview]]
 === Unterstützung für Wasabi-Objektspeicher von Drittanbietern (Vorschau)
 
 NetApp Backup and Recovery erweitert jetzt seine Unterstützung auf Objektspeicher von Drittanbietern mit einem Schwerpunkt auf Wasabi.  Mit dieser neuen Vorschaufunktion können Sie jeden S3-kompatiblen Objektspeicher für Ihre Sicherungs- und Wiederherstellungsanforderungen nutzen.

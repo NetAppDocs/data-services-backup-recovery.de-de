@@ -4,6 +4,7 @@
 
 
 
+[[enhanced-ontap-volume-dashboard]]
 === Verbessertes ONTAP Volume Dashboard
 
 Im April 2025 haben wir eine Vorschau eines verbesserten ONTAP Volume Dashboards veröffentlicht, das viel schneller und effizienter ist.
@@ -16,6 +17,7 @@ Weitere Einzelheiten finden Sie unterlink:br-use-dashboard.html["Anzeigen des Sc
 
 
 
+[[microsoft-sql-server-workload-support-as-a-public-technology-preview]]
 === Microsoft SQL Server-Workload-Unterstützung als Public Technology Preview
 
 Diese Version von NetApp Backup and Recovery bietet eine aktualisierte Benutzeroberfläche, mit der Sie Microsoft SQL Server-Workloads mithilfe einer 3-2-1-Schutzstrategie verwalten können, die Sie von NetApp Backup and Recovery kennen. Mit dieser neuen Version können Sie diese Workloads im Primärspeicher sichern, sie im Sekundärspeicher replizieren und sie im Cloud-Objektspeicher sichern.

@@ -23,6 +23,7 @@ Sichern Sie Microsoft SQL Server-Anwendungsdaten von lokalen ONTAP -Systemen auf
 
 
 
+[[view-workload-protection-status]]
 == Status des Workload-Schutzes anzeigen
 
 Bevor Sie eine Sicherung starten, sehen Sie sich den Schutzstatus Ihrer Workloads an.
@@ -38,6 +39,7 @@ Bevor Sie eine Sicherung starten, sehen Sie sich den Schutzstatus Ihrer Workload
 
 
 
+[[configure-the-log-directory-for-discovered-hosts]]
 == Konfigurieren des Protokollverzeichnisses für erkannte Hosts
 
 Legen Sie den Aktivitätsprotokollpfad für erkannte Hosts fest, um den Betriebsstatus vor dem Sichern von Workloads zu verfolgen.
@@ -61,6 +63,7 @@ NOTE: Die angezeigten Felder unterscheiden sich je nach ausgewähltem Bereitstel
 
 
 
+[[create-a-protection-group]]
 == Erstellen einer Schutzgruppe
 
 Erstellen Sie eine Schutzgruppe, um Sicherungs- und Wiederherstellungsvorgänge für mehrere Workloads zu verwalten.  Eine Schutzgruppe ist eine logische Gruppierung von Workloads.
@@ -87,6 +90,7 @@ Wenn Sie eine Richtlinie erstellen möchten, wählen Sie *Neue Richtlinie erstel
 
 
 
+[[back-up-workloads-now-with-an-on-demand-backup]]
 == Sichern Sie Workloads jetzt mit einem On-Demand-Backup
 
 Führen Sie vor der Durchführung von Änderungen an Ihrem System eine On-Demand-Sicherung durch, um sicherzustellen, dass Ihre Daten geschützt sind.
@@ -107,6 +111,7 @@ Führen Sie vor der Durchführung von Änderungen an Ihrem System eine On-Demand
 
 
 
+[[suspend-the-backup-schedule]]
 == Aussetzen des Sicherungszeitplans
 
 Unterbrechen Sie den Zeitplan, um Sicherungen während der Wartung oder Fehlerbehebung vorübergehend zu stoppen.
@@ -124,6 +129,7 @@ Unterbrechen Sie den Zeitplan, um Sicherungen während der Wartung oder Fehlerbe
 
 
 
+[[delete-a-protection-group]]
 == Löschen einer Schutzgruppe
 
 Durch das Löschen einer Schutzgruppe werden diese und alle zugehörigen Sicherungszeitpläne entfernt. Möglicherweise möchten Sie eine Schutzgruppe löschen, wenn sie nicht mehr benötigt wird.
@@ -140,6 +146,7 @@ Durch das Löschen einer Schutzgruppe werden diese und alle zugehörigen Sicheru
 
 
 
+[[remove-protection-from-a-workload]]
 == Entfernen des Schutzes von einer Arbeitslast
 
 Sie können den Schutz eines Workloads entfernen, wenn Sie ihn nicht mehr sichern möchten oder die Verwaltung in NetApp Backup and Recovery beenden möchten.

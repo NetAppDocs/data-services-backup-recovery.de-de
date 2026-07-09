@@ -20,6 +20,7 @@ NetApp Backup and Recovery muss KVM-Hosts und virtuelle Maschinen erkennen, bevo
 
 
 
+[[add-a-management-platform-kvm-host-and-discover-resources]]
 == Fügen Sie eine Managementplattform und einen KVM-Host hinzu und ermitteln Sie die Ressourcen.
 
 Fügen Sie Informationen zur Managementplattform und zum KVM-Host hinzu, damit NetApp Backup and Recovery die Workloads automatisch erkennt.
@@ -71,6 +72,7 @@ Die KVM-Arbeitslast wird in der Liste der Arbeitslasten auf der Inventarseite an
 
 
 
+[[continue-to-the-netapp-backup-and-recovery-dashboard]]
 == Weiter zum NetApp Backup and Recovery Dashboard
 
 .Schritte

@@ -53,6 +53,7 @@ Organisations- oder Ordner-/Projektadministratoren fügen Console-Benutzer zu Pr
 
 
 
+[[related-information]]
 == Verwandte Informationen
 
 * link:https://docs.netapp.com/us-en/console-setup-admin/concept-identity-and-access-management.html["Erfahren Sie mehr über das NetApp Console-Identitäts- und Zugriffsmanagement"^].

@@ -26,6 +26,7 @@ Sie können die folgenden Aufgaben im Zusammenhang mit Schutzgruppen ausführen:
 
 
 
+[[create-a-protection-group]]
 == Erstellen einer Schutzgruppe
 
 Gruppieren Sie Workloads, die Sie gemeinsam schützen möchten, in einer Schutzgruppe. Erstellen Sie eine Schutzgruppe, um Workloads gemeinsam zu sichern und wiederherzustellen.
@@ -53,6 +54,7 @@ Gruppieren Sie Workloads, die Sie gemeinsam schützen möchten, in einer Schutzg
 
 
 
+[[edit-a-protection-group]]
 == Bearbeiten Sie eine Schutzgruppe
 
 Bearbeiten Sie eine Schutzgruppe, um deren Namen oder Einstellungen zu ändern. Möglicherweise möchten Sie eine Schutzgruppe bearbeiten, wenn sich die Ressourcen in der Gruppe geändert haben.
@@ -73,6 +75,7 @@ Der Assistent zum Bearbeiten der Schutzgruppe führt Sie durch die Einstellungen
 
 
 
+[[apply-an-updated-host-time-zone-to-an-existing-protection-group]]
 === Eine aktualisierte Host-Zeitzone auf eine bestehende Schutzgruppe anwenden
 
 Geplante Backups verwenden die Zeitzone des Hyper-V-Hosts, die beim Erstellen des Zeitplans der Schutzgruppe festgelegt wurde. Wenn die Zeitzone des Hosts geändert wird, laufen bestehende Schutzgruppen weiterhin in ihrer ursprünglichen Zeitzone (in der Regel UTC), bis deren Zeitpläne aktualisiert werden.
@@ -87,6 +90,7 @@ NOTE: Zeitpläne werden nur neu erstellt, wenn der Name der Schutzgruppe geände
 
 
 
+[[delete-a-protection-group]]
 == Löschen einer Schutzgruppe
 
 Durch das Löschen einer Schutzgruppe werden diese und alle zugehörigen Sicherungszeitpläne entfernt. Möglicherweise möchten Sie eine Schutzgruppe löschen, wenn sie nicht mehr benötigt wird.

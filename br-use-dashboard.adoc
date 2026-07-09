@@ -37,6 +37,7 @@ Sie können die folgenden Arten von Informationen überprüfen:
 
 
 
+[[view-the-protection-summary]]
 == Schutzübersicht anzeigen
 
 Überprüfen Sie die folgenden Informationen in der Schutzzusammenfassung:
@@ -52,6 +53,7 @@ TIP: Eine geschützte Datenbank ist eine Datenbank, der eine Sicherungsrichtlini
 
 
 
+[[view-the-job-summary]]
 == Jobzusammenfassung anzeigen
 
 Überprüfen Sie in der Auftragszusammenfassung die Gesamtzahl der abgeschlossenen, laufenden oder fehlgeschlagenen Aufträge.
@@ -63,6 +65,7 @@ TIP: Eine geschützte Datenbank ist eine Datenbank, der eine Sicherungsrichtlini
 
 
 
+[[view-the-restore-summary]]
 == Wiederherstellungszusammenfassung anzeigen
 
 Überprüfen Sie die folgenden Informationen in der Wiederherstellungszusammenfassung:

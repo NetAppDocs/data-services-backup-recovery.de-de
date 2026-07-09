@@ -18,6 +18,7 @@ Plattformen, Geräte oder Funktionen, die mit dieser Version nicht oder nicht gu
 
 
 
+[[clone-lifecycle-support]]
 == Unterstützung des Klon-Lebenszyklus
 
 * Das Klonen aus dem Objektspeicher wird nicht unterstützt.
@@ -28,18 +29,21 @@ Plattformen, Geräte oder Funktionen, die mit dieser Version nicht oder nicht gu
 
 
 
+[[standard-deployment-mode-only]]
 == Nur Standardbereitstellungsmodus
 
 Diese NetApp Backup and Recovery Version funktioniert nur im Standardbereitstellungsmodus, nicht im eingeschränkten oder privaten Modus.
 
 
 
+[[windows-cluster-name-restriction]]
 == Einschränkung des Windows-Clusternamens
 
 Der Windows-Clustername darf keinen Unterstrich (_) enthalten.
 
 
 
+[[snapcenter-migration-issues]]
 == Probleme bei der SnapCenter -Migration
 
 Die Migration von Ressourcen von SnapCenter in NetApp Backup and Recovery unterliegt den folgenden Einschränkungen.
@@ -48,6 +52,7 @@ Weitere Informationen zur Migration von SnapCenter -Richtlinien zu NetApp Backup
 
 
 
+[[resource-group-limitations]]
 === Einschränkungen der Ressourcengruppe
 
 Wenn alle Ressourcen in einer Ressourcengruppe geschützt sind und eine dieser Ressourcen auch außerhalb der Ressourcengruppe geschützt ist, wird die Migration von SnapCenter blockiert.
@@ -56,6 +61,7 @@ Wenn alle Ressourcen in einer Ressourcengruppe geschützt sind und eine dieser R
 
 
 
+[[resources-with-multiple-policies-using-the-same-schedule-tier-not-supported]]
 === Ressourcen mit mehreren Richtlinien, die dieselbe Zeitplanebene verwenden, werden nicht unterstützt
 
 Sie können einer Ressource nicht mehrere Richtlinien zuweisen, die dieselbe Zeitplanebene verwenden (z. B. stündlich, täglich, wöchentlich usw.).  NetApp Backup and Recovery importiert diese Ressourcen nicht aus SnapCenter.
@@ -64,6 +70,7 @@ Sie können einer Ressource nicht mehrere Richtlinien zuweisen, die dieselbe Zei
 
 
 
+[[hourly-policies-must-begin-at-the-start-of-the-hour]]
 === Stundenrichtlinien müssen zu Beginn der Stunde beginnen
 
 Wenn Sie über eine SnapCenter -Richtlinie verfügen, die sich stündlich wiederholt, aber zu Beginn der Stunde keine Intervalle verwendet, importiert NetApp Backup and Recovery die Ressource nicht.  Beispielsweise werden Richtlinien mit Zeitplänen von 1:30, 2:30, 3:30 usw. nicht unterstützt, während Richtlinien mit Zeitplänen von 1:00, 2:00, 3:00 usw. unterstützt werden.
@@ -72,6 +79,7 @@ Wenn Sie über eine SnapCenter -Richtlinie verfügen, die sich stündlich wieder
 
 
 
+[[both-daily-and-monthly-policies-attached-to-one-resource-not-supported]]
 === Sowohl tägliche als auch monatliche Richtlinien, die an eine Ressource angehängt sind, werden nicht unterstützt
 
 Wenn sich eine SnapCenter -Richtlinie sowohl in Tages- als auch in Monatsintervallen wiederholt, importiert NetApp Backup and Recovery die Richtlinie nicht.
@@ -82,12 +90,14 @@ Sie können beispielsweise einer Ressource keine tägliche Richtlinie (mit wenig
 
 
 
+[[on-demand-backup-policies-not-migrated]]
 === On-Demand-Backup-Richtlinien nicht migriert
 
 NetApp Backup and Recovery importiert keine On-Demand-Sicherungsrichtlinien aus SnapCenter.
 
 
 
+[[log-only-backup-policies-not-migrated]]
 === Nur-Protokoll-Sicherungsrichtlinien werden nicht migriert
 
 NetApp Backup and Recovery importiert keine Nur-Protokoll-Sicherungsrichtlinien aus SnapCenter.  Wenn eine SnapCenter -Richtlinie Nur-Protokoll-Backups umfasst, importiert NetApp Backup and Recovery die Ressource nicht.
@@ -96,6 +106,7 @@ NetApp Backup and Recovery importiert keine Nur-Protokoll-Sicherungsrichtlinien 
 
 
 
+[[host-mapping]]
 === Host-Zuordnung
 
 SnapCenter verfügt nicht über die Möglichkeit, Speichercluster oder SVMs für die Ressourcen den Hosts zuzuordnen, NetApp Backup and Recovery hingegen schon.  Der lokale ONTAP Cluster oder SVM wird in den Vorschauversionen von NetApp Backup and Recovery keinem Host zugeordnet.  Darüber hinaus unterstützt die NetApp Console keine SVMs.
@@ -104,6 +115,7 @@ SnapCenter verfügt nicht über die Möglichkeit, Speichercluster oder SVMs für
 
 
 
+[[schedules-not-in-15-minute-intervals]]
 === Fahrpläne nicht im 15-Minuten-Takt
 
 Wenn Sie über einen SnapCenter -Richtlinienzeitplan verfügen, der zu einer bestimmten Zeit beginnt und in anderen Intervallen als 15 Minuten wiederholt wird, importiert NetApp Backup and Recovery den Zeitplan nicht.

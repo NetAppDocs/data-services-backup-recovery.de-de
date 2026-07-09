@@ -18,6 +18,7 @@ Mit NetApp Backup and Recovery können Sie Anwendungen wiederherstellen, die Sie
 
 
 
+[[view-protected-resources-for-an-application-restore-point]]
 == Geschützte Ressourcen für einen Anwendungswiederherstellungspunkt anzeigen
 
 Für jede Anwendung, die Sie mit Backup and Recovery schützen, können Sie die Ressourcen anzeigen, die für einen bestimmten Wiederherstellungspunkt gesichert wurden.
@@ -37,6 +38,7 @@ Es wird eine Liste der Ressourcen und ihrer Details angezeigt. Sie können die R
 
 
 
+[[restore-kubernetes-applications]]
 == Wiederherstellen von Kubernetes-Anwendungen
 
 Sie können Namespace-basierte oder VM-basierte Anwendungen von einem Wiederherstellungspunkt wiederherstellen, indem Sie entweder alle Ressourcen wiederherstellen oder eine Teilmenge der wiederherzustellenden Ressourcen auswählen.

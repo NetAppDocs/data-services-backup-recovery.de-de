@@ -4,6 +4,7 @@
 
 
 
+[[high-performance-indexing]]
 === Leistungsstarke Indizierung
 
 NetApp Backup and Recovery führt eine aktualisierte Indizierungsfunktion ein, die die Indizierung von Daten auf dem Quellsystem effizienter macht.  Die neue Indexierungsfunktion umfasst Aktualisierungen der Benutzeroberfläche, eine verbesserte Leistung der Such- und Wiederherstellungsmethode zum Wiederherstellen von Daten, Upgrades der globalen Suchfunktionen und eine bessere Skalierbarkeit.
@@ -40,6 +41,7 @@ Die neue Indizierungsfunktion unterstützt Folgendes:
 
 
 
+[[global-search-performance-improvements]]
 === Leistungsverbesserungen bei der globalen Suche
 
 Diese Version enthält auch Verbesserungen der globalen Suchleistung.  Sie sehen jetzt Fortschrittsanzeigen und detailliertere Suchergebnisse, einschließlich der Anzahl der Dateien und der für die Suche benötigten Zeit.  Spezielle Container für Suche und Indizierung stellen sicher, dass globale Suchvorgänge in weniger als fünf Minuten abgeschlossen sind.

@@ -4,6 +4,7 @@
 
 
 
+[[snapmirror-to-cloud-resync-for-volume-migrations]]
 === SnapMirror to Cloud Resync für Volumemigrationen
 
 Die SnapMirror to Cloud Resync-Funktion optimiert den Datenschutz und die Kontinuität während Volumemigrationen in NetApp -Umgebungen. Wenn ein Volume mithilfe von SnapMirror Logical Replication (LRSE) von einer lokalen NetApp Bereitstellung zu einer anderen oder zu einer Cloud-basierten Lösung wie Cloud Volumes ONTAP migriert wird, stellt SnapMirror to Cloud Resync sicher, dass bestehende Cloud-Backups intakt und betriebsbereit bleiben.
@@ -16,6 +17,7 @@ Einzelheiten zur Durchführung des Resynchronisierungsvorgangs finden Sie unter 
 
 
 
+[[support-for-third-party-minio-object-store-preview]]
 === Unterstützung für MinIO-Objektspeicher von Drittanbietern (Vorschau)
 
 NetApp Backup and Recovery erweitert jetzt seine Unterstützung auf Objektspeicher von Drittanbietern mit einem Schwerpunkt auf MinIO.  Mit dieser neuen Vorschaufunktion können Sie jeden S3-kompatiblen Objektspeicher für Ihre Sicherungs- und Wiederherstellungsanforderungen nutzen.

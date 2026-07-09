@@ -18,6 +18,7 @@ NetApp Backup and Recovery unterstützt zwei S3-Archivspeicherklassen und die me
 
 
 
+[[supported-s3-archival-storage-classes-for-netapp-backup-and-recovery]]
 == Unterstützte S3-Archivspeicherklassen für NetApp Backup and Recovery
 
 Wenn Sicherungsdateien zunächst erstellt werden, werden sie im S3-Standardspeicher gespeichert.  Diese Ebene ist für die Speicherung selten abgerufener Daten optimiert, ermöglicht Ihnen aber auch den sofortigen Zugriff darauf.  Nach 30 Tagen werden die Backups aus Kostengründen in die Speicherklasse S3 _Standard-Infrequent Access_ verschoben.
@@ -37,6 +38,7 @@ https://aws.amazon.com/s3/storage-classes/["Erfahren Sie mehr über S3-Speicherk
 
 
 
+[[restore-data-from-archival-storage]]
 == Daten aus dem Archivspeicher wiederherstellen
 
 Während die Speicherung älterer Sicherungsdateien im Archivspeicher wesentlich weniger kostspielig ist als die Speicherung im Standard- oder Standard-IA-Speicher, dauert der Zugriff auf Daten aus einer Sicherungsdatei im Archivspeicher für Wiederherstellungsvorgänge länger und ist teurer.

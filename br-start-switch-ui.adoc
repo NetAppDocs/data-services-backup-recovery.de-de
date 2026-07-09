@@ -18,6 +18,7 @@ Sie können zwischen den verschiedenen NetApp Backup and Recovery -Workloads wec
 
 
 
+[[switch-to-a-different-workload]]
 == Wechseln Sie zu einer anderen Arbeitslast
 
 Sie können in der NetApp Backup and Recovery -Benutzeroberfläche zu einer anderen Arbeitslast wechseln.

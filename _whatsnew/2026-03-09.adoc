@@ -4,6 +4,7 @@
 
 
 
+[[ontap-volumes-workloads-enhancements]]
 === ONTAP Volumes Workloads-Verbesserungen
 
 In dieser Version führt ONTAP Volumes Workloads die folgenden erweiterten Funktionen ein:
@@ -20,6 +21,7 @@ Weitere Informationen zum Schutz von ONTAP Volume-Workloads finden Sie unter  ht
 
 
 
+[[vmware-workloads-enhancements]]
 === VMware-Workload-Verbesserungen
 
 In dieser Version führt VMware workloads die folgenden erweiterten Funktionen ein:

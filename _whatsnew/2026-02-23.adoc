@@ -4,6 +4,7 @@
 
 
 
+[[kvm-workloads-supported-in-general-availability-ga]]
 === KVM-Workloads, die in der General Availability (GA) unterstützt werden
 
 Die Unterstützung für KVM-Workloads ist jetzt allgemein verfügbar (GA) in NetApp Backup and Recovery.
@@ -12,6 +13,7 @@ Weitere Informationen zum Schutz von KVM-Workloads finden Sie unter https://docs
 
 
 
+[[kubernetes-workloads-supported-in-general-availability-ga]]
 === Unterstützte Kubernetes-Workloads in der General Availability (GA)
 
 Die Unterstützung für Kubernetes-Workloads ist jetzt allgemein verfügbar (GA) in NetApp Backup and Recovery. Diese Version von Kubernetes-Workloads bietet außerdem die folgenden erweiterten Funktionen:

@@ -20,6 +20,7 @@ Verwenden Sie NetApp Backup and Recovery, um beschreibbare Klone von Oracle-Date
 
 
 
+[[create-a-clone-of-an-oracle-database]]
 == Erstellen Sie einen Klon einer Oracle-Datenbank
 
 Erstellen Sie sofort einen Klon aus einem vorhandenen Snapshot. Verwenden Sie diese Methode, um einen einmaligen Klon zu erstellen, der nicht kontinuierlich aus einem Snapshot aktualisiert wird.
@@ -50,6 +51,7 @@ Die Option *Speicherort für Snapshots auswählen* erscheint, wenn der Snapshot 
 
 
 
+[[schedule-a-clone-of-an-oracle-database]]
 == Planen Sie das Klonen einer Oracle-Datenbank
 
 Planen Sie die Erstellung eines sofortigen Klons und die kontinuierliche Aktualisierung des Klons. Dadurch wird der aktuellstmögliche Klon der Datenbank erstellt. Verwenden Sie diese Methode, wenn Sie den Klon kontinuierlich nach einem von Ihnen gewählten Zeitplan aus dem neuesten Stand der Datenbank aktualisieren möchten.
@@ -77,6 +79,7 @@ Planen Sie die Erstellung eines sofortigen Klons und die kontinuierliche Aktuali
 
 
 
+[[split-a-clone]]
 == Einen Klon teilen
 
 Sie können einen Klon Ihrer Oracle Database-Workloads aufteilen. Das Aufteilen eines Klons erstellt eine neue Sicherung aus dem Klon. Sie können die neue Sicherung verwenden, um Datenbanken wiederherzustellen.
@@ -95,6 +98,7 @@ Der Klon-Job wird nicht entfernt und kann für andere Klone erneut verwendet wer
 
 
 
+[[delete-a-clone]]
 == Löschen eines Klons
 
 Sie können einen Klon Ihrer Oracle Database-Workloads löschen. Wenn Sie einen Klon löschen, wird er aus dem Objektspeicher entfernt, wodurch Speicherplatz freigegeben wird.
