@@ -14,7 +14,7 @@ summary: Erstellen Sie Schutzberichte für Kubernetes-Workloads, um den Schutzst
 [role="lead"]
 In NetApp Backup and Recovery können Sie Schutzberichte für Kubernetes-Workloads erstellen, um den Schutzstatus und Details anzuzeigen, einschließlich der Anzahl erfolgreicher und fehlgeschlagener Backups, der Backup-Typen, Informationen zum Cluster-Zustand und mehr.
 
-*Erforderliche NetApp Console-Rolle* Backup and Recovery Super Admin, Backup and Recovery Backup Admin oder Backup and Recovery Restore Admin. Erfahren Sie mehr über link:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
+*Erforderliche NetApp Console-Rolle* Backup and Recovery Superadmin, Backup and Recovery Backup-Admin oder Backup and Recovery Restore-Admin. Für den Schutz von Daten, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich. Informationen zu link:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
 
 

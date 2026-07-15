@@ -16,7 +16,7 @@ summary: Ressourcen während Wiederherstellungsvorgängen in NetApp Backup and R
 [role="lead"]
 Ressourcentransformationen ermöglichen es Ihnen, eine Ressource während der Wiederherstellung zu modifizieren. Dies ist nützlich, wenn die wiederhergestellte Version von der ursprünglichen Version abweichen soll – beispielsweise die Änderung der IP-Adresse einer virtuellen Maschine bei der Wiederherstellung in einem anderen Netzwerk. Sie können auch link:br-use-restore-kubernetes-applications.html#restore-kubernetes-applications["Modifizieren Sie Ressourcen während der Wiederherstellung mithilfe der Web-Benutzeroberfläche"^].
 
-*Erforderliche NetApp Console-Rolle* Backup and Recovery Superadministrator oder Backup and Recovery Wiederherstellungsadministrator. link:reference-roles.html["Erfahren Sie mehr über die Zugriffsrollen für NetApp Backup and Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
+*Erforderliche NetApp Console-Rolle* Backup and Recovery Superadministrator oder Backup and Recovery Restore-Administrator. Für den Schutz von Daten, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich. link:reference-roles.html["Erfahren Sie mehr über die Zugriffsrollen für NetApp Backup and Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
 
 

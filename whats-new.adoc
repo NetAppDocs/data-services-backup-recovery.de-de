@@ -18,6 +18,24 @@ Erfahren Sie, was es Neues bei NetApp Backup and Recovery gibt.
 
 
 
+[[13-july-2026]]
+== 13. Juli 2026
+
+Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
+
+
+
+[[ontap-volumes-workloads-enhancements]]
+=== ONTAP Volumes Workloads-Verbesserungen
+
+In dieser Version führt ONTAP Volumes-Workloads die folgende Verbesserung ein:
+
+*Verbesserte Unterstützung für mehrere Buckets*: Ab ONTAP 9.19.1 und neueren Versionen ist es möglich, die Volumes innerhalb eines Systems mit bis zu 100 Buckets pro System über verschiedene Cloud-Anbieter hinweg zu schützen.
+
+Weitere Informationen zum Schutz von ONTAP Volumes-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["Überblick über den Schutz von ONTAP Volumes Workloads"].
+
+
+
 [[15-june-2026]]
 == 15. Juni 2026
 
