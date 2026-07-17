@@ -84,7 +84,7 @@ Planen Sie die Erstellung eines sofortigen Klons und die kontinuierliche Aktuali
 
 Sie können einen Klon Ihrer Oracle Database-Workloads aufteilen. Das Aufteilen eines Klons erstellt eine neue Sicherung aus dem Klon. Sie können die neue Sicherung verwenden, um Datenbanken wiederherzustellen.
 
-Sie können einen Klon in unabhängige oder langfristige Klone aufteilen.  Ein Assistent zeigt die Liste der Aggregate an, die Teil der SVM sind, ihre Größen und wo sich das geklonte Volume befindet.  NetApp Backup and Recovery zeigt außerdem an, ob genügend Speicherplatz zum Aufteilen des Klons vorhanden ist.  Nachdem der Klon aufgeteilt wurde, wird er zum Schutz zu einer unabhängigen Datenbank.
+Sie können wählen, ob ein Klon als unabhängiger oder langfristiger Klon aufgeteilt wird. Ein Assistent zeigt die Liste der Aggregate, die Teil der Storage-VM sind, deren Größen sowie den Speicherort des geklonten Volumes an. NetApp Backup und Recovery zeigt außerdem an, ob ausreichend Speicherplatz vorhanden ist, um den Klon zu splitten. Nach dem Splitten des Klons wird der Klon zu einer unabhängigen Datenbank für den Schutz.
 
 Der Klon-Job wird nicht entfernt und kann für andere Klone erneut verwendet werden.
 

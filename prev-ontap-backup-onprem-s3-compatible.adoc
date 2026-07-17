@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
-permalink: prev-ontap-backup-onprem-ontaps3.html 
-keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+permalink: prev-ontap-backup-onprem-s3-compatible.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, S3, compatible, Oracle database, Microsoft SQL Server database, SAP HANA database 
 summary: Schützen Sie Ihre VMware-Workloads mit NetApp Backup and Recovery. 
 ---
-= Sichern Sie lokale ONTAP -Daten auf ONTAP S3 mit NetApp Backup and Recovery
+= On-Premises ONTAP-Daten auf S3-kompatiblen Speicher mit NetApp Backup und Recovery sichern
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,31 +14,57 @@ summary: Schützen Sie Ihre VMware-Workloads mit NetApp Backup and Recovery.
 
 
 [role="lead"]
-Führen Sie einige Schritte in NetApp Backup and Recovery aus, um mit der Sicherung von Volumedaten von Ihren primären lokalen ONTAP Systemen zu beginnen.  Sie können Backups an ein sekundäres ONTAP Speichersystem (ein repliziertes Volume) oder an einen Bucket auf einem als S3-Server konfigurierten ONTAP System (eine Backup-Datei) oder an beides senden.
-
-Das primäre lokale ONTAP -System kann ein FAS, AFF oder ONTAP Select System sein.  Das sekundäre ONTAP -System kann ein lokales ONTAP oder Cloud Volumes ONTAP System sein.  Der Objektspeicher kann sich auf einem lokalen ONTAP -System oder einem Cloud Volumes ONTAP System befinden, auf dem Sie einen Simple Storage Service (S3)-Objektspeicherserver aktiviert haben.
-
-
-NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
+In NetApp Backup und Recovery sind einige Schritte erforderlich, um mit der Sicherung von Volume-Daten Ihrer primären On-Premises ONTAP-Systeme zu beginnen. Backups können an ein sekundäres ONTAP-Speichersystem (ein repliziertes Volume) oder an einen Bucket auf einem S3-kompatiblen Speichersystem oder an beides gesendet werden.
 
 
 
-[[identify-the-connection-method]]
-== Identifizieren Sie die Verbindungsmethode
+[[verify-support-for-your-configuration]]
+== Überprüfen der Unterstützung für Ihre Konfiguration
 
-Es gibt viele Konfigurationen, in denen Sie Backups in einem S3-Bucket auf einem ONTAP System erstellen können.  Nachfolgend werden zwei Szenarien dargestellt.
+Lesen Sie die folgenden Anforderungen, um sicherzustellen, dass Sie über eine unterstützte Konfiguration verfügen, bevor Sie mit dem Sichern von Volumes auf S3-kompatiblen Speicher beginnen.
 
-Das folgende Bild zeigt jede Komponente beim Sichern eines primären lokalen ONTAP -Systems auf ein für S3 konfiguriertes lokales ONTAP System und die Verbindungen, die Sie zwischen ihnen vorbereiten müssen.  Es zeigt auch eine Verbindung zu einem sekundären ONTAP -System am selben Standort vor Ort, um Volumes zu replizieren.
+Unterstützte ONTAP-Versionen:: Eine Mindestversion von ONTAP 9.17.1 ist erforderlich.
 
-image:diagram_cloud_backup_onprem_ontap_s3.png["Ein Diagramm, das zeigt, wie NetApp Backup and Recovery mit den Volumes auf den Quellsystemen und dem Zielspeicher kommuniziert, auf dem sich die Sicherungsdateien befinden."]
 
-Wenn der Konsolenagent und das primäre lokale ONTAP -System an einem lokalen Standort ohne Internetzugang installiert sind (eine Bereitstellung im „privaten“ Modus), muss sich das ONTAP S3-System im selben lokalen Rechenzentrum befinden.
 
-Das folgende Bild zeigt jede Komponente beim Sichern eines primären lokalen ONTAP -Systems auf ein für S3 konfiguriertes Cloud Volumes ONTAP System und die Verbindungen, die Sie zwischen ihnen vorbereiten müssen.  Es zeigt auch eine Verbindung zu einem sekundären Cloud Volumes ONTAP -System in derselben Cloud-Provider-Umgebung, um Volumes zu replizieren.
 
-image:diagram_cloud_backup_onprem_ontap_s3_cloud.png["Ein Diagramm, das zeigt, wie NetApp Backup and Recovery mit den Volumes auf den Quellsystemen und dem Zielspeicher kommuniziert, auf dem sich die Sicherungsdateien befinden."]
+[[supported-actions]]
+=== Unterstützte Aktionen
 
-In diesem Szenario sollte der Konsolenagent in derselben Cloud-Provider-Umgebung bereitgestellt werden, in der die Cloud Volumes ONTAP -Systeme bereitgestellt werden.
+Folgende Aktionen werden beim Sichern auf S3-kompatiblem Speicher unterstützt:
+
+* Sicherung von absturzkonsistenten und anwendungskonsistenten Snapshots von lokalem ONTAP in S3-kompatible Objektspeicher von Drittanbietern
+* Kernprozesse für den Datenschutz: Backup, Wiederherstellung und Backup-Löschung
+* Getestet und validiert mit Wasabi Object Storage; Kunden haben auch erfolgreiche Implementierungen mit MinIO und IBM Cloud Object Storage gemeldet.
+* NetApp Support nimmt alle Supportanfragen im Zusammenhang mit S3-kompatiblen Objektspeichern von Drittanbietern entgegen und triagiert sie.
+
+
+
+
+[[unsupported-features-and-configurations]]
+=== Nicht unterstützte Funktionen und Konfigurationen
+
+Die folgenden Funktionen und Konfigurationen werden bei der Datensicherung auf S3-kompatiblem Speicher nicht unterstützt:
+
+* Bring Your Own Bucket (BYOB) wird nicht unterstützt
+* DataLock-Aktivierung in Sicherungsrichtlinien wird nicht unterstützt
+* Die Aktivierung des Archivierungsmodus in Sicherungsrichtlinien wird nicht unterstützt
+* Verschlüsselungsoptionen auf Bucket-Ebene werden nicht unterstützt
+* MetroCluster-Konfigurationen werden nicht unterstützt
+* Cloudbasierte ONTAP-Umgebungen werden nicht unterstützt – es wird nur On-Premises-ONTAP unterstützt
+
+
+
+
+[[caveats]]
+=== Vorbehalte
+
+Beachten Sie beim Sichern auf S3-kompatiblem Speicher die folgenden Punkte:
+
+* *Die Leistung kann nicht garantiert werden*: NetApp-Produkte reagieren empfindlich auf die Latenz und IOPS der S3-API. Drittanbieter-Objektspeicher müssen eine mit AWS S3 vergleichbare Latenz und IOPS bieten, um eine vergleichbare Leistung zu erzielen. NetApp führt keine Fehlerbehebung bei der Objektspeicher-Performance durch.
+* *Keine Haftung für Datenbeschädigung oder -verlust*: NetApp ist nicht verantwortlich für Datenverlust oder Serviceausfälle, die durch Probleme mit S3-Objektspeichern von Drittanbietern verursacht werden.
+* *Eingeschränkte Funktionsunterstützung*: Der unterstützte Funktionsumfang für S3-kompatible Drittanbieterziele ist eine Teilmenge dessen, was für native Ziele (AWS S3, Azure Blob, GCP, ONTAP S3, StorageGRID) verfügbar ist.
+
 
 
 
@@ -52,7 +78,7 @@ Der Konsolenagent ist die Hauptsoftware für die Konsolenfunktionalität.  Zum S
 [[create-or-switch-console-agents]]
 === Erstellen oder Wechseln von Konsolenagenten
 
-Wenn Sie Daten auf ONTAP S3 sichern, muss ein Konsolenagent bei Ihnen vor Ort oder in der Cloud verfügbar sein.  Sie müssen entweder einen neuen Konsolenagenten installieren oder sicherstellen, dass sich der aktuell ausgewählte Konsolenagent an einem dieser Speicherorte befindet.  Der lokale Konsolenagent kann an einem Standort mit oder ohne Internetzugang installiert werden.
+Wenn Sie Daten auf einem S3-kompatiblen Speicher sichern, muss ein Console Agent lokal oder in der Cloud verfügbar sein. Es ist entweder ein neuer Console Agent zu installieren oder sicherzustellen, dass sich der aktuell ausgewählte Console Agent an einem dieser Standorte befindet. Der lokale Console Agent kann an einem Standort mit oder ohne Internetzugang installiert werden.
 
 * https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["Erfahren Sie mehr über Konsolenagenten"^]
 * https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html#how-to-create-a-connector["Installieren Sie den Konsolenagenten in Ihrer Cloudumgebung"^]
@@ -68,7 +94,7 @@ Wenn Sie Daten auf ONTAP S3 sichern, muss ein Konsolenagent bei Ihnen vor Ort od
 
 Stellen Sie sicher, dass das Netzwerk, in dem der Konsolenagent installiert ist, die folgenden Verbindungen ermöglicht:
 
-* Eine HTTPS-Verbindung über Port 443 zum ONTAP S3-Server
+* Eine HTTPS-Verbindung über Port 443 zum S3-kompatiblen Server
 * Eine HTTPS-Verbindung über Port 443 zu Ihrem Quell ONTAP Cluster-Management-LIF
 * Eine ausgehende Internetverbindung über Port 443 zu NetApp Backup and Recovery (nicht erforderlich, wenn der Konsolenagent an einem „dunklen“ Standort installiert ist)
 
@@ -79,7 +105,7 @@ Stellen Sie sicher, dass das Netzwerk, in dem der Konsolenagent installiert ist,
 
 Die NetApp Backup and Recovery Funktionalität ist in den Konsolenagenten integriert.  Wenn es im privaten Modus installiert ist, müssen Sie die Konsolenagent-Software regelmäßig aktualisieren, um Zugriff auf neue Funktionen zu erhalten.  Überprüfen Sie dielink:whats-new.html["NetApp Backup and Recovery – Neuigkeiten"] um die neuen Funktionen in jeder Version von NetApp Backup and Recovery anzuzeigen.  Wenn Sie die neuen Funktionen nutzen möchten, folgen Sie den Schritten zum https://docs.netapp.com/us-en/console-setup-admin/task-upgrade-connector.html["Aktualisieren Sie die Konsolenagentsoftware"^] .
 
-Wenn Sie NetApp Backup and Recovery in einer Standard-SaaS-Umgebung verwenden, werden die Konfigurationsdaten von NetApp Backup and Recovery in der Cloud gesichert.  Wenn Sie NetApp Backup and Recovery an einem Standort ohne Internetzugang verwenden, werden die Konfigurationsdaten von NetApp Backup and Recovery im ONTAP S3-Bucket gesichert, in dem Ihre Backups gespeichert werden.
+Wenn NetApp Backup und Recovery in einer Standard-SaaS-Umgebung verwendet wird, werden die NetApp Backup und Recovery-Konfigurationsdaten in der Cloud gesichert. Wenn NetApp Backup und Recovery an einem Standort ohne Internetzugang verwendet wird, werden die NetApp Backup und Recovery-Konfigurationsdaten in dem S3-kompatiblen Bucket gesichert, in dem Ihre Backups gespeichert werden.
 
 
 
@@ -91,7 +117,7 @@ Bevor Sie NetApp Backup and Recovery für Ihren Cluster aktivieren können, müs
 Sie benötigen die Seriennummer von NetApp , die Ihnen die Nutzung des Dienstes für die Dauer und Kapazität der Lizenz ermöglicht. link:br-start-licensing.html["Erfahren Sie, wie Sie Ihre BYOL-Lizenzen verwalten"].
 
 
-TIP: Die PAYGO-Lizenzierung wird beim Sichern von Dateien auf ONTAP S3 nicht unterstützt.
+TIP: PAYGO-Lizenzierung wird bei der Sicherung von Dateien auf S3-kompatiblen Speichern nicht unterstützt.
 
 
 
@@ -158,7 +184,7 @@ link:prev-ontap-protect-journey.html["Erfahren Sie mehr über die Arten der Back
 ====
 Die folgenden ONTAP Cluster-Netzwerkanforderungen sind erforderlich:
 
-* Der ONTAP Cluster initiiert für Sicherungs- und Wiederherstellungsvorgänge eine HTTPS-Verbindung über einen benutzerdefinierten Port vom Intercluster-LIF zum ONTAP S3-Server.  Der Port kann während der Sicherungseinrichtung konfiguriert werden.
+* Der ONTAP Cluster initiiert eine HTTPS-Verbindung über einen vom Benutzer festgelegten Port vom Intercluster-LIF zum S3-kompatiblen Server für Backup und Recovery. Der Port ist während der Backup-Einrichtung konfigurierbar.
 +
 ONTAP liest und schreibt Daten in den und aus dem Objektspeicher. Der Objektspeicher wird nie initiiert, er reagiert nur.
 
@@ -180,54 +206,8 @@ Wenn Sie NetApp Backup and Recovery einrichten, werden Sie nach dem zu verwenden
 
 Wenn Sie mit NetApp Backup and Recovery replizierte Volumes auf einem sekundären ONTAP System erstellen möchten, stellen Sie sicher, dass die Quell- und Zielsysteme die folgenden Netzwerkanforderungen erfüllen.
 
-
-
-==== On-Premises ONTAP Netzwerkanforderungen
-
 * Wenn sich der Cluster vor Ort befindet, sollten Sie über eine Verbindung von Ihrem Unternehmensnetzwerk zu Ihrem virtuellen Netzwerk beim Cloud-Anbieter verfügen. Dies ist normalerweise eine VPN-Verbindung.
 * ONTAP -Cluster müssen zusätzliche Subnetz-, Port-, Firewall- und Clusteranforderungen erfüllen.
-+
-Da Sie auf Cloud Volumes ONTAP oder lokale Systeme replizieren können, überprüfen Sie die Peering-Anforderungen für lokale ONTAP -Systeme. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Voraussetzungen für Cluster-Peering in der ONTAP Dokumentation anzeigen"^] .
-
-
-
-
-
-==== Netzwerkanforderungen für Cloud Volumes ONTAP
-
-* Die Sicherheitsgruppe der Instanz muss die erforderlichen Regeln für eingehenden und ausgehenden Datenverkehr enthalten, insbesondere Regeln für ICMP und die Ports 11104 und 11105. Diese Regeln sind in der vordefinierten Sicherheitsgruppe enthalten.
-
-
-
-
-[[prepare-ontap-s3-as-your-backup-target]]
-== Bereiten Sie ONTAP S3 als Ihr Backup-Ziel vor
-
-Sie müssen einen Simple Storage Service (S3)-Objektspeicherserver im ONTAP Cluster aktivieren, den Sie für Objektspeichersicherungen verwenden möchten. Siehe die https://docs.netapp.com/us-en/ontap/s3-config/index.html["ONTAP S3-Dokumentation"^] für Details.
-
-*Hinweis:* Sie können diesen Cluster zur Konsolenseite *Systeme* hinzufügen, er wird jedoch nicht als S3-Objektspeicherserver identifiziert und Sie können kein Quellsystem per Drag & Drop auf dieses S3-System ziehen, um die Aktivierung der Sicherung zu starten.
-
-Dieses ONTAP -System muss die folgenden Anforderungen erfüllen.
-
-Unterstützte ONTAP-Versionen:: Für lokale ONTAP -Systeme ist ONTAP 9.8 und höher erforderlich.  Für Cloud Volumes ONTAP -Systeme ist ONTAP 9.9.1 und höher erforderlich.
-S3-Anmeldeinformationen:: Sie müssen einen S3-Benutzer erstellt haben, um den Zugriff auf Ihren ONTAP S3-Speicher zu steuern. https://docs.netapp.com/us-en/ontap/s3-config/create-s3-user-task.html["Weitere Informationen finden Sie in der ONTAP S3-Dokumentation."^] .
-+
---
-Wenn Sie die Sicherung auf ONTAP S3 einrichten, fordert Sie der Sicherungsassistent zur Eingabe eines S3-Zugriffsschlüssels und eines geheimen Schlüssels für ein Benutzerkonto auf.  Das Benutzerkonto ermöglicht NetApp Backup and Recovery die Authentifizierung und den Zugriff auf die ONTAP S3-Buckets, die zum Speichern von Backups verwendet werden.  Die Schlüssel werden benötigt, damit ONTAP S3 weiß, wer die Anfrage stellt.
-
-Diese Zugriffsschlüssel müssen einem Benutzer zugeordnet sein, der über die folgenden Berechtigungen verfügt:
-
-[source, text]
-----
-"s3:ListAllMyBuckets",
-"s3:ListBucket",
-"s3:GetObject",
-"s3:PutObject",
-"s3:DeleteObject",
-"s3:CreateBucket",
-"s3:GetBucketLocation"
-----
---
 
 
 
@@ -349,7 +329,7 @@ Um eine Richtlinie zu erstellen, wählen Sie *Neue Richtlinie erstellen* und geh
 
 . *Replikation*: Wenn Sie *Replikation* ausgewählt haben, legen Sie die folgenden Optionen fest:
 +
-** *Replikationsziel*: Das Zielsystem und die Storage-VM auswählen. Optional das Zielaggregat (oder die Zielaggregate für FlexGroup Volumes) sowie ein Präfix oder Suffix auswählen, das dem Namen des replizierten Volumes hinzugefügt wird.
+** *Replikationsziel*: Das Zielsystem und die Storage VM auswählen. Optional das Zielaggregat (oder die Zielaggregate für FlexGroup Volumes) sowie ein Präfix oder Suffix auswählen, das dem Namen des replizierten Volumes hinzugefügt wird.
 ** *Replikationsrichtlinie*: Wählen Sie eine vorhandene Replikationsrichtlinie aus oder erstellen Sie eine neue.
 +
 Um eine Richtlinie zu erstellen, wählen Sie *Neue Richtlinie erstellen* und gehen Sie wie folgt vor:
@@ -393,9 +373,6 @@ Um eine Richtlinie zu erstellen, wählen Sie *Neue Richtlinie erstellen* und geh
 *** Wählen Sie *Erstellen*.
 
 
-
-
-+
 ** *Vorhandene Snapshots als Sicherungsdateien in den Objektspeicher exportieren*: Wenn es lokale Snapshots für Volumes in diesem System gibt, die mit der von Ihnen soeben ausgewählten Sicherungszeitplanbezeichnung (z. B. täglich, wöchentlich usw.) übereinstimmen, wird diese zusätzliche Aufforderung angezeigt. Aktivieren Sie dieses Kontrollkästchen, um alle historischen Snapshots als Sicherungsdateien in den Objektspeicher zu kopieren und so den umfassendsten Schutz für Ihre Volumes zu gewährleisten.
 
 

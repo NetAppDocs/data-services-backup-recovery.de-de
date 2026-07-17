@@ -14,7 +14,7 @@ summary: Mit NetApp Backup and Recovery können Sie ONTAP-Daten mit der Funktion
 
 
 [role="lead"]
-Mit NetApp Backup and Recovery können Sie ONTAP Daten über die Funktion „Durchsuchen & Wiederherstellen“ wiederherstellen. Notieren Sie sich vor der Wiederherstellung den Namen des Quellvolumes, das Quellsystem und die SVM sowie das Datum der Sicherungsdatei. Sie können ONTAP Daten aus einem Snapshot, einem replizierten Volume oder aus in Objektspeichern gespeicherten Backups wiederherstellen.
+Mit NetApp Backup und Recovery lassen sich ONTAP Daten mithilfe von „Browse & Restore“ wiederherstellen. Vor der Wiederherstellung sollten der Name des Quellvolumes, das Quellsystem, die Storage-VM und das Datum der Backup-Datei notiert werden. ONTAP Daten können aus einem Snapshot, einem replizierten Volume oder aus Backups, die im Objektspeicher abgelegt sind, wiederhergestellt werden.
 
 Die Wiederherstellungsmöglichkeiten hängen von Ihrer ONTAP Version ab:
 

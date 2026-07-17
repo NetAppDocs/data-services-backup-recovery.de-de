@@ -43,7 +43,7 @@ NOTE: Wenn Sie Ihre ONTAP -Systeme auf 9.13.x aktualisiert haben und im Job Moni
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Überwachung* aus.
-. Um zusätzliche Spalten (System, SVM, Benutzername, Workload, Richtlinienname, Snapshot-Bezeichnung) anzuzeigen, wählen Sie das Pluszeichen aus.
+. Zusätzliche Spalten (System, Storage-VM, Benutzername, Workload, Policy Name, Snapshot Label) werden durch Auswahl des Pluszeichens angezeigt.
 
 
 
@@ -75,7 +75,7 @@ Die meisten Filter sind selbsterklärend. Mit dem Filter „Arbeitsbelastung“ 
 +
 [TIP]
 ====
-** Sie können nur dann innerhalb einer bestimmten „SVM“ nach Daten suchen, wenn Sie zuerst ein System ausgewählt haben.
+** Sie können nur dann nach Daten innerhalb einer bestimmten Storage-VM suchen, wenn Sie zuvor ein System ausgewählt haben.
 ** Sie können mit dem Filter „Schutzart“ nur suchen, wenn Sie die „Art“ von „Schutz“ ausgewählt haben.
 
 
@@ -92,7 +92,7 @@ Sie können Details zu einem bestimmten abgeschlossenen Auftrag anzeigen.  Sie k
 
 Sie können Details wie Auftragstyp (geplant oder auf Abruf), SnapMirror -Sicherungstyp (anfänglich oder regelmäßig), Start- und Endzeiten, Dauer, Menge der vom System zum Objektspeicher übertragenen Daten, durchschnittliche Übertragungsrate, Richtlinienname, aktivierte Aufbewahrungssperre, durchgeführter Ransomware-Scan, Details zur Schutzquelle und Details zum Schutzziel anzeigen.
 
-Wiederherstellungsaufträge zeigen Details wie den Sicherungszielanbieter (Amazon Web Services, Microsoft Azure, Google Cloud, vor Ort), den S3-Bucket-Namen, den SVM-Namen, den Quellvolume-Namen, das Zielvolume, die Snapshot-Bezeichnung, die Anzahl der wiederhergestellten Objekte, Dateinamen, Dateigrößen, das Datum der letzten Änderung und den vollständigen Dateipfad an.
+Wiederherstellungsaufträge zeigen Details wie den Backup-Zielanbieter (Amazon Web Services, Microsoft Azure, Google Cloud, on-premises), den S3-Bucket-Namen, den Namen der Storage-VM, den Quellvolume-Namen, das Zielvolume, die Snapshot-Bezeichnung, die Anzahl der wiederhergestellten Objekte, die Dateinamen, die Dateigrößen, das Datum der letzten Änderung und den vollständigen Dateipfad.
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Überwachung* aus.

@@ -406,7 +406,7 @@ Um eine Richtlinie zu erstellen, wählen Sie *Neue Richtlinie erstellen* und geh
 
 . *Replikation*: Legen Sie die folgenden Optionen fest:
 +
-** *Replikationsziel*: Wählen Sie das Zielsystem und die SVM aus.  Wählen Sie optional das oder die Zielaggregate sowie das Präfix oder Suffix aus, das dem Namen des replizierten Volumes hinzugefügt wird.
+** *Replikationsziel*: Wählen Sie das Zielsystem und die Speicher-VM aus. Optional können Sie das oder die Zielaggregate sowie ein Präfix oder Suffix auswählen, das dem Namen des replizierten Datenträgers hinzugefügt werden soll.
 ** *Replikationsrichtlinie*: Wählen Sie eine vorhandene Replikationsrichtlinie aus oder erstellen Sie eine.
 +
 

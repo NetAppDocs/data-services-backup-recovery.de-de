@@ -73,7 +73,7 @@ Eine Erklärung zu diesen Verschlüsselungsarten finden Sie unterhttps://docs.ne
 +
 ** Backups werden nur vom sekundären ONTAP unterstützt.
 ** Die auf das Volume angewendete Snapshot-Richtlinie muss eine der von NetApp Backup and Recovery erkannten Richtlinien sein, einschließlich täglich, wöchentlich, monatlich usw. Die Standardrichtlinie „sm_created“ (verwendet für *Alle Snapshots spiegeln*) wird nicht erkannt und das DP-Volume wird nicht in der Liste der Volumes angezeigt, die gesichert werden können.
-** SVM-DR und Volume-Backup und -Wiederherstellung funktionieren völlig unabhängig, wenn das Backup entweder von der Quelle oder vom Ziel erstellt wird.  Die einzige Einschränkung besteht darin, dass SVM-DR die SnapMirror -Cloud-Beziehung nicht repliziert.  Im DR-Szenario müssen Sie die SnapMirror Cloud-Beziehung manuell aktualisieren, wenn die SVM am sekundären Standort online geht.
+** SVM-DR und Backup und Recovery funktionieren vollständig unabhängig voneinander, wenn das Backup entweder vom Quellsystem oder vom Ziel erstellt wird. Die einzige Einschränkung besteht darin, dass SVM-DR die SnapMirror cloud Beziehung nicht repliziert. Im DR-Szenario, wenn die Storage-VM am sekundären Standort online geht, muss die SnapMirror cloud Beziehung manuell aktualisiert werden.
 
 
 * MetroCluster -Unterstützung:

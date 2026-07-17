@@ -101,7 +101,7 @@ Stellen Sie sicher, dass Ihre Umgebung diese Anforderungen erfüllt, bevor Sie d
 +
 ** Die ONTAP -Version muss 9.8 oder höher sein.
 ** Sie müssen eine IPv4-NFS-Daten-LIF auf der Speicher-VM und einen NFS-Export für das Volume konfigurieren. Search & Restore unterstützt sowohl NFS- als auch SMB/CIFS-Volumes.
-** Der SnapDiff RPC-Server muss auf der SVM aktiviert werden. Die Konsole führt dies automatisch aus, wenn Sie die Indizierung auf dem System aktivieren. (SnapDiff ist die Technologie, die schnell die Datei- und Verzeichnisunterschiede zwischen Snapshots identifiziert.)
+** Der SnapDiff RPC Server muss auf der Storage-VM aktiviert sein. Die Console übernimmt dies automatisch, wenn die Indizierung auf dem System aktiviert wird. (SnapDiff ist die Technologie, die schnell die Datei- und Verzeichnisunterschiede zwischen Snapshots identifiziert.)
 
 
 * NetApp empfiehlt, ein separates Volume auf dem Console-Agenten einzubinden, um die Ausfallsicherheit von Search & Restore zu erhöhen.  Anweisungen finden Sie unter<<mount-volume-steps,Das Volume muss eingebunden werden, um den Katalog neu zu indizieren.>> Die

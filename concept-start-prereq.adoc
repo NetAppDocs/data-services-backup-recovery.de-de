@@ -87,6 +87,7 @@ Um NetApp Backup and Recovery für ONTAP-Volume-Workloads zu verwenden, benötig
 * ONTAP 9.8 oder höher ist erforderlich.
 * Für den Schutz von FlexGroup Volumes ist ONTAP 9.12.1 oder höher erforderlich. Weitere Informationen sind unter link:br-reference-limitations.html["Bekannte Einschränkungen bei NetApp Backup and Recovery für ONTAP -Volumes"] verfügbar.
 * Für die Sicherung oder Wiederherstellung auf S3-kompatiblem Objektspeicher ist ONTAP 9.17.1 oder höher erforderlich.
+* Für die Nutzung von mehr als 6 Buckets pro System über verschiedene Cloud-Anbieter hinweg ist ONTAP 9.19.1 oder höher erforderlich (bis zu 100 Buckets werden unterstützt).
 * Auf der lokalen ONTAP Instanz muss eine ONTAP One License aktiviert sein.
 
 

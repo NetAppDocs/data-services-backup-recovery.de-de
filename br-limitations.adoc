@@ -109,7 +109,7 @@ NetApp Backup and Recovery importiert keine Nur-Protokoll-Sicherungsrichtlinien 
 [[host-mapping]]
 === Host-Zuordnung
 
-SnapCenter verfügt nicht über die Möglichkeit, Speichercluster oder SVMs für die Ressourcen den Hosts zuzuordnen, NetApp Backup and Recovery hingegen schon.  Der lokale ONTAP Cluster oder SVM wird in den Vorschauversionen von NetApp Backup and Recovery keinem Host zugeordnet.  Darüber hinaus unterstützt die NetApp Console keine SVMs.
+SnapCenter verfügt nicht über eine Zuordnung von Speicherclustern oder Speicher-VMs zu Hosts, aber NetApp Backup und Recovery schon. Das lokale ONTAP-Cluster oder die Speicher-VM wird in den Preview-Versionen von NetApp Backup und Recovery nicht einem Host zugeordnet. Zusätzlich unterstützt die NetApp Console keine Speicher-VMs.
 
 *Problemumgehung*: Erstellen Sie vor dem Importieren von Ressourcen aus SnapCenter ein System in NetApp Backup and Recovery für alle lokalen ONTAP Speichersysteme, die im lokalen SnapCenter registriert sind.  Importieren Sie dann die Ressourcen für diesen Cluster von SnapCenter in NetApp Backup and Recovery.
 
