@@ -87,7 +87,7 @@ Um NetApp Backup and Recovery für ONTAP-Volume-Workloads zu verwenden, benötig
 * ONTAP 9.8 oder höher ist erforderlich.
 * Für den Schutz von FlexGroup Volumes ist ONTAP 9.12.1 oder höher erforderlich. Weitere Informationen sind unter link:br-reference-limitations.html["Bekannte Einschränkungen bei NetApp Backup and Recovery für ONTAP -Volumes"] verfügbar.
 * Für die Sicherung oder Wiederherstellung auf S3-kompatiblem Objektspeicher ist ONTAP 9.17.1 oder höher erforderlich.
-* Für die Nutzung von mehr als 6 Buckets pro System über verschiedene Cloud-Anbieter hinweg ist ONTAP 9.19.1 oder höher erforderlich (bis zu 100 Buckets werden unterstützt).
+* ONTAP 9.19.1 oder höher ist erforderlich, um mehr als 6 Buckets pro System bei verschiedenen Cloud-Anbietern zu unterstützen (bis zu maximal 100 Buckets).
 * Auf der lokalen ONTAP Instanz muss eine ONTAP One License aktiviert sein.
 
 
@@ -99,6 +99,9 @@ Weitere Informationen zu unterstützten Funktionen, Volumentypen, Sicherungs- un
 == Anforderungen zum Schutz von Microsoft SQL Server-Workloads
 
 Um NetApp Backup and Recovery für Microsoft SQL Server-Workloads zu verwenden, benötigen Sie die folgenden Voraussetzungen hinsichtlich Hostsystem, Speicherplatz und Größe.
+
+
+NOTE: ONTAP 9.19.1 oder höher ist erforderlich, um mehr als 6 Buckets pro System bei verschiedenen Cloud-Anbietern zu unterstützen (bis zu maximal 100 Buckets).
 
 [cols="33,66a"]
 |===
@@ -200,7 +203,7 @@ Sie benötigen bestimmte Anforderungen, um Ihre VMware-Workloads zu erkennen und
 
 
 | Vernetzter Speicher  a| 
-* ONTAP 9.13.1 oder höher
+* ONTAP 9.13.1 oder höher (ONTAP 9.19.1 oder höher ist erforderlich, um mehr als 6 Buckets pro System bei verschiedenen Cloud-Anbietern zu unterstützen; maximal 100 Buckets)
 * Amazon FSx for NetApp ONTAP-Speichersysteme mit Version 9.13.1 oder höher
 * ASA r2 SAN-only-Systeme (ONTAP 9.17.1 oder höher erforderlich)
 
@@ -233,6 +236,9 @@ Weitere Informationen zu Backup- und Recovery-Rollen finden Sie unter  https://d
 == Anforderungen zum Schutz von KVM-Workloads
 
 Sie benötigen bestimmte Anforderungen, um virtuelle KVM-Maschinen zu erkennen und zu schützen.
+
+
+NOTE: ONTAP 9.19.1 oder höher ist erforderlich, um mehr als 6 Buckets pro System bei verschiedenen Cloud-Anbietern zu unterstützen (bis zu maximal 100 Buckets).
 
 * Eine moderne Linux-Distribution mit Kernelversion 5.14.0-503.22.1.el9_5.x86_64 (longterm) oder höher
 * Ihre KVM-Hosts und VMs müssen über eine Managementplattform verwaltet werden. NetApp Backup and Recovery unterstützt die folgenden Managementplattformen:
@@ -275,6 +281,9 @@ chown -R qemu:qemu <kvm_vm_mount_path> & chmod 771 <kvm_vm_mount_path>
 == Anforderungen für den Schutz von Oracle Database Workloads
 
 Stellen Sie sicher, dass Ihre Umgebung bestimmte Anforderungen erfüllt, um Oracle Database-Ressourcen zu erkennen und zu schützen.
+
+
+NOTE: ONTAP 9.19.1 oder höher ist erforderlich, um mehr als 6 Buckets pro System bei verschiedenen Cloud-Anbietern zu unterstützen (bis zu maximal 100 Buckets).
 
 |===
 | Anforderung | Unterstützt 
@@ -321,6 +330,9 @@ Stellen Sie sicher, dass Ihre Umgebung bestimmte Anforderungen erfüllt, um Orac
 Sie benötigen spezifische Anforderungen, um Kubernetes-Ressourcen zu erkennen und Ihre Kubernetes-Anwendungen zu schützen.
 
 Informationen zu den Anforderungen der NetApp Console finden sich unter <<NetApp Console vorbereiten>>.
+
+
+NOTE: ONTAP 9.19.1 oder höher ist erforderlich, um mehr als 6 Buckets pro System bei verschiedenen Cloud-Anbietern zu unterstützen (bis zu maximal 100 Buckets).
 
 
 NOTE: NetApp empfiehlt dringend, dem für Kubernetes-Workloads verwendeten Console-Agenten eine statische IP-Adresse zuzuweisen, um Probleme zu vermeiden, falls sich die IP-Adresse des Agenten ändert.
@@ -387,6 +399,6 @@ NOTE: Stellen Sie sicher, dass Sie auf dem Hyper-V-Host genügend Speicherplatz 
 
 
 .NetApp ONTAP Konfigurationsanforderungen
-* Ein primäres ONTAP System (ONTAP 9.14.1 oder höher)
+* Ein primäres ONTAP System (ONTAP 9.14.1 oder höher, ONTAP 9.19.1 oder höher ist erforderlich, um mehr als 6 Buckets pro System bei verschiedenen Cloud-Anbietern zu unterstützen; maximal 100 Buckets)
 * Für Hyper-V-Bereitstellungen, bei denen SMB-Freigaben zur Speicherung von virtuellen Maschinendaten verwendet werden, muss die Eigenschaft „Kontinuierliche Verfügbarkeit“ der Freigabe auf dem ONTAP System aktiviert sein. Siehe  https://docs.netapp.com/us-en/ontap/smb-hyper-v-sql/configure-shares-continuous-availability-task.html["ONTAP-Dokumentation"^] für Anweisungen.
 
