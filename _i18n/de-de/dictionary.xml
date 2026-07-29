@@ -5285,7 +5285,6 @@
   <block id="57c9526981addf2ea70c6ad409673cb5" category="list-text">Optional können Sie eine Sitzung löschen, indem Sie das Menü <block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block> „Aktionen“ für die jeweilige Sitzung öffnen und *Löschen* auswählen.</block>
   <block id="970e7dbe358429eacf37bb0e37943138" category="list-text">Wiederherstellung aus einem Objektspeicher-Backup (nur am ursprünglichen Speicherort)</block>
   <block id="4b59b9c80f0f0e40294e53eb75b4e004" category="list-text">Wiederherstellung am ursprünglichen Speicherort (vom primären, sekundären und Objektspeicher)</block>
-  <block id="a6f964fecafa0484fc07f1b47496f82c" category="list-text">Wiederherstellung an einem alternativen Speicherort (vom primären und sekundären Speicher)</block>
   <block id="bff6f5877ada2718589866425ae83e38" category="doc">Erstellen und Verwalten von Hyper-V-Backup-Richtlinien in NetApp Backup und Recovery</block>
   <block id="7c54de5e880bd010125642ffb949ccad" category="paragraph">In NetApp Backup and Recovery können Sie Ihre eigenen Hyper-V-Backup-Richtlinien erstellen, die die Backup-Häufigkeit, den Zeitpunkt der Backup-Erstellung und die Anzahl der aufzubewahrenden Backup-Dateien festlegen.</block>
   <block id="110202b139c8c8a25346f036c902b4c8" category="list-text">Richtlinien bearbeiten</block>
@@ -5436,7 +5435,6 @@
   <block id="860b17c21dae4758109cd6109bb92be4" category="list-text">*Wiederherstellen von Dateien und Ordnern in einer Gast-VM – Verbesserungen*: Sie können jetzt Dateien und Ordner aus einem Snapshot auf primärem oder sekundärem Speicher in einer Gast-Windows-VM wiederherstellen. Diese Funktion wird nun für CIFS- und SAN-VMs unterstützt.</block>
   <block id="3e96e50a62c2cc112989ccd5d4d264aa" category="list-text">Wiederherstellung von Dateien und Ordnern in einer Disaster-Recovery-Konfiguration (DR): Nach einem Failover behalten Volumes auf einer für DR konfigurierten Storage-VM ihre bestehenden SnapMirror-Beziehungen in einem getrennten Zustand bei. Versuche, Dateien oder Ordner wiederherzustellen, die temporäre SnapMirror-RST-Beziehungen erstellen, werden von ONTAP blockiert, da das Zielvolume bereits eine Beziehung aufweist.</block>
   <block id="d98b87c41bd7151a94b3271b45bd340f" category="paragraph">Stellen Sie Dateien und Ordner aus Hyper-V-VM-Backups auf primärem oder sekundärem Speicher in einer Windows-Gast-VM wieder her.</block>
-  <block id="7438f70a76f855b704ba892f9c003542" category="list-text">Das Wiederherstellen von Dateien und Ordnern aus auf Objektspeicher abgelegten Backups wird nicht unterstützt.</block>
   <block id="7d3d3c20273081b66e3ecec1f0d07f51" category="list-text">Wählen Sie einen Snapshot auf dem primären oder sekundären Speicher aus, von dem die Wiederherstellung erfolgen soll, und klicken Sie dann auf *Weiter*.</block>
   <block id="3808991f408e2ffd90ae953886ec1e79" category="doc">NetApp Backup and Recovery-Anforderungen</block>
   <block id="44b68849dd3e2689fb41242f736a140f" category="paragraph">Bevor Sie mit der Nutzung von NetApp Backup and Recovery beginnen, stellen Sie sicher, dass Ihre NetApp Console und Ihre Betriebsumgebung die folgenden Anforderungen erfüllen.</block>
@@ -5654,4 +5652,6 @@
   <block id="4ad36f854b6d4d49c94081fec1b29de2" category="list-text">ONTAP 9.19.1 oder höher ist erforderlich, um mehr als 6 Buckets pro System bei verschiedenen Cloud-Anbietern zu unterstützen (bis zu maximal 100 Buckets).</block>
   <block id="59ebd83b4c20d2b24ac46c96525c37fc" category="list-text">ONTAP 9.13.1 oder höher (ONTAP 9.19.1 oder höher ist erforderlich, um mehr als 6 Buckets pro System bei verschiedenen Cloud-Anbietern zu unterstützen; maximal 100 Buckets)</block>
   <block id="6a0d2c5dd8e27d910d6ff2158f8d5520" category="list-text">Ein primäres ONTAP System (ONTAP 9.14.1 oder höher, ONTAP 9.19.1 oder höher ist erforderlich, um mehr als 6 Buckets pro System bei verschiedenen Cloud-Anbietern zu unterstützen; maximal 100 Buckets)</block>
+  <block id="d2bf4d042aabc15b9ccde353c782a6f2" category="list-text">Der Schutz von VMs der 2. Generation, die auf SAN Storage abgelegt sind, wird bei Verwendung von Microsoft Windows Server 2025 nicht unterstützt.</block>
+  <block id="b2d5ba8de92c18cbb9c45e01ad3f5509" category="list-text">Wiederherstellung an einem alternativen Speicherort (aus primärem, sekundärem und Objektspeicher)</block>
 </blocks>

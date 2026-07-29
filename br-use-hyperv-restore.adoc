@@ -28,7 +28,7 @@ Sie können Workloads von verschiedenen Startorten wiederherstellen:
 Sie können Daten bis zu diesen Punkten wiederherstellen:
 
 * Wiederherstellung am ursprünglichen Speicherort (vom primären, sekundären und Objektspeicher)
-* Wiederherstellung an einem alternativen Speicherort (vom primären und sekundären Speicher)
+* Wiederherstellung an einem alternativen Speicherort (aus primärem, sekundärem und Objektspeicher)
 
 
 .Überlegungen zur Wiederherstellung aus dem Objektspeicher

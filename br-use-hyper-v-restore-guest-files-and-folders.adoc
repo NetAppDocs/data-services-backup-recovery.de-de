@@ -36,7 +36,6 @@ Beachten Sie beim Wiederherstellen von Dateien und Ordnern Folgendes:
 [NOTE]
 ====
 * Derzeit ist es nicht möglich, Dateien und Ordner auf Linux-Gast-VMs wiederherzustellen.
-* Das Wiederherstellen von Dateien und Ordnern aus auf Objektspeicher abgelegten Backups wird nicht unterstützt.
 * Auf einer VM kann gleichzeitig nur ein Anfüge- oder Wiederherstellungsvorgang ausgeführt werden. Sie können auf derselben VM keine parallelen Anfüge- oder Wiederherstellungsvorgänge ausführen.
 * Das Anzeigen oder Durchsuchen reservierter Partitionen kann zu einem Fehler führen.
 * Während des Wiederherstellungsvorgangs werden die Attribute „Versteckt“, „System“ und „Verschlüsselt“ von Gastdateien in der wiederhergestellten Datei nicht beibehalten.
