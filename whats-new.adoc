@@ -28,7 +28,7 @@ Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 [[enhanced-multi-bucket-support-for-all-workloads]]
 === Erweiterte Unterstützung mehrerer Buckets für alle Workloads
 
-In dieser Backup und Recovery-Version ist es jetzt möglich, die Workloads innerhalb eines Systems mit bis zu 100 Buckets pro System bei verschiedenen Cloud-Anbietern zu schützen.
+NetApp Backup and Recovery unterstützt jetzt den Schutz von Workloads innerhalb eines Systems mit bis zu 100 Buckets bei verschiedenen Cloud-Anbietern. ONTAP 9.19.1 oder höher ist erforderlich, um mehr als 6 Buckets pro System zu unterstützen.
 
 Weitere Informationen zu NetApp Backup und Recovery finden sich unter  https://docs.netapp.com/us-en/data-services-backup-recovery/concept-backup-to-cloud.html["Erfahren Sie mehr über NetApp Backup and Recovery"].
 
