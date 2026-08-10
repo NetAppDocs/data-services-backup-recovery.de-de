@@ -95,7 +95,7 @@ Stellen Sie sicher, dass der Konsolenagent über die erforderlichen Netzwerkverb
 Um die Such- und Wiederherstellungsfunktion von NetApp Backup and Recovery verwenden zu können, benötigen Sie bestimmte Berechtigungen in der Rolle für den Konsolenagenten, damit dieser auf den Azure Synapse-Arbeitsbereich und das Data Lake-Speicherkonto zugreifen kann.  Sehen Sie sich die Berechtigungen unten an und befolgen Sie die Schritte, wenn Sie die Richtlinie ändern müssen.
 
 .Bevor Sie beginnen
-Sie müssen den Azure Synapse Analytics-Ressourcenanbieter (genannt „Microsoft.Synapse“) mit Ihrem Abonnement registrieren. https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["Erfahren Sie, wie Sie diesen Ressourcenanbieter für Ihr Abonnement registrieren."^] .  Sie müssen der *Eigentümer* oder *Mitwirkende* des Abonnements sein, um den Ressourcenanbieter zu registrieren.
+Sie müssen den Azure Synapse Analytics Resource Provider (genannt „Microsoft.Synapse“) bei Ihrem Abonnement registrieren https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["Erfahren Sie, wie Sie diesen Ressourcenanbieter für Ihr Abonnement registrieren."^]. Sie müssen *Abonnementinhaber* oder *Mitwirkender* sein, um den Resource Provider registrieren zu können.
 
 .Schritte
 . Identifizieren Sie die der virtuellen Maschine des Konsolenagenten zugewiesene Rolle:

@@ -126,7 +126,7 @@ Beachten Sie: Wenn Sie NetApp Backup and Recovery bereits mit einem zuvor konfig
 
 * Azure-Anforderungen:
 +
-** Sie müssen den Azure Synapse Analytics-Ressourcenanbieter (genannt „Microsoft.Synapse“) mit Ihrem Abonnement registrieren. https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["Erfahren Sie, wie Sie diesen Ressourcenanbieter für Ihr Abonnement registrieren."^] .  Sie müssen der *Eigentümer* oder *Mitwirkende* des Abonnements sein, um den Ressourcenanbieter zu registrieren.
+** Sie müssen den Azure Synapse Analytics Resource Provider (genannt „Microsoft.Synapse“) bei Ihrem Abonnement registrieren https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["Erfahren Sie, wie Sie diesen Ressourcenanbieter für Ihr Abonnement registrieren."^]. Sie müssen *Abonnementinhaber* oder *Mitwirkender* sein, um den Resource Provider registrieren zu können.
 ** Der Benutzerrolle, die der Konsole Berechtigungen erteilt, müssen bestimmte Berechtigungen für den Azure Synapse-Arbeitsbereich und das Data Lake Storage-Konto hinzugefügt werden. link:prev-ontap-backup-onprem-azure.html["Stellen Sie sicher, dass alle Berechtigungen richtig konfiguriert sind"].
 +
 Beachten Sie: Wenn Sie NetApp Backup and Recovery bereits mit einem zuvor konfigurierten Konsolenagenten verwendet haben, müssen Sie der Konsolenbenutzerrolle jetzt die Berechtigungen für den Azure Synapse-Arbeitsbereich und das Data Lake Storage-Konto hinzufügen.  Sie werden für Search & Restore benötigt.

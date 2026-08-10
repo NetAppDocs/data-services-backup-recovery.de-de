@@ -47,18 +47,6 @@ Weitere Informationen zum Schutz von VMware-Workloads finden Sie unter https://d
 
 
 
-[[oracle-database-workloads-enhancements]]
-=== Verbesserungen der Oracle Database Workloads
-
-In dieser Version werden die folgenden Verbesserungen für Oracle Database workloads eingeführt:
-
-* *Wiederherstellung und Klonen von Pluggable Databases (PDB)*: Der Service „Backup and Recovery for NetApp Console“ unterstützt jetzt die Wiederherstellung und das Klonen von Pluggable Databases.
-
-
-Weitere Informationen zum Schutz von Oracle Database-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Übersicht über den Schutz von Oracle Database-Workloads"].
-
-
-
 [[kubernetes-workloads-enhancements]]
 === Kubernetes-Workloads-Erweiterungen
 
