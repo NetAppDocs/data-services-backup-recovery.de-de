@@ -12,7 +12,7 @@ NOTE: Während Wiederherstellungsvorgängen werden alle `VirtualMachineSnapshots
 ====
 Trident Protect friert KubeVirt-Dateisysteme während der Datensicherungsoperationen automatisch ein und taut sie wieder auf, um Konsistenz zu gewährleisten. Ab Trident Protect 25.10 können Sie dieses Verhalten mit dem  `vm.freeze` Parameter während der Helm-Chart-Installation deaktivieren. Der Parameter ist standardmäßig aktiviert.
 
-[source, console]
+[source, shell]
 ----
 helm install ... --set vm.freeze=false ...
 ----
@@ -22,7 +22,7 @@ helm install ... --set vm.freeze=false ...
 ====
 Ab Trident Protect 24.10.1 friert Trident Protect KubeVirt-Dateisysteme während Datensicherungsoperationen automatisch ein und taut sie wieder auf. Optional können Sie dieses automatische Verhalten mit dem folgenden Befehl deaktivieren:
 
-[source, console]
+[source, shell]
 ----
 kubectl set env deployment/trident-protect-controller-manager NEPTUNE_VM_FREEZE=false -n trident-protect
 ----
@@ -34,7 +34,7 @@ Trident Protect 24.10 stellt den konsistenten Zustand der KubeVirt VM-Dateisyste
 
 Sie können Trident Protect 24.10 so konfigurieren, dass das Einfrieren und Auftauen des VM-Dateisystems während Datensicherungsoperationen verwaltet wird, indem link:https://docs.openshift.com/container-platform/4.16/virt/install/installing-virt.html["Virtualisierung konfigurieren"^] und anschließend den folgenden Befehl verwenden:
 
-[source, console]
+[source, shell]
 ----
 kubectl set env deployment/trident-protect-controller-manager NEPTUNE_VM_FREEZE=true -n trident-protect
 ----

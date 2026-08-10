@@ -55,7 +55,7 @@ NOTE: Wenn Sie Backups mit Kopia als Datenmover wiederherstellen, können Sie op
 ** *metadata.name*: (_Erforderlich_) Der Name dieser benutzerdefinierten Ressource; wählen Sie einen eindeutigen und sinnvollen Namen für Ihre Umgebung.
 ** *spec.appArchivePath*: Der Pfad innerhalb von AppVault, in dem die Sicherungsinhalte gespeichert sind. Sie können den folgenden Befehl verwenden, um diesen Pfad zu finden:
 +
-[source, console]
+[source, shell]
 ----
 kubectl get backups <BACKUP_NAME> -n my-app-namespace -o jsonpath='{.status.appArchivePath}'
 ----
@@ -123,7 +123,7 @@ spec:
 
 . Nachdem Sie die  `trident-protect-backup-restore-cr.yaml` Datei mit den korrekten Werten gefüllt haben, wenden Sie die CR an:
 +
-[source, console]
+[source, shell]
 ----
 kubectl apply -f trident-protect-backup-restore-cr.yaml
 ----
@@ -153,7 +153,7 @@ NOTE: Wenn Sie Backups mit Kopia als Datenmover wiederherstellen, können Sie op
 ** *metadata.name*: (_Erforderlich_) Der Name dieser benutzerdefinierten Ressource; wählen Sie einen eindeutigen und sinnvollen Namen für Ihre Umgebung.
 ** *spec.appArchivePath*: Der Pfad innerhalb von AppVault, in dem die Sicherungsinhalte gespeichert sind. Sie können den folgenden Befehl verwenden, um diesen Pfad zu finden:
 +
-[source, console]
+[source, shell]
 ----
 kubectl get backups <BACKUP_NAME> -n my-app-namespace -o jsonpath='{.status.appArchivePath}'
 ----
@@ -222,7 +222,7 @@ spec:
 
 . Nachdem Sie die  `trident-protect-backup-ipr-cr.yaml` Datei mit den korrekten Werten gefüllt haben, wenden Sie die CR an:
 +
-[source, console]
+[source, shell]
 ----
 kubectl apply -f trident-protect-backup-ipr-cr.yaml
 ----
@@ -258,7 +258,7 @@ Stellen Sie sicher, dass die folgenden Voraussetzungen erfüllt sind:
 .Schritte
 . Überprüfen Sie die Verfügbarkeit des AppVault CR auf dem Ziel-Cluster mithilfe des Trident Protect CLI-Plugins:
 +
-[source, console]
+[source, shell]
 ----
 tridentctl-protect get appvault --context <destination_cluster_name>
 ----
@@ -268,7 +268,7 @@ NOTE: Stellen Sie sicher, dass der für die Anwendungswiederherstellung vorgeseh
 
 . Zeigen Sie die Sicherungsinhalte des verfügbaren AppVault vom Ziel-Cluster an:
 +
-[source, console]
+[source, shell]
 ----
 tridentctl-protect get appvaultcontent <appvault_name> \
 --show-resources backup \
@@ -301,7 +301,7 @@ Durch Ausführen dieses Befehls werden die verfügbaren Backups im AppVault ange
 ** *spec.appVaultRef*: (_Erforderlich_) Der Name des AppVault, in dem die Sicherungsinhalte gespeichert sind.
 ** *spec.appArchivePath*: Der Pfad innerhalb von AppVault, in dem die Sicherungsinhalte gespeichert sind. Sie können den folgenden Befehl verwenden, um diesen Pfad zu finden:
 +
-[source, console]
+[source, shell]
 ----
 kubectl get backups <BACKUP_NAME> -n my-app-namespace -o jsonpath='{.status.appArchivePath}'
 ----
@@ -330,7 +330,7 @@ spec:
 
 . Nachdem Sie die  `trident-protect-backup-restore-cr.yaml` Datei mit den korrekten Werten gefüllt haben, wenden Sie die CR an:
 +
-[source, console]
+[source, shell]
 ----
 kubectl apply -f trident-protect-backup-restore-cr.yaml
 ----
@@ -365,7 +365,7 @@ Stellen Sie sicher, dass die Gültigkeitsdauer des AWS-Sitzungstokens für alle 
 ** *spec.appVaultRef*: (_Erforderlich_) Der Name des AppVault, in dem die Snapshot-Inhalte gespeichert sind.
 ** *spec.appArchivePath*: Der Pfad innerhalb von AppVault, in dem die Snapshot-Inhalte gespeichert sind. Sie können den folgenden Befehl verwenden, um diesen Pfad zu finden:
 +
-[source, console]
+[source, shell]
 ----
 kubectl get snapshots <SNAPHOT_NAME> -n my-app-namespace -o jsonpath='{.status.appArchivePath}'
 ----
@@ -432,7 +432,7 @@ spec:
 
 . Nachdem Sie die  `trident-protect-snapshot-restore-cr.yaml` Datei mit den korrekten Werten gefüllt haben, wenden Sie die CR an:
 +
-[source, console]
+[source, shell]
 ----
 kubectl apply -f trident-protect-snapshot-restore-cr.yaml
 ----
@@ -463,7 +463,7 @@ Stellen Sie sicher, dass die Gültigkeitsdauer des AWS-Sitzungstokens für alle 
 ** *spec.appVaultRef*: (_Erforderlich_) Der Name des AppVault, in dem die Snapshot-Inhalte gespeichert sind.
 ** *spec.appArchivePath*: Der Pfad innerhalb von AppVault, in dem die Snapshot-Inhalte gespeichert sind. Sie können den folgenden Befehl verwenden, um diesen Pfad zu finden:
 +
-[source, console]
+[source, shell]
 ----
 kubectl get snapshots <SNAPSHOT_NAME> -n my-app-namespace -o jsonpath='{.status.appArchivePath}'
 ----
@@ -528,7 +528,7 @@ spec:
 
 . Nachdem Sie die  `trident-protect-snapshot-ipr-cr.yaml` Datei mit den korrekten Werten gefüllt haben, wenden Sie die CR an:
 +
-[source, console]
+[source, shell]
 ----
 kubectl apply -f trident-protect-snapshot-ipr-cr.yaml
 ----

@@ -247,6 +247,8 @@ Um E-Mail-Benachrichtigungen zu NetApp Backup and Recovery zu erhalten, müssen 
 
 https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html["Erfahren Sie, wie Sie Warn-E-Mails für Sicherungs- und Wiederherstellungsaufträge senden"^].
 
+https://docs.netapp.com/us-en/console-local/task-alert-rules-manage.html["Benachrichtigungsregeln für Warnungen in der lokalen NetApp Console-Bereitstellung konfigurieren"^].
+
 .Schritte
 . Wählen Sie im Konsolenmenü die Option (image:icon_bell.png["Benachrichtigungsglocke"] ).
 . Überprüfen Sie die Benachrichtigungen.

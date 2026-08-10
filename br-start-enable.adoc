@@ -1,0 +1,63 @@
+---
+sidebar: sidebar 
+permalink: br-start-enable.html 
+keywords: backup, Backup and Recovery, enable backup, Console, service, local deployment 
+summary: Backup and Recovery auf einem System in der NetApp Console oder in einer lokalen NetApp Console-Bereitstellung aktivieren. 
+---
+= NetApp Backup and Recovery aktivieren, um Volumes zu schützen
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Es ist erforderlich, NetApp Backup and Recovery für ein Speichersystem in der NetApp Console oder der NetApp Console lokalen Bereitstellung zu aktivieren, bevor ONTAP Volumes Workloads geschützt werden können. Backup and Recovery kann für ein System beim Hinzufügen oder zu einem späteren Zeitpunkt aktiviert werden.
+
+
+
+[[enable-backup-and-recovery-in-netapp-console]]
+== Backup und Recovery in der NetApp Console aktivieren
+
+Der Sicherungs- und Wiederherstellungsdienst wird in der NetApp Console aktiviert.
+
+.Schritte
+. Das Menü *Volumes* auswählen.
+. Auf der Übersichtsseite für den Volumeschutz die Option *Backup-Einstellungen* auswählen.
+. Das System, auf dem Backups aktiviert werden sollen, identifizieren und die Schaltfläche *Backup aktivieren* auswählen.
+. Wählen Sie *Weiter*.
+. Die zu schützenden Quell-Volumes auswählen und auf *Weiter* gehen.
+. Auf der Seite „Sicherungsstrategie definieren“ wird die Sicherungsarchitektur ausgewählt und anschließend werden die Richtlinien sowie weitere Details für lokale Snapshots, replizierte Volumes und Sicherungsdateien festgelegt. Die Details zu den Sicherungsoptionen der initial in diesem System aktivierten Volumes sind hier ersichtlich. Anschließend wird *Weiter* ausgewählt.
+. Optional kann ausgewählt werden, dass Backup und Recovery nicht übereinstimmende Backup-, Snapshot- und Replikationsbezeichnungen automatisch korrigiert.
+. Überprüfen Sie die Sicherungseinstellungen für dieses Volume und wählen Sie dann *Sicherung aktivieren*.
+. Die von Ihnen geschützten Volumes erscheinen auf der Seite „Volumes Übersicht“.
+
+
+
+
+[[enable-backup-and-recovery-in-netapp-console-local-deployment]]
+== Backup und Recovery in der lokalen NetApp Console-Bereitstellung aktivieren
+
+Der Sicherungs- und Wiederherstellungsdienst wird in der lokalen Bereitstellung der NetApp Console aktiviert.
+
+.Bevor Sie beginnen
+Stellen Sie sicher, dass Sie eine Lizenz für NetApp Backup and Recovery erworben haben. Weitere Informationen sind unter  https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html#obtain-a-license-file["Lizenz erwerben"^] verfügbar.
+
+.Schritte
+. Im NetApp Konsolenmenü *Speicher > Flotten* auswählen.
+. Fügen Sie bei Bedarf Details zu Ihrer Flotte hinzu, indem Sie *Flotte hinzufügen* auswählen.
+. *Administration > Lizenzen* auswählen.
+. *Lizenz hinzufügen* auswählen, um eine Lizenz für Backup und Recovery hinzuzufügen. Weitere Informationen zum Hinzufügen einer Lizenz sind unter  https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html#add-a-license["Lizenz hinzufügen"^] zu finden.
+. *Storage* > *Fleets* auswählen und anschließend das Menü *Systems* öffnen.
+. *Hinzufügen* auswählen, um ein System hinzuzufügen, die Systemdetails eingeben und das neue System durch Auswahl von *Hinzufügen* speichern.
+. Wählen Sie ein System und wählen Sie einen Cluster aus. Im Informationsfeld auf der rechten Seite der Seite die Schaltfläche *Aktivieren* für den Backup and Recovery Service auswählen.
+. *Sicherungsvolumes* auswählen.
+. Wählen Sie *Weiter*.
+. Die zu schützenden Quell-Volumes auswählen und auf *Weiter* gehen.
+. Auf der Seite „Sicherungsstrategie definieren“ wird die Sicherungsarchitektur ausgewählt und anschließend werden die Richtlinien sowie weitere Details für lokale Snapshots, replizierte Volumes und Sicherungsdateien festgelegt. Die Details zu den Sicherungsoptionen der initial in diesem System aktivierten Volumes sind hier ersichtlich. Anschließend wird *Weiter* ausgewählt.
+. Optional kann ausgewählt werden, dass Backup und Recovery nicht übereinstimmende Backup-, Snapshot- und Replikationsbezeichnungen automatisch korrigiert.
+. Überprüfen Sie die Sicherungseinstellungen für dieses Volume und wählen Sie dann *Sicherung aktivieren*.
+. Die von Ihnen geschützten Volumes erscheinen auf der Seite „Volumes Übersicht“.
+

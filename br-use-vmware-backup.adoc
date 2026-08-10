@@ -32,7 +32,7 @@ Erstellen Sie sofort ein On-Demand-Backup.  Möglicherweise möchten Sie eine On
 
 .Schritte
 . Wählen Sie im Menü „Sicherung und Wiederherstellung“ die Option „Inventar“ aus.
-. Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.
+. Die VMware Workload auswählen.
 . Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*.
 . Wählen Sie die Menüüberschrift *Protection Groups*, *Datastores*, *Virtual machines* oder *Tags* aus.
 . Wählen Sie die Schutzgruppe, Datenspeicher, virtuellen Maschinen oder getaggten Ressourcen aus, die Sie sichern möchten.
@@ -43,4 +43,39 @@ NOTE: Die für die Datensicherung angewendete Richtlinie ist dieselbe Richtlinie
 
 . Wählen Sie die Zeitplanstufe aus.
 . Wählen Sie *Jetzt sichern*.
+
+
+
+
+[[delete-backups]]
+== Backups löschen
+
+Sie können lokale Backups löschen, die nicht mehr benötigt werden, um Speicherplatz freizugeben oder Datenaufbewahrungsvorschriften zu erfüllen.
+
+.Schritte
+. Melden Sie sich bei NetApp Backup and Recovery an und wählen Sie auf dem Startbildschirm die VMware Workload-Kachel aus.
++
+Die VMware Inventarseite wird angezeigt.
+
+. Die Überschrift *Virtuelle Maschinen* auswählen.
+. In der Liste der virtuellen Maschinen eine virtuelle Maschine auswählen und das Aktionen-Symbol image:../media/icon-action.png["Aktionsoption"] > *Schutzdetails anzeigen* wählen.
+. Einen Zeitraum auswählen, um relevante Momentaufnahmen anzuzeigen.
+. Ein oder mehrere Snapshots löschen:
++
+[role="tabbed-block"]
+====
+.Einen einzelnen Snapshot löschen
+--
+.. Wählen Sie aus der Liste den Snapshot aus, den Sie löschen möchten, und wählen Sie das Symbol Aktionen image:../media/icon-action.png["Aktionsoption"] > *Lokalen Snapshot löschen*.
+
+
+--
+.Mehrere Snapshots löschen
+--
+.. Aktivieren Sie das Kästchen links neben jedem Snapshot, den Sie löschen möchten.
+.. *Ausgewählte löschen* auswählen.
+
+
+--
+====
 

@@ -23,6 +23,7 @@ Plattformen, Geräte oder Funktionen, die mit dieser Version nicht oder nicht gu
 
 Die folgenden Aktionen werden in Hyper-V-Workloads in NetApp Backup and Recovery nicht unterstützt:
 
+* In der Backup and Recovery-Vorabversion für die lokale Bereitstellung der NetApp Console werden Backups in Objektspeicher nur für ONTAP S3 und StorageGRID Ziele unterstützt. Backup-Archivierung ist in dieser Vorabversion nicht unterstützt.
 * Der Schutz von VMs der 2. Generation, die auf SAN Storage abgelegt sind, wird bei Verwendung von Microsoft Windows Server 2025 nicht unterstützt.
 * Erstellen Sie Ressourcengruppen mithilfe von VMs von mehreren Hyper-V-Hosts.
 * Spanning-Disks (über mehrere CIFS-Freigaben hinweg)

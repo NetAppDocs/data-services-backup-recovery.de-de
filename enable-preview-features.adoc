@@ -47,13 +47,13 @@ Aktivieren Sie die Optionen für Vorschau-Features, um Funktionen zu nutzen, die
 . Verwenden Sie SSH, um sich beim Console-Agenten anzumelden.
 . Wechseln Sie zum Root-Benutzer:
 +
-[source, console]
+[source, shell]
 ----
 sudo su
 ----
 . Suchen Sie das Backup- und Wiederherstellungsvolume in Docker:
 +
-[source, console]
+[source, shell]
 ----
 docker volume ls | grep cbs
 ----
@@ -67,7 +67,7 @@ local service-manager-2_cloudmanager_cbs_volume
 ----
 . Ermitteln Sie den Mountpunkt für das Volume:
 +
-[source, console]
+[source, shell]
 ----
 docker volume inspect service-manager-2_cloudmanager_cbs_volume | grep Mountpoint
 ----
@@ -81,7 +81,7 @@ Der Mountpunkt unterscheidet sich zwischen Cloud- und privaten Bereitstellungen.
 ----
 . Wechseln Sie in das Docker-Volume-Konfigurationsverzeichnis, das sich im Mountpoint-Verzeichnis befindet. Zum Beispiel:
 +
-[source, console]
+[source, shell]
 ----
 cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data/cbs_config
 ----
@@ -106,7 +106,7 @@ Siehe <<anchor-flags,verfügbare Flags>> für Informationen zu Feature-Flags. Zu
 
 . Starten Sie den Backup- und Recovery-Container neu:
 +
-[source, console]
+[source, shell]
 ----
 docker restart cloudmanager_cbs
 ----
@@ -132,13 +132,13 @@ Deaktivieren Sie die Indizierung für bestimmte Volumes oder für alle Volumes, 
 . Verwenden Sie SSH, um sich beim Console-Agenten anzumelden.
 . Wechseln Sie zum Root-Benutzer:
 +
-[source, console]
+[source, shell]
 ----
 sudo su
 ----
 . Suchen Sie das Backup- und Wiederherstellungsvolume in Docker:
 +
-[source, console]
+[source, shell]
 ----
 docker volume ls | grep cbs
 ----
@@ -152,7 +152,7 @@ local service-manager-2_cloudmanager_cbs_volume
 ----
 . Ermitteln Sie den Mountpunkt für das Volume:
 +
-[source, console]
+[source, shell]
 ----
 docker volume inspect service-manager-2_cloudmanager_cbs_volume | grep Mountpoint
 ----
@@ -166,7 +166,7 @@ Der Mountpunkt unterscheidet sich zwischen Cloud- und privaten Bereitstellungen.
 ----
 . Wechseln Sie in das Docker-Volume-Konfigurationsverzeichnis, das sich im Mountpoint-Verzeichnis befindet. Zum Beispiel:
 +
-[source, console]
+[source, shell]
 ----
 cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data/cbs_catalog_config
 ----
@@ -183,7 +183,7 @@ cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data/cbs_c
 ----
 . Starten Sie den Indizierungskatalog-Container für NetApp Backup and Recovery neu:
 +
-[source, console]
+[source, shell]
 ----
 docker restart cloudmanager_cbs_catalog
 ----

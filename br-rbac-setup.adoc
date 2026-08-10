@@ -12,7 +12,10 @@ summary: Zur Erhöhung der Sicherheit konfigurieren Sie den Zugriff für bestimm
 
 
 [role="lead"]
-Um die Sicherheit zu erhöhen und den Ressourcenzugriff zu kontrollieren, konfigurieren Sie rollenbasierte Zugriffssteuerung für NetApp Backup and Recovery. Die NetApp Console unterstützt rollenbasierte Zugriffssteuerung (RBAC) für einige Backup and Recovery Workloads. Sie können diesen Workloads spezifische Administrator- oder Betrachterrollen zuweisen. Andere Workloads, die noch keine rollenbasierte Zugriffssteuerung unterstützen, bleiben für alle Benutzer mit Backup and Recovery Rollen zugänglich, bis die Zuordnung auf Projektebene unterstützt wird.
+Um die Sicherheit zu erhöhen und den Ressourcenzugriff zu kontrollieren, kann rollenbasierter Zugriff für NetApp Backup and Recovery konfiguriert werden. Die NetApp Console unterstützt rollenbasierte Zugriffssteuerung (RBAC) für einige Backup and Recovery Workloads. Administrations- oder Betrachterrollen können spezifisch für diese Workloads zugewiesen werden. Andere Workloads, die noch keine rollenbasierte Zugriffssteuerung unterstützen, bleiben für alle Benutzer mit Backup and Recovery Rollen zugänglich, bis die Zuordnung auf Projekt- oder Flottenebene unterstützt wird.
+
+
+NOTE: NetApp Console verwendet Projekte, um Ressourcen in Ordnern zu organisieren, während NetApp Console Local Deployment Projekte als Flotten bezeichnet.
 
 Führen Sie diese Schritte aus, um den Zugriff auf Ressourcen in Ihrer Organisation zu steuern. Nehmen Sie Änderungen auf der Seite *Administration > Identität und Zugriff* im NetApp Console-Menü vor.
 

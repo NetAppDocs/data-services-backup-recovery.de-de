@@ -18,6 +18,72 @@ Erfahren Sie, was es Neues bei NetApp Backup and Recovery gibt.
 
 
 
+[[10-august-2026]]
+== 10. August 2026
+
+Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
+
+
+
+[[general-netapp-backup-and-recovery-enhancements]]
+=== Allgemeine NetApp Backup and Recovery-Verbesserungen
+
+* *Unterstützung für die lokale Bereitstellung der NetApp Console*: Diese Version von NetApp Backup and Recovery unterstützt die lokale Bereitstellung der NetApp Console im Vorschaustatus.
+* *90 Tage Aufbewahrung von Aufträgen*: Backup and Recovery speichert Auftragsinformationen jetzt 90 Tage lang im Job Monitor.
+
+
+
+
+[[vmware-workloads-enhancements]]
+=== VMware-Workload-Verbesserungen
+
+In dieser Version führt VMware workloads die folgenden Verbesserungen ein:
+
+* *Unterstützung für die Wiederherstellung an einem alternativen Speicherort für SAN-VMs*: Es ist jetzt möglich, SAN-basierte VM-Backups an einem alternativen Speicherort wiederherzustellen.
+* *Unterstützung für das Löschen mehrerer Backups*: Es ist jetzt möglich, mehrere Backups gleichzeitig zu löschen.
+
+
+Weitere Informationen zum Schutz von VMware-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["Übersicht zum Schützen von VMware-Workloads"] .
+
+
+
+[[oracle-database-workloads-enhancements]]
+=== Verbesserungen der Oracle Database Workloads
+
+In dieser Version werden die folgenden Verbesserungen für Oracle Database workloads eingeführt:
+
+* *Wiederherstellung und Klonen von Pluggable Databases (PDB)*: Der Service „Backup and Recovery for NetApp Console“ unterstützt jetzt die Wiederherstellung und das Klonen von Pluggable Databases.
+
+
+Weitere Informationen zum Schutz von Oracle Database-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Übersicht über den Schutz von Oracle Database-Workloads"].
+
+
+
+[[kubernetes-workloads-enhancements]]
+=== Kubernetes-Workloads-Erweiterungen
+
+In dieser Version werden für Kubernetes-Workloads die folgenden Verbesserungen eingeführt:
+
+* *Vorschauunterstützung für isolierte Ressourcen*: Wenn NetApp Backup and Recovery in der lokalen NetApp Console-Bereitstellung ausgeführt wird, können isolierte Kubernetes-Ressourcen erkannt, geschützt und wiederhergestellt werden. Diese Funktion befindet sich in dieser Version in der Vorschau.
+
+
+Weitere Informationen zum Schutz von Kubernetes-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Übersicht zum Schützen von Kubernetes-Workloads"] .
+
+
+
+[[ontap-volumes-workloads-enhancements]]
+=== ONTAP Volumes Workloads-Verbesserungen
+
+In dieser Version wurden für ONTAP Volumes Workloads die folgenden Verbesserungen eingeführt:
+
+* *Wiederherstellungsaufträge gegenüber Backups priorisieren*: Es besteht jetzt die Möglichkeit, Wiederherstellungsaufträge gegenüber Backup-Aufträgen zu priorisieren, wenn VMs oder Dateien wiederhergestellt werden.
+* *ONTAP Systeme und Volumes ohne Backup and Recovery Aktivierung entdecken*: Es ist jetzt möglich, Systeme und Volumes zu entdecken, ohne Backup and Recovery zu aktivieren.
+
+
+Weitere Informationen zum Schutz von ONTAP Volumes-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["Überblick über den Schutz von ONTAP Volumes Workloads"].
+
+
+
 [[13-july-2026]]
 == 13. Juli 2026
 

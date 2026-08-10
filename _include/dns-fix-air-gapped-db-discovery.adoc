@@ -1,0 +1,105 @@
+= 
+:allow-uri-read: 
+
+
+Wenn die NetApp Console lokale Bereitstellung in einer abgeschotteten Umgebung verwendet wird, in der Datenbankhosts nicht über Standard-DNS erreichbar sind, muss die interne RKE2 CoreDNS-Konfiguration vorübergehend angepasst werden. Dies ermöglicht es Pods, bestimmte Hostnamen innerhalb des Clusters in IP-Adressen aufzulösen, ähnlich wie das Hinzufügen von Einträgen zu `/etc/hosts` auf einem Knoten.
+
+
+IMPORTANT: Vor Änderungen sollte die bestehende CoreDNS-Konfiguration geprüft werden, um ein Überschreiben vorhandener Anpassungen zu vermeiden. Für diese Änderung sind RKE2-Manifeste zu verwenden, wodurch eine konsistente Verwaltung durch den RKE2 Operator und die Laufzeitumgebung sichergestellt wird.
+
+.Bevor Sie beginnen
+* Die HelmChartConfig-Datei sollte nach Möglichkeit unter Änderungskontrolle stehen.
+* Ein eindeutiger Dateiname sorgt dafür, dass der Zweck der CoreDNS Override offensichtlich ist.
+* Falls der erwartete DNS-Eintrag in der Corefile nicht sichtbar ist, sollten die RKE2-Serverprotokolle überprüft und die Syntax der Manifestdatei bestätigt werden.
+
+
+.Schritte
+. Die bestehende CoreDNS-Konfiguration sollte daraufhin geprüft werden, ob keine bestehende Änderung überschrieben wird:
++
+[source, shell]
+----
+kubectl -n kube-system get cm rke2-coredns-rke2-coredns -o jsonpath='{.data.Corefile}'
+----
+. Den folgenden Befehlsblock kopieren und den  `configBlock` Bereich bearbeiten, um die statischen DNS-Einträge hinzuzufügen. Dadurch wird eine HelmChartConfig YAML-Datei im RKE2-Manifeste-Ordner erstellt, die RKE2 automatisch anwendet, um die CoreDNS-Konfiguration zu überschreiben:
++
+[source, shell]
+----
+sudo tee /var/lib/rancher/rke2/server/manifests/rke2-coredns-config.yaml >/dev/null <<'YAML'
+apiVersion: helm.cattle.io/v1
+kind: HelmChartConfig
+metadata:
+  name: rke2-coredns
+  namespace: kube-system
+spec:
+  # NOTE: This is a HelmChartConfig that *overlays* values onto the rke2-coredns
+  # HelmChart already managed by RKE2. RKE2 watches /var/lib/rancher/rke2/server/manifests
+  # and will re-render the rke2-coredns Helm release whenever this file changes.
+  #
+  # The `servers:` list below REPLACES the chart's default server definition,
+  # so every plugin that was in the stock Corefile must be present here.
+  # Do NOT delete plugins you don't recognize -- they are required for cluster DNS.
+  valuesContent: |-
+    servers:
+    - zones:
+      - zone: .
+      port: 53
+      plugins:
+      - name: errors
+      - name: health
+        configBlock: |-
+          lameduck 10s
+      - name: ready
+      - name: kubernetes
+        parameters: cluster.local in-addr.arpa ip6.arpa
+        configBlock: |-
+          pods insecure
+          fallthrough in-addr.arpa ip6.arpa
+          ttl 30
+      # ───────────────────────── EDIT BELOW ─────────────────────────
+      # Static DNS records for hosts the corporate DNS cannot resolve.
+      # Format:  <IP>  <FQDN>  [optional aliases...]
+      # `fallthrough` MUST stay as the last line -- it lets every other
+      # name go to the upstream resolver via the `forward` plugin below.
+      - name: hosts
+        configBlock: |-
+          1.2.3.4 example.domain.com exampleshortname
+          fallthrough
+      # ───────────────────────── EDIT ABOVE ─────────────────────────
+      - name: prometheus
+        parameters: 0.0.0.0:9153
+      - name: forward
+        parameters: . /etc/resolv.conf
+      - name: cache
+        parameters: 30
+      - name: loop
+      - name: reload
+      - name: loadbalance
+YAML
+sudo chmod 600 /var/lib/rancher/rke2/server/manifests/rke2-coredns-config.yaml
+----
+. Es wird geprüft, ob CoreDNS die Änderung übernommen hat:
++
+[source, shell]
+----
+kubectl -n kube-system get cm rke2-coredns-rke2-coredns -o jsonpath='{.data.Corefile}'
+----
++
+Wenn die Änderung nach einigen Minuten nicht sichtbar ist, die CoreDNS-Bereitstellung neu starten und anschließend die Corefile erneut überprüfen:
+
++
+[source, shell]
+----
+kubectl -n kube-system rollout restart deploy/rke2-coredns-rke2-coredns
+----
+. Falls Sie die Einträge entfernen müssen, nachdem Sie die Datenbank-Hosts entdeckt haben, gehen Sie wie folgt vor:
++
+.. Löschen Sie die HelmChartConfig-Datei aus dem Manifeste-Ordner.
+.. Die CoreDNS-Bereitstellung wird neu gestartet:
++
+[source, shell]
+----
+kubectl -n kube-system rollout restart deploy/rke2-coredns-rke2-coredns
+----
+
+
+

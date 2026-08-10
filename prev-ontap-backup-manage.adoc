@@ -49,11 +49,7 @@ Das jeweilige Symbol leuchtet auf, wenn der entsprechende Sicherungstyp aktivier
 
 Wenn Sie bei der ersten Aktivierung von NetApp Backup and Recovery die Sicherung nur auf einigen Volumes in einem System aktiviert haben, können Sie später Sicherungen auf weiteren Volumes aktivieren.
 
-.Schritte
-. Wählen Sie auf der Registerkarte *Volumes* das Volume aus, auf dem Sie Backups aktivieren möchten, und anschließend das Menü „Aktionen“ aus. image:icon-action.png["Symbol „Aktionen“"] Am Ende der Zeile wählen Sie *3-2-1-Schutz aktivieren*.
-. Auf der Seite _Sicherungsstrategie definieren_ wählen Sie die Sicherungsarchitektur aus und definieren dann die Richtlinien und weitere Details für lokale Snapshots, replizierte Volumes und Sicherungsdateien. Sehen Sie sich die Details zu den Sicherungsoptionen der ursprünglichen Volumes an, die Sie in diesem System aktiviert haben. Wählen Sie dann *Weiter*.
-. Überprüfen Sie die Sicherungseinstellungen für dieses Volume und wählen Sie dann *Sicherung aktivieren*.
-
+Weitere Anweisungen sind unter link:br-start-enable.html["NetApp Backup and Recovery aktivieren, um Volumes zu schützen"^] zu finden.
 
 
 

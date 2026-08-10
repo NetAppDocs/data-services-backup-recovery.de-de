@@ -27,9 +27,14 @@ Um sich bei der NetApp Console anzumelden, können Sie Ihre Anmeldeinformationen
 Um einen Konsolenagenten hinzuzufügen, müssen Sie über die Superadministratorrolle „Backup und Wiederherstellung“ verfügen.
 
 .Schritte
-. Öffnen Sie einen Webbrowser und gehen Sie zu https://console.netapp.com/["NetApp Console"^] .
+. Führen Sie einen der folgenden Schritte aus:
++
+** Wenn Sie die NetApp Console verwenden, einen Webbrowser öffnen und zu  https://console.netapp.com/["NetApp Console"^] gehen.
+** Wenn Sie die lokale Bereitstellung der NetApp Console verwenden, einen Webbrowser öffnen und zur IP-Adresse der Web-UI Ihrer lokalen Console-Bereitstellung gehen.
 +
 Die Anmeldeseite der NetApp Console wird angezeigt.
+
+
 
 . Melden Sie sich bei der Konsole an.
 . Wählen Sie in der linken Navigation der Konsole *Schutz* > *Sicherung und Wiederherstellung*.

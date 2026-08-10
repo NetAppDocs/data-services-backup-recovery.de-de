@@ -25,6 +25,7 @@ Die folgenden Aktionen und Konfigurationen werden in KVM-Workloads in NetApp Bac
 
 Folgende Aktionen werden nicht unterstützt:
 
+* In der Backup and Recovery-Vorabversion für die lokale Bereitstellung der NetApp Console werden Backups in Objektspeicher nur für ONTAP S3 und StorageGRID Ziele unterstützt. Backup-Archivierung ist in dieser Vorabversion nicht unterstützt.
 * Klonen, Mounten oder Unmounten von VMs
 * Schützen Sie im SAN gespeicherte VMs
 * Anwendungen schützen

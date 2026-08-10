@@ -23,7 +23,7 @@ NetApp Backup and Recovery muss Kubernetes-Workloads erkennen, bevor sie geschü
 [[discover-kubernetes-workloads]]
 == Entdecken Sie Kubernetes-Workloads
 
-Ermitteln Sie im Sicherungs- und Wiederherstellungsinventar die Kubernetes-Workloads in Ihrer Umgebung.  Durch das Hinzufügen einer Workload wird NetApp Backup and Recovery ein Kubernetes-Cluster hinzugefügt.  Anschließend können Sie Anwendungen hinzufügen und Clusterressourcen schützen.
+Im Backup and Recovery-Inventar werden Kubernetes-Workloads in Ihrer Umgebung erkannt. Das Hinzufügen eines Workloads fügt einen Kubernetes-Cluster zu NetApp Backup and Recovery hinzu. Anschließend können Anwendungen hinzugefügt und Clusterressourcen geschützt werden. Optional lassen sich lokal isolierte Kubernetes-Ressourcen mithilfe der lokalen Bereitstellung der NetApp Console erkennen.
 
 [NOTE]
 ====
@@ -39,18 +39,45 @@ Wenn Sie einen Cluster entdecken, der aktuell mit Trident Protect geschützt ist
 
 . Wählen Sie den Workloadtyp *Kubernetes* aus.
 . Geben Sie einen Clusternamen ein und wählen Sie einen Konsolenagenten aus, der mit dem Cluster verwendet wird.
-. Befolgen Sie die angezeigten Befehlszeilenanweisungen:
 +
-** Erstellen Sie einen Trident Protect-Namespace
-** Erstellen eines Kubernetes-Geheimnisses
-** Hinzufügen eines Helm-Repositorys
-** Installieren oder aktualisieren Sie Trident Protect und den Trident Protect connector
+NetApp Backup and Recovery bietet Anweisungen, die sich je nach ausgewähltem Installationstyp ändern. Bei einer lokalen Bereitstellung der NetApp Console können Anweisungen ausgewählt werden, die das Erkennen von vom Netzwerk getrennten Ressourcen ohne externe Netzwerkverbindung ermöglichen.
+
+. Einen Installationstyp auswählen, um die Anweisungen zur Installation von Trident Protect auf Ihrem Kubernetes-Cluster anzuzeigen:
 +
-Diese Schritte stellen sicher, dass NetApp Backup and Recovery mit dem Cluster interagieren kann.
+** *Verbunden* auswählen, um Cluster mit externer Netzwerkanbindung zu ermitteln.
+** *Air-gapped* auswählen, um Cluster zu ermitteln, die keine externe Netzwerkverbindung haben.
++
+[role="tabbed-block"]
+====
+.Vernetzte Entdeckung
+--
+... Befolgen Sie die Befehlszeilenanweisungen, die in Backup and Recovery angezeigt werden. Diese Schritte gewährleisten, dass Backup and Recovery mit dem Cluster interagieren kann.
 
 
+--
+.Air-gapped Discovery
+--
+... Geben Sie die URL Ihrer privaten Docker-Container-Registry ein. Diese Registry dient zum Herunterladen der Trident Protect- und Trident Protect Connector-Images während der Installation.
+... Wenn Ihre private Container-Registry eine Authentifizierung erfordert, kann eine der folgenden Methoden zur Konfiguration der Registry-Anmeldeinformationen verwendet werden:
++
+**** *Authentifizierung auf Knotenebene*: Die Registry-Anmeldeinformationen werden in der Container-Laufzeitumgebung auf jedem Knoten konfiguriert. Nach der Konfiguration können alle Pods Images abrufen, ohne dass zusätzliche Helm-Einstellungen erforderlich sind.
+**** *Kubernetes Image Pull Secret*: Ein Kubernetes Image Pull Secret wird im  `trident-protect` Namespace erstellt und anschließend beim Helm-Upgrade-Schritt in den Trident Protect-Installationsanweisungen referenziert:
++
+[source, console]
+----
+--set trident-protect.imagePullSecrets[0].name=<pull-secret-name>
+--set connector.imagePullSecrets[0].name=<pull-secret-name>
+----
 
-. Nachdem Sie die Schritte abgeschlossen haben, wählen Sie *Entdecken*.
+
+... Befolgen Sie die Befehlszeilenanweisungen, die in Backup and Recovery angezeigt werden, und fügen Sie während des Helm-Schritts (falls erforderlich) die Informationen zum Image Pull Secret hinzu. Diese Schritte stellen sicher, dass Backup and Recovery mit dem Cluster interagieren kann.
+
+
+--
+====
+
+
+. Nach Abschluss der Installationsschritte von Trident Protect wird *Entdecken* ausgewählt.
 +
 Der Cluster wird zum Inventar hinzugefügt.
 
@@ -65,7 +92,7 @@ Der Cluster wird zum Inventar hinzugefügt.
 Führen Sie die folgenden Schritte aus, um das NetApp Backup and Recovery Dashboard anzuzeigen.
 
 . Wählen Sie im NetApp Console *Schutz* > *Sicherung und Wiederherstellung*.
-. Wählen Sie eine Workload-Kachel aus (z. B. Microsoft SQL Server).
+. Die Kachel „Kubernetes Workload“ auswählen.
 . Wählen Sie im Menü „Sichern und Wiederherstellen“ die Option „Dashboard“ aus.
 . Überprüfen Sie den Zustand des Datenschutzes.  Die Anzahl der gefährdeten oder geschützten Workloads steigt basierend auf den neu entdeckten, geschützten und gesicherten Workloads.
 +

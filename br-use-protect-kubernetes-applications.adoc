@@ -126,7 +126,7 @@ Die Anwendung wird erstellt und in der Liste der Anwendungen auf der Registerkar
 ====
 Falls Sie diese Annotation nachträglich anwenden müssen, nachdem eine Anwendung bereits erstellt wurde, können Sie den folgenden Befehl verwenden:
 
-[source, console]
+[source, shell]
 ----
 kubectl annotate application -n <application CR namespace> <application CR name> protect.trident.netapp.io/skip-vm-freeze="true"
 ----
@@ -216,7 +216,7 @@ spec:
 
 . Nachdem Sie die Anwendungs-CR erstellt haben, die zu Ihrer Umgebung passt, wenden Sie die CR an. Zum Beispiel:
 +
-[source, console]
+[source, shell]
 ----
 kubectl apply -f my-app-name.yaml
 ----

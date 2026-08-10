@@ -229,7 +229,7 @@ Für das Einbauvolumen sind folgende Größenrichtlinien zu beachten:
 ** `volume name` ist das Volume auf dem Cluster, auf dem die Katalogdateien gespeichert werden.
 ** `/opt/application/netapp/cbs` ist der Weg, auf dem es montiert wird.
 +
-[source, console]
+[source, shell]
 ----
 mount <cluster IP address>:/<volume name> /opt/application/netapp/cbs
 ----
@@ -237,7 +237,7 @@ mount <cluster IP address>:/<volume name> /opt/application/netapp/cbs
 Beispiel:
 
 +
-[source, console]
+[source, shell]
 ----
 mount 10.192.24.17:/CATALOG_SCALE_234 /opt/application/netapp/cbs
 ----

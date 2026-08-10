@@ -52,8 +52,6 @@ image:diagram_browse_restore_volume-unified.png["Ein Diagramm, das den Ablauf zu
 * Wenn Sie eine Sicherung aus dem Objektspeicher wiederherstellen, können Sie die Daten auf dem ursprünglichen System oder auf einem lokalen ONTAP -System wiederherstellen.
 
 
-Auf der Seite „Wiederherstellen“ (Suchen und Wiederherstellen) können Sie eine Ressource wiederherstellen, indem Sie mithilfe von Filtern nach dem Snapshot suchen, auch wenn Sie sich nicht an den genauen Namen, den Speicherort oder das letzte bekannte Datum erinnern.
-
 
 
 [[restore-workload-data-from-the-restore-option-search-restore]]
