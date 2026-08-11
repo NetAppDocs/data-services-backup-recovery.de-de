@@ -3267,11 +3267,9 @@
   <block id="e57e5c06a7f562addb87315f013677ab" category="inline-link-macro">Erfahren Sie mehr über die Wiederherstellung aus dem Google-Archivspeicher</block>
   <block id="e429a3dcdf9ca5d36834b72490aae784" category="admonition">Die hohe Priorität wird beim Wiederherstellen von Daten aus dem Azure-Archivspeicher auf StorageGRID -Systemen nicht unterstützt.</block>
   <block id="598e51a2b37024d5f553af642c739db8" category="section-title">Durchsuchen und Wiederherstellen unterstützter Systeme und Objektspeicheranbieter</block>
-  <block id="bc6bfb0b14fd7cced8ee62c645d8aa17" category="paragraph">*Hinweis:* Sie können ein Volume aus jeder Art von Sicherungsdatei wiederherstellen, einen Ordner oder einzelne Dateien können Sie derzeit jedoch nur aus einer Sicherungsdatei im Objektspeicher wiederherstellen.</block>
   <block id="4392d15c8884c7cc66b17ff794eb41d2" category="cell">*Aus dem Objektspeicher (Backup)*</block>
   <block id="a4e7ccecf7c1ff2d3e2de88d9f7559d4" category="cell">*Vom Primär (Schnappschuss)*</block>
   <block id="c1ad4111606308626e152e2bc5089a8b" category="cell">*Vom sekundären System (Replikation)*</block>
-  <block id="f6bc09197fbc5599ccf48032f3ead672" category="cell">Zum lokalen ONTAP -System</block>
   <block id="56a66e1fc15e989f40186eb5d1841f59" category="paragraph">Für „Durchsuchen und Wiederherstellen“ kann der Konsolenagent an den folgenden Speicherorten installiert werden:</block>
   <block id="26b66b8e6541c0f2e46ee638955dab17" category="list-text">Für Amazon S3 kann der Konsolenagent in AWS oder in Ihren Räumlichkeiten bereitgestellt werden</block>
   <block id="ead25fef0ccdffb4daf4bbf7bcb1dfb5" category="list-text">Für Azure Blob kann der Konsolenagent in Azure oder in Ihren Räumlichkeiten bereitgestellt werden</block>
@@ -5804,4 +5802,6 @@
   <block id="6ffc226d668d783acc3c710ae22bd61d" category="section-title">10. August 2026</block>
   <block id="874b4474de89858c50d77a501e5764e2" category="sidebar">Leistungssteigerung der Volumensuche und -wiederherstellung für die lokale NetApp Console-Bereitstellung</block>
   <block id="4d92224f9798401488621039f9e4cfa9" category="list-text">Sie müssen den Azure Synapse Analytics Resource Provider (genannt „Microsoft.Synapse“) bei Ihrem Abonnement registrieren<block ref="c0f87c4b35b6d93246175aae02f70afd" category="inline-link-rx"></block>. Sie müssen *Abonnementinhaber* oder *Mitwirkender* sein, um den Resource Provider registrieren zu können.</block>
+  <block id="309ab91ccf975daed364d3636f21792a" category="paragraph">Es ist möglich, ONTAP Daten aus einer Sicherungsdatei, die sich auf einem sekundären System (einem replizierten Volume) oder im Objektspeicher (einer Sicherungsdatei) befindet, auf die folgenden Systeme wiederherzustellen.</block>
+  <block id="e9a171dcb6f5a1441f086b12be8cbc6b" category="cell">S3-kompatible Objektspeicher</block>
 </blocks>

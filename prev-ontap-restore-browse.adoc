@@ -40,25 +40,77 @@ NOTE: Die hohe Priorität wird beim Wiederherstellen von Daten aus dem Azure-Arc
 [[browse-restore-supported-systems-and-object-storage-providers]]
 == Durchsuchen und Wiederherstellen unterstützter Systeme und Objektspeicheranbieter
 
-Sie können ONTAP Daten aus einer Sicherungsdatei, die sich in einem sekundären System (einem replizierten Volume) oder im Objektspeicher (einer Sicherungsdatei) befindet, auf den folgenden Systemen wiederherstellen. Snapshots befinden sich auf dem Quellsystem und können nur auf demselben System wiederhergestellt werden.
-
-*Hinweis:* Sie können ein Volume aus jeder Art von Sicherungsdatei wiederherstellen, einen Ordner oder einzelne Dateien können Sie derzeit jedoch nur aus einer Sicherungsdatei im Objektspeicher wiederherstellen.
+Es ist möglich, ONTAP Daten aus einer Sicherungsdatei, die sich auf einem sekundären System (einem replizierten Volume) oder im Objektspeicher (einer Sicherungsdatei) befindet, auf die folgenden Systeme wiederherzustellen.
 
 [cols="25,25,25,25"]
 |===
 | *Aus dem Objektspeicher (Backup)* | *Vom Primär (Schnappschuss)* | *Vom sekundären System (Replikation)* | Zum Zielsystem 
 
 
-| Amazon S3 | Cloud Volumes ONTAP in AWS On-Premises- ONTAP -System | Cloud Volumes ONTAP in AWS On-Premises- ONTAP -System | Azure-Blob 
+| Amazon S3  a| 
+* Cloud Volumes ONTAP in AWS
+* On-Premises- ONTAP -System
+
+ a| 
+* Cloud Volumes ONTAP in AWS
+* On-Premises- ONTAP -System
+
+ a| 
+* On-Premises- ONTAP -System
+* Cloud Volumes ONTAP
 
 
-| Cloud Volumes ONTAP in Azure On-Premises- ONTAP -System | Cloud Volumes ONTAP in Azure On-Premises- ONTAP -System | Google Cloud-Speicher | Cloud Volumes ONTAP im lokalen ONTAP -System von Google 
 
 
-| Cloud Volumes ONTAP im lokalen ONTAP -System von Google | NetApp StorageGRID | On-Premises- ONTAP -System | On-Premises- ONTAP -System Cloud Volumes ONTAP 
+| Azure-Blob  a| 
+* Cloud Volumes ONTAP in Azure
+* On-Premises- ONTAP -System
+
+ a| 
+* Cloud Volumes ONTAP in Azure
+* On-Premises- ONTAP -System
+
+ a| 
+* On-Premises- ONTAP -System
+* Cloud Volumes ONTAP
 
 
-| Zum lokalen ONTAP -System | ONTAP S3 | On-Premises- ONTAP -System | On-Premises- ONTAP -System Cloud Volumes ONTAP 
+
+
+| Google Cloud-Speicher  a| 
+* Cloud Volumes ONTAP in Google
+* On-Premises- ONTAP -System
+
+ a| 
+* Cloud Volumes ONTAP in Google
+* On-Premises- ONTAP -System
+
+ a| 
+* On-Premises- ONTAP -System
+* Cloud Volumes ONTAP
+
+
+
+
+| NetApp StorageGRID | On-Premises- ONTAP -System  a| 
+* On-Premises- ONTAP -System
+* Cloud Volumes ONTAP
+
+| On-Premises- ONTAP -System 
+
+
+| ONTAP S3 | On-Premises- ONTAP -System  a| 
+* On-Premises- ONTAP -System
+* Cloud Volumes ONTAP
+
+| On-Premises- ONTAP -System 
+
+
+| S3-kompatible Objektspeicher | On-Premises- ONTAP -System  a| 
+* On-Premises- ONTAP -System
+* Cloud Volumes ONTAP
+
+| On-Premises- ONTAP -System 
 |===
 Für „Durchsuchen und Wiederherstellen“ kann der Konsolenagent an den folgenden Speicherorten installiert werden:
 
