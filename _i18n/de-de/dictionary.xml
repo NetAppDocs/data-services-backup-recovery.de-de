@@ -720,7 +720,6 @@
   <block id="5f0364e373bcb99c02ad1b8359683908" category="inline-link">Thema zur Lizenzierung von Cloud Volumes ONTAP</block>
   <block id="8bf40ad9f866315020ec4fdd4f65701a" category="paragraph">Siehe die<block ref="efcb71a951fd69a7db06309cdcce3842" category="inline-link-rx"></block> um mehr über diese Lizenzierungsoption zu erfahren.</block>
   <block id="bd0202b4a5e368ede75c41822527f8dd" category="inline-link">Azure Marketplace-Seite</block>
-  <block id="ba52c601f575024f72fb5f7ac8154b76" category="paragraph">Wenn Sie Azure verwenden, stehen Ihnen zwei Jahresverträge zur Verfügung von<block ref="d5a65c1c4876b0fa6968c9e08ffea7e8" category="inline-link-rx"></block> für Cloud Volumes ONTAP und lokale ONTAP Systeme:</block>
   <block id="f201c550f444b5128aeb063bf930d1e2" category="inline-link">Verknüpfen Sie das Abonnement mit Ihren Azure-Anmeldeinformationen</block>
   <block id="bb2a4ab21c5ccf409e44b59faacde869" category="paragraph">Wenn Sie diese Option nutzen möchten, richten Sie Ihr Abonnement auf der Marketplace-Seite ein und dann<block ref="ee52880e3726e54668f91a4b65aa4b29" category="inline-link-rx"></block> . Beachten Sie, dass Sie mit diesem Jahresvertragsabonnement auch für Ihre Cloud Volumes ONTAP -Systeme bezahlen müssen, da Sie Ihren Azure-Anmeldeinformationen in der Konsole nur ein aktives Abonnement zuweisen können.</block>
   <block id="78cb5753f269296b8cbe81558d864e4f" category="paragraph">Wenn Sie GCP verwenden, wenden Sie sich an Ihren NetApp Vertriebsmitarbeiter, um einen Jahresvertrag abzuschließen.  Der Vertrag ist als privates Angebot im Google Cloud Marketplace verfügbar.</block>
@@ -2433,7 +2432,6 @@
   <block id="69dbfb140f0641649e386e4fa6eb9ccc" category="paragraph">Sie müssen die Lizenzanforderungen sowohl für Azure als auch für die Konsole überprüfen:</block>
   <block id="2170d0e9ec0577e343eec3fd2bc324d7" category="list-text">Bevor Sie NetApp Backup and Recovery für Ihren Cluster aktivieren können, müssen Sie entweder ein Pay-as-you-go (PAYGO) Console Marketplace-Angebot von Azure abonnieren oder eine NetApp Backup and Recovery BYOL-Lizenz von NetApp erwerben und aktivieren.  Diese Lizenzen gelten für Ihr Konto und können systemübergreifend verwendet werden.</block>
   <block id="99502accd75b1c001f0d4173b25e6554" category="inline-link">NetApp Console Angebot vom Azure Marketplace</block>
-  <block id="a140b0fdf404992274b76a850ba3cc4b" category="list-text">Für die NetApp Backup and Recovery PAYGO-Lizenzierung benötigen Sie ein Abonnement für die<block ref="3300cb29b93693465495dcf855aee89b" category="inline-link-rx"></block> .  Die Abrechnung für NetApp Backup and Recovery erfolgt über dieses Abonnement.</block>
   <block id="38b11d9697757c33227037f48357f555" category="list-text">Für die NetApp Backup and Recovery BYOL-Lizenzierung benötigen Sie die Seriennummer von NetApp , die Ihnen die Nutzung des Dienstes für die Dauer und Kapazität der Lizenz ermöglicht. <block ref="706a4c6b2a498be3949e082e6d4f63b6" category="inline-link-macro-rx"></block>.</block>
   <block id="39476a4d8825e098719d72ca18619ed8" category="list-text">Sie benötigen ein Azure-Abonnement für den Objektspeicherplatz, in dem Ihre Sicherungen gespeichert werden.</block>
   <block id="a2dc9a4fb704e8ca875a1a77d909ba7d" category="paragraph">Sie können Sicherungen von lokalen Systemen in Azure Blob in allen Regionen erstellen, einschließlich Azure Government-Regionen.  Sie geben die Region an, in der die Sicherungen gespeichert werden, wenn Sie den Dienst einrichten.</block>
@@ -3834,7 +3832,6 @@
   <block id="8caf5a345895253ff6b6c49a438599d4" category="list-text">Stellen Sie sicher, dass die angezeigten Volumina mit denen Ihrer ursprünglichen Umgebung übereinstimmen.</block>
   <block id="432f26fda10ddec4232e210d763f233e" category="paragraph">NetApp Backup and Recovery bewertet Microsoft SQL Server-Anwendungen. Der Dienst bewertet den aktuellen Schutzstatus einschließlich der bestehenden Backup-Richtlinien, Snapshots sowie Backup- und Wiederherstellungsoptionen.</block>
   <block id="f0b87199311bf1c15f240b666518084c" category="list-text">AWS:<block ref="e5469c6686b5a2c86b78502f7ea8c335" category="inline-link-rx"></block> Die</block>
-  <block id="6d641e087ca9cbb2e0778a492ac1066a" category="list-text">Azurblau:<block ref="211ed702bd160a1aa192248c846136e5" category="inline-link-rx"></block> Die</block>
   <block id="80720981863bfe0c9cc6702701d24f18" category="list-text">Google Cloud:<block ref="5aa99f120ab43d5669622268ca1e3fd1" category="inline-link-rx"></block> Die</block>
   <block id="35521e84b87db7ff299e3d292854a426" category="paragraph">Stellen Sie Hyper-V-Workloads aus Snapshots, aus einer auf Sekundärspeicher replizierten Workload-Sicherung oder aus in Objektspeichern gespeicherten Sicherungen mithilfe von NetApp Backup and Recovery wieder her.</block>
   <block id="c71707f07223923dbaab7d7f94cf956b" category="paragraph">Stellen Sie virtuelle KVM-Maschinen aus Snapshots, aus einer auf einen Sekundärspeicher replizierten Schutzgruppensicherung oder aus in Objektspeichern gespeicherten Sicherungen mithilfe von NetApp Backup and Recovery wieder her.</block>
@@ -5809,4 +5806,7 @@
   <block id="04a5a856cc6b493eb99f477d96256257" category="sidebar">VMware Gastdateien und -ordner wiederherstellen</block>
   <block id="bd0ebd8b773f57bb68702549777a23ef" category="sidebar">Unterstützte Azure-Archivspeicherebenen mit NetApp Backup and Recovery</block>
   <block id="8ee4602516c339cfb06e6c5907f4f918" category="sidebar">Unterstützte Google Cloud Archivspeicherebenen mit NetApp Backup und Recovery</block>
+  <block id="053401f3d9ace97002dd341287d9ebb1" category="list-text">Azure:<block ref="f4515f843bc62e0cde60bea0de056fd5" category="inline-link-rx"></block>.</block>
+  <block id="a76ddbef42127fde7d9134d4314bebdd" category="paragraph">Bei der Nutzung von Azure stehen zwei Jahresverträge vom<block ref="25abf8f644a5c025c626f91c32f89a15" category="inline-link-rx"></block> für Cloud Volumes ONTAP und lokale ONTAP Systeme zur Verfügung:</block>
+  <block id="55226b5c9d4512e179f5677e92c03e76" category="list-text">Für die PAYGO-Lizenzierung von NetApp Backup und Recovery ist ein Abonnement erforderlich<block ref="404638c3cd4ff4f928bcc623b020a5df" category="inline-link-rx"></block>. Die Abrechnung für NetApp Backup und Recovery erfolgt über dieses Abonnement.</block>
 </blocks>
