@@ -4,7 +4,7 @@ permalink: br-use-kubernetes-protect-overview.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
 summary: Sie können Kubernetes-Anwendungen und Anwendungsdaten von lokalen ONTAP -Systemen auf Amazon Web Services, Microsoft Azure, Google Cloud Platform und StorageGRID schützen und so sicherstellen, dass Ihre Daten geschützt sind. 
 ---
-= Übersicht über die Verwaltung von Kubernetes-Workloads
+= Informationen zur Verwaltung von Kubernetes-Workloads mit NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -30,8 +30,8 @@ NetApp Backup and Recovery bietet die folgenden Vorteile für die Verwaltung von
 Sie können die folgenden Aufgaben im Zusammenhang mit der Verwaltung von Kubernetes-Workloads ausführen:
 
 * link:br-start-discover-kubernetes.html["Entdecken Sie Kubernetes-Workloads"].
-* link:br-use-manage-kubernetes-clusters.html["Verwalten von Kubernetes-Clustern"].
-* link:br-use-protect-kubernetes-applications.html["Kubernetes-Anwendungen hinzufügen und schützen"].
-* link:br-use-manage-kubernetes-applications.html["Verwalten von Kubernetes-Anwendungen"].
+* link:br-use-manage-kubernetes-clusters.html["Kubernetes-Cluster in NetApp Backup and Recovery verwalten"].
+* link:br-use-protect-kubernetes-applications.html["Kubernetes-Anwendungen in NetApp Backup and Recovery hinzufügen und schützen"].
+* link:br-use-manage-kubernetes-applications.html["Kubernetes-Anwendungen in NetApp Backup and Recovery verwalten"].
 * link:br-use-restore-kubernetes-applications.html["Wiederherstellen von Kubernetes-Anwendungen"].
 

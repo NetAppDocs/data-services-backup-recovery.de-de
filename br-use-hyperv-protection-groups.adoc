@@ -4,7 +4,7 @@ permalink: br-use-hyperv-protection-groups.html
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Hyper-V, vm, virtual machines, workloads, volumes, snapshots 
 summary: Erstellen und verwalten Sie Schutzgruppen für Hyper-V-Workloads in NetApp Backup and Recovery. 
 ---
-= Erstellen und verwalten Sie Schutzgruppen für Hyper-V-Workloads mit NetApp Backup and Recovery
+= Hyper-V-Schutzgruppen in NetApp Backup and Recovery erstellen und verwalten
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -40,7 +40,7 @@ In dieser Version werden für Hyper-V-Workloads die folgenden Verbesserungen ein
 * *SAN-Unterstützung (Vorschau)*: Backup and Recovery unterstützt jetzt den Schutz von Hyper-V-VMs, die auf SAN-Speichern abgelegt sind.
 
 
-Weitere Informationen zum Schutz von Hyper-V-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Übersicht zum Schützen von Hyper-V-Workloads"] .
+Weitere Informationen zum Schutz von Hyper-V-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Hyper-V Schutzworkflow mit NetApp Backup and Recovery"].
 
 
 
@@ -53,7 +53,7 @@ In dieser Version werden für KVM-Workloads die folgenden Verbesserungen eingef�
 * *Wiederherstellung an alternativem Speicherort (Vorschau)*: Sie können KVM-VMs jetzt an einem alternativen Ziel wiederherstellen. Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-restore.html["Wiederherstellen virtueller KVM-Maschinen mit NetApp Backup and Recovery"].
 
 
-Weitere Informationen zum Schutz von KVM-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Übersicht über den Schutz von KVM-Workloads"] .
+Weitere Informationen zum Schutz von KVM-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Informationen zum Schutz von KVM-Workloads mit NetApp Backup and Recovery"].
 
 
 

@@ -16,11 +16,11 @@ sidebar:
     url: "/index.html"
   - title: Versionshinweise
     entries:
-    - title: Was ist neu
+    - title: Neues in NetApp Backup and Recovery
       url: "/whats-new.html"
     - title: Bekannte Einschränkungen für ONTAP Volumes-Workloads
       url: "/br-reference-limitations.html"
-    - title: Bekannte Einschränkungen für Microsoft SQL Server-Workloads
+    - title: Bekannte Einschränkungen für SQL Server Workloads
       url: "/br-limitations.html"
     - title: Bekannte Einschränkungen für VMware-Workloads
       url: "/br-limitations-vmware.html"
@@ -34,88 +34,87 @@ sidebar:
     entries:
     - title: Erfahren Sie mehr über NetApp Backup and Recovery
       url: "/concept-backup-to-cloud.html"
-    - title: Voraussetzungen für NetApp Backup and Recovery
+    - title: NetApp Backup and Recovery-Anforderungen
       url: "/concept-start-prereq.html"
-    - title: Einrichten der Lizenzierung für NetApp Backup and Recovery
+    - title: Lizenzierung einrichten
       url: "/br-start-licensing.html"
-    - title: Sicherheitszertifikate für ONTAP und StorageGRID einrichten
+    - title: Sicherheitszertifikate einrichten
       url: "/task-setup-ca-certificates.html"
     - title: Richten Sie Sicherungsziele ein, bevor Sie NetApp Backup and Recovery
         verwenden
       url: "/br-start-setup.html"
-    - title: Ermitteln von Sicherungszielen
+    - title: Offsite-Backup-Ziele erkennen
       url: "/br-start-discover-backup-targets.html"
     - title: Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads
       url: "/br-start-switch-ui.html"
-    - title: Konfigurieren der allgemeinen Einstellungen für NetApp Backup and Recovery
+    - title: Konfigurieren der NetApp Backup and Recovery -Einstellungen
       url: "/br-start-configure.html"
-    - title: Richten Sie rollenbasierte Zugriffssteuerung in NetApp Backup and Recovery
-        ein
+    - title: Rollenbasierte Zugriffssteuerung einrichten
       url: "/br-rbac-setup.html"
   - title: Verwenden Sie NetApp Backup and Recovery
     entries:
     - title: Melden Sie sich bei NetApp Backup and Recovery an
       url: "/br-start-login.html"
-    - title: Anzeigen des Schutzstatus im Dashboard
+    - title: Anzeigen des Schutzstatus im NetApp Backup and Recovery Dashboard
       url: "/br-use-dashboard.html"
     - title: Schützen Sie ONTAP Volume-Workloads
       entries:
-      - title: Übersicht über Protect ONTAP Volume-Workloads
+      - title: Informationen zu NetApp Backup and Recovery für ONTAP Volumes
         url: "/prev-ontap-protect-overview.html"
       - title: NetApp Backup and Recovery aktivieren, um Volumes zu schützen
         url: "/br-start-enable.html"
-      - title: Leistungssteigerung der Volumensuche und -wiederherstellung für die
-          lokale NetApp Console-Bereitstellung
+      - title: Such- und Wiederherstellungsleistung in lokalen NetApp Backup and Recovery-Bereitstellungen
+          verbessern
         url: "/prev-ontap-protect-migrate-pvc.html"
-      - title: Planen Sie Ihren Schutz für ONTAP -Volumes
+      - title: Optionen zur Planung des Schutzprozesses in NetApp Backup and Recovery
         url: "/prev-ontap-protect-journey.html"
       - title: ONTAP Systeme und Volumes ohne Aktivierung erkennen
         url: "/prev-ontap-discover-no-activate.html"
-      - title: Verwalten von Richtlinien für ONTAP Volumes
+      - title: Sicherungsrichtlinien für ONTAP Volumes verwalten
         url: "/prev-ontap-policy-manage.html"
-      - title: Backup-to-Object-Richtlinienoptionen für ONTAP Volumes
+      - title: ONTAP Volumes Backup-to-Object-Richtlinienoptionen
         url: "/prev-ontap-policy-object-options.html"
-      - title: Verwalten der erweiterten Einstellungsoptionen für die Backup-to-Object-Richtlinie
+      - title: Optionen für die Sicherung in Objektspeicher verwalten
         url: "/prev-ontap-policy-object-advanced-settings.html"
-      - title: Sichern Sie Cloud Volumes ONTAP auf Amazon S3
+      - title: Sichern Sie Cloud Volumes ONTAP Daten auf Amazon S3
         url: "/prev-ontap-backup-cvo-aws.html"
-      - title: Sichern Sie Cloud Volumes ONTAP in Azure Blob
+      - title: Cloud Volumes ONTAP Daten in Azure Blob Storage sichern
         url: "/prev-ontap-backup-cvo-azure.html"
-      - title: Sichern Sie Cloud Volumes ONTAP in Google Cloud
+      - title: Cloud Volumes ONTAP Daten in Google Cloud Storage sichern
         url: "/prev-ontap-backup-cvo-gcp.html"
-      - title: Sichern Sie Ihr lokales ONTAP auf Amazon S3
+      - title: Sichern Sie lokale ONTAP -Daten auf Amazon S3
         url: "/prev-ontap-backup-onprem-aws.html"
-      - title: Sichern Sie lokales ONTAP in Azure Blob
+      - title: Lokale ONTAP Daten werden in Azure Blob Storage gesichert
         url: "/prev-ontap-backup-onprem-azure.html"
-      - title: Sichern Sie Ihr lokales ONTAP in der Google Cloud
+      - title: Lokale ONTAP Daten werden in Google Cloud Storage gesichert
         url: "/prev-ontap-backup-onprem-gcp.html"
-      - title: Sichern Sie lokales ONTAP auf ONTAP S3
+      - title: Sichern Sie lokale ONTAP -Daten auf ONTAP S3
         url: "/prev-ontap-backup-onprem-ontaps3.html"
-      - title: On-Premises ONTAP auf S3-kompatiblen Speicher sichern
+      - title: Lokale ONTAP Daten werden auf S3-kompatiblem Speicher gesichert
         url: "/prev-ontap-backup-onprem-s3-compatible.html"
-      - title: Sichern Sie Ihr lokales ONTAP auf StorageGRID
+      - title: Sichern Sie lokale ONTAP Daten auf StorageGRID
         url: "/prev-ontap-backup-onprem-storagegrid.html"
-      - title: Migrieren Sie Volumes mit SnapMirror zu Cloud Resync
+      - title: ONTAP Volumes mit SnapMirror zu Cloud Resync migrieren
         url: "/prev-ontap-migrate-resync.html"
-      - title: Verwalten von ONTAP -Backups
+      - title: Backups für Ihre ONTAP Systeme verwalten
         url: "/prev-ontap-backup-manage.html"
       - title: Wiederherstellung aus ONTAP -Backups
         entries:
-        - title: Übersicht wiederherstellen
+        - title: ONTAP Datenwiederherstellungsoptionen
           url: "/prev-ontap-restore.html"
-        - title: Wiederherstellung aus ONTAP -Backups mithilfe von Suchen & Wiederherstellen
+        - title: ONTAP Daten mithilfe von Suchen und Wiederherstellen wiederherstellen
           url: "/prev-ontap-restore-search.html"
-        - title: Wiederherstellung aus ONTAP -Backups mithilfe von Durchsuchen & Wiederherstellen
+        - title: ONTAP Daten mit Durchsuchen und Wiederherstellen wiederherstellen
           url: "/prev-ontap-restore-browse.html"
     - title: Schützen Sie Microsoft SQL Server-Workloads
       entries:
-      - title: Übersicht zum Schützen von Microsoft SQL Server-Workloads
+      - title: Microsoft SQL Server Schutzworkflow in NetApp Backup and Recovery
         url: "/br-use-mssql-protect-overview.html"
-      - title: Konfigurieren Sie zusätzliche Elemente beim Importieren aus SnapCenter
+      - title: Voraussetzungen für den SnapCenter-Import für NetApp Backup and Recovery
         url: "/concept-start-prereq-snapcenter-import.html"
       - title: Entdecken Sie Microsoft SQL Server-Workloads
         url: "/br-start-discover.html"
-      - title: Erstellen und Verwalten von Microsoft SQL Server-Workload-Sicherungsrichtlinien
+      - title: Erstellen und Verwalten von Microsoft SQL Server Sicherungsrichtlinien
         url: "/br-use-policies-mssql-create.html"
       - title: Sichern Sie Microsoft SQL Server-Workloads
         url: "/br-use-mssql-backup.html"
@@ -131,13 +130,13 @@ sidebar:
         url: "/br-use-reports.html"
     - title: Schutz von VMware-Workloads
       entries:
-      - title: Übersicht zum Schützen von VMware-Workloads
+      - title: VMware Schutzworkflow
         url: "/br-use-vmware-protect-overview.html"
       - title: Entdecken Sie VMware-Workloads
         url: "/br-use-vmware-discovery.html"
-      - title: Erstellen und Verwalten von Schutzgruppen für VMware-Workloads
+      - title: VMware Schutzgruppen verwalten
         url: "/br-use-vmware-protection-groups.html"
-      - title: VMware-Workload-Backup-Richtlinien erstellen und verwalten
+      - title: VMware Sicherungsrichtlinien verwalten
         url: "/br-use-policies-vmware-create.html"
       - title: Sichern Sie VMware-Workloads
         url: "/br-use-vmware-backup.html"
@@ -145,15 +144,15 @@ sidebar:
         url: "/br-use-vmware-clone.html"
       - title: Wiederherstellen von VMware-Workloads
         entries:
-        - title: Wiederherstellen von VMware-VMs
+        - title: Wiederherstellen von VMware-Workloads
           url: "/br-use-vmware-restore.html"
-        - title: VMware virtuelle Festplatten wiederherstellen
+        - title: Wiederherstellung von VMware-Festplatten aus Backups
           url: "/br-use-vmware-restore-vmdks-from-backups.html"
         - title: VMware-Dateien und -Ordner wiederherstellen
           entries:
-          - title: Arbeitsablauf, Voraussetzungen und Einschränkungen
+          - title: Anforderungen für die Wiederherstellung von VMware Gastdateien
             url: "/br-use-vmware-restore-guest-files-and-folders-overview.html"
-          - title: VMware-Dateien und -Ordner aus VMDKs wiederherstellen
+          - title: VMware Gastdateien und -ordner wiederherstellen
             url: "/br-use-vmware-restore-guest-files-and-folders-from-vmdks.html"
           - title: Fehlerbehebung bei der Wiederherstellung von Dateien und Ordnern
             url: "/br-use-vmware-guest-file-restore-scenarios-you-might-encounter.html"
@@ -253,24 +252,26 @@ sidebar:
       url: "/reference-restart-backup.html"
     - title: Vorschau und versteckte Funktionen aktivieren
       url: "/enable-preview-features.html"
-  - title: Automatisieren mit der REST-API
+  - title: Automatisieren Sie mit NetApp Backup and Recovery REST APIs
     url: "/br-api-backup-restore.html"
   - title: Referenz
     entries:
-    - title: Geprüfte Sicherungs- und Wiederherstellungsaktionen
+    - title: Geprüfte NetApp Backup and Recovery-Aktionen
       url: "/reference-audit-actions.html"
-    - title: Richtlinien in SnapCenter im Vergleich zu NetApp Backup and Recovery
+    - title: Richtlinien in SnapCenter im Vergleich zu denen in NetApp Backup and
+        Recovery
       url: "/reference-policy-differences-snapcenter.html"
-    - title: Rollen und Berechtigungen für NetApp Backup and Recovery
+    - title: NetApp Backup and Recovery IAM-Rollen
       url: "/reference-roles.html"
-    - title: Wiederherstellen von NetApp Backup and Recovery -Daten an einem Dark
-        Site
+    - title: Wiederherstellen der NetApp Backup and Recovery -Konfigurationsdaten
+        in einer Dark Site
       url: "/reference-backup-cbs-db-in-dark-site.html"
-    - title: Unterstützte AWS-Archivspeicherebenen
+    - title: Unterstützte AWS-Archivspeicherebenen mit NetApp Backup and Recovery
       url: "/prev-reference-aws-archive-storage-tiers.html"
-    - title: Unterstützte Azure-Archivspeicherebenen
+    - title: Unterstützte Azure-Archivspeicherebenen mit NetApp Backup and Recovery
       url: "/prev-reference-azure-archive-storage-tiers.html"
-    - title: Unterstützte Google Cloud-Archivspeicherebenen
+    - title: Unterstützte Google Cloud Archivspeicherebenen mit NetApp Backup und
+        Recovery
       url: "/prev-reference-gcp-archive-storage-tiers.html"
   - title: Rechtliche Hinweise
     url: "/legal-notices.html"

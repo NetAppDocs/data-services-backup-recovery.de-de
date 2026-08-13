@@ -4,7 +4,7 @@ permalink: prev-ontap-protect-migrate-pvc.html
 keywords: migrate, pvc, nfs, storage, performance, persistence 
 summary: Steigerung der Katalogindexleistung in NetApp Console lokalen Bereitstellungsumgebungen. 
 ---
-= Steigerung der Leistung der Volume Search & Restore bei Verwendung der lokalen NetApp Console-Bereitstellung
+= Such- und Wiederherstellungsleistung in lokalen NetApp Backup and Recovery-Bereitstellungen verbessern
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

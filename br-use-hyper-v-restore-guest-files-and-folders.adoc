@@ -4,7 +4,7 @@ permalink: br-use-hyper-v-restore-guest-files-and-folders.html
 keywords: restore, guest, files, folders, files and folders, Windows, VM, virtual machine, browse, mount, virtual disk, session, snapshot, backup 
 summary: Sie können eine oder mehrere Dateien oder Ordner aus einem Hyper-V-VM-Snapshot in eine Windows-Gast-VM wiederherstellen. 
 ---
-= Dateien und Ordner aus Hyper-V-VM-Backups wiederherstellen
+= Dateien und Ordner aus Hyper-V-VM-Backups mit NetApp Backup and Recovery wiederherstellen
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -19,7 +19,7 @@ Sichern Sie KVM-Schutzgruppen von lokalen ONTAP -Systemen auf Amazon Web Service
 
 NOTE: Um Schutzgruppen nach einem Zeitplan zu sichern, erstellen Sie Richtlinien, die die Sicherungs- und Wiederherstellungsvorgänge steuern.  Sehenlink:br-use-policies-create.html["Erstellen von Richtlinien"] Anweisungen hierzu finden Sie unter.
 
-* Erstellen Sie Schutzgruppen, um die Sicherungs- und Wiederherstellungsvorgänge für eine Reihe von Ressourcen zu verwalten. Sehenlink:br-use-kvm-protection-groups.html["Erstellen und verwalten Sie Schutzgruppen für KVM-Workloads mit NetApp Backup and Recovery"] für weitere Informationen.
+* Erstellen Sie Schutzgruppen, um die Backup- und Recovery-Vorgänge für eine Gruppe von Ressourcen zu verwalten. Siehe link:br-use-kvm-protection-groups.html["KVM-Schutzgruppen in NetApp Backup and Recovery verwalten"] für weitere Informationen.
 
 
 

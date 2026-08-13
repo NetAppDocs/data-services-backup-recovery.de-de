@@ -4,7 +4,7 @@ permalink: br-use-reports.html
 keywords: backing up, back up, backup, backup on-prem ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
 summary: Erstellen Sie in NetApp Backup and Recovery Berichte, um den Status Ihrer Sicherungen anzuzeigen, einschließlich der Anzahl der Sicherungen, der Anzahl der erfolgreichen Sicherungen und der Anzahl der fehlgeschlagenen Sicherungen.  Sie können auch die Details jeder Sicherung anzeigen, einschließlich des Sicherungstyps, des für die Sicherung verwendeten Speichersystems und der Sicherungszeit. 
 ---
-= Erstellen Sie Schutzberichte für Microsoft SQL Server-Workloads in NetApp Backup and Recovery
+= Erstellen von Microsoft SQL Server-Schutzberichten in NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :icons: font

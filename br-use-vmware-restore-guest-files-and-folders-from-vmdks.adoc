@@ -4,7 +4,7 @@ permalink: br-use-vmware-restore-guest-files-and-folders-from-vmdks.html
 keywords: restore, guest, files, folders, files and folders, guest VM, windows, linux, VMDK, attach 
 summary: Sie können eine oder mehrere Dateien oder Ordner aus einer VMDK in eine Gast-VM wiederherstellen. 
 ---
-= Dateien und Ordner von virtuellen Festplatten wiederherstellen
+= Wiederherstellung von VMware-Gastdateien und -ordnern in NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -24,7 +24,7 @@ Einzelne Dateien oder Ordner einer virtuellen Festplatte lassen sich auf der urs
 Stellen Sie Dateien oder Ordner von einer virtuellen Festplatte auf der ursprünglichen VM oder auf einer anderen VM wieder her. Wenn Sie die virtuelle Festplatte nicht an die ursprüngliche VM anbinden möchten, können Sie sie stattdessen an eine Proxy-VM anbinden.
 
 .Bevor Sie beginnen
-* Überprüfen Sie die Voraussetzungen und Einschränkungen in link:br-use-vmware-restore-guest-files-and-folders-overview.html["Anforderungen und Einschränkungen beim Wiederherstellen von Gastdateien und -ordnern"].
+* Überprüfen Sie die Voraussetzungen und Einschränkungen in link:br-use-vmware-restore-guest-files-and-folders-overview.html["Anforderungen an die Wiederherstellung von VMware-Gastdateien in NetApp Backup and Recovery"].
 * Um Dateien und Ordner mithilfe einer Proxy-VM wiederherzustellen, stellen Sie sicher, dass die Proxy-VM bereits konfiguriert ist, bevor Sie mit dem Wiederherstellungsprozess für Dateien und Ordner beginnen.
 * Sie müssen Anmeldeinformationen für die virtuelle Quellfestplatte und die Ziel-VM in NetApp Backup and Recovery erstellen, bevor Sie Dateien und Ordner wiederherstellen können. NetApp Backup and Recovery verwendet diese Anmeldeinformationen, um sich bei der virtuellen Festplatte und der Ziel-VM zu authentifizieren, wenn Dateien und Ordner wiederhergestellt werden.
 

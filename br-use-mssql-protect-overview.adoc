@@ -4,7 +4,7 @@ permalink: br-use-mssql-protect-overview.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
 summary: Schützen Sie Ihre Microsoft SQL Server-Anwendungsdaten von lokalen ONTAP -Systemen auf Amazon Web Services, Microsoft Azure oder StorageGRID mit NetApp Backup and Recovery. 
 ---
-= Schützen Sie Microsoft SQL-Workloads mit NetApp Backup and Recovery – Übersicht
+= Microsoft SQL Server Schutzworkflow in NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

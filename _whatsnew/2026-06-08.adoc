@@ -24,7 +24,7 @@ In dieser Version werden für Hyper-V-Workloads die folgenden Verbesserungen ein
 * *Schutzgruppen verwenden jetzt die Zeitzone des Hyper-V-Hosts*: Schutzgruppen verwenden nun die Zeitzone des Hyper-V-Hosts. Schutzgruppen, die vor der Einführung der Host-Zeitzonenplanung erstellt wurden, verwenden weiterhin ihre zuvor konfigurierte Zeit (typischerweise UTC). Damit diese Schutzgruppen die Zeitzone des Hyper-V-Hosts verwenden, ist es erforderlich, die Zeitpläne neu zu erstellen. Weitere Informationen sind unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protection-groups.html["Erstellen und Verwalten von Schutzgruppen für Hyper-V-Workloads"] verfügbar.
 
 
-Weitere Informationen zum Schutz von Hyper-V-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Übersicht zum Schützen von Hyper-V-Workloads"] .
+Weitere Informationen zum Schutz von Hyper-V-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Hyper-V Schutzworkflow mit NetApp Backup and Recovery"].
 
 
 

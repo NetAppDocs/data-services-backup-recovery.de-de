@@ -33,7 +33,7 @@ Diese Version von NetApp Backup and Recovery bietet Unterstützung für die Erke
 * Suchen und Wiederherstellen von VM-Backups
 
 
-Weitere Informationen zum Schutz von Hyper-V-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Übersicht zum Schützen von Hyper-V-Workloads"] .
+Weitere Informationen zum Schutz von Hyper-V-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Hyper-V Schutzworkflow mit NetApp Backup and Recovery"].
 
 
 
@@ -50,7 +50,7 @@ Diese Version von NetApp Backup and Recovery bietet Unterstützung für die Erke
 * Geführter Prozess zum Sichern und Wiederherstellen von KVM-basierten VMs und VM-Daten
 
 
-Weitere Informationen zum Schutz von KVM-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Übersicht über den Schutz von KVM-Workloads"] .
+Weitere Informationen zum Schutz von KVM-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Informationen zum Schutz von KVM-Workloads mit NetApp Backup and Recovery"].
 
 
 
@@ -111,7 +111,7 @@ Diese Version von NetApp Backup and Recovery bietet Unterstützung für die Erke
 * Oracle-Dashboard-Unterstützung
 
 
-Weitere Informationen zum Schutz von Oracle Database-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Übersicht über den Schutz von Oracle Database-Workloads"].
+Weitere Informationen zum Schutz von Oracle Database-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Informationen zum Schutz von Oracle Database Workloads mit NetApp Backup and Recovery"].
 
 
 

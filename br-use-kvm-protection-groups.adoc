@@ -4,7 +4,7 @@ permalink: br-use-kvm-protection-groups.html
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, KVM, vm, virtual machines, workloads, volumes, snapshots 
 summary: Erstellen und verwalten Sie Schutzgruppen für KVM-Workloads in NetApp Backup and Recovery. 
 ---
-= Erstellen und verwalten Sie Schutzgruppen für KVM-Workloads mit NetApp Backup and Recovery
+= KVM-Schutzgruppen in NetApp Backup and Recovery verwalten
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -49,7 +49,7 @@ Das jeweilige Symbol leuchtet auf, wenn der entsprechende Sicherungstyp aktivier
 
 Wenn Sie bei der ersten Aktivierung von NetApp Backup and Recovery die Sicherung nur auf einigen Volumes in einem System aktiviert haben, können Sie später Sicherungen auf weiteren Volumes aktivieren.
 
-Weitere Anweisungen sind unter link:br-start-enable.html["NetApp Backup and Recovery aktivieren, um Volumes zu schützen"^] zu finden.
+Anweisungen finden sich unter link:br-start-enable.html["NetApp Backup and Recovery aktivieren, um Volumes zu schützen"^].
 
 
 

@@ -4,7 +4,7 @@ permalink: br-use-back-up-now-kubernetes-applications-web-ui.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, snapcenter 
 summary: Mit NetApp Backup and Recovery können Sie Ihre Workload-Host-Informationen, Datenbankinformationen und Instanzinformationen verwalten.  Sie können Schutzeinstellungen für Ihr Inventar anzeigen, bearbeiten und löschen. 
 ---
-= Sichern Sie jetzt Kubernetes-Anwendungen mit der Backup and Recovery-Weboberfläche.
+= Kubernetes-Anwendungen können jetzt über die NetApp Backup and Recovery Web-Oberfläche gesichert werden
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

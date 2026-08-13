@@ -4,7 +4,7 @@ permalink: br-use-vmware-guest-file-restore-scenarios-you-might-encounter.html
 keywords:  
 summary: Beim Versuch, eine Gastdatei wiederherzustellen, können Szenarien auftreten, in denen die Sitzung zur Wiederherstellung der Gastdatei leer ist, der Vorgang zum Anhängen der Festplatte bei der Wiederherstellung der Gastdatei fehlschlägt oder Sicherungen nicht getrennt werden, nachdem die Sitzung zur Wiederherstellung der Gastdatei abgebrochen wurde. 
 ---
-= Fehlerbehebung bei der Wiederherstellung von Gastdateien
+= Fehlerbehebung bei der Wiederherstellung von Gastdateien in NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

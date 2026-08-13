@@ -4,7 +4,7 @@ permalink: prev-ontap-restore-search.html
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
 summary: Mit der Such- und Wiederherstellungsfunktion können Sie Volumes, Ordner oder Dateien aus ONTAP Backup-Dateien wiederherstellen. 
 ---
-= Wiederherstellung aus ONTAP-Backups mithilfe der Such- und Wiederherstellungsfunktion
+= ONTAP Daten mit der Such- und Wiederherstellungsfunktion in NetApp Backup and Recovery wiederherstellen
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

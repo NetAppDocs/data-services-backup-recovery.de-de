@@ -14,7 +14,7 @@ In dieser Version werden für Hyper-V-Workloads die folgenden Verbesserungen ein
 * *Dateien und Ordner in einer Gast-VM*: Sie können jetzt Dateien und Ordner aus einem Snapshot auf dem primären Speicher in einer Gast-Windows-VM wiederherstellen. Diese Funktion wird nur für CIFS-VMs unterstützt.
 
 
-Weitere Informationen zum Schutz von Hyper-V-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Übersicht zum Schützen von Hyper-V-Workloads"] .
+Weitere Informationen zum Schutz von Hyper-V-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Hyper-V Schutzworkflow mit NetApp Backup and Recovery"].
 
 
 
@@ -25,7 +25,7 @@ In dieser Version wird für KVM-Workloads die folgende Verbesserung eingeführt:
 
 *Wiederherstellung an alternativem Speicherort*: Sie können KVM-VMs jetzt an einem alternativen Zielort wiederherstellen (diese Funktion ist jetzt allgemein verfügbar).
 
-Weitere Informationen zum Schutz von KVM-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Übersicht über den Schutz von KVM-Workloads"] .
+Weitere Informationen zum Schutz von KVM-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Informationen zum Schutz von KVM-Workloads mit NetApp Backup and Recovery"].
 
 
 
@@ -38,7 +38,7 @@ In dieser Version werden die folgenden Verbesserungen für Oracle Database workl
 * *Unterstützung für die Backup-Verifizierung*: Sie können jetzt Backup-Richtlinien konfigurieren, um die Integrität Ihrer Oracle Datenbank-Backups automatisch zu überprüfen.
 
 
-Weitere Informationen zum Schutz von Oracle Database-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Übersicht über den Schutz von Oracle Database-Workloads"].
+Weitere Informationen zum Schutz von Oracle Database-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Informationen zum Schutz von Oracle Database Workloads mit NetApp Backup and Recovery"].
 
 
 

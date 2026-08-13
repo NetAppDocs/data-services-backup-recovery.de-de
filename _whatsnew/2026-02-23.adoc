@@ -9,7 +9,7 @@
 
 Die Unterstützung für KVM-Workloads ist jetzt allgemein verfügbar (GA) in NetApp Backup and Recovery.
 
-Weitere Informationen zum Schutz von KVM-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Übersicht über den Schutz von KVM-Workloads"] .
+Weitere Informationen zum Schutz von KVM-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Informationen zum Schutz von KVM-Workloads mit NetApp Backup and Recovery"].
 
 
 

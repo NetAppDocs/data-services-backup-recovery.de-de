@@ -4,7 +4,7 @@ permalink: br-use-vmware-restore-vmdks-from-backups.html
 keywords:  
 summary: Sie können vorhandene VMDKs oder gelöschte oder getrennte VMDKs entweder aus einem primären oder sekundären Backup herkömmlicher VMs oder vVol-VMs wiederherstellen. 
 ---
-= Bestimmte virtuelle Festplatten aus Backups wiederherstellen
+= Wiederherstellung von VMware-virtuellen Festplatten aus Backups in NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
