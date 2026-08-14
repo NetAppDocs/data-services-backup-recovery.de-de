@@ -57,7 +57,7 @@ Es ist möglich, ONTAP Daten aus einer Sicherungsdatei, die sich auf einem sekun
 
  a| 
 * On-Premises- ONTAP -System
-* Cloud Volumes ONTAP
+* Cloud Volumes ONTAP in AWS
 
 
 
@@ -72,7 +72,7 @@ Es ist möglich, ONTAP Daten aus einer Sicherungsdatei, die sich auf einem sekun
 
  a| 
 * On-Premises- ONTAP -System
-* Cloud Volumes ONTAP
+* Cloud Volumes ONTAP in Azure
 
 
 
@@ -87,7 +87,7 @@ Es ist möglich, ONTAP Daten aus einer Sicherungsdatei, die sich auf einem sekun
 
  a| 
 * On-Premises- ONTAP -System
-* Cloud Volumes ONTAP
+* Cloud Volumes ONTAP in Google
 
 
 
