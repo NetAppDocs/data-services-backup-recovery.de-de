@@ -114,6 +114,27 @@ NOTE: Die angezeigten Felder unterscheiden sich je nach ausgewähltem Anbieter u
 ** *Stufen Sie Ihre Backups vom Objektspeicher in den Archivspeicher auf*: Wenn Sie Backups in den Archivspeicher (z. B. AWS Glacier) aufstufen möchten, wählen Sie die Stufenoption und die Anzahl der Tage für die Archivierung aus.
 
 
+. Optional lassen sich erweiterte Einstellungen in der Richtlinie konfigurieren.
++
+[%collapsible]
+====
+** *Wiederholungsversuche für die Datensicherung*: Um den Auftrag im Falle eines Fehlers oder einer Unterbrechung eine bestimmte Anzahl von Malen zu wiederholen, den Abschnitt *Wiederholungsversuche für die Datensicherung* erweitern und die maximale Anzahl der Wiederholungsversuche für Snapshot- und Datensicherungsaufträge sowie das Wiederholungszeitintervall eingeben.
+
+
+
+TIP: Wenn die Snapshot-Frequenz auf 1 Stunde eingestellt ist, sollte die maximale Verzögerung zusammen mit der Anzahl der Wiederholungsversuche 45 Minuten nicht überschreiten.
+
+** *Teilerfolg*: Diese Option ermöglicht es, dass ein Sicherungsvorgang erfolgreich abgeschlossen wird, auch wenn Backup und Recovery nicht alle Ressourcen sichern kann.
+** *VM-Konfiguration*: Den benötigten Typ der Backup-Konsistenz auswählen:
++
+*** *Absturzkonsistente Sicherung*: Diese Option überspringt das Einfrieren der VM vor dem Erstellen eines Snapshots oder einer Sicherung. Der Snapshot bzw. die Sicherung ist absturzkonsistent, das heißt, der Systemspeicher zum Zeitpunkt des Snapshots bzw. der Sicherung wird nicht erfasst.
+*** *VM-konsistente Sicherung*: Diese Option friert VMs vor dem Erstellen eines Snapshots oder einer Sicherung ein. Dabei wird der vollständige VM-Zustand (einschließlich Arbeitsspeicher) erfasst, um einen VM-konsistenten Schutz bereitzustellen. Optional kann unter *Maximale Anzahl gleichzeitiger VMs* angegeben werden, wie viele VMs Backup and Recovery gleichzeitig einfrieren und sichern kann. Ist die Option *Alle VMs einfrieren* aktiviert, friert Backup and Recovery alle VMs gleichzeitig ein, startet die Sicherungen und taut alle VMs nach Abschluss aller Sicherungsvorgänge wieder auf.
+
+
+
+
+====
+. Wenn Sie fertig sind, wählen Sie *Fertig*.
 
 
 
@@ -137,6 +158,12 @@ Superadministrator für Backup und Recovery. Wenn Daten geschützt werden, die a
 . Wählen Sie die Option *Richtlinien*.
 . Wählen Sie die Richtlinie aus, die Sie bearbeiten möchten.
 . Wählen Sie die *Aktionen*image:icon-action.png["Symbol „Aktionen“"] Symbol und wählen Sie *Bearbeiten*.
+. Nach Abschluss der Bearbeitung *Fertig* auswählen.
+. Im Bestätigungsdialog wird zur Bestätigung der Änderungen der Name der Richtlinie eingegeben.
++
+Das Speichern der Änderungen wirkt sich auf alle Anwendungen aus, die durch diese Richtlinie geschützt sind.
+
+. *Fertig* auswählen bestätigt die Auswahl.
 
 
 

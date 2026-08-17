@@ -68,3 +68,44 @@ Für Kubernetes-Cluster mit Trident Protect 26.05 oder höher können Sie Triden
 
 
 
+
+
+
+[[reconnect-a-kubernetes-cluster-to-a-console-agent]]
+== Einen Kubernetes-Cluster wieder mit einem Console-Agenten verbinden
+
+Wenn sich die IP-Adresse Ihres Console-Agenten ändert (z. B. nach einem Neustart), verliert Ihr Kubernetes-Cluster die Verbindung zum Agenten und eine erneute Verbindung ist erforderlich.
+
+.Schritte
+. Wählen Sie in NetApp Backup and Recovery*Inventar* > *Cluster*.
+. Einen nicht verbundenen Kubernetes-Cluster auswählen und das Aktionssymbol image:../media/icon-action.png["Aktionsoption"] > *Cluster bearbeiten* > *Cluster wieder verbinden* auswählen.
+. Im Dialogfeld „Cluster neu verbinden“ die Befehlszeilenanweisungen kopieren und auf Ihrem Cluster ausführen.
++
+Nach Abschluss des Befehls sollte Ihr Cluster automatisch wieder verbunden werden.
+
+. *Schließen* auswählen.
+
+
+
+
+[[migrate-a-kubernetes-cluster-to-a-new-console-agent]]
+== Migration eines Kubernetes-Clusters zu einem neuen Console Agent
+
+Falls Ihr Konsolenagent gelöscht wird oder nicht mehr verfügbar ist, sollten alle Cluster, die ihn verwenden, auf einen neuen Agenten migriert werden, um eine Unterbrechung des Anwendungsschutzes zu vermeiden.
+
+.Bevor Sie beginnen
+* https://docs.netapp.com/us-en/console-setup-admin/concept-agent-install-options.html["Einen neuen Konsolenagenten bereitstellen."^]
+* Eine Datensicherungsstrategie für die Verwendung mit dem neuen Konsolenagenten auswählen, link:br-use-policies-kubernetes-create.html#edit-a-policy["Richtlinie bearbeiten"^] und die Datensicherungsstrategie dem neuen Konsolenagenten zuordnen.
+
+
+.Schritte
+. Wählen Sie in NetApp Backup and Recovery*Inventar* > *Cluster*.
+. Einen nicht verbundenen Kubernetes Cluster auswählen und das Aktionssymbol image:../media/icon-action.png["Aktionsoption"] > *Cluster ändern* > *Agent verwalten* auswählen.
+. Aus der Liste einen neuen Console Agenten auswählen.
+. Die Agenteninformationen geben Aufschluss darüber, ob der neue Konsolenagent auf die Systeme, Sicherungsziele und sekundären Ziele zugreifen kann, die von den geschützten Anwendungen in diesem Cluster verwendet werden.
+. Die Befehlszeilenanweisungen für jeden Abschnitt können kopiert und auf dem Cluster ausgeführt werden.
++
+Dadurch werden Kubernetes-Secrets neu erstellt, Trident Protect auf den neuen Console Agent umgeleitet und die Einstellungen neu geladen. Nach Ausführung der Befehle verwendet der Cluster den neuen Console Agent.
+
+. *Schließen* auswählen.
+
