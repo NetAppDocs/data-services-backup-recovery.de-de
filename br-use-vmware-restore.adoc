@@ -142,7 +142,7 @@ Bei der Wiederherstellung an einem alternativen Speicherort können Sie das Ziel
 
 ** *Zielspeicher*-Abschnitt (nur sichtbar beim Wiederherstellen aus Objektspeicher):
 +
-*** *Standardspeicherort ändern*: Aktivieren Sie diese Option, um eine Objektspeichersicherung auf einer anderen Speicher-VM wiederherzustellen, falls der Quellspeicherort nicht erreichbar oder voll ist. Wählen Sie einen anderen Cluster, eine andere Speicher-VM oder ein anderes Aggregat aus.
+*** *Standardspeicherort ändern*: Diese Option ermöglicht die Wiederherstellung einer Objektspeichersicherung an einem anderen Ort, falls der Quellspeicherort nicht erreichbar oder voll ist. Ein anderer Cluster, eine andere Storage-VM oder ein anderes Aggregat kann ausgewählt werden.
 
 
 ** Abschnitt *Optionen vor der Wiederherstellung*:

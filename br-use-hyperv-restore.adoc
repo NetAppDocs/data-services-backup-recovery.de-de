@@ -21,7 +21,7 @@ Sie können Workloads von verschiedenen Startorten wiederherstellen:
 
 * Wiederherstellung von einem primären Standort (lokaler Snapshot)
 * Wiederherstellen von einer replizierten Ressource auf einem sekundären Speicher
-* Wiederherstellung aus einem Objektspeicher-Backup (nur am ursprünglichen Speicherort)
+* Wiederherstellung aus einer Objektspeichersicherung
 
 
 .Stellen Sie diese Punkte wieder her
@@ -101,6 +101,11 @@ Es wird eine Liste möglicher Wiederherstellungspunkte angezeigt.
 *** *Netzwerk*: Wählen Sie das Zielnetzwerk aus, in dem Sie den Snapshot wiederherstellen möchten.
 *** *Name der virtuellen Maschine*: Geben Sie den Namen der VM ein, die Sie wiederherstellen möchten.
 *** *Zielort*: Geben Sie den Zielordner oder die CIFS-Freigabe ein, die die wiederhergestellten Daten enthalten soll.
+
+
+.. Im Abschnitt *Zielspeicher* (nur sichtbar beim Wiederherstellen aus Objektspeicher):
++
+*** *Standardspeicherort ändern*: Diese Option ermöglicht die Wiederherstellung einer Objektspeichersicherung an einem anderen Ort, falls der Quellspeicherort nicht erreichbar oder voll ist. Ein anderer Cluster, eine andere Storage-VM oder ein anderes Aggregat kann ausgewählt werden.
 
 
 .. Im Abschnitt *Vorbereitende Wiederherstellungsoptionen* sollten Sie folgende Optionen in Betracht ziehen:

@@ -1,0 +1,44 @@
+= Hyper-V-Workload-Verbesserungen
+:allow-uri-read: 
+
+
+
+
+[[hyper-v-workloads-enhancements]]
+=== Hyper-V-Workload-Verbesserungen
+
+In dieser Version wird für Hyper-V Workloads die folgende Verbesserung eingeführt:
+
+*Objektspeichersicherung an alternativem Speicherort wiederherstellen*: Es ist jetzt möglich, Hyper-V-VMs, Dateien und Ordner aus dem Objektspeicher an einem alternativen Speicherort wiederherzustellen.
+
+Weitere Informationen zum Schutz von Hyper-V-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Informationen zum Schutz von Hyper-V Workloads mit NetApp Backup and Recovery"].
+
+
+
+[[kubernetes-workloads-enhancements]]
+=== Kubernetes-Workloads-Erweiterungen
+
+In dieser Version werden für Kubernetes-Workloads die folgenden Verbesserungen eingeführt:
+
+* *Trident Protect 26.08*: Diese Version enthält Trident Protect 26.08.
+* *Backup-Wiederholungsversuche*: Backup-Wiederholungsversuche können jetzt aktiviert und die Anzahl der Wiederholungsversuche sowie die Intervalle zwischen den Wiederholungsversuchen als erweiterte Einstellungen in Kubernetes-Schutzrichtlinien konfiguriert werden.
+* *Teilweise erfolgreiche Sicherung*: Es besteht jetzt die Möglichkeit, in den Kubernetes-Schutzrichtlinien erweiterte Einstellungen zu konfigurieren, damit die Sicherung auch bei Ausfall einzelner Ressourcen fortgesetzt wird und Sicherungsaufträge als teilweise erfolgreich abgeschlossen werden können. Dadurch ist die Wiederherstellung gesicherter Ressourcen möglich, selbst wenn während des Sicherungsvorgangs einige Ressourcen ausfallen.
+* *Absturzkonsistente und VM-konsistente Backups*: Der Backup and Recovery Dienst für NetApp Console unterstützt jetzt die Konfiguration von Schutzrichtlinien, die absturzkonsistente oder VM-konsistente Backups oder Snapshots erstellen. Es besteht zudem die Möglichkeit, anzupassen, wie VM-Einfrierungen während des Schutzvorgangs durchgeführt werden.
+* *Wiederverbindung des Kubernetes-Clusters bei Änderung der Console-Agent-IP-Adresse*: Der Backup- und Wiederherstellungsdienst für NetApp Console ermöglicht jetzt die erneute Verbindung eines Clusters mit seinem Console-Agenten, wenn sich die IP-Adresse des Agenten ändert.
+* *Cluster auf neuen Console Agent migrieren*: Der Backup and Recovery Dienst für NetApp Console ermöglicht jetzt die Migration eines Clusters auf einen neuen Console Agent, falls der ursprüngliche Agent ausfällt oder gelöscht wird, wodurch ein unterbrechungsfreier Anwendungsschutz sichergestellt wird.
+
+
+Weitere Informationen zum Schutz von Kubernetes-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Informationen zum Schutz von Kubernetes Workloads mit NetApp Backup and Recovery"].
+
+
+
+[[oracle-database-workloads-enhancement]]
+=== Erweiterung der Oracle Database Workloads
+
+In dieser Version werden die folgenden Verbesserungen für Oracle Database workloads eingeführt:
+
+* *Wiederherstellung von Pluggable Databases (PDBs)*: Es ist jetzt möglich, einzelne Pluggable Databases (PDBs) und PDB-Tablespaces wiederherzustellen, einschließlich zeitpunktgenauer Wiederherstellung.
+* *Pluggable Database (PDB) Klonen*: Es ist jetzt möglich, eine einzelne PDB in eine bestehende Ziel-Containerdatenbank (CDB) zu klonen und optional PDBs auszuschließen, wenn eine komplette Containerdatenbank geklont wird.
+
+
+Weitere Informationen zum Schutz von Oracle Database-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Informationen zum Schutz von Oracle Database Workloads mit NetApp Backup and Recovery"].
