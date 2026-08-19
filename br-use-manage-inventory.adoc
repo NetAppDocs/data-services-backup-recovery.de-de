@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: br-use-manage-inventory.html 
-keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, snapcenter 
-summary: NetApp Backup and Recovery unterstützt Sie bei der Verwaltung Ihrer Microsoft SQL Server-Hosts, -Datenbanken und -Instanzen. 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, on-premises, applications, virtual machines, backup and recovery, snapcenter 
+summary: Die Microsoft SQL Server Hosts, Instanzen und Datenbanken werden in NetApp Backup and Recovery verwaltet. 
 ---
 = Verwalten Sie den Microsoft SQL Server-Bestand mit NetApp Backup and Recovery
 :hardbreaks:
@@ -14,9 +14,9 @@ summary: NetApp Backup and Recovery unterstützt Sie bei der Verwaltung Ihrer Mi
 
 
 [role="lead"]
-NetApp Backup and Recovery unterstützt Sie bei der Verwaltung Ihrer Microsoft SQL Server-Hosts, -Datenbanken und -Instanzen.  Sie können die Schutzeinstellungen für Ihr Inventar anzeigen, ändern oder entfernen.
+Microsoft SQL Server Hosts, Instanzen und Datenbanken anzeigen und verwalten sowie deren Schutzeinstellungen ändern oder entfernen.
 
-Sie können die folgenden Aufgaben im Zusammenhang mit der Verwaltung Ihres Inventars ausführen:
+Zur Verwaltung Ihres Lagerbestands sind folgende Optionen verfügbar:
 
 * Hostinformationen verwalten
 +
@@ -24,7 +24,7 @@ Sie können die folgenden Aufgaben im Zusammenhang mit der Verwaltung Ihres Inve
 ** Hosts bearbeiten oder löschen
 
 
-* Verwalten von Instanzinformationen
+* Instanzinformationen verwalten
 +
 ** Anmeldeinformationen einer Ressource zuordnen
 ** Sichern Sie jetzt, indem Sie ein On-Demand-Backup starten
@@ -39,7 +39,7 @@ Sie können die folgenden Aufgaben im Zusammenhang mit der Verwaltung Ihres Inve
 ** Sichern Sie jetzt, indem Sie ein On-Demand-Backup starten
 
 
-* Konfigurieren Sie das Protokollverzeichnis (unter *Inventar* > *Hosts*). Wenn Sie Protokolle für Ihre Datenbankhosts im Snapshot sichern möchten, konfigurieren Sie zuerst die Protokolle in NetApp Backup and Recovery. Weitere Einzelheiten finden Sie unterlink:br-start-setup.html["Konfigurieren der NetApp Backup and Recovery -Einstellungen"] .
+* Das Protokollverzeichnis wird unter *Inventory* > *Hosts* konfiguriert, bevor Datenbank-Hostprotokolle in Snapshots gesichert werden. Weitere Informationen finden sich unter link:br-start-setup.html["Konfigurieren der NetApp Backup and Recovery -Einstellungen"].
 
 
 
@@ -47,11 +47,11 @@ Sie können die folgenden Aufgaben im Zusammenhang mit der Verwaltung Ihres Inve
 [[manage-host-information]]
 == Hostinformationen verwalten
 
-Sie können Hostinformationen verwalten, um sicherzustellen, dass die richtigen Hosts geschützt sind.  Sie können Hostinformationen anzeigen, bearbeiten und löschen.
+Hostinformationen verwalten, um sicherzustellen, dass die richtigen Hosts geschützt sind. Hostinformationen können bei Bedarf angezeigt, bearbeitet und gelöscht werden.
 
 *Erforderliche NetApp Console-Rolle* Storage Viewer, Backup and Recovery Super Admin, Backup and Recovery Backup Admin, Backup and Recovery Restore Admin oder Backup and Recovery Clone Admin Rolle. Für den Schutz von Daten, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
-* Konfigurieren Sie das Protokollverzeichnis.  Weitere Einzelheiten finden Sie unterlink:br-start-setup.html["Konfigurieren der NetApp Backup and Recovery -Einstellungen"] .
+* Protokollverzeichnis konfigurieren. Weitere Informationen unter link:br-start-setup.html["Konfigurieren der NetApp Backup and Recovery -Einstellungen"].
 * Zeitpläne aussetzen
 * Einen Host bearbeiten
 * Löschen eines Hosts
@@ -62,10 +62,10 @@ Sie können Hostinformationen verwalten, um sicherzustellen, dass die richtigen 
 [[manage-hosts]]
 === Hosts verwalten
 
-Sie können die in Ihrem System erkannten Hosts verwalten.  Sie können sie einzeln oder als Gruppe verwalten.
+Sie können die in Ihrem System erkannten Hosts einzeln oder als Gruppe verwalten.
 
 
-TIP: Sie können Hosts mit dem Status „Nicht verwaltet“ in der Spalte „Hosts“ verwalten.  NetApp Backup and Recovery verwaltet bereits Hosts mit dem Status „Managed“.
+TIP: Um einen Host zu verwalten, ist in der Spalte „Hosts“ auf den Status „Nicht verwaltet“ zu achten. NetApp Backup and Recovery verwaltet bereits Hosts mit dem Status „Verwaltet“.
 
 Nachdem Sie die Hosts in NetApp Backup and Recovery verwaltet haben, verwaltet SnapCenter die Ressourcen auf diesen Hosts nicht mehr.
 
@@ -76,7 +76,7 @@ Nachdem Sie die Hosts in NetApp Backup and Recovery verwaltet haben, verwaltet S
 . Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.
 . Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*.
 . Wählen Sie die Registerkarte *Hosts*.
-. Wählen Sie einen oder mehrere Hosts aus.  Wenn Sie mehrere Hosts auswählen, wird die Option „Massenaktionen“ angezeigt, in der Sie *Verwalten (bis zu 5 Hosts)* auswählen können.
+. Wählen Sie einen oder mehrere Hosts aus. Wenn Sie mehrere Hosts auswählen, wird die Option *Massenaktionen* angezeigt. Wählen Sie *Verwalten (bis zu 5 Hosts)*.
 . Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Verwalten*.
 . Überprüfen Sie die Hostabhängigkeiten:
 +
@@ -107,7 +107,7 @@ Unterbrechen Sie Zeitpläne, um Sicherungs- und Wiederherstellungsvorgänge wäh
 [[edit-a-host]]
 === Einen Host bearbeiten
 
-Sie können die vCenter-Serverinformationen, die Anmeldeinformationen für die Hostregistrierung und die erweiterten Einstellungsoptionen ändern.
+Sie können die vCenter Serverinformationen, die Anmeldeinformationen für die Hostregistrierung und die erweiterten Einstellungen ändern.
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
@@ -133,15 +133,15 @@ Sie können die Host-Informationen löschen, um die Servicegebühren zu stoppen.
 
 
 
-[[manage-instances-information]]
-== Verwalten von Instanzinformationen
+[[manage-instance-information]]
+== Instanzinformationen verwalten
 
-Sie können Instanzinformationen verwalten, um die entsprechenden Anmeldeinformationen für den Ressourcenschutz zuzuweisen und Ressourcen auf folgende Weise zu sichern:
+Instanzinformationen verwalten, um Ressourcen zu schützen, Anmeldeinformationen zuzuordnen oder zu entfernen, Schutzeinstellungen zu bearbeiten und Backups auszuführen:
 
 * Schützen von Instanzen
 * Anmeldeinformationen zuordnen
 * Trennen der Anmeldeinformationen
-* Bearbeitungsschutz
+* Schutzeinstellungen bearbeiten
 * Jetzt sichern
 
 
@@ -152,7 +152,7 @@ Sie können Instanzinformationen verwalten, um die entsprechenden Anmeldeinforma
 [[protect-database-instances]]
 === Schützen Sie Datenbankinstanzen
 
-Sie können einer Datenbankinstanz eine Richtlinie zuweisen, indem Sie Richtlinien verwenden, die die Zeitpläne und die Beibehaltung des Ressourcenschutzes regeln.
+Einer Datenbankinstanz wird eine Richtlinie zugewiesen, um den Zeitplan und die Aufbewahrung des Ressourcenschutzes zu steuern.
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
@@ -162,19 +162,19 @@ Sie können einer Datenbankinstanz eine Richtlinie zuweisen, indem Sie Richtlini
 . Wählen Sie die *Aktionen*image:icon-action.png["Symbol „Aktionen“"] Symbol und wählen Sie *Schützen*.
 . Wählen Sie eine Richtlinie aus oder erstellen Sie eine neue.
 +
-Einzelheiten zum Erstellen einer Richtlinie finden Sie unterlink:br-use-policies-create.html["Erstellen einer Richtlinie"] .
+Weitere Informationen zur Erstellung einer Richtlinie finden Sie unter link:br-use-policies-create.html["Erstellen einer Richtlinie"].
 
-. Geben Sie Informationen zu den Skripten an, die Sie vor und nach der Sicherung ausführen möchten.
+. Stellen Sie die Skripte bereit, die vor und nach der Datensicherung ausgeführt werden.
 +
-** *Vorskript*: Geben Sie den Dateinamen und den Speicherort Ihres Skripts ein, um es automatisch auszuführen, bevor die Schutzaktion ausgelöst wird.  Dies ist hilfreich, um zusätzliche Aufgaben oder Konfigurationen durchzuführen, die vor dem Schutz-Workflow ausgeführt werden müssen.
-** *Postskriptum*: Geben Sie den Dateinamen und den Speicherort Ihres Skripts ein, um es nach Abschluss der Schutzaktion automatisch auszuführen.  Dies ist hilfreich, um zusätzliche Aufgaben oder Konfigurationen durchzuführen, die nach dem Schutz-Workflow ausgeführt werden müssen.
+** *Vorskript*: Geben Sie den Dateinamen und den Speicherort des Skripts ein, das automatisch ausgeführt wird, bevor die Schutzaktion startet. Dies dient dazu, zusätzliche Aufgaben oder Konfigurationen vor dem Schutzworkflow vorzunehmen.
+** *Nachtrag*: Geben Sie den Dateinamen und den Speicherort des Skripts ein, das nach Abschluss der Schutzmaßnahme automatisch ausgeführt wird. Dies kann verwendet werden, um nach dem Schutzworkflow zusätzliche Aufgaben oder Konfigurationen durchzuführen.
 
 
-. Geben Sie an, wie der Snapshot überprüft werden soll:
+. Verifizierungsinformationen für den Snapshot angeben:
 +
-** Speicherort: Wählen Sie den Speicherort aus, an dem der Überprüfungs-Snapshot gespeichert werden soll.
-** Überprüfungsressource: Wählen Sie aus, ob sich die Ressource, die Sie überprüfen möchten, im lokalen Snapshot und im sekundären ONTAP -Speicher befindet.
-** Überprüfungsplan: Wählen Sie die Häufigkeit stündlich, täglich, wöchentlich, monatlich oder jährlich.
+** Speicherort: Auswahl des Speicherorts für den Verifizierungs-Snapshot.
+** Verifizierungsressource: Es kann ausgewählt werden, ob die Ressource im lokalen Snapshot, im ONTAP Sekundärspeicher oder in beiden überprüft wird.
+** Überprüfungsplan: Die Häufigkeit kann ausgewählt werden: stündlich, täglich, wöchentlich, monatlich oder jährlich.
 
 
 
@@ -184,7 +184,7 @@ Einzelheiten zum Erstellen einer Richtlinie finden Sie unterlink:br-use-policies
 [[associate-credentials-with-a-resource]]
 === Anmeldeinformationen einer Ressource zuordnen
 
-Sie können Anmeldeinformationen mit einer Ressource verknüpfen, um Schutz zu gewährleisten.
+Anmeldeinformationen können mit einer Ressource verknüpft werden, sodass ein Schutz erfolgen kann.
 
 Weitere Einzelheiten finden Sie unterlink:br-start-configure.html["Konfigurieren Sie die NetApp Backup and Recovery -Einstellungen, einschließlich der Anmeldeinformationen"] .
 
@@ -211,7 +211,7 @@ Sie können die Richtlinie ändern, eine neue Richtlinie erstellen, einen Zeitpl
 . Wählen Sie die Instanz aus.
 . Wählen Sie die *Aktionen*image:icon-action.png["Symbol „Aktionen“"] Symbol und wählen Sie *Schutz bearbeiten*.
 +
-Einzelheiten zum Erstellen einer Richtlinie finden Sie unterlink:br-use-policies-create.html["Erstellen einer Richtlinie"] .
+Weitere Informationen zur Erstellung einer Richtlinie finden Sie unter link:br-use-policies-create.html["Erstellen einer Richtlinie"].
 
 
 
@@ -230,7 +230,7 @@ Sichern Sie Ihre Daten jetzt, um sie sofort zu schützen.
 . Wählen Sie die *Aktionen*image:icon-action.png["Symbol „Aktionen“"] Symbol und wählen Sie *Jetzt sichern*.
 . Wählen Sie den Sicherungstyp und legen Sie den Zeitplan fest.
 +
-Einzelheiten zum Erstellen einer Ad-hoc-Sicherung finden Sie unterlink:br-use-mssql-backup.html["Erstellen einer Richtlinie"] .
+Einzelheiten zum Erstellen einer Ad-hoc-Sicherung sind unter link:br-use-mssql-backup.html["Sichern Sie Microsoft SQL Server-Workloads"] zu finden.
 
 
 
@@ -264,7 +264,7 @@ Sie können die Richtlinie ändern, eine neue Richtlinie erstellen, einen Zeitpl
 . Wählen Sie die Datenbank aus.
 . Wählen Sie die *Aktionen*image:icon-action.png["Symbol „Aktionen“"] Symbol und wählen Sie *Schützen*.
 +
-Einzelheiten zum Erstellen einer Richtlinie finden Sie unterlink:br-use-policies-create.html["Erstellen einer Richtlinie"] .
+Weitere Informationen zur Erstellung einer Richtlinie finden Sie unter link:br-use-policies-create.html["Erstellen einer Richtlinie"].
 
 
 
@@ -273,15 +273,18 @@ Einzelheiten zum Erstellen einer Richtlinie finden Sie unterlink:br-use-policies
 [[restore-databases]]
 === Datenbanken wiederherstellen
 
-Stellen Sie eine Datenbank wieder her, um Ihre Daten zu schützen.
+Eine Datenbank kann wiederhergestellt werden, wenn Daten wiederhergestellt werden müssen.
 
 *Erforderliche NetApp Console-Rolle* Storage Viewer, Backup and Recovery Super Admin, Backup and Recovery Backup Admin Rolle. Wenn Daten geschützt werden, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
+. Wählen Sie die Arbeitslast aus, die Sie anzeigen möchten, und wählen Sie *Anzeigen*.
 . Wählen Sie die Registerkarte *Datenbanken*.
 . Wählen Sie die Datenbank aus.
 . Wählen Sie die *Aktionen*image:icon-action.png["Symbol „Aktionen“"] Symbol und wählen Sie *Wiederherstellen*.
 +
-Informationen zum Wiederherstellen von Workloads finden Sie unterlink:br-use-mssql-restore.html["Wiederherstellen von Workloads"] .
+Informationen zur Wiederherstellung von Workloads sind unter link:br-use-mssql-restore.html["Wiederherstellen von Workloads"] zu finden.
 
 
 
@@ -301,7 +304,7 @@ Sie können die Richtlinie ändern, eine neue Richtlinie erstellen, einen Zeitpl
 . Wählen Sie die Datenbank aus.
 . Wählen Sie die *Aktionen*image:icon-action.png["Symbol „Aktionen“"] Symbol und wählen Sie *Schutz bearbeiten*.
 +
-Einzelheiten zum Erstellen einer Richtlinie finden Sie unterlink:br-use-policies-create.html["Erstellen einer Richtlinie"] .
+Weitere Informationen zur Erstellung einer Richtlinie finden Sie unter link:br-use-policies-create.html["Erstellen einer Richtlinie"].
 
 
 

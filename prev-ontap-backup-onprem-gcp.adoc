@@ -14,7 +14,7 @@ summary: Schützen Sie Ihre VMware-Workloads mit NetApp Backup and Recovery.
 
 
 [role="lead"]
-Führen Sie einige Schritte in NetApp Backup and Recovery aus, um mit der Sicherung von Volume-Daten von Ihren lokalen primären ONTAP Systemen auf ein sekundäres Speichersystem und in Google Cloud Storage zu beginnen.
+In NetApp Backup und Recovery können Volume-Daten von lokalen ONTAP-Systemen auf ein sekundäres Speichersystem und in Google Cloud Storage gesichert werden. Auf dieser Seite finden Sie Informationen zur Vorbereitung Ihrer Umgebung und zur Aktivierung von Backups.
 
 
 NOTE: Zu den „On-Premises ONTAP -Systemen“ gehören FAS, AFF und ONTAP Select Systeme.
@@ -48,7 +48,7 @@ image:diagram_cloud_backup_onprem_gcp_private.png["Ein Diagramm, das zeigt, wie 
 [[prepare-your-console-agent]]
 == Vorbereiten Ihres Konsolenagenten
 
-Der Konsolenagent ist die Hauptsoftware für die Konsolenfunktionalität.  Zum Sichern und Wiederherstellen Ihrer ONTAP Daten ist ein Konsolenagent erforderlich.
+Der Konsolenagent ist die Hauptsoftware für die NetApp Console .  Zum Sichern und Wiederherstellen Ihrer ONTAP Daten ist ein Konsolenagent erforderlich.
 
 
 
@@ -283,7 +283,7 @@ storage.objects.update
 . Gehe zu https://console.cloud.google.com/storage/settings["GCP-Speichereinstellungen"^] und erstellen Sie Zugriffsschlüssel für das Dienstkonto:
 +
 .. Wählen Sie ein Projekt und dann *Interoperabilität* aus. Falls Sie dies noch nicht getan haben, wählen Sie *Interoperabilitätszugriff aktivieren*.
-.. Wählen Sie unter *Zugriffsschlüssel für Dienstkonten* die Option *Schlüssel für ein Dienstkonto erstellen* aus, wählen Sie das gerade erstellte Dienstkonto aus und klicken Sie auf *Schlüssel erstellen*.
+.. Unter *Zugriffsschlüssel für Dienstkonten* die Option *Schlüssel für ein Dienstkonto erstellen* auswählen, das soeben erstellte Dienstkonto auswählen und *Schlüssel erstellen* auswählen.
 +
 Sie müssen die Schlüssel später in NetApp Backup and Recovery eingeben, wenn Sie den Sicherungsdienst konfigurieren.
 
@@ -357,17 +357,17 @@ Sie können auch<<API-Befehle anzeigen>> im Überprüfungsschritt, damit Sie den
 === Starten des Assistenten
 
 .Schritte
-. Greifen Sie auf eine der folgenden Arten auf den Assistenten „Sicherung und Wiederherstellung aktivieren“ zu:
+. Der Assistent zum Aktivieren von Backup und Recovery kann auf eine der folgenden Arten aufgerufen werden:
 +
-** Wählen Sie auf der Konsolenseite *Systeme* das System aus und wählen Sie im rechten Bereich neben „Sicherung und Wiederherstellung“ die Option „Aktivieren > Sicherungsvolumes“ aus.
+** Auf der Seite *Systems* der NetApp Console das System auswählen und im rechten Bereich neben Backup and Recovery die Option *Enable > Backup Volumes* auswählen.
 +
-Wenn das Google Cloud Storage-Ziel für Ihre Backups wie auf der Konsolenseite *Systeme* vorhanden ist, können Sie den ONTAP Cluster auf den Google Cloud-Objektspeicher ziehen.
+Wenn das Google Cloud Storage-Ziel für Ihre Backups auf der NetApp Console-Seite *Systems* vorhanden ist, kann der ONTAP Cluster auf Google Cloud Storage gezogen werden.
 
 ** Wählen Sie in der Leiste „Sichern und Wiederherstellen“ *Volumes* aus.  Wählen Sie auf der Registerkarte „Volumes“ die Option „Aktionen“ aus.image:icon-action.png["Symbol „Aktionen“"] und wählen Sie *Sicherung aktivieren* für ein einzelnes Volume (für das die Replikation oder Sicherung in den Objektspeicher noch nicht aktiviert ist).
 
 
 +
-Auf der Einführungsseite des Assistenten werden die Schutzoptionen angezeigt, darunter lokale Snapshots, Replikation und Backups.  Wenn Sie in diesem Schritt die zweite Option gewählt haben, wird die Seite „Sicherungsstrategie definieren“ mit einem ausgewählten Volume angezeigt.
+Die Einführungsseite des Assistenten zeigt die Schutzoptionen, darunter lokale Snapshots, Replikation und Backups. Wenn in diesem Schritt die zweite Option gewählt wurde, erscheint die Seite „Backup-Strategie definieren“ mit einem ausgewählten Volume.
 
 . Fahren Sie mit den folgenden Optionen fort:
 +
@@ -488,10 +488,10 @@ TIP: Wenn Sie ältere Sicherungsdateien zur weiteren Kostenoptimierung in den Go
 +
 Geben Sie den Google Cloud-Zugriffsschlüssel und den geheimen Schlüssel ein.
 
-** *Verschlüsselungsschlüssel*: Wenn Sie ein neues Google Cloud-Speicherkonto erstellt haben, geben Sie die Informationen zum Verschlüsselungsschlüssel ein, die Sie vom Anbieter erhalten haben.  Wählen Sie, ob Sie die standardmäßigen Google Cloud-Verschlüsselungsschlüssel verwenden oder Ihre eigenen, vom Kunden verwalteten Schlüssel aus Ihrem Google Cloud-Konto auswählen möchten, um die Verschlüsselung Ihrer Daten zu verwalten.
+** *Verschlüsselungsschlüssel*: Wenn Sie einen neuen Google Cloud Storage-Bucket erstellt haben, geben Sie die vom Anbieter erhaltenen Verschlüsselungsschlüsselinformationen ein. Es besteht die Möglichkeit, entweder die standardmäßigen Google Cloud-Verschlüsselungsschlüssel zu verwenden oder eigene, vom Kunden verwaltete Schlüssel aus dem Google Cloud-Konto auszuwählen, um die Verschlüsselung der Daten zu verwalten.
 +
 
-NOTE: Wenn Sie ein vorhandenes Google Cloud-Speicherkonto ausgewählt haben, sind die Verschlüsselungsinformationen bereits verfügbar, sodass Sie sie jetzt nicht eingeben müssen.
+NOTE: Wenn Sie einen bestehenden Google Cloud Storage Bucket ausgewählt haben, sind die Verschlüsselungsinformationen bereits vorhanden, sodass Sie sie jetzt nicht eingeben müssen.
 
 +
 Wenn Sie Ihre eigenen, vom Kunden verwalteten Schlüssel verwenden möchten, geben Sie den Schlüsselbund und den Schlüsselnamen ein. https://cloud.google.com/kms/docs/cmek["Erfahren Sie mehr über vom Kunden verwaltete Verschlüsselungsschlüssel"^] .
@@ -547,9 +547,9 @@ Sie können den Status von Sicherungs- und Wiederherstellungsaufträgen auch mit
 [[show-the-api-commands]]
 === API-Befehle anzeigen
 
-Möglicherweise möchten Sie die im Assistenten „Sicherung und Wiederherstellung aktivieren“ verwendeten API-Befehle anzeigen und optional kopieren.  Möglicherweise möchten Sie dies tun, um die Sicherungsaktivierung in zukünftigen Systemen zu automatisieren.
+Sie können die im Assistenten „Backup und Recovery aktivieren“ verwendeten API-Befehle anzeigen und optional kopieren. Dies kann hilfreich sein, um die Aktivierung von Backups in zukünftigen Systemen zu automatisieren.
 
 .Schritte
-. Wählen Sie im Assistenten „Sicherung und Wiederherstellung aktivieren“ die Option „API-Anforderung anzeigen“ aus.
+. Im Assistenten „Backup und Recovery aktivieren“ *API-Anfrage anzeigen* auswählen.
 . Um die Befehle in die Zwischenablage zu kopieren, wählen Sie das Symbol *Kopieren*.
 

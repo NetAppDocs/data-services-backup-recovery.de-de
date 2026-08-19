@@ -14,12 +14,12 @@ summary: Es kann Situationen geben, in denen Sie NetApp Backup and Recovery neu 
 
 
 [role="lead"]
-Es kann Situationen geben, in denen Sie NetApp Backup and Recovery neu starten müssen.
+Sie können NetApp Backup and Recovery vom Console-Agent-Host aus neu starten, wenn der Dienst wiederhergestellt oder eine Änderung angewendet werden muss. Es ist der Befehl zu verwenden, der dem jeweiligen Bereitstellungstyp und der Container-Laufzeitumgebung entspricht.
 
 Der Konsolenagent umfasst die NetApp Backup and Recovery .
 
 .Schritte
-. Stellen Sie eine Verbindung zum Linux-System her, auf dem der Konsolenagent ausgeführt wird.
+. Mit dem Linux-System verbinden, auf dem der Console Agent ausgeführt wird.
 +
 [cols="25,50"]
 |===

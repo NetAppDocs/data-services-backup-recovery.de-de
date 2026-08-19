@@ -14,11 +14,9 @@ summary: Die SnapMirror to Cloud Resync-Funktion in NetApp Backup and Recovery o
 
 
 [role="lead"]
-Die SnapMirror to Cloud Resync-Funktion in NetApp Backup and Recovery optimiert den Datenschutz und die Kontinuität bei Volumemigrationen in NetApp -Umgebungen. Wenn ein Volume mithilfe von SnapMirror Logical Replication (LRSE) von einer lokalen NetApp Bereitstellung zu einer anderen oder zu einer Cloud-basierten Lösung wie Cloud Volumes ONTAP migriert wird, stellt SnapMirror to Cloud Resync sicher, dass bestehende Cloud-Backups intakt und betriebsbereit bleiben.
+Mit SnapMirror to Cloud Resync in NetApp Backup und Recovery bleiben vorhandene Cloud-Backups nach der Migration eines Volumes mit SnapMirror Logical Replication (LRSE) weiterhin verfügbar. Diese Funktion ermöglicht die Fortsetzung von Backups ohne erneute Baseline und ist ab ONTAP 9.16.1 verfügbar.
 
-Diese Funktion macht einen erneuten Baseline-Prozess überflüssig und ermöglicht die Fortsetzung der Backups nach der Migration. Diese Funktion ist in Workload-Migrationsszenarien wertvoll, unterstützt sowohl FlexVols als auch FlexGroups und ist ab ONTAP Version 9.16.1 verfügbar.
-
-SnapMirror to Cloud Resync gewährleistet die Kontinuität der Datensicherung über verschiedene Umgebungen hinweg und erleichtert so die Datenverwaltung in Hybrid- und Multi-Cloud-Setups.
+SnapMirror to Cloud Resync unterstützt FlexVol und FlexGroup Migrationen und trägt dazu bei, die Backup-Kontinuität in Hybrid- und Multi-Cloud-Umgebungen aufrechtzuerhalten.
 
 
 NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
@@ -46,7 +44,7 @@ Wenn Sie eine technische Aktualisierung durchführen oder Volumes von einem ONTA
 
 Hier ist ein Beispiel:
 
-Stellen Sie sich vor, Sie haben ein lokales Volume namens Vol1a. Dieses Volume verfügt über drei Snapshots: S1, S2 und S3. Diese Momentaufnahmen sind Wiederherstellungspunkte.  Band 1 wird mit SnapMirror to Cloud (SM-C) in der Cloud gesichert, aber nur S1 und S2 befinden sich im Objektspeicher.
+Stellen Sie sich vor, Sie haben ein lokales Volume namens Vol1a. Dieses Volume verfügt über drei Snapshots: S1, S2 und S3. Diese Snapshots sind Wiederherstellungspunkte. Vol1a wird mithilfe von SnapMirror to Cloud (SM-C) in der Cloud gesichert, jedoch befinden sich nur S1 und S2 im Objektspeicher.
 
 Jetzt möchten Sie Vol1 auf einen anderen ONTAP Cluster migrieren.  Dazu erstellen Sie eine SnapMirror Logical Replication (LRSE)-Beziehung zu einem neuen Cloud-Volume namens Vol1b.  Dadurch werden alle drei Snapshots – S1, S2 und S3 – von Vol1a nach Vol1b übertragen.
 
@@ -168,7 +166,7 @@ NOTE: Es sollte die UUID der Volume-Instanz verwendet werden, nicht die Volume-I
 NetApp Backup and Recovery validiert, dass jedes für die Resynchronisierung ausgewählte Volume einen gemeinsamen Snapshot mit dem Objektspeicher hat. Genauer gesagt muss der neueste im Objektspeicher gespeicherte Snapshot auch im lokalen Snapshot des neu geklonten Volumes vorhanden sein. Diese Prüfung stellt sicher, dass die Volumes für die SnapMirror to Cloud Resync-Operation bereit sind.
 
 . Überprüfen Sie die Validierungsergebnisse, einschließlich der neuen Quellvolume-Namen und des Resynchronisierungsstatus für jedes Volume.
-. Prüfen Sie die Eignung der Volumes. Das System prüft, ob die Volumes für die Resynchronisierung geeignet sind. Wenn ein Volume nicht geeignet ist, bedeutet dies, dass die gemeinsamen Snapshot-Kriterien nicht erfüllt wurden.
+. Die Eignung der Volumes wird geprüft. Das System prüft, ob die Volumes für die Resynchronisierung geeignet sind. Wenn ein Volume nicht geeignet ist, bedeutet dies, dass die Kriterien für den gemeinsamen Snapshot nicht erfüllt wurden.
 +
 
 IMPORTANT: Um sicherzustellen, dass die Volumes weiterhin für den SnapMirror zu-Cloud-Resync-Vorgang geeignet sind, erstellen Sie einen letzten Snapshot jedes Volumes, bevor Sie während der Phase vor der Migration alle SnapMirror -Beziehungen löschen.  Dadurch bleibt der aktuelle Stand der Daten erhalten.

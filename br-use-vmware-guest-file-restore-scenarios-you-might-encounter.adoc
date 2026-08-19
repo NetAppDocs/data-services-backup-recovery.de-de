@@ -4,7 +4,7 @@ permalink: br-use-vmware-guest-file-restore-scenarios-you-might-encounter.html
 keywords:  
 summary: Beim Versuch, eine Gastdatei wiederherzustellen, können Szenarien auftreten, in denen die Sitzung zur Wiederherstellung der Gastdatei leer ist, der Vorgang zum Anhängen der Festplatte bei der Wiederherstellung der Gastdatei fehlschlägt oder Sicherungen nicht getrennt werden, nachdem die Sitzung zur Wiederherstellung der Gastdatei abgebrochen wurde. 
 ---
-= Fehlerbehebung bei der Wiederherstellung von Gastdateien in NetApp Backup and Recovery
+= Fehlerbehebung bei der Wiederherstellung von VMware-Gastdateien in NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Beim Versuch, eine Gastdatei wiederherzustellen, können Szenarien auft
 
 
 [role="lead"]
-Beim Versuch, eine Gastdatei wiederherzustellen, können die folgenden Szenarien auftreten.
+Sollten beim Wiederherstellen einer Gastdatei Probleme auftreten, können diese Szenarien zur Identifizierung und Behebung des Problems herangezogen werden.
 
 
 
@@ -30,11 +30,11 @@ Um das Problem zu beheben, schalten Sie die VMDKs im Gastbetriebssystem manuell 
 [[guest-file-restore-attach-disk-operation-fails]]
 == Der Vorgang zum Anhängen der Festplatte beim Wiederherstellen der Gastdatei schlägt fehl
 
-Dieses Problem tritt auf, wenn Sie einen Gastdateiwiederherstellungsvorgang starten, der Vorgang zum Anschließen der Festplatte jedoch fehlschlägt, obwohl VMware Tools ausgeführt wird und die Anmeldeinformationen des Gastbetriebssystems korrekt sind. In diesem Fall wird der folgende Fehler zurückgegeben:
+Dieses Problem tritt auf, wenn eine Wiederherstellung von Gastdateien gestartet wird, der Vorgang zum Einbinden der Festplatte jedoch fehlschlägt, obwohl VMware Tools ausgeführt wird und die Anmeldeinformationen des Gastbetriebssystems korrekt sind. Tritt dies auf, wird die folgende Fehlermeldung zurückgegeben:
 
 `Error while validating guest credentials, failed to access guest system using specified credentials: Verify VMware Tools is running properly on the system and that the account used is an Administrator account. Error is SystemError vix error codes = (3016, 0).`
 
-Um das Problem zu beheben, starten Sie den VMware Tools-Windows-Dienst auf dem Gastbetriebssystem neu und versuchen Sie dann erneut, die Gastdatei wiederherzustellen.
+Um das Problem zu beheben, den VMware Tools Windows-Dienst auf dem Gastbetriebssystem neu starten und anschließend die Gastdateiwiederherstellung erneut versuchen.
 
 
 

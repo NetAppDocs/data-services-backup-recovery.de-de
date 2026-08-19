@@ -4,7 +4,7 @@ permalink: br-use-restore-kubernetes-applications-cr.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
 summary: Mit NetApp Backup and Recovery können Sie Anwendungen wiederherstellen, die Sie mit einer Schutzrichtlinie geschützt haben. 
 ---
-= Kubernetes-Anwendungen mit NetApp Backup and Recovery mithilfe einer benutzerdefinierten Ressource wiederherstellen
+= Kubernetes-Anwendungen mit benutzerdefinierten Ressourcen wiederherstellen
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,13 +14,13 @@ summary: Mit NetApp Backup and Recovery können Sie Anwendungen wiederherstellen
 
 
 [role="lead"]
-Sie können benutzerdefinierte Ressourcen verwenden, um Ihre Anwendungen aus einem Snapshot oder einem Backup wiederherzustellen. Die Wiederherstellung aus einem vorhandenen Snapshot ist schneller, wenn die Anwendung im selben Cluster wiederhergestellt wird.
+Verwenden Sie benutzerdefinierte Ressourcen, um Ihre Anwendungen aus einem Snapshot oder einer Sicherung wiederherzustellen. Die Wiederherstellung aus einem vorhandenen Snapshot erfolgt in der Regel schneller, wenn die Anwendung im selben Cluster wiederhergestellt wird.
 
 [NOTE]
 ====
 * Wenn Sie eine Anwendung wiederherstellen, werden alle für die Anwendung konfigurierten Ausführungs-Hooks mit der Anwendung wiederhergestellt. Wenn ein Ausführungs-Hook nach der Wiederherstellung vorhanden ist, wird er automatisch als Teil des Wiederherstellungsvorgangs ausgeführt.
 * Die Wiederherstellung aus einem Backup in einen anderen Namespace oder in den ursprünglichen Namespace wird für qtree Volumes unterstützt. Die Wiederherstellung aus einem Snapshot in einen anderen Namespace oder in den ursprünglichen Namespace wird für qtree Volumes jedoch nicht unterstützt.
-* Sie können die Wiederherstellungsvorgänge mithilfe erweiterter Einstellungen anpassen. Weitere Informationen sind unter link:br-use-kubernetes-advanced-restore-settings.html["Erweiterte Wiederherstellungseinstellungen für Kubernetes in NetApp Backup and Recovery"] zu finden.
+* Sie können die Wiederherstellungsvorgänge mithilfe erweiterter Einstellungen anpassen. Weitere Informationen finden sich unter link:br-use-kubernetes-advanced-restore-settings.html["Erweiterte Wiederherstellungseinstellungen für Kubernetes in NetApp Backup and Recovery"].
 
 
 ====
@@ -34,7 +34,7 @@ Wenn Sie eine Sicherung mithilfe einer BackupRestore CR in einem anderen Namespa
 [NOTE]
 ====
 * Die Wiederherstellung einer Sicherung in einem anderen Namensraum mit vorhandenen Ressourcen ändert keine Ressourcen, die denselben Namen wie die in der Sicherung haben. Um alle Ressourcen in der Sicherung wiederherzustellen, löschen und erstellen Sie entweder den Zielnamensraum neu oder stellen Sie die Sicherung in einem neuen Namensraum wieder her.
-* Wenn Sie eine CR zur Wiederherstellung in einem neuen Namespace verwenden, müssen Sie den Ziel-Namespace manuell erstellen, bevor Sie die CR anwenden. Backup und Recovery erstellt Namespaces automatisch nur bei Verwendung der CLI.
+* Wenn eine CR zur Wiederherstellung in einem neuen Namespace verwendet wird, muss der Ziel-Namespace manuell erstellt werden, bevor die CR angewendet wird. Backup and Recovery erstellt Namespaces nur automatisch, wenn die CLI verwendet wird.
 
 
 ====
@@ -307,7 +307,7 @@ kubectl get backups <BACKUP_NAME> -n my-app-namespace -o jsonpath='{.status.appA
 ----
 +
 
-NOTE: Falls BackupRestore CR nicht verfügbar ist, können Sie den in Schritt 2 genannten Befehl verwenden, um den Sicherungsinhalt anzuzeigen.
+NOTE: Falls die BackupRestore CR nicht verfügbar ist, kann der Befehl in Schritt 2 verwendet werden, um den Sicherungsinhalt anzuzeigen.
 
 ** *spec.namespaceMapping*: Die Zuordnung des Quell-Namespace des Wiederherstellungsvorgangs zum Ziel-Namespace. Ersetzen Sie  `my-source-namespace` und  `my-destination-namespace` durch Informationen aus Ihrer Umgebung.
 +

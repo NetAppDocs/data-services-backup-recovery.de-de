@@ -14,7 +14,7 @@ summary: Sie können Microsoft SQL Server-Snapshots verwalten, indem Sie sie aus
 
 
 [role="lead"]
-Sie können Microsoft SQL Server-Snapshots verwalten, indem Sie sie aus NetApp Backup and Recovery löschen.
+Lokale Microsoft SQL Server-Snapshots aus NetApp Backup and Recovery löschen.
 
 
 
@@ -23,15 +23,15 @@ Sie können Microsoft SQL Server-Snapshots verwalten, indem Sie sie aus NetApp B
 
 Sie können nur lokale Snapshots löschen.
 
-*Erforderliche NetApp Console-Rolle* Storage Viewer, Backup and Recovery Super Admin, Backup and Recovery Backup Admin Rolle. Wenn Daten geschützt werden, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
+*Erforderliche NetApp Console-Rolle* Storage Viewer, Backup and Recovery Super Admin oder Backup and Recovery Backup Admin Rolle. Wenn Daten geschützt werden, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
 .Schritte
 . Wählen Sie in NetApp Backup and Recovery*Inventar* aus.
 . Wählen Sie die Arbeitslast aus und wählen Sie *Anzeigen*.
 . Wählen Sie die Registerkarte *Datenbanken*.
-. Wählen Sie die Datenbank aus, für die Sie einen Snapshot löschen möchten.
+. Wählen Sie die Datenbank aus, deren Snapshot Sie löschen möchten.
 . Wählen Sie im Menü „Aktionen“ die Option „Schutzdetails anzeigen“ aus.
-. Wählen Sie den lokalen Snapshot aus, den Sie löschen möchten.
+. Wählen Sie den lokalen Snapshot aus, der gelöscht werden soll.
 +
 
 TIP: Stellen Sie sicher, dass das lokale Snapshot-Symbol in der Spalte *Standort* dieser Zeile blau angezeigt wird.

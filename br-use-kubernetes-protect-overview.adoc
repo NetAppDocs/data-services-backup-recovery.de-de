@@ -4,7 +4,7 @@ permalink: br-use-kubernetes-protect-overview.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
 summary: Sie können Kubernetes-Anwendungen und Anwendungsdaten von lokalen ONTAP -Systemen auf Amazon Web Services, Microsoft Azure, Google Cloud Platform und StorageGRID schützen und so sicherstellen, dass Ihre Daten geschützt sind. 
 ---
-= Informationen zur Verwaltung von Kubernetes-Workloads mit NetApp Backup and Recovery
+= Kubernetes Schutzworkflow mit NetApp Backup und Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,20 +14,20 @@ summary: Sie können Kubernetes-Anwendungen und Anwendungsdaten von lokalen ONTA
 
 
 [role="lead"]
-Die Verwaltung von Kubernetes-Workloads in NetApp Backup and Recovery ermöglicht es Ihnen, Ihre Kubernetes-Cluster und Anwendungen zentral zu erkennen, zu verwalten und zu schützen. Sie können Ressourcen und Anwendungen verwalten, die auf Ihren Kubernetes-Clustern gehostet werden. Sie können außerdem Schutzrichtlinien erstellen und Ihren Kubernetes-Anwendungen zuordnen, und das alles über eine einzige Benutzeroberfläche.
+NetApp Backup und Recovery ermöglicht das Erkennen, Verwalten und Schützen von Kubernetes-Clustern und -Anwendungen über eine einzige Schnittstelle.
 
-Das folgende Diagramm zeigt die Komponenten und die grundlegende Architektur der Sicherung und Wiederherstellung für Kubernetes-Workloads und wie verschiedene Kopien Ihrer Daten an unterschiedlichen Orten gespeichert werden können:
+Das folgende Diagramm zeigt die Komponenten und die grundlegende Architektur für Kubernetes Backup und Recovery sowie die Möglichkeiten, Kopien Ihrer Daten an verschiedenen Orten zu speichern:
 
 image:../media/backup-recovery-architecture-diagram.png["Architekturdiagramm der Sicherung und Wiederherstellung für Kubernetes-Workloads"]
 
 NetApp Backup and Recovery bietet die folgenden Vorteile für die Verwaltung von Kubernetes-Workloads:
 
-* Eine zentrale Steuerungsebene zum Schutz von Anwendungen, die über mehrere Kubernetes-Cluster hinweg ausgeführt werden. Diese Anwendungen können Container oder virtuelle Maschinen umfassen, die auf Ihren Kubernetes-Clustern ausgeführt werden.
-* Native Integration mit NetApp SnapMirror, die Speicher-Offloading-Funktionen für alle Backup- und Wiederherstellungs-Workflows ermöglicht.
+* Eine einheitliche Steuerungsebene zum Schutz von Anwendungen über mehrere Kubernetes-Cluster hinweg, einschließlich Containern und virtuellen Maschinen.
+* Die native Integration mit NetApp SnapMirror ermöglicht die Auslagerung des Speichers für Backup und Recovery Workflows.
 * Inkrementelle Dauersicherungen für Kubernetes-Anwendungen, was zu niedrigeren Recovery Point Objectives (RPOs) und Recovery Time Objectives (RTOs) führt.
 
 
-Sie können die folgenden Aufgaben im Zusammenhang mit der Verwaltung von Kubernetes-Workloads ausführen:
+Für Kubernetes Workloads sind die folgenden Aufgaben möglich:
 
 * link:br-start-discover-kubernetes.html["Entdecken Sie Kubernetes-Workloads"].
 * link:br-use-manage-kubernetes-clusters.html["Kubernetes-Cluster in NetApp Backup and Recovery verwalten"].

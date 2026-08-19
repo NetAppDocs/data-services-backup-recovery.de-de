@@ -14,7 +14,7 @@ summary: Beginnen Sie mit NetApp Backup and Recovery, indem Sie die Bereitschaft
 
 
 [role="lead"]
-Wenn Sie Ressourcen aus dem SnapCenter Plug-in-Dienst für Microsoft SQL Server in NetApp Backup and Recovery importieren möchten, müssen Sie noch einige weitere Elemente konfigurieren.
+Bevor Ressourcen aus dem SnapCenter Plug-in für Microsoft SQL Server in NetApp Backup and Recovery importiert werden, muss sichergestellt sein, dass Ihre Umgebung diese zusätzlichen Anforderungen erfüllt.
 
 
 
@@ -25,10 +25,10 @@ Wenn Sie Ressourcen aus SnapCenter importieren möchten, sollten Sie vor dem Imp
 
 
 
-[[ensure-host-requirements-to-install-the-snapcenter-plug-in]]
-== Stellen Sie sicher, dass die Hostanforderungen für die Installation des SnapCenter -Plug-Ins erfüllt sind
+[[ensure-host-requirements-for-the-snapcenter-plug-in]]
+== Host-Anforderungen für das SnapCenter Plug-in sicherstellen
 
-Um Ressourcen aus dem SnapCenter -Plug-in für Microsoft SQL Server zu importieren, stellen Sie sicher, dass die Hostanforderungen für die Installation des SnapCenter -Plug-ins für Microsoft SQL Server erfüllt sind.
+Um Ressourcen aus dem SnapCenter Plug-in für Microsoft SQL Server zu importieren, muss sichergestellt sein, dass die Host-Anforderungen für die Installation des SnapCenter Plug-in für Microsoft SQL Server erfüllt sind.
 
 Informieren Sie sich insbesondere über die SnapCenter -Anforderungen inlink:concept-start-prereq.html["Voraussetzungen für NetApp Backup and Recovery"] .
 
@@ -97,10 +97,10 @@ Dies ist eine der Methoden, mit denen Sie die Benutzerkontensteuerung deaktivier
 . Die folgenden Werte werden unterstützt.  Setzen Sie für dieses Szenario den Wert auf `1` :
 +
 ** `0`(Standard): UAC-Remotebeschränkungen sind aktiviert.  Lokale Konten verfügen beim Remotezugriff über gefilterte Token.
-** `1`: UAC-Remotebeschränkungen sind deaktiviert.  Lokale Konten umgehen die Token-Filterung und verfügen beim Remote-Zugriff über vollständige Administratorrechte.
+** `1`: Die UAC-Remote-Beschränkungen sind deaktiviert. Lokale Konten umgehen die Tokenfilterung und verfügen beim Remotezugriff über volle Administratorrechte.
 
 
-. Klicken Sie auf *OK*.
+. *OK* auswählen.
 . Schließen Sie den Registrierungseditor.
 . Starten Sie den SnapCenter Windows-Host neu.
 
@@ -127,7 +127,7 @@ CAUTION: Das Ausführen von PowerShell-Befehlen mit erhöhten Rechten kann sich 
 .Schritte
 . Öffnen Sie ein PowerShell-Fenster mit Administratorrechten auf dem SnapCenter Windows-Host:
 +
-.. Klicken Sie auf das Startmenü.
+.. Das *Start*-Menü auswählen.
 .. Suchen Sie nach *PowerShell 7* oder *Windows Powershell*.
 .. Klicken Sie mit der rechten Maustaste auf diese Option und wählen Sie *Als Administrator ausführen*.
 
@@ -143,7 +143,7 @@ TIP: PowerShell ist standardmäßig in Windows 7 und späteren Versionen enthalt
 ----
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" -Name "LocalAccountTokenFilterPolicy" -Value 1 -Type DWord
 ----
-. Überprüfen Sie, ob der aktuelle Wert auf „1“ eingestellt ist in `LocalAccountTokenFilterPolicy`` durch Ausführen von:
+. Es wird geprüft, ob der aktuelle Wert in  `LocalAccountTokenFilterPolicy` auf „1“ gesetzt ist, indem folgender Befehl ausgeführt wird:
 +
 [listing]
 ----

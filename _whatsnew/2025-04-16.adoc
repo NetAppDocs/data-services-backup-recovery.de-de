@@ -34,7 +34,7 @@ NetApp Backup and Recovery erweitert jetzt seine Unterstützung auf Objektspeich
 
 ==== Erste Schritte mit Wasabi
 
-Um Speicher von Drittanbietern als Objektspeicher zu verwenden, müssen Sie im Konsolenagenten ein Flag aktivieren.  Anschließend können Sie die Verbindungsdetails für Ihren Objektspeicher eines Drittanbieters eingeben und ihn in Ihre Sicherungs- und Wiederherstellungs-Workflows integrieren.
+Um Storage von Drittanbietern als Objektspeicher zu verwenden, muss innerhalb des Console-Agenten ein entsprechendes Flag aktiviert werden. Anschließend können die Verbindungsdetails für den Drittanbieter-Objektspeicher eingegeben und dieser in die Backup and Recovery-Workflows integriert werden.
 
 .Schritte
 . Melden Sie sich per SSH bei Ihrem Connector an.

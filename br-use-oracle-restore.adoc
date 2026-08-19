@@ -4,7 +4,7 @@ permalink: br-use-oracle-restore.html
 keywords: restore, vm, oracle, databases, snapshots, object storage, cloud storage, backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
 summary: Schützen Sie Ihre Oracle-Datenbank-Workloads mit NetApp Backup und Recovery. 
 ---
-= Stellen Sie Oracle-Datenbanken mit NetApp Backup and Recovery wieder her
+= Wiederherstellung von Oracle-Datenbank-Workloads mit NetApp Backup und Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Schützen Sie Ihre Oracle-Datenbank-Workloads mit NetApp Backup und Rec
 
 
 [role="lead"]
-Stellen Sie Oracle-Datenbanken aus Snapshots, aus einem auf Sekundärspeicher replizierten Backup oder aus in Objektspeichern gespeicherten Backups mithilfe von NetApp Backup and Recovery wieder her.
+Oracle Database-Workloads lassen sich aus Snapshots, replizierten Backups auf Sekundärspeicher oder in Objektspeicher gespeicherten Backups mit NetApp Backup and Recovery wiederherstellen.
 
 .Von diesen Speicherorten wiederherstellen
 Sie können Datenbanken von verschiedenen Startorten wiederherstellen:
@@ -32,10 +32,10 @@ Sie können Daten am ursprünglichen Speicherort wiederherstellen. Die Wiederher
 
 
 
-[[how-restoring-oracle-databases-works]]
-== So funktioniert die Wiederherstellung von Oracle-Datenbanken
+[[how-oracle-database-restore-works]]
+== Wie die Wiederherstellung einer Oracle Database funktioniert
 
-Wenn Sie Oracle-Datenbanken wiederherstellen, geschieht Folgendes:
+Beim Wiederherstellen von Oracle Database Workloads geschieht Folgendes:
 
 * Wenn Sie eine Datenbank aus einem lokalen Snapshot wiederherstellen, erstellt NetApp Backup and Recovery eine _neue_ Ressource mithilfe der Daten aus dem Backup.
 * Wenn Sie aus einem replizierten Speicher wiederherstellen, können Sie es am ursprünglichen Speicherort wiederherstellen.
@@ -49,9 +49,9 @@ Auf der Seite „Wiederherstellen“ (auch als „Suchen und Wiederherstellen“
 [[restore-an-oracle-database]]
 == Wiederherstellen einer Oracle-Datenbank
 
-Stellen Sie je nach Bedarf eine Oracle-Datenbank zu einem bestimmten Zeitpunkt, zu einer bestimmten Systemänderungsnummer (SCN) oder zum letzten fehlerfreien Zustand wieder her.  Sie können die Datenbank auch einfach aus Snapshots wiederherstellen und den automatisierten Wiederherstellungsprozess überspringen.  Wenn Sie die Wiederherstellung manuell durchführen möchten, können Sie den automatisierten Wiederherstellungsprozess überspringen.  Sie können die Datenbank anhand ihres Namens oder mit bestimmten Filtern suchen.
+Je nach Bedarf lässt sich eine Oracle Datenbank auf einen bestimmten Zeitpunkt, eine bestimmte Systemänderungsnummer (SCN) oder den letzten funktionierenden Zustand wiederherstellen. Die Datenbank kann auch aus Snapshots wiederhergestellt werden, wobei der automatisierte Wiederherstellungsprozess übersprungen werden kann, zum Beispiel wenn die Wiederherstellung manuell erfolgen soll. Die Datenbank lässt sich anhand ihres Namens oder mit spezifischen Filtern suchen.
 
-*Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung oder Administratorrolle für Backup und Wiederherstellung zur Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
+*Erforderliche NetApp Console-Rolle* Backup und Recovery Super-Admin- oder Backup und Recovery Restore-Admin-Rolle https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
 .Schritte
 . Wählen Sie im NetApp Console *Schutz > Sicherung und Wiederherstellung*.
@@ -130,13 +130,13 @@ Die passenden Schnappschüsse werden angezeigt.
 . *Optionen vor der Wiederherstellung*:
 +
 ** Aktivieren Sie diese Option optional und geben Sie den vollständigen Pfad für ein Skript ein, das vor dem Wiederherstellungsvorgang ausgeführt werden soll, sowie alle Argumente, die das Skript verwendet.
-** Wählen Sie einen Timeout-Wert für das Skript.  Wenn die Ausführung des Skripts innerhalb dieses Zeitraums fehlschlägt, wird die Wiederherstellung trotzdem fortgesetzt.
+** Wählen Sie einen Zeitüberschreitungswert für das Skript. Wenn das Skript innerhalb dieses Zeitraums nicht ausgeführt werden kann, wird die Wiederherstellung dennoch fortgesetzt.
 
 
 . *Optionen nach der Wiederherstellung*:
 +
 ** *Postscript*: Aktivieren Sie diese Option optional und geben Sie den vollständigen Pfad für ein Skript ein, das nach dem Wiederherstellungsvorgang ausgeführt werden soll, sowie alle Argumente, die das Skript verwendet.
-** *Öffnen Sie die Datenbank oder Containerdatenbank nach der Wiederherstellung im LESE-/SCHREIB-Modus*: Nachdem der Wiederherstellungsvorgang abgeschlossen ist, aktiviert Backup and Recovery den LESE-/SCHREIB-Modus für die Datenbank.
+** *Öffnen der Datenbank oder Container-Datenbank nach der Wiederherstellung im READ-WRITE-Modus*: Nach Abschluss des Wiederherstellungsvorgangs wird von Backup and Recovery der READ-WRITE-Modus für die Datenbank aktiviert.
 
 
 . Abschnitt *Benachrichtigung*:
@@ -150,7 +150,7 @@ Die passenden Schnappschüsse werden angezeigt.
 --
 .An einem anderen Speicherort wiederherstellen
 --
-Nicht verfügbar für Oracle Database-Workloads Preview.
+In dieser Vorabversion nicht für Oracle Database Workloads verfügbar.
 
 --
 ====

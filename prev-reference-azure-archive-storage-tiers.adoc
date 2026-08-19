@@ -14,14 +14,14 @@ summary: NetApp Backup and Recovery unterstützt eine Azure-Archivzugriffsebene 
 
 
 [role="lead"]
-NetApp Backup and Recovery unterstützt eine Azure-Archivzugriffsebene und die meisten Regionen.
+Diese Informationen bieten einen Überblick über die von NetApp Backup and Recovery unterstützte Azure-Archivierungsebene. Auch die Wiederherstellungskosten und Abrufzeiten für archivierte Backups werden dargestellt.
 
 
 
 [[supported-azure-blob-access-tiers-for-netapp-backup-and-recovery]]
 == Unterstützte Azure Blob-Zugriffsebenen für NetApp Backup and Recovery
 
-Wenn Sicherungsdateien zunächst erstellt werden, werden sie in der Zugriffsebene _Cool_ gespeichert.  Diese Ebene ist für die Speicherung von Daten optimiert, auf die selten zugegriffen wird, auf die bei Bedarf jedoch sofort zugegriffen werden kann.
+Beim Erstellen von Sicherungsdateien werden diese zunächst in der Zugriffsebene „Cool“ gespeichert. Diese Ebene ist für die Speicherung von Daten optimiert, auf die selten zugegriffen wird, die aber bei Bedarf sofort verfügbar sind.
 
 Wenn auf Ihren Quellclustern ONTAP 9.10.1 oder höher ausgeführt wird, können Sie zur weiteren Kostenoptimierung Backups nach einer bestimmten Anzahl von Tagen (normalerweise mehr als 30 Tage) vom _Cool_- in den _Azure Archive_-Speicher verschieben.  Auf Daten dieser Ebene kann bei Bedarf nicht sofort zugegriffen werden und der Abruf ist mit höheren Kosten verbunden. Sie müssen daher berücksichtigen, wie oft Sie Daten aus diesen archivierten Sicherungsdateien wiederherstellen müssen.  Weitere Informationen zum Wiederherstellen von Daten aus dem Archivspeicher finden Sie im Abschnitt auf dieser Seite.
 
@@ -49,7 +49,7 @@ Für jede Methode fallen unterschiedliche Abruf- und Anforderungsgebühren pro G
 
 
 
-NOTE: Die hohe Priorität wird beim Wiederherstellen von Daten von Azure auf StorageGRID -Systemen nicht unterstützt.
+NOTE: Hohe Priorität wird bei der Wiederherstellung von Daten aus Azure in StorageGRID Systemen nicht unterstützt.
 
 Wie lange dauert die Wiederherstellung meiner im Azure-Archiv archivierten Daten?:: Die Wiederherstellungszeit besteht aus zwei Teilen:
 +

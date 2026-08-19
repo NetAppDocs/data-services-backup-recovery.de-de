@@ -14,12 +14,12 @@ summary: Beachten Sie diese NetApp Backup and Recovery-Einschränkungen, bevor S
 
 
 [role="lead"]
-Plattformen, Geräte oder Funktionen, die mit dieser Version nicht oder nicht gut funktionieren, sind hier aufgelistet.  Lesen Sie diese Einschränkungen sorgfältig durch.
+Die aktuellen Einschränkungen und Workarounds für Kubernetes-Workloads in NetApp Backup and Recovery.
 
 
 
-[[backup-and-recovery-preview-for-netapp-console-local-deployment-limitation]]
-== Backup und Recovery-Vorschau für NetApp Console lokale Bereitstellungsbeschränkung
+[[limitation-in-the-backup-and-recovery-preview-for-netapp-console-local-deployment]]
+== Einschränkung in der Backup- und Recovery-Vorschau für die lokale NetApp Console Bereitstellung
 
 In der Backup and Recovery-Vorabversion für die lokale Bereitstellung der NetApp Console werden Backups in Objektspeicher nur für ONTAP S3 und StorageGRID Ziele unterstützt. Backup-Archivierung ist in dieser Vorabversion nicht unterstützt.
 
@@ -28,15 +28,15 @@ In der Backup and Recovery-Vorabversion für die lokale Bereitstellung der NetAp
 [[changing-the-protection-policy-for-an-application]]
 == Ändern der Datensicherungsstrategie für eine Anwendung
 
-Wenn Sie die zugehörige Datensicherungsstrategie für eine Anwendung ändern, um einen anderen Bucket oder ein anderes sekundäres Replikationsziel zu verwenden, kann die Datensicherungsstrategie fehlschlagen.
+Wenn die Datensicherungsstrategie einer Applikation so geändert wird, dass ein anderer Bucket oder ein anderes sekundäres Replikationsziel verwendet wird, kann der Schutz fehlschlagen.
 
-*Abhilfe*: Entfernen Sie die Anwendung und fügen Sie sie erneut hinzu.
+*Abhilfe*: Die Anwendung entfernen und erneut hinzufügen.
 
 
 
 [[3-2-1-protection-policy-configuration-limitation]]
 == Konfigurationsbeschränkung der 3-2-1-Datensicherungsstrategie
 
-Wenn Sie eine 3-2-1-Datensicherungsstrategie erstellen, bei der keine Objektspeichersicherungen gleichzeitig mit der Replikation auf den Sekundärspeicher erfolgen, hängt sich die Datensicherungsstrategie beim Schutz der Anwendung auf.
+Wenn eine 3-2-1 Datensicherungsstrategie erstellt wird, die Objektspeicher-Backups getrennt von der Replikation auf den Sekundärspeicher plant, kann der Schutz hängen bleiben.
 
-*Abhilfe*: Entfernen Sie die Anwendung, fügen Sie sie erneut hinzu und schützen Sie sie mit einer anderen Datensicherungsstrategie.
+*Abhilfe*: Die Anwendung entfernen, erneut hinzufügen und anschließend mit einer anderen Datensicherungsstrategie schützen.

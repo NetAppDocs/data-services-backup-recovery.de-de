@@ -12,7 +12,7 @@ summary: Erstellen Sie Schutzberichte für Kubernetes-Workloads, um den Schutzst
 
 
 [role="lead"]
-In NetApp Backup and Recovery können Sie Schutzberichte für Kubernetes-Workloads erstellen, um den Schutzstatus und Details anzuzeigen, einschließlich der Anzahl erfolgreicher und fehlgeschlagener Backups, der Backup-Typen, Informationen zum Cluster-Zustand und mehr.
+In NetApp Backup und Recovery Kubernetes-Schutzberichte erstellen, um den Sicherungsstatus, die Sicherungstypen und den Clusterzustand zu überwachen.
 
 *Erforderliche NetApp Console-Rolle* Backup and Recovery Superadmin, Backup and Recovery Backup-Admin oder Backup and Recovery Restore-Admin. Für den Schutz von Daten, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich. Informationen zu link:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
@@ -21,10 +21,10 @@ In NetApp Backup and Recovery können Sie Schutzberichte für Kubernetes-Workloa
 [[create-a-protection-report]]
 == Erstellen Sie einen Schutzbericht
 
-Erstellen Sie einen Schutzbericht, um den Schutzstatus Ihrer Cluster anzuzeigen.
+Ein Schutzbericht zeigt den Schutzstatus Ihrer Cluster an.
 
 .Schritte
-. Wählen Sie im NetApp Backup and Recovery -Menü die Option *Berichte*.
+. Im NetApp Backup und Recovery-Menü die Option *Berichte* auswählen.
 . Wählen Sie *Bericht erstellen*.
 . Geben Sie Details zum Berichtsumfang ein:
 +
@@ -34,13 +34,13 @@ Erstellen Sie einen Schutzbericht, um den Schutzstatus Ihrer Cluster anzuzeigen.
 
 
 . Berichtszeitraum eingeben: Wählen Sie, ob der Bericht Daten vom letzten Tag, den letzten 7 Tagen, den letzten 30 Tagen, dem letzten Quartal oder dem letzten Jahr enthalten soll.
-. Geben Sie die Konfigurationsdetails für den Bericht ein: Wählen Sie, ob der Bericht nur einmalig ausgeführt oder eine wiederkehrende Berichtserstellung geplant werden soll. Für geplante Berichte wählen Sie die Häufigkeit der Wiederholung und ein Startdatum.
+. Geben Sie die Konfigurationsdetails für den Bericht ein: Es kann ausgewählt werden, ob der Bericht einmalig oder nach einem wiederkehrenden Zeitplan ausgeführt wird. Bei geplanten Berichten kann die Häufigkeit der Wiederholung sowie ein Startdatum ausgewählt werden.
 +
-.. E-Mail-Zustellungsdetails eingeben: (Nur für geplante Berichte) Wenn der Bericht per E-Mail zugestellt werden soll, geben Sie eine oder mehrere E-Mail-Adressen ein, die den geplanten Bericht erhalten sollen.
+.. E-Mail-Zustellungsdetails eingeben: Nur für geplante Berichte eine oder mehrere E-Mail-Adressen angeben, an die der Bericht gesendet wird.
 
 
 +
-Konfigurieren Sie E-Mail-Benachrichtigungen auf der Seite „Einstellungen“. Einzelheiten zum Konfigurieren von E-Mail-Benachrichtigungen finden Sie unterlink:br-start-configure.html["Konfigurieren der Einstellungen"] .
+E-Mail-Benachrichtigungen werden auf der Seite *Einstellungen* konfiguriert. Einzelheiten zur Konfiguration von E-Mail-Benachrichtigungen finden sich unter link:br-start-configure.html["Konfigurieren der Einstellungen"].
 
 . Wählen Sie *Erstellen*.
 
@@ -53,7 +53,7 @@ Konfigurieren Sie E-Mail-Benachrichtigungen auf der Seite „Einstellungen“. E
 Laden Sie einen generierten Schutzbericht entweder als JSON-Datei oder als PDF-Dokument herunter, damit Sie ihn anzeigen und weitergeben können.
 
 .Schritte
-. Wählen Sie im NetApp Backup and Recovery -Menü die Option *Berichte*.
+. Im NetApp Backup und Recovery-Menü die Option *Berichte* auswählen.
 . Auf der Seite *Berichte* wählen Sie das Menü *Berichte* aus, um die Liste der generierten Schutzberichte anzuzeigen.
 . Für den Bericht, den Sie herunterladen möchten, wählen Sie das Aktionen-Symbol image:../media/icon-action.png["Aktionsoption"] > *Download*.
 +
@@ -68,10 +68,10 @@ Laden Sie einen generierten Schutzbericht entweder als JSON-Datei oder als PDF-D
 [[view-a-protection-report]]
 == Einen Schutzbericht anzeigen
 
-Schnell interaktive Details eines Schutzberichts innerhalb von NetApp Backup and Recovery anzeigen. Sie können Zusammenfassungsinformationen zum Auftrag, den Status der Datensicherung, Konfigurationsdetails und mehr sehen.
+Interaktive Details eines Schutzberichts innerhalb von NetApp Backup und Recovery anzeigen. Es werden Zusammenfassungsinformationen zum Auftrag, der Status des Datenschutzes, Konfigurationsdetails und weitere Informationen angezeigt.
 
 .Schritte
-. Wählen Sie im NetApp Backup and Recovery -Menü die Option *Berichte*.
+. Im NetApp Backup und Recovery-Menü die Option *Berichte* auswählen.
 . Auf der Seite *Berichte* wählen Sie das Menü *Berichte* aus, um die Liste der generierten Schutzberichte anzuzeigen.
 . Für den Bericht, den Sie anzeigen möchten, wählen Sie das Aktionen-Symbol image:../media/icon-action.png["Aktionsoption"] > *Bericht anzeigen*.
 +
@@ -87,7 +87,7 @@ Die Berichtsdetails werden angezeigt.
 Löschen Sie einen Datensicherungsbericht, wenn Sie ihn nicht mehr benötigen.
 
 .Schritte
-. Wählen Sie im NetApp Backup and Recovery -Menü die Option *Berichte*.
+. Im NetApp Backup und Recovery-Menü die Option *Berichte* auswählen.
 . Auf der Seite *Berichte* wählen Sie das Menü *Berichte* aus, um die Liste der generierten Schutzberichte anzuzeigen.
 . Für den Bericht, den Sie löschen möchten, wählen Sie das Aktionen-Symbol image:../media/icon-action.png["Aktionsoption"] > *Löschen*.
 . Bestätigen Sie die Aktion, indem Sie *Löschen* auswählen.

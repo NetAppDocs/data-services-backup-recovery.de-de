@@ -14,16 +14,16 @@ summary: NetApp Backup and Recovery unterstützt eine Archivspeicherklasse von G
 
 
 [role="lead"]
-NetApp Backup and Recovery unterstützt eine Archivspeicherklasse von Google und die meisten Regionen.
+Diese Informationen dienen dem Verständnis der von NetApp Backup and Recovery unterstützten Archivierungsebene von Google Cloud Storage. Auch die Wiederherstellungskosten und Abrufzeiten für archivierte Backups können überprüft werden.
 
 
 
 [[supported-google-archival-storage-classes-for-netapp-backup-and-recovery]]
 == Unterstützte Google-Archivspeicherklassen für NetApp Backup and Recovery
 
-Wenn Sicherungsdateien zunächst erstellt werden, werden sie im _Standard_-Speicher gespeichert.  Diese Ebene ist für die Speicherung selten abgerufener Daten optimiert, ermöglicht Ihnen aber auch den sofortigen Zugriff darauf.
+Wenn Backup-Dateien initial erstellt werden, werden sie im _Standard_-Speicher gespeichert. Diese Speicherebene ist für die Speicherung von Daten optimiert, auf die selten zugegriffen wird, ermöglicht aber dennoch sofortigen Zugriff.
 
-Wenn Ihr Cluster vor Ort ONTAP 9.12.1 oder höher verwendet, können Sie zur weiteren Kostenoptimierung in der NetApp Backup and Recovery Benutzeroberfläche ältere Backups nach einer bestimmten Anzahl von Tagen (normalerweise mehr als 30 Tage) in den Archivspeicher verschieben.  Für die Datenabfrage in dieser Ebene fallen höhere Kosten an. Sie müssen daher berücksichtigen, wie oft Sie Daten aus diesen archivierten Sicherungsdateien wiederherstellen müssen.  Weitere Informationen zum Wiederherstellen von Daten aus dem Archivspeicher finden Sie im Abschnitt auf dieser Seite.
+Wenn Ihr lokaler Cluster ONTAP 9.12.1 oder höher verwendet, kann nach einer bestimmten Anzahl von Tagen (in der Regel mehr als 30 Tagen) zur weiteren Kostenoptimierung ausgewählt werden, ältere Backups in den _Archive_-Speicher in der NetApp Backup and Recovery UI zu verschieben. Daten in dieser Ebene sind mit höheren Wiederherstellungskosten verbunden, daher sollte berücksichtigt werden, wie häufig eine Wiederherstellung von Daten aus diesen archivierten Backup-Dateien erforderlich ist. Siehe den Abschnitt auf dieser Seite zum Wiederherstellen von Daten aus dem Archivspeicher.
 
 Beachten Sie, dass Sie beim Konfigurieren von NetApp Backup and Recovery mit dieser Art von Lebenszyklusregel beim Einrichten des Buckets in Ihrem Google-Konto keine Lebenszyklusregeln konfigurieren dürfen.
 

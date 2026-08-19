@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: br-start-setup.html 
 keywords: backup, back up, restore, recovery, aws, azure 
-summary: Bevor Sie NetApp Backup and Recovery verwenden, führen Sie einige Schritte zum Einrichten von Sicherungszielen aus. 
+summary: Einen externen Speicherort wie StorageGRID, AWS oder Azure vorbereiten und die erforderlichen Berechtigungen konfigurieren, sodass dieser als Backup-Ziel genutzt werden kann. 
 ---
-= Richten Sie Sicherungsziele ein, bevor Sie NetApp Backup and Recovery verwenden
+= Backup-Ziele einrichten
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,7 +12,7 @@ summary: Bevor Sie NetApp Backup and Recovery verwenden, führen Sie einige Schr
 
 
 [role="lead"]
-Bevor Sie NetApp Backup and Recovery verwenden, führen Sie einige Schritte zum Einrichten von Sicherungszielen aus.
+Einen externen Speicherort wie StorageGRID, AWS oder Azure vorbereiten und die erforderlichen Berechtigungen konfigurieren, sodass dieser als Backup-Ziel genutzt werden kann.
 
 Bevor Sie beginnen, überprüfen Sielink:concept-start-prereq.html["Voraussetzungen"] um sicherzustellen, dass Ihre Umgebung bereit ist.
 
@@ -25,32 +25,32 @@ Bereiten Sie eines oder mehrere der folgenden Sicherungsziele vor:
 
 * NetApp StorageGRID.
 +
-Siehe https://docs.netapp.com/us-en/storage-management-storagegrid/task-discover-storagegrid.html["Entdecken Sie StorageGRID"^] .
+Siehe  https://docs.netapp.com/us-en/storage-management-storagegrid/task-discover-storagegrid.html["Entdecken Sie StorageGRID"^].
 
 +
-Siehe https://docs.netapp.com/us-en/storagegrid/index.html["StorageGRID -Dokumentation"^] für Details zu StorageGRID.
+Weitere Informationen zu StorageGRID finden Sie unter  https://docs.netapp.com/us-en/storagegrid/index.html["StorageGRID -Dokumentation"^].
 
-* Amazon Web Services.  Siehe https://docs.netapp.com/us-en/storage-management-s3-storage/index.html["Amazon S3-Dokumentation"^] .
+* Amazon Web Services. Siehe https://docs.netapp.com/us-en/storage-management-s3-storage/index.html["Amazon S3-Dokumentation"^].
 +
 Gehen Sie wie folgt vor, um AWS als Sicherungsziel vorzubereiten:
 
 +
 ** Richten Sie ein Konto in AWS ein.
 ** Konfigurieren Sie die S3-Berechtigungen in AWS, die im nächsten Abschnitt aufgeführt sind.
-** Weitere Informationen zur Verwaltung Ihres AWS-Speichers in der Konsole finden Sie unter https://docs.netapp.com/us-en/console-setup-admin/task-viewing-amazon-s3.html["Verwalten Sie Ihre Amazon S3-Buckets"^] .
+** Weitere Informationen zur Verwaltung Ihres AWS-Speichers in der Konsole finden Sie unter  https://docs.netapp.com/us-en/console-setup-admin/task-viewing-amazon-s3.html["Verwalten Sie Ihre Amazon S3-Buckets"^].
 
 
 * Microsoft Azure.
 +
-** Siehe https://docs.netapp.com/us-en/storage-management-azure-netapp-files/index.html["Azure NetApp Files Dokumentation"^] .
+** Siehe  https://docs.netapp.com/us-en/storage-management-blob-storage/index.html["Azure Blob Storage Dokumentation"^].
 ** Richten Sie ein Konto in Azure ein.
 ** Konfigurieren https://docs.netapp.com/us-en/console-setup-admin/reference-permissions.html["Azure-Berechtigungen"^] in Azure.
-** Weitere Informationen zur Verwaltung Ihres Azure-Speichers in der Konsole finden Sie unter https://docs.netapp.com/us-en/storage-management-blob-storage/task-view-azure-blob-storage.html["Verwalten Ihrer Azure-Speicherkonten"^] .
+** Weitere Informationen zur Verwaltung Ihres Azure-Speichers in der Konsole finden Sie unter  https://docs.netapp.com/us-en/storage-management-blob-storage/task-view-azure-blob-storage.html["Verwalten Ihrer Azure-Speicherkonten"^].
 
 
 
 
-Nachdem Sie Optionen im Sicherungsziel selbst konfiguriert haben, konfigurieren Sie es später als Sicherungsziel in NetApp Backup and Recovery.  Einzelheiten zum Konfigurieren des Sicherungsziels in NetApp Backup and Recovery finden Sie unterlink:br-start-discover-backup-targets.html["Ermitteln von Sicherungszielen"] .
+Nachdem die Optionen im Sicherungsziel selbst konfiguriert wurden, wird es später als Sicherungsziel in NetApp Backup and Recovery konfiguriert. Einzelheiten zur Konfiguration des Sicherungsziels in NetApp Backup and Recovery finden sich unter link:br-start-discover-backup-targets.html["Ermitteln von Sicherungszielen"].
 
 
 
@@ -71,7 +71,7 @@ NOTE: Wenn Sie Backups in AWS China-Regionen erstellen, müssen Sie den AWS-Ress
 
 . Wenn Sie den Dienst aktivieren, werden Sie vom Backup-Assistenten aufgefordert, einen Zugriffsschlüssel und einen geheimen Schlüssel einzugeben.  Diese Anmeldeinformationen werden an den ONTAP Cluster weitergegeben, damit ONTAP Daten im S3-Bucket sichern und wiederherstellen kann.  Dazu müssen Sie einen IAM-Benutzer mit den folgenden Berechtigungen erstellen.
 +
-Weitere Informationen finden Sie im https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html["AWS-Dokumentation: Erstellen einer Rolle zum Delegieren von Berechtigungen an einen IAM-Benutzer"^] .
+Siehe  https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html["AWS-Dokumentation: Erstellen einer Rolle zum Delegieren von Berechtigungen an einen IAM-Benutzer"^].
 
 +
 [%collapsible]

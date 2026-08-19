@@ -14,7 +14,7 @@ summary: 'Führen Sie einige Schritte aus, um externe Sicherungsziele in NetApp 
 
 
 [role="lead"]
-Führen Sie einige Schritte aus, um externe Sicherungsziele in NetApp Backup and Recovery zu ermitteln oder manuell hinzuzufügen.
+Offsite-Backup-Ziele wie AWS S3, Azure Blob Storage, Google Cloud Storage oder StorageGRID können erkannt oder manuell hinzugefügt werden, sodass Backups außerhalb der primären Umgebung gespeichert werden können.
 
 
 
@@ -25,14 +25,13 @@ Konfigurieren Sie Ihre Sicherungsziele (Amazon Web Services (AWS) S3, Microsoft 
 
 Sie können diese Ziele automatisch ermitteln oder manuell hinzufügen.
 
-Geben Sie Anmeldeinformationen für den Zugriff auf das Speicherkonto ein.  NetApp Backup and Recovery verwendet diese Anmeldeinformationen, um die Workloads zu ermitteln, die Sie sichern möchten.
+Geben Sie die Zugangsdaten für das Speicherkonto an. NetApp Backup and Recovery verwendet diese Zugangsdaten, um den Zugriff auf Ihre Backup-Ziel-Buckets zu ermitteln und zu überprüfen.
 
 .Bevor Sie beginnen
 Sie müssen mindestens eine Arbeitslast ermitteln, bevor Sie ein externes Sicherungsziel hinzufügen können.
 
 .Schritte
-. Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
-. Wählen Sie die Registerkarte *Verwaltete externe Sicherungsziele* aus.
+. Im Menü NetApp Backup and Recovery die Option *Backup-Ziele* auswählen.
 . Wählen Sie *Sicherungsziel ermitteln*.
 . Wählen Sie einen der verfügbaren Backup-Zieltypen aus: *AWS*, *Azure*, *StorageGRID*, *ONTAP S3* oder *GCP*.
 . Wählen Sie *Weiter*.
@@ -43,7 +42,7 @@ Sie müssen mindestens eine Arbeitslast ermitteln, bevor Sie ein externes Sicher
 ** Für AWS:
 +
 *** *Anmeldeinformationsname*: Geben Sie den AWS-Anmeldeinformationsnamen ein.
-*** *Zugriffsschlüssel*: Geben Sie das AWS-Geheimnis ein.
+*** *Zugriffsschlüssel*: AWS-Zugriffsschlüssel eingeben.
 *** *Geheimschlüssel*: Geben Sie den geheimen AWS-Schlüssel ein.
 
 
@@ -51,14 +50,14 @@ Sie müssen mindestens eine Arbeitslast ermitteln, bevor Sie ein externes Sicher
 +
 *** *Anmeldeinformationsname*: Geben Sie den Anmeldeinformationsnamen für Azure Blob Storage ein.
 *** *Clientgeheimnis*: Geben Sie das Clientgeheimnis von Azure Blob Storage ein.
-*** *Anwendungs-ID (Client-ID)*: Wählen Sie die Azure Blob Storage-Anwendungs-ID aus.
+*** *Anwendungs-ID (Client-ID)*: Die Azure Blob Storage-Anwendungs-ID eingeben.
 *** *Verzeichnis-Mandanten-ID*: Geben Sie die Azure Blob Storage-Mandanten-ID ein.
 
 
 ** Für StorageGRID:
 +
 *** *Anmeldeinformationsname*: Geben Sie den Anmeldeinformationsnamen von StorageGRID ein.
-*** *Gateway-Knoten-FQDN*: Geben Sie einen FQDN-Namen für StorageGRID ein.
+*** *FQDN des Gateway-Knotens*: Einen FQDN für den StorageGRID Gateway-Knoten eingeben.
 *** *Port*: Geben Sie die Portnummer für StorageGRID ein.
 *** *Zugriffsschlüssel*: Geben Sie den StorageGRID S3-Zugriffsschlüssel ein.
 *** *Geheimschlüssel*: Geben Sie den geheimen Schlüssel von StorageGRID S3 ein.
@@ -67,7 +66,7 @@ Sie müssen mindestens eine Arbeitslast ermitteln, bevor Sie ein externes Sicher
 ** Für ONTAP S3:
 +
 *** *Anmeldeinformationsname*: Geben Sie den Anmeldeinformationsnamen für ONTAP S3 ein.
-*** *Gateway-Knoten-FQDN*: Geben Sie einen FQDN-Namen für ONTAP S3 ein.
+*** *FQDN des Gateway-Knotens*: Einen FQDN für den ONTAP S3 Gateway-Knoten eingeben.
 *** *Port*: Geben Sie die Portnummer für ONTAP S3 ein.
 *** *Zugriffsschlüssel*: Geben Sie den ONTAP S3-Zugriffsschlüssel ein.
 *** *Geheimschlüssel*: Geben Sie den geheimen Schlüssel von ONTAP S3 ein.
@@ -90,12 +89,11 @@ Sie müssen mindestens eine Arbeitslast ermitteln, bevor Sie ein externes Sicher
 [[add-a-bucket-for-a-backup-target]]
 == Einen Bucket für ein Sicherungsziel hinzufügen
 
-Anstatt Buckets automatisch von NetApp Backup and Recovery erkennen zu lassen, können Sie einem externen Sicherungsziel manuell einen Bucket hinzufügen.
+Manuell einen Bucket zu einem externen Backup-Ziel hinzufügen, anstatt NetApp Backup and Recovery Buckets automatisch erkennen zu lassen.
 
 .Schritte
-. Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
-. Wählen Sie *Verwaltete externe Sicherungsziele*.
-. Wählen Sie das Ziel aus und wählen Sie rechts die *Aktionen*image:icon-action.png["Symbol „Aktionen“"] Symbol und wählen Sie *Bucket hinzufügen*.
+. Im Menü NetApp Backup and Recovery die Option *Backup-Ziele* auswählen.
+. Wählen Sie ein Ziel aus und wählen Sie rechts das Symbol image:icon-action.png["Symbol „Aktionen“"] *Aktionen* und dann *Bucket hinzufügen* aus.
 . Geben Sie die Bucket-Informationen ein.  Die Informationen unterscheiden sich je nach Art des ausgewählten Sicherungsziels.
 +
 ** Für AWS:
@@ -116,21 +114,21 @@ Anstatt Buckets automatisch von NetApp Backup and Recovery erkennen zu lassen, k
 
 ** Für Azure:
 +
-*** *Abonnement*: Wählen Sie den Namen des Azure Blob Storage-Containers aus.
+*** *Abonnement*: Der Name des Azure-Abonnements wird ausgewählt.
 *** *Ressourcengruppe*: Wählen Sie den Namen der Azure-Ressourcengruppe aus.
 *** *Instanzdetails*:
 +
-**** *Speicherkontoname*: Geben Sie den Namen des Azure Blob Storage-Containers ein.
-**** *Azure-Region*: Geben Sie die Azure-Region für den Container ein.
-**** *Leistungstyp*: Wählen Sie den Leistungstyp „Standard“ oder „Premium“ für den Azure Blob Storage-Container aus, der das erforderliche Leistungsniveau angibt.
-**** *Verschlüsselung*: Wählen Sie den Verschlüsselungstyp für den Azure Blob Storage-Container aus.  Zur Auswahl stehen entweder von Microsoft verwaltete Schlüssel oder vom Kunden verwaltete Schlüssel.  Wenn Sie vom Kunden verwaltete Schlüssel auswählen, müssen Sie den Namen des Schlüsseltresors und den Schlüsselnamen angeben.
+**** *Name des Speicherkontos*: Der Name des Azure Blob Storage Kontos ist einzugeben.
+**** *Azure region*: Geben Sie die Azure-Region für das Speicherkonto ein.
+**** *Leistungstyp*: Der Leistungstyp „Standard“ oder „Premium“ für das Azure Blob Storage-Konto gibt das erforderliche Leistungsniveau an.
+**** *Verschlüsselung*: Der Verschlüsselungstyp für das Azure Blob Storage-Konto kann ausgewählt werden. Zur Auswahl stehen entweder von Microsoft verwaltete Schlüssel oder vom Kunden verwaltete Schlüssel. Bei Auswahl von vom Kunden verwalteten Schlüsseln sind der Name des Schlüsseltresors und der Schlüsselnamen anzugeben.
 
 
 
 
 ** Für StorageGRID:
 +
-*** *Name des Sicherungsziels*: Wählen Sie den Namen des StorageGRID Buckets aus.
+*** *Sicherungsziel*: Den Namen des StorageGRID Sicherungsziels auswählen.
 *** *Bucket-Name*: Geben Sie den Namen des StorageGRID Buckets ein.
 *** *Region*: Geben Sie die StorageGRID -Region für den Bucket ein.
 *** *Versionierung aktivieren*: Wählen Sie diese Option, um die Versionierung für den StorageGRID Bucket zu aktivieren.  Durch die Versionierung können Sie mehrere Versionen von Objekten im Bucket behalten, was für Sicherungs- und Wiederherstellungszwecke nützlich sein kann.
@@ -140,8 +138,8 @@ Anstatt Buckets automatisch von NetApp Backup and Recovery erkennen zu lassen, k
 
 ** Für ONTAP S3:
 +
-*** *Name des Sicherungsziels*: Wählen Sie den Namen des ONTAP S3-Buckets aus.
-*** *Bucket-Zielname*: Geben Sie den Namen des ONTAP S3-Buckets ein.
+*** *Sicherungsziel*: Der Name des ONTAP S3 Backup-Ziels ist auszuwählen.
+*** *Bucket-Name*: Der Name des ONTAP S3 Buckets ist einzugeben.
 *** *Kapazität*: Geben Sie die Kapazität für den ONTAP S3-Bucket ein.  Dies ist die maximale Datenmenge, die im Bucket gespeichert werden kann.
 *** *Versionierung aktivieren*: Wählen Sie diese Option, um die Versionierung für den ONTAP S3-Bucket zu aktivieren.  Durch die Versionierung können Sie mehrere Versionen von Objekten im Bucket behalten, was für Sicherungs- und Wiederherstellungszwecke nützlich sein kann.
 *** *Objektsperre*: Wählen Sie diese Option, um die Objektsperre für den ONTAP S3-Bucket zu aktivieren.  Durch die Objektsperre wird verhindert, dass Objekte für einen bestimmten Aufbewahrungszeitraum gelöscht oder überschrieben werden, und so eine zusätzliche Ebene des Datenschutzes geschaffen.  Sie können dies nur aktivieren, wenn Sie einen Bucket erstellen, und Sie können es später nicht mehr deaktivieren.
@@ -168,9 +166,8 @@ Anstatt Buckets automatisch von NetApp Backup and Recovery erkennen zu lassen, k
 Geben Sie die für den Zugriff auf das Sicherungsziel erforderlichen Anmeldeinformationen ein.
 
 .Schritte
-. Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
-. Wählen Sie *Offsite-Sicherungsziele*.
-. Wählen Sie das Ziel aus und wählen Sie rechts die *Aktionen*image:icon-action.png["Symbol „Aktionen“"] Symbol und wählen Sie *Anmeldeinformationen ändern*.
+. Im Menü NetApp Backup and Recovery die Option *Backup-Ziele* auswählen.
+. Wählen Sie ein Ziel aus und wählen Sie rechts das Symbol image:icon-action.png["Symbol „Aktionen“"] *Aktionen* und dann *Anmeldeinformationen ändern* aus.
 . Geben Sie die neuen Anmeldeinformationen für das Sicherungsziel ein.  Die Informationen unterscheiden sich je nach Art des ausgewählten Sicherungsziels.
 . Wählen Sie *Fertig*.
 

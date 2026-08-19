@@ -14,12 +14,12 @@ summary: Schützen Sie Ihre VMware-Workloads mit NetApp Backup and Recovery.
 
 
 [role="lead"]
-Verwenden Sie mit NetApp Backup and Recovery die von NetApp bereitgestellten Standard-Backup-Richtlinien zum Erstellen Ihrer Backups oder erstellen Sie benutzerdefinierte Richtlinien.  Richtlinien regeln die Sicherungshäufigkeit, den Zeitpunkt der Sicherung und die Anzahl der aufbewahrten Sicherungsdateien.
+In NetApp Backup und Recovery können die Standardsicherungsrichtlinien verwendet oder benutzerdefinierte Richtlinien für Ihre ONTAP Volumes erstellt werden. Richtlinien steuern Sicherungshäufigkeit, Sicherungszeitpunkt und Aufbewahrungsdauer.
 
 
 NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
 
-Wenn Sie den Aktivierungsassistenten verwenden, um den Sicherungs- und Wiederherstellungsdienst für Ihre Volumes zu aktivieren, können Sie aus den Standardrichtlinien und allen anderen Richtlinien auswählen, die bereits im System vorhanden sind (Cloud Volumes ONTAP oder lokales ONTAP System).  Wenn Sie eine andere Richtlinie als die vorhandenen Richtlinien verwenden möchten, können Sie die Richtlinie vor oder während der Verwendung des Aktivierungsassistenten erstellen.
+Wenn Sie den Aktivierungsassistenten verwenden, um den Backup und Recovery Service für Ihre Volumes zu aktivieren, können Sie aus den Standardrichtlinien und allen anderen bereits im System vorhandenen Richtlinien (Cloud Volumes ONTAP oder On-Premises ONTAP System) auswählen. Wenn eine andere Richtlinie als die vorhandenen verwendet werden soll, kann diese vor oder während der Nutzung des Aktivierungsassistenten erstellt werden.
 
 Weitere Informationen zu den bereitgestellten Standard-Sicherungsrichtlinien finden Sie unterlink:prev-ontap-protect-journey.html["Planen Sie Ihren Schutzweg"] .
 
@@ -85,7 +85,7 @@ Ein Teil des Richtlinienerstellungsprozesses umfasst die Identifizierung von Sna
 +
 Die Seite „Richtlinienverwaltung“ wird angezeigt.
 
-. Wählen Sie auf der Seite „Richtlinien“ *Richtlinie erstellen* > *Snapshot-Richtlinie erstellen*.
+. Auf der Seite „Richtlinienverwaltung“ *Richtlinie erstellen* > *Snapshot-Richtlinie erstellen* auswählen.
 . Geben Sie den Richtliniennamen an.
 . Wählen Sie den oder die Snapshot-Zeitpläne aus.  Sie können maximal 5 Etiketten haben.  Oder erstellen Sie einen Zeitplan.
 . Wenn Sie einen Zeitplan erstellen möchten:
@@ -127,7 +127,7 @@ In diesem Beispiel wird eine Snapshot-Richtlinie mit zwei Clustern erstellt:
 Ihre 3-2-1-Strategie könnte die Replikation eines Volumes auf einem anderen Speichersystem umfassen.  Die Replikationsrichtlinie befindet sich auf dem *sekundären* Speichersystem.
 
 .Schritte
-. Wählen Sie auf der Seite „Richtlinien“ die Optionen *Richtlinie erstellen* > *Replikationsrichtlinie erstellen*.
+. Auf der Seite „Richtlinienverwaltung“ *Richtlinie erstellen* > *Replikationsrichtlinie erstellen* auswählen.
 . Geben Sie im Abschnitt „Richtliniendetails“ den Richtliniennamen an.
 . Geben Sie die SnapMirror -Beschriftungen (maximal 5) an, die die Aufbewahrungsdauer für jede Beschriftung angeben.
 . Geben Sie den Übertragungsplan an.
@@ -148,7 +148,7 @@ Diese Speicherrichtlinie befindet sich je nach Sicherungsarchitektur an verschie
 
 
 .Schritte
-. Wählen Sie auf der Seite „Richtlinienverwaltung“ *Richtlinie erstellen* > *Sicherungsrichtlinie erstellen*.
+. Auf der Seite „Richtlinienverwaltung“ *Richtlinie erstellen* > *Sicherungsrichtlinie erstellen* auswählen.
 . Geben Sie im Abschnitt „Richtliniendetails“ den Richtliniennamen an.
 . Geben Sie die SnapMirror -Beschriftungen (maximal 5) an, die die Aufbewahrungsdauer für jede Beschriftung angeben.
 . Geben Sie die Einstellungen an, einschließlich des Übertragungszeitplans und des Zeitpunkts, zu dem die Sicherungen archiviert werden sollen.

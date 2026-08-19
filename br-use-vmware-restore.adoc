@@ -14,7 +14,7 @@ summary: Schützen Sie Ihre VMware-Workloads mit NetApp Backup and Recovery.
 
 
 [role="lead"]
-VMware-Workloads können mithilfe von NetApp Backup and Recovery aus Snapshots, aus einer auf einen Sekundärspeicher replizierten Workload-Sicherung oder aus in Objektspeichern gespeicherten Sicherungen wiederhergestellt werden.
+NetApp Backup and Recovery ermöglicht die Wiederherstellung von VMware-Workloads aus Snapshots, replizierten Backups auf Sekundärspeicher oder in Objektspeicher gespeicherten Backups.
 
 .Von diesen Speicherorten wiederherstellen
 Sie können Workloads von verschiedenen Startorten wiederherstellen:
@@ -39,8 +39,8 @@ TIP: Möglicherweise zahlen Sie Ihrem Cloud-Anbieter zusätzliche Gebühren für
 
 
 
-[[how-restoring-workloads-works]]
-== So funktioniert die Wiederherstellung von Workloads
+[[how-vmware-workload-restore-works]]
+== Funktionsweise der Wiederherstellung von VMware Workloads
 
 Beim Wiederherstellen von Workloads geschieht Folgendes:
 
@@ -57,7 +57,7 @@ image:diagram_browse_restore_volume-unified.png["Ein Diagramm, das den Ablauf zu
 [[restore-workload-data-from-the-restore-option-search-restore]]
 == Wiederherstellen von Workload-Daten über die Option „Wiederherstellen“ (Suchen und Wiederherstellen)
 
-Stellen Sie VMware-Workloads mithilfe der Option „Wiederherstellen“ wieder her. Sie können nach dem Snapshot anhand seines Namens oder mithilfe von Filtern suchen.
+Die Option „Wiederherstellen“ dient dazu, VMware-Workloads wiederherzustellen. Eine Suche nach einem Snapshot ist anhand des Namens oder mithilfe von Filtern möglich.
 
 *Erforderliche NetApp Console-Rolle* Storage Viewer, Backup and Recovery Super Admin, Backup and Recovery Restore Admin Rolle. Für den Schutz von Daten, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
@@ -102,7 +102,7 @@ Wenn Sie sich für einen sekundären Speicher entscheiden, wählen Sie den Ziels
 ====
 .Am ursprünglichen Speicherort wiederherstellen
 --
-Bei der Wiederherstellung am ursprünglichen Speicherort können Sie weder das Ziel-vCenter, den ESXi-Host, den Datenspeicher noch den Namen der VM ändern. Die ursprüngliche VM wird bei der Wiederherstellungsoperation überschrieben.
+Bei der Wiederherstellung am ursprünglichen Speicherort können weder das Ziel vCenter, der ESXi-Host, der Datenspeicher noch der Name der VM geändert werden. Der Wiederherstellungsvorgang überschreibt die ursprüngliche VM.
 
 . Wählen Sie den Bereich *Ursprünglicher Speicherort* aus.
 . Wählen Sie aus den folgenden Optionen:
@@ -137,7 +137,7 @@ Bei der Wiederherstellung an einem alternativen Speicherort können Sie das Ziel
 *** *ESXi-Host*: Wählen Sie den Host aus, auf dem Sie den Snapshot wiederherstellen möchten.
 *** *Netzwerk*: Wählen Sie das Netzwerk aus, in dem Sie den Snapshot wiederherstellen möchten.
 *** *Datenspeicher*: Wählen Sie in der Dropdown-Liste den Namen des Datenspeichers aus, in dem Sie den Snapshot wiederherstellen möchten.
-*** *Name der virtuellen Maschine*: Geben Sie den Namen der VM ein, auf der Sie den Snapshot wiederherstellen möchten. Wenn der Name mit einer bereits im Datenspeicher vorhandenen VM übereinstimmt, sorgt Backup and Recovery für einen eindeutigen Namen, indem ein aktueller Zeitstempel angehängt wird.
+*** *Name der virtuellen Maschine*: Der Name der VM, auf der der Snapshot wiederhergestellt werden soll, ist einzugeben. Wenn der Name mit einer bereits im Datenspeicher vorhandenen VM übereinstimmt, macht NetApp Backup and Recovery den Namen durch Anhängen des aktuellen Zeitstempels eindeutig.
 
 
 ** *Zielspeicher*-Abschnitt (nur sichtbar beim Wiederherstellen aus Objektspeicher):

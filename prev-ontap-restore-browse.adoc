@@ -14,7 +14,7 @@ summary: Mit NetApp Backup and Recovery können Sie ONTAP-Daten mit der Funktion
 
 
 [role="lead"]
-Mit NetApp Backup und Recovery lassen sich ONTAP Daten mithilfe von „Browse & Restore“ wiederherstellen. Vor der Wiederherstellung sollten der Name des Quellvolumes, das Quellsystem, die Storage-VM und das Datum der Backup-Datei notiert werden. ONTAP Daten können aus einem Snapshot, einem replizierten Volume oder aus Backups, die im Objektspeicher abgelegt sind, wiederhergestellt werden.
+„Durchsuchen & Wiederherstellen“ wird verwendet, wenn der Name des Quellvolumes, das Quellsystem, die Storage-VM und das Datum der Sicherungsdatei bekannt sind. ONTAP Daten können aus einem Snapshot, einem replizierten Volume oder einer in einem Objektspeicher gespeicherten Sicherung wiederhergestellt werden.
 
 Die Wiederherstellungsmöglichkeiten hängen von Ihrer ONTAP Version ab:
 
@@ -33,7 +33,7 @@ Die Wiederherstellungsmöglichkeiten hängen von Ihrer ONTAP Version ab:
 link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über die Wiederherstellung aus dem AWS-Archivspeicher"]Die link:prev-reference-azure-archive-storage-tiers.html["Weitere Informationen zur Wiederherstellung aus dem Azure-Archivspeicher"]Die link:prev-reference-gcp-archive-storage-tiers.html["Erfahren Sie mehr über die Wiederherstellung aus dem Google-Archivspeicher"]Die
 
 
-NOTE: Die hohe Priorität wird beim Wiederherstellen von Daten aus dem Azure-Archivspeicher auf StorageGRID -Systemen nicht unterstützt.
+NOTE: Die hohe Wiederherstellungspriorität wird beim Wiederherstellen von Daten aus dem Azure-Archivspeicher auf StorageGRID Systeme nicht unterstützt.
 
 
 
@@ -92,7 +92,7 @@ Es ist möglich, ONTAP Daten aus einer Sicherungsdatei, die sich auf einem sekun
 
 
 
-| NetApp StorageGRID | On-Premises- ONTAP -System  a| 
+| StorageGRID | On-Premises- ONTAP -System  a| 
 * On-Premises- ONTAP -System
 * Cloud Volumes ONTAP
 
@@ -114,14 +114,14 @@ Es ist möglich, ONTAP Daten aus einer Sicherungsdatei, die sich auf einem sekun
 |===
 Für „Durchsuchen und Wiederherstellen“ kann der Konsolenagent an den folgenden Speicherorten installiert werden:
 
-* Für Amazon S3 kann der Konsolenagent in AWS oder in Ihren Räumlichkeiten bereitgestellt werden
-* Für Azure Blob kann der Konsolenagent in Azure oder in Ihren Räumlichkeiten bereitgestellt werden
+* Für Amazon S3 kann der Console Agent in AWS oder lokal bereitgestellt werden.
+* Für Azure Blob kann der Console-Agent in Azure oder lokal bereitgestellt werden.
 * Für Google Cloud Storage muss der Konsolenagent in Ihrem Google Cloud Platform VPC bereitgestellt werden
-* Für StorageGRID muss der Konsolenagent in Ihren Räumlichkeiten bereitgestellt werden; mit oder ohne Internetzugang
-* Für ONTAP S3 kann der Konsolenagent in Ihren Räumlichkeiten (mit oder ohne Internetzugang) oder in einer Cloud-Provider-Umgebung bereitgestellt werden
+* Für StorageGRID muss der Konsolenagent lokal bereitgestellt werden, mit oder ohne Internetzugang
+* Für ONTAP S3 kann der Console-Agent lokal (mit oder ohne Internetzugang) oder in einer Cloud-Provider-Umgebung bereitgestellt werden
 
 
-Beachten Sie, dass Verweise auf „On-Premises ONTAP Systeme“ FAS, AFF und ONTAP Select Systeme umfassen.
+Zu beachten ist, dass Verweise auf „On-Premises ONTAP Systeme“ FAS, AFF und ONTAP Select Systeme einschließen.
 
 
 NOTE: Wenn die ONTAP Version auf Ihrem System niedriger als 9.13.1 ist, können Sie keine Ordner oder Dateien wiederherstellen, wenn die Sicherungsdatei mit DataLock & Ransomware konfiguriert wurde.  In diesem Fall können Sie das gesamte Volume aus der Sicherungsdatei wiederherstellen und dann auf die benötigten Dateien zugreifen.
@@ -139,7 +139,7 @@ NOTE: Wenn Sie ein SnapLock-fähiges Volume wiederherstellen, bleibt der SnapLoc
 Wenn Sie ein Cloud-Backup auf einem Cloud Volumes ONTAP -System mit ONTAP 9.13.0 oder höher oder auf einem lokalen ONTAP System mit ONTAP 9.14.1 wiederherstellen, haben Sie die Möglichkeit, eine _schnelle Wiederherstellung_ durchzuführen. Die schnelle Wiederherstellung ist ideal für Notfallwiederherstellungssituationen, in denen Sie so schnell wie möglich Zugriff auf ein Volume bereitstellen müssen. Bei einer schnellen Wiederherstellung werden die Metadaten aus der Sicherungsdatei auf einem Volume wiederhergestellt, anstatt die gesamte Sicherungsdatei wiederherzustellen.  Die schnelle Wiederherstellung wird für leistungs- oder latenzempfindliche Anwendungen nicht empfohlen und wird bei Sicherungen im Archivspeicher nicht unterstützt.
 
 
-NOTE: Die schnelle Wiederherstellung wird für FlexGroup -Volumes nur unterstützt, wenn auf dem Quellsystem, von dem das Cloud-Backup erstellt wurde, ONTAP 9.12.1 oder höher ausgeführt wurde.  Und es wird für SnapLock -Volumes nur unterstützt, wenn auf dem Quellsystem ONTAP 9.11.0 oder höher ausgeführt wurde.
+NOTE: Die Schnellwiederherstellung wird für FlexGroup Volumes nur unterstützt, wenn auf dem Quellsystem, von dem die Cloud-Sicherung erstellt wurde, ONTAP 9.12.1 oder höher ausgeführt wurde. Sie wird für SnapLock Volumes nur unterstützt, wenn auf dem Quellsystem ONTAP 9.11.0 oder höher ausgeführt wurde.
 
 Bei der Wiederherstellung von einem replizierten Volume können Sie das Volume auf dem ursprünglichen System oder auf einem Cloud Volumes ONTAP oder On-Premises ONTAP -System wiederherstellen.
 
@@ -149,7 +149,7 @@ Um ein Volume wiederherzustellen, benötigen Sie den Namen des Quellsystems, die
 
 .Schritte
 . Wählen Sie im Konsolenmenü *Schutz > Sicherung und Wiederherstellung*.
-. Wählen Sie die Registerkarte *Wiederherstellen* und das Wiederherstellungs-Dashboard wird angezeigt.
+. Die Registerkarte *Wiederherstellen* zeigt das Wiederherstellungs-Dashboard an.
 . Wählen Sie im Abschnitt „Durchsuchen und Wiederherstellen“ die Option „Volume wiederherstellen“ aus.
 . Navigieren Sie auf der Seite „Quelle auswählen“ zur Sicherungsdatei für das Volume, das Sie wiederherstellen möchten.  Wählen Sie das *System*, das *Volume* und die *Sicherungsdatei* mit dem Datums-/Zeitstempel aus, von dem Sie wiederherstellen möchten.
 +
@@ -157,7 +157,7 @@ Die Spalte *Speicherort* zeigt an, ob die Sicherungsdatei (Snapshot) *lokal* (ei
 
 . Wählen Sie *Weiter*.
 +
-Beachten Sie: Wenn Sie eine Sicherungsdatei im Objektspeicher auswählen und für diese Sicherung der Ransomware-Schutz aktiviert ist (wenn Sie Datalock und Ransomware-Schutz in der Sicherungsrichtlinie aktiviert haben), werden Sie aufgefordert, vor der Datenwiederherstellung einen zusätzlichen Ransomware-Scan der Sicherungsdatei durchzuführen. Wir empfehlen, die Sicherungsdatei auf Ransomware zu scannen. (Für den Zugriff auf die Inhalte der Sicherungsdatei fallen zusätzliche Egress-Kosten Ihres Cloud-Anbieters an.)
+Beachten Sie, dass, wenn Sie eine Sicherungsdatei im Objektspeicher auswählen und für diese Sicherung ein Ransomware-Schutz aktiv ist (wenn Sie DataLock und den Ransomware-Schutz in der Sicherungsrichtlinie aktiviert haben), Sie aufgefordert werden, vor der Wiederherstellung der Daten einen zusätzlichen Ransomware-Scan der Sicherungsdatei durchzuführen. Es wird empfohlen, die Sicherungsdatei auf Ransomware zu scannen. (Für den Zugriff auf die Inhalte der Sicherungsdatei fallen zusätzliche Egress-Kosten Ihres Cloud-Anbieters an.)
 
 . Wählen Sie auf der Seite „Ziel auswählen“ das *System* aus, auf dem Sie das Volume wiederherstellen möchten.
 . Wenn Sie beim Wiederherstellen einer Sicherungsdatei aus dem Objektspeicher ein lokales ONTAP -System auswählen und die Clusterverbindung zum Objektspeicher noch nicht konfiguriert haben, werden Sie zur Eingabe zusätzlicher Informationen aufgefordert:
@@ -235,7 +235,7 @@ image:diagram_browse_restore_file.png["Ein Diagramm, das den Ablauf zum Ausführ
 
 .Schritte
 . Wählen Sie im Konsolenmenü *Schutz > Sicherung und Wiederherstellung*.
-. Wählen Sie die Registerkarte *Wiederherstellen* und das Wiederherstellungs-Dashboard wird angezeigt.
+. Die Registerkarte *Wiederherstellen* zeigt das Wiederherstellungs-Dashboard an.
 . Wählen Sie im Abschnitt „Durchsuchen und Wiederherstellen“ die Option „Dateien oder Ordner wiederherstellen“ aus.
 . Navigieren Sie auf der Seite „Quelle auswählen“ zur Sicherungsdatei für das Volume, das den Ordner oder die Dateien enthält, die Sie wiederherstellen möchten.  Wählen Sie das *System*, das *Volume* und das *Backup* mit dem Datums-/Zeitstempel aus, aus dem Sie Dateien wiederherstellen möchten.
 . Wählen Sie *Weiter* und die Liste der Ordner und Dateien aus der Volume-Sicherung wird angezeigt.
@@ -246,7 +246,7 @@ Wenn Sie Ordner oder Dateien aus einer Sicherungsdatei wiederherstellen, die sic
 link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über die Wiederherstellung aus dem AWS-Archivspeicher"]. link:prev-reference-azure-archive-storage-tiers.html["Weitere Informationen zur Wiederherstellung aus dem Azure-Archivspeicher"]. link:prev-reference-gcp-archive-storage-tiers.html["Erfahren Sie mehr über die Wiederherstellung aus dem Google-Archivspeicher"]. Sicherungsdateien in der Speicherebene des Google-Archivs werden fast sofort wiederhergestellt und erfordern keine Wiederherstellungspriorität.
 
 +
-Wenn der Ransomware-Schutz für die Sicherungsdatei aktiv ist (falls Sie Datalock und Ransomware-Schutz in der Sicherungsrichtlinie aktiviert haben), werden Sie aufgefordert, vor der Wiederherstellung der Daten einen zusätzlichen Ransomware-Scan der Sicherungsdatei durchzuführen. Wir empfehlen, die Sicherungsdatei auf Ransomware zu scannen. (Sie werden zusätzliche Egress-Kosten von Ihrem Cloud-Anbieter für den Zugriff auf die Inhalte der Sicherungsdatei haben.)
+Wenn der Ransomware-Schutz für die Sicherungsdatei aktiv ist (wenn DataLock und der Ransomware-Schutz in der Sicherungsrichtlinie aktiviert wurden), erscheint eine Aufforderung, vor der Wiederherstellung der Daten einen zusätzlichen Ransomware-Scan der Sicherungsdatei durchzuführen. Es wird empfohlen, die Sicherungsdatei auf Ransomware zu scannen. (Für den Zugriff auf die Inhalte der Sicherungsdatei entstehen zusätzliche Egress-Kosten bei Ihrem Cloud-Anbieter.)
 
 . Wählen Sie auf der Seite „Elemente auswählen“ den Ordner oder die Datei(en) aus, die Sie wiederherstellen möchten, und wählen Sie „Weiter“ aus.  So können Sie den Artikel leichter finden:
 +
@@ -271,16 +271,16 @@ Wenn Sie einen lokalen Cluster auswählen und die Clusterverbindung zum Objektsp
 
 . Wählen Sie dann das *Volume* und den *Ordner* aus, in dem Sie den Ordner oder die Datei(en) wiederherstellen möchten.
 +
-Beim Wiederherstellen von Ordnern und Dateien stehen Ihnen einige Optionen für den Speicherort zur Verfügung.
+Beim Wiederherstellen von Ordnern und Dateien stehen verschiedene Optionen für den Speicherort zur Verfügung.
 
 +
 ** Wenn Sie wie oben gezeigt „Zielordner auswählen“ ausgewählt haben:
 +
 *** Sie können einen beliebigen Ordner auswählen.
-*** Sie können mit der Maus über einen Ordner fahren und am Ende der Zeile klicken, um in die Unterordner zu gelangen, und dann einen Ordner auswählen.
+*** Sie können mit dem Mauszeiger über einen Ordner fahren und das Ende der Zeile auswählen, um in die Unterordner zu wechseln und anschließend einen Ordner auswählen.
 
 
-** Wenn Sie dasselbe Zielsystem und Volume ausgewählt haben, in dem sich der Quellordner/die Quelldatei befand, können Sie „Pfad des Quellordners beibehalten“ auswählen, um den Ordner oder die Datei(en) in demselben Ordner wiederherzustellen, in dem sie in der Quellstruktur vorhanden waren.  Alle Ordner und Unterordner müssen bereits vorhanden sein; es werden keine Ordner erstellt.  Beim Wiederherstellen von Dateien an ihrem ursprünglichen Speicherort können Sie die Quelldatei(en) überschreiben oder neue Dateien erstellen.
+** Wenn dasselbe Zielsystem und Volume wie der Quellordner oder Speicherort der Quelldatei ausgewählt wurde, kann *Quellordnerpfad beibehalten* ausgewählt werden, um den Ordner oder die Dateien im selben Ordner wiederherzustellen, in dem sie in der Quellstruktur vorhanden waren. Alle gleichen Ordner und Unterordner müssen bereits existieren; Ordner werden nicht erstellt. Beim Wiederherstellen von Dateien am ursprünglichen Speicherort besteht die Möglichkeit, die Quelldateien zu überschreiben oder neue Dateien zu erstellen.
 
 
 . Wählen Sie *Wiederherstellen*, um zum Wiederherstellungs-Dashboard zurückzukehren und den Fortschritt des Wiederherstellungsvorgangs zu überprüfen.

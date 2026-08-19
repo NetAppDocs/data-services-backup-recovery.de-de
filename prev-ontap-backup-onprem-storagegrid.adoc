@@ -14,7 +14,7 @@ summary: Führen Sie einige Schritte in NetApp Backup and Recovery aus, um mit d
 
 
 [role="lead"]
-Führen Sie einige Schritte in NetApp Backup and Recovery aus, um mit der Sicherung von Volume-Daten von Ihren lokalen primären ONTAP Systemen auf ein sekundäres Speichersystem und auf Objektspeicher in Ihren NetApp StorageGRID Systemen zu beginnen.
+In NetApp Backup und Recovery können Sie Volumendaten Ihrer primären ONTAP-Systeme vor Ort auf ein sekundäres Speichersystem und in den StorageGRID Objektspeicher sichern. Auf dieser Seite lässt sich die Umgebung vorbereiten und die Backups aktivieren.
 
 
 NOTE: Zu den „On-Premises ONTAP -Systemen“ gehören FAS, AFF und ONTAP Select Systeme.
@@ -40,7 +40,7 @@ Wenn der Konsolenagent und das lokale ONTAP -System an einem lokalen Standort oh
 [[prepare-your-console-agent]]
 == Vorbereiten Ihres Konsolenagenten
 
-Der Konsolenagent ist die Hauptsoftware für die Konsolenfunktionalität.  Zum Sichern und Wiederherstellen Ihrer ONTAP Daten ist ein Konsolenagent erforderlich.
+Der Konsolenagent ist die Hauptsoftware für die NetApp Console .  Zum Sichern und Wiederherstellen Ihrer ONTAP Daten ist ein Konsolenagent erforderlich.
 
 
 
@@ -73,7 +73,7 @@ Stellen Sie sicher, dass das Netzwerk, in dem der Konsolenagent installiert ist,
 
 * Die NetApp Backup and Recovery Funktionalität ist in den Konsolenagenten integriert.  Wenn es im privaten Modus installiert ist, müssen Sie die Konsolenagent-Software regelmäßig aktualisieren, um Zugriff auf neue Funktionen zu erhalten.  Überprüfen Sie dielink:whats-new.html["NetApp Backup and Recovery – Neuigkeiten"] um die neuen Funktionen in jeder Version von NetApp Backup and Recovery anzuzeigen.  Wenn Sie die neuen Funktionen nutzen möchten, folgen Sie den Schritten zum https://docs.netapp.com/us-en/console-setup-admin/task-upgrade-connector.html["Aktualisieren Sie die Konsolenagentsoftware"^] .
 +
-Die neue Version von NetApp Backup and Recovery , die neben der Erstellung von Backups auf Objektspeicher auch die Möglichkeit bietet, Snapshots und replizierte Volumes zu planen und zu erstellen, erfordert die Verwendung der Version 3.9.31 oder höher des Console-Agenten. Es wird daher empfohlen, dass Sie sich diese neueste Version besorgen, um alle Ihre Backups zu verwalten.
+Die neue Version von NetApp Backup und Recovery, die neben der Erstellung von Backups auf Objektspeicher auch die Möglichkeit bietet, Snapshots und replizierte Volumes zu planen und zu erstellen, erfordert, dass Version 3.9.31 oder höher des Console Agent verwendet wird. NetApp empfiehlt, diese neueste Version zur Verwaltung aller Backups zu nutzen.
 
 * Wenn Sie NetApp Backup and Recovery in einer SaaS-Umgebung verwenden, werden die NetApp Backup and Recovery -Konfigurationsdaten in der Cloud gesichert.  Wenn Sie NetApp Backup and Recovery an einem Standort ohne Internetzugang verwenden, werden die Konfigurationsdaten von NetApp Backup and Recovery im StorageGRID Bucket gesichert, in dem Ihre Backups gespeichert werden.
 
@@ -196,7 +196,7 @@ Da Sie auf Cloud Volumes ONTAP oder lokale Systeme replizieren können, überpr�
 
 StorageGRID muss die folgenden Anforderungen erfüllen. Siehe die https://docs.netapp.com/us-en/storagegrid-117/["StorageGRID -Dokumentation"^] für weitere Informationen.
 
-Weitere Informationen zu den Anforderungen an Datalock und Ransomware-Schutz für StorageGRID finden Sie unter link:prev-ontap-policy-object-options.html["Optionen für die Backup-to-Object-Richtlinie"].
+Weitere Informationen zu DataLock und den Anforderungen an den Ransomware-Schutz für StorageGRID finden Sie unter link:prev-ontap-policy-object-options.html["Optionen für die Backup-to-Object-Richtlinie"].
 
 Unterstützte StorageGRID Versionen:: StorageGRID 10.3 und höher wird unterstützt.
 +
@@ -306,9 +306,9 @@ Sie können auch<<API-Befehle anzeigen>> im Überprüfungsschritt, damit Sie den
 === Starten des Assistenten
 
 .Schritte
-. Greifen Sie auf eine der folgenden Arten auf den Assistenten „Sicherung und Wiederherstellung aktivieren“ zu:
+. Der Assistent zum Aktivieren von Backup und Recovery kann auf eine der folgenden Arten aufgerufen werden:
 +
-** Wählen Sie auf der Konsolenseite *Systeme* das System aus und wählen Sie im rechten Bereich neben „Sicherung und Wiederherstellung“ die Option „Aktivieren > Sicherungsvolumes“ aus.
+** Auf der Seite *Systems* der NetApp Console das System auswählen und im rechten Bereich neben Backup and Recovery die Option *Enable > Backup Volumes* auswählen.
 +
 Wenn das Ziel für Ihre Backups als System auf der Konsolenseite *Systeme* vorhanden ist, können Sie den ONTAP Cluster auf den Objektspeicher ziehen.
 
@@ -316,7 +316,7 @@ Wenn das Ziel für Ihre Backups als System auf der Konsolenseite *Systeme* vorha
 
 
 +
-Auf der Einführungsseite des Assistenten werden die Schutzoptionen angezeigt, darunter lokale Snapshots, Replikation und Backups.  Wenn Sie in diesem Schritt die zweite Option gewählt haben, wird die Seite „Sicherungsstrategie definieren“ mit einem ausgewählten Volume angezeigt.
+Die Einführungsseite des Assistenten zeigt die Schutzoptionen, darunter lokale Snapshots, Replikation und Backups. Wenn in diesem Schritt die zweite Option gewählt wurde, erscheint die Seite „Backup-Strategie definieren“ mit einem ausgewählten Volume.
 
 . Fahren Sie mit den folgenden Optionen fort:
 +
@@ -362,7 +362,7 @@ Wenn auf die von Ihnen ausgewählten Volumes bereits Snapshot- oder Replikations
 
 Zum Definieren der Sicherungsstrategie müssen die folgenden Optionen festgelegt werden:
 
-* Ob Sie eine oder alle Backup-Optionen wünschen: lokale Snapshots, Replikation und Backup auf Objektspeicher
+* Ob Sie eine oder alle der Backup-Optionen wünschen: lokale Snapshots, Replikation und Backup auf Objektspeicher
 * Architektur
 * Lokale Snapshot-Richtlinie
 * Replikationsziel und -richtlinie
@@ -446,9 +446,9 @@ Um eine Richtlinie zu erstellen, wählen Sie *Neue Richtlinie erstellen* und geh
 +
 *** Geben Sie den Namen der Richtlinie ein.
 *** Wählen Sie bis zu fünf Zeitpläne aus, normalerweise mit unterschiedlicher Häufigkeit.
-*** Für Backup-to-Object-Richtlinien müssen die Einstellungen für Datalock und Ransomware-Schutz konfiguriert werden. Weitere Informationen zu Datalock und Ransomware-Schutz finden Sie unter link:prev-ontap-policy-object-options.html["Einstellungen der Backup-to-Object-Richtlinie"].
+*** Für Backup-to-Object-Richtlinien die Einstellungen für DataLock und Ransomware-Schutz festlegen. Weitere Informationen zu DataLock und Ransomware-Schutz finden sich unter link:prev-ontap-policy-object-options.html["Einstellungen der Backup-to-Object-Richtlinie"].
 +
-Wenn Ihr Cluster ONTAP 9.11.1 oder höher verwendet, können Sie Ihre Backups vor Löschung und Ransomware-Angriffen schützen, indem Sie _DataLock und Ransomware-Schutz_ konfigurieren. _DataLock_ schützt Ihre Backup-Dateien davor, geändert oder gelöscht zu werden, und _Ransomware-Schutz_ scannt Ihre Backup-Dateien, um Hinweise auf einen Ransomware-Angriff in Ihren Backup-Dateien zu finden.
+Wenn Ihr Cluster ONTAP 9.11.1 oder höher verwendet, besteht die Möglichkeit, Ihre Backups vor Löschung und Ransomware-Angriffen zu schützen, indem _DataLock and Ransomware protection_ konfiguriert wird. _DataLock_ schützt Ihre Backup-Dateien davor, geändert oder gelöscht zu werden, und _ransomware protection_ scannt Ihre Backup-Dateien, um Hinweise auf einen Ransomware-Angriff in Ihren Backup-Dateien zu erkennen.
 
 *** Wählen Sie *Erstellen*.
 
@@ -498,9 +498,9 @@ Sie können den Status von Sicherungs- und Wiederherstellungsaufträgen auch mit
 [[show-the-api-commands]]
 === API-Befehle anzeigen
 
-Möglicherweise möchten Sie die im Assistenten „Sicherung und Wiederherstellung aktivieren“ verwendeten API-Befehle anzeigen und optional kopieren.  Möglicherweise möchten Sie dies tun, um die Sicherungsaktivierung in zukünftigen Systemen zu automatisieren.
+Sie können die im Assistenten „Backup und Recovery aktivieren“ verwendeten API-Befehle anzeigen und optional kopieren. Dies kann hilfreich sein, um die Aktivierung von Backups in zukünftigen Systemen zu automatisieren.
 
 .Schritte
-. Wählen Sie im Assistenten „Sicherung und Wiederherstellung aktivieren“ die Option „API-Anforderung anzeigen“ aus.
+. Im Assistenten „Backup und Recovery aktivieren“ *API-Anfrage anzeigen* auswählen.
 . Um die Befehle in die Zwischenablage zu kopieren, wählen Sie das Symbol *Kopieren*.
 

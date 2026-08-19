@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: br-use-back-up-now-kubernetes-applications-web-ui.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, snapcenter 
-summary: Mit NetApp Backup and Recovery können Sie Ihre Workload-Host-Informationen, Datenbankinformationen und Instanzinformationen verwalten.  Sie können Schutzeinstellungen für Ihr Inventar anzeigen, bearbeiten und löschen. 
+summary: Manuelle Erstellung von On-Demand-Backups von Kubernetes-Anwendungen über die NetApp Backup und Recovery Web-Benutzeroberfläche. 
 ---
-= Kubernetes-Anwendungen können jetzt über die NetApp Backup and Recovery Web-Oberfläche gesichert werden
+= Eine Kubernetes-Anwendung mit der NetApp Backup und Recovery Web-Oberfläche sichern
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,25 +14,25 @@ summary: Mit NetApp Backup and Recovery können Sie Ihre Workload-Host-Informati
 
 
 [role="lead"]
-NetApp Backup and Recovery ermöglicht es Ihnen, Kubernetes-Anwendungen manuell über die Weboberfläche zu sichern.
+Die Web-UI kann verwendet werden, um eine bedarfsgesteuerte Sicherung einer Kubernetes-Anwendung durchzuführen.
 
 .Erforderliche NetApp Console
 Organisationsadministrator oder SnapCenter Administrator. link:reference-roles.html["Erfahren Sie mehr über die Zugriffsrollen für NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
 
 
-[[back-up-a-kubernetes-application-now-using-the-web-ui]]
-== Sichern Sie jetzt eine Kubernetes-Anwendung über die Web-Oberfläche
+[[back-up-a-kubernetes-application]]
+== Sichern einer Kubernetes-Anwendung
 
 Erstellen Sie manuell ein Backup einer Kubernetes-Anwendung, um eine Basis für zukünftige Backups und Snapshots zu schaffen oder um sicherzustellen, dass die aktuellsten Daten geschützt sind.
 
 .Schritte
 . Wählen Sie in NetApp Backup and Recovery*Inventar* aus.
-. Wählen Sie eine Kubernetes-Instanz und wählen Sie *Anzeigen*, um die mit dieser Instanz verknüpften Ressourcen anzuzeigen.
+. Wählen Sie eine Kubernetes-Instanz aus und wählen Sie *Anzeigen*, um auf die mit dieser Instanz verknüpften Ressourcen zuzugreifen.
 . Wählen Sie die Registerkarte *Anwendungen*.
-. Wählen Sie in der Anwendungsliste eine Anwendung aus, die Sie sichern möchten, und wählen Sie das zugehörige Aktionsmenü.
+. In der Anwendungsliste eine Anwendung auswählen, die gesichert werden soll, und das zugehörige Aktionsmenü öffnen.
 . Wählen Sie *Jetzt sichern*.
-. Stellen Sie sicher, dass der richtige Anwendungsname ausgewählt ist.
+. Bestätigen Sie, dass die richtige Anwendung ausgewählt ist.
 . Wählen Sie *Sichern*.
 
 

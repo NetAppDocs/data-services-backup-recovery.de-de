@@ -14,7 +14,7 @@ summary: Schützen Sie Ihre VMware-Workloads mit NetApp Backup and Recovery.
 
 
 [role="lead"]
-Führen Sie einige Schritte in NetApp Backup and Recovery aus, um mit der Sicherung von Volumedaten von Ihren lokalen ONTAP -Systemen auf einem sekundären Speichersystem und im Azure Blob-Speicher zu beginnen.
+In NetApp Backup und Recovery können Sie Volumendaten Ihrer lokalen ONTAP-Systeme auf ein sekundäres Speichersystem und in Azure Blob sichern. Auf dieser Seite lässt sich die Umgebung vorbereiten und Backups aktivieren.
 
 
 NOTE: Zu den „On-Premises ONTAP -Systemen“ gehören FAS, AFF und ONTAP Select Systeme.
@@ -64,7 +64,7 @@ Wenn nicht, müssen Sie an einem dieser Standorte einen Konsolenagenten erstelle
 * https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-on-prem.html["Installieren Sie einen Konsolenagenten in Ihren Räumlichkeiten"^]
 * https://docs.netapp.com/us-en/console-setup-admin/task-install-restricted-mode.html["Installieren eines Konsolen-Agenten in einer Azure Government-Region"^]
 +
-NetApp Backup and Recovery wird in Azure Government-Regionen unterstützt, wenn der Konsolenagent in der Cloud bereitgestellt wird – nicht, wenn er in Ihren Räumlichkeiten installiert ist.  Darüber hinaus müssen Sie den Konsolen-Agenten vom Azure Marketplace bereitstellen.  Sie können den Konsolenagenten nicht von der SaaS-Website der Konsole in einer Regierungsregion bereitstellen.
+NetApp Backup und Recovery wird in Azure Government-Regionen unterstützt, wenn der Console-Agent in der Cloud bereitgestellt wird, nicht jedoch, wenn er in Ihren Räumlichkeiten installiert ist. Zusätzlich muss der Console-Agent aus dem Azure Marketplace bereitgestellt werden. Der Console-Agent kann in einer Government-Region nicht über die NetApp Console SaaS-Website bereitgestellt werden.
 
 
 
@@ -290,7 +290,7 @@ Da Sie auf Cloud Volumes ONTAP oder lokale Systeme replizieren können, überpr�
 
 . Sie können im Aktivierungsassistenten Ihre eigenen benutzerdefinierten verwalteten Schlüssel zur Datenverschlüsselung verwenden, anstatt die standardmäßigen, von Microsoft verwalteten Verschlüsselungsschlüssel zu verwenden.  In diesem Fall benötigen Sie das Azure-Abonnement, den Key Vault-Namen und den Schlüssel. https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["Erfahren Sie, wie Sie Ihre eigenen Schlüssel verwenden"^] .
 +
-Beachten Sie, dass Backup und Wiederherstellung _Azure-Zugriffsrichtlinien_ als Berechtigungsmodell unterstützen.  Das Berechtigungsmodell _Azure Role-Based Access Control_ (Azure RBAC) wird derzeit nicht unterstützt.
+Zu beachten ist, dass NetApp Backup und Recovery _Azure-Zugriffsrichtlinien_ als Berechtigungsmodell unterstützt. Das Berechtigungsmodell _Azure role-based access control_ (Azure RBAC) wird derzeit nicht unterstützt.
 
 . Wenn Sie eine sicherere Verbindung über das öffentliche Internet von Ihrem lokalen Rechenzentrum zum VNet wünschen, besteht im Aktivierungsassistenten die Möglichkeit, einen privaten Azure-Endpunkt zu konfigurieren.  In diesem Fall müssen Sie das VNet und das Subnetz für diese Verbindung kennen. https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview["Weitere Informationen zur Verwendung eines privaten Endpunkts finden Sie hier."^] .
 
@@ -326,9 +326,9 @@ Sie können auch<<API-Befehle anzeigen>> im Überprüfungsschritt, damit Sie den
 === Starten des Assistenten
 
 .Schritte
-. Greifen Sie auf eine der folgenden Arten auf den Assistenten „Sicherung und Wiederherstellung aktivieren“ zu:
+. Der Assistent zum Aktivieren von Backup und Recovery kann auf eine der folgenden Arten aufgerufen werden:
 +
-** Wählen Sie auf der Konsolenseite *Systeme* das System aus und wählen Sie im rechten Bereich neben dem Sicherungs- und Wiederherstellungsdienst *Aktivieren > Sicherungsvolumes*.
+** Auf der Seite *Systeme* der NetApp Console das System auswählen und im rechten Bereich neben dem Backup und Recovery Service *Aktivieren > Backup Volumes* auswählen.
 +
 Wenn das Azure-Ziel für Ihre Sicherungen auf der Konsolenseite *Systeme* vorhanden ist, können Sie den ONTAP Cluster auf den Azure Blob-Objektspeicher ziehen.
 
@@ -336,7 +336,7 @@ Wenn das Azure-Ziel für Ihre Sicherungen auf der Konsolenseite *Systeme* vorhan
 
 
 +
-Auf der Einführungsseite des Assistenten werden die Schutzoptionen angezeigt, darunter lokale Snapshots, Replikation und Backups.  Wenn Sie in diesem Schritt die zweite Option gewählt haben, wird die Seite „Sicherungsstrategie definieren“ mit einem ausgewählten Volume angezeigt.
+Die Einführungsseite des Assistenten zeigt die Schutzoptionen, darunter lokale Snapshots, Replikation und Backups. Wenn in diesem Schritt die zweite Option gewählt wurde, erscheint die Seite „Backup-Strategie definieren“ mit einem ausgewählten Volume.
 
 . Fahren Sie mit den folgenden Optionen fort:
 +
@@ -382,7 +382,7 @@ Beachten Sie: Wenn auf die von Ihnen ausgewählten Volumes bereits Snapshot- ode
 
 Zum Definieren der Sicherungsstrategie müssen die folgenden Optionen festgelegt werden:
 
-* Ob Sie eine oder alle Backup-Optionen wünschen: lokale Snapshots, Replikation und Backup auf Objektspeicher
+* Ob Sie eine oder alle der Backup-Optionen wünschen: lokale Snapshots, Replikation und Backup auf Objektspeicher
 * Architektur
 * Lokale Snapshot-Richtlinie
 * Replikationsziel und -richtlinie
@@ -493,7 +493,7 @@ Um eine Richtlinie zu erstellen, wählen Sie *Neue Richtlinie erstellen* und geh
 +
 *** Geben Sie den Namen der Richtlinie ein.
 *** Wählen Sie bis zu fünf Zeitpläne aus, normalerweise mit unterschiedlicher Häufigkeit.
-*** Für Backup-to-Object-Richtlinien müssen die Einstellungen für Datalock und Ransomware-Schutz konfiguriert werden. Weitere Informationen zu Datalock und Ransomware-Schutz finden Sie unter link:prev-ontap-policy-object-options.html["Einstellungen der Backup-to-Object-Richtlinie"].
+*** Für Backup-to-Object-Richtlinien die Einstellungen für DataLock und Ransomware-Schutz festlegen. Weitere Informationen zu DataLock und Ransomware-Schutz finden sich unter link:prev-ontap-policy-object-options.html["Einstellungen der Backup-to-Object-Richtlinie"].
 *** Wählen Sie *Erstellen*.
 
 
@@ -530,9 +530,9 @@ Sie können den Status von Sicherungs- und Wiederherstellungsaufträgen auch mit
 [[show-the-api-commands]]
 === API-Befehle anzeigen
 
-Möglicherweise möchten Sie die im Assistenten „Sicherung und Wiederherstellung aktivieren“ verwendeten API-Befehle anzeigen und optional kopieren.  Möglicherweise möchten Sie dies tun, um die Sicherungsaktivierung in zukünftigen Systemen zu automatisieren.
+Sie können die im Assistenten „Backup und Recovery aktivieren“ verwendeten API-Befehle anzeigen und optional kopieren. Dies kann hilfreich sein, um die Aktivierung von Backups in zukünftigen Systemen zu automatisieren.
 
 .Schritte
-. Wählen Sie im Assistenten „Sicherung und Wiederherstellung aktivieren“ die Option „API-Anforderung anzeigen“ aus.
+. Im Assistenten „Backup und Recovery aktivieren“ *API-Anfrage anzeigen* auswählen.
 . Um die Befehle in die Zwischenablage zu kopieren, wählen Sie das Symbol *Kopieren*.
 

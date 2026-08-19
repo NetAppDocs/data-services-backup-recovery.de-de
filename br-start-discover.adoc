@@ -14,9 +14,9 @@ summary: NetApp Backup and Recovery muss zunächst Workloads erkennen, damit Sie
 
 
 [role="lead"]
-NetApp Backup and Recovery muss zunächst Microsoft SQL Server-Workloads erkennen, damit Sie den Dienst nutzen können.  Sie können optional Sicherungsdaten und Richtlinien aus SnapCenter importieren, wenn Sie SnapCenter bereits installiert haben.
+Microsoft SQL Server-Workloads in NetApp Backup and Recovery erkennen, sodass deren Schutz und Wiederherstellung möglich ist. Wenn SnapCenter bereits verwendet wird, können auch vorhandene Backup-Daten und Richtlinien importiert werden.
 
-*Erforderliche NetApp Console-Rolle* Backup and Recovery Superadministrator. Für den Schutz von Daten, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich. Informationen zu link:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
+*Erforderliche NetApp Console-Rolle* Backup and Recovery Superadministrator. Für den Schutz von Daten, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich. Informationen zu link:reference-roles.html["Backup und Recovery Rollen und Berechtigungen"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
 
 
@@ -130,18 +130,18 @@ kubectl -n kube-system rollout restart deploy/rke2-coredns-rke2-coredns
 [[discover-microsoft-sql-server-workloads-and-optionally-import-snapcenter-resources]]
 == Entdecken Sie Microsoft SQL Server-Workloads und importieren Sie optional SnapCenter -Ressourcen
 
-Während der Erkennung analysiert NetApp Backup and Recovery Microsoft SQL Server-Instanzen und Datenbanken in Systemen innerhalb Ihres Unternehmens.
+Während der Erkennung analysiert NetApp Backup and Recovery Microsoft SQL Server-Instanzen und -Datenbanken systemübergreifend in Ihrer Organisation.
 
-NetApp Backup and Recovery bewertet Microsoft SQL Server-Anwendungen. Der Dienst bewertet den aktuellen Schutzstatus einschließlich der bestehenden Backup-Richtlinien, Snapshots sowie Backup- und Wiederherstellungsoptionen.
+Der Dienst bewertet die bestehenden Schutzstufen, einschließlich aktueller Backup-Richtlinien, Snapshots sowie Backup und Recovery-Optionen.
 
 Die Ermittlung erfolgt auf folgende Weise:
 
 * Wenn Sie bereits über SnapCenter verfügen, importieren Sie SnapCenter -Ressourcen mithilfe der NetApp Backup and Recovery -Benutzeroberfläche in NetApp Backup and Recovery .
 +
 
-NOTE: Wenn Sie bereits über SnapCenter verfügen, überprüfen Sie zunächst, ob Sie die Voraussetzungen erfüllt haben, bevor Sie aus SnapCenter importieren.  Beispielsweise sollten Sie lokale SnapCenter -Cluster-Speichersysteme zuerst zur NetApp Console hinzufügen, bevor Sie sie aus SnapCenter importieren.  Sehenlink:concept-start-prereq-snapcenter-import.html["Voraussetzungen für den Import von Ressourcen aus SnapCenter"] .
+NOTE: Wenn SnapCenter bereits vorhanden ist, sollte zunächst überprüft werden, ob die Voraussetzungen erfüllt sind, bevor ein Import aus SnapCenter erfolgt. Beispielsweise sollten lokale SnapCenter Cluster-Speichersysteme zur NetApp Console hinzugefügt werden, bevor ein Import aus SnapCenter erfolgt. Siehe link:concept-start-prereq-snapcenter-import.html["Voraussetzungen für den Import von Ressourcen aus SnapCenter"].
 
-* Wenn Sie noch kein SnapCenter haben, können Sie Workloads trotzdem ermitteln, indem Sie manuell ein vCenter hinzufügen und die Erkennung durchführen.
+* Wenn SnapCenter noch nicht vorhanden ist, können Workloads dennoch ermittelt werden, indem ein vCenter manuell hinzugefügt und die Erkennung durchgeführt wird.
 
 
 
@@ -200,7 +200,7 @@ NOTE: Falls der SnapCenter Server bereits registriert ist, können Sie die beste
 
 
 .Ergebnis
-Auf der Inventarseite werden die importierten SnapCenter -Ressourcen angezeigt, darunter MS SQL-Hosts, -Instanzen und -Datenbanken.
+Auf der Inventarseite werden die importierten SnapCenter Ressourcen angezeigt, darunter Microsoft SQL Server Hosts, Instanzen und Datenbanken.
 
 Um die Details der importierten SnapCenter -Ressourcen anzuzeigen, wählen Sie im Menü „Aktionen“ die Option „Details anzeigen“ aus.
 
@@ -208,11 +208,11 @@ Um die Details der importierten SnapCenter -Ressourcen anzuzeigen, wählen Sie i
 
 ==== Verwalten von SnapCenter -Hostressourcen
 
-Nachdem Sie die SnapCenter -Ressourcen importiert haben, verwalten Sie diese Hostressourcen in NetApp Backup and Recovery.  Nachdem Sie die Verwaltung dieser Ressourcen ausgewählt haben, kann NetApp Backup and Recovery die aus SnapCenter importierten Ressourcen sichern und wiederherstellen.  Sie verwalten diese Ressourcen nicht mehr im SnapCenter Server.
+Nachdem Sie SnapCenter-Ressourcen importiert haben, werden die Hostressourcen in NetApp Backup und Recovery verwaltet. Nach Auswahl der Verwaltung kann NetApp Backup und Recovery die importierten Ressourcen sichern und wiederherstellen. Diese Ressourcen werden nicht mehr im SnapCenter Server verwaltet.
 
 .Schritte
 . Nachdem Sie die SnapCenter -Ressourcen importiert haben, wählen Sie im Menü „Sichern und Wiederherstellen“ die Option „Inventar“ aus.
-. Wählen Sie auf der Inventarseite den importierten SnapCenter -Host aus, den NetApp Backup and Recovery ab sofort verwalten soll.
+. Auf der Inventarseite den importierten SnapCenter Host auswählen, den NetApp Backup and Recovery verwalten soll.
 . Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*, um die Arbeitslastdetails anzuzeigen.
 . Wählen Sie auf der Seite Inventar > Arbeitslast das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Verwalten*, um die Seite „Host verwalten“ anzuzeigen.
 . Wählen Sie *Verwalten*.
@@ -243,9 +243,9 @@ Wenn Sie bereits Ressourcen entdeckt haben, können Sie SnapCenter -Ressourcen v
 [[if-you-dont-have-snapcenter-installed-add-a-vcenter-and-discover-resources]]
 === Wenn Sie SnapCenter nicht installiert haben, fügen Sie ein vCenter hinzu und ermitteln Sie Ressourcen
 
-Wenn Sie SnapCenter noch nicht installiert haben, können Sie vCenter-Informationen hinzufügen und die Workloads von NetApp Backup and Recovery ermitteln lassen. Wählen Sie in jedem Konsolenagenten die Systeme aus, auf denen Sie Workloads ermitteln möchten.
+Wenn SnapCenter noch nicht installiert ist, können vCenter-Informationen hinzugefügt werden und NetApp Backup and Recovery erkennt die Workloads. Innerhalb jedes Console-Agenten können die Systeme ausgewählt werden, auf denen Workloads erkannt werden sollen.
 
-Dies ist optional, wenn Sie eine VMware-Umgebung haben.
+Dieser Schritt ist optional, wenn Sie eine VMware-Umgebung haben.
 
 .Schritte
 . Wählen Sie in der linken Navigation der Konsole *Schutz* > *Sicherung und Wiederherstellung*.
@@ -259,7 +259,7 @@ Wenn Sie sich zum ersten Mal bei Backup and Recovery anmelden und zwar ein Syste
 .. *vCenter-Einstellungen*: Wählen Sie ein vorhandenes vCenter aus oder fügen Sie ein neues hinzu. Um ein neues vCenter hinzuzufügen, geben Sie den FQDN oder die IP-Adresse, den Benutzernamen, das Kennwort, den Port und das Protokoll des vCenters ein.
 +
 
-TIP: Wenn Sie vCenter-Informationen eingeben, geben Sie Informationen sowohl für die vCenter-Einstellungen als auch für die Host-Registrierung ein.  Wenn Sie hier vCenter-Informationen hinzugefügt oder eingegeben haben, müssen Sie als Nächstes auch Plugin-Informationen in den erweiterten Einstellungen hinzufügen.
+TIP: Wenn Sie vCenter-Informationen eingeben, geben Sie Informationen sowohl für die vCenter-Einstellungen als auch für die Host-Registrierung ein. Wenn Sie hier vCenter-Informationen hinzugefügt oder eingegeben haben, müssen anschließend auch die Plug-in-Informationen in den erweiterten Einstellungen hinzugefügt werden.
 
 .. *Hostregistrierung*: Wählen Sie *Anmeldeinformationen hinzufügen* und geben Sie Informationen zu den Hosts ein, die die Workloads enthalten, die Sie ermitteln möchten.
 +
@@ -278,23 +278,23 @@ TIP: Dieser Vorgang kann einige Minuten dauern.
 
 
 
-==== Legen Sie während der Erkennung erweiterte Einstellungsoptionen fest und installieren Sie das Plugin
+==== Erweiterte Einstellungsoptionen während der Erkennung festlegen und das Plug-in installieren
 
-Mit den erweiterten Einstellungen können Sie den Plugin-Agenten manuell auf allen registrierten Servern installieren.  Dadurch können Sie alle SnapCenter -Workloads in NetApp Backup and Recovery importieren, sodass Sie dort Backups und Wiederherstellungen verwalten können.  NetApp Backup and Recovery zeigt die erforderlichen Schritte zur Installation des Plug-Ins.
+Mit den erweiterten Einstellungen kann der Plug-in-Agent manuell auf allen zu registrierenden Servern installiert werden. Dadurch ist es möglich, alle SnapCenter Workloads in NetApp Backup and Recovery zu importieren, sodass Backups und Wiederherstellungen dort verwaltet werden können. NetApp Backup and Recovery zeigt die Schritte an, die für die Installation des Plug-ins erforderlich sind.
 
 .Schritte
-. Fahren Sie auf der Seite „Ressourcen entdecken“ mit den erweiterten Einstellungen fort, indem Sie rechts auf den Abwärtspfeil klicken.
+. Von der Seite „Ressourcen entdecken“ geht es zu den erweiterten Einstellungen, wenn der Abwärtspfeil auf der rechten Seite ausgewählt wird.
 . Geben Sie auf der Seite „Workload-Ressourcen ermitteln“ die folgenden Informationen ein.
 +
 ** *Plug-in-Portnummer eingeben*: Geben Sie die Portnummer ein, die das Plug-in verwendet.
-** *Installationspfad*: Geben Sie den Pfad ein, in dem das Plugin installiert werden soll.
+** *Installationspfad*: Der Pfad, unter dem das Plug-in installiert wird, ist einzugeben.
 
 
-. Wenn Sie den SnapCenter -Agenten manuell installieren möchten, aktivieren Sie die Kontrollkästchen für die folgenden Optionen:
+. Wenn Sie den SnapCenter Agenten manuell installieren möchten, sind die folgenden Optionen auszuwählen:
 +
-** *Manuelle Installation verwenden*: Aktivieren Sie dieses Kontrollkästchen, um das Plugin manuell zu installieren.
-** *Alle Hosts im Cluster hinzufügen*: Aktivieren Sie dieses Kontrollkästchen, um während der Erkennung alle Hosts im Cluster zu NetApp Backup and Recovery hinzuzufügen.
-** *Optionale Vorinstallationsprüfungen überspringen*: Aktivieren Sie dieses Kontrollkästchen, um optionale Vorinstallationsprüfungen zu überspringen.  Dies ist beispielsweise dann sinnvoll, wenn Sie wissen, dass sich die Speicher- oder Speicherplatzanforderungen in naher Zukunft ändern werden und Sie das Plug-In jetzt installieren möchten.
+** *Manuelle Installation verwenden*: Diese Option ermöglicht die manuelle Installation des Plug-ins.
+** *Alle Hosts im Cluster hinzufügen*: Diese Option fügt alle Hosts im Cluster während der Erkennung zu NetApp Backup und Recovery hinzu.
+** *Optionale Vorinstallationsprüfungen überspringen*: Diese Option ermöglicht das Überspringen optionaler Vorinstallationsprüfungen. Dies kann beispielsweise relevant sein, wenn bekannt ist, dass sich Speicher- oder Speicherplatzanforderungen in naher Zukunft ändern und das Plug-in bereits jetzt installiert werden soll.
 
 
 . Wählen Sie *Entdecken*.
@@ -304,10 +304,10 @@ Mit den erweiterten Einstellungen können Sie den Plugin-Agenten manuell auf all
 
 ==== Weiter zum NetApp Backup and Recovery Dashboard
 
-. Wählen Sie im NetApp Console *Schutz* > *Sicherung und Wiederherstellung*.
+. Im NetApp Console-Menü *Schutz* > *Backup und Recovery* auswählen.
 . Wählen Sie eine Workload-Kachel aus (z. B. Microsoft SQL Server).
 . Wählen Sie im Menü „Sichern und Wiederherstellen“ die Option „Dashboard“ aus.
-. Überprüfen Sie den Zustand des Datenschutzes.  Die Anzahl der gefährdeten oder geschützten Workloads steigt basierend auf den neu entdeckten, geschützten und gesicherten Workloads.
+. Der Zustand des Datenschutzes wird angezeigt. Die Anzahl der gefährdeten oder geschützten Workloads erhöht sich entsprechend den neu erkannten, geschützten und gesicherten Workloads.
 +
 link:br-use-dashboard.html["Erfahren Sie, was Ihnen das Dashboard anzeigt"].
 

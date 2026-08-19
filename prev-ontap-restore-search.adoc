@@ -14,7 +14,7 @@ summary: Mit der Such- und Wiederherstellungsfunktion können Sie Volumes, Ordne
 
 
 [role="lead"]
-Mit der Such- und Wiederherstellungsfunktion können Sie Volumes, Ordner oder Dateien aus ONTAP Backup-Dateien wiederherstellen. Die Such- und Wiederherstellungsfunktion ermöglicht die Suche in allen Backups (einschließlich lokaler Snapshots, replizierter Volumes und Objektspeicher), ohne dass genaue System-, Volume- oder Dateinamen erforderlich sind.
+Mit der Such- und Wiederherstellungsfunktion können Volumes, Ordner oder Dateien aus ONTAP Backups wiederhergestellt werden, wenn der genaue System-, Volume- oder Dateiname nicht bekannt ist. Eine Suche ist über lokale Snapshots, replizierte Volumes und Objektspeicher Backups möglich.
 
 Die Wiederherstellung aus lokalen Snapshots oder replizierten Volumes ist in der Regel schneller und kostengünstiger als die Wiederherstellung aus dem Objektspeicher.
 
@@ -46,7 +46,7 @@ link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über die 
 
 
 ====
-Bevor Sie beginnen, sollten Sie eine Vorstellung vom Namen oder Speicherort des Datenträgers oder der Datei haben, die Sie wiederherstellen möchten.
+Bevor Sie beginnen, sollte eine ungefähre Vorstellung vom Namen oder Speicherort des Volumes oder der Datei bestehen, die wiederhergestellt werden soll.
 
 
 
@@ -74,21 +74,21 @@ Sie können ONTAP Daten aus einer Sicherungsdatei, die sich in einem sekundären
 | Google Cloud-Speicher | Cloud Volumes ONTAP im lokalen ONTAP -System von Google | Cloud Volumes ONTAP im lokalen ONTAP -System von Google 
 
 
-| NetApp StorageGRID | On-Premises- ONTAP -System Cloud Volumes ONTAP | On-Premises- ONTAP -System 
+| StorageGRID | On-Premises- ONTAP -System Cloud Volumes ONTAP | On-Premises- ONTAP -System 
 
 
 | ONTAP S3 | On-Premises- ONTAP -System Cloud Volumes ONTAP | On-Premises- ONTAP -System 
 |===
 Für Search & Restore kann der Konsolenagent an den folgenden Speicherorten installiert werden:
 
-* Für Amazon S3 kann der Konsolenagent in AWS oder in Ihren Räumlichkeiten bereitgestellt werden
-* Für Azure Blob kann der Konsolenagent in Azure oder in Ihren Räumlichkeiten bereitgestellt werden
+* Für Amazon S3 kann der Console Agent in AWS oder lokal bereitgestellt werden.
+* Für Azure Blob kann der Console-Agent in Azure oder lokal bereitgestellt werden.
 * Für Google Cloud Storage muss der Konsolenagent in Ihrem Google Cloud Platform VPC bereitgestellt werden
-* Für StorageGRID muss der Konsolenagent in Ihren Räumlichkeiten bereitgestellt werden; mit oder ohne Internetzugang
-* Für ONTAP S3 kann der Konsolenagent in Ihren Räumlichkeiten (mit oder ohne Internetzugang) oder in einer Cloud-Provider-Umgebung bereitgestellt werden
+* Für StorageGRID muss der Konsolenagent lokal bereitgestellt werden, mit oder ohne Internetzugang
+* Für ONTAP S3 kann der Console-Agent lokal (mit oder ohne Internetzugang) oder in einer Cloud-Provider-Umgebung bereitgestellt werden
 
 
-Beachten Sie, dass Verweise auf „On-Premises ONTAP Systeme“ FAS, AFF und ONTAP Select Systeme umfassen.
+Zu beachten ist, dass Verweise auf „On-Premises ONTAP Systeme“ FAS, AFF und ONTAP Select Systeme einschließen.
 
 
 
@@ -166,7 +166,7 @@ Auch wenn Sie einen lokalen Konsolen-Agenten verwenden, müssen die Anforderunge
 [[search-restore-process]]
 == Such- und Wiederherstellungsprozess
 
-Der Vorgang läuft folgendermaßen ab:
+Der Prozess funktioniert folgendermaßen:
 
 . Bevor Sie „Suchen und Wiederherstellen“ verwenden können, müssen Sie die „Indizierung“ auf jedem Quellsystem aktivieren, von dem Sie Volumedaten wiederherstellen möchten.  Dadurch kann der indizierte Katalog die Sicherungsdateien für jedes Volume verfolgen.
 +
@@ -211,7 +211,7 @@ Der Indexkatalog unterstützt Folgendes:
 .Schritte zum Aktivieren der Indizierung für ein System:
 Wenn die Indizierung für Ihr System bereits aktiviert wurde, fahren Sie mit dem nächsten Abschnitt fort, um Ihre Daten wiederherzustellen.
 
-Zuerst müssen Sie ein separates Volume einbinden, um die Katalogdateien aufzunehmen. Dadurch wird ein Datenverlust verhindert, falls die Größe der Dateien, die die Snapshots enthalten, zu groß wird. Dies ist nicht auf jedem Cluster erforderlich; Sie können ein beliebiges Volume von einem beliebigen Cluster in Ihrer Umgebung einbinden. Wenn Sie dies nicht tun, funktioniert die Indizierung möglicherweise nicht richtig.
+Zuerst ein separates Volume einbinden, um die Katalogdateien zu speichern. Dies hilft, Datenverlust zu verhindern, falls die Snapshot-Katalogdateien zu groß werden. Dies ist nicht auf jedem Cluster erforderlich; es kann ein beliebiges Volume von einem beliebigen Cluster in Ihrer Umgebung eingebunden werden. Wenn dies nicht erfolgt, funktioniert die Indizierung möglicherweise nicht korrekt.
 
 Für das Einbauvolumen sind folgende Größenrichtlinien zu beachten:
 
@@ -223,7 +223,7 @@ Für das Einbauvolumen sind folgende Größenrichtlinien zu beachten:
 
 
 [[mount-volume-steps]]
-.Schritt zum Einbinden des Volumes, um den Katalog neu zu indizieren
+.Schritt zum Einbinden des Volumes für die Katalogneuindizierung
 . Montieren Sie das Volumen an `/opt/application/netapp/cbs` durch Eingabe des folgenden Befehls, wobei:
 +
 ** `volume name` ist das Volume auf dem Cluster, auf dem die Katalogdateien gespeichert werden.
@@ -269,21 +269,20 @@ Nachdem Sie<<enable-the-indexed-catalog-for-each-system,Aktivierte Indizierung f
 
 .Schritte
 . Wählen Sie im Konsolenmenü *Schutz > Sicherung und Wiederherstellung*.
-. Wählen Sie die Registerkarte *Wiederherstellen* und das Wiederherstellungs-Dashboard wird angezeigt.
-. Wählen Sie im Abschnitt „Suchen und Wiederherstellen“ die Option „Suchen und Wiederherstellen“ aus.
+. Die Registerkarte *Wiederherstellen* zeigt das Wiederherstellungs-Dashboard an.
 . Wählen Sie im Abschnitt „Suchen und Wiederherstellen“ die Option „Suchen und Wiederherstellen“ aus.
 . Auf der Seite „Suchen und Wiederherstellen“:
 +
 .. Geben Sie in der Suchleiste einen vollständigen oder teilweisen Datenträgernamen, Ordnernamen oder Dateinamen ein.
 .. Wählen Sie den Ressourcentyp aus: *Volumes*, *Dateien*, *Ordner* oder *Alle*.
-.. Wählen Sie im Bereich _Filtern nach_ die Filterkriterien aus. Sie können beispielsweise das System auswählen, auf dem sich die Daten befinden, und den Dateityp, beispielsweise eine JPEG-Datei. Alternativ können Sie den Typ des Sicherungsspeicherorts auswählen, wenn Sie die Ergebnisse nur in verfügbaren Snapshots oder Sicherungsdateien im Objektspeicher suchen möchten.
+.. Im Bereich „Filtern nach“ die Filterkriterien auswählen. Beispielsweise kann das System, auf dem sich die Daten befinden, und der Dateityp, wie eine .JPEG-Datei, ausgewählt werden. Auch der Typ des Sicherungsspeicherorts kann ausgewählt werden, wenn nur innerhalb verfügbarer Snapshots oder Sicherungsdateien im Objektspeicher gesucht werden soll.
 
 
 . Wählen Sie *Suchen* und im Bereich „Suchergebnisse“ werden alle Ressourcen angezeigt, die über eine Datei, einen Ordner oder ein Volume verfügen, das Ihrer Suche entspricht.
 . Suchen Sie die Ressource mit den Daten, die Sie wiederherstellen möchten, und wählen Sie *Alle Sicherungen anzeigen* aus, um alle Sicherungsdateien anzuzeigen, die das entsprechende Volume, den entsprechenden Ordner oder die entsprechende Datei enthalten.
 . Suchen Sie die Sicherungsdatei, die Sie zum Wiederherstellen der Daten verwenden möchten, und wählen Sie *Wiederherstellen*.
 +
-Beachten Sie, dass die Ergebnisse lokale Volume-Snapshots und Remote-Replicated-Volumes identifizieren, die die in Ihrer Suche enthaltene Datei enthalten.  Sie können die Wiederherstellung entweder aus der Cloud-Sicherungsdatei, aus dem Snapshot oder aus dem replizierten Volume durchführen.
+Beachten Sie, dass die Ergebnisse lokale Volume-Snapshots und replizierte Remote-Volumes identifizieren, die die Datei in Ihrer Suche enthalten. Es besteht die Möglichkeit, die Wiederherstellung aus der Cloud-Backup-Datei, dem Snapshot oder dem replizierten Volume vorzunehmen.
 
 . Wählen Sie den Zielspeicherort aus, an dem das Volume, der Ordner oder die Datei(en) wiederhergestellt werden sollen, und wählen Sie *Wiederherstellen*.
 +

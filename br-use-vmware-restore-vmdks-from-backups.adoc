@@ -14,7 +14,7 @@ summary: Sie können vorhandene VMDKs oder gelöschte oder getrennte VMDKs entwe
 
 
 [role="lead"]
-Sie können vorhandene virtuelle Festplatten (VMDKs) oder gelöschte bzw. getrennte virtuelle Festplatten aus primären oder sekundären Backups herkömmlicher VMs wiederherstellen. Dadurch können Sie nur bestimmte VM-Daten oder Anwendungen wiederherstellen, sodass Sie nicht die gesamte VM und alle zugehörigen virtuellen Festplatten wiederherstellen müssen, wenn nur bestimmte Daten betroffen sind. Nach der Wiederherstellung der virtuellen Festplatte wird diese wieder an die ursprüngliche VM angebunden und ist sofort einsatzbereit.
+Vorhandene, gelöschte oder getrennte virtuelle Festplatten (VMDKs) können aus primären oder sekundären Backups herkömmlicher VMs wiederhergestellt werden. Dadurch ist es möglich, bestimmte VM-Daten oder Anwendungen wiederherzustellen, ohne die gesamte VM wiederherstellen zu müssen. Nach der Wiederherstellung wird die virtuelle Festplatte an die ursprüngliche VM angehängt und ist einsatzbereit.
 
 Sie können eine oder mehrere virtuelle Maschinenfestplatten (VMDKs) einer VM auf demselben Datenspeicher oder auf verschiedenen Datenspeichern wiederherstellen.
 
@@ -32,7 +32,7 @@ Die VM, die Sie wiederherstellen möchten, darf sich nicht im Zustand vMotion od
 .Informationen zu diesem Vorgang
 * Wenn das VMDK gelöscht oder von der VM getrennt wird, wird das VMDK beim Wiederherstellungsvorgang an die VM angehängt.
 * Ein Wiederherstellungsvorgang kann fehlschlagen, wenn die Speicherebene des FabricPool , in dem sich die VM befindet, nicht verfügbar ist.
-* Anfügen- und Wiederherstellungsvorgänge verbinden VMDKs mithilfe des Standard-SCSi-Controllers. Wenn jedoch VMDKs gesichert werden, die an eine VM mit einer NVMe-Festplatte angeschlossen sind, verwenden die Anfüge- und Wiederherstellungsvorgänge den NVMe-Controller, sofern verfügbar.
+* Anfüge- und Wiederherstellungsvorgänge verbinden VMDKs über den standardmäßigen SCSI-Controller. Wenn jedoch VMDKs gesichert werden, die an eine VM mit einer NVMe-Festplatte angehängt sind, verwenden Anfüge- und Wiederherstellungsvorgänge einen NVMe-Controller, sofern einer verfügbar ist.
 
 
 .Schritte

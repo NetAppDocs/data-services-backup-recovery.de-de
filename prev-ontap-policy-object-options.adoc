@@ -14,7 +14,7 @@ summary: Schützen Sie Ihre VMware-Workloads mit NetApp Backup and Recovery.
 
 
 [role="lead"]
-Mit NetApp Backup and Recovery können Sie Sicherungsrichtlinien mit einer Vielzahl von Einstellungen für Ihre lokalen ONTAP und Cloud Volumes ONTAP Systeme erstellen.
+Backup-to-Object-Richtlinien in NetApp Backup and Recovery ermöglichen die Definition von Zeitplänen, Aufbewahrungsfristen, DataLock, Ransomware-Schutz und Archivierungseinstellungen für On-Premises ONTAP und Cloud Volumes ONTAP Systeme.
 
 
 NOTE: Diese Richtlinieneinstellungen sind nur für die Sicherung auf Objektspeicher relevant.  Keine dieser Einstellungen wirkt sich auf Ihre Snapshot- oder Replikationsrichtlinien aus.
@@ -59,7 +59,7 @@ Jährliche Backups werden nach der Übertragung in den Objektspeicher automatisc
 
 NetApp Backup and Recovery bietet Unterstützung für DataLock- und Ransomware-Schutz für Ihre Volume-Backups.  Mit diesen Funktionen können Sie Ihre Sicherungsdateien sperren und scannen, um mögliche Ransomware in den Sicherungsdateien zu erkennen.  Dies ist eine optionale Einstellung, die Sie in Ihren Sicherungsrichtlinien definieren können, wenn Sie zusätzlichen Schutz für Ihre Volumesicherungen für einen Cluster wünschen.
 
-Beide Funktionen schützen Ihre Sicherungsdateien, sodass Sie im Falle eines Ransomware-Angriffs stets über eine gültige Sicherungsdatei zur Datenwiederherstellung verfügen. Dies ist auch hilfreich, um bestimmte regulatorische Anforderungen zu erfüllen, bei denen Sicherungen für einen bestimmten Zeitraum gesperrt und aufbewahrt werden müssen. Wenn die Option *Datalock and Ransomware protection* aktiviert ist, wird für den im Rahmen der NetApp Backup and Recovery-Aktivierung bereitgestellten Cloud-Bucket die Objektsperrung und Objektversionierung aktiviert.
+Beide Funktionen schützen Ihre Sicherungsdateien, sodass Sie im Falle eines Ransomware-Angriffs stets eine gültige Sicherungsdatei zur Datenwiederherstellung haben. Dies ist auch hilfreich, um bestimmte regulatorische Anforderungen zu erfüllen, bei denen Sicherungen gesperrt und für einen bestimmten Zeitraum aufbewahrt werden müssen. Wenn die Option *DataLock and Ransomware protection* aktiviert ist, werden für den im Rahmen der NetApp Backup und Recovery Aktivierung bereitgestellten Cloud-Bucket Objektsperrung und Objektversionierung aktiviert.
 
 Diese Funktion bietet keinen Schutz für Ihre Quellvolumes, sondern nur für die Sicherungen dieser Quellvolumes.  Verwenden Sie einige der https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html["Anti-Ransomware-Schutz von ONTAP"^] um Ihre Quellvolumes zu schützen.
 
@@ -125,7 +125,7 @@ Die DataLock-Aufbewahrungseinstellung überschreibt die Richtlinienaufbewahrungs
 
 Sie können DataLock und Ransomware-Schutz aktivieren, wenn Sie eine Richtlinie erstellen.  Sie können dies nach der Erstellung der Richtlinie nicht mehr aktivieren, ändern oder deaktivieren.
 
-. Wenn Sie eine Richtlinie erstellen, erweitern Sie den Abschnitt *Datalock and Ransomware protection*.
+. Beim Erstellen einer Richtlinie lässt sich der Abschnitt *DataLock und Ransomware-Schutz* erweitern.
 . Wählen Sie eine der folgenden Optionen:
 +
 ** *Keine*: DataLock protection und Ransomware-Schutz sind deaktiviert.
@@ -181,7 +181,7 @@ Sie können DataLock- und Ransomware-Schutz auf ONTAP -Volumes der folgenden Sys
 | Cloud Volumes ONTAP in Azure | Azure-Blob 
 
 
-| Cloud Volumes ONTAP in Google Cloud | Google Cloud 
+| Cloud Volumes ONTAP in Google Cloud | Google Cloud-Speicher 
 
 
 | On-Premises- ONTAP -System | Amazon S3, Azure Blob, Google Cloud , NetApp StorageGRID 
@@ -334,7 +334,7 @@ Darüber hinaus können Sie Schätzungen für die mit DataLock verbundenen Koste
 [[archival-storage-options]]
 == Archivspeicheroptionen
 
-Wenn Sie AWS-, Azure- oder Google-Cloud-Speicher verwenden, können Sie ältere Sicherungsdateien nach einer bestimmten Anzahl von Tagen in eine weniger teure Archivspeicherklasse oder Zugriffsebene verschieben.  Sie können Ihre Sicherungsdateien auch sofort in den Archivspeicher senden, ohne sie in den Standard-Cloud-Speicher zu schreiben.  Geben Sie einfach *0* als „Archiv nach Tagen“ ein, um Ihre Sicherungsdatei direkt in den Archivspeicher zu senden.  Dies kann besonders für Benutzer hilfreich sein, die selten auf Daten aus Cloud-Backups zugreifen müssen, oder für Benutzer, die eine Backup-to-Tape-Lösung ersetzen.
+Bei der Verwendung von AWS, Azure oder Google Cloud Storage können ältere Sicherungsdateien nach einer bestimmten Anzahl von Tagen in eine kostengünstigere Archivspeicherklasse oder Zugriffsebene verschoben werden. Es besteht auch die Möglichkeit, Sicherungsdateien unmittelbar in den Archivspeicher zu senden, ohne sie zuvor im Standard-Cloudspeicher abzulegen. Durch die Eingabe von *0* als „Archivierung nach Tagen“ wird die Sicherungsdatei direkt in den Archivspeicher verschoben. Dies kann besonders hilfreich für Benutzer sein, die nur selten auf Daten aus Cloud-Backups zugreifen oder eine Backup und Recovery auf Band ersetzen.
 
 Auf Daten in Archivebenen kann bei Bedarf nicht sofort zugegriffen werden und der Abruf ist mit höheren Kosten verbunden. Sie müssen daher überlegen, wie oft Sie Daten aus Sicherungsdateien wiederherstellen müssen, bevor Sie sich für die Archivierung Ihrer Sicherungsdateien entscheiden.
 

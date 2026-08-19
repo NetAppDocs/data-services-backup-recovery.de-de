@@ -14,11 +14,11 @@ summary: Schützen Sie Ihre Hyper-V-Workloads mit NetApp Backup und Recovery.
 
 
 [role="lead"]
-Sichern Sie Hyper-V-VMs von lokalen ONTAP Systemen auf Amazon Web Services, Azure NetApp Files oder StorageGRID, um sicherzustellen, dass Ihre Daten geschützt sind. Backups werden automatisch erstellt und in einem Objektspeicher in Ihrem öffentlichen oder privaten Cloud-Konto gespeichert.
+Hyper-V-VMs von lokalen ONTAP Systemen können auf unterstützte Objektspeicherziele gesichert werden, um die Daten zu schützen. Geplante und bedarfsgesteuerte Backups werden in der Cloud oder im privaten Objektspeicher gespeichert.
 
 * Um Workloads nach einem Zeitplan zu sichern, erstellen Sie Richtlinien, die die Sicherungs- und Wiederherstellungsvorgänge steuern.  Sehenlink:br-use-policies-create.html["Erstellen von Richtlinien"] Anweisungen hierzu finden Sie unter.
-* Erstellen Sie Schutzgruppen, um die Backup- und Recovery-Vorgänge für eine Gruppe von Ressourcen zu verwalten. Siehe link:br-use-hyperv-protection-groups.html["Hyper-V-Schutzgruppen in NetApp Backup and Recovery erstellen und verwalten"] für weitere Informationen.
-* Sichern Sie jetzt Workloads (erstellen Sie jetzt ein On-Demand-Backup).
+* Erstellen Sie Schutzgruppen, um Sicherungs- und Wiederherstellungsvorgänge für eine Gruppe von Ressourcen zu verwalten. Weitere Informationen finden Sie unter link:br-use-hyperv-protection-groups.html["Hyper-V-Schutzgruppen in NetApp Backup and Recovery erstellen und verwalten"].
+* Workloads können jetzt mit einem On-Demand-Backup gesichert werden.
 
 
 
@@ -26,16 +26,16 @@ Sichern Sie Hyper-V-VMs von lokalen ONTAP Systemen auf Amazon Web Services, Azur
 [[back-up-workloads-now-with-an-on-demand-backup]]
 == Sichern Sie Workloads jetzt mit einem On-Demand-Backup
 
-Verwenden Sie On-Demand-Backups, damit Ihre Daten geschützt sind, bevor Sie Systemänderungen vornehmen.
+Eine bedarfsgesteuerte Datensicherung schützt die Daten, bevor Systemänderungen vorgenommen werden.
 
 *Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung oder Backupadministratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
 .Schritte
-. Wählen Sie im Menü *Inventar* aus.
+. Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
 . Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.
 . Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*.
-. Wählen Sie die Registerkarte *Schutzgruppen*, *Datenspeicher* oder *Virtuelle Maschinen*.
-. Wählen Sie die Schutzgruppe oder virtuellen Maschinen aus, die Sie sichern möchten.
+. Die Registerkarte *Schutzgruppen*, *Datenspeicher* oder *Virtuelle Maschinen* auswählen.
+. Wählen Sie die Schutzgruppe oder die virtuellen Maschinen aus, die gesichert werden sollen.
 . Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Jetzt sichern*.
 +
 

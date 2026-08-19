@@ -4,7 +4,7 @@ permalink: br-use-kvm-protect-overview.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
 summary: Sie können virtuelle KVM-Maschinen von lokalen ONTAP -Systemen bis hin zu Amazon Web Services, Microsoft Azure, Google Cloud Platform und StorageGRID schützen und so sicherstellen, dass Ihre Daten geschützt sind. 
 ---
-= Informationen zum Schutz von KVM-Workloads mit NetApp Backup and Recovery
+= KVM-Schutzworkflow mit NetApp Backup und Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,18 +14,18 @@ summary: Sie können virtuelle KVM-Maschinen von lokalen ONTAP -Systemen bis hin
 
 
 [role="lead"]
-Schützen Sie Ihre verwalteten KVM-VMs und Speicherpools mit NetApp Backup and Recovery. NetApp Backup and Recovery bietet schnelle, speichereffiziente, absturzsichere und VM-konsistente Backup- und Wiederherstellungsvorgänge. Bevor Sie Ihre KVM-Hosts und VMs mithilfe von Backup und Recovery schützen können, müssen diese über eine Managementplattform wie Apache CloudStack verwaltet werden.
+Ihre verwalteten KVM-VMs und Speicherpools werden mit NetApp Backup und Recovery geschützt. Der Service bietet schnelle, platzsparende, absturzkonsistente und VM-konsistente Backup- und Wiederherstellungsvorgänge.
 
-Sie können KVM-Workloads auf Amazon Web Services S3, Azure NetApp Files oder StorageGRID sichern und KVM-Workloads auf einem lokalen KVM-Host wiederherstellen.
+Ihre KVM-Hosts und VMs müssen von einer Plattform wie Apache CloudStack verwaltet werden, bevor sie mit NetApp Backup und Recovery geschützt werden können.
 
 Verwenden Sie NetApp Backup and Recovery , um eine 3-2-1-Schutzstrategie zu implementieren, bei der Sie 3 Kopien Ihrer Quelldaten auf 2 verschiedenen Speichersystemen sowie 1 Kopie in der Cloud haben. Zu den Vorteilen des 3-2-1-Ansatzes gehören:
 
 * Mehrere Datenkopien schützen vor internen und externen Cybersicherheitsbedrohungen.
-* Die Verwendung unterschiedlicher Medientypen erleichtert Ihnen die Wiederherstellung, wenn ein Typ ausfällt.
+* Die Verwendung verschiedener Medientypen unterstützt die Wiederherstellung, falls ein Typ ausfällt.
 * Sie können die Wiederherstellung schnell von der Vor-Ort-Kopie durchführen und die Offsite-Kopien verwenden, wenn die Vor-Ort-Kopie kompromittiert ist.
 
 
-Mit NetApp Backup and Recovery können Sie die folgenden Aufgaben im Zusammenhang mit KVM-Workloads ausführen:
+NetApp Backup und Recovery ermöglicht die Ausführung der folgenden Aufgaben für KVM-Workloads:
 
 * link:br-start-discover-kvm.html["Entdecken Sie KVM-Workloads"]
 * link:br-use-kvm-protection-groups.html["Erstellen und Verwalten von Schutzgruppen für KVM-Workloads"]

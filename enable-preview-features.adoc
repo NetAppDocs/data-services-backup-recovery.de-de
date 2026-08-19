@@ -14,7 +14,7 @@ summary: Vorschau- und versteckte Funktionen für NetApp Backup and Recovery akt
 
 
 [role="lead"]
-Vorschau- und versteckte Funktionen für NetApp Backup and Recovery aktivieren.
+Mit diesen Schritten lassen sich Vorschau- und versteckte Funktionen für NetApp Backup and Recovery aktivieren. Vorschaufunktionen sollten in Produktionsumgebungen mit Vorsicht verwendet werden.
 
 *Erforderliche NetApp Console-Rolle* Backup and Recovery Superadministrator. Für den Schutz von Daten, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich. Informationen zu link:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
@@ -44,7 +44,7 @@ Sie können die folgenden Vorschaufunktionen für NetApp Backup und Recovery akt
 Aktivieren Sie die Optionen für Vorschau-Features, um Funktionen zu nutzen, die noch nicht allgemein verfügbar sind. Verwenden Sie Vorschau-Features in Produktionsumgebungen mit Vorsicht.
 
 .Schritte
-. Verwenden Sie SSH, um sich beim Console-Agenten anzumelden.
+. Verwenden Sie SSH, um sich beim Console Agent anzumelden.
 . Wechseln Sie zum Root-Benutzer:
 +
 [source, shell]
@@ -129,7 +129,7 @@ Deaktivieren Sie die Indizierung für bestimmte Volumes oder für alle Volumes, 
 
 
 .Schritte
-. Verwenden Sie SSH, um sich beim Console-Agenten anzumelden.
+. Verwenden Sie SSH, um sich beim Console Agent anzumelden.
 . Wechseln Sie zum Root-Benutzer:
 +
 [source, shell]

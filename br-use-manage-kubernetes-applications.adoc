@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: br-use-manage-kubernetes-applications.html 
-keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, snapcenter 
-summary: Mit NetApp Backup and Recovery können Sie den Schutz Ihrer Kubernetes-Anwendungen und der zugehörigen Ressourcen aufheben und diese löschen. 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, on-premises, applications, virtual machines, backup and recovery, snapcenter 
+summary: Kubernetes-Anwendungen und zugehörige Schutzdaten in NetApp Backup and Recovery verwalten. 
 ---
 = Kubernetes-Anwendungen in NetApp Backup and Recovery verwalten
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Mit NetApp Backup and Recovery können Sie den Schutz Ihrer Kubernetes-
 
 
 [role="lead"]
-Mit NetApp Backup and Recovery können Sie den Schutz Ihrer Kubernetes-Anwendungen und der zugehörigen Ressourcen aufheben und diese löschen.
+Kubernetes-Anwendungen bei Bedarf aufheben oder löschen und Wiederherstellungspunkte entfernen.
 
 .Erforderliche NetApp Console
 Organisationsadministrator oder SnapCenter Administrator. link:reference-roles.html["Erfahren Sie mehr über die Zugriffsrollen für NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
@@ -24,16 +24,16 @@ Organisationsadministrator oder SnapCenter Administrator. link:reference-roles.h
 [[unprotect-a-kubernetes-application]]
 == Aufheben des Schutzes einer Kubernetes-Anwendung
 
-Sie können den Schutz einer Anwendung aufheben, wenn Sie sie nicht mehr schützen möchten. Wenn Sie den Schutz einer Anwendung aufheben, beendet NetApp Backup and Recovery den Schutz der Anwendung, behält jedoch alle zugehörigen Backups und Snapshots bei.
+Sie können den Schutz einer Anwendung aufheben, wenn Sie sie nicht mehr schützen müssen. Wenn Sie den Schutz einer Anwendung aufheben, stellt NetApp Backup and Recovery den Schutz der Anwendung ein, behält jedoch alle zugehörigen Backups und Snapshots bei.
 
 
-NOTE: Sie können den Schutz einer Anwendung nicht aufheben, solange noch Schutzvorgänge für sie ausgeführt werden. Warten Sie entweder, bis der Vorgang abgeschlossen ist, oder als Workaround <<Einen Wiederherstellungspunkt für eine Kubernetes-Anwendung entfernen,den Wiederherstellungspunkt entfernen>> den laufenden Schutzvorgang verwendet. Anschließend können Sie den Schutz der Anwendung aufheben.
+NOTE: Sie können den Schutz einer Anwendung nicht aufheben, solange noch Schutzvorgänge für sie ausgeführt werden. Es sollte abgewartet werden, bis der Vorgang abgeschlossen ist, oder der Wiederherstellungspunkt entfernt werden, den der laufende Schutzvorgang verwendet. Danach kann der Schutz der Anwendung aufgehoben werden.
 
 .Schritte
 . Wählen Sie in NetApp Backup and Recovery*Inventar* aus.
-. Wählen Sie eine Kubernetes-Instanz und wählen Sie *Anzeigen*, um die mit dieser Instanz verknüpften Ressourcen anzuzeigen.
+. Wählen Sie eine Kubernetes-Instanz aus und wählen Sie *Anzeigen*, um die mit dieser Instanz verknüpften Ressourcen zu öffnen.
 . Wählen Sie die Registerkarte *Anwendungen*.
-. Wählen Sie in der Anwendungsliste eine Anwendung aus, deren Schutz Sie aufheben möchten, und wählen Sie das zugehörige Aktionsmenü.
+. Wählen Sie in der Liste der Anwendungen die Anwendung aus, deren Schutz Sie aufheben möchten, und wählen Sie das zugehörige Aktionsmenü.
 . Wählen Sie *Schutz aufheben*.
 . Lesen Sie den Hinweis und wählen Sie anschließend „Schutz aufheben“ aus.
 
@@ -43,15 +43,15 @@ NOTE: Sie können den Schutz einer Anwendung nicht aufheben, solange noch Schutz
 [[delete-a-kubernetes-application]]
 == Löschen einer Kubernetes-Anwendung
 
-Löschen Sie eine Anwendung, die Sie nicht mehr benötigen.  NetApp Backup and Recovery beendet den Schutz und entfernt alle Backups und Snapshots für gelöschte Anwendungen.
+Eine Anwendung, die nicht mehr benötigt wird, kann gelöscht werden. NetApp Backup and Recovery beendet den Schutz und entfernt alle Backups und Snapshots für gelöschte Anwendungen.
 
 .Schritte
 . Wählen Sie in NetApp Backup and Recovery*Inventar* aus.
-. Wählen Sie eine Kubernetes-Instanz und wählen Sie *Anzeigen*, um die mit dieser Instanz verknüpften Ressourcen anzuzeigen.
+. Wählen Sie eine Kubernetes-Instanz aus und wählen Sie *Anzeigen*, um die mit dieser Instanz verknüpften Ressourcen zu öffnen.
 . Wählen Sie die Registerkarte *Anwendungen*.
-. Wählen Sie in der Anwendungsliste eine Anwendung aus, die Sie löschen möchten, und wählen Sie das zugehörige Aktionsmenü.
+. In der Liste der Anwendungen die Anwendung auswählen, die gelöscht werden soll, und das zugehörige Aktionsmenü auswählen.
 . Wählen Sie *Löschen*.
-. Aktivieren Sie *Snapshots und Backups löschen*, um alle Snapshots und Backups der Anwendung zu entfernen.
+. *Snapshots und Backups löschen* aktivieren, um alle Snapshots und Backups für die Anwendung zu entfernen.
 +
 
 CAUTION: Sie können die Anwendung mithilfe dieser Snapshots und Backups nicht mehr wiederherstellen.
@@ -64,13 +64,10 @@ CAUTION: Sie können die Anwendung mithilfe dieser Snapshots und Backups nicht m
 [[remove-a-restore-point-for-a-kubernetes-application]]
 == Einen Wiederherstellungspunkt für eine Kubernetes-Anwendung entfernen
 
-Möglicherweise müssen Sie einen Wiederherstellungspunkt für eine Anwendung entfernen, wenn Sie den Schutz aufheben müssen und derzeit Schutzvorgänge ausgeführt werden.
+Ein Wiederherstellungspunkt für eine Anwendung kann entfernt werden, wenn der Schutz aufgehoben werden muss, während Schutzvorgänge aktuell ausgeführt werden.
 
 .Schritte
 . Wählen Sie im NetApp Backup und Recovery-Menü *Wiederherstellen* aus.
-. Wählen Sie eine Kubernetes-Anwendung aus der Liste und wählen Sie *Anzeigen und Wiederherstellen* für diese Anwendung.
-+
-Die Liste der Wiederherstellungspunkte wird angezeigt.
-
-. Wählen Sie den Wiederherstellungspunkt aus, den Sie löschen möchten, und wählen Sie das Aktionssymbol image:../media/icon-action.png["Aktionsoption"] > *Wiederherstellungspunkt löschen*, um ihn zu löschen.
+. Wählen Sie eine Kubernetes-Anwendung aus der Liste und wählen Sie *Anzeigen und Wiederherstellen*, um deren Wiederherstellungspunkte zu öffnen.
+. Wählen Sie den Wiederherstellungspunkt aus, den Sie löschen möchten, und wählen Sie das Aktionen-Symbol image:../media/icon-action.png["Aktionsoption"] > *Wiederherstellungspunkt löschen*, um ihn zu löschen.
 

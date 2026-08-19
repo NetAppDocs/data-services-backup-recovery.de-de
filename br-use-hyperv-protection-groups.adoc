@@ -14,12 +14,12 @@ summary: Erstellen und verwalten Sie Schutzgruppen für Hyper-V-Workloads in Net
 
 
 [role="lead"]
-Erstellen Sie Schutzgruppen, um die Sicherungsvorgänge für eine Reihe virtueller Maschinen zu verwalten.  Eine Schutzgruppe ist eine logische Gruppierung von Ressourcen wie VMs, die Sie gemeinsam schützen möchten.
+Schutzgruppen ermöglichen den gemeinsamen Schutz zusammengehöriger Hyper-V-VMs und die Verwaltung ihrer Backup-Vorgänge in NetApp Backup und Recovery.
 
 Sie können die folgenden Aufgaben im Zusammenhang mit Schutzgruppen ausführen:
 
 * Erstellen Sie eine Schutzgruppe.
-* Schutzdetails anzeigen.
+* Details zur Schutzgruppe.
 * Sichern Sie jetzt eine Schutzgruppe. Sehenlink:br-use-hyperv-backup.html["Sichern Sie jetzt Hyper-V-Workloads"] .
 * Löschen Sie eine Schutzgruppe.
 
@@ -29,19 +29,19 @@ Sie können die folgenden Aufgaben im Zusammenhang mit Schutzgruppen ausführen:
 [[create-a-protection-group]]
 == Erstellen einer Schutzgruppe
 
-Gruppieren Sie Workloads, die Sie gemeinsam schützen möchten, in einer Schutzgruppe. Erstellen Sie eine Schutzgruppe, um Workloads gemeinsam zu sichern und wiederherzustellen.
+Workloads, die gemeinsam geschützt werden sollen, in einer Schutzgruppe zusammenfassen. Eine Schutzgruppe erstellen, um diese Workloads gemeinsam zu sichern und wiederherzustellen.
 
 *Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung oder Backupadministratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
 .Bevor Sie beginnen
-* Beachten Sie, dass bei Hyper-V-Workloads die geplante Sicherungszeit in der Zeitzone des Verwaltungshosts interpretiert wird. Weitere Informationen finden Sie unter link:br-use-policies-hyper-v-create.html["Erstellen und Verwalten von Hyper-V-Backup-Richtlinien in NetApp Backup und Recovery"].
+* Beachten Sie, dass bei Hyper-V-Workloads die geplante Sicherungszeit in der Zeitzone des Verwaltungshosts interpretiert wird. Siehe link:br-use-policies-hyper-v-create.html["Erstellen und Verwalten von Hyper-V-Backup-Richtlinien in NetApp Backup und Recovery"] für weitere Informationen.
 
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
-. Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.
+. Wählen Sie eine Arbeitslast aus, um deren Schutzdetails anzuzeigen.
 . Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*.
-. Wählen Sie das Menü *Schutzgruppen*.
+. Wählen Sie die Registerkarte *Schutzgruppen*.
 . Wählen Sie *Schutzgruppe erstellen*.
 . Geben Sie einen Namen für die Schutzgruppe ein.
 . Wählen Sie die VMs aus, die Sie in die Schutzgruppe aufnehmen möchten.
@@ -81,7 +81,7 @@ Der Assistent zum Bearbeiten der Schutzgruppe führt Sie durch die Einstellungen
 Geplante Backups verwenden die Zeitzone des Hyper-V-Hosts, die beim Erstellen des Zeitplans der Schutzgruppe festgelegt wurde. Wenn die Zeitzone des Hosts geändert wird, laufen bestehende Schutzgruppen weiterhin in ihrer ursprünglichen Zeitzone (in der Regel UTC), bis deren Zeitpläne aktualisiert werden.
 
 
-NOTE: Zeitpläne werden nur neu erstellt, wenn der Name der Schutzgruppe geändert, eine VM hinzugefügt oder entfernt, die zugewiesene Richtlinie geändert oder Vor-/Nachbearbeitungsskripte aktualisiert werden. Das Speichern ohne Änderungen aktualisiert die Zeitpläne nicht. Diese Aktualisierung des Zeitplans ist eine einmalige Aktion pro Schutzgruppe und startet keine sofortige Sicherung.
+NOTE: Zeitpläne werden nur neu erstellt, wenn der Name der Schutzgruppe geändert, eine VM hinzugefügt oder entfernt, die zugewiesene Richtlinie geändert oder Vor-/Nachbearbeitungsskripte aktualisiert werden. Das Speichern ohne Änderungen aktualisiert die Zeitpläne nicht. Diese einmalige Aktualisierung des Zeitplans startet kein sofortiges Backup.
 
 .Schritte
 . Der Hyper-V-Host wird aktualisiert, sodass seine aktuelle Zeitzone abgerufen wird.
@@ -97,7 +97,7 @@ Durch das Löschen einer Schutzgruppe werden diese und alle zugehörigen Sicheru
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
-. Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.
+. Wählen Sie eine Arbeitslast aus, um deren Schutzdetails anzuzeigen.
 . Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*.
 . Wählen Sie die Registerkarte *Schutzgruppen*.
 . Wählen Sie die Schutzgruppe aus, die Sie löschen möchten.

@@ -14,9 +14,9 @@ summary: Führen Sie einige Schritte aus, um NetApp Backup and Recovery zu konfi
 
 
 [role="lead"]
-Nachdem Sie die NetApp Console eingerichtet haben, konfigurieren Sie die Sicherungs- und Wiederherstellungseinstellungen.  Fügen Sie Anmeldeinformationen für Hostressourcen hinzu, importieren Sie SnapCenter -Ressourcen, konfigurieren Sie Protokollverzeichnisse und legen Sie VMware vCenter-Einstellungen fest.  Führen Sie diese Schritte aus, bevor Sie Daten sichern oder wiederherstellen.
+Backup- und Recovery-Einstellungen konfigurieren, um Anmeldeinformationen für Workloads hinzuzufügen, die Integration in die bestehende Infrastruktur vorzunehmen und Backup- sowie Restore-Vorgänge vorzubereiten.
 
-* <<Anmeldeinformationen für Hostressourcen hinzufügen>> für alle Windows-, Microsoft SQL Server-, Oracle Database- oder Linux-Hosts, mit denen sich NetApp Backup and Recovery authentifizieren muss. Dies umfasst auch die Anmeldeinformationen des Gastbetriebssystems, die beim Wiederherstellen von Dateien oder Ordnern verwendet werden.
+* <<Anmeldeinformationen für Hostressourcen hinzufügen>> für Windows, Microsoft SQL Server, Oracle Database und Linux Hosts, mit denen NetApp Backup and Recovery eine Authentifizierung durchführen muss. Dies umfasst die Gastbetriebssystem-Anmeldeinformationen, die beim Wiederherstellen von Dateien oder Ordnern verwendet werden.
 * <<Verwalten der VMware vCenter-Einstellungen>>.
 * <<Importieren und Verwalten von SnapCenter -Hostressourcen>>. (Nur Microsoft SQL Server-Workloads)
 * <<Fügen Sie eine KVM-Managementplattform hinzu.>>Die (Nur KVM-Workloads)
@@ -49,13 +49,13 @@ Sie müssen die folgenden Arten von Anmeldeinformationen konfigurieren:
 . Wählen Sie im NetApp Backup and Recovery -Menü *Einstellungen* aus.
 . Wählen Sie den Abwärtspfeil für *Anmeldeinformationen*.
 . Wählen Sie *Neue Anmeldeinformationen hinzufügen*.
-. Geben Sie die Zugangsdaten ein. Je nach gewähltem Authentifizierungsmodus werden unterschiedliche Felder angezeigt. Bewegen Sie den Mauszeiger über das Informationssymbol *i*, um weitere Informationen zu den Feldern zu erhalten.
+. Geben Sie die Anmeldeinformationen ein. Je nach gewähltem Authentifizierungsmodus werden unterschiedliche Felder angezeigt. Fahren Sie mit dem Mauszeiger über das Informationssymbol *i*, um weitere Informationen zu den Feldern zu erhalten.
 +
 ** *Name der Anmeldeinformationen*: Geben Sie einen Namen für die Anmeldeinformationen ein.
 ** *Authentifizierungsmodus*: Wählen Sie *Windows*, *Microsoft SQL*, *Oracle Database* oder *Linux*.
 +
 
-TIP: Für Microsoft SQL Server-Workloads müssen Sie Anmeldeinformationen sowohl für Windows als auch für Microsoft SQL Server eingeben, daher müssen Sie zwei Sätze von Anmeldeinformationen hinzufügen.
+TIP: Für Microsoft SQL Server Workloads müssen Anmeldeinformationen sowohl für Windows als auch für Microsoft SQL Server eingegeben werden, sodass zwei Sätze von Anmeldeinformationen erforderlich sind.
 
 +
 [role="tabbed-block"]
@@ -138,7 +138,7 @@ Sie können das Passwort für alle von Ihnen erstellten Zugangsdaten später bea
 [[maintain-vmware-vcenter-settings]]
 == Verwalten der VMware vCenter-Einstellungen
 
-Geben Sie VMware vCenter-Anmeldeinformationen ein, um Workloads für die Sicherung zu ermitteln.  Wenn Sie keine Anmeldeinformationen haben, erstellen Sie diese mit Berechtigungen für den Zugriff auf und die Verwaltung der VMware vCenter Server-Workloads.
+VMware vCenter Server-Anmeldeinformationen bereitstellen, um Workloads für das Backup zu erkennen. Wenn keine Anmeldeinformationen vorhanden sind, können diese mit Berechtigungen für den Zugriff auf und die Verwaltung von VMware vCenter Server-Workloads erstellt werden.
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Einstellungen* aus.
@@ -146,7 +146,7 @@ Geben Sie VMware vCenter-Anmeldeinformationen ein, um Workloads für die Sicheru
 . Wählen Sie *vCenter hinzufügen*.
 . Geben Sie die VMware vCenter Server-Informationen ein.
 +
-** *vCenter FQDN oder IP-Adresse*: Geben Sie einen FQDN-Namen oder die IP-Adresse für den VMware vCenter Server ein.
+** *vCenter FQDN oder IP-Adresse*: Ein FQDN oder die IP-Adresse für den VMware vCenter Server ist anzugeben.
 ** *Benutzername* und *Passwort*: Geben Sie den Benutzernamen und das Passwort für den VMware vCenter Server ein.
 ** *Port*: Geben Sie die Portnummer für den VMware vCenter Server ein.
 ** *Protokoll*: Wählen Sie *HTTP* oder *HTTPS*.
@@ -247,7 +247,7 @@ Auf der Seite „Aus SnapCenter importieren“ werden alle vorherigen Importe an
 [[add-a-kvm-management-platform]]
 == Fügen Sie eine KVM-Managementplattform hinzu.
 
-Wenn Sie die Apache CloudStack-Managementplattform zur Verwaltung von KVM-Ressourcen verwenden, müssen Sie diese mit NetApp Backup and Recovery integrieren, damit Backup and Recovery die verwalteten KVM-Hosts und VMs erkennen und schützen kann.
+Wenn die Apache CloudStack Managementplattform zur Verwaltung von KVM-Ressourcen verwendet wird, kann sie mit NetApp Backup and Recovery integriert werden, sodass Backup and Recovery die verwalteten KVM-Hosts und VMs erkennen und schützen kann.
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Einstellungen* aus.
@@ -255,7 +255,7 @@ Wenn Sie die Apache CloudStack-Managementplattform zur Verwaltung von KVM-Ressou
 . Wählen Sie *Verwaltungsplattform-Anmeldeinformationen hinzufügen*.
 . Geben Sie die folgenden Informationen ein:
 +
-** *IP-Adresse oder FQDN der Managementplattform*: Geben Sie die IP-Adresse oder den vollqualifizierten Domänennamen der Managementplattform ein.
+** *IP-Adresse oder FQDN der Managementplattform*: Die IP-Adresse oder ein FQDN der Managementplattform ist einzugeben.
 ** *API-Schlüssel*: Geben Sie den API-Schlüssel ein, der zur Authentifizierung von API-Anfragen verwendet werden soll.
 ** *Geheimer Schlüssel*: Geben Sie den geheimen Schlüssel ein, der zur Authentifizierung von API-Anfragen verwendet werden soll.
 ** *Port*: Geben Sie den Port ein, der für die Kommunikation zwischen Backup und Recovery und der Managementplattform verwendet werden soll.
@@ -270,7 +270,7 @@ Wenn Sie die Apache CloudStack-Managementplattform zur Verwaltung von KVM-Ressou
 [[configure-log-directories-in-snapshots-for-windows-hosts]]
 == Konfigurieren von Protokollverzeichnissen in Snapshots für Windows-Hosts
 
-Bevor Sie Richtlinien für Windows-Hosts erstellen, sollten Sie Protokollverzeichnisse in Snapshots für Windows-Hosts konfigurieren.  Protokollverzeichnisse werden zum Speichern der Protokolle verwendet, die während des Sicherungsvorgangs generiert werden.
+Bevor Richtlinien für Windows-Hosts erstellt werden, sollten Protokollverzeichnisse in Snapshots konfiguriert werden, damit die während des Backup-Prozesses generierten Protokolle gespeichert werden.
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
@@ -310,18 +310,18 @@ Nachdem Sie die Vorlage erstellt haben, wird sie in der Vorlagenliste im Abschni
 [[create-a-resource-transformation-template]]
 == Erstellen Sie eine Vorlage für die Ressourcentransformation
 
-Erstellen Sie Vorlagen für Ressourcentransformationen, um häufige Transformationen zu speichern, die Sie an Ressourcen vornehmen, während Sie diese wiederherstellen.
+Vorlagen für Ressourcentransformationen ermöglichen das Speichern von häufig verwendeten Transformationen, die während Wiederherstellungsvorgängen auf Ressourcen angewendet werden.
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Einstellungen* aus.
-. Klicken Sie auf den Abwärtspfeil, um den Abschnitt *Resource modifer template* zu erweitern.
+. Wählen Sie den Abwärtspfeil aus, um den Abschnitt *Ressourcentransformationsvorlage* zu erweitern.
 . Wählen Sie *Vorlage erstellen*.
 . Geben Sie einen Namen für die Ressourcentransformationsvorlage ein.
 . Optional können Sie eine Vorlagenbeschreibung eingeben.
 . Beschreiben Sie die Zielressource:
 +
 .. Geben Sie den Ressourcentyp an (z. B. Pod oder Deployment). Dieses Feld ist erforderlich.
-.. Optional können Sie eine Ressourcengruppe, Version, Namen eingeben.
+.. Optional kann eine Ressourcengruppe, eine Version und ein Name eingegeben werden.
 
 
 . Einen Vorgang erstellen:

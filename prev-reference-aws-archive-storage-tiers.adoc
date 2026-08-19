@@ -14,14 +14,14 @@ summary: NetApp Backup and Recovery unterstützt zwei S3-Archivspeicherklassen u
 
 
 [role="lead"]
-NetApp Backup and Recovery unterstützt zwei S3-Archivspeicherklassen und die meisten Regionen.
+Diese Informationen dienen zur Auswahl einer AWS S3-Archivierungsebene für NetApp Backup and Recovery Backups. Es besteht außerdem die Möglichkeit, Wiederherstellungskosten und Abrufzeiten für archivierte Backups zu überprüfen.
 
 
 
 [[supported-s3-archival-storage-classes-for-netapp-backup-and-recovery]]
 == Unterstützte S3-Archivspeicherklassen für NetApp Backup and Recovery
 
-Wenn Sicherungsdateien zunächst erstellt werden, werden sie im S3-Standardspeicher gespeichert.  Diese Ebene ist für die Speicherung selten abgerufener Daten optimiert, ermöglicht Ihnen aber auch den sofortigen Zugriff darauf.  Nach 30 Tagen werden die Backups aus Kostengründen in die Speicherklasse S3 _Standard-Infrequent Access_ verschoben.
+Wenn Backup-Dateien initial erstellt werden, werden sie im S3 _Standard_-Speicher gespeichert. Diese Ebene ist für die Speicherung von Daten optimiert, auf die selten zugegriffen wird, ermöglicht aber dennoch einen sofortigen Zugriff. Nach 30 Tagen wechseln die Backups in die Speicherklasse S3 _Standard-Infrequent Access_, um Kosten zu sparen.
 
 Wenn auf Ihren Quellclustern ONTAP 9.10.1 oder höher ausgeführt wird, können Sie zur weiteren Kostenoptimierung Backups nach einer bestimmten Anzahl von Tagen (normalerweise mehr als 30 Tage) entweder auf _S3 Glacier_- oder _S3 Glacier Deep Archive_-Speicher verschieben.  Sie können dies auf „0“ oder auf 1–999 Tage einstellen.  Wenn Sie es auf „0“ Tage einstellen, können Sie es später nicht auf 1–999 Tage ändern.
 

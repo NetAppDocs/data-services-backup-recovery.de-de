@@ -14,7 +14,7 @@ summary: Erfahren Sie, was es Neues bei NetApp Backup and Recovery gibt.
 
 
 [role="lead"]
-Erfahren Sie, was es Neues bei NetApp Backup and Recovery gibt.
+Informationen zu neuen Funktionen, Verbesserungen und Fehlerbehebungen in NetApp Backup and Recovery.
 
 
 
@@ -807,7 +807,7 @@ Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 [[microsoft-sql-server-workload-supported-in-general-availability-ga]]
 === Microsoft SQL Server-Workload wird in der allgemeinen Verfügbarkeit (GA) unterstützt
 
-Die Workload-Unterstützung für Microsoft SQL Server ist jetzt in NetApp Backup and Recovery allgemein verfügbar (GA). Organisationen, die eine MSSQL-Umgebung auf ONTAP, Cloud Volumes ONTAP und Amazon FSx for NetApp ONTAP -Speicher verwenden, können jetzt diesen neuen Backup- und Wiederherstellungsdienst zum Schutz ihrer Daten nutzen.
+Die Unterstützung für Microsoft SQL Server Workloads ist jetzt allgemein in NetApp Backup and Recovery verfügbar. Organisationen, die eine MSSQL-Umgebung auf ONTAP, Cloud Volumes ONTAP und Amazon FSx for NetApp ONTAP Storage nutzen, können nun diesen neuen Backup and Recovery Service zum Schutz ihrer Daten nutzen.
 
 Diese Version enthält die folgenden Verbesserungen der Microsoft SQL Server-Workload-Unterstützung gegenüber der vorherigen Vorschauversion:
 
@@ -1066,7 +1066,7 @@ NetApp Backup and Recovery erweitert jetzt seine Unterstützung auf Objektspeich
 
 ==== Erste Schritte mit Wasabi
 
-Um Speicher von Drittanbietern als Objektspeicher zu verwenden, müssen Sie im Konsolenagenten ein Flag aktivieren.  Anschließend können Sie die Verbindungsdetails für Ihren Objektspeicher eines Drittanbieters eingeben und ihn in Ihre Sicherungs- und Wiederherstellungs-Workflows integrieren.
+Um Storage von Drittanbietern als Objektspeicher zu verwenden, muss innerhalb des Console-Agenten ein entsprechendes Flag aktiviert werden. Anschließend können die Verbindungsdetails für den Drittanbieter-Objektspeicher eingegeben und dieser in die Backup and Recovery-Workflows integriert werden.
 
 .Schritte
 . Melden Sie sich per SSH bei Ihrem Connector an.
@@ -1218,7 +1218,7 @@ NOTE: Diese Dokumentation wird als Technologievorschau bereitgestellt. Bei diese
 
 Diese Version von NetApp Backup and Recovery Preview 2025 enthält die folgenden Updates.
 
-* Eine neu gestaltete Benutzeroberfläche, die eine intuitivere Erfahrung bei der Verwaltung Ihrer Sicherungs- und Wiederherstellungsaufgaben bietet.
+* Eine neu gestaltete Benutzeroberfläche, die eine intuitivere Erfahrung bei der Verwaltung Ihrer Backup- und Recovery-Aufgaben bietet.
 * Mit der Vorschauversion können Sie Microsoft SQL Server-Datenbanken sichern und wiederherstellen. (Unterstützung für andere Workloads wird in zukünftigen Versionen hinzugefügt.)
 * Diese Version integriert SnapCenter -Funktionen und ermöglicht Ihnen die Verwaltung und den Schutz Ihrer SnapCenter -Ressourcen mit einer 3-2-1-Datensicherungsstrategie über die NetApp Backup and Recovery -Benutzeroberfläche.
 * Mit dieser Version können Sie SnapCenter -Workloads in NetApp Backup and Recovery importieren.

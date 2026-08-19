@@ -14,7 +14,7 @@ NOTE: Diese Dokumentation wird als Technologievorschau bereitgestellt. Bei diese
 
 Diese Version von NetApp Backup and Recovery Preview 2025 enthält die folgenden Updates.
 
-* Eine neu gestaltete Benutzeroberfläche, die eine intuitivere Erfahrung bei der Verwaltung Ihrer Sicherungs- und Wiederherstellungsaufgaben bietet.
+* Eine neu gestaltete Benutzeroberfläche, die eine intuitivere Erfahrung bei der Verwaltung Ihrer Backup- und Recovery-Aufgaben bietet.
 * Mit der Vorschauversion können Sie Microsoft SQL Server-Datenbanken sichern und wiederherstellen. (Unterstützung für andere Workloads wird in zukünftigen Versionen hinzugefügt.)
 * Diese Version integriert SnapCenter -Funktionen und ermöglicht Ihnen die Verwaltung und den Schutz Ihrer SnapCenter -Ressourcen mit einer 3-2-1-Datensicherungsstrategie über die NetApp Backup and Recovery -Benutzeroberfläche.
 * Mit dieser Version können Sie SnapCenter -Workloads in NetApp Backup and Recovery importieren.

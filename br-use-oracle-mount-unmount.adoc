@@ -14,7 +14,7 @@ summary: Schützen Sie Ihre Oracle-Datenbank-Workloads mit NetApp Backup und Rec
 
 
 [role="lead"]
-Sie sollten einen Oracle Database-Wiederherstellungspunkt einbinden, wenn Sie auf die Datenbank in einem kontrollierten Zustand zugreifen müssen, um Wiederherstellungsvorgänge durchzuführen. Katalogisieren Sie den Wiederherstellungspunkt manuell, wenn Sie die Backup und Recovery Metadaten der Sicherungs- und Wiederherstellungsvorgänge im RMAN-Wiederherstellungskatalog speichern müssen und die Option zur automatischen Katalogisierung der Metadaten nicht aktiviert ist.
+Einen Oracle Database-Wiederherstellungspunkt einbinden, wenn Zugriff auf die Datenbank in einem kontrollierten Zustand für Wiederherstellungsvorgänge erforderlich ist. Wenn die automatische Katalogisierung deaktiviert ist, kann die Katalogisierung der Metadaten des Wiederherstellungspunkts manuell im RMAN recovery catalog erfolgen.
 
 
 
@@ -73,7 +73,7 @@ Es wird eine Liste mit Wiederherstellungspunkten für diese Datenbank angezeigt.
 
 
 [[catalog-an-oracle-database-recovery-point]]
-== Katalogisieren Sie einen Wiederherstellungspunkt einer Oracle-Datenbank
+== Einen Wiederherstellungspunkt einer Oracle Datenbank katalogisieren
 
 Katalogisieren Sie einen Wiederherstellungspunkt manuell, wenn Sie dessen Backup und Recovery-Betriebsmetadaten erhalten müssen. Die Metadaten werden gemäß den von Ihnen für die Datenbank gewählten Einstellungen für *Configure RMAN catalog* gespeichert (standardmäßig in der Ziel-Kontrolldatei). Sie müssen nur manuell katalogisieren, wenn die automatische Katalogisierung in der zugehörigen Datensicherungsstrategie deaktiviert ist.
 

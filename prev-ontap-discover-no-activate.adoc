@@ -4,7 +4,7 @@ permalink: prev-ontap-discover-no-activate.html
 keywords: activate, backup and recovery, volumes, back up, discover 
 summary: Systeme und Volumes erkennen, ohne NetApp Backup and Recovery zu aktivieren. 
 ---
-= ONTAP-Systeme und Volumes ohne Aktivierung in NetApp Backup and Recovery erkennen
+= ONTAP-Systeme und Volumes erkennen, ohne NetApp Backup und Recovery zu aktivieren
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Systeme und Volumes erkennen, ohne NetApp Backup and Recovery zu aktivi
 
 
 [role="lead"]
-Sie können Systeme und Volumes entweder bei der Aktivierung von NetApp Backup and Recovery für die Volumes oder bereits davor erkennen. Wenn Volumes ohne Aktivierung erkannt werden, ist ein Schutz der Volumes erst möglich, nachdem Backup and Recovery für sie aktiviert wurde.
+ONTAP-Systeme und Volumes werden ermittelt, bevor NetApp Backup und Recovery aktiviert wird. Nach der Ermittlung können die Volumes überprüft werden, ein Schutz ist jedoch erst nach der Aktivierung von Backup und Recovery möglich.
 
 .Schritte
 . Wechseln Sie zu *Schutz > Sicherung und Wiederherstellung*.

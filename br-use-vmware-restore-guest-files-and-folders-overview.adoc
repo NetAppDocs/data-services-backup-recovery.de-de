@@ -14,14 +14,14 @@ summary: 'Sie können Dateien oder Ordner von einer virtuellen Maschinenfestplat
 
 
 [role="lead"]
-Sie können Dateien oder Ordner von einer virtuellen Maschinenfestplatte (VMDK) auf einem Windows- oder Linux-Gast-OS wiederherstellen.
+Mit der Gastdateiwiederherstellung lassen sich Dateien oder Ordner von einer virtuellen Maschinenfestplatte (VMDK) auf einem Windows- oder Linux-Gastbetriebssystem wiederherstellen.
 
 
 
-[[guest-restore-workflow]]
-== Workflow zur Gastwiederherstellung
+[[guest-file-restore-workflow]]
+== Workflow zur Wiederherstellung von Gastdateien
 
-Die Wiederherstellungsvorgänge des Gastbetriebssystems umfassen die folgenden Schritte:
+Die Wiederherstellung der Gastdateien umfasst die folgenden Schritte:
 
 . Befestigen
 +
@@ -48,12 +48,12 @@ Stellen Sie die ausgewählten Dateien oder Ordner an einem angegebenen Speichero
 
 Prüfen Sie alle Voraussetzungen, bevor Sie Dateien oder Ordner aus einer VMDK wiederherstellen.
 
-* VMware-Tools müssen installiert und ausgeführt werden.
+* VMware Tools muss installiert sein und ausgeführt werden.
 +
-NetApp Backup and Recovery nutzt Informationen von VMware Tools, um eine Verbindung zum VMware-Gastbetriebssystem herzustellen.
+NetApp Backup and Recovery verwendet Informationen von VMware Tools, um eine Verbindung zum VMware-Gastbetriebssystem herzustellen.
 
 * Sie müssen den Sicherungs-Snapshot und das VMDK kennen, von dem die Wiederherstellung durchgeführt werden soll.
-* Die anzuhängende virtuelle Festplatte muss sich in einem NetApp Backup and Recovery -Backup befinden.
+* Die virtuelle Festplatte, die Sie einbinden, muss sich in einer NetApp Backup and Recovery Sicherung befinden.
 +
 Die virtuelle Festplatte, die die wiederherzustellende Datei oder den Ordner enthält, muss sich in einer VM-Sicherung befinden, die mit NetApp Backup and Recovery erstellt wurde.
 
@@ -61,9 +61,9 @@ Die virtuelle Festplatte, die die wiederherzustellende Datei oder den Ordner ent
 +
 Wenn Sie eine virtuelle Festplatte an eine Proxy-VM anhängen möchten, muss die Proxy-VM konfiguriert werden, bevor der Anhänge- und Wiederherstellungsvorgang beginnt.
 
-* Dateien mit Namen, die nicht aus dem englischen Alphabet stammen, müssen Sie in einem Verzeichnis und nicht als einzelne Datei wiederherstellen.
+* Für Dateien mit nicht-englischen Zeichen im Namen ist eine Wiederherstellung in einem Verzeichnis erforderlich, nicht als einzelne Datei.
 +
-Sie können Dateien mit nicht-alphabetischen Namen, wie etwa japanische Kanji, wiederherstellen, indem Sie das Verzeichnis wiederherstellen, in dem sich die Dateien befinden.
+Dateien mit nicht-englischen Zeichen, wie japanischen Kanji, lassen sich wiederherstellen, indem das Verzeichnis wiederhergestellt wird, in dem sich die Dateien befinden.
 
 
 
@@ -106,14 +106,14 @@ IMPORTANT: Wenn Sie ein Konto verwenden müssen, das nicht das integrierte Admin
 [[guest-file-restore-limitations]]
 == Einschränkungen bei der Wiederherstellung von Gastdateien
 
-Bevor Sie eine Datei oder einen Ordner aus einem Gastbetriebssystem wiederherstellen, sollten Sie sich über die Funktionsbeschränkungen im Klaren sein.
+Vor der Wiederherstellung einer Datei oder eines Ordners aus einem Gastbetriebssystem gelten diese Einschränkungen.
 
 * Sie können dynamische Datenträgertypen nicht innerhalb eines Gastbetriebssystems wiederherstellen.
 * Wenn Sie eine verschlüsselte Datei oder einen verschlüsselten Ordner wiederherstellen, bleibt das Verschlüsselungsattribut nicht erhalten.
 * Sie können keine Dateien oder Ordner in einem verschlüsselten Ordner wiederherstellen.
 * Versteckte Dateien und Ordner werden auf der Dateiauswahlseite angezeigt und können nicht gefiltert werden.
 * Dateien oder Ordner können nicht zwischen Gastsystemen mit unterschiedlichen Betriebssystemen wiederhergestellt werden (bei der Wiederherstellung auf eine andere Gast-VM muss der Zielbetriebssystemtyp mit dem Quellbetriebssystemtyp übereinstimmen).
-* Sie können keine Wiederherstellung von einem NTFS-Dateisystem auf ein FAT-Dateisystem durchführen.
+* Eine Wiederherstellung von einem NTFS-Dateisystem auf ein FAT-Dateisystem ist nicht möglich.
 +
 Wenn Sie versuchen, vom NTFS-Format ins FAT-Format wiederherzustellen, wird der NTFS-Sicherheitsdeskriptor nicht kopiert, da das FAT-Dateisystem keine Windows-Sicherheitsattribute unterstützt.
 

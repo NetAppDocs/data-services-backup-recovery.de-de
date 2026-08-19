@@ -14,7 +14,7 @@ summary: NetApp Backup and Recovery muss zunächst Workloads erkennen, damit Sie
 
 
 [role="lead"]
-NetApp Backup and Recovery muss KVM-Hosts und virtuelle Maschinen erkennen, bevor diese geschützt werden können. Bevor Sie Ihre KVM-Hosts und VMs zu Backup und Recovery hinzufügen können, müssen diese über eine Managementplattform wie Apache CloudStack verwaltet werden.
+KVM-Hosts und virtuelle Maschinen in NetApp Backup und Recovery können erkannt werden, sodass sie mit Schutzrichtlinien geschützt werden können. Die KVM-Umgebung muss vor der Erkennung von einer Managementplattform wie Apache CloudStack verwaltet werden.
 
 *Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung.  Erfahren Sie mehr überlink:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
@@ -26,10 +26,10 @@ NetApp Backup and Recovery muss KVM-Hosts und virtuelle Maschinen erkennen, bevo
 Fügen Sie Informationen zur Managementplattform und zum KVM-Host hinzu, damit NetApp Backup and Recovery die Workloads automatisch erkennt.
 
 .Schritte
-. Wählen Sie im NetApp Console *Schutz > Sicherung und Wiederherstellung*.
+. Wählen Sie im NetApp Console *Schutz* > *Sicherung und Wiederherstellung*.
 . Wählen Sie unter *Workloads* die Kachel *KVM* aus.
 +
-Wenn Sie sich zum ersten Mal bei Backup and Recovery anmelden und zwar ein System in der Konsole haben, aber keine Ressourcen erkannt wurden, wird die Seite _Willkommen bei der neuen NetApp Backup and Recovery_ mit einer Option zum *Erkennen von Ressourcen* angezeigt.
+Wenn Sie sich zum ersten Mal bei NetApp Backup and Recovery anmelden und bereits ein System in der Console vorhanden ist, aber keine Ressourcen erkannt wurden, erscheint die Seite „Willkommen beim neuen NetApp Backup and Recovery“ mit der Option *Ressourcen erkennen*.
 
 . Wählen Sie *Ressourcen entdecken*.
 . Geben Sie die folgenden Informationen ein:
@@ -39,7 +39,7 @@ Wenn Sie sich zum ersten Mal bei Backup and Recovery anmelden und zwar ein Syste
 +
 ... Geben Sie die folgenden Informationen ein:
 +
-**** *IP-Adresse oder FQDN der Managementplattform*: Geben Sie die IP-Adresse oder den vollqualifizierten Domänennamen der Managementplattform ein.
+**** *IP-Adresse oder FQDN der Managementplattform*: Die IP-Adresse oder ein FQDN der Managementplattform ist einzugeben.
 **** *API-Schlüssel*: Geben Sie den API-Schlüssel ein, der zur Authentifizierung von API-Anfragen verwendet werden soll.
 **** *Geheimer Schlüssel*: Geben Sie den geheimen Schlüssel ein, der zur Authentifizierung von API-Anfragen verwendet werden soll.
 **** *Port*: Geben Sie den Port ein, der für die Kommunikation zwischen Backup und Recovery und der Managementplattform verwendet werden soll.
@@ -77,7 +77,7 @@ Die KVM-Arbeitslast wird in der Liste der Arbeitslasten auf der Inventarseite an
 
 .Schritte
 . Wählen Sie im NetApp Console *Schutz* > *Sicherung und Wiederherstellung*.
-. Wählen Sie eine Workload-Kachel aus (z. B. Microsoft SQL Server).
+. Die Kachel für die KVM Workload auswählen.
 . Wählen Sie im Menü „Sichern und Wiederherstellen“ die Option „Dashboard“ aus.
 . Überprüfen Sie den Zustand des Datenschutzes.  Die Anzahl der gefährdeten oder geschützten Workloads steigt basierend auf den neu entdeckten, geschützten und gesicherten Workloads.
 

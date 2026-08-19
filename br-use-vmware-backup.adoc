@@ -14,11 +14,11 @@ summary: Schützen Sie Ihre VMware-Workloads mit NetApp Backup and Recovery.
 
 
 [role="lead"]
-Sichern Sie VMware-VMs und Datenspeicher von lokalen ONTAP -Systemen auf Amazon Web Services, Azure NetApp Files oder StorageGRID , um sicherzustellen, dass Ihre Daten geschützt sind. Backups werden automatisch erstellt und in einem Objektspeicher in Ihrem öffentlichen oder privaten Cloud-Konto gespeichert.
+VMware-VMs und Datenspeicher können von lokalen ONTAP-Systemen zu Amazon Web Services, Azure NetApp Files oder StorageGRID gesichert werden, um den Schutz Ihrer Daten zu unterstützen. Backups werden automatisch erstellt und in einem Objektspeicher in Ihrem öffentlichen oder privaten Cloud-Konto gespeichert.
 
 * Um Workloads regelmäßig zu sichern, erstellen Sie Richtlinien, die die Sicherungs- und Wiederherstellungsvorgänge steuern. Siehe link:br-use-policies-create.html["Schutzrichtlinien erstellen"] für Anweisungen.
 * Erstellen Sie Schutzgruppen, um die Backup- und Recovery-Vorgänge für eine Gruppe von Ressourcen zu verwalten. Siehe link:br-use-vmware-protection-groups.html["Schutzgruppen erstellen und verwalten"] für weitere Informationen.
-* Sichern Sie jetzt Workloads (erstellen Sie jetzt ein On-Demand-Backup).
+* Workloads können jetzt durch Erstellen eines On-Demand-Backups gesichert werden.
 
 
 
@@ -31,7 +31,7 @@ Erstellen Sie sofort ein On-Demand-Backup.  Möglicherweise möchten Sie eine On
 *Erforderliche NetApp Console-Rolle* Storage Viewer, Backup and Recovery Super Admin, Backup and Recovery Backup Admin, Backup and Recovery Restore Admin, Backup and Recovery Clone Admin oder Backup and Recovery Viewer Role. Wenn Daten geschützt werden, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
 .Schritte
-. Wählen Sie im Menü „Sicherung und Wiederherstellung“ die Option „Inventar“ aus.
+. Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
 . Die VMware Workload auswählen.
 . Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*.
 . Wählen Sie die Menüüberschrift *Protection Groups*, *Datastores*, *Virtual machines* oder *Tags* aus.

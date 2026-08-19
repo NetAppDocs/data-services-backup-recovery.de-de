@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-start-discover-oracle.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, workloads, protect, Oracle 
-summary: NetApp Backup and Recovery muss zunächst Workloads erkennen, damit Sie diese schützen können. 
+summary: NetApp Backup und Recovery müssen zunächst die Workloads erkennen, bevor sie diese schützen können. 
 ---
 = Entdecken Sie Oracle-Datenbank-Workloads in NetApp Backup and Recovery
 :hardbreaks:
@@ -14,9 +14,9 @@ summary: NetApp Backup and Recovery muss zunächst Workloads erkennen, damit Sie
 
 
 [role="lead"]
-Die Erkennung von Oracle-Datenbanken ermöglicht es NetApp Backup and Recovery, diese durch das Erstellen und Wiederherstellen von Backups und Snapshots zu schützen.
+Oracle Database Workloads in NetApp Backup und Recovery erkennen, um sie mit Backups und Snapshots zu schützen.
 
-*Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung.  Erfahren Sie mehr überlink:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
+*Erforderliche NetApp Console-Rolle* Backup and Recovery Superadministrator. Informationen zu link:reference-roles.html["Backup und Recovery Rollen und Berechtigungen"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
 
 
@@ -130,10 +130,10 @@ kubectl -n kube-system rollout restart deploy/rke2-coredns-rke2-coredns
 [[add-an-oracle-database-host-and-discover-resources]]
 == Fügen Sie einen Oracle Database-Host hinzu und entdecken Sie Ressourcen
 
-Fügen Sie Oracle-Hostinformationen hinzu und lassen Sie NetApp Backup and Recovery die Workloads erkennen. Wählen Sie in jedem Konsolenagenten die Systeme aus, auf denen Sie Workloads ermitteln möchten.
+Fügen Sie die Hostinformationen der Oracle-Datenbank hinzu und lassen Sie NetApp Backup and Recovery die Workloads erkennen. Für jeden Console-Agenten werden die zu erkennenden Systeme ausgewählt.
 
 .Schritte
-. Wählen Sie im NetApp Console *Schutz > Sicherung und Wiederherstellung*.
+. Im NetApp Console-Menü *Schutz* > *Backup und Recovery* auswählen.
 . Wählen Sie unter *Workloads* die Kachel *Oracle* aus.
 . Wählen Sie *Ressourcen entdecken*.
 . Wählen Sie *Oracle* für das Feld *Workload type* aus.
@@ -145,10 +145,10 @@ Fügen Sie Oracle-Hostinformationen hinzu und lassen Sie NetApp Backup and Recov
 .. Wählen Sie *Fertig*.
 
 
-. *Hostregistrierung*: Fügen Sie einen neuen Oracle Database Host hinzu. Geben Sie im Feld *Host-FQDN oder IP-Adresse* den FQDN oder die IP-Adresse des Hosts ein – bei Clusterdatenbanken können Sie den FQDN oder die IP-Adresse eines beliebigen Knotens im Cluster eingeben. Geben Sie anschließend die Anmeldeinformationen, den Console Agent und die Portnummer an.
+. *Hostregistrierung*: Einen neuen Oracle Database Host hinzufügen. Im Feld *Host-FQDN oder IP-Adresse* den FQDN oder die IP-Adresse des Hosts eingeben. Für Clusterdatenbanken kann der FQDN oder die IP-Adresse eines beliebigen Knotens im Cluster eingegeben werden. Anschließend Anmeldeinformationen, den Console Agent und die Portnummer angeben.
 . (Optional) Wenn Sie Anmeldeinformationen für einen Nicht-Root-Benutzer auswählen, führen Sie Folgendes aus:
 +
-.. Anweisungen zum Hinzufügen des von Ihnen ausgewählten Nicht-Root-Benutzers zur sudoers-Datei auf dem Oracle Database-Host finden Sie unter *Configure sudoers*.
+.. Anweisungen zum Hinzufügen des ausgewählten Nicht-Root-Benutzers zur sudoers-Datei auf dem Oracle Database Host finden Sie unter *Configure sudoers*.
 .. Folgen Sie den Anweisungen im Dialog, aktivieren Sie das Kontrollkästchen, wenn Sie fertig sind, und wählen Sie *Fertig*.
 
 
@@ -159,7 +159,7 @@ Fügen Sie Oracle-Hostinformationen hinzu und lassen Sie NetApp Backup and Recov
 +
 [NOTE]
 ====
-Backup und Recovery verbindet sich per SSH mit jedem Host, um das Plug-in automatisch zu installieren. Aktivieren Sie die Option *manuelle Installation verwenden*, wenn einer der folgenden Punkte zutrifft:
+NetApp Backup und Recovery verbindet sich per SSH mit jedem Host, um das Plug-in automatisch zu installieren. *Manuelle Installation verwenden* ist zu aktivieren, wenn einer der folgenden Punkte zutrifft:
 
 *** Auf einem oder mehreren Hosts läuft der SSH-Dienst nicht.
 *** Auf jedem Host ist das NetApp Plug-in bereits vorhanden (auch wenn es nur auf einigen Cluster-Mitgliedern vorhanden ist).
@@ -174,20 +174,20 @@ Backup und Recovery verbindet sich per SSH mit jedem Host, um das Plug-in automa
 . Wählen Sie *Entdecken*.
 +
 
-TIP: Das Hinzufügen von Ressourcen kann einige Minuten dauern. Um den Fortschritt zu sehen, wählen Sie *Fortschritt verfolgen* im Statusdialog unten auf der Inventarseite oder wählen Sie *Überwachung* im Menü auf der linken Seite.
+TIP: Das Hinzufügen von Ressourcen kann einige Minuten dauern. Der Fortschritt ist im Statusdialog unten auf der Inventarseite unter *Fortschritt verfolgen* oder in der linken Navigation unter *Überwachung* einsehbar.
 
 
 
 .Ergebnis
-Die Oracle Database-Workload wird in der Liste der Workloads auf der Inventarseite angezeigt.
+Die Oracle Database Workload erscheint in der Workload-Liste auf der Inventarseite.
 
 
 
 [[continue-to-the-netapp-backup-and-recovery-dashboard]]
 == Weiter zum NetApp Backup and Recovery Dashboard
 
-. Wählen Sie im NetApp Console *Schutz* > *Sicherung und Wiederherstellung*.
-. Wählen Sie eine Workload-Kachel aus (z. B. Microsoft SQL Server).
+. Im NetApp Console-Menü *Schutz* > *Backup und Recovery* auswählen.
+. Eine Workload-Kachel auswählen (z. B. Oracle Database).
 . Wählen Sie im Menü „Sichern und Wiederherstellen“ die Option „Dashboard“ aus.
-. Überprüfen Sie den Zustand des Datenschutzes.  Die Anzahl der gefährdeten oder geschützten Workloads steigt basierend auf den neu entdeckten, geschützten und gesicherten Workloads.
+. Der Zustand des Datenschutzes wird angezeigt. Die Anzahl der gefährdeten oder geschützten Workloads erhöht sich entsprechend den neu erkannten, geschützten und gesicherten Workloads.
 

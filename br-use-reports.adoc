@@ -12,7 +12,7 @@ summary: Erstellen Sie in NetApp Backup and Recovery Berichte, um den Status Ihr
 
 
 [role="lead"]
-In NetApp Backup and Recovery können Sie Berichte für Microsoft SQL Server-Workloads erstellen, um den Sicherungsstatus und Details anzuzeigen, einschließlich der Anzahl erfolgreicher und fehlgeschlagener Sicherungen, Sicherungstypen, Speichersysteme und Zeitstempel.
+Berichte für Microsoft SQL Server Workloads in NetApp Backup and Recovery ermöglichen eine Überprüfung des Sicherungsstatus und der Details, einschließlich der Anzahl erfolgreicher und fehlgeschlagener Sicherungen, Sicherungstypen, Storage-Systeme und Zeitstempel.
 
 
 
@@ -22,7 +22,7 @@ In NetApp Backup and Recovery können Sie Berichte für Microsoft SQL Server-Wor
 *Erforderliche NetApp Console-Rolle* Storage Viewer, Backup and Recovery Super Admin, Backup and Recovery Backup Admin, Backup and Recovery Restore Admin, Backup and Recovery Clone Admin. Für den Schutz von Daten, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich. Informationen zu link:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
 .Schritte
-. Wählen Sie im NetApp Backup and Recovery -Menü die Option *Berichte*.
+. Im NetApp Backup und Recovery-Menü die Option *Berichte* auswählen.
 . Wählen Sie *Bericht erstellen*.
 . Geben Sie Details zum Berichtsumfang ein:
 +
@@ -32,9 +32,9 @@ In NetApp Backup and Recovery können Sie Berichte für Microsoft SQL Server-Wor
 ** *Inhalt auswählen*: Wählen Sie, ob der Bericht eine Zusammenfassung aller Sicherungen oder Details zu jeder Sicherung enthalten soll.  (Wenn Sie „Nach Konto“ gewählt haben)
 
 
-. Geben Sie den Berichtszeitraum ein: Wählen Sie, ob der Bericht Daten vom letzten Tag, den letzten 7 Tagen, den letzten 30 Tagen, dem letzten Quartal oder dem letzten Jahr enthalten soll.
-. Geben Sie die Details zur Berichtszustellung ein: Wenn Sie den Bericht per E-Mail zugestellt bekommen möchten, aktivieren Sie *Bericht per E-Mail senden*. Geben Sie die E-Mail-Adresse ein, an die der Bericht gesendet werden soll.
+. Geben Sie den Berichtszeitraum ein: Es kann ausgewählt werden, ob der Bericht Daten vom letzten Tag, den letzten 7 Tagen, den letzten 30 Tagen, dem letzten Quartal oder dem letzten Jahr enthalten soll.
+. Geben Sie die Details zur Berichtszustellung ein: Wenn der Bericht per E-Mail zugestellt werden soll, *Bericht per E-Mail senden* auswählen. Die E-Mail-Adresse eingeben, an die der Bericht gesendet werden soll.
 +
-Konfigurieren Sie E-Mail-Benachrichtigungen auf der Seite „Einstellungen“. Einzelheiten zum Konfigurieren von E-Mail-Benachrichtigungen finden Sie unterlink:br-start-configure.html["Konfigurieren der Einstellungen"] .
+E-Mail-Benachrichtigungen können auf der Einstellungsseite konfiguriert werden. Weitere Informationen zur Konfiguration von E-Mail-Benachrichtigungen sind unter link:br-start-configure.html["Konfigurieren der Einstellungen"] zu finden.
 
 

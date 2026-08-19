@@ -14,7 +14,7 @@ summary: NetApp Backup and Recovery muss zunächst Daten erkennen, damit Sie den
 
 
 [role="lead"]
-Plattformen, Geräte oder Funktionen, die mit dieser Version nicht oder nicht gut funktionieren, sind hier aufgelistet.  Lesen Sie diese Einschränkungen sorgfältig durch.
+Diese Einschränkungen sollten vor der Verwendung von NetApp Backup and Recovery für SQL Server Workloads geprüft werden.
 
 
 
@@ -71,7 +71,7 @@ Wenn alle Ressourcen in einer Ressourcengruppe geschützt sind und eine dieser R
 [[resources-with-multiple-policies-using-the-same-schedule-tier-not-supported]]
 === Ressourcen mit mehreren Richtlinien, die dieselbe Zeitplanebene verwenden, werden nicht unterstützt
 
-Sie können einer Ressource nicht mehrere Richtlinien zuweisen, die dieselbe Zeitplanebene verwenden (z. B. stündlich, täglich, wöchentlich usw.).  NetApp Backup and Recovery importiert diese Ressourcen nicht aus SnapCenter.
+Sie können einer Ressource nicht mehrere Richtlinien zuweisen, die dieselbe Zeitplanstufe verwenden (z. B. stündlich, täglich oder wöchentlich). NetApp Backup and Recovery wird diese Ressourcen nicht aus SnapCenter importieren.
 
 *Problemumgehung*: Fügen Sie einer Ressource nur eine Richtlinie mit derselben Zeitplanebene hinzu.
 
@@ -89,18 +89,18 @@ Wenn Sie über eine SnapCenter -Richtlinie verfügen, die sich stündlich wieder
 [[both-daily-and-monthly-policies-attached-to-one-resource-not-supported]]
 === Sowohl tägliche als auch monatliche Richtlinien, die an eine Ressource angehängt sind, werden nicht unterstützt
 
-Wenn sich eine SnapCenter -Richtlinie sowohl in Tages- als auch in Monatsintervallen wiederholt, importiert NetApp Backup and Recovery die Richtlinie nicht.
+Wenn eine SnapCenter-Richtlinie sowohl im Tages- als auch im Monatsintervall wiederholt wird, wird die Richtlinie von NetApp Backup and Recovery nicht importiert.
 
-Sie können beispielsweise einer Ressource keine tägliche Richtlinie (mit weniger als oder gleich 7 Tagen oder mehr als 7 Tagen) und derselben Ressource auch eine monatliche Richtlinie zuordnen.
+Beispielsweise kann einer Ressource nicht sowohl eine Tagesrichtlinie (mit einem Intervall von 7 Tagen oder weniger oder mehr als 7 Tagen) als auch eine Monatsrichtlinie zugewiesen werden.
 
 *Problemumgehung*: Verwenden Sie eine Richtlinie, die ein tägliches oder ein monatliches Intervall verwendet, aber nicht beides.
 
 
 
 [[on-demand-backup-policies-not-migrated]]
-=== On-Demand-Backup-Richtlinien nicht migriert
+=== On-demand-Backup-Richtlinien nicht migriert
 
-NetApp Backup and Recovery importiert keine On-Demand-Sicherungsrichtlinien aus SnapCenter.
+NetApp Backup and Recovery importiert keine On-Demand-Backup-Richtlinien von SnapCenter.
 
 
 
@@ -116,7 +116,7 @@ NetApp Backup and Recovery importiert keine Nur-Protokoll-Sicherungsrichtlinien 
 [[host-mapping]]
 === Host-Zuordnung
 
-SnapCenter verfügt nicht über eine Zuordnung von Speicherclustern oder Speicher-VMs zu Hosts, aber NetApp Backup und Recovery schon. Das lokale ONTAP-Cluster oder die Speicher-VM wird in den Preview-Versionen von NetApp Backup und Recovery nicht einem Host zugeordnet. Zusätzlich unterstützt die NetApp Console keine Speicher-VMs.
+SnapCenter ordnet Speichercluster oder Speicher-VMs für Ressourcen nicht Hosts zu, NetApp Backup and Recovery hingegen schon. Das lokale ONTAP-Cluster oder die Speicher-VM wird in den Preview-Versionen von NetApp Backup and Recovery keinem Host zugeordnet. Außerdem unterstützt die NetApp Console keine Speicher-VMs.
 
 *Problemumgehung*: Erstellen Sie vor dem Importieren von Ressourcen aus SnapCenter ein System in NetApp Backup and Recovery für alle lokalen ONTAP Speichersysteme, die im lokalen SnapCenter registriert sind.  Importieren Sie dann die Ressourcen für diesen Cluster von SnapCenter in NetApp Backup and Recovery.
 

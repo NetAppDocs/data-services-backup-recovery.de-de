@@ -14,15 +14,15 @@ summary: Erstellen und verwalten Sie Schutzgruppen für KVM-Workloads in NetApp 
 
 
 [role="lead"]
-Erstellen Sie Schutzgruppen, um die Sicherungsvorgänge für eine Reihe von KVM-Ressourcen zu verwalten.  Eine Schutzgruppe ist eine logische Gruppierung von Ressourcen wie VMs und Speicherpools, die Sie gemeinsam schützen möchten.  Sie müssen eine Schutzgruppe erstellen, um virtuelle KVM-Maschinen oder Speicherpools zu sichern.
+Schutzgruppen können erstellt und verwaltet werden, sodass zusammengehörige KVM-VMs und Speicherpools gemeinsam gesichert werden können.
 
-Sie können die folgenden Aufgaben im Zusammenhang mit Schutzgruppen ausführen:
+Mit Schutzgruppen sind folgende Aktionen möglich:
 
-* Erstellen Sie eine Schutzgruppe.
-* Schutzdetails anzeigen.
+* Erstellen einer Schutzgruppe
+* Schutzdetails anzeigen
 * Sichern Sie jetzt eine Schutzgruppe. Sehenlink:br-use-kvm-backup.html["Sichern Sie jetzt KVM-Workloads"] .
-* Bearbeiten Sie eine Datensicherungsgruppe.
-* Löschen Sie eine Schutzgruppe.
+* Bearbeiten Sie eine Schutzgruppe
+* Löschen einer Schutzgruppe
 
 
 
@@ -30,7 +30,7 @@ Sie können die folgenden Aufgaben im Zusammenhang mit Schutzgruppen ausführen:
 [[create-a-protection-group]]
 == Erstellen einer Schutzgruppe
 
-Gruppieren Sie VMs und Speicherpools, die Sie gemeinsam schützen möchten, in einer Schutzgruppe.
+VMs und Speicherpools, die geschützt werden sollen, werden in einer Schutzgruppe zusammengefasst.
 
 *Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung oder Backupadministratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
@@ -44,12 +44,12 @@ Gruppieren Sie VMs und Speicherpools, die Sie gemeinsam schützen möchten, in e
 . Wählen Sie einen Host aus, um die auf diesem Host verfügbaren VMs aufzulisten. Um VMs von allen gefundenen Hosts einzubeziehen, wählen Sie in der Hostliste *All* aus.
 . Wählen Sie einzelne VMs aus, die Sie in die Datensicherungsgruppe aufnehmen möchten, oder wählen Sie *All*, um alle VMs in die Liste aufzunehmen.
 +
-Die von Ihnen ausgewählten VMs werden im Bereich *Added virtual machines* angezeigt. Sie können einzelne VMs aus der Liste entfernen oder die Liste vollständig leeren. Sie können VMs von mehreren KVM-Hosts zur Liste hinzufügen.
+Die ausgewählten VMs werden im Bereich *Hinzugefügte virtuelle Maschinen* angezeigt. Einzelne VMs können entfernt oder die Liste geleert werden. VMs können von mehreren KVM Hosts hinzugefügt werden.
 
 . Wählen Sie *Weiter*.
 . Wählen Sie die Datensicherungsstrategie, die Sie auf die Schutzgruppe anwenden möchten, oder erstellen Sie eine neue Strategie, indem Sie *Create new policy* auswählen.
 +
-Weitere Informationen zum Erstellen einer Sicherungsrichtlinie finden Sie unterlink:br-use-policies-create.html["Erstellen und Verwalten von Richtlinien"] .
+Weitere Informationen finden sich unter link:br-use-policies-create.html["Erstellen und Verwalten von Richtlinien"].
 
 . Wählen Sie *Weiter*.
 . Überprüfen Sie die Konfiguration.

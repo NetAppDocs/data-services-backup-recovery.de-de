@@ -14,9 +14,9 @@ summary: Diese Version von NetApp Backup and Recovery weist die folgenden bekann
 
 
 [role="lead"]
-Plattformen, Geräte oder Funktionen, die mit dieser Version nicht oder nicht gut funktionieren, sind hier aufgelistet.  Lesen Sie diese Einschränkungen sorgfältig durch.
+Die aktuellen Einschränkungen für KVM-Workloads in NetApp Backup and Recovery werden dargestellt.
 
-Die folgenden Aktionen und Konfigurationen werden in KVM-Workloads in NetApp Backup and Recovery nicht unterstützt:
+Die folgenden nicht unterstützten Aktionen und Konfigurationen gelten für KVM-Workloads in NetApp Backup and Recovery:
 
 
 
@@ -51,7 +51,7 @@ Die folgenden Konfigurationen werden nicht unterstützt:
 [[troubleshooting-notes]]
 == Hinweise zur Fehlerbehebung
 
-Beachten Sie Folgendes bei der Verwendung von KVM-Workloads mit NetApp Backup and Recovery.
+Folgendes ist zu beachten, wenn KVM-Workloads mit NetApp Backup and Recovery verwendet werden.
 
-* Backups können fehlschlagen, wenn der QEMU Guest Agent nicht in einer geschützten VM ausgeführt wird. Um dieses Problem zu umgehen, stellen Sie sicher, dass der  `qemu-guest-agent` Daemon auf der VM ausgeführt wird, bevor Sie das Backup starten.
+* Backups können fehlschlagen, wenn der QEMU Guest Agent nicht in einer geschützten VM ausgeführt wird. Um dieses Problem zu vermeiden, muss sichergestellt sein, dass der  `qemu-guest-agent` Daemon auf der VM läuft, bevor das Backup gestartet wird.
 

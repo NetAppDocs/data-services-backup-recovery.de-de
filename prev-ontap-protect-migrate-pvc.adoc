@@ -4,7 +4,7 @@ permalink: prev-ontap-protect-migrate-pvc.html
 keywords: migrate, pvc, nfs, storage, performance, persistence 
 summary: Steigerung der Katalogindexleistung in NetApp Console lokalen Bereitstellungsumgebungen. 
 ---
-= Such- und Wiederherstellungsleistung in lokalen NetApp Backup and Recovery-Bereitstellungen verbessern
+= Migration des Such- und Wiederherstellungskatalogspeichers zu ONTAP NFS
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Steigerung der Katalogindexleistung in NetApp Console lokalen Bereitste
 
 
 [role="lead"]
-Migrieren Sie den Katalogindexspeicher von der Standardspeicherklasse des Clusters auf eine von ONTAP unterstützte NFS-Freigabe, um die Katalogleistung bei der lokalen Bereitstellung der NetApp Console deutlich zu verbessern. Der Indexkatalog wird für die Funktion „Search & Restore“ verwendet. Während der Katalog mit dem Standardspeicher funktioniert, bietet die Nutzung von ONTAP-gestütztem NFS messbare Leistungsverbesserungen für „Search & Restore“.
+Zur Verbesserung der Such- und Wiederherstellungsleistung in einer lokalen NetApp Console-Bereitstellung sollte der Katalogindexspeicher von der Standardspeicherklasse des Clusters auf eine von ONTAP unterstützte NFS-Freigabe migriert werden. Der Katalogindex unterstützt Such- und Wiederherstellung, und ONTAP-gestütztes NFS kann messbare Leistungsverbesserungen bieten.
 
 .Bevor Sie beginnen
 Stellen Sie sicher, dass Sie Folgendes vor Beginn bereithalten:
@@ -52,7 +52,7 @@ kubectl get pods -n cbs | grep cloudmanager-cbs-catalog-worker- || echo "no work
 
 
 [discrete]
-===== Das ONTAP Volume auf der lokalen NetApp Console-Bereitstellung einbinden und aus dem Pod kopieren
+===== Das ONTAP Volume auf der lokalen NetApp Console-Bereitstellung einbinden und Daten aus dem Pod kopieren
 
 . Den ONTAP NFS-Export an einem lokalen Mount-Punkt in der VM einbinden, die erstellt wurde, als die NetApp Console lokale Deployment-OVA bereitgestellt wurde.
 . Die Daten werden vom laufenden Coordinator-Pod direkt in das ONTAP-Mount kopiert, ohne ein Zwischenverzeichnis zu verwenden. Der Coordinator muss weiterhin ausgeführt werden.
@@ -118,7 +118,7 @@ kubectl delete pv "$PV"
 [discrete]
 ===== Die statische ONTAP PV und PVC erstellen
 
-. Die folgenden PV- und PVC-YAML-Objekte erstellen:
+. Die folgenden PV- und PVC-YAML-Objekte werden erstellt:
 +
 **`pv.yaml`**
 
@@ -166,7 +166,7 @@ spec:
     matchLabels:
       volume: ontap-nfs-share # Forces binding to the specific PV above
 ----
-. Die YAML-Objekte werden angewendet, zuerst das PV, dann das PVC (das PV muss vorhanden sein, damit der Label-Selektor des PVC daran gebunden werden kann). Anschließend wird überprüft, ob der PVC-Claim gebunden ist.
+. Die YAML-Objekte werden angewendet, indem zuerst das PV und dann das PVC angewendet wird (das PV muss vorhanden sein, damit der Label-Selektor des PVC daran gebunden werden kann). Anschließend kann überprüft werden, ob der PVC-Claim gebunden ist:
 +
 [source, shell]
 ----

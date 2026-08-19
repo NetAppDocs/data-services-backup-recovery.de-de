@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: br-use-mssql-backup.html 
-keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
-summary: Sichern Sie Microsoft SQL Server-Anwendungsdaten von lokalen ONTAP -Systemen auf Amazon Web Services, Microsoft Azure und StorageGRID, um sicherzustellen, dass Ihre Daten geschützt sind. 
+keywords: backing up, back up, backup, cloud volumes ontap, aws, azure, storagegrid, back up volumes, cloud backup, on-premises ontap, onprem, applications, backup and recovery 
+summary: Microsoft SQL Server-Anwendungsdaten können von lokalen ONTAP-Systemen auf Amazon Web Services, Microsoft Azure und StorageGRID gesichert werden, sodass der Schutz Ihrer Daten gewährleistet ist. 
 ---
 = Sichern Sie Microsoft SQL Server-Workloads mit NetApp Backup and Recovery
 :hardbreaks:
@@ -14,11 +14,11 @@ summary: Sichern Sie Microsoft SQL Server-Anwendungsdaten von lokalen ONTAP -Sys
 
 
 [role="lead"]
-Sichern Sie Microsoft SQL Server-Anwendungsdaten von lokalen ONTAP -Systemen auf Amazon Web Services, Microsoft Azure oder StorageGRID.  Das System erstellt automatisch Backups und speichert diese zum Schutz Ihrer Daten in einem Objektspeicher in Ihrem Cloud-Konto.
+Microsoft SQL Server-Workloads können von lokalen ONTAP Systemen auf Amazon Web Services, Microsoft Azure oder StorageGRID gesichert werden.
 
-* Um Workloads nach einem Zeitplan zu sichern, erstellen Sie Richtlinien, die Sicherungs- und Wiederherstellungsvorgänge verwalten. Sehenlink:br-use-policies-create.html["Erstellen von Richtlinien"] Anweisungen hierzu finden Sie unter.
+* Richtlinien können erstellt werden, um Workloads nach Zeitplan zu sichern und Sicherungs- sowie Wiederherstellungsvorgänge zu verwalten. Siehe link:br-use-policies-create.html["Erstellen von Richtlinien"] für Anweisungen.
 * Konfigurieren Sie das Protokollverzeichnis für erkannte Hosts, bevor Sie eine Sicherung starten.
-* Sichern Sie jetzt Workloads (erstellen Sie jetzt ein On-Demand-Backup).
+* Eine bedarfsgesteuerte Datensicherung ermöglicht die sofortige Sicherung von Workloads.
 
 
 
@@ -28,7 +28,7 @@ Sichern Sie Microsoft SQL Server-Anwendungsdaten von lokalen ONTAP -Systemen auf
 
 Bevor Sie eine Sicherung starten, sehen Sie sich den Schutzstatus Ihrer Workloads an.
 
-*Erforderliche NetApp Console-Rolle* Storage Viewer, Backup and Recovery Super Admin, Backup and Recovery Backup Admin, Backup and Recovery Restore Admin, Backup and Recovery Clone Admin oder Backup and Recovery Viewer-Rolle. Für den Schutz von Daten, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich. Informationen dazu unter link:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
+*Erforderliche NetApp Console-Rolle* Storage Viewer, Backup and Recovery Super Admin, Backup and Recovery Backup Admin, Backup and Recovery Restore Admin, Backup and Recovery Clone Admin oder Backup and Recovery Viewer Role. Für den Schutz von Daten, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich. Informationen zu link:reference-roles.html["Backup und Recovery Rollen und Berechtigungen"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
@@ -44,7 +44,7 @@ Bevor Sie eine Sicherung starten, sehen Sie sich den Schutzstatus Ihrer Workload
 
 Legen Sie den Aktivitätsprotokollpfad für erkannte Hosts fest, um den Betriebsstatus vor dem Sichern von Workloads zu verfolgen.
 
-*Erforderliche NetApp Console-Rolle* Storage Viewer, Backup and Recovery Super Admin, Backup and Recovery Backup Admin oder Backup and Recovery Restore Admin Rolle. Wenn Daten geschützt werden, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^]
+*Erforderliche NetApp Console-Rolle* Storage Viewer, Backup and Recovery Super Admin, Backup and Recovery Backup Admin oder Backup and Recovery Restore Admin Rolle. Für den Schutz von Daten, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich. Informationen zu link:reference-roles.html["Backup und Recovery Rollen und Berechtigungen"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
@@ -53,7 +53,7 @@ Legen Sie den Aktivitätsprotokollpfad für erkannte Hosts fest, um den Betriebs
 . Wählen Sie einen Host aus.
 . Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Protokollverzeichnis konfigurieren*.
 . Geben Sie den Hostpfad ein oder durchsuchen Sie eine Liste von Hosts oder Knoten, um herauszufinden, wo Sie das Hostprotokoll speichern möchten.
-. Wählen Sie diejenigen aus, auf denen Sie die Protokolle speichern möchten.
+. Wählen Sie die Hosts oder Knoten aus, auf denen Sie die Protokolle speichern möchten.
 +
 
 NOTE: Die angezeigten Felder unterscheiden sich je nach ausgewähltem Bereitstellungsmodell, z. B. Failoverclusterinstanz oder Standalone.
@@ -68,7 +68,7 @@ NOTE: Die angezeigten Felder unterscheiden sich je nach ausgewähltem Bereitstel
 
 Erstellen Sie eine Schutzgruppe, um Sicherungs- und Wiederherstellungsvorgänge für mehrere Workloads zu verwalten.  Eine Schutzgruppe ist eine logische Gruppierung von Workloads.
 
-*Erforderliche NetApp Console-Rolle* Storage Viewer, Backup and Recovery Super Admin oder Backup and Recovery Backup Admin Rolle. Wenn Daten geschützt werden, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
+*Erforderliche NetApp Console-Rolle* Storage Viewer, Backup and Recovery Super Admin oder Backup and Recovery Backup Admin Rolle. Für den Schutz von Daten, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich. Informationen zu link:reference-roles.html["Backup und Recovery Rollen und Berechtigungen"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
@@ -81,7 +81,7 @@ Erstellen Sie eine Schutzgruppe, um Sicherungs- und Wiederherstellungsvorgänge 
 . Wählen Sie *Weiter*.
 . Wählen Sie die *Sicherungsrichtlinie* aus, die Sie auf die Schutzgruppe anwenden möchten.
 +
-Wenn Sie eine Richtlinie erstellen möchten, wählen Sie *Neue Richtlinie erstellen* und folgen Sie den Anweisungen zum Erstellen einer Richtlinie.  Sehenlink:br-use-policies-create.html["Erstellen von Richtlinien"] für weitere Informationen.
+Wenn eine Richtlinie erstellt werden soll, ist *Neue Richtlinie erstellen* auszuwählen und den Anweisungen zu folgen. Siehe link:br-use-policies-create.html["Erstellen von Richtlinien"] für weitere Informationen.
 
 . Wählen Sie *Weiter*.
 . Überprüfen Sie die Konfiguration.
@@ -95,16 +95,16 @@ Wenn Sie eine Richtlinie erstellen möchten, wählen Sie *Neue Richtlinie erstel
 
 Führen Sie vor der Durchführung von Änderungen an Ihrem System eine On-Demand-Sicherung durch, um sicherzustellen, dass Ihre Daten geschützt sind.
 
-*Erforderliche NetApp Console-Rolle* Storage Viewer, Backup and Recovery Super Admin oder Backup and Recovery Backup Admin Rolle. Wenn Daten geschützt werden, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
+*Erforderliche NetApp Console-Rolle* Storage Viewer, Backup and Recovery Super Admin oder Backup and Recovery Backup Admin Rolle. Für den Schutz von Daten, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich. Informationen zu link:reference-roles.html["Backup und Recovery Rollen und Berechtigungen"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
 .Schritte
-. Wählen Sie im Menü *Inventar* aus.
+. Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
 . Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.
 . Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*.
-. Wählen Sie die Registerkarte *Schutzgruppe*, *Instanzen* oder *Datenbanken*.
+. Die Registerkarte *Schutzgruppen*, *Instanzen* oder *Datenbanken* auswählen.
 . Wählen Sie die Instanz oder Datenbank aus, die Sie sichern möchten.
 . Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Jetzt sichern*.
-. Wählen Sie die Richtlinie aus, die Sie auf die Sicherung anwenden möchten.
+. Wählen Sie die Richtlinie aus, die auf das Backup angewendet werden soll.
 . Wählen Sie die Zeitplanstufe aus.
 . Wählen Sie *Jetzt sichern*.
 
@@ -116,13 +116,13 @@ Führen Sie vor der Durchführung von Änderungen an Ihrem System eine On-Demand
 
 Unterbrechen Sie den Zeitplan, um Sicherungen während der Wartung oder Fehlerbehebung vorübergehend zu stoppen.
 
-*Erforderliche NetApp Console-Rolle* Storage Viewer, Backup and Recovery Super Admin oder Backup and Recovery Backup Admin Rolle. Wenn Daten geschützt werden, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
+*Erforderliche NetApp Console-Rolle* Storage Viewer, Backup and Recovery Super Admin oder Backup and Recovery Backup Admin Rolle. Für den Schutz von Daten, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich. Informationen zu link:reference-roles.html["Backup und Recovery Rollen und Berechtigungen"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
 . Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.
 . Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*.
-. Wählen Sie die Registerkarte *Schutzgruppe*, *Instanzen* oder *Datenbanken*.
+. Die Registerkarte *Schutzgruppen*, *Instanzen* oder *Datenbanken* auswählen.
 . Wählen Sie die Schutzgruppe, Instanz oder Datenbank aus, die Sie anhalten möchten.
 . Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Aussetzen*.
 
@@ -134,7 +134,7 @@ Unterbrechen Sie den Zeitplan, um Sicherungen während der Wartung oder Fehlerbe
 
 Durch das Löschen einer Schutzgruppe werden diese und alle zugehörigen Sicherungszeitpläne entfernt. Möglicherweise möchten Sie eine Schutzgruppe löschen, wenn sie nicht mehr benötigt wird.
 
-*Erforderliche NetApp Console * Speicherbetrachter, Superadministrator für Backup und Wiederherstellung oder Backup-Administratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
+*Erforderliche NetApp Console-Rolle* Storage Viewer, Backup and Recovery Super Admin oder Backup and Recovery Backup Admin Rolle. Für den Schutz von Daten, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich. Informationen zu link:reference-roles.html["Backup und Recovery Rollen und Berechtigungen"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
@@ -151,13 +151,13 @@ Durch das Löschen einer Schutzgruppe werden diese und alle zugehörigen Sicheru
 
 Sie können den Schutz eines Workloads entfernen, wenn Sie ihn nicht mehr sichern möchten oder die Verwaltung in NetApp Backup and Recovery beenden möchten.
 
-*Erforderliche NetApp Console * Speicherbetrachter, Superadministrator für Backup und Wiederherstellung oder Backup-Administratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
+*Erforderliche NetApp Console-Rolle* Storage Viewer, Backup and Recovery Super Admin oder Backup and Recovery Backup Admin Rolle. Für den Schutz von Daten, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich. Informationen zu link:reference-roles.html["Backup und Recovery Rollen und Berechtigungen"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
 . Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.
 . Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*.
-. Wählen Sie die Registerkarte *Schutzgruppe*, *Instanzen* oder *Datenbanken*.
+. Die Registerkarte *Schutzgruppen*, *Instanzen* oder *Datenbanken* auswählen.
 . Wählen Sie die Schutzgruppe, Instanz oder Datenbank aus.
 . Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Schutz entfernen*.
 . Wählen Sie im Dialogfeld „Schutz entfernen“ aus, ob Sie Sicherungen und Metadaten behalten oder löschen möchten.

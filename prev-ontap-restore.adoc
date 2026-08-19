@@ -14,13 +14,13 @@ summary: Mit der Such- und Wiederherstellungsfunktion können Sie Volumes, Ordne
 
 
 [role="lead"]
-Backups Ihrer ONTAP -Volume-Daten werden als Snapshots, auf replizierten Volumes oder im Objektspeicher gespeichert.  Sie können Daten von jedem dieser Speicherorte zu einem bestimmten Zeitpunkt wiederherstellen.  Mit NetApp Backup and Recovery können Sie je nach Bedarf ein gesamtes Volume, einen Ordner oder einzelne Dateien wiederherstellen.
+Mit NetApp Backup and Recovery können ONTAP Volumedaten aus Snapshots, replizierten Volumes oder Objektspeichern zu einem bestimmten Zeitpunkt wiederhergestellt werden. Es ist möglich, je nach Bedarf ein gesamtes Volume, einen Ordner oder einzelne Dateien wiederherzustellen.
 
 
 NOTE: Wenn Sie ein SnapLock-fähiges Volume wiederherstellen, bleibt der SnapLock-Schutz nur erhalten, wenn der Zielspeicher WORM-fähig ist. Wenn Sie auf einen nicht-WORM-fähigen Zielspeicher wiederherstellen, wird der SnapLock-Status vom wiederhergestellten Volume entfernt.
 
 * Sie können ein *Volume* (als neues Volume) auf dem ursprünglichen System, auf einem anderen System, das dasselbe Cloud-Konto verwendet, oder auf einem lokalen ONTAP -System wiederherstellen.
-* Sie können einen *Ordner* aus replizierten oder Objektspeicher-Snapshots auf ein Volume im ursprünglichen System, auf ein Volume in einem anderen System mit demselben Cloud-Konto oder auf ein Volume in einem lokalen ONTAP System wiederherstellen. Die Wiederherstellung von Ordnern aus lokalen Snapshots wird nicht unterstützt.
+* Es ist möglich, einen Ordner von einem replizierten Volume oder einer Objektspeichersicherung auf ein Volume im ursprünglichen System, auf ein Volume in einem anderen System mit demselben Cloud-Konto oder auf ein Volume in einem lokalen ONTAP System wiederherzustellen. Die Wiederherstellung von Ordnern aus lokalen Snapshots wird nicht unterstützt.
 * Sie können *Dateien* auf einem Volume im ursprünglichen System, auf einem Volume in einem anderen System, das dasselbe Cloud-Konto verwendet, oder auf einem Volume auf einem lokalen ONTAP System wiederherstellen.
 
 
@@ -42,7 +42,7 @@ NOTE: Informationen zu Einschränkungen im Zusammenhang mit der Wiederherstellun
 
 
 [[the-restore-dashboard]]
-== Das Wiederherstellungs-Dashboard
+== Das Wiederherstellungsdashboard
 
 Sie verwenden das Wiederherstellungs-Dashboard, um Volume-, Ordner- und Dateiwiederherstellungsvorgänge durchzuführen. Um auf das Wiederherstellungs-Dashboard zuzugreifen, wählen Sie im Konsolenmenü *Sicherung und Wiederherstellung* und anschließend die Registerkarte *Wiederherstellung*.  Sie können auch auswählenimage:icon-options-vertical.gif["Schaltfläche „Mehr“"] > *Wiederherstellungs-Dashboard anzeigen* Sie können es über den Sicherungs- und Wiederherstellungsdienst im Dienstebereich aufrufen.
 
@@ -53,10 +53,10 @@ Das Wiederherstellungs-Dashboard bietet zwei verschiedene Möglichkeiten zum Wie
 
 
 
-[[comparing-browse-restore-and-search-restore]]
-== Vergleich von „Browse & Restore“ und „Search & Restore“
+[[compare-browse-restore-and-search-restore]]
+== Durchsuchen & Wiederherstellen und Suchen & Wiederherstellen im Vergleich
 
-Im Großen und Ganzen ist „Durchsuchen und Wiederherstellen“ normalerweise besser geeignet, wenn Sie ein bestimmtes Volume, einen bestimmten Ordner oder eine bestimmte Datei aus der letzten Woche oder dem letzten Monat wiederherstellen müssen – und Sie den Namen und Speicherort der Datei sowie das Datum kennen, an dem sie zuletzt in gutem Zustand war.  „Suchen und Wiederherstellen“ ist normalerweise besser, wenn Sie ein Volume, einen Ordner oder eine Datei wiederherstellen müssen, sich aber nicht an den genauen Namen, das Volume, auf dem es sich befindet, oder das Datum erinnern, an dem es zuletzt in gutem Zustand war.
+Im Allgemeinen eignet sich „Browse & Restore“ besser, wenn Sie ein bestimmtes Volume, einen Ordner oder eine Datei aus der letzten Woche oder dem letzten Monat wiederherstellen müssen und den Namen, den Speicherort und das Datum kennen, an dem sie zuletzt intakt waren. „Search & Restore“ ist typischerweise besser geeignet, wenn Sie ein Volume, einen Ordner oder eine Datei wiederherstellen müssen, sich aber nicht mehr an den genauen Namen, das Volume, in dem sie sich befindet, oder das Datum erinnern, an dem sie zuletzt intakt war.
 
 Diese Tabelle bietet einen Funktionsvergleich der beiden Methoden.
 
@@ -68,7 +68,7 @@ Diese Tabelle bietet einen Funktionsvergleich der beiden Methoden.
 | Durchsuchen Sie eine ordnerartige Struktur, um das Volume, den Ordner oder die Datei innerhalb einer einzelnen Sicherungsdatei zu finden. | Suchen Sie in *allen Sicherungsdateien* nach einem Volume, Ordner oder einer Datei anhand des teilweisen oder vollständigen Volumenamens, des teilweisen oder vollständigen Ordner-/Dateinamens, des Größenbereichs und zusätzlicher Suchfilter. 
 
 
-| Führt keine Dateiwiederherstellung durch, wenn die Datei gelöscht oder umbenannt wurde und der Benutzer den ursprünglichen Dateinamen nicht kennt | Verarbeitet neu erstellte/gelöschte/umbenannte Verzeichnisse und neu erstellte/gelöschte/umbenannte Dateien 
+| Die Wiederherstellung von Dateien wird nicht unterstützt, wenn die Datei gelöscht oder umbenannt wurde und der ursprüngliche Dateiname nicht bekannt ist. | Verarbeitet neu erstellte, gelöschte und umbenannte Verzeichnisse und Dateien 
 
 
 | Die schnelle Wiederherstellung wird unterstützt. | Die schnelle Wiederherstellung wird nicht unterstützt. 

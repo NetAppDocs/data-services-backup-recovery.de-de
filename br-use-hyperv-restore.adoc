@@ -14,10 +14,10 @@ summary: Schützen Sie Ihre Hyper-V-Workloads mit NetApp Backup and Recovery.
 
 
 [role="lead"]
-Stellen Sie Hyper-V-Workloads aus Snapshots, aus einer auf Sekundärspeicher replizierten Workload-Sicherung oder aus in Objektspeichern gespeicherten Sicherungen mithilfe von NetApp Backup and Recovery wieder her.
+Hyper-V-Workloads können mithilfe von NetApp Backup und Recovery aus lokalen Snapshots, replizierten Backups auf Sekundärspeichern oder Backups im Objektspeicher wiederhergestellt werden.
 
 .Von diesen Speicherorten wiederherstellen
-Sie können Workloads von verschiedenen Startorten wiederherstellen:
+Sie können Workloads von diesen Speicherorten wiederherstellen:
 
 * Wiederherstellung von einem primären Standort (lokaler Snapshot)
 * Wiederherstellen von einer replizierten Ressource auf einem sekundären Speicher
@@ -25,14 +25,14 @@ Sie können Workloads von verschiedenen Startorten wiederherstellen:
 
 
 .Stellen Sie diese Punkte wieder her
-Sie können Daten bis zu diesen Punkten wiederherstellen:
+Sie können Daten an diesen Zielen wiederherstellen:
 
 * Wiederherstellung am ursprünglichen Speicherort (vom primären, sekundären und Objektspeicher)
 * Wiederherstellung an einem alternativen Speicherort (aus primärem, sekundärem und Objektspeicher)
 
 
 .Überlegungen zur Wiederherstellung aus dem Objektspeicher
-Wenn Sie eine Sicherungsdatei im Objektspeicher auswählen und für diese Sicherung der Ransomware-Schutz aktiviert ist (wenn Sie Datalock und Ransomware-Schutz in der Sicherungsrichtlinie aktiviert haben), werden Sie aufgefordert, vor der Wiederherstellung der Daten eine zusätzliche Integritätsprüfung der Sicherungsdatei durchzuführen. Wir empfehlen, die Überprüfung durchzuführen.
+Wenn Sie eine Sicherungsdatei im Objektspeicher auswählen und für diese Sicherung der Ransomware-Schutz aktiviert ist, weil Sie DataLock und den Ransomware-Schutz in der Sicherungsrichtlinie aktiviert haben, erfolgt eine Aufforderung, vor der Wiederherstellung der Daten eine zusätzliche Integritätsprüfung durchzuführen. Das Ausführen des Scans wird empfohlen.
 
 
 TIP: Für den Zugriff auf den Inhalt der Sicherungsdatei fallen bei Ihrem Cloud-Anbieter zusätzliche Kosten für den Datenverkehr an.
@@ -42,27 +42,27 @@ TIP: Für den Zugriff auf den Inhalt der Sicherungsdatei fallen bei Ihrem Cloud-
 [[how-restoring-workloads-works]]
 == So funktioniert die Wiederherstellung von Workloads
 
-Beim Wiederherstellen von Workloads geschieht Folgendes:
+Wenn eine Arbeitslast wiederhergestellt wird, tritt Folgendes auf:
 
 * Wenn Sie eine Workload aus einer lokalen Sicherungsdatei wiederherstellen, erstellt NetApp Backup and Recovery mithilfe der Daten aus der Sicherung eine _neue_ Ressource.
 * Wenn Sie eine Wiederherstellung aus einem replizierten Workload durchführen, können Sie den Workload auf dem ursprünglichen System oder auf einem lokalen ONTAP System wiederherstellen.
 
 
-Auf der Seite „Wiederherstellen“ können Sie eine Ressource wiederherstellen, selbst wenn Sie sich nicht mehr an den genauen Namen, den Speicherort oder das Datum erinnern, an dem sie zuletzt in einwandfreiem Zustand war. Sie können mithilfe von Filtern nach dem Snapshot suchen.
+Auf der Wiederherstellungsseite können Sie eine Ressource wiederherstellen, selbst wenn Sie sich nicht mehr an ihren genauen Namen, Speicherort oder das Datum der letzten funktionierenden Sicherung erinnern. Sie können mithilfe von Filtern nach dem Snapshot suchen.
 
 
 
 [[restore-hyper-v-workloads]]
 == Wiederherstellen von Hyper-V-Workloads
 
-Stellen Sie Hyper-V-Workloads über das Menü „Wiederherstellen“ wieder her. Sie können den Snapshot anhand seines Namens oder mithilfe von Filtern suchen.
+Hyper-V-Workloads können über das Menü „Wiederherstellen“ wiederhergestellt werden. Nach einem Snapshot kann anhand des Namens oder mithilfe von Filtern gesucht werden.
 
 *Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung oder Administratorrolle für Backup und Wiederherstellung zur Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Wiederherstellen* aus.
 . Wählen Sie aus der Dropdown-Liste rechts neben dem Namenssuchfeld *Hyper-V* aus.
-. Geben Sie den Namen der Ressource ein, die Sie wiederherstellen möchten, oder filtern Sie nach dem VM-Namen, VM-Host oder Speicherpool, in dem sich die wiederherzustellende Ressource befindet.
+. Geben Sie den Namen der Ressource ein, die Sie wiederherstellen möchten, oder filtern Sie nach VM-Name, VM-Host oder dem Storage-Pool, in dem sich die Ressource befindet.
 +
 Es wird eine Liste mit Snapshots angezeigt, die Ihren Suchkriterien entsprechen.
 
@@ -95,7 +95,7 @@ Es wird eine Liste möglicher Wiederherstellungspunkte angezeigt.
 .An einem anderen Speicherort wiederherstellen
 --
 .. Wählen Sie den Bereich *Alternativer Standort* aus.
-.. Geben Sie im Abschnitt *Zieleinstellungen* die folgenden Informationen ein:
+.. Im Abschnitt *Zieleinstellungen* sind die folgenden Informationen einzugeben:
 +
 *** *Hyper-V FQDN oder IP-Adresse*: Geben Sie den vollqualifizierten Domänennamen oder die IP-Adresse des Ziel-Hyper-V-Hosts ein.
 *** *Netzwerk*: Wählen Sie das Zielnetzwerk aus, in dem Sie den Snapshot wiederherstellen möchten.
@@ -103,17 +103,17 @@ Es wird eine Liste möglicher Wiederherstellungspunkte angezeigt.
 *** *Zielort*: Geben Sie den Zielordner oder die CIFS-Freigabe ein, die die wiederhergestellten Daten enthalten soll.
 
 
-.. Im Abschnitt *Zielspeicher* (nur sichtbar beim Wiederherstellen aus Objektspeicher):
+.. Im Abschnitt *Zielspeicher* (nur sichtbar beim Wiederherstellen aus dem Objektspeicher):
 +
-*** *Standardspeicherort ändern*: Diese Option ermöglicht die Wiederherstellung einer Objektspeichersicherung an einem anderen Ort, falls der Quellspeicherort nicht erreichbar oder voll ist. Ein anderer Cluster, eine andere Storage-VM oder ein anderes Aggregat kann ausgewählt werden.
+*** *Standardspeicherort ändern*: Diese Option ermöglicht die Wiederherstellung eines Objektspeicher-Backups an einem anderen Speicherort, falls der Quellspeicherort nicht erreichbar oder voll ist. Ein anderer Cluster, eine andere Storage-VM oder ein anderes Aggregat kann ausgewählt werden.
 
 
-.. Im Abschnitt *Vorbereitende Wiederherstellungsoptionen* sollten Sie folgende Optionen in Betracht ziehen:
+.. Im Abschnitt *Optionen vor der Wiederherstellung* sind folgende Optionen zu berücksichtigen:
 +
 *** *Schnellwiederherstellung*: Aktivieren Sie diese Option, um die wiederhergestellte VM sofort verfügbar zu machen. Aus dem Objektspeicher werden nur die zum Ausführen der VM benötigten Dateien wiederhergestellt, nicht das gesamte Volume.
 
 
-.. Im Abschnitt *Optionen nach der Wiederherstellung* sollten Sie folgende Optionen in Betracht ziehen:
+.. Im Abschnitt *Optionen nach der Wiederherstellung* sind folgende Optionen zu berücksichtigen:
 +
 *** *Starten der virtuellen Maschine*: Aktivieren Sie diese Option, um die neue virtuelle Maschine nach der Wiederherstellung zu starten.
 

@@ -14,9 +14,9 @@ summary: Referenz der von der NetApp Console-Überwachung unterstützten Backup-
 
 
 [role="lead"]
-Die NetApp Console Audit-Seite protokolliert die folgenden Aktionen, die Benutzer in Backup and Recovery im Rahmen der Auditierungsfunktion ausführen. Details zum Anzeigen und Filtern von Audit-Ereignissen finden Sie in https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html#audit-user-activity-from-the-audit-page["Benutzeraktivitäten auf der Seite „Audit“ prüfen"^] der Konsolendokumentation.
+Diese Referenz zeigt, welche NetApp Backup and Recovery-Aktionen die NetApp Console auf der Audit-Seite protokolliert. Einzelheiten zum Anzeigen und Filtern von Audit-Ereignissen finden sich unter  https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html#audit-user-activity-from-the-audit-page["Benutzeraktivitäten auf der Seite „Audit“ prüfen"^] in der NetApp Console-Dokumentation.
 
-Für jede überwachte Aktion protokolliert die Konsole den Dienstnamen, den Agenten, die Ressource, den Benutzer und den Aktionsstatus.
+Für jede überwachte Aktion protokolliert die NetApp Console den Dienstnamen, den Agenten, die Ressource, den Benutzer und den Aktionsstatus.
 
 .Geprüfte Sicherungs- und Wiederherstellungsaktionen
 * Volume oder Dateien aus Backup wiederherstellen

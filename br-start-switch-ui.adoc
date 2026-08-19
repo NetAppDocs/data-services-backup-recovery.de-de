@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: br-start-switch-ui.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Sie können zwischen den verschiedenen NetApp Backup and Recovery -Workloads wechseln.  Einige Workloads verwenden eine andere Benutzeroberfläche. 
+summary: NetApp Backup und Recovery unterstützt verschiedene Workload-Typen, und einige Workloads verwenden eine andere Benutzeroberfläche. Mit dem Workload-Umschalter ist ein Wechsel zwischen ihnen möglich. 
 ---
-= Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads
+= Zu einer anderen NetApp Backup und Recovery-Workload wechseln
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Sie können zwischen den verschiedenen NetApp Backup and Recovery -Work
 
 
 [role="lead"]
-Sie können zwischen den verschiedenen NetApp Backup and Recovery -Workloads wechseln.
+NetApp Backup und Recovery unterstützt verschiedene Workload-Typen, und einige Workloads verwenden eine andere Benutzeroberfläche. Mit dem Workload-Umschalter ist ein Wechsel zwischen ihnen möglich.
 
 
 

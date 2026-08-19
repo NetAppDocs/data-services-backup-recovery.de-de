@@ -4,7 +4,7 @@ permalink: br-use-vmware-protect-overview.html
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
 summary: Schützen Sie Ihre VMware-Workloads mit NetApp Backup and Recovery. 
 ---
-= VMware Schutzworkflow mit NetApp Backup and Recovery
+= VMware-Workloads mit NetApp Backup and Recovery schützen
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,16 +14,16 @@ summary: Schützen Sie Ihre VMware-Workloads mit NetApp Backup and Recovery.
 
 
 [role="lead"]
-VMware-VMs und Datenspeicher lassen sich mit NetApp Backup and Recovery schützen. NetApp Backup and Recovery bietet schnelle, platzsparende, absturzkonsistente und VM-konsistente Backup- und Wiederherstellungsvorgänge. VMware-Workloads können auf unterstützte Backup-Ziele gesichert und auf einen lokalen VMware-Host wiederhergestellt werden.
+NetApp Backup and Recovery kann zum Schutz von VMware-VMs und Datenspeichern eingesetzt werden. Schnelle, platzsparende, absturzkonsistente und VM-konsistente Backups können erstellt, auf unterstützten Backup-Zielen gespeichert und VMware-Workloads auf einem lokalen VMware-Host wiederhergestellt werden.
 
 
 NOTE: Diese Version von NetApp Backup and Recovery unterstützt nur VMware vCenter und erkennt keine vVols oder VMs auf vVols.
 
-Verwenden Sie NetApp Backup and Recovery , um eine 3-2-1-Strategie zu implementieren, bei der Sie 3 Kopien Ihrer Quelldaten auf 2 verschiedenen Speichersystemen sowie 1 Kopie in der Cloud haben. Zu den Vorteilen des 3-2-1-Ansatzes gehören:
+Mit NetApp Backup and Recovery lässt sich eine 3-2-1-Strategie umsetzen, bei der drei Kopien Ihrer Quelldaten auf zwei verschiedenen Storage-Systemen und eine Kopie in der Cloud gespeichert werden. Zu den Vorteilen des 3-2-1-Ansatzes zählen:
 
 * Mehrere Datenkopien schützen vor internen und externen Cybersicherheitsbedrohungen.
 * Die Verwendung unterschiedlicher Medientypen erleichtert Ihnen die Wiederherstellung, wenn ein Typ ausfällt.
-* Sie können die Wiederherstellung schnell von der Vor-Ort-Kopie durchführen und die Offsite-Kopien verwenden, wenn die Vor-Ort-Kopie kompromittiert ist.
+* Eine schnelle Wiederherstellung von der vor Ort Kopie ist möglich, und die externen Kopien können genutzt werden, falls die vor Ort Kopie kompromittiert ist.
 
 
 Mit NetApp Backup and Recovery können Sie die folgenden Aufgaben im Zusammenhang mit VMware-Workloads ausführen:

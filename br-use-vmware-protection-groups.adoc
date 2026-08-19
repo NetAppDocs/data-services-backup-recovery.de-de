@@ -14,7 +14,7 @@ summary: Erstellen und verwalten Sie Schutzgruppen für VMware-Workloads in NetA
 
 
 [role="lead"]
-Erstellen Sie Schutzgruppen, um die Sicherungs- und Wiederherstellungsvorgänge für eine Reihe von Workloads zu verwalten. Eine Schutzgruppe ist eine logische Gruppierung von Ressourcen wie VMs und Datenspeichern, die Sie gemeinsam schützen möchten.
+Schutzgruppen dienen zur Verwaltung von Sicherungs- und Wiederherstellungsvorgängen für eine Gruppe von Workloads. Eine Schutzgruppe ist eine logische Gruppierung von Ressourcen wie VMs und Datastores, die gemeinsam geschützt werden sollen.
 
 Sie können die folgenden Aufgaben im Zusammenhang mit Schutzgruppen ausführen:
 
@@ -32,7 +32,7 @@ Sie können die folgenden Aufgaben im Zusammenhang mit Schutzgruppen ausführen:
 
 Bei der Auswahl von Ressourcen, die einer Schutzgruppe hinzugefügt werden sollen, können Sie diese nach Datenspeichern, virtuellen Maschinen oder nach vSphere Tags organisieren.
 
-Der tagbasierte Schutz (mittels vSphere Tags) vereinfacht die Verwaltung von Schutzgruppen in Backup und Recovery.
+Tag-basierter Schutz mithilfe von vSphere Tags vereinfacht die Verwaltung von Schutzgruppen in NetApp Backup and Recovery.
 
 Die Verwendung von tagbasiertem Schutz bietet einige Vorteile:
 
@@ -56,7 +56,7 @@ Erstellen Sie eine Schutzgruppe, um die Ressourcen zu organisieren, die Sie geme
 .Bevor Sie beginnen
 * Stellen Sie sicher, dass in Ihrer Umgebung unterstützte Versionen von VMware vSphere verwendet werden.
 * Beim Erstellen einer tagbasierten Schutzgruppe stellen Sie sicher, dass die virtuellen Maschinen und Datenspeicher, die Sie schützen möchten, bereits einem oder mehreren vSphere-Tags in vCenter zugeordnet sind.
-* Beachten Sie, dass bei VMware Workloads die geplante Sicherungszeit in der Zeitzone des Verwaltungshosts interpretiert wird. Weitere Informationen finden Sie unter link:br-use-policies-vmware-create.html["Erstellen und Verwalten von VMware-Sicherungsrichtlinien in NetApp Backup und Recovery"].
+* Bei VMware-Workloads wird für die geplante Sicherungszeit die Zeitzone des Verwaltungshosts verwendet. Weitere Informationen sind unter link:br-use-policies-vmware-create.html["Erstellen und Verwalten von VMware-Sicherungsrichtlinien in NetApp Backup und Recovery"] zu finden.
 
 
 .Schritte
@@ -172,7 +172,7 @@ NOTE: Zeitpläne werden nur neu erstellt, wenn der Name der Schutzgruppe geände
 [[delete-a-protection-group]]
 == Löschen einer Schutzgruppe
 
-Wenn Sie eine Schutzgruppe löschen, entfernen Sie diese und alle Sicherungszeitpläne für die Gruppe.  Löschen Sie eine Schutzgruppe, wenn Sie sie nicht mehr benötigen.
+Wenn Sie eine Schutzgruppe löschen, werden diese und alle Sicherungspläne für die Gruppe entfernt. Eine Schutzgruppe kann gelöscht werden, wenn sie nicht mehr benötigt wird.
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.

@@ -4,7 +4,7 @@ permalink: reference-policy-differences-snapcenter.html
 keywords: backup policy, backup policies, snapcenter, migration 
 summary: Es gibt einige Unterschiede zwischen den in NetApp Backup and Recovery und den in SnapCenter verwendeten Richtlinien. 
 ---
-= Richtlinien in SnapCenter im Vergleich zu denen in NetApp Backup and Recovery
+= Richtlinienunterschiede zwischen SnapCenter und NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,7 +12,7 @@ summary: Es gibt einige Unterschiede zwischen den in NetApp Backup and Recovery 
 
 
 [role="lead"]
-Es gibt einige Unterschiede zwischen den in SnapCenter und den in NetApp Backup and Recovery verwendeten Richtlinien, die sich auf die Anzeige nach dem Importieren von Ressourcen und Richtlinien aus SnapCenter auswirken können.
+Diese Referenz bietet einen Überblick über die Richtlinienunterschiede zwischen SnapCenter und NetApp Backup and Recovery, die sich auf importierte Ressourcen und Richtlinien auswirken können.
 
 
 
@@ -27,7 +27,7 @@ SnapCenter verwendet die folgenden Zeitplanebenen:
 * *Monatlich*: Januar bis Dezember, mit der Option, an bestimmten oder mehreren Tagen im Monat aufzutreten, zum Beispiel am 7.
 
 
-NetApp Backup and Recovery verwendet die folgenden Zeitplanebenen, die sich leicht unterscheiden:
+NetApp Backup and Recovery verwendet die folgenden Zeitplanebenen, die sich geringfügig unterscheiden:
 
 * *Stündlich*: Führt Snapshots nur in 15-Minuten-Intervallen aus, beispielsweise alle 1 Stunde oder in 15-Minuten-Intervallen unter 60.
 * *Täglich*: Stunden des Tages (0–23) mit Startzeit beispielsweise um 10:00 Uhr mit der Option, alle paar Stunden eine Ausführung durchzuführen.
@@ -50,7 +50,7 @@ Sie können einer Ressource in SnapCenter mehrere Richtlinien mit derselben Zeit
 [[imported-snapcenter-daily-schedules]]
 == Importierte SnapCenter -Tagespläne
 
-NetApp Backup and Recovery passt die SnapCenter -Zeitpläne wie folgt an:
+NetApp Backup and Recovery passt die SnapCenter Zeitpläne wie folgt an:
 
 * Wenn der SnapCenter -Zeitplan auf weniger als oder gleich 7 Tage eingestellt ist, legt NetApp Backup and Recovery den Zeitplan auf wöchentlich fest. Einige Schnappschüsse werden während der Woche übersprungen.
 +

@@ -14,9 +14,9 @@ summary: Konfigurieren Sie Ihre Oracle-Datenbank in NetApp Backup und Recovery.
 
 
 [role="lead"]
-Sie können Authentifizierung und Knoteneinstellungen für eine neue eigenständige oder geclusterte Oracle-Datenbank ändern. NetApp Backup und Recovery schützt Datenbanken ohne diese Änderungen. Wenn sich Ihre Umgebung nach der Erkennung ändert, müssen Sie möglicherweise die Datenbankeinstellungen aktualisieren.
+Authentifizierungs- und Knoteneinstellungen für eine eigenständige oder geclusterte Oracle Datenbank ändern. NetApp Backup and Recovery schützt Datenbanken auch ohne diese Änderungen, aber möglicherweise ist eine Aktualisierung der Einstellungen erforderlich, falls sich Ihre Umgebung nach der Erkennung ändert.
 
-*Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung.  Erfahren Sie mehr überlink:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
+*Erforderliche NetApp Console-Rolle* Backup and Recovery Superadministrator. Informationen zu link:reference-roles.html["Backup und Recovery Rollen und Berechtigungen"] und  https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["NetApp Console-Zugriffsrollen für alle Dienste"^].
 
 
 
@@ -29,8 +29,8 @@ Sie können Authentifizierung und Knoteneinstellungen für eine neue eigenständ
 . Wählen Sie im NetApp Console *Schutz > Sicherung und Wiederherstellung*.
 . Wählen Sie unter *Workloads* die Kachel *Oracle* aus.
 . Wählen Sie im Oracle-Inventar das Menü *Datenbanken* aus.
-. Wählen Sie in der Liste der Datenbanken entweder *Datenbank konfigurieren* (eigenständige Datenbank) oder *RAC-Datenbank konfigurieren* (Clusterdatenbank) für die Datenbank aus, die Sie konfigurieren möchten.
-. *Datenbankeinstellungen konfigurieren*: Konfigurieren Sie die Authentifizierungseinstellungen für die eigenständige oder die Cluster-Datenbank.
+. In der Liste der Datenbanken entweder *Datenbank konfigurieren* (eigenständig) oder *RAC-Datenbank konfigurieren* (geclustert) für die zu konfigurierende Datenbank auswählen.
+. *Datenbankeinstellungen konfigurieren*: Die Authentifizierungseinstellungen für die eigenständige oder die Cluster-Datenbank festlegen.
 +
 ** Wählen Sie *OS-Authentifizierung*, um sich nur beim Host-Betriebssystem zu authentifizieren. Backup und Recovery verwendet die Host-Anmeldeinformationen, die Sie während der Erkennung angegeben haben.
 ** Wählen Sie *Database authentication*, wenn die Datenbank Anmeldeinformationen erfordert. Wählen Sie anschließend vorhandene Anmeldeinformationen aus oder fügen Sie neue hinzu und wählen Sie den Port für die Verbindung.
@@ -41,7 +41,7 @@ Sie können Authentifizierung und Knoteneinstellungen für eine neue eigenständ
 ** Wählen Sie *Target control file* aus, um Metadaten in der Datenbank-Kontrolldatei zu speichern.
 ** Wählen Sie *Katalogdatenbank* aus, um Metadaten im RMAN-Wiederherstellungskatalog zu speichern. Wählen Sie die Anmeldeinformationen und den Transparent Network Substrate (TNS)-Namen aus, um eine Verbindung zum Wiederherstellungskatalog herzustellen.
 +
-Der RMAN-Wiederherstellungskatalog ist ein separates Datenbankschema, das vom RMAN-Dienstprogramm verwendet wird, um Metadaten zu Sicherungs- und Wiederherstellungsvorgängen registrierter Datenbanken zu speichern. Er bietet Redundanz und langfristige Aufbewahrung für den Fall, dass die Kontrolldatei verloren geht oder historische Daten benötigt werden. Aktivieren Sie diese Option, um Datendateien und Archivprotokollkopien im RMAN-Repository zu registrieren, sodass RMAN diese Kopien für Berichterstellung und Wiederherstellung nachverfolgen und verwalten kann.
+Der RMAN-Wiederherstellungskatalog ist ein separates Datenbankschema, das vom RMAN-Dienstprogramm zur Speicherung von Backup- und Wiederherstellungsmetadaten für registrierte Datenbanken verwendet wird. Er bietet Redundanz und langfristige Aufbewahrung, falls die Kontrolldatei verloren geht oder historische Daten benötigt werden. Durch Aktivieren dieser Option werden Datendateien und Archivprotokollkopien im RMAN-Repository registriert, sodass RMAN sie für Berichterstellung und Wiederherstellung nachverfolgen und verwalten kann.
 
 
 

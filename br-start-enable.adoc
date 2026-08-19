@@ -4,7 +4,7 @@ permalink: br-start-enable.html
 keywords: backup, Backup and Recovery, enable backup, Console, service, local deployment 
 summary: Backup and Recovery auf einem System in der NetApp Console oder in einer lokalen NetApp Console-Bereitstellung aktivieren. 
 ---
-= NetApp Backup and Recovery aktivieren, um Volumes zu schützen
+= Backup und Recovery von NetApp für ONTAP Volumes aktivieren
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Backup and Recovery auf einem System in der NetApp Console oder in eine
 
 
 [role="lead"]
-Es ist erforderlich, NetApp Backup and Recovery für ein Speichersystem in der NetApp Console oder der NetApp Console lokalen Bereitstellung zu aktivieren, bevor ONTAP Volumes Workloads geschützt werden können. Backup and Recovery kann für ein System beim Hinzufügen oder zu einem späteren Zeitpunkt aktiviert werden.
+Die NetApp Backup und Recovery Funktion für ein Speichersystem in der NetApp Console oder der lokalen NetApp Console-Bereitstellung sollte vor dem Schutz von ONTAP Volumes aktiviert werden. Die Aktivierung des Dienstes ist beim Hinzufügen eines Systems oder zu einem späteren Zeitpunkt möglich.
 
 
 
@@ -26,13 +26,13 @@ Der Sicherungs- und Wiederherstellungsdienst wird in der NetApp Console aktivier
 .Schritte
 . Das Menü *Volumes* auswählen.
 . Auf der Übersichtsseite für den Volumeschutz die Option *Backup-Einstellungen* auswählen.
-. Das System, auf dem Backups aktiviert werden sollen, identifizieren und die Schaltfläche *Backup aktivieren* auswählen.
+. Das zu schützende System identifizieren und *Sicherung aktivieren* auswählen.
 . Wählen Sie *Weiter*.
 . Die zu schützenden Quell-Volumes auswählen und auf *Weiter* gehen.
 . Auf der Seite „Sicherungsstrategie definieren“ wird die Sicherungsarchitektur ausgewählt und anschließend werden die Richtlinien sowie weitere Details für lokale Snapshots, replizierte Volumes und Sicherungsdateien festgelegt. Die Details zu den Sicherungsoptionen der initial in diesem System aktivierten Volumes sind hier ersichtlich. Anschließend wird *Weiter* ausgewählt.
-. Optional kann ausgewählt werden, dass Backup und Recovery nicht übereinstimmende Backup-, Snapshot- und Replikationsbezeichnungen automatisch korrigiert.
-. Überprüfen Sie die Sicherungseinstellungen für dieses Volume und wählen Sie dann *Sicherung aktivieren*.
-. Die von Ihnen geschützten Volumes erscheinen auf der Seite „Volumes Übersicht“.
+. Optional kann Backup und Recovery auch automatisch nicht übereinstimmende Sicherungs-, Snapshot- und Replikationsbezeichnungen korrigieren.
+. Die Backup-Einstellungen für diese Volumes können überprüft werden, anschließend ist *Backup aktivieren* auszuwählen.
+. Die geschützten Volumes erscheinen auf der Übersichtsseite *Volumes*.
 
 
 
@@ -43,21 +43,21 @@ Der Sicherungs- und Wiederherstellungsdienst wird in der NetApp Console aktivier
 Der Sicherungs- und Wiederherstellungsdienst wird in der lokalen Bereitstellung der NetApp Console aktiviert.
 
 .Bevor Sie beginnen
-Stellen Sie sicher, dass Sie eine Lizenz für NetApp Backup and Recovery erworben haben. Weitere Informationen sind unter  https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html#obtain-a-license-file["Lizenz erwerben"^] verfügbar.
+Stellen Sie sicher, dass Sie eine Lizenz für NetApp Backup and Recovery erworben haben. Siehe  https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html#obtain-a-license-file["Lizenz erwerben"^] für weitere Informationen.
 
 .Schritte
-. Im NetApp Konsolenmenü *Speicher > Flotten* auswählen.
-. Fügen Sie bei Bedarf Details zu Ihrer Flotte hinzu, indem Sie *Flotte hinzufügen* auswählen.
-. *Administration > Lizenzen* auswählen.
-. *Lizenz hinzufügen* auswählen, um eine Lizenz für Backup und Recovery hinzuzufügen. Weitere Informationen zum Hinzufügen einer Lizenz sind unter  https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html#add-a-license["Lizenz hinzufügen"^] zu finden.
+. Im NetApp Console-Menü *Storage* > *Fleets* auswählen.
+. Bei Bedarf kann die Flotte durch Auswahl von *Flotte hinzufügen* hinzugefügt werden.
+. *Administration* > *Lizenzen* auswählen.
+. Wählen Sie *Lizenz hinzufügen*, um eine Backup und Recovery-Lizenz hinzuzufügen. Weitere Informationen zum Hinzufügen einer Lizenz sind unter  https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html#add-a-license["Lizenz hinzufügen"^] zu finden.
 . *Storage* > *Fleets* auswählen und anschließend das Menü *Systems* öffnen.
 . *Hinzufügen* auswählen, um ein System hinzuzufügen, die Systemdetails eingeben und das neue System durch Auswahl von *Hinzufügen* speichern.
-. Wählen Sie ein System und wählen Sie einen Cluster aus. Im Informationsfeld auf der rechten Seite der Seite die Schaltfläche *Aktivieren* für den Backup and Recovery Service auswählen.
+. Wählen Sie ein System und wählen Sie einen Cluster aus. Im Informationsbereich auf der rechten Seite *Aktivieren* für den Backup und Recovery Service auswählen.
 . *Sicherungsvolumes* auswählen.
 . Wählen Sie *Weiter*.
 . Die zu schützenden Quell-Volumes auswählen und auf *Weiter* gehen.
 . Auf der Seite „Sicherungsstrategie definieren“ wird die Sicherungsarchitektur ausgewählt und anschließend werden die Richtlinien sowie weitere Details für lokale Snapshots, replizierte Volumes und Sicherungsdateien festgelegt. Die Details zu den Sicherungsoptionen der initial in diesem System aktivierten Volumes sind hier ersichtlich. Anschließend wird *Weiter* ausgewählt.
-. Optional kann ausgewählt werden, dass Backup und Recovery nicht übereinstimmende Backup-, Snapshot- und Replikationsbezeichnungen automatisch korrigiert.
-. Überprüfen Sie die Sicherungseinstellungen für dieses Volume und wählen Sie dann *Sicherung aktivieren*.
-. Die von Ihnen geschützten Volumes erscheinen auf der Seite „Volumes Übersicht“.
+. Optional kann Backup und Recovery auch automatisch nicht übereinstimmende Sicherungs-, Snapshot- und Replikationsbezeichnungen korrigieren.
+. Die Backup-Einstellungen für diese Volumes können überprüft werden, anschließend ist *Backup aktivieren* auszuwählen.
+. Die geschützten Volumes erscheinen auf der Übersichtsseite *Volumes*.
 

@@ -14,10 +14,10 @@ summary: Schützen Sie Ihre KVM-Workloads mit NetApp Backup and Recovery.
 
 
 [role="lead"]
-Stellen Sie virtuelle KVM-Maschinen aus Snapshots, aus einer auf einen Sekundärspeicher replizierten Schutzgruppensicherung oder aus in Objektspeichern gespeicherten Sicherungen mithilfe von NetApp Backup and Recovery wieder her.
+KVM-VMs können aus primären Snapshots, replizierten sekundären Kopien oder Objektspeicher-Backups wiederhergestellt werden.
 
 .Von diesen Speicherorten wiederherstellen
-Sie können virtuelle Maschinen von verschiedenen Startorten aus wiederherstellen:
+Virtuelle Maschinen lassen sich von diesen Speicherorten wiederherstellen:
 
 * Wiederherstellung von einem primären Standort (lokaler Snapshot)
 * Wiederherstellen von einer replizierten Ressource auf einem sekundären Speicher
@@ -32,7 +32,7 @@ Sie können Daten bis zu diesen Punkten wiederherstellen:
 
 
 .Überlegungen zur Wiederherstellung aus dem Objektspeicher
-Wenn Sie eine Sicherungsdatei im Objektspeicher auswählen und für diese Sicherung der Ransomware-Schutz aktiviert ist (wenn Sie Datalock und Ransomware-Schutz in der Sicherungsrichtlinie aktiviert haben), werden Sie aufgefordert, vor der Wiederherstellung der Daten eine zusätzliche Integritätsprüfung der Sicherungsdatei durchzuführen. Wir empfehlen, die Überprüfung durchzuführen.
+Wenn Sie eine Sicherung im Objektspeicher auswählen und für diese Sicherung der Ransomware-Schutz aktiviert ist (sofern Sie DataLock und den Ransomware-Schutz in der Sicherungsrichtlinie aktiviert haben), erfolgt eine Aufforderung, vor der Wiederherstellung der Daten eine zusätzliche Integritätsprüfung durchzuführen. Ein Scan wird empfohlen.
 
 
 TIP: Für den Zugriff auf den Inhalt der Sicherungsdatei fallen bei Ihrem Cloud-Anbieter zusätzliche Kosten für den Datenverkehr an.
@@ -42,21 +42,21 @@ TIP: Für den Zugriff auf den Inhalt der Sicherungsdatei fallen bei Ihrem Cloud-
 [[how-restoring-virtual-machines-works]]
 == So funktioniert die Wiederherstellung virtueller Maschinen
 
-Wenn Sie virtuelle Maschinen wiederherstellen, geschieht Folgendes:
+Beim Wiederherstellen virtueller Maschinen gilt Folgendes:
 
 * Wenn Sie eine Workload aus einer lokalen Sicherungsdatei wiederherstellen, erstellt NetApp Backup and Recovery mithilfe der Daten aus der Sicherung eine _neue_ Ressource.
 * Wenn Sie eine Wiederherstellung von einer replizierten VM durchführen, können Sie diese auf dem Originalsystem oder auf einem lokalen ONTAP -System wiederherstellen.
 * Wenn Sie eine Sicherung aus dem Objektspeicher wiederherstellen, können Sie die Daten auf dem ursprünglichen System oder auf einem lokalen ONTAP -System wiederherstellen.
 
 
-Auf der Seite „Wiederherstellen“ können Sie eine VM wiederherstellen, selbst wenn Sie sich nicht mehr an den genauen Namen, den Speicherort oder das Datum des letzten fehlerfreien Zustands erinnern. Sie können mithilfe von Filtern nach dem Snapshot suchen.
+Auf der Wiederherstellungsseite können Sie eine VM wiederherstellen, selbst wenn Sie sich nicht mehr an ihren genauen Namen, Speicherort oder das Datum des letzten bekannten funktionierenden Zustands erinnern. Sie können mithilfe von Filtern nach dem Snapshot suchen.
 
 
 
 [[restore-kvm-virtual-machines]]
 == Wiederherstellen von KVM-VMs
 
-Stellen Sie KVM-VMs über das Menü „Wiederherstellen“ wieder her. Sie können den Snapshot anhand seines Namens oder mithilfe von Filtern suchen.
+KVM-VMs können über das Menü „Wiederherstellen“ wiederhergestellt werden. Snapshots lassen sich nach Name oder mit Filtern suchen.
 
 *Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung oder Administratorrolle für Backup und Wiederherstellung zur Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
@@ -64,11 +64,11 @@ Stellen Sie KVM-VMs über das Menü „Wiederherstellen“ wieder her. Sie könn
 . Wählen Sie im NetApp Console *Schutz > Sicherung und Wiederherstellung*.
 . Wählen Sie im NetApp Backup and Recovery -Menü *Wiederherstellen* aus.
 . Wählen Sie aus der Dropdown-Liste rechts neben dem Namenssuchfeld *KVM* aus.
-. Geben Sie den Namen der VM ein, die Sie wiederherstellen möchten, oder filtern Sie nach dem VM-Host oder Speicherpool, in dem sich die wiederherzustellende Ressource befindet.
+. Den Namen der VM eingeben, die wiederhergestellt werden soll, oder nach dem VM-Host oder dem Speicherpool filtern, in dem sich die VM befindet.
 +
 Es wird eine Liste mit Snapshots angezeigt, die Ihren Suchkriterien entsprechen.
 
-. Wählen Sie die Schaltfläche *Wiederherstellen* für den Snapshot, den Sie wiederherstellen möchten.
+. Für den Snapshot, den Sie wiederherstellen möchten, *Wiederherstellen* auswählen.
 +
 Es wird eine Liste möglicher Wiederherstellungspunkte angezeigt.
 
@@ -93,7 +93,7 @@ Es wird eine Liste möglicher Wiederherstellungspunkte angezeigt.
 .An einem anderen Speicherort wiederherstellen
 --
 .. Wählen Sie den Bereich *Alternativer Standort* aus.
-.. Geben Sie im Abschnitt *Cloudstack settings*: die folgenden Informationen an:
+.. Im Abschnitt *CloudStack settings* sind folgende Informationen anzugeben:
 +
 *** *Zone*: Wählen Sie eine Zielzone CloudStack aus der Liste.
 *** *Pod*: Wählen Sie aus der Liste einen Ziel-Pod innerhalb der ausgewählten Zone aus.
@@ -108,7 +108,7 @@ Es wird eine Liste möglicher Wiederherstellungspunkte angezeigt.
 
 .. Wählen Sie aus der Liste *Serviceangebot auswählen* das Serviceangebot aus, das Ihrem bevorzugten Ressourceneinsatz entspricht.
 .. Aktivieren Sie die Option *Erzwungen*, um die wiederhergestellte VM auch dann zu importieren, wenn eine oder mehrere MAC-Adressen der Netzwerkkarte der VM bereits vorhanden sind. Existiert eine MAC-Adresse bereits, wird für diese Netzwerkkarte eine neue MAC-Adresse generiert.
-.. Im Abschnitt *Optionen nach der Wiederherstellung* sollten Sie folgende Optionen in Betracht ziehen:
+.. Im Abschnitt *Optionen nach der Wiederherstellung* sind folgende Optionen zu berücksichtigen:
 +
 *** *Virtuelle Maschine neu starten*: Aktivieren Sie diese Option, um die neue virtuelle Maschine nach der Wiederherstellung zu starten.
 

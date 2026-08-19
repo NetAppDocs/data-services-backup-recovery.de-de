@@ -14,15 +14,15 @@ summary: Sie verwenden die NetApp Console , um sich beim NetApp Backup and Recov
 
 
 [role="lead"]
-Sie verwenden die NetApp Console , um sich bei NetApp Backup and Recovery anzumelden.
+Bei NetApp Backup and Recovery über die NetApp Console anmelden, um Workloads zu erkennen und Schutzvorgänge zu verwalten.
 
 NetApp Backup and Recovery verwendet Identitäts- und Zugriffsverwaltung, um zu steuern, was jeder Benutzer tun kann.
 
 Einzelheiten zu den Aktionen, die jede Rolle ausführen kann, finden Sie unterlink:reference-roles.html["NetApp Backup and Recovery -Benutzerrollen"] .
 
-Um sich bei der NetApp Console anzumelden, können Sie Ihre Anmeldeinformationen für die NetApp -Support-Site verwenden oder sich mit Ihrer E-Mail-Adresse und einem Kennwort für die Anmeldung bei der NetApp Console registrieren. https://docs.netapp.com/us-en/console-setup-admin/task-logging-in.html["Erfahren Sie mehr über die Anmeldung"^] .
+Um sich bei der NetApp Console anzumelden, können Sie Ihre NetApp Support Site-Zugangsdaten verwenden oder sich mit Ihrer E-Mail-Adresse und einem Passwort für ein NetApp Console-Konto registrieren https://docs.netapp.com/us-en/console-setup-admin/task-logging-in.html["Erfahren Sie mehr über die Anmeldung"^].
 
-*Erforderliche NetApp Console-Rolle* Backup and Recovery Superadmin- oder Backup and Recovery Restore-Admin-Rolle. Wenn Daten geschützt werden, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
+*Erforderliche NetApp Console-Rolle* Backup and Recovery Superadministrator oder Backup and Recovery Restore-Administrator. Für den Schutz von Daten, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
 Um einen Konsolenagenten hinzuzufügen, müssen Sie über die Superadministratorrolle „Backup und Wiederherstellung“ verfügen.
 
@@ -39,18 +39,18 @@ Die Anmeldeseite der NetApp Console wird angezeigt.
 . Melden Sie sich bei der Konsole an.
 . Wählen Sie in der linken Navigation der Konsole *Schutz* > *Sicherung und Wiederherstellung*.
 +
-** Wenn Sie sich zum ersten Mal bei Backup and Recovery anmelden und noch kein System zur Seite *Systeme* hinzugefügt haben, zeigt Backup and Recovery die Startseite "Willkommen bei der neuen NetApp Backup and Recovery" mit der Option zum Hinzufügen eines Systems an. Einzelheiten zum Hinzufügen eines Systems zur Seite *Systeme* finden Sie unter https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-standard-mode.html["Erste Schritte mit dem Standardmodus der NetApp Console"^]Die
+** Wenn Sie sich zum ersten Mal bei Backup und Recovery anmelden und noch kein System zur Seite *Systeme* hinzugefügt haben, zeigt der Backup und Recovery-Service die Landingpage „Willkommen beim neuen NetApp Backup und Recovery“ mit einer Option zum Hinzufügen eines Systems an. Einzelheiten zum Hinzufügen eines Systems zur Seite *Systeme* sind unter  https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-standard-mode.html["Erste Schritte mit dem Standardmodus der NetApp Console"^] zu finden.
 ** Wenn Sie sich zum ersten Mal bei Backup and Recovery anmelden und zwar ein System in der Konsole haben, aber keine Ressourcen erkannt wurden, wird die Seite _Willkommen bei der neuen NetApp Backup and Recovery_ mit einer Option zum *Erkennen von Ressourcen* angezeigt.
 
 
-. Falls noch nicht geschehen, wählen Sie die Option *Erkennen und verwalten*.
+. Falls Sie dies noch nicht getan haben, *Entdecken und verwalten* auswählen.
 +
-** Informationen zu Microsoft SQL Server-Workloads finden Sie unterlink:br-start-discover.html["Entdecken Sie Microsoft SQL Server-Workloads"] .
-** Informationen zu VMware-Workloads finden Sie unterlink:br-use-vmware-discovery.html["Entdecken Sie VMware-Workloads"] .
-** Informationen zu KVM-Workloads finden Sie unterlink:br-start-discover-kvm.html["Entdecken Sie KVM-Workloads"] .
-** Für Oracle Database-Workloads siehe link:br-start-discover-oracle.html["Oracle Database-Workloads entdecken"].
-** Informationen zu Hyper-V-Workloads finden Sie unterlink:br-start-discover-hyperv.html["Entdecken Sie Hyper-V-Workloads"] .
-** Informationen zu Kubernetes-Workloads finden Sie unterlink:br-start-discover-kubernetes.html["Entdecken Sie Kubernetes-Workloads"] .
+** Informationen zu Microsoft SQL Server Workloads finden Sie unter link:br-start-discover.html["Entdecken Sie Microsoft SQL Server-Workloads"].
+** Informationen zu VMware Workloads finden Sie unter link:br-use-vmware-discovery.html["Entdecken Sie VMware-Workloads"].
+** Informationen zu KVM-Workloads finden Sie unter link:br-start-discover-kvm.html["Entdecken Sie KVM-Workloads"].
+** Informationen zu Oracle Database Workloads finden Sie unter link:br-start-discover-oracle.html["Oracle Database-Workloads entdecken"].
+** Informationen zu Hyper-V Workloads finden Sie unter link:br-start-discover-hyperv.html["Entdecken Sie Hyper-V-Workloads"].
+** Informationen zu Kubernetes Workloads finden Sie unter link:br-start-discover-kubernetes.html["Entdecken Sie Kubernetes-Workloads"].
 
 
 

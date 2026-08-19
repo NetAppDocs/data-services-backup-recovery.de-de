@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: br-use-oracle-backup.html 
-keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database, protection group 
+keywords: backing up, back up, backup, backup application data, Amazon Web Services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database, protection group 
 summary: Schützen Sie Ihre Oracle-Datenbank-Workloads mit NetApp Backup und Recovery. 
 ---
 = Sichern Sie Oracle-Datenbank-Workloads mit NetApp Backup und Recovery
@@ -14,22 +14,22 @@ summary: Schützen Sie Ihre Oracle-Datenbank-Workloads mit NetApp Backup und Rec
 
 
 [role="lead"]
-Verwenden Sie NetApp Backup and Recovery , um Oracle Database-Schutzgruppen oder Datenbanken von lokalen ONTAP -Systemen in Cloud-Speicher zu sichern, einschließlich Amazon S3, NetApp StorageGRID, Microsoft Azure Blob Storage oder ONTAP S3.  NetApp Backup and Recovery sichert Datenbanken und Protokolldaten in jeder Schutzgruppe.
+Oracle Datenbank-Schutzgruppen oder einzelne Datenbanken von lokalen ONTAP Systemen können mit NetApp Backup und Recovery gesichert werden. Backups werden an Cloud-Speicher wie Amazon S3, NetApp StorageGRID, Microsoft Azure Blob Storage oder ONTAP S3 gesendet.
 
 
 NOTE: Um Schutzgruppen oder einzelne Datenbanken nach einem Zeitplan zu sichern, erstellen Sie Richtlinien, die Sicherungs- und Wiederherstellungsvorgänge verwalten. Sehenlink:br-use-policies-create.html["Erstellen von Richtlinien"] Anweisungen hierzu finden Sie unter.
 
-* Erstellen Sie Schutzgruppen, um die Backup- und Recovery-Vorgänge für eine Gruppe von Ressourcen zu verwalten. Siehe link:br-use-kvm-protection-groups.html["Erstellen und Verwalten von Schutzgruppen für Oracle-Datenbank-Workloads mit NetApp Backup und Recovery"] für weitere Informationen.
-* Sichern Sie jetzt eine Schutzgruppe (erstellen Sie jetzt ein On-Demand-Backup).
-* Sichern Sie jetzt eine Datenbank.
+* Erstellen Sie Schutzgruppen, um Backup- und Restore-Vorgänge für eine Gruppe von Ressourcen zu verwalten. Siehe link:br-use-kvm-protection-groups.html["Erstellen und Verwalten von Schutzgruppen für Oracle-Datenbank-Workloads mit NetApp Backup und Recovery"] für weitere Informationen.
+* Eine bedarfsgesteuerte Sicherung einer Schutzgruppe erstellen.
+* Eine bedarfsgesteuerte Datensicherung einer Datenbank erstellen.
 
 
 
 
-[[back-up-protection-groups-now-with-an-on-demand-backup]]
-== Sichern Sie Schutzgruppen jetzt mit einem On-Demand-Backup
+[[create-an-on-demand-backup-of-a-protection-group]]
+== On-Demand-Backup einer Schutzgruppe erstellen
 
-Führen Sie vor Systemänderungen eine On-Demand-Sicherung durch, um sicherzustellen, dass Ihre Daten geschützt sind.
+Vor Systemänderungen ein Backup bei Bedarf erstellen, um die Daten zu schützen.
 
 *Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung oder Backupadministratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
@@ -39,7 +39,7 @@ Führen Sie vor Systemänderungen eine On-Demand-Sicherung durch, um sicherzuste
 . Wählen Sie *Inventar*.
 . Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.
 . Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*.
-. Wählen Sie die Registerkarte *Schutzgruppen*, *Datenspeicher* oder *Virtuelle Maschinen*.
+. Die Registerkarte *Schutzgruppen* auswählen.
 . Wählen Sie die Schutzgruppe aus, die Sie sichern möchten.
 . Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Jetzt sichern*.
 +
@@ -52,10 +52,10 @@ NOTE: NetApp Backup and Recovery verwendet für die Sicherungs- und die Schutzgr
 
 
 
-[[back-up-a-database-now-with-an-on-demand-backup]]
-== Sichern Sie jetzt eine Datenbank mit einem On-Demand-Backup
+[[create-an-on-demand-backup-of-a-database]]
+== Eine bedarfsgesteuerte Sicherung einer Datenbank erstellen
 
-Sie können bei Bedarf eine Sicherung einer einzelnen Datenbank ausführen.
+Vor Systemänderungen ein Backup bei Bedarf erstellen, um die Daten zu schützen.
 
 *Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung oder Backupadministratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 

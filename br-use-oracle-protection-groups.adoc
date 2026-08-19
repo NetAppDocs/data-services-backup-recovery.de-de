@@ -14,13 +14,13 @@ summary: Erstellen und Verwalten von Schutzgruppen für Oracle Database-Workload
 
 
 [role="lead"]
-Erstellen Sie Schutzgruppen, um die Sicherungsvorgänge für eine Reihe von Oracle Database-Ressourcen zu verwalten.  Eine Schutzgruppe ist eine logische Gruppierung von Ressourcen wie Datenbanken, die Sie gemeinsam schützen möchten.  Sie müssen eine Schutzgruppe erstellen, um Oracle-Datenbanken zu sichern.
+Schutzgruppen dienen zur Verwaltung von Backup-Vorgängen für Oracle Datenbank-Ressourcen. Eine Schutzgruppe ist eine logische Gruppierung von Ressourcen wie Datenbanken, die gemeinsam geschützt werden sollen.
 
 Sie können die folgenden Aufgaben im Zusammenhang mit Schutzgruppen ausführen:
 
 * Erstellen Sie eine Schutzgruppe.
 * Schutzdetails anzeigen.
-* Sichern Sie jetzt eine Schutzgruppe. Siehe link:br-use-kvm-backup.html["Sichern Sie jetzt Oracle Database Workloads"].
+* Sichern Sie jetzt eine Schutzgruppe. Siehe link:br-use-oracle-backup.html["Sichern Sie jetzt Oracle Database Workloads"].
 * Löschen Sie eine Schutzgruppe.
 
 
@@ -29,7 +29,7 @@ Sie können die folgenden Aufgaben im Zusammenhang mit Schutzgruppen ausführen:
 [[create-a-protection-group]]
 == Erstellen einer Schutzgruppe
 
-Gruppieren Sie VMs und Speicherpools, die Sie gemeinsam schützen möchten, in einer Schutzgruppe.
+Oracle-Datenbankressourcen, die gemeinsam geschützt werden sollen, in einer Schutzgruppe zusammenfassen.
 
 *Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung oder Backupadministratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
 
@@ -40,7 +40,7 @@ Gruppieren Sie VMs und Speicherpools, die Sie gemeinsam schützen möchten, in e
 . Wählen Sie die Registerkarte *Schutzgruppen*.
 . Wählen Sie *Schutzgruppe erstellen*.
 . Geben Sie einen Namen für die Schutzgruppe ein.
-. Wählen Sie die VMs oder Speicherpools aus, die Sie in die Schutzgruppe aufnehmen möchten.
+. Wählen Sie die Datenbanken aus, die in die Schutzgruppe aufgenommen werden sollen.
 . Wählen Sie *Weiter*.
 . Wählen Sie die *Sicherungsrichtlinie* aus, die Sie auf die Schutzgruppe anwenden möchten.
 +

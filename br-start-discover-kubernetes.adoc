@@ -14,7 +14,7 @@ summary: NetApp Backup and Recovery muss zunächst Workloads erkennen, damit Sie
 
 
 [role="lead"]
-NetApp Backup and Recovery muss Kubernetes-Workloads erkennen, bevor sie geschützt werden können.
+Kubernetes-Cluster und deren Workloads in NetApp Backup und Recovery können erkannt werden, sodass sie mit Schutzrichtlinien geschützt werden können.
 
 *Erforderliche NetApp Console-Rolle* Backup and Recovery Superadministrator. Für den Schutz von Daten, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich. Informationen zu link:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
@@ -23,11 +23,11 @@ NetApp Backup and Recovery muss Kubernetes-Workloads erkennen, bevor sie geschü
 [[discover-kubernetes-workloads]]
 == Entdecken Sie Kubernetes-Workloads
 
-Im Backup and Recovery-Inventar werden Kubernetes-Workloads in Ihrer Umgebung erkannt. Das Hinzufügen eines Workloads fügt einen Kubernetes-Cluster zu NetApp Backup and Recovery hinzu. Anschließend können Anwendungen hinzugefügt und Clusterressourcen geschützt werden. Optional lassen sich lokal isolierte Kubernetes-Ressourcen mithilfe der lokalen Bereitstellung der NetApp Console erkennen.
+Im Backup und Recovery-Inventar werden Kubernetes-Cluster und Workloads in Ihrer Umgebung erkannt. Das Hinzufügen eines Clusters ermöglicht die Registrierung in NetApp Backup and Recovery und die Erkennung seiner Anwendungen und Ressourcen zum Schutz. Optional lassen sich lokal isolierte Kubernetes-Ressourcen mithilfe der lokalen Bereitstellung der NetApp Console erkennen.
 
 [NOTE]
 ====
-Wenn Sie einen Cluster entdecken, der aktuell mit Trident Protect geschützt ist, werden alle mit Trident Protect verwendeten Sicherungszeitpläne während des Erkennungsprozesses deaktiviert (Trident Protect-Sicherungszeitpläne sind nicht mit Backup and Recovery kompatibel). Um die Anwendungen des Clusters zu schützen, link:br-use-policies-create.html["eine neue Datensicherungsstrategie erstellen"] oder ordnen Sie die Anwendungen einer bestehenden Richtlinie zu. Sie können dann die Trident Protect-Sicherungszeitpläne bei Bedarf entfernen.
+Wenn ein Cluster erkannt wird, der aktuell mit Trident Protect geschützt ist, werden alle mit Trident Protect verwendeten Backup-Zeitpläne während des Erkennungsprozesses deaktiviert, da Trident Protect Backup-Zeitpläne nicht mit Backup und Recovery kompatibel sind. Zum Schutz der Anwendungen des Clusters link:br-use-policies-create.html["eine neue Datensicherungsstrategie erstellen"] oder können die Anwendungen einer bestehenden Richtlinie zugeordnet werden. Anschließend lassen sich die Trident Protect Backup-Zeitpläne bei Bedarf entfernen.
 
 ====
 .Schritte
@@ -40,7 +40,7 @@ Wenn Sie einen Cluster entdecken, der aktuell mit Trident Protect geschützt ist
 . Wählen Sie den Workloadtyp *Kubernetes* aus.
 . Geben Sie einen Clusternamen ein und wählen Sie einen Konsolenagenten aus, der mit dem Cluster verwendet wird.
 +
-NetApp Backup and Recovery bietet Anweisungen, die sich je nach ausgewähltem Installationstyp ändern. Bei einer lokalen Bereitstellung der NetApp Console können Anweisungen ausgewählt werden, die das Erkennen von vom Netzwerk getrennten Ressourcen ohne externe Netzwerkverbindung ermöglichen.
+Backup und Recovery bietet Anweisungen, die sich je nach Installationstyp ändern. Bei der lokalen Bereitstellung der NetApp Console können Anweisungen zur Erkennung von vom Netzwerk isolierten Ressourcen ohne externe Netzwerkverbindung ausgewählt werden.
 
 . Einen Installationstyp auswählen, um die Anweisungen zur Installation von Trident Protect auf Ihrem Kubernetes-Cluster anzuzeigen:
 +
@@ -89,7 +89,7 @@ Der Cluster wird zum Inventar hinzugefügt.
 [[continue-to-the-netapp-backup-and-recovery-dashboard]]
 == Weiter zum NetApp Backup and Recovery Dashboard
 
-Führen Sie die folgenden Schritte aus, um das NetApp Backup and Recovery Dashboard anzuzeigen.
+Führen Sie diese Schritte aus, um das NetApp Backup und Recovery Dashboard anzuzeigen und die erkannten Ressourcen zu überprüfen.
 
 . Wählen Sie im NetApp Console *Schutz* > *Sicherung und Wiederherstellung*.
 . Die Kachel „Kubernetes Workload“ auswählen.

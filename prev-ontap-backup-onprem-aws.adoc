@@ -14,7 +14,7 @@ summary: Schützen Sie Ihre VMware-Workloads mit NetApp Backup and Recovery.
 
 
 [role="lead"]
-Führen Sie einige Schritte in NetApp Backup and Recovery aus, um mit der Sicherung von Volume-Daten von Ihren lokalen ONTAP -Systemen auf einem sekundären Speichersystem und im Amazon S3-Cloud-Speicher zu beginnen.
+In NetApp Backup und Recovery können Volume-Daten von lokalen ONTAP-Systemen auf ein sekundäres Speichersystem und auf Amazon S3 gesichert werden. Auf dieser Seite lässt sich die Umgebung vorbereiten und Backups aktivieren.
 
 
 NOTE: Zu den „On-Premises ONTAP -Systemen“ gehören FAS, AFF und ONTAP Select Systeme.
@@ -425,9 +425,9 @@ Sie können auch<<API-Befehle anzeigen>> im Überprüfungsschritt, damit Sie den
 === Starten des Assistenten
 
 .Schritte
-. Greifen Sie auf eine der folgenden Arten auf den Assistenten „Sicherung und Wiederherstellung aktivieren“ zu:
+. Der Assistent zum Aktivieren von Backup und Recovery kann auf eine der folgenden Arten aufgerufen werden:
 +
-** Wählen Sie auf der Konsolenseite *Systeme* das System aus und wählen Sie im rechten Bereich neben „Sicherung und Wiederherstellung“ die Option „Aktivieren > Sicherungsvolumes“ aus.
+** Auf der Seite *Systems* der NetApp Console das System auswählen und im rechten Bereich neben Backup and Recovery die Option *Enable > Backup Volumes* auswählen.
 +
 Wenn das Amazon S3-Ziel für Ihre Backups als System auf der Konsolenseite *Systeme* vorhanden ist, können Sie den ONTAP Cluster auf den Amazon S3-Objektspeicher ziehen.
 
@@ -435,7 +435,7 @@ Wenn das Amazon S3-Ziel für Ihre Backups als System auf der Konsolenseite *Syst
 
 
 +
-Auf der Einführungsseite des Assistenten werden die Schutzoptionen angezeigt, darunter lokale Snapshots, Replikation und Backups.  Wenn Sie in diesem Schritt die zweite Option gewählt haben, wird die Seite „Sicherungsstrategie definieren“ mit einem ausgewählten Volume angezeigt.
+Die Einführungsseite des Assistenten zeigt die Schutzoptionen, darunter lokale Snapshots, Replikation und Backups. Wenn in diesem Schritt die zweite Option gewählt wurde, erscheint die Seite „Backup-Strategie definieren“ mit einem ausgewählten Volume.
 
 . Fahren Sie mit den folgenden Optionen fort:
 +
@@ -502,7 +502,7 @@ NOTE: Wenn die von Ihnen ausgewählten Volumes andere Snapshot- und Replikations
 
 . *Architektur*: Wenn Sie Replikation und Sicherung gewählt haben, wählen Sie einen der folgenden Informationsflüsse:
 +
-** *Kaskadierung*: Informationen fließen vom primären zum sekundären zum Objektspeicher und vom sekundären zum Objektspeicher.
+** *Kaskadierung*: Informationen fließen vom primären zum sekundären und dann vom sekundären zum Objektspeicher.
 ** *Fan-out*: Informationen fließen vom primären zum sekundären _und_ vom primären zum Objektspeicher.
 +
 Weitere Informationen zu diesen Architekturen finden Sie unterlink:prev-ontap-protect-journey.html["Planen Sie Ihren Schutzweg"] .
@@ -519,7 +519,7 @@ TIP: Informationen zum Erstellen einer benutzerdefinierten Richtlinie vor der Ak
 ** Geben Sie den Namen der Richtlinie ein.
 ** Wählen Sie bis zu fünf Zeitpläne aus, normalerweise mit unterschiedlicher Häufigkeit.
 +
-*** Für Backup-to-Object-Richtlinien müssen die Einstellungen für Datalock und Ransomware-Schutz konfiguriert werden. Weitere Informationen zu Datalock und Ransomware-Schutz finden Sie unter link:prev-ontap-policy-object-options.html["Einstellungen der Backup-to-Object-Richtlinie"].
+*** Für Backup-to-Object-Richtlinien die Einstellungen für DataLock und Ransomware-Schutz festlegen. Weitere Informationen zu DataLock und Ransomware-Schutz finden sich unter link:prev-ontap-policy-object-options.html["Einstellungen der Backup-to-Object-Richtlinie"].
 
 
 ** Wählen Sie *Erstellen*.
@@ -613,9 +613,9 @@ Sie können den Status von Sicherungs- und Wiederherstellungsaufträgen auch mit
 [[show-the-api-commands]]
 === API-Befehle anzeigen
 
-Möglicherweise möchten Sie die im Assistenten „Sicherung und Wiederherstellung aktivieren“ verwendeten API-Befehle anzeigen und optional kopieren.  Möglicherweise möchten Sie dies tun, um die Sicherungsaktivierung in zukünftigen Systemen zu automatisieren.
+Sie können die im Assistenten „Backup und Recovery aktivieren“ verwendeten API-Befehle anzeigen und optional kopieren. Dies kann hilfreich sein, um die Aktivierung von Backups in zukünftigen Systemen zu automatisieren.
 
 .Schritte
-. Wählen Sie im Assistenten „Sicherung und Wiederherstellung aktivieren“ die Option „API-Anforderung anzeigen“ aus.
+. Im Assistenten „Backup und Recovery aktivieren“ *API-Anfrage anzeigen* auswählen.
 . Um die Befehle in die Zwischenablage zu kopieren, wählen Sie das Symbol *Kopieren*.
 

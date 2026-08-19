@@ -14,7 +14,7 @@ summary: Ressourcen während Wiederherstellungsvorgängen in NetApp Backup and R
 
 
 [role="lead"]
-Ressourcentransformationen ermöglichen es Ihnen, eine Ressource während der Wiederherstellung zu modifizieren. Dies ist nützlich, wenn die wiederhergestellte Version von der ursprünglichen Version abweichen soll – beispielsweise die Änderung der IP-Adresse einer virtuellen Maschine bei der Wiederherstellung in einem anderen Netzwerk. Sie können auch link:br-use-restore-kubernetes-applications.html#restore-kubernetes-applications["Modifizieren Sie Ressourcen während der Wiederherstellung mithilfe der Web-Benutzeroberfläche"^].
+Ressourcentransformationen ermöglichen die Modifikation von Kubernetes-Ressourcen während Wiederherstellungsvorgängen. Informationen zur Modifikation von Ressourcen in der Web-Benutzeroberfläche finden sich unter link:br-use-restore-kubernetes-applications.html#restore-kubernetes-applications["Ressourcen während der Wiederherstellung ändern"^].
 
 *Erforderliche NetApp Console-Rolle* Backup and Recovery Superadministrator oder Backup and Recovery Restore-Administrator. Für den Schutz von Daten, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich. link:reference-roles.html["Erfahren Sie mehr über die Zugriffsrollen für NetApp Backup and Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
@@ -27,7 +27,7 @@ Das `transformations` Feld in `SnapshotRestore`, `BackupRestore`, `AppMirrorRela
 
 Ressourcentransformationen verwenden https://tools.ietf.org/html/rfc6902["RFC 6902"] JSON-Patch-Operationen und https://tools.ietf.org/html/rfc6901["RFC 6901"] JSON-Pointer-Pfade, um bestimmte Felder innerhalb von Kubernetes-Ressourcen anzusprechen und zu modifizieren.
 
-Hier ist die grundlegende Struktur eines Wiederherstellungsobjekts, das Ressourcentransformationen enthält:
+Das folgende Beispiel zeigt die grundlegende Struktur eines Wiederherstellungsobjekts, das Ressourcentransformationen enthält:
 
 [source, yaml]
 ----
@@ -61,7 +61,7 @@ spec:
 Sie können Ressourcentransformationen mit Ressourcen verwenden, die den folgenden Kriterien entsprechen:
 
 * `kind` (erforderlich): Der Kubernetes-Ressourcentyp (zum Beispiel, `ConfigMap`, `Deployment`, `Pod`)
-* `group` (optional): Die API-Gruppe (zum Beispiel, `apps`, `route.openshift.io`) - für Kernressourcen weglassen
+* `group` (optional): Die API-Gruppe (z. B. `apps`, `route.openshift.io`) für Kernressourcen weglassen
 * `version` (optional): Die API-Version (z. B. `v1`, `v1beta1`)
 * `name` (optional): Nur auf eine bestimmte Ressource anhand des Namens anwenden
 
@@ -185,7 +185,7 @@ tridentctl-protect --transformation ',v1,ConfigMap:remove{"path":"/metadata/anno
 [[replace-a-value-within-a-resource]]
 == Ersetzen Sie einen Wert innerhalb einer Ressource
 
-Verwenden Sie die  `replace` Operation, um einen vorhandenen Wert innerhalb einer Ressource am angegebenen Pfad zu ersetzen. Der JSON-Pfad muss bereits existieren. Das folgende Beispiel ändert einen Hostnamen für ein Route-Objekt:
+Die  `replace`-Operation ersetzt einen vorhandenen Wert innerhalb einer Ressource am angegebenen Pfad. Der JSON Pointer-Pfad muss bereits existieren. Im folgenden Beispiel wird der Hostname eines Route-Objekts geändert:
 
 [source, yaml]
 ----

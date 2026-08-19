@@ -12,20 +12,20 @@ summary: Zur Erhöhung der Sicherheit konfigurieren Sie den Zugriff für bestimm
 
 
 [role="lead"]
-Um die Sicherheit zu erhöhen und den Ressourcenzugriff zu kontrollieren, kann rollenbasierter Zugriff für NetApp Backup and Recovery konfiguriert werden. Die NetApp Console unterstützt rollenbasierte Zugriffssteuerung (RBAC) für einige Backup and Recovery Workloads. Administrations- oder Betrachterrollen können spezifisch für diese Workloads zugewiesen werden. Andere Workloads, die noch keine rollenbasierte Zugriffssteuerung unterstützen, bleiben für alle Benutzer mit Backup and Recovery Rollen zugänglich, bis die Zuordnung auf Projekt- oder Flottenebene unterstützt wird.
+Die rollenbasierte Zugriffssteuerung (RBAC) wird in der NetApp Console konfiguriert, um zu steuern, wer auf NetApp Backup and Recovery Ressourcen zugreifen kann. Administrativen oder Betrachterrollen können Workloads zugewiesen werden, die RBAC unterstützen. Workloads, die RBAC noch nicht unterstützen, bleiben für alle Benutzer mit Backup and Recovery Rollen zugänglich, bis eine Zuordnung auf Projekt- oder Flottenebene verfügbar ist.
 
 
 NOTE: NetApp Console verwendet Projekte, um Ressourcen in Ordnern zu organisieren, während NetApp Console Local Deployment Projekte als Flotten bezeichnet.
 
-Führen Sie diese Schritte aus, um den Zugriff auf Ressourcen in Ihrer Organisation zu steuern. Nehmen Sie Änderungen auf der Seite *Administration > Identität und Zugriff* im NetApp Console-Menü vor.
+Um den Zugriff auf Ressourcen in Ihrer Organisation zu steuern, sind diese Schritte auf der Seite *Administration > Identität und Zugriff* der NetApp Console auszuführen.
 
 
-NOTE: Diese Schritte setzen voraus, dass Ihnen in der Console die Rolle „Organization Admin“ zugewiesen ist.
+NOTE: Diese Schritte setzen voraus, dass Ihnen in der NetApp Console die Rolle des Organisationsadministrators zugewiesen ist.
 
 .Schritte
 . Erstellen Sie die Identitäts- und Zugriffsprojektstruktur.
 +
-Als Organisationsadministrator richten Sie den Ordner für Identität und Zugriff sowie die Projektstruktur ein, in der die Workloads gespeichert werden.
+Als Organisationsadministrator die Ordner- und Projektstruktur einrichten, in der die Workloads gespeichert werden.
 
 . Benutzerrollen zuweisen.
 +
@@ -34,8 +34,8 @@ Als Organisationsadministrator richten Sie den Ordner für Identität und Zugrif
 Fügen Sie jedem für Arbeitslasten vorgesehenen Projekt Benutzer hinzu und weisen Sie ihnen die entsprechende Rolle zu. Beispiel:
 
 +
-*** *Organisationsadministrator* und *Backup and Recovery Superadministrator*: Ein Benutzer mit diesen Rollen kann alle Ressourcen in allen Organisationen sehen, und Backup and Recovery Workloads erkennen und diese Projekten zuordnen (zum Beispiel US East oder US West).
-*** *Ordner- oder Projektadministrator* und *Backup and Recovery Superadmin*: Ein Benutzer mit diesen Rollen kann nur die Ressourcen in dem Ordner oder Projekt sehen, für das er Berechtigungen hat, kann aber Backup and Recovery Workloads erkennen und sie diesem Projekt zuweisen.
+*** *Organisationsadministrator* und *Backup and Recovery Superadministrator*: Ein Benutzer mit diesen Rollen kann alle Ressourcen organisationsübergreifend einsehen und Backup and Recovery Workloads ermitteln und diese Projekten zuweisen (zum Beispiel US East oder US West).
+*** *Ordner- oder Projektadministrator* und *Backup and Recovery Superadministrator*: Ein Benutzer mit diesen Rollen kann nur die Ressourcen in seinem zugewiesenen Ordner oder Projekt anzeigen, kann jedoch Backup and Recovery Workloads erkennen und sie diesem Projekt zuweisen.
 
 
 .. Alternative Option:
@@ -46,11 +46,11 @@ Anstatt einem Benutzer vollen Backup and Recovery-Administratorzugriff zu gewäh
 
 . Workloads in NetApp Backup and Recovery ermitteln.
 +
-Organisation-Admins oder Ordner- oder Projekt-Admins entdecken die verfügbaren Workloads und wählen das entsprechende Projekt aus (wie US East oder US West). Jeder Workload wird automatisch dem ausgewählten Projekt zugeordnet.
+Organisations-, Ordner- oder Projektadministratoren ermitteln die verfügbaren Workloads und wählen das entsprechende Projekt aus (z. B. US East oder US West). Jeder Workload wird automatisch dem ausgewählten Projekt zugeordnet.
 
 . Fügen Sie Benutzer zu Projekten hinzu.
 +
-Organisations- oder Ordner-/Projektadministratoren fügen Console-Benutzer zu Projekten mit Workloads hinzu. Weisen Sie Benutzern die Rolle „Organization viewer“ und eine Backup and Recovery-Rolle entsprechend ihren Zugriffsanforderungen zu. Benutzer mit der entsprechenden Backup and Recovery-Rolle erhalten automatisch Zugriff auf neue Workloads in diesen Projekten.
+Organisations-, Ordner- oder Projektadministratoren fügen NetApp Console-Benutzer zu Projekten mit Workloads hinzu. Benutzern wird die Rolle „Organisationsbetrachter“ und eine „NetApp Backup and Recovery“-Rolle entsprechend ihren Zugriffsanforderungen zugewiesen. Benutzer mit der entsprechenden „NetApp Backup and Recovery“-Rolle erhalten automatisch Zugriff auf neue Workloads in diesen Projekten.
 
 
 

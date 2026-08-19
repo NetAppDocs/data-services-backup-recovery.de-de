@@ -14,7 +14,7 @@ summary: Sie können CR-Wiederherstellungsvorgänge mithilfe von Annotationen, N
 
 
 [role="lead"]
-Sie können Wiederherstellungsvorgänge mithilfe erweiterter Einstellungen wie Annotationen, Namespace-Einstellungen und Speicheroptionen an Ihre spezifischen Anforderungen anpassen.
+Annotationen, Namespace-Einstellungen und Speicheroptionen ermöglichen die Anpassung von Kubernetes-Wiederherstellungsvorgängen an Ihre Umgebung.
 
 
 
@@ -113,14 +113,14 @@ Die folgende Tabelle veranschaulicht den Zustand des Beispiel-Ziel-Namespace nac
 [[supported-fields]]
 == Unterstützte Felder
 
-In diesem Abschnitt werden zusätzliche Felder beschrieben, die für Wiederherstellungsvorgänge zur Verfügung stehen.
+Dieser Abschnitt beschreibt zusätzliche Felder für Wiederherstellungsvorgänge.
 
 
 
 [[storage-class-mapping]]
 === Speicherklassenzuordnung
 
-Das  `spec.storageClassMapping` Attribut definiert eine Zuordnung von einer Speicherklasse in der Quellanwendung zu einer neuen Speicherklasse im Zielcluster. Sie können dies verwenden, wenn Sie Anwendungen zwischen Clustern mit unterschiedlichen Speicherklassen migrieren oder das Speicher-Backend für BackupRestore-Operationen ändern.
+Das `spec.storageClassMapping` Attribut ordnet eine Speicherklasse in der Quellanwendung einer neuen Speicherklasse im Zielcluster zu. Dieses Feld wird verwendet, wenn Anwendungen zwischen Clustern mit unterschiedlichen Speicherklassen migriert werden oder wenn das Speicher-Backend für BackupRestore Operationen geändert wird.
 
 *Beispiel:*
 
@@ -137,18 +137,18 @@ storageClassMapping:
 [[supported-annotations]]
 == Unterstützte Annotationen
 
-Dieser Abschnitt listet die unterstützten Annotationen zur Konfiguration verschiedener Verhaltensweisen im System auf. Wenn eine Annotation nicht explizit vom Benutzer festgelegt wird, verwendet das System den Standardwert.
+Dieser Abschnitt listet die unterstützten Annotationen zur Konfiguration verschiedener Verhaltensweisen im System auf. Wenn keine Annotation explizit festgelegt wird, verwendet das System den Standardwert.
 
 [cols="1,1,3,1"]
 |===
 | Anmerkung | Typ | Beschreibung | Standardwert 
 
 
-| protect.trident.netapp.io/data-mover-timeout-sec | Zeichenkette | Die maximal zulässige Zeit (in Sekunden), in der der Datenübertragungsvorgang angehalten werden darf. | "300" 
+| protect.trident.netapp.io/data-mover-timeout-sec | Zeichenkette | Die maximale Zeit in Sekunden, die ein Datenmover-Vorgang angehalten bleiben kann. | "300" 
 
 
 | protect.trident.netapp.io/kopia-content-cache-size-limit-mb | Zeichenkette | Die maximale Größenbeschränkung (in Megabytes) für den Kopia-Inhaltscache. | "1000" 
 
 
-| protect.trident.netapp.io/pvc-bind-timeout-sec | Zeichenkette | Maximale Zeit (in Sekunden), die auf neu erstellte PersistentVolumeClaims (PVCs) gewartet wird, um die  `Bound` Phase zu erreichen, bevor der Vorgang fehlschlägt. Gilt für alle Restore-CR-Typen (BackupRestore, BackupInplaceRestore, SnapshotRestore, SnapshotInplaceRestore). Verwenden Sie einen höheren Wert, wenn Ihr Storage-Backend oder Cluster häufig mehr Zeit benötigt. | "1200" (20 Minuten) 
+| protect.trident.netapp.io/pvc-bind-timeout-sec | Zeichenkette | Maximale Zeit (in Sekunden), die auf neu erstellte PersistentVolumeClaims (PVCs) gewartet wird, um die  `Bound` Phase zu erreichen, bevor der Vorgang fehlschlägt. Gilt für alle Restore-CR-Typen (BackupRestore, BackupInplaceRestore, SnapshotRestore, SnapshotInplaceRestore). Ein höherer Wert ist sinnvoll, wenn das Storage-Backend oder der Cluster häufig mehr Zeit benötigt. | "1200" (20 Minuten) 
 |===
