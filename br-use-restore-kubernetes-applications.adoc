@@ -23,7 +23,8 @@ Anwendungen, die durch eine Datensicherungsstrategie in NetApp Backup and Recove
 
 Für jede Anwendung, die Sie mit Backup and Recovery schützen, können Sie die Ressourcen anzeigen, die für einen bestimmten Wiederherstellungspunkt gesichert wurden.
 
-.Erforderliche NetApp Console
+*Erforderliche NetApp Console-Rolle*
+
 Backup- und Wiederherstellungsanzeige. link:reference-roles.html["Erfahren Sie mehr über die Zugriffsrollen für NetApp Backup and Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
 .Schritte
@@ -46,7 +47,8 @@ Sie können Namespace-basierte oder VM-basierte Anwendungen von einem Wiederhers
 .Bevor Sie beginnen
 Wenn Sie eine Anwendung wiederherstellen, die mit Trident Protect gesichert wurde, stellen Sie sicher, dass Trident Protect sowohl auf dem Quell-Cluster als auch auf dem Ziel-Cluster installiert ist.
 
-.Erforderliche NetApp Console
+*Erforderliche NetApp Console-Rolle*
+
 Superadministrator für Backup und Recovery oder Restore-Administrator für Backup und Recovery. link:reference-roles.html["Erfahren Sie mehr über die Zugriffsrollen für NetApp Backup and Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
 .Schritte

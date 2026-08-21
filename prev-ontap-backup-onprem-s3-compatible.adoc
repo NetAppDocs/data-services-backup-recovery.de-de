@@ -266,7 +266,7 @@ Sie können FlexVol oder FlexGroup -Volumes schützen. Sie können jedoch keine 
 
 ====
 .Schritte
-Beachten Sie: Wenn auf die von Ihnen ausgewählten Volumes bereits Snapshot- oder Replikationsrichtlinien angewendet wurden, werden diese vorhandenen Richtlinien durch die später ausgewählten Richtlinien überschrieben.
+Beachten Sie, dass, falls für die von Ihnen ausgewählten Volumes bereits Snapshot- oder Replikationsrichtlinien angewendet wurden, die später ausgewählten Richtlinien diese bestehenden Richtlinien überschreiben.
 
 . Wählen Sie auf der Seite „Volumes auswählen“ das oder die Volumes aus, die Sie schützen möchten.
 +
@@ -312,7 +312,7 @@ Weitere Informationen zu diesen Architekturen finden Sie unterlink:prev-ontap-pr
 . *Lokaler Snapshot*: Wählen Sie eine vorhandene Snapshot-Richtlinie oder erstellen Sie eine neue.
 +
 
-TIP: Wenn Sie vor der Aktivierung des Snapshots eine benutzerdefinierte Richtlinie erstellen möchten, können Sie den System Manager oder die ONTAP CLI verwenden. `snapmirror policy create` Befehl.  Siehe .
+TIP: Wenn vor der Aktivierung des Snapshots eine benutzerdefinierte Richtlinie erstellt werden soll, kann der System Manager oder der ONTAP CLI `snapmirror policy create`-Befehl verwendet werden. Siehe .
 
 +
 
@@ -373,7 +373,7 @@ Um eine Richtlinie zu erstellen, wählen Sie *Neue Richtlinie erstellen* und geh
 *** Wählen Sie *Erstellen*.
 
 
-** *Vorhandene Snapshots als Sicherungsdateien in den Objektspeicher exportieren*: Wenn es lokale Snapshots für Volumes in diesem System gibt, die mit der von Ihnen soeben ausgewählten Sicherungszeitplanbezeichnung (z. B. täglich, wöchentlich usw.) übereinstimmen, wird diese zusätzliche Aufforderung angezeigt. Aktivieren Sie dieses Kontrollkästchen, um alle historischen Snapshots als Sicherungsdateien in den Objektspeicher zu kopieren und so den umfassendsten Schutz für Ihre Volumes zu gewährleisten.
+** *Vorhandene Snapshots als Sicherungsdateien in den Objektspeicher exportieren*: Falls lokale Snapshots für Volumes in diesem System vorhanden sind, die dem soeben ausgewählten Sicherungsplan-Label entsprechen (z. B. täglich, wöchentlich usw.), wird diese zusätzliche Meldung angezeigt. Durch Aktivieren dieses Kontrollkästchens werden alle historischen Snapshots als Sicherungsdateien in den Objektspeicher kopiert, um den umfassendsten Schutz für Ihre Volumes sicherzustellen.
 
 
 . Wählen Sie *Weiter*.
@@ -388,7 +388,7 @@ Dies ist die Gelegenheit, Ihre Auswahl zu überprüfen und gegebenenfalls Anpass
 
 .Schritte
 . Überprüfen Sie Ihre Auswahl auf der Überprüfungsseite.
-. Aktivieren Sie optional das Kontrollkästchen, um *die Snapshot-Richtlinienbezeichnungen automatisch mit den Replikations- und Sicherungsrichtlinienbezeichnungen zu synchronisieren*.  Dadurch werden Snapshots mit einer Bezeichnung erstellt, die mit den Bezeichnungen in den Replikations- und Sicherungsrichtlinien übereinstimmt.  Wenn die Richtlinien nicht übereinstimmen, werden keine Sicherungen erstellt.
+. Optional kann das Kontrollkästchen aktiviert werden, um die Snapshot-Richtlinienbezeichnungen automatisch mit den Replikations- und Sicherungsrichtlinienbezeichnungen zu synchronisieren. Dadurch entstehen Snapshots mit einer Bezeichnung, die den Bezeichnungen in den Replikations- und Sicherungsrichtlinien entspricht. Wenn die Richtlinien nicht übereinstimmen, werden keine Sicherungen erstellt.
 . Wählen Sie *Backup aktivieren*.
 
 

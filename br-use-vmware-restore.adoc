@@ -59,7 +59,7 @@ image:diagram_browse_restore_volume-unified.png["Ein Diagramm, das den Ablauf zu
 
 Die Option „Wiederherstellen“ dient dazu, VMware-Workloads wiederherzustellen. Eine Suche nach einem Snapshot ist anhand des Namens oder mithilfe von Filtern möglich.
 
-*Erforderliche NetApp Console-Rolle* Storage Viewer, Backup and Recovery Super Admin, Backup and Recovery Restore Admin Rolle. Für den Schutz von Daten, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
+*Erforderliche NetApp Console-Rolle* Backup and Recovery Superadmin- oder Backup and Recovery Restore-Admin-Rolle. Für den Schutz von Daten, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Wiederherstellen* aus.

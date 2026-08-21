@@ -16,7 +16,7 @@ summary: Klonen Sie Ihre VMware-VM-Workloads mit NetApp Backup and Recovery.
 [role="lead"]
 Mit NetApp Backup and Recovery können beschreibbare Klone von VMware-VMs aus primären oder sekundären Snapshots erstellt werden. Es besteht die Möglichkeit, geklonte virtuelle Maschinen für Tests, Integration und Schulungen zu erstellen und zu verwalten, ohne die Produktionsdaten zu beeinträchtigen.
 
-*Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung oder Backupadministratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
+*Erforderliche NetApp Console-Rolle* Backup and Recovery Super Admin oder Backup and Recovery Clone Admin Rolle. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
 .Bevor Sie beginnen
 Stellen Sie sicher, dass alle VMs, deren Snapshots Sie klonen möchten, einer Schutzgruppe hinzugefügt und gesichert wurden.

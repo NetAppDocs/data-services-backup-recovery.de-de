@@ -28,7 +28,7 @@ Hyper-V-VMs von lokalen ONTAP Systemen können auf unterstützte Objektspeicherz
 
 Eine bedarfsgesteuerte Datensicherung schützt die Daten, bevor Systemänderungen vorgenommen werden.
 
-*Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung oder Backupadministratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
+*Erforderliche NetApp Console-Rolle* Backup and Recovery Superadmin- oder Backup and Recovery Backup-Admin-Rolle https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.

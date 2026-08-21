@@ -23,7 +23,7 @@ Wenn Sie den Aktivierungsassistenten verwenden, um den Backup und Recovery Servi
 
 Weitere Informationen zu den bereitgestellten Standard-Sicherungsrichtlinien finden Sie unterlink:prev-ontap-protect-journey.html["Planen Sie Ihren Schutzweg"] .
 
-NetApp Backup and Recovery bietet drei Arten von Backups von ONTAP -Daten: Snapshots, Replikationen und Backups auf Objektspeicher.  Ihre Richtlinien befinden sich je nach verwendeter Architektur und Sicherungstyp an unterschiedlichen Orten:
+NetApp Backup and Recovery bietet drei Arten von Backups von ONTAP Daten: Snapshots, Replikationen und Backups in den Objektspeicher. Die zugehörigen Richtlinien befinden sich je nach verwendeter Architektur und Art des Backups an unterschiedlichen Orten:
 
 [cols="25,25,25,25"]
 |===
@@ -206,4 +206,4 @@ Wenn eine Richtlinie mit einem Volume verknüpft ist und Sie die Richtlinie lös
 
 Anweisungen zum Erstellen von Richtlinien mit System Manager oder ONTAP CLI finden Sie hier:
 
-https://docs.netapp.com/us-en/ontap/task_dp_configure_snapshot.html["Erstellen einer Snapshot-Richtlinie mit System Manager"^] https://docs.netapp.com/us-en/ontap/data-protection/create-snapshot-policy-task.html["Erstellen einer Snapshot-Richtlinie mit der ONTAP CLI"^] https://docs.netapp.com/us-en/ontap/task_dp_create_custom_data_protection_policies.html["Erstellen einer Replikationsrichtlinie mit System Manager"^] https://docs.netapp.com/us-en/ontap/data-protection/create-custom-replication-policy-concept.html["Erstellen einer Replikationsrichtlinie mit der ONTAP CLI"^] https://docs.netapp.com/us-en/ontap/task_dp_back_up_to_cloud.html#create-a-custom-cloud-backup-policy["Erstellen einer Richtlinie für die Sicherung in einem Objektspeicher mit System Manager"^] https://docs.netapp.com/us-en/ontap-cli-9131/snapmirror-policy-create.html#description["Erstellen einer Richtlinie für das Backup in einem Objektspeicher mithilfe der ONTAP CLI"^]
+https://docs.netapp.com/us-en/ontap/task_dp_configure_snapshot.html["Eine Snapshot-Richtlinie mit System Manager erstellen"^] https://docs.netapp.com/us-en/ontap/data-protection/create-snapshot-policy-task.html["Eine Snapshot-Richtlinie mithilfe der ONTAP CLI erstellen"^] https://docs.netapp.com/us-en/ontap/task_dp_create_custom_data_protection_policies.html["Erstellen einer Replikationsrichtlinie mit System Manager"^] https://docs.netapp.com/us-en/ontap/data-protection/create-custom-replication-policy-concept.html["Erstellen einer Replikationsrichtlinie mit der ONTAP CLI"^] https://docs.netapp.com/us-en/ontap/task_dp_back_up_to_cloud.html#create-a-custom-cloud-backup-policy["Erstellen einer Richtlinie für die Sicherung in einem Objektspeicher mit System Manager"^] https://docs.netapp.com/us-en/ontap-cli-9131/snapmirror-policy-create.html#description["Erstellen einer Richtlinie für das Backup in einem Objektspeicher mithilfe der ONTAP CLI"^]

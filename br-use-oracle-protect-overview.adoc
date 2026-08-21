@@ -26,7 +26,8 @@ Verwenden Sie NetApp Backup and Recovery , um eine 3-2-1-Schutzstrategie zu impl
 Sie können NetApp Backup und Recovery verwenden, um die folgenden Aufgaben im Zusammenhang mit Oracle Database-Workloads durchzuführen:
 
 * link:br-start-discover-oracle.html["Oracle Database-Workloads entdecken"]
-* link:br-use-oracle-protection-groups.html["Erstellen und Verwalten von Schutzgruppen für Oracle Database-Workloads"]
+* link:br-use-oracle-protection-groups.html["Schutzgruppen für Oracle Database Workloads verwalten"]
 * link:br-use-oracle-backup.html["Oracle-Datenbank-Workloads sichern"]
+* link:br-use-oracle-clone.html["Oracle-Datenbank-Workloads klonen"]
 * link:br-use-oracle-restore.html["Oracle-Datenbank-Workloads wiederherstellen"]
 

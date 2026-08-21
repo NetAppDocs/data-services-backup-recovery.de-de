@@ -18,6 +18,7 @@ Die aktuellen Einschränkungen und nicht unterstützten Aktionen für Oracle Dat
 
 Die folgenden Aktionen werden für Oracle Database-Workloads in der Vorabversion von NetApp Backup and Recovery nicht unterstützt:
 
+* Nach einer unvollständigen Wiederherstellung durch das Wiederherstellen einer Datenbank auf einen bestimmten Zeitpunkt oder SCN muss, falls später eine Wiederherstellung auf einen Zeitpunkt vor dieser Wiederherstellung erforderlich ist, in den Einstellungen für das Wiederherstellungsziel auch *Kontrolldateien* ausgewählt werden. Ohne die Wiederherstellung der Kontrolldatei kann die Datenbank nicht auf einen Zeitpunkt vor der vorherigen unvollständigen Wiederherstellung wiederhergestellt werden.
 * In der Backup and Recovery-Vorabversion für die lokale Bereitstellung der NetApp Console werden Backups in Objektspeicher nur für ONTAP S3 und StorageGRID Ziele unterstützt. Backup-Archivierung ist in dieser Vorabversion nicht unterstützt.
 * Offline-Backups
 

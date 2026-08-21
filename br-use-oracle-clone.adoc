@@ -16,7 +16,7 @@ summary: Klonen Sie Ihre Oracle-Datenbank-Workloads mit NetApp Backup and Recove
 [role="lead"]
 Mit NetApp Backup und Recovery lassen sich beschreibbare Klone von Oracle Datenbank-Workloads aus lokalen ONTAP Systemen auf primärem oder sekundärem Speicher erstellen. Auch eine zeitliche Planung der Klon-Aktualisierungen entsprechend den Anforderungen ist möglich.
 
-*Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung oder Backupadministratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
+*Erforderliche NetApp Console-Rolle* Backup and Recovery Super Admin oder Backup and Recovery Clone Admin Rolle. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
 
 
@@ -31,6 +31,15 @@ Erstellen Sie sofort einen Klon aus einem vorhandenen Snapshot. Verwenden Sie di
 . Wählen Sie *Clone* aus.
 . Wählen Sie *Neuen Klon erstellen*.
 . Wählen Sie im Abschnitt *Datenbankquelle* den Quellhost und die Datenbank aus den Listen aus.
++
+.. Wenn es sich bei der Quelldatenbank um eine Containerdatenbank (CDB) handelt, im Abschnitt *Klontyp* eine der folgenden Optionen auswählen:
++
+*** *Vollständiger Datenbank-Clone*: Klont die gesamte Containerdatenbank, einschließlich aller PDBs.
+*** *PDB-Klon*: Klont eine bestimmte PDB aus dem Container-Datenbank-Backup in eine bestehende Zielcontainerdatenbank.
+
+
+
+
 . Im Abschnitt *Zieldatenbank* wählen Sie den Zielhost und die Datenbank aus den Listen aus. Der Zielhost und die Datenbank können sich vom Quellhost unterscheiden.
 . Wählen Sie *Weiter*.
 . Im Abschnitt *Klonen von* auf der Seite *Wiederherstellungspunkt auswählen* wählen Sie *Vorhandene Snapshots*.
@@ -41,8 +50,9 @@ Die Seite *Speicherort für Snapshots auswählen* wird angezeigt, wenn der Snaps
 . Wählen Sie den Snapshot-Speicherort aus und wählen Sie *Weiter*.
 . Führen Sie auf der Seite *Erweiterte Optionen* Folgendes aus:
 +
-.. Wenn Sie zuvor eine Spezifikationsdatei gespeichert haben, können Sie diese hochladen, um die Einstellungen der geklonten Datenbank anzupassen. Sie können auch die Standardspezifikationsdatei für den Datenbank-Snapshot herunterladen.
-.. Im Abschnitt *Wiederherstellungsbereich* wählen Sie aus, wie die wiederherzustellenden Daten für die Klonerstellung eingeschränkt werden sollen, und geben Sie die erforderlichen Informationen für die von Ihnen gewählte Option ein. Die Auswahl von *Keine* stellt alle Daten wieder her.
+.. Optional kann beim Klonen einer vollständigen mandantenfähigen Datenbank in den *Complete database clone settings* eine oder mehrere PDBs ausgewählt werden, die vom Klon ausgeschlossen werden sollen (PDB$SEED wird immer ausgeschlossen). Dieser Abschnitt erscheint beim Klonen einer Einzelmandantendatenbank nicht.
+.. Wenn Sie zuvor eine Spezifikationsdatei gespeichert haben, kann die Option *Zieldatenbankparameter anpassen* aktiviert werden, um diese hochzuladen und die Einstellungen der geklonten Datenbank anzupassen. Es besteht außerdem die Möglichkeit, die Standardspezifikationsdatei für den Datenbank-Snapshot herunterzuladen.
+.. Im Abschnitt *Wiederherstellungsbereich* kann eine Option zur Wiederherstellung des Klons mithilfe von Archivprotokollen ausgewählt und alle erforderlichen Details eingegeben werden. Die Auswahl von *Keine* überspringt die Wiederherstellung (der Klon wird aus dem Snapshot erstellt, ohne Änderungen aus den Archivprotokollen anzuwenden). *Keine* ist für PDB-Klone nicht verfügbar.
 .. Im Abschnitt *Vor- und Nachskripte* können Sie eine oder beide der Optionen *Vorskript* und *Nachskript* aktivieren, um ein Skript auszuführen, bevor der Klonvorgang beginnt oder nachdem er abgeschlossen ist. Geben Sie für jede Option den vollständigen Skriptpfad und alle erforderlichen Argumente ein.
 
 
@@ -55,6 +65,9 @@ Die Seite *Speicherort für Snapshots auswählen* wird angezeigt, wenn der Snaps
 == Planen Sie das Klonen einer Oracle-Datenbank
 
 Einen sofortigen Klon erstellen und regelmäßige Aktualisierungen planen, damit er dem aktuellen Stand der Datenbank entspricht.
+
+
+NOTE: Das Erstellen eines sofortigen Snapshots und Klons mit einem Aktualisierungszeitplan gilt nur für vollständige Datenbankklone. Es ist nicht für einen PDB-Klon verfügbar.
 
 .Schritte
 . Wählen Sie im NetApp Console *Schutz > Sicherung und Wiederherstellung*.

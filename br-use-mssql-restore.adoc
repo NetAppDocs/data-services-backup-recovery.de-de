@@ -64,7 +64,7 @@ Stellen Sie Workloads mit einer der folgenden Methoden wieder her:
 * *Von der Inventarseite*: Verwenden Sie diese Option, um eine bestimmte Ressource wiederherzustellen, wenn Sie ihren Namen, ihren Standort und ihr letztes Gültigkeitsdatum kennen.  Durchsuchen Sie die Liste, um die Ressource zu finden.
 
 
-*Erforderliche NetApp Console-Rolle* Storage Viewer, Backup and Recovery Super Admin oder Backup and Recovery Backup Admin Rolle. Wenn Daten geschützt werden, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
+*Erforderliche NetApp Console-Rolle* Backup and Recovery Superadmin- oder Backup and Recovery Restore-Admin-Rolle. Für den Schutz von Daten, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
 
 

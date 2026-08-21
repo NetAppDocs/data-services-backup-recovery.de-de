@@ -16,8 +16,9 @@ summary: Manuelle Erstellung von On-Demand-Backups von Kubernetes-Anwendungen ü
 [role="lead"]
 Die Web-UI kann verwendet werden, um eine bedarfsgesteuerte Sicherung einer Kubernetes-Anwendung durchzuführen.
 
-.Erforderliche NetApp Console
-Organisationsadministrator oder SnapCenter Administrator. link:reference-roles.html["Erfahren Sie mehr über die Zugriffsrollen für NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
+*Erforderliche NetApp Console-Rolle*
+
+Backup and Recovery Superadministrator oder Backup and Recovery Backup-Administrator. link:reference-roles.html["Erfahren Sie mehr über die Zugriffsrollen für NetApp Backup and Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
 
 

@@ -16,8 +16,9 @@ summary: Kubernetes-Anwendungen und zugehörige Schutzdaten in NetApp Backup and
 [role="lead"]
 Kubernetes-Anwendungen bei Bedarf aufheben oder löschen und Wiederherstellungspunkte entfernen.
 
-.Erforderliche NetApp Console
-Organisationsadministrator oder SnapCenter Administrator. link:reference-roles.html["Erfahren Sie mehr über die Zugriffsrollen für NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
+*Erforderliche NetApp Console-Rolle*
+
+Backup and Recovery Superadministrator oder Backup and Recovery Backup-Administrator. link:reference-roles.html["Erfahren Sie mehr über die Zugriffsrollen für NetApp Backup and Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
 
 

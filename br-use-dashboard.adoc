@@ -16,7 +16,7 @@ summary: Durch die Überwachung des Zustands Ihrer Workloads wird sichergestellt
 [role="lead"]
 Der Zustand Ihrer Workloads kann überwacht werden, um Schutzprobleme zu erkennen und auf Warnmeldungen zu reagieren. Der Status von Backups und Wiederherstellungen sowie die System-, Schutz-, Job- und Wiederherstellungsübersichten sind im NetApp Backup und Recovery Dashboard einsehbar.
 
-*Erforderliche NetApp Console-Rolle* Storage Viewer, Backup and Recovery Super Admin, Backup and Recovery Backup Admin, Backup and Recovery Restore Admin, Backup and Recovery Clone Admin oder Backup and Recovery Viewer Role. Für den Schutz von Daten, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich. Informationen zu link:reference-roles.html["Backup und Recovery Rollen und Berechtigungen"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
+*Erforderliche NetApp Console-Rolle*: Backup and Recovery Super Admin, Backup and Recovery Backup Admin, Backup and Recovery Restore Admin, Backup and Recovery Clone Admin oder Backup and Recovery Backup Viewer Rolle. Falls Daten geschützt werden, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich. Informationen dazu: link:reference-roles.html["Backup und Recovery Rollen und Berechtigungen"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
 .Schritte
 . Im NetApp Console-Menü *Schutz* > *Backup und Recovery* auswählen.

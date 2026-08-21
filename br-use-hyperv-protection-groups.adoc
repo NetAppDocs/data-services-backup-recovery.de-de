@@ -31,7 +31,7 @@ Sie können die folgenden Aufgaben im Zusammenhang mit Schutzgruppen ausführen:
 
 Workloads, die gemeinsam geschützt werden sollen, in einer Schutzgruppe zusammenfassen. Eine Schutzgruppe erstellen, um diese Workloads gemeinsam zu sichern und wiederherzustellen.
 
-*Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung oder Backupadministratorrolle für Backup und Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
+*Erforderliche NetApp Console-Rolle* Backup and Recovery Superadmin- oder Backup and Recovery Backup-Admin-Rolle https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
 .Bevor Sie beginnen
 * Beachten Sie, dass bei Hyper-V-Workloads die geplante Sicherungszeit in der Zeitzone des Verwaltungshosts interpretiert wird. Siehe link:br-use-policies-hyper-v-create.html["Erstellen und Verwalten von Hyper-V-Backup-Richtlinien in NetApp Backup und Recovery"] für weitere Informationen.

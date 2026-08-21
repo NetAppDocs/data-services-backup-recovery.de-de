@@ -29,7 +29,7 @@ NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads 
 
 Mit NetApp Backup and Recovery können Sie mehrere Sicherungsrichtlinien mit individuellen Zeitplänen für jedes System (Cluster) erstellen.  Sie können Volumes mit unterschiedlichen Recovery Point Objectives (RPO) unterschiedliche Sicherungsrichtlinien zuweisen.
 
-Jede Sicherungsrichtlinie enthält einen Abschnitt für _Labels und Aufbewahrung_, den Sie auf Ihre Sicherungsdateien anwenden können.  Beachten Sie, dass die auf das Volume angewendete Snapshot-Richtlinie eine der von NetApp Backup and Recovery erkannten Richtlinien sein muss, da sonst keine Sicherungsdateien erstellt werden.
+Jede Sicherungsrichtlinie enthält einen Abschnitt für _Bezeichnungen & Aufbewahrung_, der auf die Sicherungsdateien angewendet werden kann. Es ist zu beachten, dass die auf das Volume angewendete Snapshot-Richtlinie eine der von NetApp Backup and Recovery erkannten Richtlinien sein muss, andernfalls werden keine Sicherungsdateien erstellt.
 
 Der Zeitplan besteht aus zwei Teilen: dem Label und dem Aufbewahrungswert:
 

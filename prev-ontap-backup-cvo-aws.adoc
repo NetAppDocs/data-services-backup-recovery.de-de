@@ -285,7 +285,7 @@ Die Einführungsseite des Assistenten zeigt die Schutzoptionen, darunter lokale 
 [[select-the-volumes-that-you-want-to-back-up]]
 === Wählen Sie die Volumes aus, die Sie sichern möchten
 
-Wählen Sie die Volumes aus, die Sie schützen möchten.  Ein geschütztes Volume verfügt über eine oder mehrere der folgenden Optionen: Snapshot-Richtlinie, Replikationsrichtlinie, Backup-to-Object-Richtlinie.
+Wählen Sie die Volumes aus, die Sie schützen möchten.  Ein geschütztes Volume ist ein Volume, das über eine oder mehrere der folgenden Optionen verfügt: Snapshot-Richtlinie, Replikationsrichtlinie, Backup-to-Object-Richtlinie.
 
 Sie können FlexVol oder FlexGroup -Volumes schützen. Sie können jedoch keine Mischung dieser Volumes auswählen, wenn Sie die Sicherung für ein System aktivieren.  Erfahren Sie, wie Sielink:prev-ontap-backup-manage.html["Aktivieren Sie die Sicherung für zusätzliche Volumes im System"] (FlexVol oder FlexGroup), nachdem Sie die Sicherung für die ersten Volumes konfiguriert haben.
 
@@ -316,7 +316,7 @@ Wenn auf die von Ihnen ausgewählten Volumes bereits Snapshot- oder Replikations
 
 Zum Definieren der Sicherungsstrategie müssen die folgenden Optionen festgelegt werden:
 
-* Ob Sie eine oder alle Backup-Optionen wünschen: lokale Snapshots, Replikation und Backup auf Objektspeicher
+* Ob Sie eine oder alle der Backup-Optionen wünschen: lokale Snapshots, Replikation und Backup auf Objektspeicher
 * Architektur
 * Lokale Snapshot-Richtlinie
 * Replikationsziel und -richtlinie
@@ -432,7 +432,7 @@ Dies ist die Gelegenheit, Ihre Auswahl zu überprüfen und gegebenenfalls Anpass
 
 .Schritte
 . Überprüfen Sie Ihre Auswahl auf der Überprüfungsseite.
-. Optional können Sie das Kontrollkästchen aktivieren, um *nicht übereinstimmende Bezeichnungen bei lokalen Snapshots, Replikationen und Backups automatisch zu korrigieren*. Dadurch werden Snapshots mit einer Bezeichnung erstellt, die mit den Bezeichnungen in den Snapshot-, Replikations- und Sicherungsrichtlinien übereinstimmt.
+. Optional kann das Kontrollkästchen „Abweichende Bezeichnungen bei lokalen Snapshots, Replikation und Backup automatisch korrigieren“ aktiviert werden. Dadurch entstehen Snapshots mit einer Bezeichnung, die mit den Bezeichnungen in den Snapshot-, Replikation- und Backup-Richtlinien übereinstimmt.
 . Wählen Sie *Backup aktivieren*.
 
 

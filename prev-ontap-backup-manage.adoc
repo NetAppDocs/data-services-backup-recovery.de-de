@@ -128,7 +128,7 @@ Der Sicherungsname enthält den Zeitstempel, sodass Sie Ihre On-Demand-Sicherung
 
 Wenn bei der Aktivierung von NetApp Backup und Recovery für diesen Cluster _DataLock und Ransomware-Schutz_ aktiviert wurde, wird auch das On-Demand-Backup mit DataLock konfiguriert, und die Aufbewahrungsdauer beträgt 30 Tage. Ransomware-Scans werden für Ad-hoc-Backups nicht unterstützt. link:prev-ontap-policy-object-options.html["Erfahren Sie mehr über DataLock und Ransomware-Schutz"^].
 
-Wenn Sie ein Ad-hoc-Backup erstellen, wird auf dem Quellvolume ein Snapshot erstellt.  Da dieser Snapshot nicht Teil eines normalen Snapshot-Zeitplans ist, wird er nicht deaktiviert.  Möglicherweise möchten Sie diesen Snapshot manuell vom Quellvolume löschen, sobald die Sicherung abgeschlossen ist.  Dadurch können Blöcke freigegeben werden, die mit diesem Snapshot in Zusammenhang stehen.  Der Name des Snapshots beginnt mit `cbs-snapshot-adhoc-` . https://docs.netapp.com/us-en/ontap/san-admin/delete-all-existing-snapshot-copies-volume-task.html["Erfahren Sie, wie Sie einen Snapshot mit der ONTAP CLI löschen"^] .
+Wenn Sie eine Ad-hoc-Sicherung erstellen, wird ein Snapshot auf dem Quellvolume angelegt. Da dieser Snapshot nicht Teil eines regulären Snapshot-Zeitplans ist, wird er nicht entfernt. Es kann sinnvoll sein, diesen Snapshot nach Abschluss der Sicherung manuell vom Quellvolume zu löschen. Dadurch können die mit diesem Snapshot verbundenen Blöcke freigegeben werden. Der Name des Snapshots beginnt mit  `cbs-snapshot-adhoc-`. https://docs.netapp.com/us-en/ontap/san-admin/delete-all-existing-snapshot-copies-volume-task.html["Informationen zum Löschen eines Snapshots mit der ONTAP CLI"^].
 
 
 NOTE: Die On-Demand-Volume-Sicherung wird auf Datenschutzvolumes nicht unterstützt.

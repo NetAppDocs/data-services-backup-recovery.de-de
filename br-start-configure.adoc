@@ -25,8 +25,6 @@ Backup- und Recovery-Einstellungen konfigurieren, um Anmeldeinformationen für W
 * <<Erstellen Sie eine Vorlage für die Ressourcentransformation>>Ressourcen beim Wiederherstellen modifizieren.
 
 
-*Erforderliche NetApp Console-Rolle* Backup and Recovery Super Admin, Backup and Recovery Backup Admin, Backup and Recovery Restore Admin. Für den Schutz von Daten, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich. Informationen zu link:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
-
 
 
 [[add-credentials-for-host-resources]]
@@ -44,6 +42,8 @@ Sie müssen die folgenden Arten von Anmeldeinformationen konfigurieren:
 * Oracle-Datenbank-Zugangsdaten
 * Anmeldeinformationen für den Linux-Host
 
+
+*Erforderliche NetApp Console-Rolle* Backup and Recovery Superadministrator. Für den Schutz von Daten, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich. Informationen zu link:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Einstellungen* aus.
@@ -122,6 +122,8 @@ TIP: Für Microsoft SQL Server Workloads müssen Anmeldeinformationen sowohl fü
 
 Sie können das Passwort für alle von Ihnen erstellten Zugangsdaten später bearbeiten.
 
+*Erforderliche NetApp Console-Rolle* Backup and Recovery Superadministrator. Für den Schutz von Daten, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich. Informationen zu link:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
+
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Einstellungen* aus.
 . Wählen Sie den Abwärtspfeil aus, um den Abschnitt *Anmeldeinformationen* zu erweitern.
@@ -139,6 +141,8 @@ Sie können das Passwort für alle von Ihnen erstellten Zugangsdaten später bea
 == Verwalten der VMware vCenter-Einstellungen
 
 VMware vCenter Server-Anmeldeinformationen bereitstellen, um Workloads für das Backup zu erkennen. Wenn keine Anmeldeinformationen vorhanden sind, können diese mit Berechtigungen für den Zugriff auf und die Verwaltung von VMware vCenter Server-Workloads erstellt werden.
+
+*Erforderliche NetApp Console-Rolle* Backup and Recovery Superadministrator. Für den Schutz von Daten, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich. Informationen zu link:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Einstellungen* aus.
@@ -167,6 +171,8 @@ Dies ist ein zweiteiliger Prozess:
 * Importieren Sie SnapCenter Server-Anwendungs- und Hostressourcen
 * Verwalten ausgewählter SnapCenter -Hostressourcen
 
+
+*Erforderliche NetApp Console-Rolle*: Backup and Recovery Super Admin oder Backup and Recovery Backup Admin. Für den Schutz von Daten, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich. Informationen dazu unter link:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
 
 
@@ -249,6 +255,8 @@ Auf der Seite „Aus SnapCenter importieren“ werden alle vorherigen Importe an
 
 Wenn die Apache CloudStack Managementplattform zur Verwaltung von KVM-Ressourcen verwendet wird, kann sie mit NetApp Backup and Recovery integriert werden, sodass Backup and Recovery die verwalteten KVM-Hosts und VMs erkennen und schützen kann.
 
+*Erforderliche NetApp Console-Rolle*: Backup and Recovery Super Admin oder Backup and Recovery Backup Admin. Für den Schutz von Daten, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich. Informationen dazu unter link:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
+
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Einstellungen* aus.
 . Klicken Sie auf den Abwärtspfeil, um den Abschnitt *Managementplattform* zu erweitern.
@@ -271,6 +279,8 @@ Wenn die Apache CloudStack Managementplattform zur Verwaltung von KVM-Ressourcen
 == Konfigurieren von Protokollverzeichnissen in Snapshots für Windows-Hosts
 
 Bevor Richtlinien für Windows-Hosts erstellt werden, sollten Protokollverzeichnisse in Snapshots konfiguriert werden, damit die während des Backup-Prozesses generierten Protokolle gespeichert werden.
+
+*Erforderliche NetApp Console-Rolle*: Backup and Recovery Super Admin, Backup and Recovery Backup Admin oder Backup and Recovery Restore Admin. Für den Schutz von Daten, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich. Informationen dazu unter link:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
@@ -311,6 +321,8 @@ Nachdem Sie die Vorlage erstellt haben, wird sie in der Vorlagenliste im Abschni
 == Erstellen Sie eine Vorlage für die Ressourcentransformation
 
 Vorlagen für Ressourcentransformationen ermöglichen das Speichern von häufig verwendeten Transformationen, die während Wiederherstellungsvorgängen auf Ressourcen angewendet werden.
+
+*Erforderliche NetApp Console-Rolle*: Backup and Recovery Super Admin, Backup and Recovery Backup Admin oder Backup and Recovery Restore Admin. Für den Schutz von Daten, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich. Informationen dazu unter link:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Einstellungen* aus.

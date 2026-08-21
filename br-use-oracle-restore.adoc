@@ -121,29 +121,37 @@ Die passenden Schnappschüsse werden angezeigt.
 ====
 .Am ursprünglichen Speicherort wiederherstellen
 --
+[NOTE]
+====
+Wenn PDBs oder PDB-Tablespaces auf einen bestimmten Zeitpunkt oder SCN wiederhergestellt werden sollen:
+
+* Wählen Sie nur eine PDB aus. Zeitpunktgenaue Wiederherstellung ist nicht mit der Wiederherstellung mehrerer PDBs kompatibel.
+* PDB $SEEDkann nicht für die zeitpunktgenaue Wiederherstellung ausgewählt werden.
+* Die Wiederherstellung der Kontrolldatei kann nicht mit der zeitpunktgenauen Wiederherstellung von PDBs oder Tablespaces kombiniert werden.
+* Es wird sichergestellt, dass die Datensicherung und die erforderlichen Protokollsicherungen katalogisiert sind.
+
+
+====
 . *Zieleinstellungen*:
+. Wählen Sie aus, was wiederhergestellt werden soll:
 +
-** Wählen Sie, ob die gesamte Datenbank oder nur die Tablespaces für die Datenbank wiederhergestellt werden sollen.
-** *Steuerdateien*: Aktivieren Sie diese Option optional, um auch die Datenbank-Steuerdateien wiederherzustellen.
+** *Alle Datendateien* kann ausgewählt werden, um die gesamte Datenbank oder Containerdatenbank (CDB) wiederherzustellen.
+** *Pluggable Databases (PDBs)* kann ausgewählt werden, um eine oder mehrere PDBs aus einer CDB wiederherzustellen, ohne die anderen PDBs im Container zu beeinträchtigen. Anschließend werden die gewünschten PDBs aus der Liste ausgewählt.
+** *Pluggable database (PDB) Tablespaces* (bei einer Nicht-CDB Datenbank als *Tablespaces* angezeigt) auswählen, um bestimmte PDB Tablespaces wiederherzustellen. Anschließend die PDB und die Tablespaces auswählen.
 
 
-. *Optionen vor der Wiederherstellung*:
+. Optional kann die Option *Kontrolldateien* aktiviert werden, um auch die Kontrolldateien der Datenbank wiederherzustellen. Diese Option ist für zeitpunktgenaue oder SCN-basierte Wiederherstellung von PDBs oder PDB-Tablespaces nicht verfügbar.
+. Optional kann die Option *Datenbankstatus bei Bedarf für Wiederherstellung und Recovery ändern* aktiviert werden, damit Backup and Recovery den Datenbankstatus je nach Art der Wiederherstellung verwalten kann.
+. Optional kann die Option *Wiederherstellung am ursprünglichen Ort erzwingen* aktiviert werden, um eine schnellere Wiederherstellungsmethode für SAN/ASM Datenbanken zu verwenden und die Überprüfung der fremden Dateien zu überspringen. Die Datenbank und die ASM Festplattengruppe werden auf den Zeitpunkt der Sicherungserstellung wiederhergestellt.
+. Den Speicherort der externen Archivprotokolldateien angeben, wenn PDBs oder PDB-Tablespaces zu einem bestimmten Zeitpunkt oder SCN wiederhergestellt werden. Den Speicherort angeben, an dem RMAN die Hilfsinstanz für die Durchführung der Wiederherstellung erstellt. Einen Dateisystempfad eingeben, der mit „/“ beginnt, oder eine ASM Festplattengruppe, die mit „+“ beginnt. Die Schaltflächen „Plus“ und „Minus“ neben dem Texteingabefeld verwenden, um Speicherorte hinzuzufügen oder zu entfernen.
+. Optional kann die Option *Open the database or container database in READ-WRITE mode after recovery* aktiviert werden, um die Datenbanken nach der Wiederherstellung im READ-WRITE-Modus zu öffnen. Dadurch werden die wiederhergestellten Tabellenbereiche online geschaltet.
+. *Prescripts und Postscripts*:
 +
-** Aktivieren Sie diese Option optional und geben Sie den vollständigen Pfad für ein Skript ein, das vor dem Wiederherstellungsvorgang ausgeführt werden soll, sowie alle Argumente, die das Skript verwendet.
-** Wählen Sie einen Zeitüberschreitungswert für das Skript. Wenn das Skript innerhalb dieses Zeitraums nicht ausgeführt werden kann, wird die Wiederherstellung dennoch fortgesetzt.
-
-
-. *Optionen nach der Wiederherstellung*:
-+
+** *Vorgabe*: Optional kann diese Option aktiviert und der vollständige Pfad zu einem Skript angegeben werden, das vor dem Wiederherstellungsvorgang ausgeführt werden soll, sowie alle Argumente, die das Skript benötigt.
 ** *Postscript*: Aktivieren Sie diese Option optional und geben Sie den vollständigen Pfad für ein Skript ein, das nach dem Wiederherstellungsvorgang ausgeführt werden soll, sowie alle Argumente, die das Skript verwendet.
-** *Öffnen der Datenbank oder Container-Datenbank nach der Wiederherstellung im READ-WRITE-Modus*: Nach Abschluss des Wiederherstellungsvorgangs wird von Backup and Recovery der READ-WRITE-Modus für die Datenbank aktiviert.
 
 
-. Abschnitt *Benachrichtigung*:
-+
-** *E-Mail-Benachrichtigungen aktivieren*: Wählen Sie diese Option aus, um E-Mail-Benachrichtigungen über den Wiederherstellungsvorgang zu erhalten, und geben Sie an, welche Art von Benachrichtigungen Sie erhalten möchten.
-
-
+. Wählen Sie einen Zeitüberschreitungswert für das Skript. Falls das Skript innerhalb dieses Zeitraums nicht ausgeführt werden kann, wird die Wiederherstellung dennoch fortgesetzt.
 . Wählen Sie *Wiederherstellen*.
 
 

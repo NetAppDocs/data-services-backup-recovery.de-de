@@ -153,7 +153,7 @@ Um ein Volume wiederherzustellen, benötigen Sie den Namen des Quellsystems, die
 . Wählen Sie im Abschnitt „Durchsuchen und Wiederherstellen“ die Option „Volume wiederherstellen“ aus.
 . Navigieren Sie auf der Seite „Quelle auswählen“ zur Sicherungsdatei für das Volume, das Sie wiederherstellen möchten.  Wählen Sie das *System*, das *Volume* und die *Sicherungsdatei* mit dem Datums-/Zeitstempel aus, von dem Sie wiederherstellen möchten.
 +
-Die Spalte *Speicherort* zeigt an, ob die Sicherungsdatei (Snapshot) *lokal* (ein Snapshot auf dem Quellsystem), *sekundär* (ein repliziertes Volume auf einem sekundären ONTAP System) oder *Objektspeicher* (eine Sicherungsdatei im Objektspeicher) ist. Wählen Sie die Datei aus, die Sie wiederherstellen möchten.
+Die Spalte *Speicherort* zeigt an, ob die Sicherungsdatei (Snapshot) *lokal* (ein Snapshot auf dem Quellsystem), *sekundär* (ein repliziertes Volume auf einem sekundären ONTAP System) oder *Objektspeicher* (eine Sicherungsdatei im Objektspeicher) ist. Die gewünschte Datei zur Wiederherstellung kann ausgewählt werden.
 
 . Wählen Sie *Weiter*.
 +

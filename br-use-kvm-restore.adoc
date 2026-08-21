@@ -58,7 +58,7 @@ Auf der Wiederherstellungsseite können Sie eine VM wiederherstellen, selbst wen
 
 KVM-VMs können über das Menü „Wiederherstellen“ wiederhergestellt werden. Snapshots lassen sich nach Name oder mit Filtern suchen.
 
-*Erforderliche Konsolenrolle* Superadministrator für Backup und Wiederherstellung oder Administratorrolle für Backup und Wiederherstellung zur Wiederherstellung. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
+*Erforderliche NetApp Console-Rolle* Backup und Recovery Super-Admin- oder Backup und Recovery Restore-Admin-Rolle https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
 .Schritte
 . Wählen Sie im NetApp Console *Schutz > Sicherung und Wiederherstellung*.

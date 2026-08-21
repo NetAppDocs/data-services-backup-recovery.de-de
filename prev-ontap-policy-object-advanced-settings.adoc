@@ -17,7 +17,7 @@ summary: Schützen Sie Ihre VMware-Workloads mit NetApp Backup and Recovery.
 Auf der Seite „Erweiterte Einstellungen“ lassen sich die Backup-zu-Objektspeicher-Einstellungen auf Cluster-Ebene für jedes ONTAP-System ändern, nachdem NetApp Backup und Recovery aktiviert wurde. Bandbreite, Export historischer Snapshots, jährliche Snapshot-Löschung und Ransomware-Scan-Einstellungen können angepasst werden.
 
 
-NOTE: Diese Einstellungen sind nur für die Sicherung im Objektspeicher verfügbar.  Keine dieser Einstellungen wirkt sich auf Ihre Snapshot- oder Replikationseinstellungen aus.
+NOTE: Diese Einstellungen sind nur für die Sicherung in Objektspeicher verfügbar. Keine dieser Einstellungen wirkt sich auf Ihre Snapshot- oder Replikationseinstellungen aus.
 
 
 NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .

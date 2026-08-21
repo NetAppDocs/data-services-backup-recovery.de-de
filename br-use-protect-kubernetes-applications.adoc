@@ -16,8 +16,9 @@ summary: Mit NetApp Backup and Recovery können Sie Ihre Workload-Host-Informati
 [role="lead"]
 Die NetApp Backup and Recovery Web-Oberfläche oder benutzerdefinierte Ressourcendateien ermöglichen das Hinzufügen von Kubernetes-Anwendungen zum Schutz. Namespace-basierte Anwendungen, die Standard-Kubernetes-Ressourcen verwenden, oder VM-basierte Anwendungen, die eine oder mehrere virtuelle Maschinen nutzen, können hinzugefügt werden.
 
-.Erforderliche NetApp Console
-Organisationsadministrator oder SnapCenter Administrator. link:reference-roles.html["Erfahren Sie mehr über die Zugriffsrollen für NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^] .
+*Erforderliche NetApp Console-Rolle*
+
+Backup and Recovery Superadministrator oder Backup and Recovery Backup-Administrator. link:reference-roles.html["Erfahren Sie mehr über die Zugriffsrollen für NetApp Backup and Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
 
 

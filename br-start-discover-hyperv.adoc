@@ -16,7 +16,7 @@ summary: NetApp Backup and Recovery muss virtuelle Hyper-V-Maschinen erkennen, b
 [role="lead"]
 Hyper-V-VMs in NetApp Backup und Recovery können erkannt werden, sodass sie mit Schutzrichtlinien geschützt werden können.
 
-*Erforderliche Konsolenrolle* Backup und Recovery Superadministrator. Informationen zu link:reference-roles.html["Backup und Recovery Rollen und Berechtigungen"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
+*Erforderliche NetApp Console-Rolle* Backup and Recovery Superadministrator. Informationen zu link:reference-roles.html["Backup und Recovery Rollen und Berechtigungen"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
 
 

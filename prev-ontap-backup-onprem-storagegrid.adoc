@@ -331,7 +331,7 @@ Die Einführungsseite des Assistenten zeigt die Schutzoptionen, darunter lokale 
 [[select-the-volumes-that-you-want-to-back-up]]
 === Wählen Sie die Volumes aus, die Sie sichern möchten
 
-Wählen Sie die Volumes aus, die Sie schützen möchten.  Ein geschütztes Volume verfügt über eine oder mehrere der folgenden Optionen: Snapshot-Richtlinie, Replikationsrichtlinie, Backup-to-Object-Richtlinie.
+Wählen Sie die Volumes aus, die Sie schützen möchten.  Ein geschütztes Volume ist ein Volume, das über eine oder mehrere der folgenden Optionen verfügt: Snapshot-Richtlinie, Replikationsrichtlinie, Backup-to-Object-Richtlinie.
 
 Sie können FlexVol oder FlexGroup -Volumes schützen. Sie können jedoch keine Mischung dieser Volumes auswählen, wenn Sie die Sicherung für ein System aktivieren.  Erfahren Sie, wie Sielink:prev-ontap-backup-manage.html["Aktivieren Sie die Sicherung für zusätzliche Volumes im System"] (FlexVol oder FlexGroup), nachdem Sie die Sicherung für die ersten Volumes konfiguriert haben.
 
@@ -478,7 +478,7 @@ Dies ist die Gelegenheit, Ihre Auswahl zu überprüfen und gegebenenfalls Anpass
 
 .Schritte
 . Überprüfen Sie Ihre Auswahl auf der Überprüfungsseite.
-. Aktivieren Sie optional das Kontrollkästchen, um *die Snapshot-Richtlinienbezeichnungen automatisch mit den Replikations- und Sicherungsrichtlinienbezeichnungen zu synchronisieren*.  Dadurch werden Snapshots mit einer Bezeichnung erstellt, die mit den Bezeichnungen in den Replikations- und Sicherungsrichtlinien übereinstimmt.
+. Optional kann das Kontrollkästchen aktiviert werden, um die Snapshot-Richtlinienbezeichnungen automatisch mit den Replikations- und Sicherungsrichtlinienbezeichnungen zu synchronisieren. Dadurch werden Snapshots mit einer Bezeichnung erstellt, die den Bezeichnungen in den Replikations- und Sicherungsrichtlinien entspricht.
 . Wählen Sie *Backup aktivieren*.
 
 
