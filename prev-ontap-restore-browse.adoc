@@ -136,7 +136,7 @@ Wenn Sie ein Volume aus einer Sicherungsdatei wiederherstellen, erstellt NetApp 
 
 NOTE: Wenn Sie ein SnapLock-fähiges Volume wiederherstellen, bleibt der SnapLock-Schutz nur erhalten, wenn der Zielspeicher WORM-fähig ist. Wenn Sie auf einen nicht-WORM-fähigen Zielspeicher wiederherstellen, wird der SnapLock-Status vom wiederhergestellten Volume entfernt.
 
-Wenn Sie ein Cloud-Backup auf einem Cloud Volumes ONTAP -System mit ONTAP 9.13.0 oder höher oder auf einem lokalen ONTAP System mit ONTAP 9.14.1 wiederherstellen, haben Sie die Möglichkeit, eine _schnelle Wiederherstellung_ durchzuführen. Die schnelle Wiederherstellung ist ideal für Notfallwiederherstellungssituationen, in denen Sie so schnell wie möglich Zugriff auf ein Volume bereitstellen müssen. Bei einer schnellen Wiederherstellung werden die Metadaten aus der Sicherungsdatei auf einem Volume wiederhergestellt, anstatt die gesamte Sicherungsdatei wiederherzustellen.  Die schnelle Wiederherstellung wird für leistungs- oder latenzempfindliche Anwendungen nicht empfohlen und wird bei Sicherungen im Archivspeicher nicht unterstützt.
+Bei der Wiederherstellung eines Cloud-Backups auf einem Cloud Volumes ONTAP System mit ONTAP 9.13.0 oder höher oder auf einem lokalen ONTAP System mit ONTAP 9.14.1 besteht die Möglichkeit, eine _Schnellwiederherstellung_ durchzuführen. Eine Schnellwiederherstellung ist ideal für Disaster-Recovery-Situationen, in denen ein Zugriff auf ein Volume so schnell wie möglich bereitgestellt werden muss. Bei einer Schnellwiederherstellung werden die Metadaten aus der Sicherungsdatei auf ein Volume wiederhergestellt, anstatt die gesamte Sicherungsdatei wiederherzustellen. Eine Schnellwiederherstellung wird für Performance- oder latenztkritische Anwendungen nicht empfohlen und wird für Backups im archivierten Speicher nicht unterstützt.
 
 
 NOTE: Die Schnellwiederherstellung wird für FlexGroup Volumes nur unterstützt, wenn auf dem Quellsystem, von dem die Cloud-Sicherung erstellt wurde, ONTAP 9.12.1 oder höher ausgeführt wurde. Sie wird für SnapLock Volumes nur unterstützt, wenn auf dem Quellsystem ONTAP 9.11.0 oder höher ausgeführt wurde.
@@ -185,7 +185,11 @@ link:prev-reference-aws-archive-storage-tiers.html["Erfahren Sie mehr über die 
 ** *Schnelle Wiederherstellung*: Wiederhergestellte Volumes und Daten sind sofort verfügbar. Verwenden Sie dies nicht auf Volumes, die eine hohe Leistung erfordern, da der Zugriff auf die Daten während des schnellen Wiederherstellungsprozesses langsamer als gewöhnlich sein kann.
 
 
-. Wählen Sie *Wiederherstellen* und Sie kehren zum Wiederherstellungs-Dashboard zurück, damit Sie den Fortschritt des Wiederherstellungsvorgangs überprüfen können.
+. Optional kann *Diese Wiederherstellung gegenüber der bestehenden Auftragswarteschlange priorisieren* aktiviert werden, um diesem Wiederherstellungsvorgang eine höhere Priorität zuzuweisen. Wenn diese Option aktiviert ist, können andere laufende Aufträge angehalten oder verzögert werden, damit diese Wiederherstellung fortgesetzt werden kann.
+. Wählen Sie *Wiederherstellen*.
++
+Sie kehren zum Restore Dashboard zurück, sodass der Fortschritt des Restore-Vorgangs überprüft werden kann.
+
 
 
 .Ergebnis
