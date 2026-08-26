@@ -34,6 +34,9 @@ image:diagram_cloud_backup_cvo_aws.png["Ein Diagramm, das zeigt, wie NetApp Back
 
 Der VPC-Gateway-Endpunkt muss bereits in Ihrer VPC vorhanden sein. https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints-s3.html["Erfahren Sie mehr über Gateway-Endpunkte"^] .
 
+
+NOTE: Wenn Sie für Backup- oder Wiederherstellungs-Datentransfers einen privaten VPC-Endpunkt verwenden, hat dieser Vorrang vor jeder konfigurierten Proxy-Verbindung.
+
 Unterstützte ONTAP-Versionen:: Mindestens ONTAP 9.8; ONTAP 9.8P13 und höher wird empfohlen.
 Erforderliche Informationen zur Verwendung von kundenverwalteten Schlüsseln zur Datenverschlüsselung:: Sie können im Aktivierungsassistenten Ihre eigenen, vom Kunden verwalteten Schlüssel für die Datenverschlüsselung auswählen, anstatt die standardmäßigen Amazon S3-Verschlüsselungsschlüssel zu verwenden.  In diesem Fall müssen Sie die verwalteten Verschlüsselungsschlüssel bereits eingerichtet haben. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-setting-up-kms.html["Erfahren Sie, wie Sie Ihre eigenen Schlüssel verwenden"^] .
 

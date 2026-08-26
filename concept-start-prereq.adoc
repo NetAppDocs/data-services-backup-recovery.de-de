@@ -460,7 +460,7 @@ Stellen Sie sicher, dass Ihre Hyper-V-Instanz bestimmte Anforderungen zum Erkenn
 
 |===
 .Hardwareanforderungen für den Hyper-V-Host
-* Standalone- und FCI-Cluster-Hosts werden unterstützt
+* Standalone Hosts und Failover Cluster-Konfigurationen werden unterstützt
 * Mindestens 1 GB RAM für das NetApp Hyper-V-Plug-In auf dem Hyper-V-Host
 * Mindestens 5 GB Installations- und Protokollspeicherplatz für das Plug-In auf dem Hyper-V-Host
 +

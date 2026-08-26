@@ -14,7 +14,7 @@ summary: Sie können virtuelle Hyper-V-Maschinen von lokalen ONTAP Systemen auf 
 
 
 [role="lead"]
-NetApp Backup und Recovery ermöglicht das Sichern und Wiederherstellen von eigenständigen Hyper-V-VMs, FCI-Clusterinstanzen und von SCVMM bereitgestellten VMs, die auf einer CIFS-Freigabe gehostet werden.
+NetApp Backup and Recovery ermöglicht das Sichern und Wiederherstellen von eigenständigen Hyper-V-VMs, Failoverclusterinstanzen und von SCVMM bereitgestellten VMs, die auf einer CIFS-Freigabe gehostet werden.
 
 Hyper-V-Workloads können in Amazon S3 oder StorageGRID gesichert und auf einem lokalen Hyper-V-Host wiederhergestellt werden.
 
