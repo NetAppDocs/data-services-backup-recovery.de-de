@@ -25,6 +25,9 @@ KVM-Hosts und virtuelle Maschinen in NetApp Backup und Recovery können erkannt 
 
 Fügen Sie Informationen zur Managementplattform und zum KVM-Host hinzu, damit NetApp Backup and Recovery die Workloads automatisch erkennt.
 
+
+NOTE: Nach dem Hinzufügen eines Speichersystems zur NetApp Console sollte einige Minuten gewartet werden, bevor Ressourcen ermittelt werden. Die Ressourcenermittlung unmittelbar nach dem Hinzufügen eines Speichersystems kann dazu führen, dass die Ermittlung fehlschlägt.
+
 .Schritte
 . Wählen Sie im NetApp Console *Schutz* > *Sicherung und Wiederherstellung*.
 . Wählen Sie unter *Workloads* die Kachel *KVM* aus.

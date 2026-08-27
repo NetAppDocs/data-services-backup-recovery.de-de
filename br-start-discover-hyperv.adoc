@@ -26,6 +26,9 @@ Hyper-V-VMs in NetApp Backup und Recovery können erkannt werden, sodass sie mit
 Fügen Sie Hyper-V-Hostinformationen hinzu, damit NetApp Backup und Recovery virtuelle Maschinen erkennen kann. Innerhalb jedes Console-Agenten die Systeme auswählen, auf denen Ressourcen erkannt werden sollen.
 
 
+NOTE: Nach dem Hinzufügen eines Speichersystems zur NetApp Console sollte einige Minuten gewartet werden, bevor Ressourcen ermittelt werden. Die Ressourcenermittlung unmittelbar nach dem Hinzufügen eines Speichersystems kann dazu führen, dass die Ermittlung fehlschlägt.
+
+
 NOTE: Wenn Sie Hyper-V-Hosts hinzufügen und Ressourcen ermitteln, installiert NetApp Backup and Recovery das NetApp Hyper-V-Plug-in und das NetApp SnapCenter Windows FileSystem-Plug-in auf dem Hyper-V-Host, um die Verwaltung und den Schutz virtueller Maschinen zu unterstützen.
 
 .Schritte
