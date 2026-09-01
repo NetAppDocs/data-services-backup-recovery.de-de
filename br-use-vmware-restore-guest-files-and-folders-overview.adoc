@@ -48,7 +48,8 @@ Stellen Sie die ausgewählten Dateien oder Ordner an einem angegebenen Speichero
 
 Prüfen Sie alle Voraussetzungen, bevor Sie Dateien oder Ordner aus einer VMDK wiederherstellen.
 
-* VMware Tools muss installiert sein und ausgeführt werden.
+* Port 443 (HTTPS) auf dem VMware ESXi Server muss für die bidirektionale Kommunikation geöffnet sein.
+* VMware Tools muss auf dem Gastbetriebssystem installiert und ausgeführt werden.
 +
 NetApp Backup and Recovery verwendet Informationen von VMware Tools, um eine Verbindung zum VMware-Gastbetriebssystem herzustellen.
 
