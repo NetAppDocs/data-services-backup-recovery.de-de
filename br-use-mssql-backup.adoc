@@ -101,7 +101,7 @@ Führen Sie vor der Durchführung von Änderungen an Ihrem System eine On-Demand
 . Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
 . Wählen Sie eine Arbeitslast aus, um die Schutzdetails anzuzeigen.
 . Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*.
-. Die Registerkarte *Schutzgruppen*, *Instanzen* oder *Datenbanken* auswählen.
+. Die Registerkarte *Schutzgruppen*, *Verfügbarkeitsgruppen*, *Instanzen* oder *Datenbanken* auswählen.
 . Wählen Sie die Instanz oder Datenbank aus, die Sie sichern möchten.
 . Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Jetzt sichern*.
 . Wählen Sie die Richtlinie aus, die auf das Backup angewendet werden soll.

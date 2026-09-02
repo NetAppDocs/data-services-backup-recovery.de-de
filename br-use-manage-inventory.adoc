@@ -133,6 +133,45 @@ Sie können die Host-Informationen löschen, um die Servicegebühren zu stoppen.
 
 
 
+[[manage-availability-group-information]]
+== Informationen zu Verfügbarkeitsgruppen verwalten
+
+Verfügbarkeitsgruppeninformationen verwalten, um Ressourcen zu schützen, Schutzeinstellungen zu bearbeiten und Sicherungen durchzuführen:
+
+* Schützen von Instanzen
+* Schutzeinstellungen bearbeiten
+* Jetzt sichern
+
+
+*Erforderliche NetApp Console-Rolle*: Backup and Recovery Superadmin- oder Backup and Recovery Backup-Admin-Rolle. Für den Schutz von Daten, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
+
+
+
+[[protect-availability-groups]]
+=== Verfügbarkeitsgruppen schützen
+
+Einer Verfügbarkeitsgruppe wird eine Richtlinie zugewiesen, die den Zeitplan und die Aufbewahrung des Ressourcenschutzes steuert.
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
+. Wählen Sie die Arbeitslast aus, die Sie anzeigen möchten, und wählen Sie *Anzeigen*.
+. Die Registerkarte *Verfügbarkeitsgruppen* auswählen.
+. Die Verfügbarkeitsgruppe auswählen.
+. Wählen Sie die *Aktionen*image:icon-action.png["Symbol „Aktionen“"] Symbol und wählen Sie *Schützen*.
+. Wählen Sie eine Richtlinie aus oder erstellen Sie eine neue.
++
+Weitere Informationen zur Erstellung einer Richtlinie finden Sie unter link:br-use-policies-create.html["Erstellen einer Richtlinie"].
+
+. Stellen Sie die Skripte bereit, die vor und nach der Datensicherung ausgeführt werden.
++
+** *Vorskript*: Geben Sie den Dateinamen und den Speicherort des Skripts ein, das automatisch ausgeführt wird, bevor die Schutzaktion startet. Dies dient dazu, zusätzliche Aufgaben oder Konfigurationen vor dem Schutzworkflow vorzunehmen.
+** *Nachtrag*: Geben Sie den Dateinamen und den Speicherort des Skripts ein, das nach Abschluss der Schutzmaßnahme automatisch ausgeführt wird. Dies kann verwendet werden, um nach dem Schutzworkflow zusätzliche Aufgaben oder Konfigurationen durchzuführen.
+
+
+
+
+
+
 [[manage-instance-information]]
 == Instanzinformationen verwalten
 
@@ -265,6 +304,12 @@ Sie können die Richtlinie ändern, eine neue Richtlinie erstellen, einen Zeitpl
 . Wählen Sie die *Aktionen*image:icon-action.png["Symbol „Aktionen“"] Symbol und wählen Sie *Schützen*.
 +
 Weitere Informationen zur Erstellung einer Richtlinie finden Sie unter link:br-use-policies-create.html["Erstellen einer Richtlinie"].
+
+. Stellen Sie die Skripte bereit, die vor und nach der Datensicherung ausgeführt werden.
++
+** *Vorskript*: Geben Sie den Dateinamen und den Speicherort des Skripts ein, das automatisch ausgeführt wird, bevor die Schutzaktion startet. Dies dient dazu, zusätzliche Aufgaben oder Konfigurationen vor dem Schutzworkflow vorzunehmen.
+** *Nachtrag*: Geben Sie den Dateinamen und den Speicherort des Skripts ein, das nach Abschluss der Schutzmaßnahme automatisch ausgeführt wird. Dies kann verwendet werden, um nach dem Schutzworkflow zusätzliche Aufgaben oder Konfigurationen durchzuführen.
+
 
 
 
