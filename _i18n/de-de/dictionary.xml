@@ -5980,4 +5980,5 @@
   <block id="f4c9691991fd542b1f48cc8fcbdef656" category="list-text">Die Registerkarte *Verfügbarkeitsgruppen* auswählen.</block>
   <block id="65fa180bca046084f17003e06ddb0b9f" category="list-text">Die Verfügbarkeitsgruppe auswählen.</block>
   <block id="129dd3dd8cd4324317ed888dd78c8d3e" category="list-text">Die Registerkarte *Schutzgruppen*, *Verfügbarkeitsgruppen*, *Instanzen* oder *Datenbanken* auswählen.</block>
+  <block id="6c2c266ca065311d4804d34cd534ac61" category="paragraph">Das Wiederherstellen eines Volumes oder einer Datei aus dem Archivspeicher kann zusätzliche Zeit in Anspruch nehmen. Der Auftrag bleibt im *Job Monitor* als *In progress* angezeigt, während Backup and Recovery die Wiederherstellung entsprechend der ausgewählten Priorität erneut versucht. Die Wiederherstellung kann im *Job Monitor* überwacht werden; sie ist abgeschlossen, wenn der Auftrag nach allen Wiederholungsversuchen einen endgültigen Status wie *Completed* oder *Failed* erreicht. Eine weitere Wiederherstellung sollte nur gestartet werden, wenn der Auftrag letztlich fehlschlägt.</block>
 </blocks>

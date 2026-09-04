@@ -61,9 +61,16 @@ Wie lange dauert die Wiederherstellung meiner im Azure-Archiv archivierten Daten
 
 
 * *Wiederherstellungszeit*: Die Zeit zum Wiederherstellen der Daten aus der Sicherungsdatei im Cool-Speicher.  Diese Zeit unterscheidet sich nicht von der typischen Wiederherstellungsoperation direkt aus dem Cool-Speicher – wenn keine Archivierungsebene verwendet wird.
-
-
++
 Weitere Informationen zu den Abrufoptionen für Azure-Archive finden Sie unter https://azure.microsoft.com/en-us/pricing/details/storage/blobs/#faq["diese Azure-FAQ"^] .
+
+
 
 --
 
+
+[NOTE]
+====
+Das Wiederherstellen eines Volumes oder einer Datei aus dem Archivspeicher kann zusätzliche Zeit in Anspruch nehmen. Der Auftrag bleibt im *Job Monitor* als *In progress* angezeigt, während Backup and Recovery die Wiederherstellung entsprechend der ausgewählten Priorität erneut versucht. Die Wiederherstellung kann im *Job Monitor* überwacht werden; sie ist abgeschlossen, wenn der Auftrag nach allen Wiederholungsversuchen einen endgültigen Status wie *Completed* oder *Failed* erreicht. Eine weitere Wiederherstellung sollte nur gestartet werden, wenn der Auftrag letztlich fehlschlägt.
+
+====

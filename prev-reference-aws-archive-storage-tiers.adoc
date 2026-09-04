@@ -81,9 +81,16 @@ Wie lange dauert die Wiederherstellung meiner in Amazon S3 Glacier archivierten 
 | *S3 Glacier Deep-Archiv* |  | 12 Stunden | 48 Stunden 
 |===
 * *Wiederherstellungszeit*: Die Zeit, die zum Wiederherstellen der Daten aus der Sicherungsdatei im Standardspeicher benötigt wird.  Diese Zeit unterscheidet sich nicht von der typischen Wiederherstellungsoperation direkt vom Standardspeicher – wenn keine Archivierungsebene verwendet wird.
-
-
++
 Weitere Informationen zu den Abrufoptionen von Amazon S3 Glacier und S3 Glacier Deep Archive finden Sie unter https://aws.amazon.com/s3/faqs/#Amazon_S3_Glacier["die Amazon FAQ zu diesen Lagerklassen"^] .
+
+
 
 --
 
+
+[NOTE]
+====
+Das Wiederherstellen eines Volumes oder einer Datei aus dem Archivspeicher kann zusätzliche Zeit in Anspruch nehmen. Der Auftrag bleibt im *Job Monitor* als *In progress* angezeigt, während Backup and Recovery die Wiederherstellung entsprechend der ausgewählten Priorität erneut versucht. Die Wiederherstellung kann im *Job Monitor* überwacht werden; sie ist abgeschlossen, wenn der Auftrag nach allen Wiederholungsversuchen einen endgültigen Status wie *Completed* oder *Failed* erreicht. Eine weitere Wiederherstellung sollte nur gestartet werden, wenn der Auftrag letztlich fehlschlägt.
+
+====

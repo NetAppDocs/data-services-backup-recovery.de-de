@@ -46,3 +46,9 @@ Wie lange dauert die Wiederherstellung meiner im Google-Archiv archivierten Obje
 
 --
 
+
+[NOTE]
+====
+Das Wiederherstellen eines Volumes oder einer Datei aus dem Archivspeicher kann zusätzliche Zeit in Anspruch nehmen. Der Auftrag bleibt im *Job Monitor* als *In progress* angezeigt, während Backup and Recovery die Wiederherstellung entsprechend der ausgewählten Priorität erneut versucht. Die Wiederherstellung kann im *Job Monitor* überwacht werden; sie ist abgeschlossen, wenn der Auftrag nach allen Wiederholungsversuchen einen endgültigen Status wie *Completed* oder *Failed* erreicht. Eine weitere Wiederherstellung sollte nur gestartet werden, wenn der Auftrag letztlich fehlschlägt.
+
+====
