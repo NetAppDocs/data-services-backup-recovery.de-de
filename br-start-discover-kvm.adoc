@@ -31,9 +31,6 @@ NOTE: Nach dem Hinzufügen eines Speichersystems zur NetApp Console sollte einig
 .Schritte
 . Wählen Sie im NetApp Console *Schutz* > *Sicherung und Wiederherstellung*.
 . Wählen Sie unter *Workloads* die Kachel *KVM* aus.
-+
-Wenn Sie sich zum ersten Mal bei NetApp Backup and Recovery anmelden und bereits ein System in der Console vorhanden ist, aber keine Ressourcen erkannt wurden, erscheint die Seite „Willkommen beim neuen NetApp Backup and Recovery“ mit der Option *Ressourcen erkennen*.
-
 . Wählen Sie *Ressourcen entdecken*.
 . Geben Sie die folgenden Informationen ein:
 +
@@ -52,15 +49,26 @@ Wenn Sie sich zum ersten Mal bei NetApp Backup and Recovery anmelden und bereits
 ... Wenn Sie fertig sind, wählen Sie *Hinzufügen*.
 
 
-.. *KVM-Einstellungen*: Fügen Sie einen neuen KVM-Host hinzu, indem Sie die folgenden Informationen eingeben:
+.. *KVM-Einstellungen*: Führen Sie Folgendes aus:
 +
-*** *KVM FQDN oder IP-Adresse*: Geben Sie den FQDN oder die IP-Adresse des Hosts ein.
-*** *Anmeldedaten*: Geben Sie den Benutzernamen und das Passwort für den KVM-Host ein.
-*** *Konsolenagent*: Wählen Sie den Konsolenagenten aus, der für die Kommunikation zwischen Backup und Recovery und dem KVM-Host verwendet werden soll.
-*** *Portnummer*: Geben Sie den Port ein, der für die Kommunikation zwischen Backup und Recovery und dem KVM-Host verwendet werden soll.
-*** *Verwaltungsplattform*: Wenn der KVM-Host verwaltet wird und Sie die Verwaltungsplattform zu Backup und Wiederherstellung hinzugefügt haben, wählen Sie die Verwaltungsplattform aus der Liste aus.
+... Falls noch keine Anmeldeinformationen für diesen KVM-Host gespeichert wurden, ist *Anmeldeinformationen hinzufügen* auszuwählen.
++
+**** Wählen Sie den Konsolenagenten aus, der mit diesem Host verwendet werden soll.
+**** Geben Sie einen Namen für diese Anmeldeinformationen ein.
+**** Geben Sie den Benutzernamen und das Kennwort für das Konto ein.
+**** Wählen Sie *Fertig*.
 
 
+... Einen neuen KVM-Host hinzufügen, indem die folgenden Informationen eingegeben werden:
++
+**** *KVM FQDN oder IP-Adresse*: Geben Sie den FQDN oder die IP-Adresse des Hosts ein.
+**** *Agenten*: Der Konsolenagent wird für die Kommunikation zwischen Backup and Recovery und dem KVM-Host verwendet.
+**** *Anmeldeinformationen*: Eine gespeicherte Anmeldeinformation für den KVM-Host auswählen.
+
+
+
+
+.. *Erweiterte Einstellungen*: Optional kann ein Port für die Kommunikation mit dem KVM-Host eingegeben und die Managementplattform des Hosts aus der Liste ausgewählt werden.
 
 
 . Wählen Sie *Entdecken*.

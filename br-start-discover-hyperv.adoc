@@ -33,22 +33,24 @@ NOTE: Wenn Sie Hyper-V-Hosts hinzufügen und Ressourcen ermitteln, installiert N
 
 .Schritte
 . Im NetApp Console-Menü *Schutz* > *Backup und Recovery* auswählen.
-+
-Wenn Sie sich zum ersten Mal bei NetApp Backup und Recovery anmelden und bereits ein System in der Console haben, aber noch keine Ressourcen entdeckt wurden, erscheint die Landingpage „Willkommen beim neuen NetApp Backup und Recovery“ mit einer Option zum *Entdecken von Ressourcen*.
-
 . Wählen Sie *Ressourcen entdecken*.
 . Geben Sie die folgenden Informationen ein:
 +
 .. *Workload-Typ*: Wählen Sie *Hyper-V*.
-.. Wenn Sie für diesen Hyper-V-Host noch keine Anmeldeinformationen gespeichert haben, wählen Sie *Anmeldeinformationen hinzufügen*.
+.. *Hyper-V-Einstellungen*: Folgendes ist zu tun:
 +
-... Wählen Sie den Konsolenagenten aus, der mit diesem Host verwendet werden soll.
-... Geben Sie einen Namen für diese Anmeldeinformationen ein.
-... Geben Sie den Benutzernamen und das Kennwort für das Konto ein.
-... Wählen Sie *Fertig*.
+... Wenn Sie für diesen Hyper-V-Host noch keine Anmeldeinformationen gespeichert haben, wählen Sie *Anmeldeinformationen hinzufügen*.
++
+**** Wählen Sie den Konsolenagenten aus, der mit diesem Host verwendet werden soll.
+**** Geben Sie einen Namen für diese Anmeldeinformationen ein.
+**** Geben Sie den Benutzernamen und das Kennwort für das Konto ein.
+**** Wählen Sie *Fertig*.
 
 
-.. *Hostregistrierung*: Ein neuer Hyper-V-Host wird hinzugefügt, indem der FQDN oder die IP-Adresse des Hosts, die Anmeldeinformationen, der Console Agent und die Portnummer eingegeben werden. Wenn der FQDN vom Console Agent nicht aufgelöst werden kann, ist stattdessen die IP-Adresse zu verwenden. Für Failover-Cluster ist die Clusterverwaltungs-IP-Adresse einzugeben.
+... Ein neuer Hyper-V-Host wird hinzugefügt, indem der FQDN oder die IP-Adresse des Hosts eingegeben und ein Console-Agent sowie Anmeldeinformationen ausgewählt werden. Wenn der FQDN vom Console-Agent nicht aufgelöst werden kann, ist stattdessen die IP-Adresse zu verwenden. Für Failover-Cluster ist die Clusterverwaltungs-IP-Adresse einzugeben.
+
+
+.. *Erweiterte Einstellungen*: Optional kann ein Installationspfad für das NetApp Hyper-V Plug-in eingegeben werden.
 
 
 . Wählen Sie *Entdecken*.

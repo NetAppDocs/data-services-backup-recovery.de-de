@@ -1,0 +1,34 @@
+= Allgemeine NetApp Backup and Recovery-Verbesserungen
+:allow-uri-read: 
+
+
+
+
+[[general-netapp-backup-and-recovery-enhancements]]
+=== Allgemeine NetApp Backup and Recovery-Verbesserungen
+
+In dieser Version führen KVM-, Hyper-V- und VMware-Workloads die folgende Verbesserung ein:
+
+*Auswahl der Anmeldeinformationen bei der VM-Hosterkennung*: Bei der Registrierung eines KVM-, Hyper-V- oder VMware-Hosts ist jetzt die Verwendung von Anmeldeinformationen möglich, die bereits zu Backup and Recovery hinzugefügt wurden.
+
+
+
+[[hyper-v-workloads-enhancements]]
+=== Hyper-V-Workload-Verbesserungen
+
+In dieser Version wird für Hyper-V Workloads die folgende Verbesserung eingeführt:
+
+*Datenträgerübergreifender Schutz für VMs*: Bei CIFS-Konfigurationen unterstützt NetApp Backup and Recovery jetzt den Schutz aller an jede VM in einer Datensicherungsstrategie angeschlossenen Datenträger. Dies umfasst Dateien, die über mehrere ONTAP Volumes oder ONTAP Speichersysteme verteilt sind (datenträgerübergreifende Datenträger), sowie Dateien, die sich an einem einzigen Speicherort befinden.
+
+Weitere Informationen zum Schutz von Hyper-V-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Informationen zum Schutz von Hyper-V Workloads mit NetApp Backup and Recovery"].
+
+
+
+[[ontap-volumes-workloads-enhancement]]
+=== ONTAP Volumes Workloads-Verbesserung
+
+In dieser Version wird für ONTAP Volumes Workloads die folgende Vorschau-Verbesserung eingeführt:
+
+*Täglicher Bericht zum Datentransfer bei Backups*: NetApp Backup and Recovery für Volumes enthält jetzt unter der Registerkarte „Berichte“ einen täglichen Bericht zum Datentransfer bei Backups, der Einblick in die täglichen Backup- und Replikations-Datentransfers in Ihrer Umgebung bietet. Der Bericht kann für das gesamte Konto oder für ausgewählte Speichersysteme erstellt, nach Datumsbereich und Datensicherungsstrategie gefiltert und als CSV heruntergeladen werden.
+
+Weitere Informationen zum Schutz von ONTAP Volumes-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["Informationen zum ONTAP Volumeschutz mit NetApp Backup und Recovery"].

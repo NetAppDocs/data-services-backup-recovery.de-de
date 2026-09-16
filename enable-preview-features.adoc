@@ -35,6 +35,9 @@ Sie können die folgenden Vorschaufunktionen für NetApp Backup und Recovery akt
 
 
 | `"prioritize-restore": true` | Ermöglicht die Auswahl der Option „Wiederherstellung gegenüber bestehender Auftragswarteschlange priorisieren“ während des Wiederherstellungs-Workflows in der NetApp Backup and Recovery Web-Benutzeroberfläche. Wenn Sie diese Option während des Wiederherstellungs-Workflows auswählen, werden Wiederherstellungsvorgänge gegenüber anderen Aufträgen in der Warteschlange priorisiert und somit auch dann ausgeführt, wenn die Warteschlange ausgelastet ist. 
+
+
+| `"data-transfer-report": true` | Aktiviert den täglichen Datentransferbericht unter der Registerkarte „Berichte“ in NetApp Backup and Recovery für Volumes. Der Bericht liefert tägliche Informationen zur Datentransfer- und Replikationsaktivität in Ihrer Umgebung. 
 |===
 
 

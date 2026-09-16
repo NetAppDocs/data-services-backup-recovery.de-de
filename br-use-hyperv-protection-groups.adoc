@@ -46,8 +46,17 @@ Workloads, die gemeinsam geschützt werden sollen, in einer Schutzgruppe zusamme
 . Geben Sie einen Namen für die Schutzgruppe ein.
 . Wählen Sie die VMs aus, die Sie in die Schutzgruppe aufnehmen möchten.
 . Wählen Sie *Weiter*.
-. Wählen Sie die *Sicherungsrichtlinie* aus, die Sie auf die Schutzgruppe anwenden möchten.
+. Wählen Sie ein Verhalten für übergreifende Datenträger. Derzeit wird *Immer alle übergreifenden Datenträger einbeziehen* unterstützt.
++
+
+NOTE: Bei CIFS-Konfigurationen schützt Backup and Recovery automatisch alle an jede VM in der Schutzgruppe angeschlossenen Datenträger. Dies umfasst Dateien, die über mehrere ONTAP Volumes oder ONTAP Storage-Systeme verteilt sind (übergreifende Datenträger) sowie Dateien, die auf einen einzigen Speicherort beschränkt sind (nicht übergreifende Datenträger). Bei SAN-Konfigurationen werden alle nicht übergreifenden Datenträger in die Schutzgruppe aufgenommen.
+
 . Wählen Sie *Weiter*.
+. Wählen Sie die Datensicherungsstrategie, die Sie auf die Schutzgruppe anwenden möchten.
++
+Optional kann *Neue Richtlinie erstellen* ausgewählt werden, um eine neue Datensicherungsstrategie zu erstellen. Wenn eine Richtlinie ausgewählt wird, erscheinen die Richtliniendetails.
+
+. Wenn Sie fertig sind, wählen Sie *Weiter*.
 . Überprüfen Sie die Konfiguration.
 . Wählen Sie *Erstellen* aus, um die Schutzgruppe zu erstellen.
 
