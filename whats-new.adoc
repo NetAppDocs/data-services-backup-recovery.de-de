@@ -16,7 +16,31 @@ summary: Erfahren Sie, was es Neues bei NetApp Backup and Recovery gibt.
 [role="lead"]
 Informationen zu neuen Funktionen, Verbesserungen und Fehlerbehebungen in NetApp Backup and Recovery.
 
-<<<<<<< HEAD == 16. September 2026
+
+
+[[21-september-2026]]
+== 21. September 2026
+
+Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
+
+
+
+[[kubernetes-workloads-enhancements]]
+=== Kubernetes-Workloads-Erweiterungen
+
+In dieser Version werden für Kubernetes-Workloads die folgenden Verbesserungen eingeführt:
+
+* *Trident Protect 26.09*: Diese Version enthält Trident Protect 26.09.
+* *Cluster- und Namespace-spezifische rollenbasierte Zugriffskontrolle*: Während der Kubernetes-Clustererkennung lässt sich der Zugriff auf Ressourcen steuern, indem ein Projekt oder ein Ordner ausgewählt wird, das bzw. der dem neuen Cluster zugeordnet wird. Auch können spezifische Namespaces für die Zugriffskontrolle registriert werden. Dadurch wird eine granularere Zugriffskontrolle auf Cluster- oder Namespace-Ebene ermöglicht.
+* *Dateien und Ordner wiederherstellen*: Es ist jetzt möglich, bestimmte Dateien und Ordner aus Kubernetes VM-basierten Anwendungssicherungen wiederherzustellen oder herunterzuladen.
+
+
+Weitere Informationen zum Schutz von Kubernetes-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Informationen zum Schutz von Kubernetes Workloads mit NetApp Backup and Recovery"].
+
+
+
+[[16-september-2026]]
+== 16. September 2026
 
 Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 
@@ -61,32 +85,30 @@ In dieser Version werden die folgenden Verbesserungen für Oracle Database workl
 
 Weitere Informationen zum Schutz von Oracle Database-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Informationen zum Schutz von Oracle Database Workloads mit NetApp Backup and Recovery"].
 
-[]
-====
-== 21. September 2026
-
-Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
-
-=== Verbesserungen für Kubernetes Workloads In dieser Version führt Kubernetes Workloads die folgenden Verbesserungen ein:
-
-* *Trident Protect 26.09*: Diese Version enthält Trident Protect 26.09.
-* *Cluster- und Namespace-spezifische rollenbasierte Zugriffskontrolle*: Während der Kubernetes-Clustererkennung lässt sich der Zugriff auf Ressourcen steuern, indem ein Projekt oder ein Ordner ausgewählt wird, das bzw. der dem neuen Cluster zugeordnet wird. Auch können spezifische Namespaces für die Zugriffskontrolle registriert werden. Dadurch wird eine granularere Zugriffskontrolle auf Cluster- oder Namespace-Ebene ermöglicht.
-* *Dateien und Ordner wiederherstellen*: Es ist jetzt möglich, bestimmte Dateien und Ordner aus Kubernetes VM-basierten Anwendungssicherungen wiederherzustellen oder herunterzuladen.
 
 
-Weitere Informationen zum Schutz von Kubernetes-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Informationen zum Schutz von Kubernetes Workloads mit NetApp Backup and Recovery"]. >>>>>>> 13d089e3cffcfba837d21c436e1c43e2f3068e74
-
+[[17-august-2026]]
 == 17. August 2026
 
 Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 
-=== Verbesserungen für Hyper-V Workloads In dieser Version bietet Hyper-V Workloads die folgende Verbesserung:
+
+
+[[hyper-v-workloads-enhancements]]
+=== Hyper-V-Workload-Verbesserungen
+
+In dieser Version wird für Hyper-V Workloads die folgende Verbesserung eingeführt:
 
 *Objektspeichersicherung an alternativem Speicherort wiederherstellen*: Es ist jetzt möglich, Hyper-V-VMs, Dateien und Ordner aus dem Objektspeicher an einem alternativen Speicherort wiederherzustellen.
 
 Weitere Informationen zum Schutz von Hyper-V-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Informationen zum Schutz von Hyper-V Workloads mit NetApp Backup and Recovery"].
 
-=== Verbesserungen für Kubernetes Workloads In dieser Version führt Kubernetes Workloads die folgenden Verbesserungen ein:
+
+
+[[kubernetes-workloads-enhancements]]
+=== Kubernetes-Workloads-Erweiterungen
+
+In dieser Version werden für Kubernetes-Workloads die folgenden Verbesserungen eingeführt:
 
 * *Trident Protect 26.08*: Diese Version enthält Trident Protect 26.08.
 * *Backup-Wiederholungsversuche*: Backup-Wiederholungsversuche können jetzt aktiviert und die Anzahl der Wiederholungsversuche sowie die Intervalle zwischen den Wiederholungsversuchen als erweiterte Einstellungen in Kubernetes-Schutzrichtlinien konfiguriert werden.
@@ -98,7 +120,12 @@ Weitere Informationen zum Schutz von Hyper-V-Workloads finden Sie unter  https:/
 
 Weitere Informationen zum Schutz von Kubernetes-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Informationen zum Schutz von Kubernetes Workloads mit NetApp Backup and Recovery"].
 
-=== Verbesserungen für Oracle Database Workloads In dieser Version wurden die folgenden Verbesserungen für Oracle Database Workloads eingeführt:
+
+
+[[oracle-database-workloads-enhancement]]
+=== Erweiterung der Oracle Database Workloads
+
+In dieser Version werden die folgenden Verbesserungen für Oracle Database workloads eingeführt:
 
 * *Wiederherstellung von Pluggable Databases (PDBs)*: Es ist jetzt möglich, einzelne Pluggable Databases (PDBs) und PDB-Tablespaces wiederherzustellen, einschließlich zeitpunktgenauer Wiederherstellung.
 * *Pluggable Database (PDB) Klonen*: Es ist jetzt möglich, eine einzelne PDB in eine bestehende Ziel-Containerdatenbank (CDB) zu klonen und optional PDBs auszuschließen, wenn eine komplette Containerdatenbank geklont wird.
@@ -106,17 +133,28 @@ Weitere Informationen zum Schutz von Kubernetes-Workloads finden Sie unter  http
 
 Weitere Informationen zum Schutz von Oracle Database-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Informationen zum Schutz von Oracle Database Workloads mit NetApp Backup and Recovery"].
 
+
+
+[[10-august-2026]]
 == 10. August 2026
 
 Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 
-=== Allgemeine NetApp Backup und Recovery-Verbesserungen
+
+
+[[general-netapp-backup-and-recovery-enhancements]]
+=== Allgemeine NetApp Backup and Recovery-Verbesserungen
 
 * *Unterstützung für die lokale Bereitstellung der NetApp Console*: Diese Version von NetApp Backup and Recovery unterstützt die lokale Bereitstellung der NetApp Console im Vorschaustatus.
 * *90 Tage Aufbewahrung von Aufträgen*: Backup and Recovery speichert Auftragsinformationen jetzt 90 Tage lang im Job Monitor.
 
 
-=== Verbesserungen für VMware Workloads In dieser Version führt VMware Workloads die folgenden Verbesserungen ein:
+
+
+[[vmware-workloads-enhancements]]
+=== VMware-Workload-Verbesserungen
+
+In dieser Version führt VMware workloads die folgenden Verbesserungen ein:
 
 * *Unterstützung für die Wiederherstellung an einem alternativen Speicherort für SAN-VMs*: Es ist jetzt möglich, SAN-basierte VM-Backups an einem alternativen Speicherort wiederherzustellen.
 * *Unterstützung für das Löschen mehrerer Backups*: Es ist jetzt möglich, mehrere Backups gleichzeitig zu löschen.
@@ -124,14 +162,24 @@ Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 
 Weitere Informationen zum Schutz von VMware-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["Übersicht zum Schützen von VMware-Workloads"] .
 
-=== Verbesserungen für Kubernetes Workloads In dieser Version führt Kubernetes Workloads die folgenden Verbesserungen ein:
+
+
+[[kubernetes-workloads-enhancements]]
+=== Kubernetes-Workloads-Erweiterungen
+
+In dieser Version werden für Kubernetes-Workloads die folgenden Verbesserungen eingeführt:
 
 * *Vorschauunterstützung für isolierte Ressourcen*: Wenn NetApp Backup and Recovery in der lokalen NetApp Console-Bereitstellung ausgeführt wird, können isolierte Kubernetes-Ressourcen erkannt, geschützt und wiederhergestellt werden. Diese Funktion befindet sich in dieser Version in der Vorschau.
 
 
 Weitere Informationen zum Schutz von Kubernetes-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Übersicht zum Schützen von Kubernetes-Workloads"] .
 
-=== Verbesserungen für ONTAP Volumes Workloads In dieser Version von ONTAP Volumes Workloads sind die folgenden Verbesserungen enthalten:
+
+
+[[ontap-volumes-workloads-enhancements]]
+=== ONTAP Volumes Workloads-Verbesserungen
+
+In dieser Version wurden für ONTAP Volumes Workloads die folgenden Verbesserungen eingeführt:
 
 * *Wiederherstellungsaufträge gegenüber Backups priorisieren*: Es besteht jetzt die Möglichkeit, Wiederherstellungsaufträge gegenüber Backup-Aufträgen zu priorisieren, wenn VMs oder Dateien wiederhergestellt werden.
 * *ONTAP Systeme und Volumes ohne Backup and Recovery Aktivierung entdecken*: Es ist jetzt möglich, Systeme und Volumes zu entdecken, ohne Backup and Recovery zu aktivieren.
@@ -139,19 +187,35 @@ Weitere Informationen zum Schutz von Kubernetes-Workloads finden Sie unter https
 
 Weitere Informationen zum Schutz von ONTAP Volumes-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["Überblick über den Schutz von ONTAP Volumes Workloads"].
 
+
+
+[[13-july-2026]]
 == 13. Juli 2026
 
 Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 
-=== Verbesserte Unterstützung mehrerer Buckets für alle Workloads NetApp Backup und Recovery unterstützt jetzt den Schutz der Workloads innerhalb eines Systems mit bis zu 100 Buckets über verschiedene Cloud-Anbieter hinweg. ONTAP 9.19.1 oder höher ist erforderlich, um mehr als 6 Buckets pro System zu unterstützen.
+
+
+[[enhanced-multi-bucket-support-for-all-workloads]]
+=== Erweiterte Unterstützung mehrerer Buckets für alle Workloads
+
+NetApp Backup and Recovery unterstützt jetzt den Schutz von Workloads innerhalb eines Systems mit bis zu 100 Buckets bei verschiedenen Cloud-Anbietern. ONTAP 9.19.1 oder höher ist erforderlich, um mehr als 6 Buckets pro System zu unterstützen.
 
 Weitere Informationen zu NetApp Backup und Recovery finden sich unter  https://docs.netapp.com/us-en/data-services-backup-recovery/concept-backup-to-cloud.html["Erfahren Sie mehr über NetApp Backup and Recovery"].
 
+
+
+[[15-june-2026]]
 == 15. Juni 2026
 
 Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 
-=== Verbesserungen für Kubernetes Workloads In dieser Version führt Kubernetes Workloads die folgenden Verbesserungen ein:
+
+
+[[kubernetes-workloads-enhancements]]
+=== Kubernetes-Workloads-Erweiterungen
+
+In dieser Version werden für Kubernetes-Workloads die folgenden Verbesserungen eingeführt:
 
 * *Trident Protect 26.06*: Diese Version enthält Trident Protect 26.06.
 * *Anwendungserstellung bei Wiederherstellung überspringen*: Die automatische Erstellung benutzerdefinierter Anwendungsressourcenobjekte kann während Wiederherstellungsvorgängen nun übersprungen werden. Dies reduziert unnötige Einträge im Anwendungsinventar.
@@ -161,17 +225,30 @@ Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 
 Weitere Informationen zum Schutz von Kubernetes-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Übersicht zum Schützen von Kubernetes-Workloads"] .
 
-== 8. Juni 2026
+
+
+[[08-june-2026]]
+== 08. Juni 2026
 
 Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 
-=== Verbesserungen für ONTAP Volumes Workloads In dieser Version von ONTAP Volumes Workloads wird die folgende Verbesserung eingeführt:
+
+
+[[ontap-volumes-workloads-enhancements]]
+=== ONTAP Volumes Workloads-Verbesserungen
+
+In dieser Version führt ONTAP Volumes-Workloads die folgende Verbesserung ein:
 
 *Unterstützung für S3-kompatiblen Cloud-Speicher*: NetApp Backup and Recovery für Volumes-Workloads unterstützt jetzt das Sichern in S3-kompatiblen Cloud-Speicher.
 
 Weitere Informationen zum Schutz von ONTAP Volumes-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["Überblick über den Schutz von ONTAP Volumes Workloads"].
 
-=== Verbesserungen für Hyper-V Workloads In dieser Version bietet Hyper-V Workloads die folgenden Verbesserungen:
+
+
+[[hyper-v-workloads-enhancements]]
+=== Hyper-V-Workload-Verbesserungen
+
+In dieser Version werden für Hyper-V-Workloads die folgenden Verbesserungen eingeführt:
 
 * *Wiederherstellen von Dateien und Ordnern in einer Gast-VM – Verbesserungen*: Sie können jetzt Dateien und Ordner aus einem Snapshot auf primärem oder sekundärem Speicher in einer Gast-Windows-VM wiederherstellen. Diese Funktion wird nun für CIFS- und SAN-VMs unterstützt.
 * *Schutzgruppen verwenden jetzt die Zeitzone des Hyper-V-Hosts*: Schutzgruppen verwenden nun die Zeitzone des Hyper-V-Hosts. Schutzgruppen, die vor der Einführung der Host-Zeitzonenplanung erstellt wurden, verwenden weiterhin ihre zuvor konfigurierte Zeit (typischerweise UTC). Damit diese Schutzgruppen die Zeitzone des Hyper-V-Hosts verwenden, ist es erforderlich, die Zeitpläne neu zu erstellen. Weitere Informationen sind unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protection-groups.html["Erstellen und Verwalten von Schutzgruppen für Hyper-V-Workloads"] verfügbar.
@@ -179,18 +256,31 @@ Weitere Informationen zum Schutz von ONTAP Volumes-Workloads finden Sie unter  h
 
 Weitere Informationen zum Schutz von Hyper-V-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Hyper-V Schutzworkflow mit NetApp Backup and Recovery"].
 
-=== Verbesserungen für VMware Workloads In dieser Version bietet VMware Workloads die folgende Verbesserung:
+
+
+[[vmware-workloads-enhancements]]
+=== VMware-Workload-Verbesserungen
+
+In dieser Version führt VMware Workloads die folgende Verbesserung ein:
 
 * *Schutzgruppen verwenden jetzt die Zeitzonenplanung des Hosts*: Schutzgruppen verwenden nun die Zeitzone des VMware vCenter Servers. Schutzgruppen, die vor der Einführung der Host-Zeitzonenplanung erstellt wurden, laufen weiterhin in ihrer zuvor konfigurierten Zeitzone (typischerweise UTC). Um die vCenter-Zeitzone zu nutzen, ist es erforderlich, die Zeitpläne neu zu erstellen. Weitere Informationen sind unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protection-groups.html["Erstellen und Verwalten von Schutzgruppen für VMware-Workloads"] verfügbar.
 
 
 Weitere Informationen zum Schutz von VMware-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["Übersicht zum Schützen von VMware-Workloads"] .
 
+
+
+[[11-may-2026]]
 == 11. Mai 2026
 
 Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 
-=== Verbesserungen für Hyper-V Workloads In dieser Version bietet Hyper-V Workloads die folgenden Verbesserungen:
+
+
+[[hyper-v-workloads-enhancements]]
+=== Hyper-V-Workload-Verbesserungen
+
+In dieser Version werden für Hyper-V-Workloads die folgenden Verbesserungen eingeführt:
 
 * *VMs auf SAN-Speicher schützen*: Sie können jetzt VMs auf SAN-Objektspeicher schützen.
 * *Verbesserungen bei der Wiederherstellung an alternativen Speicherorten*: Sie können jetzt von primären und sekundären Speicherorten für VMs auf SAN-Speicher an einem alternativen Speicherort wiederherstellen.
@@ -199,13 +289,23 @@ Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 
 Weitere Informationen zum Schutz von Hyper-V-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Hyper-V Schutzworkflow mit NetApp Backup and Recovery"].
 
-=== Verbesserungen für KVM Workloads In dieser Version bringt KVM Workloads die folgende Verbesserung:
+
+
+[[kvm-workloads-enhancements]]
+=== Verbesserungen für KVM-Workloads
+
+In dieser Version wird für KVM-Workloads die folgende Verbesserung eingeführt:
 
 *Wiederherstellung an alternativem Speicherort*: Sie können KVM-VMs jetzt an einem alternativen Zielort wiederherstellen (diese Funktion ist jetzt allgemein verfügbar).
 
 Weitere Informationen zum Schutz von KVM-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Informationen zum Schutz von KVM-Workloads mit NetApp Backup and Recovery"].
 
-=== Verbesserungen für Oracle Database Workloads In dieser Version gibt es die folgenden Verbesserungen für Oracle Database Workloads:
+
+
+[[oracle-database-workloads-enhancements]]
+=== Verbesserungen der Oracle Database Workloads
+
+In dieser Version werden die folgenden Verbesserungen für Oracle Database workloads eingeführt:
 
 * *Unterstützung für Oracle AI Database 26ai*: Backup und Recovery unterstützen jetzt Oracle AI Database 26ai.
 * *Unterstützung für die Backup-Verifizierung*: Sie können jetzt Backup-Richtlinien konfigurieren, um die Integrität Ihrer Oracle Datenbank-Backups automatisch zu überprüfen.
@@ -213,7 +313,12 @@ Weitere Informationen zum Schutz von KVM-Workloads finden Sie unter  https://doc
 
 Weitere Informationen zum Schutz von Oracle Database-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Informationen zum Schutz von Oracle Database Workloads mit NetApp Backup and Recovery"].
 
-=== Verbesserungen für VMware Workloads In dieser Version führt VMware Workloads die folgenden Verbesserungen ein:
+
+
+[[vmware-workloads-enhancements]]
+=== VMware-Workload-Verbesserungen
+
+In dieser Version führt VMware workloads die folgenden Verbesserungen ein:
 
 * *Unterstützung für datenspeicherübergreifende Schutzgruppen*: Sie können nun das Verhalten von Schutzgruppen beim Schutz virtueller Maschinen auswählen, deren virtuelle Festplatten sich über mehrere Datenspeicher erstrecken.
 * *Klonunterstützung*: Sie können jetzt Klone von Snapshots virtueller Maschinen aus dem primären und sekundären Speicher erstellen.
@@ -221,7 +326,12 @@ Weitere Informationen zum Schutz von Oracle Database-Workloads finden Sie unter 
 
 Weitere Informationen zum Schutz von VMware-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["Übersicht zum Schützen von VMware-Workloads"] .
 
-=== Verbesserungen für Kubernetes Workloads In dieser Version führt Kubernetes Workloads die folgenden Verbesserungen ein:
+
+
+[[kubernetes-workloads-enhancements]]
+=== Kubernetes-Workloads-Erweiterungen
+
+In dieser Version werden für Kubernetes-Workloads die folgenden Verbesserungen eingeführt:
 
 * *Trident Protect 26.05.1*: Diese Version enthält Trident Protect 26.05.1.
 * *Wiederherstellung direkt am Ort für VM-basierte Anwendungen*: Sie können VM-basierte Anwendungen jetzt im ursprünglichen Namespace und ursprünglichen Cluster wiederherstellen.
@@ -229,11 +339,19 @@ Weitere Informationen zum Schutz von VMware-Workloads finden Sie unter https://d
 
 Weitere Informationen zum Schutz von Kubernetes-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Übersicht zum Schützen von Kubernetes-Workloads"] .
 
+
+
+[[05-may-2026]]
 == 05. Mai 2026
 
 Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 
-=== Verbesserungen für Kubernetes Workloads In dieser Version führt Kubernetes Workloads die folgenden Verbesserungen ein:
+
+
+[[kubernetes-workloads-enhancements]]
+=== Kubernetes-Workloads-Erweiterungen
+
+In dieser Version werden für Kubernetes-Workloads die folgenden Verbesserungen eingeführt:
 
 * *Trident Protect 26.05*: Diese Version enthält Trident Protect 26.05.
 * *Upgrade Trident Protect von Backup und Recovery*: Wenn auf Ihrem Kubernetes-Cluster Trident Protect 26.05 oder neuer ausgeführt wird, können Sie Trident Protect jetzt direkt von Backup und Recovery aus aktualisieren.
@@ -244,27 +362,48 @@ Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 
 Weitere Informationen zum Schutz von Kubernetes-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Übersicht zum Schützen von Kubernetes-Workloads"] .
 
+
+
+[[20-april-2026]]
 == 20. April 2026
 
 Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 
-=== Verbesserungen für VMware Workloads In dieser Version bietet VMware Workloads die folgende Verbesserung:
+
+
+[[vmware-workloads-enhancements]]
+=== VMware-Workload-Verbesserungen
+
+In dieser Version führt VMware Workloads die folgende Verbesserung ein:
 
 *ASA r2 SAN-Unterstützung*: VMware-Workloads unterstützen jetzt den Schutz von VMs auf VMFS-Datenspeichern, die in NetApp ASA r2 SAN-only-Umgebungen gehostet werden.
 
 Weitere Informationen zum Schutz von VMware-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["Übersicht zum Schützen von VMware-Workloads"] .
 
+
+
+[[13-april-2026]]
 == 13. April 2026
 
 Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 
-=== Verbesserungen für ONTAP Volumes Workloads In dieser Version von ONTAP Volumes Workloads wird die folgende Verbesserung eingeführt:
+
+
+[[ontap-volumes-workloads-enhancements]]
+=== ONTAP Volumes Workloads-Verbesserungen
+
+In dieser Version führt ONTAP Volumes-Workloads die folgende Verbesserung ein:
 
 *NetApp MetroCluster Aktiv/Aktiv-Konfigurationen unterstützt*: NetApp Backup and Recovery for Volumes-Workloads unterstützt jetzt MetroCluster in der Aktiv/Aktiv-Konfiguration.
 
 Weitere Informationen zum Schutz von ONTAP Volumes-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["Überblick über den Schutz von ONTAP Volumes Workloads"].
 
-=== Verbesserungen für Kubernetes-Workloads In dieser Version führt Kubernetes-Workloads die folgenden Verbesserungen der Datensicherungsstrategie ein:
+
+
+[[kubernetes-workloads-enhancements]]
+=== Kubernetes-Workloads-Erweiterungen
+
+In dieser Version führt Kubernetes-Workloads die folgenden Verbesserungen der Datensicherungsstrategie ein:
 
 * *Bearbeitung der Schutzrichtlinien*: Sie können jetzt die Kubernetes-Workload-Schutzrichtlinien bearbeiten, falls Sie sie ändern müssen.
 * *Disk-to-Disk-Unterstützung*: Sie können jetzt Kubernetes-Schutzrichtlinien mit einer Disk-to-Disk-Backup-Architektur konfigurieren.
@@ -275,7 +414,12 @@ Weitere Informationen zu den Datensicherungsstrategien finden Sie unter https://
 
 Weitere Informationen zum Schutz von Kubernetes-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Übersicht zum Schützen von Kubernetes-Workloads"] .
 
-=== Verbesserungen für Hyper-V Workloads In dieser Version bietet Hyper-V Workloads die folgenden Verbesserungen:
+
+
+[[hyper-v-workloads-enhancements]]
+=== Hyper-V-Workload-Verbesserungen
+
+In dieser Version werden für Hyper-V-Workloads die folgenden Verbesserungen eingeführt:
 
 * *Verbesserte Auftragsabwicklung*: Backup and Recovery verarbeitet jetzt mehrere gleichzeitig laufende Aufträge effizienter.
 * *SAN-Unterstützung (Vorschau)*: Backup and Recovery unterstützt jetzt den Schutz von Hyper-V-VMs, die auf SAN-Speichern abgelegt sind.
@@ -283,7 +427,12 @@ Weitere Informationen zum Schutz von Kubernetes-Workloads finden Sie unter https
 
 Weitere Informationen zum Schutz von Hyper-V-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Hyper-V Schutzworkflow mit NetApp Backup and Recovery"].
 
-=== Verbesserungen für KVM Workloads In dieser Version wurden die folgenden Verbesserungen für KVM Workloads eingeführt:
+
+
+[[kvm-workloads-enhancements]]
+=== Verbesserungen für KVM-Workloads
+
+In dieser Version werden für KVM-Workloads die folgenden Verbesserungen eingeführt:
 
 * *Verbesserte Auftragsabwicklung*: Backup and Recovery verarbeitet jetzt mehrere gleichzeitig laufende Aufträge effizienter.
 * *Wiederherstellung an alternativem Speicherort (Vorschau)*: Sie können KVM-VMs jetzt an einem alternativen Ziel wiederherstellen. Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-restore.html["Wiederherstellen virtueller KVM-Maschinen mit NetApp Backup and Recovery"].
@@ -291,7 +440,12 @@ Weitere Informationen zum Schutz von Hyper-V-Workloads finden Sie unter  https:/
 
 Weitere Informationen zum Schutz von KVM-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Informationen zum Schutz von KVM-Workloads mit NetApp Backup and Recovery"].
 
-=== Verbesserungen für VMware Workloads In dieser Version führt VMware Workloads die folgenden Verbesserungen ein:
+
+
+[[vmware-workloads-enhancements]]
+=== VMware-Workload-Verbesserungen
+
+In dieser Version führt VMware workloads die folgenden Verbesserungen ein:
 
 * *Tagbasierter Schutz*: Backup and Recovery für VMware-Workloads unterstützt jetzt tagbasierten Schutz für VMs, die auf NFS- und VMFS-Volumes gespeichert sind, sodass Sie Schutzgruppen aus vCenter-Tags anstatt aus einzelnen VMs oder Datenspeichern erstellen können. Wenn Sie VMs und Datenspeicher in vCenter taggen, erkennt Backup and Recovery diese automatisch und schließt sie in zukünftige Backups ein, ohne dass eine manuelle Gruppenverwaltung erforderlich ist. Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protection-groups.html["Schutzgruppen erstellen und verwalten"].
 * *Wiederherstellung auf alternativem Speichersystem*: Sie können virtuelle Maschinen jetzt auch dann auf einem alternativen Speichersystem wiederherstellen, wenn das ursprüngliche (primäre) Speichersystem vollständig ausgefallen ist. Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-restore.html["Wiederherstellen von VMware-Workloads"].
@@ -303,11 +457,19 @@ Weitere Informationen zum Schutz von KVM-Workloads finden Sie unter  https://doc
 
 Weitere Informationen zum Schutz von VMware-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["Übersicht zum Schützen von VMware-Workloads"] .
 
+
+
+[[31-march-2026]]
 == 31. März 2026
 
 Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 
-=== Verbesserungen für Oracle Database Workloads In dieser Version gibt es die folgende Verbesserung für Oracle Database Workloads:
+
+
+[[oracle-database-workloads-enhancements]]
+=== Verbesserungen der Oracle Database Workloads
+
+In dieser Version wird für Oracle Database-Workloads die folgende Verbesserung eingeführt:
 
 * *Unterstützung für Cluster-Hosts*: Sie können jetzt Oracle Real Application Clusters (RAC)-Datenbanken erkennen und schützen, die Oracle Automatic Storage Management (ASM) verwenden und mit VMDK auf VMFS-Dateisystemen bereitgestellt werden. Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-start-discover-oracle.html["Oracle Database-Workloads entdecken"].
 * *RMAN-Katalogunterstützung*: Sie können Backup und Recovery jetzt so konfigurieren, dass Schutzmetadaten im RMAN-Wiederherstellungskatalog gespeichert werden, was Redundanz und langfristige Aufbewahrung für den Fall bietet, dass die Kontrolldatei verloren geht. Weitere Informationen finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-start-configure-oracle-database.html["Konfigurieren einer Oracle-Datenbank"].
@@ -315,21 +477,37 @@ Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 
 Weitere Informationen zum Schutz von Oracle Database-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Informationen zum Schutz von Oracle Database Workloads mit NetApp Backup and Recovery"].
 
+
+
+[[16-march-2026]]
 == 16. März 2026
 
 Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 
-=== Verbesserungen für VMware Workloads In dieser Version führt VMware Workloads die folgenden Verbesserungen ein:
+
+
+[[vmware-workloads-enhancements]]
+=== VMware-Workload-Verbesserungen
+
+In dieser Version führt VMware workloads die folgenden Verbesserungen ein:
 
 *VM-Konsistenzunterstützung pro Zeitplanstufe*: Sie können jetzt VM-konsistente und anwendungskonsistente Backups für bestimmte Zeitplanstufen aktivieren, wenn Sie Schutzrichtlinien für VMware-Workloads konfigurieren. Jährliche, monatliche und wöchentliche Zeitplanstufen werden unterstützt.
 
 Weitere Informationen zum Schutz von VMware-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["Übersicht zum Schützen von VMware-Workloads"] .
 
-== 9. März 2026
+
+
+[[09-march-2026]]
+== 09. März 2026
 
 Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 
-=== Verbesserungen für ONTAP Volumes Workloads In dieser Version führt ONTAP Volumes Workloads die folgenden erweiterten Funktionen ein:
+
+
+[[ontap-volumes-workloads-enhancements]]
+=== ONTAP Volumes Workloads-Verbesserungen
+
+In dieser Version führt ONTAP Volumes Workloads die folgenden erweiterten Funktionen ein:
 
 * *Wiederherstellung am Quellspeicherort*: Sie können jetzt Dateien aus lokalen Snapshots und replizierten Snapshots am Quellspeicherort sowie an einem alternativen Speicherort wiederherstellen.
 * *Stündliche Volumenerkennung*: Das Dashboard erkennt und aktualisiert neue Volumes jetzt schneller.
@@ -341,7 +519,12 @@ Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 
 Weitere Informationen zum Schutz von ONTAP Volume-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["Überblick über den Schutz von ONTAP Volume-Workloads"].
 
-=== Verbesserungen für VMware Workloads In dieser Version führt VMware Workloads die folgenden erweiterten Funktionen ein:
+
+
+[[vmware-workloads-enhancements]]
+=== VMware-Workload-Verbesserungen
+
+In dieser Version führt VMware workloads die folgenden erweiterten Funktionen ein:
 
 * *Gastdaten aus Objektspeicher wiederherstellen*: Sie können jetzt Gastdateien und -ordner aus dem Objektspeicher wiederherstellen.
 * *Schnellwiederherstellung für VMFS/NFS*: Sie können jetzt die Schnellwiederherstellungsoption beim Wiederherstellen an einem alternativen Speicherort aktivieren. Ist diese Option aktiviert, werden nur VM-Metadaten (Dateien, LUNs und Namespaces) aus dem Objektspeicher abgerufen, wodurch Volumes schneller verfügbar sind als bei einer vollständigen Wiederherstellung.
@@ -350,29 +533,60 @@ Weitere Informationen zum Schutz von ONTAP Volume-Workloads finden Sie unter  ht
 
 Weitere Informationen zum Schutz von VMware-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["Übersicht zum Schützen von VMware-Workloads"] .
 
+
+
+[[23-february-2026]]
 == 23. Februar 2026
 
 Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 
-=== KVM-Workloads werden in der General Availability (GA) unterstützt KVM-Workload-Unterstützung ist jetzt in NetApp Backup und Recovery allgemein verfügbar (GA).
+
+
+[[kvm-workloads-supported-in-general-availability-ga]]
+=== KVM-Workloads, die in der General Availability (GA) unterstützt werden
+
+Die Unterstützung für KVM-Workloads ist jetzt allgemein verfügbar (GA) in NetApp Backup and Recovery.
 
 Weitere Informationen zum Schutz von KVM-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Informationen zum Schutz von KVM-Workloads mit NetApp Backup and Recovery"].
 
-=== Kubernetes-Workloads werden ab sofort allgemein unterstützt (GA). Die Unterstützung für Kubernetes-Workloads ist jetzt allgemein in NetApp Backup und Recovery verfügbar (GA). Diese Version von Kubernetes-Workloads bietet außerdem die folgenden erweiterten Funktionen:
+
+
+[[kubernetes-workloads-supported-in-general-availability-ga]]
+=== Unterstützte Kubernetes-Workloads in der General Availability (GA)
+
+Die Unterstützung für Kubernetes-Workloads ist jetzt allgemein verfügbar (GA) in NetApp Backup and Recovery. Diese Version von Kubernetes-Workloads bietet außerdem die folgenden erweiterten Funktionen:
 
 *Berichtsunterstützung*: Sie können jetzt Berichte über die Schutzaktivitäten für Kubernetes-Cluster und Anwendungen generieren, die durch NetApp Backup and Recovery geschützt sind.
 
 Weitere Informationen zum Schutz von Kubernetes-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Übersicht zum Schützen von Kubernetes-Workloads"] .
 
+
+
+[[09-february-2026]]
 == 09. Februar 2026
 
 Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 
-=== Microsoft Hyper-V Workloads werden in der allgemeinen Verfügbarkeit (GA) unterstützt Die Unterstützung für Microsoft Hyper-V Workloads ist jetzt allgemein in NetApp Backup und Recovery verfügbar (GA).
 
-=== VMware Workloads werden in der allgemeinen Verfügbarkeit (GA) unterstützt Die Unterstützung für VMware Workloads ist jetzt allgemein in NetApp Backup und Recovery verfügbar (GA).
 
-=== Verbesserungen für Kubernetes Workloads Diese Version von Kubernetes Workloads bietet die folgenden erweiterten Funktionen:
+[[microsoft-hyper-v-workloads-supported-in-general-availability-ga]]
+=== Microsoft Hyper-V-Workloads, die in General Availability (GA) unterstützt werden
+
+Die Unterstützung für Microsoft Hyper-V-Workloads ist jetzt allgemein verfügbar (GA) in NetApp Backup and Recovery.
+
+
+
+[[vmware-workloads-supported-in-general-availability-ga]]
+=== Unterstützte VMware-Workloads in der allgemeinen Verfügbarkeit (GA)
+
+Die Unterstützung für VMware-Workloads ist jetzt allgemein verfügbar (GA) in NetApp Backup and Recovery.
+
+
+
+[[kubernetes-workloads-enhancements]]
+=== Kubernetes-Workloads-Erweiterungen
+
+Diese Version von Kubernetes-Workloads bietet die folgenden erweiterten Funktionen:
 
 * *CR-Workflow-Unterstützung*: Sie können jetzt gängige Schutzaufgaben sowohl mit CRs als auch über die Backup and Recovery-Weboberfläche durchführen.
 * *Clustermigration*: Sie können jetzt bestehende Kubernetes-Cluster, die mit Trident Protect geschützt sind, zu Backup and Recovery hinzufügen.
@@ -383,7 +597,12 @@ Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 
 Weitere Informationen zum Schutz von Kubernetes-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Übersicht zum Schützen von Kubernetes-Workloads"] .
 
-=== Verbesserungen der Oracle Database Workloads Diese Version der Oracle Database Workloads bietet die folgenden erweiterten Funktionen:
+
+
+[[oracle-database-workloads-enhancements]]
+=== Verbesserungen der Oracle Database Workloads
+
+Diese Version der Oracle Database Workloads bietet die folgenden erweiterten Funktionen:
 
 * *Unterstützung für Nicht-Root-Benutzer*: Nicht-Root-Benutzer können nun Sicherungs-, Wiederherstellungs- und Klonvorgänge durchführen, was die Sicherheit und Compliance verbessert.
 * *Klonunterstützung*: Klonfunktionen werden jetzt in primären und sekundären NAS-, SAN- und ASM-Umgebungen mithilfe der ASM library v2 unterstützt, wodurch koordinierte Schutz-Workflows ermöglicht werden.
@@ -405,17 +624,30 @@ Weitere Informationen zum Schutz von Kubernetes-Workloads finden Sie unter https
 
 Weitere Informationen zum Schutz von Oracle Database-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Informationen zum Schutz von Oracle Database Workloads mit NetApp Backup and Recovery"].
 
+
+
+[[19-january-2026]]
 == 19. Januar 2026
 
 Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 
-=== Verbesserungen für ONTAP Volume Workloads Diese Version von ONTAP Volume Workloads bietet die folgende erweiterte Funktion:
+
+
+[[ontap-volume-workloads-enhancements]]
+=== ONTAP Volume-Workload-Erweiterungen
+
+Diese Version der ONTAP Volume-Workloads führt die folgenden erweiterten Funktionen ein:
 
 *Unterstützung für mehrere Buckets*: (Private Vorschau) Ab ONTAP 9.17.1 und neueren Versionen können Sie nun die Volumes innerhalb eines Systems mit bis zu 6 Buckets pro System über verschiedene Cloud-Anbieter hinweg schützen.
 
 link:https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-backup-manage.html["Erfahren Sie mehr über die Sicherung von ONTAP Volume-Daten mit NetApp Backup and Recovery."].
 
-=== Verbesserungen für VMware Workloads Diese Version von VMware Workloads bietet die folgenden erweiterten Funktionen:
+
+
+[[vmware-workloads-enhancements]]
+=== VMware-Workload-Verbesserungen
+
+Diese Version von VMware-Workloads bietet die folgenden erweiterten Funktionen:
 
 * Die Unterstützung für VMware-Workloads ist jetzt allgemein verfügbar (GA) in NetApp Backup and Recovery.
 * Sie können jetzt Gastbetriebssystemdateien und -ordner wiederherstellen.
@@ -423,7 +655,12 @@ link:https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-back
 
 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-restore-guest-files-and-folders-overview.html["Erfahren Sie mehr über das Wiederherstellen von Gastdateien und -ordnern."]Die
 
-=== Vorschau-Verbesserungen für Hyper-V Workloads Diese Version von Hyper-V Workloads bietet die folgenden erweiterten Funktionen:
+
+
+[[hyper-v-workloads-preview-enhancements]]
+=== Vorschau der Verbesserungen für Hyper-V-Workloads
+
+Diese Version von Hyper-V-Workloads bietet die folgenden erweiterten Funktionen:
 
 * Sie können jetzt Hyper-V-VM-Backups und -Snapshots an einem alternativen Speicherort wiederherstellen. Nutzen Sie diese Funktion, um VM-Versionen auf verschiedenen Hyper-V-Hosts zu verwalten.
 * NetApp Backup und Recovery unterstützt jetzt Hyper-V-VMs, die von System Center Virtual Machine Manager (SCVMM) bereitgestellt und auf einer CIFS-Freigabe gehostet werden.
@@ -435,17 +672,28 @@ NOTE: Nur in dieser Version ist es nicht möglich, die NetApp -Plugins für Hype
 
 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-restore.html["Erfahren Sie mehr über die Wiederherstellung von Hyper-V-VMs mit NetApp Backup and Recovery."]Die
 
+
+
+[[kvm-workloads-preview-enhancements]]
 === Vorschau der Verbesserungen für KVM-Workloads
 
 Die KVM-Workload-Vorschau schützt jetzt KVM-Hosts und virtuelle Maschinen, die von Apache CloudStack verwaltet werden.
 
 Weitere Informationen zum Schutz von KVM-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Informationen zum Schutz von KVM-Workloads mit NetApp Backup and Recovery"].
 
+
+
+[[08-december-2025]]
 == 08. Dezember 2025
 
 Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 
-=== Verbesserungen in der VMware Workloads-Vorschauversion Die Vorschauversion von VMware Workloads führt die folgenden erweiterten Funktionen ein:
+
+
+[[vmware-workloads-preview-enhancements]]
+=== VMware Workloads Vorschau-Verbesserungen
+
+Die Vorschauversion von VMware-Workloads führt die folgenden erweiterten Funktionen ein:
 
 * Sie können Backups und Snapshots jetzt an einem alternativen Speicherort wiederherstellen. Dies ist nützlich, wenn Sie Versionen einer VM auf verschiedenen VMware vCenter-Bereitstellungen, VMware ESXi-Hosts oder VMware-Datenspeichern verwalten möchten.
 
@@ -457,21 +705,33 @@ link:br-use-vmware-restore.html["Erfahren Sie mehr über die Wiederherstellung v
 
 link:br-use-vmware-restore-vmdks-from-backups.html["Erfahren Sie mehr über die Wiederherstellung virtueller VMware-Festplatten mit NetApp Backup and Recovery."].
 
+
+
+[[06-october-2025]]
 == 06. Oktober 2025
 
 Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 
-=== BlueXP Backup und Recovery heißt jetzt NetApp Backup und Recovery
+
+
+[[bluexp-backup-and-recovery-is-now-netapp-backup-and-recovery]]
+=== BlueXP backup and recovery heißt jetzt NetApp Backup and Recovery
 
 BlueXP backup and recovery wurde in NetApp Backup and Recovery umbenannt.
 
-=== BlueXP ist jetzt NetApp Console
+
+
+[[bluexp-is-now-netapp-console]]
+=== BlueXP heißt jetzt NetApp Console
 
 Die NetApp Console basiert auf der verbesserten und neu strukturierten BlueXP -Grundlage und ermöglicht die zentrale Verwaltung von NetApp Storage und NetApp Data Services in On-Premises- und Cloud-Umgebungen auf Unternehmensniveau. Sie liefert Einblicke in Echtzeit, schnellere Workflows und eine vereinfachte Administration, die äußerst sicher und konform ist.
 
 Einzelheiten zu den Änderungen finden Sie imlink:https://docs.netapp.com/us-en/console-relnotes/index.html["Versionshinweise zur NetApp Console ."]
 
-=== Hyper-V Workload-Unterstützung als private Vorschau
+
+
+[[hyper-v-workload-support-as-a-private-preview]]
+=== Hyper-V-Workload-Unterstützung als private Vorschau
 
 Diese Version von NetApp Backup and Recovery bietet Unterstützung für die Erkennung und Verwaltung von Hyper-V-Workloads:
 
@@ -485,7 +745,10 @@ Diese Version von NetApp Backup and Recovery bietet Unterstützung für die Erke
 
 Weitere Informationen zum Schutz von Hyper-V-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Hyper-V Schutzworkflow mit NetApp Backup and Recovery"].
 
-=== KVM Workload-Unterstützung als private Vorschau
+
+
+[[kvm-workload-support-as-a-private-preview]]
+=== KVM-Workload-Unterstützung als private Vorschau
 
 Diese Version von NetApp Backup and Recovery bietet Unterstützung für die Erkennung und Verwaltung von KVM-Workloads:
 
@@ -499,7 +762,12 @@ Diese Version von NetApp Backup and Recovery bietet Unterstützung für die Erke
 
 Weitere Informationen zum Schutz von KVM-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Informationen zum Schutz von KVM-Workloads mit NetApp Backup and Recovery"].
 
-=== Verbesserungen in der Kubernetes-Vorschau Die Vorschauversion von Kubernetes-Workloads bietet die folgenden erweiterten Funktionen:
+
+
+[[kubernetes-preview-enhancements]]
+=== Verbesserungen der Kubernetes-Vorschau
+
+Die Vorschauversion der Kubernetes-Workloads führt die folgenden erweiterten Funktionen ein:
 
 * Unterstützung der 3-2-1 Fan-Out-Backup-Architektur
 * Unterstützung für ONTAP S3 als Backup-Ziel
@@ -518,7 +786,12 @@ Weitere Informationen zum Schutz von KVM-Workloads finden Sie unter  https://doc
 
 Weitere Informationen zum Schutz von Kubernetes-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Übersicht zum Schützen von Kubernetes-Workloads"] .
 
-=== VMware Preview-Verbesserungen Die Preview-Version von VMware Workloads führt die folgenden erweiterten Funktionen ein:
+
+
+[[vmware-preview-enhancements]]
+=== Verbesserungen der VMware-Vorschau
+
+Die Vorschauversion von VMware-Workloads führt die folgenden erweiterten Funktionen ein:
 
 * Unterstützung für die Wiederherstellung aus dem Objektspeicher
 * Das Dashboard der NetApp Console zeigt jetzt Informationen zum VMware-Workload-Status an
@@ -531,7 +804,10 @@ Weitere Informationen zum Schutz von Kubernetes-Workloads finden Sie unter https
 
 Weitere Informationen zum Schutz von VMware-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["Übersicht zum Schützen von VMware-Workloads"] .
 
-=== Unterstützung für Oracle Database Workloads als private Vorschau
+
+
+[[oracle-database-workload-support-as-a-private-preview]]
+=== Oracle Database-Workload-Unterstützung als private Vorschau
 
 Diese Version von NetApp Backup and Recovery bietet Unterstützung für die Erkennung und Verwaltung von Oracle Database-Workloads:
 
@@ -547,15 +823,26 @@ Diese Version von NetApp Backup and Recovery bietet Unterstützung für die Erke
 
 Weitere Informationen zum Schutz von Oracle Database-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Informationen zum Schutz von Oracle Database Workloads mit NetApp Backup and Recovery"].
 
-=== Verbesserungen für ONTAP Volume-Workloads Diese Version der ONTAP Volume-Workloads bietet die folgende erweiterte Funktion:
+
+
+[[ontap-volume-workload-enhancements]]
+=== Verbesserungen der ONTAP Volume-Workload
+
+Diese Version der ONTAP Volume-Workloads führt die folgenden erweiterten Funktionen ein:
 
 Ab ONTAP 9.17.1 und neuer wird DataLock jetzt mit der Google Cloud Platform unterstützt. Dies ergänzt die bestehende DataLock-Unterstützung mit Amazon AWS, Microsoft Azure und NetApp StorageGRID.
 
+
+
+[[25-august-2025]]
 == 25. August 2025
 
 Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 
-=== Unterstützung für den Schutz von VMware Workloads in der Vorschau
+
+
+[[support-for-protecting-vmware-workloads-in-preview]]
+=== Unterstützung für den Schutz von VMware-Workloads in der Vorschau
 
 Diese Version fügt Vorschauunterstützung zum Schutz von VMware-Workloads hinzu. Sichern Sie VMware-VMs und Datenspeicher von lokalen ONTAP -Systemen auf Amazon Web Services und StorageGRID.
 
@@ -564,7 +851,10 @@ NOTE: Dokumentation zum Schutz von VMware-Workloads wird als Technologievorschau
 
 link:br-use-vmware-protect-overview.html["Erfahren Sie mehr über den Schutz von VMware-Workloads mit NetApp Backup and Recovery"].
 
-=== Hochleistungs-Indizierung für AWS, Azure und GCP ist allgemein verfügbar
+
+
+[[high-performance-indexing-for-aws-azure-and-gcp-is-generally-available]]
+=== Hochleistungsindizierung für AWS, Azure und GCP ist allgemein verfügbar
 
 Im Februar 2025 haben wir die Vorschau der Hochleistungsindizierung (Indexed Catalog v2) für AWS, Azure und GCP angekündigt. Diese Funktion ist jetzt allgemein verfügbar (GA). Im Juni 2025 haben wir es allen _neuen_ Kunden standardmäßig zur Verfügung gestellt. Mit dieser Version steht der Support _allen_ Kunden zur Verfügung. Durch die Hochleistungsindizierung wird die Leistung von Sicherungs- und Wiederherstellungsvorgängen für Workloads verbessert, die im Objektspeicher geschützt sind.
 
@@ -574,11 +864,17 @@ Standardmäßig aktiviert:
 * Wenn Sie bereits Kunde sind, können Sie die Neuindizierung aktivieren, indem Sie zum Abschnitt „Wiederherstellen“ der Benutzeroberfläche gehen.
 
 
+
+
+[[12-august-2025]]
 == 12. August 2025
 
 Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 
-=== Microsoft SQL Server Workload wird in der General Availability (GA) unterstützt
+
+
+[[microsoft-sql-server-workload-supported-in-general-availability-ga]]
+=== Microsoft SQL Server-Workload wird in der allgemeinen Verfügbarkeit (GA) unterstützt
 
 Die Unterstützung für Microsoft SQL Server Workloads ist jetzt allgemein in NetApp Backup and Recovery verfügbar. Organisationen, die eine MSSQL-Umgebung auf ONTAP, Cloud Volumes ONTAP und Amazon FSx for NetApp ONTAP Storage nutzen, können nun diesen neuen Backup and Recovery Service zum Schutz ihrer Daten nutzen.
 
@@ -616,7 +912,10 @@ image:../media/screen-br-dashboard3.png["NetApp Backup and Recovery -Dashboard"]
 
 
 
-=== ONTAP Volume Workload-Erweiterungen
+
+
+[[ontap-volume-workload-enhancements]]
+=== Verbesserungen der ONTAP Volume-Workload
 
 * *Wiederherstellung mehrerer Ordner für ONTAP -Volumes*: Bisher konnten Sie mit der Funktion „Durchsuchen und Wiederherstellen“ entweder einen Ordner oder mehrere Dateien gleichzeitig wiederherstellen. NetApp Backup and Recovery bietet jetzt die Möglichkeit, mithilfe der Funktion „Durchsuchen und Wiederherstellen“ mehrere Ordner gleichzeitig auszuwählen.
 * *Backups gelöschter Volumes anzeigen und verwalten*: Das NetApp Backup and Recovery Dashboard bietet jetzt eine Option zum Anzeigen und Verwalten von Volumes, die aus ONTAP gelöscht wurden. Damit können Sie Backups von Volumes anzeigen und löschen, die in ONTAP nicht mehr vorhanden sind.
@@ -628,11 +927,17 @@ CAUTION: Verwenden Sie diese Option mit Vorsicht und nur bei extremem Reinigungs
 
 Siehe https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["Schützen Sie ONTAP -Workloads"] .
 
+
+
+[[28-july-2025]]
 == 28. Juli 2025
 
 Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 
-=== Kubernetes Workload-Unterstützung als Vorschau
+
+
+[[kubernetes-workload-support-as-a-preview]]
+=== Kubernetes-Workload-Unterstützung als Vorschau
 
 Diese Version von NetApp Backup and Recovery bietet Unterstützung für die Erkennung und Verwaltung von Kubernetes-Workloads:
 
@@ -647,11 +952,17 @@ Diese Version von NetApp Backup and Recovery bietet Unterstützung für die Erke
 
 Weitere Informationen zum Schutz von Kubernetes-Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Übersicht zum Schützen von Kubernetes-Workloads"] .
 
+
+
+[[14-july-2025]]
 == 14. Juli 2025
 
 Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 
-=== Erweitertes ONTAP Volume Dashboard
+
+
+[[enhanced-ontap-volume-dashboard]]
+=== Verbessertes ONTAP Volume Dashboard
 
 Im April 2025 haben wir eine Vorschau eines verbesserten ONTAP Volume Dashboards veröffentlicht, das viel schneller und effizienter ist.
 
@@ -661,7 +972,10 @@ Nach einer erfolgreichen Vorschau und großartigem Feedback von Vorschaukunden m
 
 Weitere Einzelheiten finden Sie unterlink:br-use-dashboard.html["Anzeigen des Schutzstatus im Dashboard"] .
 
-=== Microsoft SQL Server Workload-Unterstützung als Public Technology Preview
+
+
+[[microsoft-sql-server-workload-support-as-a-public-technology-preview]]
+=== Microsoft SQL Server-Workload-Unterstützung als Public Technology Preview
 
 Diese Version von NetApp Backup and Recovery bietet eine aktualisierte Benutzeroberfläche, mit der Sie Microsoft SQL Server-Workloads mithilfe einer 3-2-1-Schutzstrategie verwalten können, die Sie von NetApp Backup and Recovery kennen. Mit dieser neuen Version können Sie diese Workloads im Primärspeicher sichern, sie im Sekundärspeicher replizieren und sie im Cloud-Objektspeicher sichern.
 
@@ -684,11 +998,19 @@ Diese Version von NetApp Backup and Recovery enthält die folgenden Updates:
 
 Weitere Informationen zum Schutz von Microsoft SQL Server-Workloads finden Sie unterlink:br-use-mssql-protect-overview.html["Übersicht zum Schützen von Microsoft SQL Server-Workloads"] .
 
-== 9. Juni 2025
+
+
+[[09-june-2025]]
+== 09. Juni 2025
 
 Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 
-=== Aktualisierungen der Unterstützung für den indizierten Katalog Im Februar 2025 wurde die aktualisierte Indizierungsfunktion (Indexed Catalog v2) eingeführt, die während der Methode „Search & Restore“ zur Wiederherstellung von Daten verwendet wird. Die vorherige Version verbesserte die Datenindexierungsleistung in lokalen Umgebungen deutlich. Mit dieser Version ist der Indexierungskatalog nun auch für Amazon Web Services, Microsoft Azure und Google Cloud Platform (GCP) verfügbar.
+
+
+[[indexed-catalog-support-updates]]
+=== Aktualisierungen der Unterstützung für indizierte Kataloge
+
+Im Februar 2025 haben wir die aktualisierte Indizierungsfunktion (Indexed Catalog v2) eingeführt, die Sie während der Such- und Wiederherstellungsmethode zum Wiederherstellen von Daten verwenden. Die vorherige Version hat die Leistung der Datenindizierung in lokalen Umgebungen erheblich verbessert. Mit dieser Version ist der Indexierungskatalog jetzt in den Umgebungen Amazon Web Services, Microsoft Azure und Google Cloud Platform (GCP) verfügbar.
 
 Wenn Sie ein neuer Kunde sind, ist der indizierte Katalog v2 standardmäßig für alle neuen Umgebungen aktiviert. Wenn Sie bereits Kunde sind, können Sie Ihre Umgebung neu indizieren, um den Indexed Catalog v2 zu nutzen.
 
@@ -699,7 +1021,10 @@ Der indizierte Katalog kann dann jedes Volume und jede Sicherungsdatei verfolgen
 
 Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-restore.html["Indizierung für Suchen und Wiederherstellen aktivieren"] .
 
-=== Azure Private Link Endpunkte und Dienstendpunkte
+
+
+[[azure-private-link-endpoints-and-service-endpoints]]
+=== Azure Private Link-Endpunkte und Dienstendpunkte
 
 Normalerweise richtet NetApp Backup and Recovery einen privaten Endpunkt beim Cloud-Anbieter ein, um Schutzaufgaben zu übernehmen. Diese Version führt eine optionale Einstellung ein, mit der Sie die automatische Erstellung eines privaten Endpunkts durch NetApp Backup and Recovery aktivieren oder deaktivieren können. Dies kann für Sie nützlich sein, wenn Sie mehr Kontrolle über den Prozess der Erstellung privater Endpunkte wünschen.
 
@@ -707,21 +1032,33 @@ Sie können diese Option aktivieren oder deaktivieren, wenn Sie den Schutz aktiv
 
 Wenn Sie diese Einstellung deaktivieren, müssen Sie den privaten Endpunkt manuell erstellen, damit NetApp Backup and Recovery ordnungsgemäß funktioniert. Ohne ordnungsgemäße Konnektivität können Sie Sicherungs- und Wiederherstellungsaufgaben möglicherweise nicht erfolgreich durchführen.
 
+
+
+[[support-for-snapmirror-to-cloud-resync-on-ontap-s3]]
 === Unterstützung für SnapMirror to Cloud Resync auf ONTAP S3
 
 Die vorherige Version führte die Unterstützung für SnapMirror zu Cloud Resync (SM-C Resync) ein. Diese Funktion vereinfacht den Datenschutz bei der Volume-Migration in NetApp-Umgebungen. Diese Version erweitert die Unterstützung um SM-C Resync für ONTAP S3 sowie weitere S3-kompatible Anbieter wie Wasabi und MinIO.
 
-=== Eigenen Bucket für StorageGRID bereitstellen
+
+
+[[bring-your-own-bucket-for-storagegrid]]
+=== Bringen Sie Ihren eigenen Bucket für StorageGRID mit
 
 Wenn Sie Sicherungsdateien im Objektspeicher für eine Arbeitsumgebung erstellen, erstellt NetApp Backup and Recovery standardmäßig den Container (Bucket oder Speicherkonto) für die Sicherungsdateien im von Ihnen konfigurierten Objektspeicherkonto. Bisher konnten Sie dies überschreiben und Ihren eigenen Container für Amazon S3, Azure Blob Storage und Google Cloud Storage angeben. Mit dieser Version können Sie jetzt Ihren eigenen StorageGRID Objektspeichercontainer mitbringen.
 
 Sehen https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-journey.html["Erstellen Sie Ihren eigenen Objektspeichercontainer"] .
 
+
+
+[[13-may-2025]]
 == 13. Mai 2025
 
 Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 
-=== SnapMirror to Cloud Resync für Volume-Migrationen
+
+
+[[snapmirror-to-cloud-resync-for-volume-migrations]]
+=== SnapMirror to Cloud Resync für Volumemigrationen
 
 Die SnapMirror to Cloud Resync-Funktion optimiert den Datenschutz und die Kontinuität während Volumemigrationen in NetApp -Umgebungen. Wenn ein Volume mithilfe von SnapMirror Logical Replication (LRSE) von einer lokalen NetApp Bereitstellung zu einer anderen oder zu einer Cloud-basierten Lösung wie Cloud Volumes ONTAP migriert wird, stellt SnapMirror to Cloud Resync sicher, dass bestehende Cloud-Backups intakt und betriebsbereit bleiben.
 
@@ -731,7 +1068,10 @@ Durch die Aufrechterhaltung der Backup-Kontinuität in allen Umgebungen steigert
 
 Einzelheiten zur Durchführung des Resynchronisierungsvorgangs finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-migrate-resync.html["Migrieren Sie Volumes mit SnapMirror zu Cloud Resync"] .
 
-=== Unterstützung für MinIO Objektspeicher (Vorschau)
+
+
+[[support-for-third-party-minio-object-store-preview]]
+=== Unterstützung für MinIO-Objektspeicher von Drittanbietern (Vorschau)
 
 NetApp Backup and Recovery erweitert jetzt seine Unterstützung auf Objektspeicher von Drittanbietern mit einem Schwerpunkt auf MinIO.  Mit dieser neuen Vorschaufunktion können Sie jeden S3-kompatiblen Objektspeicher für Ihre Sicherungs- und Wiederherstellungsanforderungen nutzen.
 
@@ -756,10 +1096,16 @@ Obwohl sich diese Funktion in der Vorschauphase befindet, gelten bestimmte Einsc
 
 Um diese Vorschaufunktion zu nutzen, müssen Sie ein Flag im Console-Agent aktivieren. Anschließend können Sie die Verbindungsdetails Ihres MinIO-Objektspeichers im Schutz-Workflow eingeben, indem Sie im Sicherungsbereich *Third party Compatible* Objektspeicher auswählen.
 
+
+
+[[16-april-2025]]
 == 16. April 2025
 
 Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 
+
+
+[[ui-improvements]]
 === Verbesserungen der Benutzeroberfläche
 
 Diese Version verbessert Ihr Erlebnis durch Vereinfachung der Benutzeroberfläche:
@@ -771,13 +1117,21 @@ Diese Version verbessert Ihr Erlebnis durch Vereinfachung der Benutzeroberfläch
 * Während des Aktivierungsprozesses der Arbeitsumgebung wird in einem Dialogfeld ein Ladesymbol angezeigt, um Feedback zu geben, bis der Erkennungsprozess abgeschlossen ist. Dies erhöht die Transparenz und das Vertrauen in die Funktionsweise des Systems.
 
 
-=== Erweitertes Volume Dashboard (Vorschau)
+
+
+[[enhanced-volume-dashboard-preview]]
+=== Verbessertes Volume-Dashboard (Vorschau)
 
 Das Volume Dashboard wird jetzt in weniger als 10 Sekunden geladen und bietet eine viel schnellere und effizientere Benutzeroberfläche.  Diese Vorschauversion steht ausgewählten Kunden zur Verfügung und bietet ihnen einen ersten Einblick in diese Verbesserungen.
 
-=== Unterstützung für Wasabi Objektspeicher von Drittanbietern (Vorschau)
+
+
+[[support-for-third-party-wasabi-object-store-preview]]
+=== Unterstützung für Wasabi-Objektspeicher von Drittanbietern (Vorschau)
 
 NetApp Backup and Recovery erweitert jetzt seine Unterstützung auf Objektspeicher von Drittanbietern mit einem Schwerpunkt auf Wasabi.  Mit dieser neuen Vorschaufunktion können Sie jeden S3-kompatiblen Objektspeicher für Ihre Sicherungs- und Wiederherstellungsanforderungen nutzen.
+
+
 
 ==== Erste Schritte mit Wasabi
 
@@ -806,6 +1160,8 @@ vi default.json
 .Ergebnis
 Nachdem der Container wieder eingeschaltet ist, öffnen Sie die NetApp Backup and Recovery -Benutzeroberfläche.  Wenn Sie eine Sicherung initiieren oder eine Sicherungsstrategie bearbeiten, wird der neue Anbieter „S3-kompatibel“ zusammen mit anderen Sicherungsanbietern von AWS, Microsoft Azure, Google Cloud, StorageGRID und ONTAP S3 aufgeführt.
 
+
+
 ==== Einschränkungen des Vorschaumodus
 
 Während sich diese Funktion in der Vorschauphase befindet, beachten Sie bitte die folgenden Einschränkungen:
@@ -820,31 +1176,52 @@ Während sich diese Funktion in der Vorschauphase befindet, beachten Sie bitte d
 
 Wir empfehlen Ihnen, während dieser Vorschau diese neue Funktion zu erkunden und Feedback zur Integration mit Objektspeichern von Drittanbietern zu geben, bevor die vollständige Funktionalität eingeführt wird.
 
+
+
+[[17-march-2025]]
 == 17. März 2025
 
 Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 
-=== SMB Snapshot-Durchsuchen
+
+
+[[smb-snapshot-browsing]]
+=== Durchsuchen von SMB-Snapshots
 
 Dieses Update für NetApp Backup and Recovery behebt ein Problem, das Kunden daran hinderte, lokale Snapshots in einer SMB-Umgebung zu durchsuchen.
 
-=== AWS GovCloud Umgebungsaktualisierung
+
+
+[[aws-govcloud-environment-update]]
+=== AWS GovCloud-Umgebungsupdate
 
 Dieses Update für NetApp Backup and Recovery behebt ein Problem, das aufgrund von TLS-Zertifikatfehlern die Verbindung der Benutzeroberfläche mit einer AWS GovCloud-Umgebung verhinderte.  Das Problem wurde behoben, indem anstelle der IP-Adresse der Hostname des Konsolenagenten verwendet wurde.
 
-=== Aufbewahrungsgrenzen der Backup-Richtlinie
+
+
+[[backup-policy-retention-limits]]
+=== Aufbewahrungsgrenzen für Sicherungsrichtlinien
 
 Zuvor beschränkte die NetApp Backup and Recovery Benutzeroberfläche die Anzahl der Backups auf 999 Kopien, während die CLI mehr zuließ.  Jetzt können Sie bis zu 4.000 Volumes an eine Sicherungsrichtlinie anhängen und 1.018 Volumes einschließen, die keiner Sicherungsrichtlinie angehängt sind.  Dieses Update enthält zusätzliche Validierungen, die ein Überschreiten dieser Grenzwerte verhindern.
 
-=== SnapMirror Cloud-Resynchronisierung
+
+
+[[snapmirror-cloud-resync]]
+=== SnapMirror Cloud-Neusynchronisierung
 
 Dieses Update stellt sicher, dass die SnapMirror Cloud-Neusynchronisierung nicht von NetApp Backup and Recovery für nicht unterstützte ONTAP Versionen gestartet werden kann, nachdem eine SnapMirror Beziehung gelöscht wurde.
 
+
+
+[[21-february-2025]]
 == 21. Februar 2025
 
 Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 
-=== High Performance Indizierung
+
+
+[[high-performance-indexing]]
+=== Leistungsstarke Indizierung
 
 NetApp Backup and Recovery führt eine aktualisierte Indizierungsfunktion ein, die die Indizierung von Daten auf dem Quellsystem effizienter macht.  Die neue Indexierungsfunktion umfasst Aktualisierungen der Benutzeroberfläche, eine verbesserte Leistung der Such- und Wiederherstellungsmethode zum Wiederherstellen von Daten, Upgrades der globalen Suchfunktionen und eine bessere Skalierbarkeit.
 
@@ -878,7 +1255,10 @@ Die neue Indizierungsfunktion unterstützt Folgendes:
 * Die maximale Zeit für die Basisindexierung beträgt weniger als 7 Tage.  Die tatsächliche Zeit hängt von Ihrer Umgebung ab.
 
 
-=== Verbesserungen der globalen Suchleistung
+
+
+[[global-search-performance-improvements]]
+=== Leistungsverbesserungen bei der globalen Suche
 
 Diese Version enthält auch Verbesserungen der globalen Suchleistung.  Sie sehen jetzt Fortschrittsanzeigen und detailliertere Suchergebnisse, einschließlich der Anzahl der Dateien und der für die Suche benötigten Zeit.  Spezielle Container für Suche und Indizierung stellen sicher, dass globale Suchvorgänge in weniger als fünf Minuten abgeschlossen sind.
 
@@ -888,11 +1268,17 @@ Beachten Sie die folgenden Überlegungen zur globalen Suche:
 * Die neue Indizierungsfunktion funktioniert nur bei Snapshots auf FlexVols und nicht bei Snapshots auf FlexGroups.
 
 
+
+
+[[13-february-2025]]
 == 13. Februar 2025
 
 Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 
-=== NetApp Backup und Recovery Vorschauversion
+
+
+[[netapp-backup-and-recovery-preview-release]]
+=== Vorschauversion von NetApp Backup and Recovery
 
 Diese Vorschauversion von NetApp Backup and Recovery bietet eine aktualisierte Benutzeroberfläche, mit der Sie Microsoft SQL Server-Workloads mithilfe einer 3-2-1-Schutzstrategie verwalten können, die Sie von NetApp Backup and Recovery kennen. Mit dieser neuen Version können Sie diese Workloads im Primärspeicher sichern, sie im Sekundärspeicher replizieren und sie im Cloud-Objektspeicher sichern.
 
@@ -907,17 +1293,28 @@ Diese Version von NetApp Backup and Recovery Preview 2025 enthält die folgenden
 * Mit dieser Version können Sie SnapCenter -Workloads in NetApp Backup and Recovery importieren.
 
 
+
+
+[[22-november-2024]]
 == 22. November 2024
 
 Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 
+
+
+[[snaplock-compliance-and-snaplock-enterprise-protection-modes]]
 === SnapLock Compliance und SnapLock Enterprise Schutzmodi
 
 NetApp Backup and Recovery kann jetzt sowohl FlexVol- als auch FlexGroup-On-Premises-Volumes sichern, die entweder im SnapLock Compliance- oder SnapLock Enterprise-Schutzmodus konfiguriert sind. Ihre Cluster müssen für diese Unterstützung ONTAP 9.14 oder höher ausführen. Die Sicherung von FlexVol-Volumes im SnapLock Enterprise-Modus wird seit ONTAP 9.11.1 unterstützt. Frühere ONTAP-Versionen unterstützen die Sicherung von SnapLock-geschützten Volumes nicht.
 
 Die vollständige Liste der unterstützten Volumes finden Sie in  https://docs.netapp.com/us-en/data-services-backup-recovery/concept-backup-to-cloud.html["Erfahren Sie mehr über NetApp Backup and Recovery"].
 
-=== Indizierung für den Search & Restore-Prozess auf der Seite „Volumes“ Bevor Search & Restore verwendet werden kann, muss die „Indizierung“ auf jedem Quellsystem aktiviert werden, von dem Volume-Daten wiederhergestellt werden sollen. Dadurch kann der Indexed Catalog die Backup-Dateien für jedes Volume nachverfolgen. Die Seite „Volumes“ zeigt nun den Indizierungsstatus an:
+
+
+[[indexing-for-search-restore-process-on-volumes-page]]
+=== Indizierung für den Such- und Wiederherstellungsprozess auf der Volumes-Seite
+
+Bevor Sie „Suchen und Wiederherstellen“ verwenden können, müssen Sie die „Indizierung“ auf jedem Quellsystem aktivieren, von dem Sie Volumedaten wiederherstellen möchten.  Dadurch kann der indizierte Katalog die Sicherungsdateien für jedes Volume verfolgen.  Auf der Seite „Volumes“ wird jetzt der Indizierungsstatus angezeigt:
 
 * Indiziert: Bände wurden indiziert.
 * In Bearbeitung: Die Indizierung ist im Gange.
@@ -927,18 +1324,29 @@ Die vollständige Liste der unterstützten Volumes finden Sie in  https://docs.n
 * Nicht aktiviert: Die Indizierung ist für diese Quelle nicht aktiviert.
 
 
+
+
+[[27-september-2024]]
 == 27. September 2024
 
 Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 
-=== Podman-Unterstützung auf RHEL 8 oder 9 mit Browse und Restore NetApp Backup und Recovery unterstützt jetzt die Wiederherstellung von Dateien und Ordnern auf Red Hat Enterprise Linux (RHEL) Versionen 8 und 9 mit der Podman-Engine. Dies gilt für die NetApp Backup und Recovery Browse und Restore-Methode.
+
+
+[[podman-support-on-rhel-8-or-9-with-browse-and-restore]]
+=== Podman-Unterstützung auf RHEL 8 oder 9 mit Durchsuchen und Wiederherstellen
+
+NetApp Backup and Recovery unterstützt jetzt die Wiederherstellung von Dateien und Ordnern unter Red Hat Enterprise Linux (RHEL) Version 8 und 9 mithilfe der Podman-Engine.  Dies gilt für die Durchsuchen- und Wiederherstellungsmethode von NetApp Backup and Recovery .
 
 Die Console-Agent-Version 3.9.40 unterstützt bestimmte Red Hat Enterprise Linux 8- und 9-Versionen für manuelle Console-Agent-Installationen auf RHEL-Hosts, zusätzlich zu den in der  https://docs.netapp.com/us-en/console-setup-admin/task-prepare-private-mode.html#step-3-review-host-requirements["Hostanforderungen"^] aufgeführten Betriebssystemen. Diese neueren RHEL-Versionen benötigen die Podman-Engine anstelle der Docker-Engine. Früher hatte NetApp Backup and Recovery zwei Einschränkungen bei der Verwendung der Podman-Engine; diese Einschränkungen wurden entfernt.
 
 https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-restore.html["Erfahren Sie mehr über die Wiederherstellung von ONTAP -Daten aus Sicherungsdateien"].
 
-=== Schnellere Indizierung verbessert Suche und Wiederherstellung Diese Version enthält einen verbesserten Katalogindex, der die Basisindizierung deutlich schneller abschließt. Die schnellere Indizierung ermöglicht eine zügigere Nutzung der Such- und Wiederherstellungsfunktion.
+
+
+[[faster-catalog-indexing-improves-search-and-restore]]
+=== Schnellere Katalogindizierung verbessert Suche und Wiederherstellung
+
+Diese Version enthält einen verbesserten Katalogindex, der die Basisindizierung viel schneller abschließt.  Durch die schnellere Indizierung können Sie die Such- und Wiederherstellungsfunktion schneller nutzen.
 
 https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-restore.html["Erfahren Sie mehr über die Wiederherstellung von ONTAP -Daten aus Sicherungsdateien"].
-
-====
