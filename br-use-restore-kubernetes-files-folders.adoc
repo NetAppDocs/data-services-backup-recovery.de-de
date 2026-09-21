@@ -1,0 +1,124 @@
+---
+sidebar: sidebar 
+permalink: br-use-restore-kubernetes-files-folders.html 
+keywords: backing up, restoring, back up, backup, file, folder, files and folders, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: NetApp Backup and Recovery ermöglicht das Wiederherstellen und Herunterladen von Dateien und Ordnern, die von einer VM-basierten Anwendung gesichert wurden. 
+---
+= Wiederherstellen oder Herunterladen von VM-basierten Anwendungsdateien und -ordnern mit NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Dateien und Ordner, die von einer VM-basierten Kubernetes-Anwendung gesichert wurden, können wiederhergestellt oder heruntergeladen werden. Für das Wiederherstellen oder Herunterladen von Dateien und Ordnern ist mindestens ein Wiederherstellungspunkt erforderlich, und die VM muss über eine Partition mit einem unterstützten Dateisystem verfügen. Aktuell ist das Wiederherstellen und Herunterladen nur aus dem lokalen Snapshot möglich.
+
+Unterstützte Gastbetriebssysteme und Versionen umfassen:
+
+* *Windows*: Windows Server 2022, Windows 10, Windows 11
+* *Linux*: Ubuntu 22.04, Red Hat Enterprise Linux 9, Fedora 39, CentOS Stream 9, openSUSE Leap 15.6
+
+
+Unterstützte Dateisysteme umfassen:
+
+* BTRFS
+* exFAT
+* ext4
+* NTFS
+* XFS
+
+
+*Erforderliche NetApp Console-Rolle*
+
+Superadministrator für Backup und Recovery oder Restore-Administrator für Backup und Recovery. link:reference-roles.html["Erfahren Sie mehr über die Zugriffsrollen für NetApp Backup and Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
+
+
+
+[[restore-vm-files-and-folders-from-a-vm-based-application]]
+== Wiederherstellen von VM-Dateien und Ordnern aus einer VM-basierten Anwendung
+
+VM-basierte Dateien und Ordner können von einem Wiederherstellungspunkt wiederhergestellt werden, wenn bestimmte Dateien oder Ordner für eine VM-basierte Anwendung wiederhergestellt werden müssen, ohne die gesamte Anwendung wiederherzustellen. Vorhandene Dateien werden standardmäßig überschrieben.
+
+.Bevor Sie beginnen
+Vor der Wiederherstellung von Dateien und Ordnern aus einer VM-basierten Anwendung ist sicherzustellen, dass die Ziel-VM die folgenden Anforderungen erfüllt:
+
+* Die Ziel-VM läuft und hat eine IP-Adresse.
+* Der Benutzer kann in das Wiederherstellungsziel schreiben.
+* SSH ist aktiviert und verwendet Passwort-Authentifizierung (Anmeldung nur mit Schlüssel wird nicht unterstützt). Es sollte sichergestellt sein, dass der SSH-Dienst auf den Linux-Zielhosts aktiviert ist und dass auf den Windows-Zielhosts ein OpenSSH-Server installiert und aktiviert ist.
+
+
+.Schritte
+. Wählen Sie im NetApp Backup und Recovery-Menü *Wiederherstellen* aus.
+. Wählen Sie eine Kubernetes-Anwendung aus der Liste und wählen Sie *Anzeigen und Wiederherstellen* für diese Anwendung.
++
+Die Liste der Wiederherstellungspunkte wird angezeigt.
+
+. Das *Aktionen*image:icon-action.png["Symbol „Aktionen“"]-Symbol für einen Wiederherstellungspunkt auswählen und das Menü *Dateien und Ordner wiederherstellen* öffnen.
+. Wählen Sie den Quellspeicherort für die Wiederherstellung aus (nur Snapshot wird derzeit unterstützt).
+. Wählen Sie eine virtuelle Maschine aus dem Wiederherstellungspunkt aus, um deren Dateien und Ordner zu durchsuchen.
+. Wählen Sie *Weiter*.
++
+Der Dateibrowser wird angezeigt.
+
+. Durchsuchen Sie die Liste der Dateien und Ordner und wählen Sie Dateien und Ordner zur Wiederherstellung aus.
++
+Eine Partition kann geöffnet werden, um deren Dateien und Ordner zu durchsuchen. Wird eine Datei oder ein Ordner zur Wiederherstellung ausgewählt, indem das entsprechende Kästchen aktiviert wird, wird sie oder er der Liste „Ausgewählt“ auf der rechten Seite hinzugefügt.
+
+. Wenn Sie fertig sind, wählen Sie *Weiter*.
+. Den Übertragungsmodus *Transfer to VM* auswählen.
+. Zieleinstellungen:
++
+** *Auf ursprüngliche VM wiederherstellen*: Diese Option ermöglicht die Wiederherstellung auf die ursprüngliche virtuelle Maschine.
++
+*** *Wiederherstellung im selben Pfad wie in der Sicherung*: Diese Option ermöglicht die Wiederherstellung im selben Pfad, der in der Sicherung verwendet wurde.
+*** *Alternativer Pfad*: Um auf einen anderen Pfad wiederherzustellen, diese Option aktivieren und den bevorzugten Pfad eingeben.
+
+
+** *Wiederherstellung auf alternativer VM*: Diese Option ermöglicht die Wiederherstellung auf einer anderen virtuellen Maschine im Cluster. Eine VM kann aus der Liste ausgewählt werden, und ein Zielpfad für die wiederhergestellten Dateien oder Ordner wird eingegeben.
+
+
+. Im Abschnitt *Anmeldeinformationen der Gast-VM* die Anmeldeinformationen für die Gast-VM auswählen.
++
+Wenn für diese Gast-VM noch keine Anmeldeinformationen hinzugefügt wurden, kann mit *Anmeldeinformationen hinzufügen* eine neue Anmeldeinformation für die Gast-VM hinzugefügt werden. Nach dem Hinzufügen einer Gast-VM-Anmeldeinformation erscheint die neue Anmeldeinformation in der Anmeldeinformationsliste und kann ausgewählt werden. Diese Anmeldeinformationen sind eindeutig für Gast-VMs und können von jedem Cluster wiederverwendet werden, der denselben Console-Agent verwendet.
+
+. Wählen Sie *Weiter*.
+. Die Einstellungen für die Wiederherstellung von Dateien oder Ordnern werden überprüft und bestätigt.
+. Wählen Sie *Wiederherstellen*.
+
+
+
+
+[[download-kubernetes-vm-files-and-folders]]
+== Kubernetes VM-Dateien und -Ordner herunterladen
+
+Dateien und Ordner können von einem Wiederherstellungspunkt heruntergeladen werden, wenn keine Wiederherstellung in einer VM-basierten Anwendung gewünscht ist, sondern eine Speicherung auf dem lokalen Computer erfolgen soll. Die heruntergeladenen Dateien und Ordner werden als einzelnes .tar-Archiv gespeichert. Für das Herunterladen von Dateien und Ordnern sind keine Anmeldeinformationen für eine Gast-VM erforderlich.
+
+.Schritte
+. Wählen Sie im NetApp Backup und Recovery-Menü *Wiederherstellen* aus.
+. Wählen Sie eine Kubernetes-Anwendung aus der Liste und wählen Sie *Anzeigen und Wiederherstellen* für diese Anwendung.
++
+Die Liste der Wiederherstellungspunkte wird angezeigt.
+
+. Das *Aktionen*image:icon-action.png["Symbol „Aktionen“"]-Symbol für einen Wiederherstellungspunkt auswählen und das Menü *Dateien und Ordner wiederherstellen* öffnen.
+. Wählen Sie den Quellspeicherort für den Download aus (derzeit wird nur Snapshot unterstützt).
+. Wählen Sie eine virtuelle Maschine aus dem Wiederherstellungspunkt aus, um deren Dateien und Ordner zu durchsuchen.
+. Wählen Sie *Weiter*.
++
+Der Dateibrowser wird angezeigt.
+
+. Die Liste der Dateien und Ordner kann durchsucht und Dateien sowie Ordner zum Herunterladen ausgewählt werden.
++
+Eine Partition kann geöffnet werden, um deren Dateien und Ordner zu durchsuchen. Wird eine Datei oder ein Ordner zum Herunterladen ausgewählt, indem das entsprechende Kästchen aktiviert wird, wird sie oder er der Liste „Ausgewählt“ auf der rechten Seite hinzugefügt.
+
+. Wenn Sie fertig sind, wählen Sie *Weiter*.
+. Den Übertragungsmodus *Datei herunterladen* auswählen.
+. Wählen Sie *Weiter*.
+. Die Einstellungen für den Datei- oder Ordner-Download werden überprüft und bestätigt.
+. Wählen Sie *Wiederherstellen*.
++
+Ihr Webbrowser übernimmt den Download; das .tar-Archiv wird auf dem lokalen Rechner gespeichert.
+
+

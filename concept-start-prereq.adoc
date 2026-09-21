@@ -416,6 +416,7 @@ NOTE: NetApp empfiehlt dringend, dem für Kubernetes-Workloads verwendeten Conso
 ** Stellen Sie sicher, dass TCP-Port 443 in ausgehender Richtung zwischen dem Kubernetes-Cluster, dem Trident Protect Connector und dem Trident Protect Proxy ungefiltert ist.
 
 
+* Zum Wiederherstellen von Dateien und Ordnern aus VM-basierten Anwendungen ist SSH erforderlich. Es sollte überprüft werden, dass der SSH-Dienst auf den Linux-Zielhosts aktiviert ist und dass auf den Windows-Zielhosts ein OpenSSH-Server installiert und aktiviert ist.
 
 
 

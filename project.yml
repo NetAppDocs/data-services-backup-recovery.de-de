@@ -238,10 +238,15 @@ sidebar:
         - title: Ressourcen während Wiederherstellungsvorgängen mithilfe benutzerdefinierter
             Ressourcen ändern
           url: "/br-use-modify-resources-kubernetes-cr.html"
+        - title: Dateien und Ordner aus einer VM-basierten Anwendung wiederherstellen
+            oder herunterladen
+          url: "/br-use-restore-kubernetes-files-folders.html"
       - title: Verwalten von Kubernetes-Clustern
         url: "/br-use-manage-kubernetes-clusters.html"
       - title: Verwalten von Kubernetes-Anwendungen
         url: "/br-use-manage-kubernetes-applications.html"
+      - title: Zugriff auf Kubernetes-Ressourcen verwalten
+        url: "/br-use-manage-kubernetes-access-control.html"
       - title: Verwalten von Ausführungs-Hook-Vorlagen für Kubernetes-Workloads
         url: "/br-use-manage-execution-hook-templates.html"
       - title: Schutzberichte erstellen und verwalten

@@ -36,6 +36,7 @@ Fügen Sie jedem für Arbeitslasten vorgesehenen Projekt Benutzer hinzu und weis
 +
 *** *Organisationsadministrator* und *Backup and Recovery Superadministrator*: Ein Benutzer mit diesen Rollen kann alle Ressourcen organisationsübergreifend einsehen und Backup and Recovery Workloads ermitteln und diese Projekten zuweisen (zum Beispiel US East oder US West).
 *** *Ordner- oder Projektadministrator* und *Backup and Recovery Superadministrator*: Ein Benutzer mit diesen Rollen kann nur die Ressourcen in seinem zugewiesenen Ordner oder Projekt anzeigen, kann jedoch Backup and Recovery Workloads erkennen und sie diesem Projekt zuweisen.
+*** *Weitere Backup and Recovery Rollen*: Benutzern werden die spezifischen Backup and Recovery Rollen zugewiesen, die sie benötigen, wie zum Beispiel Backup and Recovery Viewer oder Backup and Recovery Clone Admin. Diese Rollen ermöglichen es Benutzern, alltägliche Aufgaben wie das Anzeigen von Ressourcen, das Schützen von Workloads, das Klonen und das Wiederherstellen durchzuführen. Backup and Recovery Rollen werden getrennt von Plattformrollen zugewiesen. Weitere Informationen finden sich unter link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-backup-rec-roles.html["NetApp Backup and Recovery -Rollen in der NetApp Console"^].
 
 
 .. Alternative Option:
@@ -46,7 +47,7 @@ Anstatt einem Benutzer vollen Backup and Recovery-Administratorzugriff zu gewäh
 
 . Workloads in NetApp Backup and Recovery ermitteln.
 +
-Organisations-, Ordner- oder Projektadministratoren ermitteln die verfügbaren Workloads und wählen das entsprechende Projekt aus (z. B. US East oder US West). Jeder Workload wird automatisch dem ausgewählten Projekt zugeordnet.
+Organisations-, Ordner- oder Projektadministratoren ermitteln die verfügbaren Workloads und wählen das passende Projekt (z. B. US East oder US West) aus. Jeder Workload wird automatisch dem ausgewählten Projekt zugeordnet. Für Kubernetes-Cluster kann optional während der Ermittlung ein Ordner oder Projekt ausgewählt werden, das dem Cluster zugeordnet wird.
 
 . Fügen Sie Benutzer zu Projekten hinzu.
 +
@@ -59,6 +60,9 @@ Organisations-, Ordner- oder Projektadministratoren fügen NetApp Console-Benutz
 [[related-information]]
 == Verwandte Informationen
 
-* link:https://docs.netapp.com/us-en/console-setup-admin/concept-identity-and-access-management.html["Erfahren Sie mehr über das NetApp Console-Identitäts- und Zugriffsmanagement"^].
-* link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-backup-rec-roles.html["NetApp Backup and Recovery -Rollen in der NetApp Console"^].
+* link:https://docs.netapp.com/us-en/console-setup-admin/concept-identity-and-access-management.html["Erfahren Sie mehr über das NetApp Console-Identitäts- und Zugriffsmanagement"^]
+* link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-backup-rec-roles.html["NetApp Backup and Recovery -Rollen in der NetApp Console"^]
+* link:reference-roles.html["NetApp Backup and Recovery Rollen und Berechtigungen"]
+* link:br-start-discover-kubernetes.html["Entdecken Sie Kubernetes-Workloads"]
+* link:br-use-manage-kubernetes-access-control.html["Zugriff auf Kubernetes-Ressourcen verwalten"]
 

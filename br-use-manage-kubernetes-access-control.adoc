@@ -1,0 +1,88 @@
+---
+sidebar: sidebar 
+permalink: br-use-manage-kubernetes-access-control.html 
+keywords: backup, back up, restore, recovery, kubernetes, k8s, access control, rbac, iam, folder, project 
+summary: Der Zugriff auf Kubernetes-Ressourcen in NetApp Backup and Recovery kann mithilfe von NetApp Console-Ordnern, Projekten und Rollen verwaltet werden. 
+---
+= Zugriff auf Kubernetes-Ressourcen verwalten
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der Zugriff auf Kubernetes-Ressourcen in NetApp Backup and Recovery kann auf Cluster- oder Ressourcenebene verwaltet werden. Der Zugriff auf Clusterressourcen wird verwaltet, indem Cluster während der Erkennung in NetApp Console Ordnern oder Projekten zugeordnet und Benutzern die entsprechenden Rollen zugewiesen werden. Der Ressourcenzugriff auf Namespace-Ebene wird verwaltet, indem ein Namespace als IAM-Ressource registriert wird, die einem Projekt oder Ordner zugeordnet ist.
+
+Informationen zum Verknüpfen eines Clusters mit einem IAM-Ordner oder Projekt finden sich unter link:br-start-discover-kubernetes.html["Entdecken Sie Kubernetes-Workloads"].
+
+Der Zugriff auf Ressourcen auf Namespace-Ebene für Backup and Recovery bei Kubernetes-Ressourcen wird durch den Ordner oder das Projekt gesteuert, das dem Namespace bei der Registrierung für die Zugriffskontrolle zugeordnet wird. Nachdem der Namespace einem Ordner oder Projekt zugeordnet wurde, können Benutzer, die über die entsprechenden NetApp Console- und Backup and Recovery-Rollen für diesen Geltungsbereich verfügen, auf den Namespace und dessen geschützte Ressourcen zugreifen.
+
+
+
+[[backup-and-recovery-roles-and-what-they-allow-with-kubernetes-workloads]]
+== Backup und Recovery Rollen und ihre Möglichkeiten mit Kubernetes Workloads
+
+Für einen Kubernetes-Cluster oder Namespace, der einem Ordner oder Projekt zugeordnet ist, bestimmt die spezifische Backup and Recovery-Rolle, die ein Benutzer für diesen Ordner oder dieses Projekt innehat, was er tun kann. Weitere Informationen zu Backup and Recovery-Rollen finden sich unter  https://docs.netapp.com/us-en/console-setup-admin/reference-iam-backup-rec-roles.html["Backup- und Wiederherstellungsrollen in der NetApp Console"^].
+
+
+NOTE: Die Administratorrolle für Backup and Recovery Klone wird bei Kubernetes Workloads nicht verwendet.
+
+[cols="1,2,2"]
+|===
+| Rolle | Umfang des Ansichtsbereichszugriffs | Zulässige Aktionen 
+
+
+| Backup and Recovery Super-Admin | Vollständige Übersicht über Cluster, Namensräume und Anwendungen im Geltungsbereich | Anzeigen, Anwendung erstellen, schützen (Schutz erstellen/entfernen) und wiederherstellen 
+
+
+| Backup and Recovery Viewer | Anzeige nur für Cluster und Namensräume im Geltungsbereich | Nur Ansicht. Erstellen, Schützen oder Wiederherstellen ist nicht möglich. 
+
+
+| Backup und Recovery Backup Admin | Vollständige Übersicht über Cluster, Namensräume und Anwendungen im Geltungsbereich | Anzeigen, Anwendung erstellen und schützen (Schutz erstellen/entfernen). Wiederherstellung nicht möglich. 
+
+
+| Backup and Recovery-Restore-Administrator | Vollständige Übersicht über Cluster, Namensräume und Anwendungen im Geltungsbereich | Nur Anzeigen und Wiederherstellen. Es können keine Anwendungen oder Schutzrichtlinien erstellt werden. 
+|===
+
+
+[[associate-a-kubernetes-namespace-with-a-folder-or-project]]
+== Einem Kubernetes-Namespace kann ein Ordner oder Projekt zugeordnet werden.
+
+Einem Ordner oder Projekt kann ein Namespace zugeordnet werden, sodass die Zugriffskontrolle für diesen Bereich gilt.
+
+*Erforderliche NetApp Console-Rolle* Backup and Recovery Superadministrator. Für den Schutz von Daten, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich. Informationen zu link:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
+
+.Schritte
+. Wählen Sie im NetApp Console *Schutz* > *Sicherung und Wiederherstellung*.
+. Unter *Workloads* die Kachel *Kubernetes* auswählen.
+. Im Inventar das Menü *Namensräume* auswählen.
+. Wählen Sie einen oder mehrere Namensräume aus, die für die Zugriffskontrolle registriert werden sollen, und aktivieren Sie das Kästchen für jeden.
+. *Für die Zugangskontrolle registrieren* auswählen.
+. Optional können Sie einen Ordner oder ein Projekt auswählen, um festzulegen, wo die Zugriffskontrolle für diesen Namespace gilt. Wenn Sie keinen Ordner oder kein Projekt auswählen, wird die Namespace IAM-Ressource registriert, aber keinem Ordner oder Projekt hinzugefügt:
++
+** *Ordner*: Diese Option steuert den Benutzerzugriff auf Namespace-Ressourcen auf Ordnerebene, und ein Ordner kann aus der Liste ausgewählt werden.
++
+
+NOTE: Wenn ein Kubernetes-Cluster oder Namespace mit einem Ordner verknüpft ist, benötigen Benutzer außerdem die Rolle *Backup and Recovery viewer* für das im Projektauswahlfeld oben rechts ausgewählte Projekt. Dieser Zugriff auf Projektebene ermöglicht Benutzern das Öffnen der Backup and Recovery-Startseite. Rollen, die auf Ordnerebene zugewiesen sind (zum Beispiel Backup and Recovery backup admin), bestimmen, was Benutzer nach dem Aufrufen der Workload-Seite tun können, gewähren aber selbst keinen Zugriff auf die Seite.
+
+** *Projekt*: Diese Option steuert den Benutzerzugriff auf Namespace-Ressourcen auf Projektebene, und ein Projekt kann aus der Liste ausgewählt werden.
++
+https://docs.netapp.com/us-en/console-setup-admin/concept-identity-and-access-management.html#netapp-console-organizational-components["Mehr erfahren"^] über organisatorische Komponenten in NetApp Console.
+
+
+
+. *Registrieren* auswählen.
+
+
+
+
+[[related-information]]
+== Verwandte Informationen
+
+* link:br-start-discover-kubernetes.html["Entdecken Sie Kubernetes-Workloads"]
+* link:br-rbac-setup.html["Richten Sie rollenbasierte Zugriffssteuerung in NetApp Backup and Recovery ein"]
+* link:reference-roles.html["NetApp Backup and Recovery Rollen und Berechtigungen"]
+

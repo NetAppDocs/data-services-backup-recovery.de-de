@@ -1,0 +1,17 @@
+= Kubernetes-Workloads-Erweiterungen
+:allow-uri-read: 
+
+
+
+
+[[kubernetes-workloads-enhancements]]
+=== Kubernetes-Workloads-Erweiterungen
+
+In dieser Version werden für Kubernetes-Workloads die folgenden Verbesserungen eingeführt:
+
+* *Trident Protect 26.09*: Diese Version enthält Trident Protect 26.09.
+* *Cluster- und Namespace-spezifische rollenbasierte Zugriffskontrolle*: Während der Kubernetes-Clustererkennung lässt sich der Zugriff auf Ressourcen steuern, indem ein Projekt oder ein Ordner ausgewählt wird, das bzw. der dem neuen Cluster zugeordnet wird. Auch können spezifische Namespaces für die Zugriffskontrolle registriert werden. Dadurch wird eine granularere Zugriffskontrolle auf Cluster- oder Namespace-Ebene ermöglicht.
+* *Dateien und Ordner wiederherstellen*: Es ist jetzt möglich, bestimmte Dateien und Ordner aus Kubernetes VM-basierten Anwendungssicherungen wiederherzustellen oder herunterzuladen.
+
+
+Weitere Informationen zum Schutz von Kubernetes-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Informationen zum Schutz von Kubernetes Workloads mit NetApp Backup and Recovery"].
