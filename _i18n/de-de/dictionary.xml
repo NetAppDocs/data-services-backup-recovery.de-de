@@ -5921,7 +5921,6 @@
   <block id="6c2c266ca065311d4804d34cd534ac61" category="paragraph">Das Wiederherstellen eines Volumes oder einer Datei aus dem Archivspeicher kann zusätzliche Zeit in Anspruch nehmen. Der Auftrag bleibt im *Job Monitor* als *In progress* angezeigt, während Backup and Recovery die Wiederherstellung entsprechend der ausgewählten Priorität erneut versucht. Die Wiederherstellung kann im *Job Monitor* überwacht werden; sie ist abgeschlossen, wenn der Auftrag nach allen Wiederholungsversuchen einen endgültigen Status wie *Completed* oder *Failed* erreicht. Eine weitere Wiederherstellung sollte nur gestartet werden, wenn der Auftrag letztlich fehlschlägt.</block>
   <block id="534cf708a73e1e3ff80e4b70322d78d6" category="paragraph"><block ref="534cf708a73e1e3ff80e4b70322d78d6" category="inline-link-rx"></block></block>
   <block id="6c302dca9120d9212ecda9d1ad1f74c9" category="paragraph">In dieser Version führen KVM-, Hyper-V- und VMware-Workloads die folgende Verbesserung ein:</block>
-  <block id="0898522d58ded515e98cbdbeae0b2894" category="paragraph">*Auswahl der Anmeldeinformationen bei der VM-Hosterkennung*: Bei der Registrierung eines KVM-, Hyper-V- oder VMware-Hosts ist jetzt die Verwendung von Anmeldeinformationen möglich, die bereits zu Backup and Recovery hinzugefügt wurden.</block>
   <block id="51b1f28526e9e7dfdb39548a8b5d4ac0" category="paragraph">*Datenträgerübergreifender Schutz für VMs*: Bei CIFS-Konfigurationen unterstützt NetApp Backup and Recovery jetzt den Schutz aller an jede VM in einer Datensicherungsstrategie angeschlossenen Datenträger. Dies umfasst Dateien, die über mehrere ONTAP Volumes oder ONTAP Speichersysteme verteilt sind (datenträgerübergreifende Datenträger), sowie Dateien, die sich an einem einzigen Speicherort befinden.</block>
   <block id="1e62d1b5255654e86ebb8b223345252a" category="section-title">ONTAP Volumes Workloads-Verbesserung</block>
   <block id="705eb27960b89edebb2b2269e939009b" category="paragraph">In dieser Version wird für ONTAP Volumes Workloads die folgende Vorschau-Verbesserung eingeführt:</block>
@@ -6104,4 +6103,7 @@
   <block id="6cdd743b39af79062eb92fec70569354" category="section-title">13. Februar 2025</block>
   <block id="008c6d012aabba0e44e2b94f8259635c" category="section-title">22. November 2024</block>
   <block id="5fcc5d3ffc4bbbcf6d018ab4a9639205" category="section-title">27. September 2024</block>
+  <block id="1f5228fb8e4d751814a84ea17a1c4929" category="doc">Allgemeine NetApp Backup and Recovery-Verbesserung</block>
+  <block id="36d329847d8e5ae441cfdb0f4e5f6e2f" category="paragraph">*Auswahl der Anmeldeinformationen bei der VM-Host-Erkennung*: Bei der Erkennung eines KVM-, Hyper-V- oder VMware-Hosts können jetzt Anmeldeinformationen verwendet werden, die bereits zu Backup and Recovery hinzugefügt wurden.</block>
+  <block id="ffe23fba63447ec89bcdd7bc0c48257f" category="section-title">Hyper-V Workload-Verbesserung</block>
 </blocks>

@@ -1,20 +1,20 @@
-= Allgemeine NetApp Backup and Recovery-Verbesserungen
+= Allgemeine NetApp Backup and Recovery-Verbesserung
 :allow-uri-read: 
 
 
 
 
-[[general-netapp-backup-and-recovery-enhancements]]
-=== Allgemeine NetApp Backup and Recovery-Verbesserungen
+[[general-netapp-backup-and-recovery-enhancement]]
+=== Allgemeine NetApp Backup and Recovery-Verbesserung
 
 In dieser Version führen KVM-, Hyper-V- und VMware-Workloads die folgende Verbesserung ein:
 
-*Auswahl der Anmeldeinformationen bei der VM-Hosterkennung*: Bei der Registrierung eines KVM-, Hyper-V- oder VMware-Hosts ist jetzt die Verwendung von Anmeldeinformationen möglich, die bereits zu Backup and Recovery hinzugefügt wurden.
+*Auswahl der Anmeldeinformationen bei der VM-Host-Erkennung*: Bei der Erkennung eines KVM-, Hyper-V- oder VMware-Hosts können jetzt Anmeldeinformationen verwendet werden, die bereits zu Backup and Recovery hinzugefügt wurden.
 
 
 
-[[hyper-v-workloads-enhancements]]
-=== Hyper-V-Workload-Verbesserungen
+[[hyper-v-workloads-enhancement]]
+=== Hyper-V Workload-Verbesserung
 
 In dieser Version wird für Hyper-V Workloads die folgende Verbesserung eingeführt:
 
