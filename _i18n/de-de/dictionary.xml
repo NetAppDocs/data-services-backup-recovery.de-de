@@ -4747,7 +4747,6 @@
   <block id="b7bfbf5f47aa4163507ae71ed18f8b9f" category="list-text">*Unterstützung für das Löschen mehrerer Backups*: Es ist jetzt möglich, mehrere Backups gleichzeitig zu löschen.</block>
   <block id="c67660fa166ae58260874bbf6f9c5e4a" category="list-text">*Vorschauunterstützung für isolierte Ressourcen*: Wenn NetApp Backup and Recovery in der lokalen NetApp Console-Bereitstellung ausgeführt wird, können isolierte Kubernetes-Ressourcen erkannt, geschützt und wiederhergestellt werden. Diese Funktion befindet sich in dieser Version in der Vorschau.</block>
   <block id="d1c241263c19a21db56b6d9aaeb83ca1" category="paragraph">In dieser Version wurden für ONTAP Volumes Workloads die folgenden Verbesserungen eingeführt:</block>
-  <block id="a33b2a8cf6a943c4ae96728143fee277" category="list-text">*Wiederherstellungsaufträge gegenüber Backups priorisieren*: Es besteht jetzt die Möglichkeit, Wiederherstellungsaufträge gegenüber Backup-Aufträgen zu priorisieren, wenn VMs oder Dateien wiederhergestellt werden.</block>
   <block id="3c8fad259371a43b707a7a3c64b147f6" category="list-text">*ONTAP Systeme und Volumes ohne Backup and Recovery Aktivierung entdecken*: Es ist jetzt möglich, Systeme und Volumes zu entdecken, ohne Backup and Recovery zu aktivieren.</block>
   <block id="2c6cc6886b730f35083997c1321dcc78" category="list-text">In der Backup and Recovery-Vorabversion für die lokale Bereitstellung der NetApp Console werden Backups in Objektspeicher nur für ONTAP S3 und StorageGRID Ziele unterstützt. Backup-Archivierung ist in dieser Vorabversion nicht unterstützt.</block>
   <block id="5c09edc1ed9afb140af2607f91da29e1" category="section-title">Backup und Recovery-Vorschau für NetApp Console lokale Bereitstellungsbeschränkung</block>
@@ -6106,4 +6105,5 @@
   <block id="1f5228fb8e4d751814a84ea17a1c4929" category="doc">Allgemeine NetApp Backup and Recovery-Verbesserung</block>
   <block id="36d329847d8e5ae441cfdb0f4e5f6e2f" category="paragraph">*Auswahl der Anmeldeinformationen bei der VM-Host-Erkennung*: Bei der Erkennung eines KVM-, Hyper-V- oder VMware-Hosts können jetzt Anmeldeinformationen verwendet werden, die bereits zu Backup and Recovery hinzugefügt wurden.</block>
   <block id="ffe23fba63447ec89bcdd7bc0c48257f" category="section-title">Hyper-V Workload-Verbesserung</block>
+  <block id="8dbaebd91b282de2115c0933e53cc8b1" category="list-text">*Wiederherstellungsaufträge gegenüber Backups priorisieren*: Es ist jetzt möglich, Wiederherstellungsaufträge gegenüber Backup-Aufträgen zu priorisieren, wenn Volumes, Dateien oder Ordner wiederhergestellt werden.</block>
 </blocks>

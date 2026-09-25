@@ -43,7 +43,7 @@ Weitere Informationen zum Schutz von Kubernetes-Workloads finden Sie unter https
 
 In dieser Version wurden für ONTAP Volumes Workloads die folgenden Verbesserungen eingeführt:
 
-* *Wiederherstellungsaufträge gegenüber Backups priorisieren*: Es besteht jetzt die Möglichkeit, Wiederherstellungsaufträge gegenüber Backup-Aufträgen zu priorisieren, wenn VMs oder Dateien wiederhergestellt werden.
+* *Wiederherstellungsaufträge gegenüber Backups priorisieren*: Es ist jetzt möglich, Wiederherstellungsaufträge gegenüber Backup-Aufträgen zu priorisieren, wenn Volumes, Dateien oder Ordner wiederhergestellt werden.
 * *ONTAP Systeme und Volumes ohne Backup and Recovery Aktivierung entdecken*: Es ist jetzt möglich, Systeme und Volumes zu entdecken, ohne Backup and Recovery zu aktivieren.
 
 
