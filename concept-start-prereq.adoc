@@ -277,8 +277,9 @@ Sie benötigen bestimmte Anforderungen, um Ihre VMware-Workloads zu erkennen und
 
 | Vernetzter Speicher  a| 
 * ONTAP 9.13.1 oder höher (ONTAP 9.19.1 oder höher ist erforderlich, um mehr als 6 Buckets pro System bei verschiedenen Cloud-Anbietern zu unterstützen; maximal 100 Buckets)
-* Amazon FSx for NetApp ONTAP-Speichersysteme mit Version 9.13.1 oder höher
 * ASA r2 SAN-only-Systeme (ONTAP 9.17.1 oder höher erforderlich)
+* Amazon FSx for NetApp ONTAP-Speichersysteme mit Version 9.13.1 oder höher
+* Google Cloud NetApp Volumes (ONTAP-Modus und Flex Unified Service Level)
 
 
 |===
