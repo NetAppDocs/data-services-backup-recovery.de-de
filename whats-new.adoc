@@ -54,12 +54,16 @@ Diese Version von NetApp Backup and Recovery enthält die folgenden Updates.
 
 
 
-[[ontap-volumes-workloads-enhancement]]
-=== ONTAP Volumes Workloads-Verbesserung
+[[ontap-volumes-workloads-enhancements]]
+=== ONTAP Volumes Workloads-Verbesserungen
 
-In dieser Version wird für ONTAP Volumes Workloads die folgende Vorschau-Verbesserung eingeführt:
+In dieser Version führt ONTAP Volumes Workloads die folgenden Vorschauverbesserungen ein:
 
-*Verbesserte Unterstützung für Dark Sites*: NetApp Backup and Recovery for dark sites bietet jetzt dieselben ONTAP Volumes Datenschutzfunktionen wie NetApp Backup and Recovery. Diese Verbesserung umfasst aktualisierte Backup-, Wiederherstellungs- und Job-Management-Services sowie eine neue Metadaten-Datenbank. Während eines Upgrades bleiben vorhandene Datenbankdaten erhalten und werden automatisch migriert. Nach dem Upgrade ist eine Überprüfung der Audit-Protokolle erforderlich, um sicherzustellen, dass die Migration erfolgreich abgeschlossen wurde. NetApp Backup and Recovery for dark sites unterstützt nur ONTAP Volumes Workloads.
+* *Verbesserte Unterstützung für Dark Sites*: NetApp Backup and Recovery for dark sites bietet jetzt dieselben ONTAP Volumes Datenschutzfunktionen wie NetApp Backup and Recovery. Diese Verbesserung umfasst aktualisierte Backup-, Wiederherstellungs- und Job-Management-Services sowie eine neue Metadaten-Datenbank. Während eines Upgrades bleiben vorhandene Datenbankdaten erhalten und werden automatisch migriert. Nach dem Upgrade ist eine Überprüfung der Audit-Protokolle erforderlich, um sicherzustellen, dass die Migration erfolgreich abgeschlossen wurde. NetApp Backup and Recovery for dark sites unterstützt nur ONTAP Volumes Workloads.
+* *Abbrechen von Volume-Wiederherstellungsaufträgen*: Laufende ONTAP Volumes-Wiederherstellungsaufträge können jetzt auf der Seite zur Auftragsüberwachung abgebrochen werden, was die Verwaltung lang laufender oder langsam ausgeführter Aufträge vereinfacht.
+* *Verbesserte Statusberichterstattung zur Volume-Indizierung*: Das ONTAP Volumes Dashboard meldet den Indizierungsstatus jetzt genauer, indem der  `Not Applicable`Status für Volumes und Snapshot-Kopien eingeführt wird, die nicht für die Indizierung geeignet sind. Der  `Not Indexed`Status ist jetzt Volumes vorbehalten, die auf die Indizierung warten, und die Volume-Details zeigen jetzt den Indizierungsstatus pro Snapshot mit einem Hovertext an, der erklärt, warum ein Volume oder eine Snapshot-Kopie nicht indiziert wird.
+* *NetApp AFX Unterstützung*: Sie können jetzt Volumes schützen, die auf 2- und 4-Knoten-NetApp AFX Clustern gehostet werden.
+
 
 Weitere Informationen zum Schutz von ONTAP Volumes-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["Informationen zum ONTAP Volumeschutz mit NetApp Backup und Recovery"].
 

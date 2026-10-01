@@ -241,7 +241,7 @@ Das Benachrichtigungscenter zeigt zahlreiche Ereignisse im Zusammenhang mit Snap
 
 NOTE: Ab ONTAP 9.13.0 werden alle Warnungen für Cloud Volumes ONTAP und lokale ONTAP -Systeme angezeigt.  Bei Systemen mit Cloud Volumes ONTAP 9.13.0 und lokalem ONTAP wird nur die Warnmeldung „Wiederherstellungsauftrag abgeschlossen, aber mit Warnungen“ angezeigt.
 
-Standardmäßig erhalten die Organisations- und Kontoadministratoren der NetApp Console E-Mails für alle Warnmeldungen vom Typ „Kritisch“ und „Empfehlung“. Standardmäßig richtet das System keine anderen Benutzer und Empfänger für den Empfang von Benachrichtigungs-E-Mails ein.  Konfigurieren Sie E-Mail-Benachrichtigungen für alle Konsolenbenutzer in Ihrem NetApp Cloud-Konto oder für andere Empfänger, die über Sicherungs- und Wiederherstellungsaktivitäten informiert werden müssen.
+Standardmäßig erhalten Unternehmens- und Kontoadministratoren von NetApp Console E-Mail-Benachrichtigungen für alle "Kritisch"- und "Empfehlung"-Warnmeldungen. Andere Benutzer und Empfänger erhalten keine Benachrichtigungs-E-Mails, es sei denn, Sie konfigurieren diese. Richten Sie E-Mail-Benachrichtigungen für Console-Benutzer in Ihrem NetApp Cloud-Konto oder für andere Empfänger ein, die Sicherungs- und Wiederherstellungsaktivitäten überwachen müssen.
 
 Um E-Mail-Benachrichtigungen zu NetApp Backup and Recovery zu erhalten, müssen Sie auf der Einstellungsseite für Benachrichtigungen die Schweregrade „Kritisch“, „Warnung“ und „Fehler“ auswählen.
 
@@ -259,6 +259,59 @@ https://docs.netapp.com/us-en/console-local/task-alert-rules-manage.html["Benach
 [[review-operation-activity-in-console-timeline]]
 == Überprüfen der Vorgangsaktivität in der Konsolenzeitleiste
 
-Details zu Sicherungs- und Wiederherstellungsvorgängen können zur weiteren Untersuchung in der Console Timeline angezeigt werden. Die Console Timeline bietet Details zu jedem Ereignis, unabhängig davon, ob es vom Benutzer oder vom System initiiert wurde, und zeigt Aktionen, die in der Benutzeroberfläche oder über die API initiiert wurden.
+Die Console Timeline dient zur Untersuchung von Sicherungs- und Wiederherstellungsvorgängen. Sie liefert Details zu jedem Ereignis, einschließlich der Information, ob es von einem Benutzer oder vom System initiiert wurde, und zeigt in der UI oder über die API ausgeführte Aktionen an.
 
 https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html["Informationen zur Überwachung von NetApp Console-Vorgängen"^].
+
+
+
+[[cancel-an-ongoing-job]]
+== Einen laufenden Job abbrechen
+
+Einige Backup- und Wiederherstellungs-Workloads unterstützen das Abbrechen eines laufenden Auftrags, wenn dessen Abschluss zu lange dauert und er nicht fehlgeschlagen ist.
+
+
+NOTE: Informationen zum Abbrechen eines ONTAP Volumes Wiederherstellungsauftrags finden Sie unter <<Einen ONTAP Volumes Wiederherstellungsauftrag abbrechen>>.
+
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery -Menü *Überwachung* aus.
+. Optional kann der Bereich *Erweiterte Suche & Filterung* erweitert und können spezifische Kriterien ausgewählt werden, um die Ergebnisse der Stellensuche einzugrenzen.
+. Mit *Suchen* werden passende Wiederherstellungsaufträge angezeigt.
+. Aus der Liste ist ein Auftrag auszuwählen, das Menü „Aktionen“ image:icon-action.png["Symbol „Aktionen“"] sowie anschließend die Aktion *Abbrechen* (die Aktionsbezeichnung variiert je nach Auftragstyp).
+. Im Bestätigungsdialog ist die Stornierung zu bestätigen.
+
+
+
+
+[[cancel-an-ontap-volumes-restore-job]]
+== Einen ONTAP Volumes Wiederherstellungsauftrag abbrechen
+
+Ein ONTAP Volumes Wiederherstellungsauftrag kann abgebrochen werden, wenn seine Ausführung zu lange dauert und er nicht fehlgeschlagen ist.
+
+Wenn Sie eine Volume Wiederherstellung abbrechen, wird der gesamte Wiederherstellungsvorgang rückgängig gemacht, sodass kein Teil des Volumes wiederhergestellt wird.
+
+Bei der Wiederherstellung von Dateien und Ordnern stellt Backup and Recovery Dateien in Gruppen zu je acht wieder her. Wenn Sie die Wiederherstellung von Dateien und Ordnern abbrechen, während eine Gruppe verarbeitet wird, stoppt die Wiederherstellung, bevor die nächste Gruppe beginnt. Dateien und Ordner, die bereits wiederhergestellt wurden, bleiben erhalten.
+
+.Informationen zu diesem Vorgang
+Zu beachten sind die Arten von Aufträgen, die abgebrochen werden können und die nicht abgebrochen werden können:
+
+[cols="1,1"]
+|===
+| Sie können kündigen | Sie können nicht abbrechen 
+
+
+| Wiederherstellung von Volumes aus einem lokalen oder Cloud-Snapshot (FlexVol und FlexGroup) | Wiederherstellungsaufträge in der Warteschlange 
+
+
+| Wiederherstellung von Dateien und Ordnern aus der Cloud | Wiederherstellungen aus dem Archiv 
+
+
+| Wiederherstellung von Dateien und Ordnern aus einem lokalen Snapshot auf ein anderes Volume | Wiederherstellung von Dateien und Ordnern aus einem lokalen Snapshot auf dasselbe Volume 
+|===
+.Schritte
+. Wählen Sie im NetApp Backup and Recovery -Menü *Überwachung* aus.
+. Optional kann der Bereich *Erweiterte Suche & Filterung* erweitert und können spezifische Kriterien ausgewählt werden, um die Ergebnisse der Stellensuche einzugrenzen.
+. Mit *Suchen* werden passende Wiederherstellungsaufträge angezeigt.
+. Wählen Sie einen Auftrag aus der Liste aus, wählen Sie das Menü Aktionen image:icon-action.png["Symbol „Aktionen“"] und anschließend die Aktion *Wiederherstellung abbrechen*.
+. Im Bestätigungsdialog ist *Wiederherstellung abbrechen* auszuwählen.
+
