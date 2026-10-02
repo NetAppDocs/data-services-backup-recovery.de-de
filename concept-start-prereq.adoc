@@ -155,14 +155,29 @@ Um Objektspeicher als Backup-Ziel zu verwenden, wird ein Konto bei AWS S3, Googl
 [[requirements-for-protecting-ontap-volume-workloads]]
 == Anforderungen zum Schutz von ONTAP-Volume-Workloads
 
-Um NetApp Backup and Recovery für ONTAP-Volume-Workloads zu verwenden, benötigen Sie die folgenden Voraussetzungen hinsichtlich Hostsystem, Speicherplatz und Dimensionierung.
+Für die Nutzung von NetApp Backup and Recovery für ONTAP Volume-Workloads benötigen Sie die folgenden Voraussetzungen.
 
-* ONTAP 9.8 oder höher ist erforderlich.
-* Für den Schutz von FlexGroup Volumes ist ONTAP 9.12.1 oder höher erforderlich. Weitere Informationen sind unter link:br-reference-limitations.html["Bekannte Einschränkungen bei NetApp Backup and Recovery für ONTAP -Volumes"] verfügbar.
-* Für die Sicherung oder Wiederherstellung auf S3-kompatiblem Objektspeicher ist ONTAP 9.17.1 oder höher erforderlich.
-* ONTAP 9.19.1 oder höher ist erforderlich, um mehr als 6 Buckets pro System bei verschiedenen Cloud-Anbietern zu unterstützen (bis zu maximal 100 Buckets).
-* Auf der lokalen ONTAP Instanz muss eine ONTAP One License aktiviert sein.
+[cols="2,1"]
+|===
+| Funktion | Erforderliche ONTAP Version 
 
+
+| Schützen Sie ONTAP Volumes | 9.8 oder höher 
+
+
+| Schutz von FlexGroup Volumes (weitere Informationen unter link:br-reference-limitations.html["Bekannte Einschränkungen bei NetApp Backup and Recovery für ONTAP -Volumes"]) | 9.12.1 oder höher 
+
+
+| Microsoft Entra ID Authentifizierung für Azure-Buckets zum Schutz von Cloud Volumes ONTAP verwenden | 9.16.1 oder höher 
+
+
+| Sicherung oder Wiederherstellung in S3-kompatiblem Objektspeicher | 9.17.1 oder höher 
+
+
+| Mehr als 6 Buckets pro System bei verschiedenen Cloud-Anbietern (maximal 100 Buckets) | 9.19.1 oder später 
+|===
+
+NOTE: Auf der lokalen ONTAP Instanz muss eine ONTAP One License aktiviert sein.
 
 Weitere Informationen zu unterstützten Funktionen, Volumentypen, Sicherungs- und Wiederherstellungszielen und mehr finden Sie unter link:prev-ontap-protect-overview.html["Schützen Sie Ihre ONTAP Volume-Daten"].
 

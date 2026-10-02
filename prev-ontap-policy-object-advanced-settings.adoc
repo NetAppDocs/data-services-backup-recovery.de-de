@@ -154,3 +154,22 @@ Sie können Ransomware-Scans auf Anbieterebene über die Anbietereinstellungssei
 . Legen Sie fest, wie oft (in Tagen oder Wochen) der Scan ausgeführt werden soll.
 . Wählen Sie *Übernehmen*.
 
+
+
+
+[[switch-an-azure-object-store-configuration-to-microsoft-entra-id-authentication]]
+== Umstellung einer Azure Objektspeicherkonfiguration auf Microsoft Entra ID Authentifizierung
+
+Beim Bearbeiten einer bestehenden Azure Bucket Konfiguration kann zur Microsoft Entra ID Authentifizierung für Azure Objektspeicher gewechselt werden, wenn der Zugriffsschlüssel des Speicherkontos nicht für die Azure Authentifizierung verwendet werden soll. Diese Option ist für Cloud Volumes ONTAP in Azure Systemen mit ONTAP 9.16.1 oder höher verfügbar.
+
+.Bevor Sie beginnen
+Ihre Umgebung muss die link:prev-ontap-backup-cvo-azure.html#anchor-entraid["Anforderungen"^] Voraussetzungen für die Verwendung von Entra ID erfüllen.
+
+.Schritte
+. Wählen Sie auf der Registerkarte *Volumes* die Option *Backup-Einstellungen* aus.
+. Auf der Seite _Backup Settings_ image:icon-actions-horizontal.gif["Symbol „Mehr“"]das System auswählen und *Erweiterte Einstellungen konfigurieren > Provider-Einstellungen* wählen.
+. Wählen Sie oben auf der angezeigten Seite den Bucket aus, dessen Einstellungen Sie ändern möchten.
+. Erweiterung des Abschnitts *Authentifizierungsmethode*.
+. Die Auswahl erfolgt für *Entra ID (verwaltete Identität)*.
+. Wählen Sie *Übernehmen*.
+

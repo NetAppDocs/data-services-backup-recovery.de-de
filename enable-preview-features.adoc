@@ -38,6 +38,9 @@ Sie können die folgenden Vorschaufunktionen für NetApp Backup und Recovery akt
 
 
 | `"data-transfer-report": true` | Aktiviert den täglichen Datentransferbericht unter der Registerkarte „Berichte“ in NetApp Backup and Recovery für Volumes. Der Bericht liefert tägliche Informationen zur Datentransfer- und Replikationsaktivität in Ihrer Umgebung. 
+
+
+| `"use-azure-msi-cvo": true` | Ermöglicht die Option, für Azure Objektspeicher die Authentifizierung mit verwalteter Identität von Microsoft Entra ID anstelle eines Zugriffsschlüssels für das Speicherkonto zu verwenden. Unterstützt für Cloud Volumes ONTAP in Azure Systemen mit ONTAP 9.16.1 oder neuer. Weitere Informationen enthält link:prev-ontap-backup-cvo-azure.html["Cloud Volumes ONTAP in Azure Blob Storage sichern"]. 
 |===
 
 
