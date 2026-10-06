@@ -64,6 +64,7 @@ Sie können die Microsoft Entra ID Authentifizierung für Azure Objektspeicher a
 
 NOTE: Innerhalb desselben Cloud Volumes ONTAP Systems können Sie für verschiedene Objektspeicherkonfigurationen unterschiedliche Authentifizierungsmethoden verwenden. Wenn Sie jedoch eine Objektspeicherkonfiguration auf die Verwendung von Microsoft Entra ID umstellen, können Sie nicht mehr zur Verwendung des Speicherkontoschlüssels zurückwechseln.
 
+* Das Cloud Volumes ONTAP System und der Console agent müssen sich beide in Azure befinden.
 * Es ist zu überprüfen, ob das Feature-Flag „use-azure-msi-cvo“ auf dem Cloud Volumes ONTAP System aktiviert ist. Weitere Informationen sind unter link:enable-preview-features.html["Vorschaufunktionen aktivieren"] verfügbar.
 * Es wird nur die Backup-Strategie „Eigenen Bucket verwenden“ unterstützt. Voraussetzung ist, dass das Azure-Speicherkonto bereits vorhanden ist und einen Container mit demselben Namen wie das Konto enthält.
 * In den IAM-Einstellungen des Azure-Speicherkontos muss sichergestellt sein, dass die `Storage Blob Data Contributor` Rolle sowohl dem Azure Agent als auch dem Cloud Volumes ONTAP System zugewiesen ist. Wenn die `Object lock` Richtlinienoption verwendet wird, muss außerdem die Versionierung für das Speicherkonto aktiviert und die `Storage Blob Data Owner` Rolle sowohl dem Azure Agent als auch dem Cloud Volumes ONTAP System zugewiesen sein.

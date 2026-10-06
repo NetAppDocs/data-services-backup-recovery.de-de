@@ -40,14 +40,17 @@ Sie können die folgenden Vorschaufunktionen für NetApp Backup und Recovery akt
 | `"data-transfer-report": true` | Aktiviert den täglichen Datentransferbericht unter der Registerkarte „Berichte“ in NetApp Backup and Recovery für Volumes. Der Bericht liefert tägliche Informationen zur Datentransfer- und Replikationsaktivität in Ihrer Umgebung. 
 
 
-| `"use-azure-msi-cvo": true` | Ermöglicht die Option, für Azure Objektspeicher die Authentifizierung mit verwalteter Identität von Microsoft Entra ID anstelle eines Zugriffsschlüssels für das Speicherkonto zu verwenden. Unterstützt für Cloud Volumes ONTAP in Azure Systemen mit ONTAP 9.16.1 oder neuer. Weitere Informationen enthält link:prev-ontap-backup-cvo-azure.html["Cloud Volumes ONTAP in Azure Blob Storage sichern"]. 
+| `"use-azure-msi-cvo": true` | Ermöglicht die Verwendung der verwalteten Identitätsauthentifizierung von Microsoft Entra ID für Azure Objektspeicher anstelle der Verwendung eines Zugriffsschlüssels für das Storage Konto. Unterstützt für Cloud Volumes ONTAP in Azure Systemen mit ONTAP 9.16.1 oder neuer (der Console Agent muss sich ebenfalls in Azure befinden). Weitere Informationen sind unter link:prev-ontap-backup-cvo-azure.html#anchor-entraid["Anforderungen für die Verwendung der Microsoft Entra ID Authentifizierung mit Azure Objektspeichern"] verfügbar. 
 |===
 
 
 [[enable-preview-features]]
 == Vorschaufunktionen aktivieren
 
-Aktivieren Sie die Optionen für Vorschau-Features, um Funktionen zu nutzen, die noch nicht allgemein verfügbar sind. Verwenden Sie Vorschau-Features in Produktionsumgebungen mit Vorsicht.
+Die Aktivierung von Vorschau-Feature-Flags ermöglicht die Nutzung von Funktionen, die noch nicht allgemein verfügbar sind. Bei der Verwendung von Vorschau-Funktionen in Produktionsumgebungen ist Vorsicht geboten.
+
+
+NOTE: Diese Beispiele setzen voraus, dass Sie Docker verwenden; bei Verwendung von Podman kommen die entsprechenden Podman Befehle zum Einsatz.
 
 .Schritte
 . Verwenden Sie SSH, um sich beim Console Agent anzumelden.
@@ -131,8 +134,11 @@ NOTE: Um eine Vorschaufunktion zu deaktivieren, führen Sie die gleichen Schritt
 Deaktivieren Sie die Indizierung für bestimmte Volumes oder für alle Volumes, die zu einer oder mehreren Storage-VMs gehören, indem Sie die folgenden Optionsflags verwenden:
 
 * `svms-not-to-index`: Eine durch Kommas getrennte Liste von Speicher-VMs, deren Volumes nicht indiziert werden sollen
-* `volumes-not-to-index`: Eine durch Kommas getrennte Liste einzelner Bände, die nicht indiziert werden sollen
+* `volumes-not-to-index`: Eine durch Kommas getrennte Liste einzelner Volume-IDs von Volumes, die nicht indexiert werden sollen
 
+
+
+NOTE: Diese Beispiele setzen voraus, dass Sie Docker verwenden; bei Verwendung von Podman kommen die entsprechenden Podman Befehle zum Einsatz.
 
 .Schritte
 . Verwenden Sie SSH, um sich beim Console Agent anzumelden.
@@ -176,14 +182,14 @@ Der Mountpunkt unterscheidet sich zwischen Cloud- und privaten Bereitstellungen.
 ----
 cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data/cbs_catalog_config
 ----
-. Erstellen Sie eine Datei mit dem Namen  `production-customer.json` und passen Sie die Namen der Storage-VM und Volumes an Ihre Umgebung an:
+. Erforderlich ist eine Datei mit dem Namen `production-customer.json` sowie die Anpassung der Namen der Storage VMs und der Volume-IDs an Ihre Umgebung:
 +
 [source, json]
 ----
 {
   "indexing": {
-    "svms-not-to-index": "storage_vm_1,storage_vm_2,storage_vm_3",
-    "volumes-not-to-index": "volume_1,volume_2,volume_3"
+    "svms-not-to-index": "storage_vm_name_1,storage_vm_name_2,storage_vm_name_3",
+    "volumes-not-to-index": "volume_ID_1,volume_ID_2,volume_ID_3"
   }
 }
 ----

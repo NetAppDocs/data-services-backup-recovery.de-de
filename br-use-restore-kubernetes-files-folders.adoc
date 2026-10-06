@@ -113,6 +113,10 @@ Der Dateibrowser wird angezeigt.
 +
 Eine Partition kann geöffnet werden, um deren Dateien und Ordner zu durchsuchen. Wird eine Datei oder ein Ordner zum Herunterladen ausgewählt, indem das entsprechende Kästchen aktiviert wird, wird sie oder er der Liste „Ausgewählt“ auf der rechten Seite hinzugefügt.
 
++
+
+NOTE: Die Gesamtgröße der ausgewählten Dateien und Ordner darf 5 MB nicht überschreiten.
+
 . Wenn Sie fertig sind, wählen Sie *Weiter*.
 . Den Übertragungsmodus *Datei herunterladen* auswählen.
 . Wählen Sie *Weiter*.
