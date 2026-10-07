@@ -20,15 +20,14 @@ https://docs.netapp.com/us-en/data-services-backup-recovery/br-rbac-setup.html["
 
 In dieser Version wird für ONTAP Volumes Workloads die folgende Vorschau-Verbesserung eingeführt:
 
-* *Cloud Volumes ONTAP Azure Entra ID-Unterstützung*: Microsoft Entra ID Authentifizierung kann jetzt für Azure Storage-Bucket-Konfigurationen verwendet werden, wenn für die Azure Authentifizierung nicht der Zugriffsschlüssel des Storage-Kontos verwendet werden soll. Diese Option steht für Cloud Volumes ONTAP in Azure-Systemen mit ONTAP 9.16.1 oder höher zur Verfügung.
-
+*Cloud Volumes ONTAP Azure Entra ID-Unterstützung*: Microsoft Entra ID Authentifizierung kann jetzt für Azure Storage-Bucket-Konfigurationen verwendet werden, wenn für die Azure Authentifizierung nicht der Zugriffsschlüssel des Storage-Kontos verwendet werden soll. Diese Option steht für Cloud Volumes ONTAP in Azure-Systemen mit ONTAP 9.16.1 oder höher zur Verfügung.
 
 Weitere Informationen zum Schutz von ONTAP Volumes-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["Informationen zum ONTAP Volumeschutz mit NetApp Backup und Recovery"].
 
 
 
-[[vmware-workloads-enhancements]]
-=== VMware-Workload-Verbesserungen
+[[vmware-workloads-enhancement]]
+=== Erweiterung für VMware Workloads
 
 In dieser Version führt VMware Workloads die folgende Verbesserung ein:
 
