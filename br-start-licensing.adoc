@@ -18,6 +18,8 @@ Die Lizenzierung für NetApp Backup und Recovery in der NetApp Console oder der 
 
 Ein paar Anmerkungen zur Funktionsweise von Lizenzen:
 
+* Beim Schutz von Microsoft SQL Server Workloads werden Ihnen nur Backups auf Objekt-Storage in Rechnung gestellt (z. B. bei Verwendung der 3-2-1-Backup-Architekturen oder Disk-to-Object-Storage).
+* Für Oracle Database Workloads ist keine Lizenz erforderlich, da sie sich im Preview-Status befinden.
 * Bei der Verwendung von ONTAP Volumes Workloads können Volumes ohne Lizenz erkannt und wiederhergestellt werden. Wenn Volumes jedoch geschützt (gesichert) werden sollen, ist der Erwerb einer Lizenz erforderlich.
 * Wenn Sie Backup and Recovery mit NetApp Console lokaler Bereitstellung verwenden, kann ausschließlich eine Bring-Your-Own-License-(BYOL)-Lizenz erworben werden.
 * Die Bring-Your-Own-License (BYOL) von NetApp Backup and Recovery ist eine Floating-Lizenz, die Sie auf allen Systemen verwenden können, die mit Ihrer NetApp Console -Organisation oder Ihrem NetApp Console-Konto verknüpft sind.  Wenn Ihnen also durch eine vorhandene BYOL-Lizenz ausreichend Sicherungskapazität zur Verfügung steht, müssen Sie keine weitere BYOL-Lizenz erwerben.

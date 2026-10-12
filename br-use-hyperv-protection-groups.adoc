@@ -49,7 +49,7 @@ Workloads, die gemeinsam geschützt werden sollen, in einer Schutzgruppe zusamme
 . Wählen Sie ein Verhalten für übergreifende Datenträger. Derzeit wird *Immer alle übergreifenden Datenträger einbeziehen* unterstützt.
 +
 
-NOTE: Bei CIFS-Konfigurationen schützt Backup and Recovery automatisch alle an jede VM in der Schutzgruppe angeschlossenen Datenträger. Dies umfasst Dateien, die über mehrere ONTAP Volumes oder ONTAP Storage-Systeme verteilt sind (übergreifende Datenträger) sowie Dateien, die auf einen einzigen Speicherort beschränkt sind (nicht übergreifende Datenträger). Bei SAN-Konfigurationen werden alle nicht übergreifenden Datenträger in die Schutzgruppe aufgenommen.
+NOTE: Bei CIFS- und SAN-Konfigurationen schützt Backup and Recovery automatisch alle an jede VM in der Schutzgruppe angeschlossenen Datenträger. Dies umfasst Dateien, die über mehrere ONTAP Volumes oder ONTAP Storage Systeme verteilt sind (übergreifende Datenträger), sowie Dateien, die auf einen einzigen Speicherort beschränkt sind (nicht übergreifende Datenträger).
 
 . Wählen Sie *Weiter*.
 . Wählen Sie die Datensicherungsstrategie, die Sie auf die Schutzgruppe anwenden möchten.

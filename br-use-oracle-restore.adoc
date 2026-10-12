@@ -42,7 +42,24 @@ Beim Wiederherstellen von Oracle Database Workloads geschieht Folgendes:
 * Wenn Sie ein Backup aus dem Objektspeicher wiederherstellen, können Sie die Daten im Quellspeicher oder auf einem lokalen ONTAP -System wiederherstellen und die Datenbank von dort wiederherstellen.
 
 
-Auf der Seite „Wiederherstellen“ (auch als „Suchen und Wiederherstellen“ bezeichnet) können Sie eine Datenbank wiederherstellen, auch wenn Sie sich nicht an den genauen Namen, den Speicherort oder das Datum erinnern, an dem sie zuletzt in gutem Zustand war.  Sie können mithilfe von Filtern nach der Datenbank suchen.
+
+
+[[view-information-about-available-oracle-database-restore-points]]
+== Informationen zu verfügbaren Wiederherstellungspunkten der Oracle Database
+
+Verfügbar sind die Wiederherstellungspunkte einschließlich der SCN-Nummer und der zugehörigen Datenbankinkarnation.
+
+
+NOTE: Oracle Database erstellt jedes Mal eine neue Datenbankinkarnation, wenn Sie eine Datenbank mit der  `RESETLOGS` Option öffnen. NetApp Backup and Recovery listet die relevanten Datenbankinkarnationen auf, wenn Sie Wiederherstellungspunkte überprüfen und wenn Sie eine Wiederherstellung bis zu einer bestimmten SCN durchführen.
+
+.Schritte
+. Im Menü „Backup and Recovery“ erfolgt die Auswahl von *Inventory*.
+. Wählen Sie im NetApp Backup and Recovery -Menü *Wiederherstellen* aus.
+. Für die Oracle Database Workload ist *Ansicht* auszuwählen.
+. Wählen Sie die Registerkarte *Datenbanken*.
+. Wenn die Wiederherstellungspunkte einer Datenbank angezeigt werden sollen, ist für diese Datenbank das *Aktionen* image:icon-action.png["Symbol „Aktionen“"] Symbol und anschließend *Schutzdetails anzeigen* auszuwählen.
+. Die verfügbaren Wiederherstellungspunkte sowie die jeweils zugehörige SCN-Nummer und Datenbankinkarnation werden überprüft.
+
 
 
 
@@ -60,9 +77,7 @@ Wenn PDBs oder Tablespaces zu einem bestimmten Zeitpunkt oder SCN wiederhergeste
 * Wählen Sie nur eine PDB aus. Zeitpunktgenaue Wiederherstellung ist nicht mit der Wiederherstellung mehrerer PDBs kompatibel.
 * `PDB$SEED`Kann nicht für zeitpunktgenaue Wiederherstellung ausgewählt werden.
 * Die Wiederherstellung von Kontrolldateien kann nicht mit zeitpunktgenauem Recovery von PDBs oder PDB-Tablespaces kombiniert werden.
-* Es wird sichergestellt, dass die Datensicherung und die erforderlichen Protokollsicherungen katalogisiert sind.
 * Die  `SYSTEM`, `SYSAUX` und  `UNDO` Tabellenbereiche können nicht ausgewählt werden.
-* Es wird geprüft, ob die Datensicherung und die erforderlichen Protokollsicherungen katalogisiert sind.
 
 
 ====
@@ -87,11 +102,6 @@ Es wird eine Liste mit Snapshots angezeigt, die Ihren Suchkriterien entsprechen.
 +
 Die der angegebenen Uhrzeit und dem angegebenen Datum nächstliegende Snapshot wird angezeigt.
 
-.. Optional kann *Protokollsicherungen anzeigen* ausgewählt werden, um die zugehörigen Protokollsicherungen anzuzeigen.
-+
-... Es wird geprüft, ob die Protokollsicherungen eingebunden sind.
-
-
 .. Wenn der Snapshot an mehr als einem Ort gespeichert ist, kann ein Quellort ausgewählt und Standortdetails hinzugefügt oder überprüft werden.
 .. Wählen Sie *Weiter*.
 
@@ -99,17 +109,14 @@ Die der angegebenen Uhrzeit und dem angegebenen Datum nächstliegende Snapshot w
 --
 .Wiederherstellen auf eine bestimmte Systemänderungsnummer (SCN)
 --
+.. Optional sind in <<Informationen zu verfügbaren Wiederherstellungspunkten der Oracle Database>> die verfügbaren SCNs und zugehörigen Datenbank-Inkarnationen aufgeführt.
 .. Wählen Sie *Auf eine bestimmte Systemänderungsnummer (SCN) wiederherstellen*.
 .. Wählen Sie *Weiter*.
 .. Geben Sie die SCN ein, die als Wiederherstellungspunkt verwendet werden soll, und wählen Sie *Suchen*.
 +
-Der nächstliegende Snapshot für die angegebene SCN wird angezeigt.
+Der am besten passende Snapshot für die angegebene SCN wird angezeigt. Falls mehrere Datenbankinkarnationen mit der SCN übereinstimmen, werden alle übereinstimmenden Inkarnationen angezeigt.
 
-.. Optional kann *Protokollsicherungen anzeigen* ausgewählt werden, um die zugehörigen Protokollsicherungen anzuzeigen.
-+
-... Es wird geprüft, ob die Protokollsicherungen eingebunden sind.
-
-
+.. Wenn mehrere Datenbankinkarnationen der Suche entsprechen, muss der Snapshot mit der richtigen Inkarnation ausgewählt werden.
 .. Wenn der Snapshot an mehr als einem Ort gespeichert ist, kann ein Quellort ausgewählt und Standortdetails hinzugefügt oder überprüft werden.
 .. Wählen Sie *Weiter*.
 
@@ -121,11 +128,6 @@ Der nächstliegende Snapshot für die angegebene SCN wird angezeigt.
 .. Wählen Sie *Weiter*.
 +
 Der aktuellste Snapshot wird angezeigt. Der Wiederherstellungsvorgang stellt den letzten funktionierenden Zustand mithilfe aller verfügbaren Protokollsicherungen wieder her.
-
-.. Optional kann *Protokollsicherungen anzeigen* ausgewählt werden, um die zugehörigen Protokollsicherungen anzuzeigen.
-+
-... Es wird geprüft, ob die Protokollsicherungen eingebunden sind.
-
 
 .. Wenn der Snapshot an mehr als einem Ort gespeichert ist, kann ein Quellort ausgewählt und Standortdetails hinzugefügt oder überprüft werden.
 .. Wählen Sie *Weiter*.
@@ -168,7 +170,7 @@ Verfügbare Snapshots werden angezeigt.
 ... Optional kann die Option *Steuerdateien* aktiviert werden, um auch die Datenbank-Steuerdateien wiederherzustellen. Diese Option kann nicht für zeitpunktgenaue oder SCN-basierte Wiederherstellung von PDBs oder PDB-Tablespaces ausgewählt werden.
 ... Optional kann die Option *Datenbankstatus bei Bedarf für Wiederherstellung und Recovery ändern* aktiviert werden, damit Backup and Recovery den Datenbankstatus je nach Art der Wiederherstellung verwalten kann.
 ... Optional kann die Option *Wiederherstellung vor Ort erzwingen* aktiviert werden, um eine Wiederherstellung vor Ort durchzuführen, wenn nach dem Backup neue Datendateien hinzugefügt wurden oder wenn LUNs in einer LVM Festplattengruppe hinzugefügt, gelöscht oder neu erstellt wurden. Dadurch wird die Prüfung auf fremde Dateien überschrieben; das Datenbank-Recovery erfolgt mit der gewählten Wiederherstellungsoption.
-... Geben Sie im Feld *Externe Archivprotokolldateien* die Speicherorte der externen Archivprotokolldateien an, wenn PDBs oder Tablespaces zu einem bestimmten Zeitpunkt oder SCN wiederhergestellt werden und sich die Archivprotokolle nicht am konfigurierten Speicherort befinden. Geben Sie einen Dateisystempfad ein, der mit  `/` beginnt, oder eine ASM Festplattengruppe, die mit  `+` beginnt. Die Schaltflächen „Plus“ und „Minus“ neben dem Texteingabefeld ermöglichen das Hinzufügen oder Entfernen von Speicherorten. Dieses Feld wird nicht angezeigt, wenn aus Snapshots ohne Recovery wiederhergestellt wird.
+... Im Feld *Specify external archive log files locations* sind externe Archivprotokolldateispeicherorte anzugeben, wenn PDBs oder Tablespaces zu einem bestimmten Zeitpunkt oder SCN wiederhergestellt werden und sich die Archivprotokolle nicht am konfigurierten Speicherort befinden. Es ist ein Dateisystempfad einzugeben, der mit `/` beginnt, oder eine ASM Festplattengruppe, die mit `+` beginnt. Mit den Schaltflächen „Plus“ und „Minus“ neben dem Texteingabefeld lassen sich Speicherorte hinzufügen oder entfernen. Dieses Feld wird nicht angezeigt, wenn die Wiederherstellung aus Snapshots ohne Recovery erfolgt.
 ... Optional kann die Option *Datenbank oder Containerdatenbank nach der Wiederherstellung im READ-WRITE-Modus öffnen* aktiviert und eine Unteroption ausgewählt werden, die dem Wiederherstellungsbereich entspricht (diese Optionen werden nicht angezeigt, wenn aus Snapshots ohne Recovery wiederhergestellt wird):
 +
 **** *Alle Datendateien*: Die Datenbank oder Containerdatenbank wird nach dem Datenbank-Recovery im READ-WRITE-Modus geöffnet.

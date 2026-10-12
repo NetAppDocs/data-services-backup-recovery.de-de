@@ -1,0 +1,38 @@
+= Hyper-V-Workload-Verbesserungen
+:allow-uri-read: 
+
+
+
+
+[[hyper-v-workloads-enhancements]]
+=== Hyper-V-Workload-Verbesserungen
+
+In dieser Version werden für Hyper-V-Workloads die folgenden Verbesserungen eingeführt:
+
+* *NetApp MetroCluster support*: NetApp Backup and Recovery ermöglicht es Ihnen jetzt, Hyper-V-VMs zu schützen, die von NetApp MetroCluster gespiegelt werden.
+* *Datenträgerübergreifender Schutz für SAN-VMs*: Bei CIFS- und SAN-Konfigurationen können Sie jetzt alle an jede VM in einer Schutzgruppe angeschlossenen Datenträger schützen. Dies umfasst Dateien, die über mehrere ONTAP Volumes oder ONTAP Storage Systeme verteilt sind (datenträgerübergreifende Datenträger), sowie Dateien, die auf einen einzelnen Speicherort beschränkt sind.
+
+
+Weitere Informationen zum Schutz von Hyper-V-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Informationen zum Schutz von Hyper-V Workloads mit NetApp Backup and Recovery"].
+
+
+
+[[oracle-database-workloads-enhancement]]
+=== Erweiterung der Oracle Database Workloads
+
+In dieser Version wird für Oracle Database-Workloads die folgende Verbesserung eingeführt:
+
+*Automatische Archivprotokollverwaltung*: Bei Vorgängen zur Datenbankwiederherstellung und zum Klonen erkennt und mountet NetApp Backup and Recovery die erforderlichen Archivprotokolle automatisch und hängt sie nach Abschluss des Vorgangs wieder aus. Primäre, sekundäre und Objekt-Storage-Protokollquellen werden unterstützt.
+
+Weitere Informationen zum Schutz von Oracle Database-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Informationen zum Schutz von Oracle Database Workloads mit NetApp Backup and Recovery"].
+
+
+
+[[microsoft-sql-server-workloads-enhancement]]
+=== Verbesserung von Microsoft SQL Server Workloads
+
+In dieser Version wird für Microsoft SQL Server Workloads die folgende Verbesserung eingeführt:
+
+*Lizenzänderung*: Für Backups mit Disk-to-Disk- oder Disk-to-Disk-Fan-Out-Architekturen fallen keine Gebühren mehr an. Gebühren fallen nur für Backups auf Objekt-Storage an, einschließlich Backups mit 3-2-1- oder Disk-to-Object-Storage-Architekturen.
+
+Weitere Informationen zum Schutz von Microsoft SQL Server Workloads finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-mssql-protect-overview.html["Informationen zum Schutz von Microsoft SQL Server Workloads mit NetApp Backup and Recovery"].
