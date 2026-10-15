@@ -263,6 +263,18 @@ NOTE: Der Schutz von Datenbanken, die auf Passthrough-Disks oder VHD/VHDX-Dateie
 |===
 
 
+[[required-permissions-for-microsoft-sql-server-host-discovery]]
+=== Erforderliche Berechtigungen für die Hosterkennung in Microsoft SQL Server
+
+Wenn Sie einen SQL Server-Host ermitteln, installiert NetApp Backup and Recovery das NetApp SnapCenter Plug-in for Microsoft SQL Server auf dem Host. Alternativ können Sie das Plug-in auch manuell installieren. Wenn Sie die automatische Installation wählen, müssen die Host-Anmeldeinformationen, die Sie während der Ermittlung angeben, über die folgenden Mitgliedschaften und Berechtigungen verfügen, damit Backup and Recovery das Plug-in installieren kann:
+
+* Mitgliedschaft in der  `sysadmin` festen Rolle auf Serverebene der Microsoft SQL Server Instanz
+* Mitgliedschaft in der lokalen Administratorgruppe unter Windows
+* Berechtigung zur Anmeldung am Host
+
+
+
+
 [[requirements-for-protecting-vmware-workloads]]
 == Anforderungen zum Schutz von VMware-Workloads
 
@@ -411,6 +423,33 @@ NOTE: ONTAP 9.19.1 oder höher ist erforderlich, um mehr als 6 Buckets pro Syste
 
 
 |===
+
+
+[[required-permissions-for-oracle-database-host-discovery]]
+=== Erforderliche Berechtigungen für die Hosterkennung von Oracle Database
+
+Wenn Sie einen Oracle Database-Host erkennen, installiert NetApp Backup and Recovery das NetApp Oracle Database plug-in mithilfe von passwortbasierter SSH auf dem Host. Alternativ kann das plug-in auch manuell installiert werden. Für die plug-in-Installation sind spezielle Berechtigungen erforderlich.
+
+
+
+==== Anforderungen bei Verwendung der automatischen Plug-in-Installation
+
+Die Host-Anmeldeinformationen, die Sie während der Ermittlung angeben, müssen über die folgenden Berechtigungen verfügen, damit Backup and Recovery das NetApp Oracle Database plug-in installieren kann:
+
+* Root-Berechtigungen oder sudo-Zugriff für einen Benutzer ohne Root-Rechte. Für die Gewährung von sudo-Zugriff während der Host-Erkennung erfolgt im Abschnitt *Host registration* die Auswahl von Anmeldedaten für einen Nicht-Root-Benutzer; anschließend erfolgen die Auswahl von *Configure sudoers* und das Befolgen der Anweisungen. Root-Anmeldedaten benötigen diesen Schritt nicht.
+* Ausführungsberechtigung für die Java JVM.
+
+
+
+
+==== Anforderungen bei der manuellen Installation des Plug-ins
+
+Wenn Sie das Plug-in manuell installieren, muss das für die Installation verwendete Konto über folgende Berechtigungen verfügen:
+
+* Root-Berechtigungen oder sudo-Berechtigung für einen Nicht-Root-Benutzer.
+* Ausführungsberechtigung für die Java JVM.
+
+
 
 
 [[requirements-for-protecting-kubernetes-applications]]
