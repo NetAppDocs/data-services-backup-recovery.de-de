@@ -60,7 +60,10 @@ Standardmäßig werden auf der Seite „Jobüberwachung“ Schutz- und Wiederher
 . Um die Ergebnisse anders zu sortieren, wählen Sie jede Spaltenüberschrift aus, um sie nach Status, Startzeit, Ressourcenname usw. zu sortieren.
 . Wenn Sie nach bestimmten Jobs suchen, wählen Sie den Bereich *Erweiterte Suche und Filterung* aus, um das Suchfeld zu öffnen.
 +
-In diesem Bereich kann eine Freitextsuche nach beliebigen Ressourcen eingegeben werden, zum Beispiel „volume 1“ oder „application 3“. Auch eine Filterung der Aufgabenliste nach den Einträgen in den Dropdown-Menüs ist möglich.
+In diesem Bereich können Sie eine Freitextsuche für beliebige Ressourcen eingeben, z. B. „Volume 1“ oder „Applikation 3“. Sie können die Auftragsliste auch nach den Einträgen in den Dropdown-Menüs filtern. Sie können auch einen Zeitraum durchsuchen.
+
++
+Bei der Suche nach einem Zeitraum kann mit *Benutzerdefinierter Bereich* ein Start- und Enddatum in einem Kalender ausgewählt werden.
 
 +
 Die meisten Filter sind selbsterklärend. Mit dem Filter „Arbeitsbelastung“ können Sie sich Jobs in folgenden Kategorien anzeigen lassen:
