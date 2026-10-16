@@ -157,6 +157,14 @@ Um Objektspeicher als Backup-Ziel zu verwenden, wird ein Konto bei AWS S3, Googl
 
 Für die Nutzung von NetApp Backup and Recovery für ONTAP Volume-Workloads benötigen Sie die folgenden Voraussetzungen.
 
+Vor der Erkennung eines ONTAP Systems in Backup and Recovery sollten folgende Voraussetzungen erfüllt sein:
+
+* Es ist sicherzustellen, dass auf der lokalen ONTAP Instanz eine ONTAP One Lizenz aktiviert ist.
+* Voraussetzung ist, dass die AMQP Applikation als  `Password`Anmeldemethode für den ONTAP Benutzer aktiviert ist, den Sie zur Erkennung von ONTAP Systemen verwenden. Dadurch erscheinen geplante Sicherungsaufträge im Job Monitor. Anweisungen zur Benutzerverwaltung finden sich im https://docs.netapp.com/us-en/ontap/manage-users-groups-host-specific-task.html#manage-unix-users["ONTAP-Dokumentation"^].
+
+
+Einige ONTAP Funktionen erfordern bestimmte ONTAP Versionen:
+
 [cols="2,1"]
 |===
 | Funktion | Erforderliche ONTAP Version 
@@ -176,9 +184,6 @@ Für die Nutzung von NetApp Backup and Recovery für ONTAP Volume-Workloads ben�
 
 | Mehr als 6 Buckets pro System bei verschiedenen Cloud-Anbietern (maximal 100 Buckets) | 9.19.1 oder später 
 |===
-
-NOTE: Auf der lokalen ONTAP Instanz muss eine ONTAP One License aktiviert sein.
-
 Weitere Informationen zu unterstützten Funktionen, Volumentypen, Sicherungs- und Wiederherstellungszielen und mehr finden Sie unter link:prev-ontap-protect-overview.html["Schützen Sie Ihre ONTAP Volume-Daten"].
 
 
