@@ -1,0 +1,14 @@
+= Erweiterung der Oracle Database Workloads
+:allow-uri-read: 
+
+
+
+
+[[oracle-database-workloads-enhancement]]
+=== Erweiterung der Oracle Database Workloads
+
+In dieser Version wird für Oracle Database-Workloads die folgende Verbesserung eingeführt:
+
+*Unterstützung für Oracle Data Guard*: NetApp Backup and Recovery unterstützt jetzt die Verwendung von Schutzgruppen zum Schutz von primären und Standby-Datenbanken, die Oracle Data Guard für Hochverfügbarkeit verwenden.
+
+Weitere Informationen zum Schutz von Oracle Database-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Informationen zum Schutz von Oracle Database Workloads mit NetApp Backup and Recovery"].

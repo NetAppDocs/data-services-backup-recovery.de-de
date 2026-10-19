@@ -24,6 +24,7 @@ Aktuelle Einschränkungen und nicht unterstützte Aktionen für Hyper-V-Workload
 Die folgenden Aktionen werden für Hyper-V-Workloads in NetApp Backup and Recovery nicht unterstützt:
 
 * In der Backup and Recovery-Vorabversion für die lokale Bereitstellung der NetApp Console werden Backups in Objektspeicher nur für ONTAP S3 und StorageGRID Ziele unterstützt. Backup-Archivierung ist in dieser Vorabversion nicht unterstützt.
-* Erstellen von Ressourcengruppen mithilfe von VMs von mehreren Hyper-V Hosts
+* NetApp Backup and Recovery unterstützt derzeit nicht den Schutz von Hyper-V-LUNs, die auf FlexGroup Volumes gehostet werden.
+* Es ist nicht möglich, Ressourcengruppen mit VMs von mehreren Hyper-V-Hosts zu erstellen.
 * Unabhängig von der Einstellung „Prozessorkompatibilität“ in Hyper-V können Sie keine VMs oder VM-Daten zwischen Systemen mit unterschiedlichen CPU-Herstellern (Intel zu AMD oder umgekehrt) wiederherstellen. Diese Einstellung unterstützt nur die Kompatibilität zwischen verschiedenen Generationen desselben Herstellers (z. B. Intel zu Intel oder AMD zu AMD).
 

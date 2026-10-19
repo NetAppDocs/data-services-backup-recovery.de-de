@@ -42,7 +42,7 @@ Oracle-Datenbankressourcen, die gemeinsam geschützt werden sollen, in einer Sch
 . Geben Sie einen Namen für die Schutzgruppe ein.
 . Wählen Sie die Datenbanken aus, die in die Schutzgruppe aufgenommen werden sollen.
 . Wählen Sie *Weiter*.
-. Wählen Sie die *Sicherungsrichtlinie* aus, die Sie auf die Schutzgruppe anwenden möchten.
+. Für die Schutzgruppe ist die gewünschte *Sicherungsrichtlinie* auszuwählen. Bei Einbeziehung einer Datenbank, die Teil einer Oracle Data Guard Konfiguration ist, ist eine Sicherungsrichtlinie mit aktivierter Data Guard Option auszuwählen.
 +
 Wenn Sie eine Richtlinie erstellen möchten, wählen Sie *Neue Richtlinie erstellen* und folgen Sie den Anweisungen zum Erstellen einer Richtlinie.  Sehenlink:br-use-policies-create.html["Erstellen von Richtlinien"] für weitere Informationen.
 

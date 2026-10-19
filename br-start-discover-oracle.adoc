@@ -290,13 +290,35 @@ TIP: Das Hinzufügen von Ressourcen kann einige Minuten dauern. Der Fortschritt 
 
 
 .Ergebnis
-Die Oracle Database Workload erscheint in der Workload-Liste auf der Inventarseite.
+Der Oracle Database Host wird in der Workload-Liste auf der Inventarseite angezeigt.
+
+
+
+[[view-oracle-database-inventory]]
+== Ansicht des Oracle Database Inventars
+
+Details zu den im Backup and Recovery Inventar erkannten Oracle Database Ressourcen.
+
+.Schritte
+. Im NetApp Console-Menü *Schutz* > *Backup und Recovery* auswählen.
+. Wählen Sie unter *Workloads* die Kachel *Oracle* aus.
+. Die gefundenen Oracle Database Hosts werden auf der Registerkarte *Hosts* angezeigt.
++
+In dieser Ansicht können Sie Details wie jeden Hostnamen, die Anzahl der Datenbanken, die auf jedem Host gehostet werden, das Deployment (z. B. Cluster, Oracle Data Guard oder Standalone) und weitere Informationen einsehen.
+
+. Zur Anzeige der zum Schutz von Oracle Database Ressourcen erstellten Schutzgruppen dient die Registerkarte *Schutzgruppen*.
+. Auf der Registerkarte *Datenbanken* sind die von jedem Oracle Database Host gehosteten Datenbanken zu sehen.
++
+Diese Ansicht zeigt detaillierte Informationen, unter anderem darüber, ob es sich bei jeder Datenbank um eine Einzelinstanz oder um einen Teil eines Clusters oder einer Hochverfügbarkeitskonfiguration handelt.
+
+
 
 
 
 [[continue-to-the-netapp-backup-and-recovery-dashboard]]
 == Weiter zum NetApp Backup and Recovery Dashboard
 
+.Schritte
 . Im NetApp Console-Menü *Schutz* > *Backup und Recovery* auswählen.
 . Eine Workload-Kachel auswählen (z. B. Oracle Database).
 . Wählen Sie im Menü „Sichern und Wiederherstellen“ die Option „Dashboard“ aus.
