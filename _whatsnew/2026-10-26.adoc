@@ -1,0 +1,45 @@
+= Kubernetes-Workloads-Erweiterungen
+:allow-uri-read: 
+
+
+
+
+[[kubernetes-workloads-enhancements]]
+=== Kubernetes-Workloads-Erweiterungen
+
+In dieser Version führt NetApp Backup and Recovery für Kubernetes-Workloads die folgenden Verbesserungen ein:
+
+* *Trident Protect 26.10*: Diese Version enthält Trident Protect 26.10.
+* *Unterstützung für die Treiber ontap-nas-economy und ontap-san-economy*: Sie können jetzt Persistent Volume Claims (PVCs) schützen, die vom NetApp Trident `ontap-nas-economy` Treiber (Qtrees) und dem  `ontap-san-economy` Treiber (LUNs) bereitgestellt werden. Wenn PVCs mithilfe von Economy-Treibern geschützt werden, wird das gesamte zugrunde liegende FlexVol bzw. die gesamte zugrunde liegende LUN geschützt. Einzelne PVCs können aus diesen Backups wiederhergestellt werden.
+* *Kubernetes-fähiges Alerting*: Die NetApp Console sendet Kubernetes-Warnmeldungen jetzt einmal pro Kubernetes Applikation statt einmal pro Volume.
+* *Unterstützung für Volume-Gruppen-Snapshots*: Beim Definieren einer Kubernetes Applikation können jetzt Volume-Gruppen erstellt werden. Volume-Gruppen ermöglichen es, mehrere Volumes gemeinsam als absturzkonsistenten Satz per Snapshot zu sichern und so die Datenkonsistenz über alle Volumes in der Gruppe hinweg zu gewährleisten.
+* *Unterstützung für S3-kompatiblen Objektspeicher*: Sie können jetzt Kubernetes-Applikationsressourcen und -daten auf S3-kompatiblem Objektspeicher sichern, indem Sie Backup-Ziel-Anmeldedaten hinzufügen und Sicherungsrichtlinien konfigurieren.
+
+
+Weitere Informationen zum Schutz von Kubernetes-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Informationen zum Schutz von Kubernetes Workloads mit NetApp Backup and Recovery"].
+
+
+
+[[ontap-volumes-workloads-enhancements]]
+=== ONTAP Volumes Workloads-Verbesserungen
+
+In dieser Version führt NetApp Backup and Recovery die folgenden Verbesserungen für ONTAP Volumes Workloads ein:
+
+* *Schutzberichte*: NetApp Backup and Recovery unterstützt jetzt die Erstellung und das Herunterladen erweiterter Berichte für Workloads von ONTAP Volumes.
+* *Auswählen, ob Backups bei der Abmeldung eines ONTAP Systems beibehalten werden sollen*: Wenn Sie ein ONTAP System von NetApp Backup and Recovery abmelden, können Sie nun auswählen, ob die zuvor gesicherten Daten verworfen oder für die Wiederherstellung verfügbar gehalten werden sollen. Die Dokumentation zu NetApp Backup and Recovery enthält jetzt Anweisungen zur Wiederherstellung der beibehaltenen Daten nach der Abmeldung des Systems.
+
+
+Weitere Einzelheiten finden sich in https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-backup-manage.html#unregister-netapp-backup-and-recovery-for-a-system["Backup and Recovery für ein System deregistrieren"^].
+
+Weitere Informationen zum Schutz von ONTAP Volumes-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["Informationen zum ONTAP Volumeschutz mit NetApp Backup und Recovery"].
+
+
+
+[[oracle-database-workloads-enhancement]]
+=== Erweiterung der Oracle Database Workloads
+
+In dieser Version, in dieser Version führt NetApp Backup and Recovery die folgende Verbesserung für Oracle Database Workloads ein:
+
+*Wiederherstellung an einem alternativen Speicherort*: NetApp Backup and Recovery unterstützt jetzt die Wiederherstellung einer Oracle Datenbank an einem alternativen Speicherort (einem anderen registrierten Host).
+
+Weitere Informationen zum Schutz von Oracle Database-Workloads finden Sie unter  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Informationen zum Schutz von Oracle Database Workloads mit NetApp Backup and Recovery"].

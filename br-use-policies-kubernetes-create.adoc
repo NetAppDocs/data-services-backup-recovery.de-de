@@ -14,9 +14,6 @@ summary: Erstellen Sie in NetApp Backup and Recovery Ihre eigenen Richtlinien, d
 [role="lead"]
 NetApp Backup and Recovery ermöglicht die Erstellung von Kubernetes-Backup-Richtlinien, die die Backup-Häufigkeit, den Zeitplan und die Aufbewahrung steuern.
 
-
-NOTE: Einige dieser Optionen und Konfigurationsabschnitte sind nicht für alle Workloads verfügbar.
-
 Wenn Sie Ressourcen aus SnapCenter importieren, können Sie auf Unterschiede zwischen den in SnapCenter und den in NetApp Backup and Recovery verwendeten Richtlinien stoßen.  Sehenlink:reference-policy-differences-snapcenter.html["Richtlinienunterschiede zwischen SnapCenter und NetApp Backup and Recovery"] .
 
 Sie können die folgenden Ziele im Zusammenhang mit Richtlinien erreichen:

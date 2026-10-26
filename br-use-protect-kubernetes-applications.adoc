@@ -27,6 +27,9 @@ Backup and Recovery Superadministrator oder Backup and Recovery Backup-Administr
 
 Zum Schutz einer Kubernetes-Anwendung wird die Anwendung zunächst in NetApp Backup and Recovery erstellt. Beim Erstellen der Anwendung erkennt NetApp Backup and Recovery die laufende Anwendung im Kubernetes-Cluster.
 
+
+NOTE: Wenn Ihre Applikationen FlexVol Volumes verwenden, die mit Qtrees partitioniert sind, werden beim Schutz der Applikation alle Qtrees in allen FlexVol Volumes geschützt, die Teil der Applikation sind.
+
 .Bevor Sie beginnen
 Bevor Sie eine Kubernetes-Anwendung hinzufügen und schützen können, müssen Sielink:br-start-discover.html["Kubernetes-Workloads entdecken"] .
 
@@ -59,6 +62,7 @@ NOTE: Backup and Recovery speichert weder die Suchparameter noch die Ergebnisse;
 
 
 
+. Optional können Sie im Bereich *Volume groups* Label-Selektoren verwenden, um Volume-Gruppen zu definieren. Ressourcen in jedem durch Kommas getrennten Label werden als absturzkonsistentes Set geschützt.
 . Backup and Recovery zeigt eine Liste der Ressourcen an, die Ihren Suchkriterien entsprechen.
 . Wenn die Liste die Ressourcen enthält, die Sie schützen möchten, wählen Sie *Weiter*.
 . Optional können Sie im Bereich *Richtlinie* eine vorhandene Datensicherungsstrategie auswählen, um die Anwendung zu schützen, oder eine neue Strategie erstellen. Wenn Sie keine Strategie auswählen, wird die Anwendung ohne Datensicherungsstrategie erstellt. Sie können link:br-use-policies-kubernetes-create.html#create-a-policy["Fügen Sie eine Schutzrichtlinie hinzu"] dies später nachholen.
@@ -89,6 +93,7 @@ NOTE: Wenn Sie VMs aus der Liste auswählen, ist die Anwendungsdefinition statis
 +
 Die ausgewählten virtuellen Maschinen werden in der Liste auf der rechten Seite angezeigt.
 
+. Optional lässt sich im Bereich *Volume groups* die Option aktivieren, die Festplatten der ausgewählten VM gemeinsam als absturzkonsistente Volume-Gruppe zu schützen (eine Volume-Gruppe pro VM).
 . Wenn die Liste die VMs enthält, die Sie schützen möchten, wählen Sie *Weiter*.
 . Optional können Sie im Bereich *Richtlinie* eine vorhandene Datensicherungsstrategie auswählen, um die Anwendung zu schützen, oder eine neue Strategie erstellen. Wenn Sie keine Strategie auswählen, wird die Anwendung ohne Datensicherungsstrategie erstellt. Sie können link:br-use-policies-kubernetes-create.html#create-a-policy["Fügen Sie eine Schutzrichtlinie hinzu"] dies später nachholen.
 . Aktivieren und konfigurieren Sie im Bereich *Prescripts und Postscripts* alle Prescript- oder Postscript-Ausführungs-Hooks, die Sie vor oder nach Sicherungsvorgängen ausführen möchten.  Um Präskripte oder Postskripte zu aktivieren, müssen Sie bereits mindestens einlink:br-use-manage-execution-hook-templates.html["Ausführungs-Hook-Vorlage"] .
@@ -157,6 +162,10 @@ spec:
       labelSelector:
         matchLabels:
           app: another-example-app
+  volumeGroups:
+    - labelSelector:
+        matchLabels:
+          volume-group: my-volume-group
   includedClusterScopedResources:
     - groupVersionKind:
         group: rbac.authorization.k8s.io

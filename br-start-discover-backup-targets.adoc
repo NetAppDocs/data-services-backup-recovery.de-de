@@ -21,7 +21,7 @@ Offsite-Backup-Ziele wie AWS S3, Azure Blob Storage, Google Cloud Storage oder S
 [[discover-a-backup-target]]
 == Ermitteln eines Sicherungsziels
 
-Konfigurieren Sie Ihre Sicherungsziele (Amazon Web Services (AWS) S3, Microsoft Azure Blob Storage, Google Cloud Storage oder StorageGRID), bevor Sie NetApp Backup and Recovery verwenden.
+Vor der Verwendung von NetApp Backup and Recovery ist die Konfiguration Ihrer Sicherungsziele (Amazon Web Services (AWS) S3, ONTAP S3, S3-kompatibler Objektspeicher, Microsoft Azure Blob Storage, Google Cloud Storage oder StorageGRID) erforderlich.
 
 Sie können diese Ziele automatisch ermitteln oder manuell hinzufügen.
 
@@ -33,7 +33,7 @@ Sie müssen mindestens eine Arbeitslast ermitteln, bevor Sie ein externes Sicher
 .Schritte
 . Im Menü NetApp Backup and Recovery die Option *Backup-Ziele* auswählen.
 . Wählen Sie *Sicherungsziel ermitteln*.
-. Wählen Sie einen der verfügbaren Backup-Zieltypen aus: *AWS*, *Azure*, *StorageGRID*, *ONTAP S3* oder *GCP*.
+. Zur Auswahl steht einer der verfügbaren Backup-Zieltypen: *AWS*, *Azure*, *StorageGRID*, *ONTAP S3*, *S3-kompatibel* oder *GCP*.
 . Wählen Sie *Weiter*.
 . (Nur für AWS- und Azure-Backup-Ziele) Wählen Sie im Abschnitt *Speicherort der Anmeldeinformationen auswählen* den Speicherort aus, an dem sich die Anmeldeinformationen befinden, und wählen Sie dann aus, wie die Anmeldeinformationen verknüpft werden sollen.
 . Wählen Sie *Weiter*.
@@ -72,9 +72,19 @@ Sie müssen mindestens eine Arbeitslast ermitteln, bevor Sie ein externes Sicher
 *** *Geheimschlüssel*: Geben Sie den geheimen Schlüssel von ONTAP S3 ein.
 
 
+** Für S3-kompatible:
++
+*** *Name der Anmeldeinformation*: Hier wird der S3-kompatible Name der Anmeldeinformation eingegeben.
+*** *Gateway-Node-FQDN*: Geben Sie einen FQDN für den S3-kompatiblen Gateway-Node ein.
+*** *Port*: Hier wird die Portnummer für S3-kompatible Systeme angegeben.
+*** *Zugriffsschlüssel*: Geben Sie den S3-kompatiblen Zugriffsschlüssel ein.
+*** *Geheimer Schlüssel*: Geben Sie den S3-kompatiblen geheimen Schlüssel ein.
+
+
 ** Für GCP:
 +
 *** *Name der Anmeldeinformationen*: Geben Sie den Namen der Google Cloud-Anmeldeinformationen ein.
+*** *GCP-Projekt*: Name Ihres Google Cloud-Projekts.
 *** *Zugriffsschlüssel*: Geben Sie den Google Cloud access key ein.
 *** *Geheimer Schlüssel*: Geben Sie den Google Cloud-Geheimschlüssel ein.
 
@@ -116,33 +126,35 @@ Manuell einen Bucket zu einem externen Backup-Ziel hinzufügen, anstatt NetApp B
 +
 *** *Abonnement*: Der Name des Azure-Abonnements wird ausgewählt.
 *** *Ressourcengruppe*: Wählen Sie den Namen der Azure-Ressourcengruppe aus.
-*** *Instanzdetails*:
+*** *Instanzdetails*: Fügen Sie die folgenden Informationen hinzu:
 +
 **** *Name des Speicherkontos*: Der Name des Azure Blob Storage Kontos ist einzugeben.
 **** *Azure region*: Geben Sie die Azure-Region für das Speicherkonto ein.
-**** *Leistungstyp*: Der Leistungstyp „Standard“ oder „Premium“ für das Azure Blob Storage-Konto gibt das erforderliche Leistungsniveau an.
-**** *Verschlüsselung*: Der Verschlüsselungstyp für das Azure Blob Storage-Konto kann ausgewählt werden. Zur Auswahl stehen entweder von Microsoft verwaltete Schlüssel oder vom Kunden verwaltete Schlüssel. Bei Auswahl von vom Kunden verwalteten Schlüsseln sind der Name des Schlüsseltresors und der Schlüsselnamen anzugeben.
+**** *Objektsperre*: Mit dieser Option wird die Objektsperre für den Bucket aktiviert. Die Objektsperre verhindert, dass Objekte für einen festgelegten Aufbewahrungszeitraum gelöscht oder überschrieben werden, und bietet so eine zusätzliche Datenschutzebene. Diese Funktion kann nur beim Erstellen eines Buckets aktiviert und später nicht mehr deaktiviert werden.
 
 
+*** *Verschlüsselung*: Der Verschlüsselungstyp für das Azure Blob Storage-Konto wird ausgewählt. Es können entweder von Microsoft verwaltete Schlüssel oder kundenseitig verwaltete Schlüssel ausgewählt werden. Wenn kundenseitig verwaltete Schlüssel ausgewählt werden, müssen sowohl der Verschlüsselungsschlüssel als auch die Verschlüsselungs-ID angegeben werden.
 
 
 ** Für StorageGRID:
 +
-*** *Sicherungsziel*: Den Namen des StorageGRID Sicherungsziels auswählen.
-*** *Bucket-Name*: Geben Sie den Namen des StorageGRID Buckets ein.
-*** *Region*: Geben Sie die StorageGRID -Region für den Bucket ein.
-*** *Versionierung aktivieren*: Wählen Sie diese Option, um die Versionierung für den StorageGRID Bucket zu aktivieren.  Durch die Versionierung können Sie mehrere Versionen von Objekten im Bucket behalten, was für Sicherungs- und Wiederherstellungszwecke nützlich sein kann.
-*** *Objektsperre*: Wählen Sie diese Option, um die Objektsperre für den StorageGRID Bucket zu aktivieren.  Durch die Objektsperre wird verhindert, dass Objekte für einen bestimmten Aufbewahrungszeitraum gelöscht oder überschrieben werden, und so eine zusätzliche Ebene des Datenschutzes geschaffen.  Sie können dies nur aktivieren, wenn Sie einen Bucket erstellen, und Sie können es später nicht mehr deaktivieren.
-*** *Kapazität*: Geben Sie die Kapazität für den StorageGRID Bucket ein.  Dies ist die maximale Datenmenge, die im Bucket gespeichert werden kann.
+*** *Credentials name*: Wählen Sie die Anmeldedaten aus, die für die Authentifizierung beim Backup-Ziel dieses Buckets verwendet werden sollen.
+*** *Bucket-Name*: Geben Sie den Namen des neuen StorageGRID Bucket ein.
+*** *Objektsperre*: Mit dieser Option wird die Objektsperre für den Bucket aktiviert. Die Objektsperre verhindert, dass Objekte für einen festgelegten Aufbewahrungszeitraum gelöscht oder überschrieben werden, und bietet so eine zusätzliche Datenschutzebene. Diese Funktion kann nur beim Erstellen eines Buckets aktiviert und später nicht mehr deaktiviert werden.
 
 
 ** Für ONTAP S3:
 +
-*** *Sicherungsziel*: Der Name des ONTAP S3 Backup-Ziels ist auszuwählen.
+*** *Credentials name*: Wählen Sie die Anmeldedaten aus, die für die Authentifizierung beim Backup-Ziel dieses Buckets verwendet werden sollen.
 *** *Bucket-Name*: Der Name des ONTAP S3 Buckets ist einzugeben.
-*** *Kapazität*: Geben Sie die Kapazität für den ONTAP S3-Bucket ein.  Dies ist die maximale Datenmenge, die im Bucket gespeichert werden kann.
-*** *Versionierung aktivieren*: Wählen Sie diese Option, um die Versionierung für den ONTAP S3-Bucket zu aktivieren.  Durch die Versionierung können Sie mehrere Versionen von Objekten im Bucket behalten, was für Sicherungs- und Wiederherstellungszwecke nützlich sein kann.
-*** *Objektsperre*: Wählen Sie diese Option, um die Objektsperre für den ONTAP S3-Bucket zu aktivieren.  Durch die Objektsperre wird verhindert, dass Objekte für einen bestimmten Aufbewahrungszeitraum gelöscht oder überschrieben werden, und so eine zusätzliche Ebene des Datenschutzes geschaffen.  Sie können dies nur aktivieren, wenn Sie einen Bucket erstellen, und Sie können es später nicht mehr deaktivieren.
+*** *Objektsperre*: Mit dieser Option wird die Objektsperre für den Bucket aktiviert. Die Objektsperre verhindert, dass Objekte für einen festgelegten Aufbewahrungszeitraum gelöscht oder überschrieben werden, und bietet so eine zusätzliche Datenschutzebene. Diese Funktion kann nur beim Erstellen eines Buckets aktiviert und später nicht mehr deaktiviert werden.
+
+
+** Für S3-kompatible:
++
+*** *Credentials name*: Wählen Sie die Anmeldedaten aus, die für die Authentifizierung beim Backup-Ziel dieses Buckets verwendet werden sollen.
+*** *Bucket-Name*: Name des neuen S3-kompatiblen Buckets eingeben.
+*** *Objektsperre*: Mit dieser Option wird die Objektsperre für den Bucket aktiviert. Die Objektsperre verhindert, dass Objekte für einen festgelegten Aufbewahrungszeitraum gelöscht oder überschrieben werden, und bietet so eine zusätzliche Datenschutzebene. Diese Funktion kann nur beim Erstellen eines Buckets aktiviert und später nicht mehr deaktiviert werden.
 
 
 ** Für GCP:
@@ -150,7 +162,6 @@ Manuell einen Bucket zu einem externen Backup-Ziel hinzufügen, anstatt NetApp B
 *** *Bucket-Name*: Geben Sie den Namen des Google Cloud-Buckets ein.
 *** *GCP-Projekt*: Wählen Sie den Namen des Google Cloud-Projekts aus.
 *** *Bucket-Region*: Wählen Sie eine Region für den Google Cloud-Bucket aus.
-*** *Objektsperrung*: Wählen Sie diese Option, um Aufbewahrungsfristen für Objekte in diesem Bucket zu aktivieren. Während einer Aufbewahrungsfrist können Objekte weder geändert noch gelöscht werden und sind bis zum Ablauf der Frist unveränderlich. Wenn Sie diese Option für einen Bucket aktivieren, kann sie nicht mehr deaktiviert werden.
 
 
 

@@ -295,7 +295,7 @@ CAUTION: Wenn Sie ein System oder einen Cluster löschen möchten, das bzw. der 
 [[delete-all-backup-files-for-a-system]]
 === Löschen aller Sicherungsdateien für ein System
 
-Das Löschen aller Sicherungen im Objektspeicher für ein System deaktiviert nicht zukünftige Sicherungen von Volumes in diesem System.  Wenn Sie die Erstellung von Backups aller Volumes in einem System beenden möchten, können Sie Backups deaktivieren<<NetApp Backup and Recovery für ein System deaktivieren,wie hier beschrieben>> .
+Das Löschen aller Backups auf dem Objektspeicher für ein System deaktiviert nicht zukünftige Backups von Volumes in diesem System. Wenn Sie die Erstellung von Backups aller Volumes in einem System stoppen möchten, können Sie die Backups pausieren <<Alle Backups für ein System anhalten,wie hier beschrieben>>.
 
 Beachten Sie, dass diese Aktion keine Auswirkungen auf Snapshots oder replizierte Volumes hat – diese Arten von Sicherungsdateien werden nicht gelöscht.
 
@@ -386,41 +386,47 @@ NOTE: Einzelne Volume-Sicherungsdateien können nicht mehr gelöscht werden, sob
 
 
 
-[[deactivate-netapp-backup-and-recovery-for-a-system]]
-== NetApp Backup and Recovery für ein System deaktivieren
+[[pause-all-backups-for-a-system]]
+== Alle Backups für ein System anhalten
 
-Das Deaktivieren von NetApp Backup and Recovery für ein System pausiert Backups und Wiederherstellungen für alle seine Volumes, ohne vorhandene Backups zu löschen. So können Sie alle Backup- und Wiederherstellungsaktivitäten für einen bestimmten Zeitraum anhalten, ohne den Backup-Dienst von diesem System abzumelden.
+Pausieren Sie alle Backups für ein System, um Backup-Aktivitäten für alle Volumes des Systems anzuhalten, ohne bestehende Backups zu löschen. Das Pausieren von Backups hebt die Registrierung des Backup-Service von diesem System nicht auf.
 
 Beachten Sie, dass Ihnen Ihr Cloud-Anbieter weiterhin die Kosten für die Objektspeicherung für die Kapazität berechnet, die Ihre Backups nutzen, es sei denn, Sie<<Backups löschen,Löschen Sie die Backups>> .
 
 .Schritte
 . Wählen Sie auf der Registerkarte *Volumes* die Option *Backup-Einstellungen* aus.
-. Wählen Sie auf der Seite „Backup-Einstellungen“image:icon-actions-horizontal.gif["Symbol „Aktionen“"] für das System, auf dem Sie Backups deaktivieren möchten, und wählen Sie *Backup deaktivieren*.
-. Wählen Sie im Bestätigungsdialogfeld *Deaktivieren* aus.
+. Auf der Seite „Backup Settings“ können Sie für das System, für das Sie Sicherungen anhalten möchten, image:icon-actions-horizontal.gif["Symbol „Aktionen“"] und anschließend „Pause all backups“ auswählen.
+. Im Bestätigungsdialogfeld wird *Pause* ausgewählt.
 
-
-
-NOTE: Während die Sicherung deaktiviert ist, wird für dieses System die Schaltfläche *Sicherung aktivieren* angezeigt.  Sie können diese Schaltfläche auswählen, wenn Sie die Sicherungsfunktion für dieses System erneut aktivieren möchten.
 
 
 
 [[unregister-netapp-backup-and-recovery-for-a-system]]
 == Aufheben der Registrierung von NetApp Backup and Recovery für ein System
 
-Sie können die Registrierung von NetApp Backup and Recovery für ein System aufheben, wenn Sie die Sicherungsfunktion nicht mehr verwenden möchten und für die Sicherungen in diesem System keine Gebühren mehr anfallen sollen.  Normalerweise wird diese Funktion verwendet, wenn Sie ein System löschen möchten und den Sicherungsdienst kündigen möchten.
+Durch das Aufheben der Registrierung von NetApp Backup and Recovery für ein System werden künftige Backups für ein Storage-System gestoppt und dieses aus NetApp Backup and Recovery entfernt. Während dieses Vorgangs können Sie wählen, ob die vorhandenen Backups beibehalten oder gelöscht werden sollen.
 
-Sie können diese Funktion auch verwenden, wenn Sie den Zielobjektspeicher ändern möchten, in dem Ihre Cluster-Backups gespeichert werden.  Nachdem Sie die Registrierung von NetApp Backup and Recovery für das System aufgehoben haben, können Sie NetApp Backup and Recovery für diesen Cluster mithilfe der neuen Cloud-Anbieterinformationen aktivieren.
+.Informationen zu diesem Vorgang
+* Beachten Sie, dass Ihnen Ihr Cloud-Anbieter weiterhin die Kosten für die Objektspeicherung für die Kapazität berechnet, die Ihre Backups nutzen, es sei denn, Sie<<Backups löschen,Löschen Sie die Backups>> .
+* Informationen zum Wiederherstellen vorhandener Backups sind unter link:prev-ontap-restore-cli.html["ONTAP Daten mithilfe der ONTAP CLI wiederherstellen"^] verfügbar.
 
-Bevor Sie die Registrierung von NetApp Backup and Recovery aufheben können, müssen Sie die folgenden Schritte in dieser Reihenfolge ausführen:
-
-* Deaktivieren Sie NetApp Backup and Recovery für das System
-* Löschen Sie alle Backups für dieses System
-
-
-Die Option zum Aufheben der Registrierung ist erst verfügbar, wenn diese beiden Aktionen abgeschlossen sind.
 
 .Schritte
-. Wählen Sie auf der Registerkarte *Volumes* die Option *Backup-Einstellungen* aus.
-. Wählen Sie auf der Seite „Backup-Einstellungen“image:icon-actions-horizontal.gif["Symbol „Aktionen“"] für das System, bei dem Sie die Registrierung des Sicherungsdienstes aufheben möchten, und wählen Sie *Registrierung aufheben*.
-. Wählen Sie im Bestätigungsdialogfeld *Abmelden* aus.
+. Wechseln Sie zu *Schutz > Sicherung und Wiederherstellung*.
+. Die Kachel *Volumes* auswählen.
+. Die Auswahl von *Backup Settings*.
+. Wählen Sie auf der Seite „Backup Settings“ image:icon-actions-horizontal.gif["Symbol „Aktionen“"] für das System und dann *Unregister backups* aus.
+. Wählen Sie eine der folgenden Optionen:
++
+** *Backups deaktivieren*: Beendet künftige Backups, löscht die Objektspeicher-Backup-Beziehungen und behält die vorhandenen Backups im Objektspeicher bei. Nachdem die Registrierung des Systems aufgehoben wurde, können Sie diese Backups nur über die ONTAP CLI wiederherstellen.
+** *Backups deaktivieren und löschen*: Beendet zukünftige Backups, löscht die Backup-Beziehungen des Objektspeichers und löscht die vorhandenen Backups. Optional kann *Fehler beim Deaktivieren/Löschen von Backups ignorieren* ausgewählt werden, wenn der Vorgang bei einem Fehler fortgesetzt werden soll.
 
+
+. Im Feld *Systemnamen zur Bestätigung eingeben* den Systemnamen eingeben.
+. Bestätigen Sie unter *Confirm protection report backup*, dass Sie alle benötigten Berichte gespeichert haben.
+. Wählen Sie *Bestätigen & Registrierung aufheben*.
+. Im Job Monitor lässt sich der Vorgang bis zum Abschluss überwachen.
+
+
+
+NOTE: Durch das Aufheben der Registrierung des Systems werden die Volumes, die Snapshot-Konfiguration oder die Replikationsbeziehungen des Systems in ONTAP nicht geändert.
