@@ -412,6 +412,7 @@ IMPORTANT: Vor der Abmeldung eines Systems sollte ein vollständiger Bericht mit
 .Informationen zu diesem Vorgang
 * Beachten Sie, dass Ihnen Ihr Cloud-Anbieter weiterhin die Kosten für die Objektspeicherung für die Kapazität berechnet, die Ihre Backups nutzen, es sei denn, Sie<<Backups löschen,Löschen Sie die Backups>> .
 * Informationen zum Wiederherstellen vorhandener Backups sind unter link:prev-ontap-restore-cli.html["ONTAP Daten mithilfe der ONTAP CLI wiederherstellen"^] verfügbar.
+* Der Zielobjektspeicher eines Systems kann nach der Aktivierung von Backups nicht mehr geändert werden. Wenn Sie einen anderen Objektspeicher verwenden möchten, müssen Sie NetApp Backup and Recovery für das System abmelden und anschließend mit den Informationen des neuen Cloud-Anbieters erneut aktivieren.
 
 
 .Schritte

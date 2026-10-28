@@ -184,7 +184,7 @@ Einige ONTAP Funktionen erfordern bestimmte ONTAP Versionen:
 
 | Mehr als 6 Buckets pro System bei verschiedenen Cloud-Anbietern (maximal 100 Buckets) | 9.19.1 oder später 
 |===
-Weitere Informationen zu unterstützten Funktionen, Volumentypen, Sicherungs- und Wiederherstellungszielen und mehr finden Sie unter link:prev-ontap-protect-overview.html["Schützen Sie Ihre ONTAP Volume-Daten"].
+Weitere Informationen zu unterstützten Funktionen, Volumentypen, Sicherungs- und Wiederherstellungszielen und mehr finden Sie unter link:prev-ontap-protect-overview.html["Schutz von ONTAP Volumes Workloads mit NetApp Backup and Recovery"].
 
 
 

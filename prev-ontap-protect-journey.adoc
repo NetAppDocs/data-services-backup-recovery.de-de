@@ -25,6 +25,7 @@ Wir gehen die folgenden Optionen durch:
 * Welche Backup-Architektur werden Sie verwenden: ein Kaskaden- oder Fan-Out-Backup Ihrer Volumes
 * Werden Sie die Standard-Backup-Richtlinien verwenden oder müssen Sie benutzerdefinierte Richtlinien erstellen?
 * Möchten Sie, dass der Dienst die Cloud-Buckets für Sie erstellt, oder möchten Sie Ihre Objektspeichercontainer erstellen, bevor Sie beginnen?
+* Befinden sich einige Ihrer Volumes auf FabricPool Aggregaten, und wie könnten sich deren Tiering-Richtlinien auf Ihre Backups auswirken
 * Welchen Bereitstellungsmodus des Konsolenagenten verwenden Sie (Standard-, eingeschränkter oder privater Modus)?
 
 
@@ -229,6 +230,25 @@ Wenn Sie ältere Sicherungsdateien in einen Archivspeicher verschieben oder Data
 ** Für Azure müssen Sie die Speicherklasse mit Unterstützung für Unveränderlichkeit auf Versionsebene erstellen.
 
 
+
+
+
+
+[[are-any-of-your-volumes-on-fabricpool-aggregates]]
+== Befinden sich Volumes auf FabricPool Aggregaten
+
+Es gibt bestimmte Dinge, die Sie beachten müssen, wenn sich das Volume, das Sie sichern, auf einem FabricPool Aggregat befindet und ihm eine andere Tiering-Richtlinie zugewiesen ist als `none` :
+
+* Für die erste Sicherung eines FabricPool-Tiered-Volumes müssen alle lokalen und alle Tiered-Daten (aus dem Objektspeicher) gelesen werden.  Bei einem Sicherungsvorgang werden die kalten, im Objektspeicher abgelegten Daten nicht „wieder aufgewärmt“.
++
+Dieser Vorgang kann zu einer einmaligen Kostenerhöhung beim Lesen der Daten von Ihrem Cloud-Anbieter führen.
+
++
+** Nachfolgende Sicherungen sind inkrementell und haben diesen Effekt nicht.
+** Wenn die Tiering-Richtlinie dem Volume bei dessen Erstellung zugewiesen wird, tritt dieses Problem nicht auf.
+
+
+* Vor der Zuweisung der `all` Tiering-Richtlinie an Volumes sollten die Auswirkungen von Backups berücksichtigt werden. Da Daten sofort auf ein Tier verschoben werden, liest NetApp Backup and Recovery die Daten aus dem Cloud-Tier statt aus dem lokalen Tier. Da gleichzeitige Backup-Vorgänge die Netzwerkverbindung zum Cloud-Objektspeicher gemeinsam nutzen, kann die Performance sinken, wenn die Netzwerkressourcen ausgelastet sind. In diesem Fall kann es sinnvoll sein, proaktiv mehrere Netzwerkschnittstellen (LIFs) zu konfigurieren, um diese Art von Netzwerkauslastung zu verringern.
 
 
 

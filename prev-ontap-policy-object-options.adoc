@@ -31,6 +31,9 @@ Mit NetApp Backup and Recovery können Sie mehrere Sicherungsrichtlinien mit ind
 
 Jede Sicherungsrichtlinie enthält einen Abschnitt für _Bezeichnungen & Aufbewahrung_, der auf die Sicherungsdateien angewendet werden kann. Es ist zu beachten, dass die auf das Volume angewendete Snapshot-Richtlinie eine der von NetApp Backup and Recovery erkannten Richtlinien sein muss, andernfalls werden keine Sicherungsdateien erstellt.
 
+
+NOTE: Die auf das Volume angewendete Snapshot-Richtlinie muss eine der Bezeichnungen aufweisen, die Sie in Ihrer Replikationsrichtlinie und Ihrer Backup-to-Object-Richtlinie verwenden. Werden keine übereinstimmenden Bezeichnungen gefunden, werden keine Sicherungsdateien erstellt. Wenn Sie beispielsweise „weekly“ replizierte Volumes und Sicherungsdateien erstellen möchten, müssen Sie eine Snapshot-Richtlinie verwenden, die „weekly“ Snapshots erstellt.
+
 Der Zeitplan besteht aus zwei Teilen: dem Label und dem Aufbewahrungswert:
 
 * Das *Label* definiert, wie oft eine Sicherungsdatei vom Volume erstellt (oder aktualisiert) wird.  Sie können zwischen folgenden Etikettentypen wählen:
@@ -51,6 +54,9 @@ Angenommen, Sie erstellen eine Sicherungsrichtlinie, die 7 *wöchentliche* und 1
 
 
 Jährliche Backups werden nach der Übertragung in den Objektspeicher automatisch aus dem Quellsystem gelöscht.  Dieses Standardverhalten kann auf der Seite „Erweiterte Einstellungen“ für das System geändert werden.
+
+
+TIP: Die Aufbewahrungsfrist für Backups von Datensicherungs-Volumes (DP-Volumes) entspricht der in der Quell-SnapMirror Beziehung definierten Frist. Dies kann über die API geändert werden.
 
 
 
@@ -150,6 +156,8 @@ Scans werden in folgenden Situationen durchgeführt:
 * Ransomware-Scans können gestartet werden, wenn das Backup für den Wiederherstellungsprozess ausgewählt wird.
 * Scans können jederzeit auf Anfrage durchgeführt werden.
 
+
+Geplante Ransomware-Scans sind standardmäßig aktiviert und werden alle 7 Tage nur auf dem neuesten Snapshot ausgeführt. Sie können die Scanfrequenz ändern oder geplante Scans auf der Seite „Erweiterte Einstellungen“ deaktivieren.
 
 *Wie funktioniert der Wiederherstellungsprozess?*
 
