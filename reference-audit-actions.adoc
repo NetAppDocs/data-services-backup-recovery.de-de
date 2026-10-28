@@ -18,44 +18,87 @@ Diese Referenz zeigt, welche NetApp Backup and Recovery-Aktionen die NetApp Cons
 
 Für jede überwachte Aktion protokolliert die NetApp Console den Dienstnamen, den Agenten, die Ressource, den Benutzer und den Aktionsstatus.
 
-.Geprüfte Sicherungs- und Wiederherstellungsaktionen
+[cols="1,3"]
+|===
+| Kategorie | Aktionen 
+
+
+| Restore und Recovery  a| 
+* Dateien aus Snapshot wiederherstellen
 * Volume oder Dateien aus Backup wiederherstellen
 * Volume auf Snapshot zurücksetzen
 * Dateiexplorer starten
-* Dateien aus Snapshot wiederherstellen
-* Cloud-Anmeldeinformationen registrieren
-* Cloud-Zugangsdaten aktualisieren
-* Cloud-Anmeldeinformationen löschen
-* Objektspeicher-Bucket erstellen
-* Objektspeicher-Bucket ändern
-* Backup-Migration validieren
-* Backups zwischen ONTAP Systemen migrieren
-* Quellschutz initialisieren
-* Peer-Cluster zum Schutz
-* Zielschutz initialisieren
-* Volume-Replikation starten
-* Cyber Vault-System erstellen
-* Cyber Vault-System löschen
-* Cyber Vault-Zugriff aktivieren
-* Cyber Vault-Zugriff deaktivieren
-* Ad-hoc-Snapshot erstellen
-* Entdecken Sie Volumes und Beziehungen
-* Anwendungskonfiguration aktualisieren
-* Panoramaschutz für Volumes aktivieren
-* Panoramaschutz für Volumes anpassen
-* Objektspeicher für das System modifizieren
+
+
+
+
+| Backup- und Snapshot-Vorgänge  a| 
 * Ad-hoc-Cloud-Backup erstellen
+* Ad-hoc-Snapshot erstellen
+* Snapshot-Richtlinie von Azure NetApp Files löschen
+* Sicherung in einem Volume aktivieren
+* Aktualisierung der Metadaten der Volume-Sicherung (geplant)
+
+
+
+
+| Schutz und Replikation  a| 
 * Schutz für das System initialisieren
+* Quellschutz initialisieren
+* Zielschutz initialisieren
+* Peer-Cluster zum Schutz
+* Volume-Replikation starten
+
+
+
+
+| Umfassender Schutz  a| 
+* Panoramaschutz in einem System aktivieren
 * Panoramaschutz für Volumes aktivieren
 * Panoramaschutz für Volumes anpassen
-* Aktualisierung der Metadaten der Volume-Sicherung (geplant)
-* Sicherung in einem Volume aktivieren
-* Panoramaschutz für Volumes anpassen
-* ANF-Snapshot-Richtlinie löschen
-* Panoramaschutz in einem System aktivieren
 * Modifizieren Sie den Panoramaschutz in einem System
 
 
+
+
+| Backup-Migration  a| 
+* Backups zwischen ONTAP Systemen migrieren
+* Backup-Migration validieren
+
+
+
+
+| Cyber Vault Management  a| 
+* Cyber Vault-System erstellen
+* Cyber Vault-System löschen
+* Cyber Vault-Zugriff deaktivieren
+* Cyber Vault-Zugriff aktivieren
+
+
+
+
+| Objektspeicher-Management  a| 
+* Objektspeicher-Bucket erstellen
+* Objektspeicher-Bucket ändern
+* Objektspeicher für das System modifizieren
+
+
+
+
+| Verwaltung von Cloud-Anmeldeinformationen  a| 
+* Cloud-Anmeldeinformationen löschen
+* Cloud-Anmeldeinformationen registrieren
+* Cloud-Zugangsdaten aktualisieren
+
+
+
+
+| Erkennung und Konfiguration  a| 
+* Entdecken Sie Volumes und Beziehungen
+* Anwendungskonfiguration aktualisieren
+
+
+|===
 
 
 [[more-information]]

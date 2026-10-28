@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: br-use-reports.html 
-keywords: backing up, back up, backup, backup on-prem ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
-summary: Erstellen Sie in NetApp Backup and Recovery Berichte, um den Status Ihrer Sicherungen anzuzeigen, einschließlich der Anzahl der Sicherungen, der Anzahl der erfolgreichen Sicherungen und der Anzahl der fehlgeschlagenen Sicherungen.  Sie können auch die Details jeder Sicherung anzeigen, einschließlich des Sicherungstyps, des für die Sicherung verwendeten Speichersystems und der Sicherungszeit. 
+keywords: reports, protection report, protection overview, usage and charges, status summary, audit report, kubernetes overview, schedule report, download report, delete report, backup status, workloads 
+summary: In NetApp Backup and Recovery können Sie Berichte für Ihren Workload erstellen, um den Schutzstatus, den Auftragsstatus, die Nutzung und die Audit-Details zu überprüfen. 
 ---
-= Erstellen von Microsoft SQL Server-Schutzberichten in NetApp Backup and Recovery
+= Berichte in NetApp Backup and Recovery erstellen und managen
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,29 +12,137 @@ summary: Erstellen Sie in NetApp Backup and Recovery Berichte, um den Status Ihr
 
 
 [role="lead"]
-Berichte für Microsoft SQL Server Workloads in NetApp Backup and Recovery ermöglichen eine Überprüfung des Sicherungsstatus und der Details, einschließlich der Anzahl erfolgreicher und fehlgeschlagener Sicherungen, Sicherungstypen, Storage-Systeme und Zeitstempel.
+Mit NetApp Backup and Recovery lassen sich Berichte erstellen, um zu bestätigen, dass Ihre Workloads geschützt sind, und um Backups zu finden, die Aufmerksamkeit erfordern. Berichte zeigen die Anzahl erfolgreicher und fehlgeschlagener Backups, Backup-Typen, Speichersysteme, den Cluster-Systemstatus und Zeitstempel. Ein Bericht lässt sich einmalig oder nach Zeitplan ausführen; anschließend können die generierten Berichte angezeigt, heruntergeladen oder gelöscht werden.
+
+*Erforderliche NetApp Console Rolle* Backup and Recovery super admin, Backup and Recovery backup admin, Backup and Recovery restore admin oder Backup and Recovery clone admin. Wenn Sie Daten schützen, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Rolle Cloud Volumes ONTAP Admin erforderlich. Informationen zu link:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
 
 
-[[create-a-protection-report]]
-== Erstellen Sie einen Schutzbericht
+[[report-types-you-can-create]]
+== Berichtstypen, die Sie erstellen können
 
-*Erforderliche NetApp Console-Rolle* Backup and Recovery Super Admin, Backup and Recovery Backup Admin, Backup and Recovery Restore Admin, Backup and Recovery Clone Admin. Für den Schutz von Daten, die auf einem Cloud Volumes ONTAP Cluster gespeichert sind, ist zusätzlich die Cloud Volumes ONTAP Admin-Rolle erforderlich. Informationen dazu link:reference-roles.html["Rollen und Berechtigungen für Backup und Wiederherstellung"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
+Der Berichtstyp richtet sich nach Ihrer Frage, etwa danach, ob Workloads geschützt sind, wofür Ihnen Kosten berechnet werden oder welche Jobs fehlgeschlagen sind.
+
+[cols="1,3"]
+|===
+| Berichtstyp | Beschreibung 
+
+
+| Schutzübersicht | Eine vollständige Übersicht über Ihren Schutzstatus, einschließlich Inventar- und Wiederherstellungszusammenfassungen. 
+
+
+| Nutzung und Gebühren | Nutzungs- und Abrechnungsdetails für jede Workload oder Ressource. 
+
+
+| Statusübersicht | Der Status aller geplanten und On-Demand-Jobs, mit Details zu jedem Job. 
+
+
+| Prüfbericht | Ein Prüfprotokoll aller im System durchgeführten Aktionen und Ereignisse. 
+
+
+| Überblick über Kubernetes | Schutz- und Sicherungsstatus für Ihre Kubernetes-Cluster, Anwendungen und Namespaces. 
+|===
+
+
+[[create-a-report]]
+== Einen Bericht erstellen
+
+Mit einem Bericht lässt sich der Schutzstatus Ihres Kontos, bestimmter Agenten, bestimmter Hosts oder bestimmter Workloads überprüfen. Der Bericht kann einmalig oder nach einem wiederkehrenden Zeitplan ausgeführt werden.
+
+.Schritte
+. Im Menü NetApp Backup and Recovery *Reports* und anschließend *Go to new reports* auswählen, falls die Seite *Protection reports* angezeigt wird.
+. Zum Hinzufügen eines Berichts wird *Bericht hinzufügen* ausgewählt.
+. Unter *Berichtstyp auswählen* erfolgt die Auswahl eines Berichtstyps; anschließend wird *Weiter* gewählt.
+. In *Berichtsname* wird ein eindeutiger Name für den Bericht eingegeben.
++
+Der Name muss zwischen 3 und 100 Zeichen lang sein, darf nur Buchstaben, Zahlen, Leerzeichen, Unterstriche (_) und Bindestriche (-) enthalten und muss mit einem Buchstaben beginnen.
+
+. Unter *Umfang* wird das Level ausgewählt, auf dem der Bericht Daten erfasst:
++
+** *Pro Konto*: Der gesamte Inhalt des Kontos ist eingeschlossen. Es sind keine weiteren Angaben erforderlich.
+** *Nach Agent*: Unter *Agent* werden ein oder mehrere Console Agenten ausgewählt. Der Bericht enthält nur die von den ausgewählten Agenten verwalteten Ressourcen.
+** *Nach Host*: Unter *Host auswählen* können Sie einen oder mehrere Hosts auswählen und *Akzeptieren* wählen. Diese Option ist für Workloads vorgesehen, die auf Hosts ausgeführt werden, wie Microsoft SQL Server und Oracle Database.
+** *Nach Workload*: Unter *Workloads* können ein oder mehrere Workload-Typen ausgewählt werden.
++
+
+NOTE: Die Liste *Nach Arbeitslast* enthält keine ONTAP Volumes. Zum Erstellen eines Berichts für ONTAP Volumes steht der Bereich *Nach Konto* oder *Nach Agent* zur Verfügung.
+
+
+
+. Unter *Häufigkeit* lässt sich auswählen, wie oft der Bericht ausgeführt werden soll:
++
+** *Einmalig*: Der Bericht wird einmalig ausgeführt. Dies ist die Standardeinstellung.
+** *Nach Zeitplan*: Der Bericht wird wiederholt ausgeführt. In *Alle ausführen* erfolgt die Auswahl einer Häufigkeit. Geplante Berichte erscheinen auf der Registerkarte *Geplante Berichte*.
+
+
+. Unter *Report delivery options* kann optional *Email the report results when the report runs* aktiviert werden.
++
+Diese Option ist standardmäßig deaktiviert. Standardmäßig werden Berichte an alle Benutzer im Unternehmen gesendet. Zum Senden von Berichten an bestimmte Empfänger lassen sich E-Mail-Benachrichtigungen auf der Seite *Einstellungen* unter *Benachrichtigungen* konfigurieren. Details zur Konfiguration von E-Mail-Benachrichtigungen finden sich unter link:br-start-configure.html["Konfigurieren der Einstellungen"].
+
+. Unter *Aufbewahrung* können Sie im Feld *Aufbewahren für* auswählen, wie lange der Bericht aufbewahrt werden soll, bevor er gelöscht wird. Der Standardwert beträgt 30 Tage.
+. Wählen Sie *Hinzufügen*.
++
+Der Bericht erscheint oben in der Liste *Generierte Berichte*. Sobald der Bericht fertig ist, wird eine Erfolgsmeldung angezeigt und Sie können den Bericht herunterladen oder löschen.
+
+
+
+Die Liste *Generierte Berichte* zeigt den Namen, den Typ, den Bereich, den Generierungszeitpunkt und den Benutzer für jeden Bericht an. Die Spalte *Bereich* fasst zusammen, was der Bericht abdeckt, zum Beispiel „1 Konto“ oder „1 Agent“. Der Bericht wird über *Anzeigen* in der Spalte *Bereich* geöffnet. Der Bereich zeigt bei einmaligen Berichten N/A an.
+
+
+
+[[download-a-report-as-json-pdf-excel-or-csv]]
+== Herunterladen eines Berichts als JSON, PDF, Excel oder CSV
+
+Ein generierter Bericht kann heruntergeladen werden, um ihn offline zu prüfen oder mit anderen zu teilen, die keinen Zugriff auf die NetApp Console haben.
 
 .Schritte
 . Im NetApp Backup und Recovery-Menü die Option *Berichte* auswählen.
-. Wählen Sie *Bericht erstellen*.
-. Geben Sie Details zum Berichtsumfang ein:
+. Auf der Registerkarte *Generierte Berichte* befindet sich der Bericht, den Sie herunterladen möchten.
+. In der Berichtszeile erfolgt die Auswahl von *Download* und anschließend die Auswahl eines Formats:
 +
-** *Berichtsname*: Geben Sie einen eindeutigen Namen für den Bericht ein.
-** *Berichtstyp*: Wählen Sie, ob Sie einen Bericht nach Konto oder nach Arbeitslast (Microsoft SQL Server) wünschen.
-** *Host auswählen*: Wenn Sie nach Arbeitslast ausgewählt haben, wählen Sie den Host aus, für den Sie den Bericht erstellen möchten.
-** *Inhalt auswählen*: Wählen Sie, ob der Bericht eine Zusammenfassung aller Sicherungen oder Details zu jeder Sicherung enthalten soll.  (Wenn Sie „Nach Konto“ gewählt haben)
-
-
-. Geben Sie den Berichtszeitraum ein: Es kann ausgewählt werden, ob der Bericht Daten vom letzten Tag, den letzten 7 Tagen, den letzten 30 Tagen, dem letzten Quartal oder dem letzten Jahr enthalten soll.
-. Geben Sie die Details zur Berichtszustellung ein: Wenn der Bericht per E-Mail zugestellt werden soll, *Bericht per E-Mail senden* auswählen. Die E-Mail-Adresse eingeben, an die der Bericht gesendet werden soll.
+** *JSON-Download*
+** *PDF-Download*
+** *Excel herunterladen*
+** *CSV herunterladen*
 +
-E-Mail-Benachrichtigungen können auf der Einstellungsseite konfiguriert werden. Weitere Informationen zur Konfiguration von E-Mail-Benachrichtigungen sind unter link:br-start-configure.html["Konfigurieren der Einstellungen"] zu finden.
+Sie können auch das Menü *Download* auf der Berichtsseite verwenden.
 
++
+Die Erstellung umfangreicher Berichte kann länger dauern.
+
+
+
+
+
+
+
+[[view-report-details]]
+== Berichtsdetails anzeigen
+
+Die Details eines generierten Berichts in NetApp Backup and Recovery, einschließlich einer Zusammenfassung, Inventarzahlen und Detailtabellen, werden angezeigt.
+
+.Schritte
+. Im NetApp Backup und Recovery-Menü die Option *Berichte* auswählen.
+. Auf der Registerkarte *Generierte Berichte* ist der Name des Berichts auszuwählen, der angezeigt werden soll.
+. Unter *Inventar* werden nach dem Erweitern die Anzahlen für Systeme, SVMs, Volumes, Hosts, Instanzen und Buckets angezeigt.
+. Weiter unten sind die Berichtstabellen zur Überprüfung aufgeführt. Welche Tabellen angezeigt werden, hängt vom Berichtstyp ab.
+. (Optional) Zum Auswählen der Spalten, die eine Tabelle anzeigt, das Spaltensymbol am rechten Ende der Tabellenkopfzeile auswählen, Spalten auswählen oder deaktivieren und anschließend *Apply* auswählen.
++
+Die Spalte *Ressourcenname* bleibt immer aktiviert. *Standard wiederherstellen* dient zur Rückkehr zu den Standardspalten.
+
+. Die Rückkehr zur Liste der Berichte erfolgt über *Berichte* oben auf der Seite.
+
+
+
+
+[[delete-a-report]]
+== Einen Bericht löschen
+
+Mit dem Löschen eines generierten Berichts wird dieser aus der Liste *Generierte Berichte* entfernt. Berichte werden außerdem automatisch gelöscht, wenn ihre Aufbewahrungsfrist abläuft.
+
+.Schritte
+. Im NetApp Backup und Recovery-Menü die Option *Berichte* auswählen.
+. Auf der Registerkarte *Generierte Berichte* den Bericht suchen, der gelöscht werden soll.
+. Die Auswahl des Löschsymbols erfolgt in der Zeile des Berichts.
+. Bestätigen Sie die Aktion, indem Sie *Löschen* auswählen.
 

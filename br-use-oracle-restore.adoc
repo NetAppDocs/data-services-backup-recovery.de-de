@@ -25,9 +25,10 @@ Sie können Datenbanken von verschiedenen Startorten wiederherstellen:
 
 
 .Stellen Sie diese Punkte wieder her
-Sie können Daten am ursprünglichen Speicherort wiederherstellen. Die Wiederherstellung an einem anderen Speicherort ist in dieser privaten Vorschauversion nicht verfügbar.
+Sie können eine Datenbank an ihrem ursprünglichen Speicherort wiederherstellen oder sie als neue Datenbank auf einem anderen registrierten Host (alternativer Speicherort) wiederherstellen.
 
 * Am ursprünglichen Speicherort wiederherstellen
+* Wiederherstellung an einem alternativen Speicherort (einem anderen registrierten Host)
 
 
 
@@ -39,6 +40,7 @@ Beim Wiederherstellen von Oracle Database Workloads geschieht Folgendes:
 
 * Wenn Sie eine Datenbank aus einem lokalen Snapshot wiederherstellen, erstellt NetApp Backup and Recovery eine _neue_ Ressource mithilfe der Daten aus dem Backup.
 * Wenn Sie aus einem replizierten Speicher wiederherstellen, können Sie es am ursprünglichen Speicherort wiederherstellen.
+* Wenn die Wiederherstellung an einem alternativen Speicherort erfolgt, stellt NetApp Backup and Recovery die ausgewählte Sicherung der Quelldatenbank als neue Datenbank auf einem anderen registrierten Host wieder her. Sie geben den Zielhost und einen Namen für die neue Datenbank an. Wenn Sie keine Wiederherstellungsspezifikationsdatei angeben, berechnet Backup and Recovery automatisch die Speicherorte für die Datendateien, Kontrolldateien und Wiederherstellungsprotokolldateien auf dem Zielhost.
 * Wenn Sie ein Backup aus dem Objektspeicher wiederherstellen, können Sie die Daten im Quellspeicher oder auf einem lokalen ONTAP -System wiederherstellen und die Datenbank von dort wiederherstellen.
 
 
@@ -69,6 +71,25 @@ NOTE: Oracle Database erstellt jedes Mal eine neue Datenbankinkarnation, wenn Si
 Je nach Bedarf lässt sich eine Oracle Datenbank auf einen bestimmten Zeitpunkt, eine bestimmte Systemänderungsnummer (SCN) oder den letzten funktionierenden Zustand wiederherstellen. Die Datenbank kann auch aus Snapshots wiederhergestellt werden, wobei der automatisierte Wiederherstellungsprozess übersprungen werden kann, zum Beispiel wenn die Wiederherstellung manuell erfolgen soll. Die Datenbank lässt sich anhand ihres Namens oder mit spezifischen Filtern suchen.
 
 *Erforderliche NetApp Console-Rolle* Backup und Recovery Super-Admin- oder Backup und Recovery Restore-Admin-Rolle https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
+
+[[alternate-location-support]]
+.Bevor Sie beginnen
+Bei einer Wiederherstellung an einem alternativen Speicherort sind die folgenden unterstützten und nicht unterstützten Wiederherstellungsszenarien zu beachten:
+
+*Unterstützte Wiederherstellungsszenarien für alternative Standorte*
+
+* Wiederherstellen einer einzelnen, vollständigen Oracle Datenbank auf einem einzelnen Zielhost
+* Wiederherstellung zu einem bestimmten Zeitpunkt, zu einer bestimmten SCN oder zum letzten Backup
+* Verwendung externer Archivprotokollverzeichnisse, wenn die für den ausgewählten Wiederherstellungspunkt erforderlichen Archivprotokolle nicht in der Sicherung enthalten sind
+
+
+*Nicht unterstützte Szenarien für die Wiederherstellung an einem alternativen Speicherort*
+
+* Wiederherstellung nur von Tablespaces, einschließlich der Wiederherstellung von Tablespaces innerhalb einer PDB
+* Wiederherstellung nur der PDB in eine andere Containerdatenbank (CDB)
+* Wiederherstellung aus dem sekundären Storage
+* Wiederherstellung aus dem Objektspeicher
+
 
 [NOTE]
 ====
@@ -169,8 +190,8 @@ Verfügbare Snapshots werden angezeigt.
 
 ... Optional kann die Option *Steuerdateien* aktiviert werden, um auch die Datenbank-Steuerdateien wiederherzustellen. Diese Option kann nicht für zeitpunktgenaue oder SCN-basierte Wiederherstellung von PDBs oder PDB-Tablespaces ausgewählt werden.
 ... Optional kann die Option *Datenbankstatus bei Bedarf für Wiederherstellung und Recovery ändern* aktiviert werden, damit Backup and Recovery den Datenbankstatus je nach Art der Wiederherstellung verwalten kann.
-... Optional kann die Option *Wiederherstellung vor Ort erzwingen* aktiviert werden, um eine Wiederherstellung vor Ort durchzuführen, wenn nach dem Backup neue Datendateien hinzugefügt wurden oder wenn LUNs in einer LVM Festplattengruppe hinzugefügt, gelöscht oder neu erstellt wurden. Dadurch wird die Prüfung auf fremde Dateien überschrieben; das Datenbank-Recovery erfolgt mit der gewählten Wiederherstellungsoption.
-... Im Feld *Specify external archive log files locations* sind externe Archivprotokolldateispeicherorte anzugeben, wenn PDBs oder Tablespaces zu einem bestimmten Zeitpunkt oder SCN wiederhergestellt werden und sich die Archivprotokolle nicht am konfigurierten Speicherort befinden. Es ist ein Dateisystempfad einzugeben, der mit `/` beginnt, oder eine ASM Festplattengruppe, die mit `+` beginnt. Mit den Schaltflächen „Plus“ und „Minus“ neben dem Texteingabefeld lassen sich Speicherorte hinzufügen oder entfernen. Dieses Feld wird nicht angezeigt, wenn die Wiederherstellung aus Snapshots ohne Recovery erfolgt.
+... Optional kann die Option *Wiederherstellung vor Ort erzwingen* aktiviert werden, um eine Wiederherstellung vor Ort durchzuführen, wenn nach der Sicherung neue Datendateien hinzugefügt wurden oder wenn LUNs in einer LVM-Festplattengruppe hinzugefügt, gelöscht oder neu erstellt wurden. Dadurch wird die Prüfung auf fremde Dateien umgangen; die Datenbank-Recovery wird mit der von Ihnen ausgewählten Wiederherstellungsoption fortgesetzt.
+... Im Feld *Specify external archive log files locations* werden die Speicherorte externer Archivprotokolldateien angegeben, wenn eine Datenbank zu einem bestimmten Zeitpunkt oder SCN wiederhergestellt wird und sich die Archivprotokolle nicht am konfigurierten Speicherort befinden. Anzugeben sind ein Dateisystempfad, der mit `/` beginnt, oder eine ASM Festplattengruppe, die mit `+` beginnt. Mit den Schaltflächen „Plus“ und „Minus“ neben dem Texteingabefeld lassen sich Speicherorte hinzufügen oder entfernen. Dieses Feld wird nicht angezeigt, wenn aus Snapshots ohne Recovery wiederhergestellt wird.
 ... Optional kann die Option *Datenbank oder Containerdatenbank nach der Wiederherstellung im READ-WRITE-Modus öffnen* aktiviert und eine Unteroption ausgewählt werden, die dem Wiederherstellungsbereich entspricht (diese Optionen werden nicht angezeigt, wenn aus Snapshots ohne Recovery wiederhergestellt wird):
 +
 **** *Alle Datendateien*: Die Datenbank oder Containerdatenbank wird nach dem Datenbank-Recovery im READ-WRITE-Modus geöffnet.
@@ -192,9 +213,27 @@ Verfügbare Snapshots werden angezeigt.
 --
 .An einem anderen Speicherort wiederherstellen
 --
-In dieser Vorabversion nicht für Oracle Database Workloads verfügbar.
+Wiederherstellung einer Datenbank als neue Datenbank auf einem anderen registrierten Host. Überprüfung der <<alternate-location-support,Unterstützte und nicht unterstützte Szenarien>> vor Beginn.
+
+.. Im Abschnitt *Zieleinstellungen* sind die folgenden Informationen einzugeben:
++
+... *Zielhost*: Auswahl des registrierten Hosts, auf dem Sie die neue Datenbank erstellen möchten.
+... *Ziel-Datenbank*: Der Name für die Ziel-Datenbank wird eingegeben. Standardmäßig beginnt der Name mit dem Namen der Quelldatenbank, er kann jedoch bearbeitet werden.
+... *Zieldatenbankparameter anpassen*: Mit dieser Option kann eine benutzerdefinierte Wiederherstellungsspezifikationsdatei hochgeladen werden, um die Parameter der Zieldatenbank anzupassen.
+... *Wiederherstellungsspezifikationsdatei*: Wenn Sie die Option *Zieldatenbankparameter anpassen* aktiviert haben, geben Sie eine Wiederherstellungsspezifikationsdatei an, um festzulegen, wo die wiederhergestellten Dateien auf dem Zielhost abgelegt werden. Sie können eine Standard-Wiederherstellungsspezifikationsdatei herunterladen und anpassen, um die Details der Zieldatenbank wie Authentifizierung und Protokollspeicherorte zu ändern.
++
+Wenn Sie keine Wiederherstellungsspezifikationsdatei angeben, berechnet Backup and Recovery automatisch die Speicherorte für die Datendateien, Kontrolldateien und Wiederherstellungsprotokolldateien.
+
+... Im Feld *Specify external archive log files locations* werden die Speicherorte externer Archivprotokolldateien angegeben, wenn eine Datenbank zu einem bestimmten Zeitpunkt oder SCN wiederhergestellt wird und sich die Archivprotokolle nicht am konfigurierten Speicherort befinden. Anzugeben sind ein Dateisystempfad, der mit `/` beginnt, oder eine ASM Festplattengruppe, die mit `+` beginnt. Mit den Schaltflächen „Plus“ und „Minus“ neben dem Texteingabefeld lassen sich Speicherorte hinzufügen oder entfernen. Dieses Feld wird nicht angezeigt, wenn aus Snapshots ohne Recovery wiederhergestellt wird.
+... Optional kann die Option *Datenbank oder Containerdatenbank nach der Wiederherstellung im READ-WRITE-Modus öffnen* aktiviert und eine Unteroption ausgewählt werden, die dem Wiederherstellungsbereich entspricht (diese Optionen werden nicht angezeigt, wenn aus Snapshots ohne Recovery wiederhergestellt wird):
+
+
+
 
 --
 ====
 . Wählen Sie *Wiederherstellen*.
++
+Nach Abschluss der Wiederherstellung können Sie auf der Seite *Inventar* prüfen, ob die neue Datenbank aufgeführt ist. Falls die Datenbank nicht aufgeführt ist, können Sie den Zielhost aktualisieren.
+
 

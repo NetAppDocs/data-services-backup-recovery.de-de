@@ -406,6 +406,9 @@ Beachten Sie, dass Ihnen Ihr Cloud-Anbieter weiterhin die Kosten für die Objekt
 
 Durch das Aufheben der Registrierung von NetApp Backup and Recovery für ein System werden künftige Backups für ein Storage-System gestoppt und dieses aus NetApp Backup and Recovery entfernt. Während dieses Vorgangs können Sie wählen, ob die vorhandenen Backups beibehalten oder gelöscht werden sollen.
 
+
+IMPORTANT: Vor der Abmeldung eines Systems sollte ein vollständiger Bericht mit dem Titel „Schutzübersicht“ heruntergeladen werden. Der Bericht listet Ihre vorhandenen Backups und deren UUIDs auf. Wenn Sie die Backups aufbewahren, benötigen Sie diese UUIDs für ihre Wiederherstellung.
+
 .Informationen zu diesem Vorgang
 * Beachten Sie, dass Ihnen Ihr Cloud-Anbieter weiterhin die Kosten für die Objektspeicherung für die Kapazität berechnet, die Ihre Backups nutzen, es sei denn, Sie<<Backups löschen,Löschen Sie die Backups>> .
 * Informationen zum Wiederherstellen vorhandener Backups sind unter link:prev-ontap-restore-cli.html["ONTAP Daten mithilfe der ONTAP CLI wiederherstellen"^] verfügbar.

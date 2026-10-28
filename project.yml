@@ -128,8 +128,6 @@ sidebar:
         url: "/br-use-manage-inventory.html"
       - title: Verwalten von Microsoft SQL Server-Snapshots
         url: "/br-use-manage-snapshots.html"
-      - title: Erstellen von Microsoft SQL Server-Berichten
-        url: "/br-use-reports.html"
     - title: Schutz von VMware-Workloads
       entries:
       - title: VMware Schutzworkflow
@@ -251,8 +249,8 @@ sidebar:
         url: "/br-use-manage-kubernetes-access-control.html"
       - title: Verwalten von Ausführungs-Hook-Vorlagen für Kubernetes-Workloads
         url: "/br-use-manage-execution-hook-templates.html"
-      - title: Schutzberichte erstellen und verwalten
-        url: "/br-use-kubernetes-reports.html"
+    - title: Berichte erstellen und managen
+      url: "/br-use-reports.html"
     - title: Überwachen von Jobs
       url: "/br-use-monitor-tasks.html"
     - title: Starten Sie NetApp Backup and Recovery neu
