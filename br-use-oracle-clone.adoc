@@ -25,6 +25,9 @@ Mit NetApp Backup und Recovery lassen sich beschreibbare Klone von Oracle Datenb
 
 Erstellen Sie sofort einen Klon aus einem vorhandenen Snapshot. Verwenden Sie diese Methode, um einen einmaligen Klon zu erstellen, der nicht kontinuierlich aus einem Snapshot aktualisiert wird.
 
+
+NOTE: In Oracle Data Guard Konfigurationen können Sie eine geschützte primäre Datenbank oder eine geschützte physische Standby-Datenbank klonen. Der Klon ist eine eigenständige Datenbank und nicht Teil der Oracle Data Guard Konfiguration. Wenn Sie eine Standby-Datenbank klonen, wird die neue Datenbank als *Data Guard Standby* aufgeführt, bis Sie den Host aktualisieren. Nach der Aktualisierung des Hosts wird sie als reguläre Datenbank aufgeführt.
+
 .Schritte
 . Wählen Sie im NetApp Console *Schutz > Sicherung und Wiederherstellung*.
 . Wählen Sie unter *Workloads* die Kachel *Oracle* aus.
@@ -68,6 +71,9 @@ Einen sofortigen Klon erstellen und regelmäßige Aktualisierungen planen, damit
 
 
 NOTE: Das Erstellen eines sofortigen Snapshots und Klons mit einem Aktualisierungszeitplan gilt nur für vollständige Datenbankklone. Es ist nicht für einen PDB-Klon verfügbar.
+
+
+NOTE: In Oracle Data Guard Konfigurationen können Sie eine geschützte primäre Datenbank oder eine geschützte physische Standby-Datenbank klonen. Der Klon ist eine eigenständige Datenbank und nicht Teil der Oracle Data Guard Konfiguration. Wenn Sie eine Standby-Datenbank klonen, wird die neue Datenbank als *Data Guard Standby* aufgeführt, bis Sie den Host aktualisieren. Nach der Aktualisierung des Hosts wird sie als reguläre Datenbank aufgeführt.
 
 .Schritte
 . Wählen Sie im NetApp Console *Schutz > Sicherung und Wiederherstellung*.

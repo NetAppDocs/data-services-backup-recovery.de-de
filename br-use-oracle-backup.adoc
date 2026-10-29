@@ -71,3 +71,6 @@ Vor Systemänderungen ein Backup bei Bedarf erstellen, um die Daten zu schützen
 . Wählen Sie die Zeitplanstufe aus.
 . Wählen Sie *Sichern*.
 
+
+
+NOTE: Bei Oracle Data Guard Datenbanken prüft NetApp Backup and Recovery beim Start einer Sicherung die aktuelle Rolle jeder Datenbank und befolgt die *Data Guard Einstellungen* in der Richtlinie. Nach einem Switchover oder Failover verwendet die nächste Sicherung die neuen Rollen.

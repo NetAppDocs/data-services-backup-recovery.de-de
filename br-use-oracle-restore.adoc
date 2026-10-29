@@ -102,6 +102,17 @@ Wenn PDBs oder Tablespaces zu einem bestimmten Zeitpunkt oder SCN wiederhergeste
 
 
 ====
+*Wichtige Hinweise zur Wiederherstellung von Oracle Data Guard Datenbanken*
+
+* Vor der Wiederherstellung muss sichergestellt sein, dass die Datenbankrolle aktuell ist. Wenn ein Switchover oder Failover erfolgt ist, ist zunächst auf der Registerkarte *Hosts* für den Host *Refresh* auszuwählen. Die verfügbaren Wiederherstellungsoptionen hängen von der aktuellen Datenbankrolle ab.
+* Wenn die Datenbank aktuell als Standby-Datenbank dient, kann sie nicht am ursprünglichen Speicherort wiederhergestellt werden, unabhängig von ihrer Rolle zum Zeitpunkt der Sicherung. Eine Wiederherstellung an einem alternativen Speicherort ist erforderlich.
+* Wenn sich die Datenbank derzeit im Standby-Modus befindet, können Sie keinen Snapshot wiederherstellen, der nur auf sekundärem Storage oder in Objektspeicher vorhanden ist.
+* Sie können eine Sicherung, die erstellt wurde, als sich die Datenbank im Standby-Modus befand, am ursprünglichen Speicherort wiederherstellen, nachdem die Datenbank zur primären Datenbank geworden ist.
+
+
+
+CAUTION: Die Wiederherstellung einer primären Datenbank ändert die Standby-Datenbank nicht. Wenn Sie die primäre Datenbank nach einer zeitpunktgenauen oder SCN-Wiederherstellung mit `RESETLOGS` öffnen, beginnt eine neue Datenbankinkarnation. Wenn die Standby-Datenbank Redo bereits über diesen Zeitpunkt hinaus angewendet hat, stoppt die Redo-Anwendung auf der Standby-Datenbank mit einem Fehler, und die Standby-Datenbank bleibt in ihrem früheren Zustand. Um den Schutz wiederherzustellen, richten Sie die Standby-Datenbank nach der Wiederherstellung mit Oracle Tools erneut ein.
+
 .Schritte
 . Wählen Sie im NetApp Console *Schutz > Sicherung und Wiederherstellung*.
 . Wählen Sie im NetApp Backup and Recovery -Menü *Wiederherstellen* aus.

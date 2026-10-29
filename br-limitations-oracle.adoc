@@ -21,4 +21,6 @@ Die folgenden Aktionen werden für Oracle Database-Workloads in der Vorabversion
 * Nach einer unvollständigen Wiederherstellung durch das Wiederherstellen einer Datenbank auf einen bestimmten Zeitpunkt oder SCN muss, falls später eine Wiederherstellung auf einen Zeitpunkt vor dieser Wiederherstellung erforderlich ist, in den Einstellungen für das Wiederherstellungsziel auch *Kontrolldateien* ausgewählt werden. Ohne die Wiederherstellung der Kontrolldatei kann die Datenbank nicht auf einen Zeitpunkt vor der vorherigen unvollständigen Wiederherstellung wiederhergestellt werden.
 * In der Backup and Recovery-Vorabversion für die lokale Bereitstellung der NetApp Console werden Backups in Objektspeicher nur für ONTAP S3 und StorageGRID Ziele unterstützt. Backup-Archivierung ist in dieser Vorabversion nicht unterstützt.
 * Offline-Backups
+* Das Wiederherstellen einer Datenbank, die sich derzeit in einer Oracle Data Guard Konfiguration im Standby-Modus befindet, am ursprünglichen Speicherort wird derzeit nicht unterstützt. Stattdessen ist eine Wiederherstellung an einem alternativen Speicherort möglich.
+* Oracle Data Guard Konfigurationen, die RAC verwenden, und Oracle Active Data Guard Konfigurationen werden nicht unterstützt.
 

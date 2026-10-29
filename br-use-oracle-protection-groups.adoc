@@ -41,8 +41,11 @@ Oracle-Datenbankressourcen, die gemeinsam geschützt werden sollen, in einer Sch
 . Wählen Sie *Schutzgruppe erstellen*.
 . Geben Sie einen Namen für die Schutzgruppe ein.
 . Wählen Sie die Datenbanken aus, die in die Schutzgruppe aufgenommen werden sollen.
++
+Standby-Datenbanken werden standardmäßig nicht aufgelistet. Die Auflistung erfolgt über *Show Data Guard standby databases*. Wenn eine Datenbank ausgewählt wird, die Teil einer Oracle Data Guard Konfiguration ist, fügt NetApp Backup and Recovery auch die andere Datenbank in derselben Konfiguration hinzu. Dies gilt nur, wenn diese Datenbank erkannt wird, geschützt werden kann und sich nicht in einer anderen Schutzgruppe befindet.
+
 . Wählen Sie *Weiter*.
-. Für die Schutzgruppe ist die gewünschte *Sicherungsrichtlinie* auszuwählen. Bei Einbeziehung einer Datenbank, die Teil einer Oracle Data Guard Konfiguration ist, ist eine Sicherungsrichtlinie mit aktivierter Data Guard Option auszuwählen.
+. Für die Schutzgruppe ist die anzuwendende *Sicherungsrichtlinie* auszuwählen. Wenn die Gruppe Oracle Data Guard Datenbanken enthält, erfolgt die Auswahl der zu sichernden Datenbanken über *Data Guard settings* in der Richtlinie. Weitere Informationen in link:br-use-policies-oracle-create.html["Oracle Database Backup-Richtlinien erstellen und managen"].
 +
 Wenn Sie eine Richtlinie erstellen möchten, wählen Sie *Neue Richtlinie erstellen* und folgen Sie den Anweisungen zum Erstellen einer Richtlinie.  Sehenlink:br-use-policies-create.html["Erstellen von Richtlinien"] für weitere Informationen.
 
@@ -50,6 +53,9 @@ Wenn Sie eine Richtlinie erstellen möchten, wählen Sie *Neue Richtlinie erstel
 . Überprüfen Sie die Konfiguration.
 . Wählen Sie *Erstellen* aus, um die Schutzgruppe zu erstellen.
 
+
+
+NOTE: Wenn Sie den Standby-Host nach dem Erstellen der Schutzgruppe hinzufügen, ist die Schutzgruppe zu bearbeiten und zu speichern. NetApp Backup and Recovery fügt den Standby-Host automatisch hinzu. Vom Standby-Host aus werden der Gruppe nur Standby-Datenbanken hinzugefügt. Eine weitere Datenbank auf diesem Host, für die ein anderer Sicherungstyp erforderlich ist, führt dazu, dass die Sicherung für diesen Host fehlschlägt.
 
 
 
