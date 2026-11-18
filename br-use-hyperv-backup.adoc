@@ -28,6 +28,9 @@ Hyper-V-VMs von lokalen ONTAP Systemen können auf unterstützte Objektspeicherz
 
 Eine bedarfsgesteuerte Datensicherung schützt die Daten, bevor Systemänderungen vorgenommen werden.
 
+
+IMPORTANT: Wenn ein Hyper-V-Host durch eine NetApp MetroCluster Konfiguration geschützt ist, ist nach jedem MetroCluster Switchover oder Switchback sowie vor der nächsten geplanten oder manuell ausgelösten Sicherung oder dem nächsten Snapshot eine Aktualisierung des Hosts erforderlich. Anweisungen dazu sind in link:br-start-discover-hyperv.html#refresh-a-hyper-v-host["Hyper-V-Host aktualisieren"] enthalten.
+
 *Erforderliche NetApp Console-Rolle* Backup and Recovery Superadmin- oder Backup and Recovery Backup-Admin-Rolle https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
 .Schritte
