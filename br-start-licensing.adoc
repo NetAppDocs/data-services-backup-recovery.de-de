@@ -23,7 +23,7 @@ Ein paar Anmerkungen zur Funktionsweise von Lizenzen:
 * Bei der Verwendung von ONTAP Volumes Workloads können Sie Volumes ohne Lizenz identifizieren und wiederherstellen. Wenn Sie Volumes jedoch zum Schutz (zur Sicherung) in Objekt-Storage benötigen, müssen Sie eine Lizenz erwerben.
 * Wenn Sie Backup and Recovery mit NetApp Console lokaler Bereitstellung verwenden, kann ausschließlich eine Bring-Your-Own-License-(BYOL)-Lizenz erworben werden.
 * Die Bring-Your-Own-License (BYOL) von NetApp Backup and Recovery ist eine Floating-Lizenz, die Sie auf allen Systemen verwenden können, die mit Ihrer NetApp Console -Organisation oder Ihrem NetApp Console-Konto verknüpft sind.  Wenn Ihnen also durch eine vorhandene BYOL-Lizenz ausreichend Sicherungskapazität zur Verfügung steht, müssen Sie keine weitere BYOL-Lizenz erwerben.
-* Wenn eine BYOL-Lizenz mit NetApp Console verwendet wird, wird zusätzlich ein PAYGO-Abonnement empfohlen. Wenn mehr Daten gesichert werden, als durch die BYOL-Lizenz erlaubt ist, oder wenn die Laufzeit der Lizenz abläuft, wird die Sicherung über das Pay-as-you-go (PAYGO) Abonnement fortgesetzt, ohne dass es zu einer Unterbrechung des Service kommt.
+* Bei Verwendung einer BYOL-Lizenz mit NetApp Console ist zusätzlich ein PAYGO-Abonnement erforderlich. Falls Sie mehr Daten sichern, als Ihre BYOL-Lizenz erlaubt, oder falls die Laufzeit Ihrer Lizenz abläuft, wird die Datensicherung über Ihr PAYGO-Abonnement ohne Serviceunterbrechung fortgesetzt.
 * Beim Sichern von On-Premises ONTAP Daten in StorageGRID wird eine BYOL-Lizenz benötigt, für den Speicherplatz des Cloud-Anbieters fallen jedoch keine Kosten an.
 
 
@@ -37,8 +37,8 @@ link:concept-backup-to-cloud.html["Erfahren Sie mehr über die Kosten im Zusamme
 Es gibt drei Lizenzierungsoptionen für NetApp Backup and Recovery:
 
 * Eine Direktlizenz, auch bekannt als Bring-Your-Own-License (BYOL), kann von NetApp erworben werden. Diese Option gilt sowohl für die NetApp Console als auch für die lokale Console-Bereitstellung.
-* Ein Jahresvertrag kann über einen Hyperscaler Marketplace erworben werden. Diese Option gilt nur für die NetApp Console.
-* Ein Abonnement für eine Pay-as-you-go-Lizenz (PAYGO) aus einem Hyperscaler-Marktplatz ist möglich. Diese Option gilt nur für die NetApp Console.
+* Ein Jahresvertrag kann über den Marktplatz eines Cloud-Anbieters erworben werden. Diese Option gilt nur für NetApp Console.
+* Eine Pay-as-you-go-Lizenz (PAYGO) kann über den Marktplatz eines Cloud-Anbieters abonniert werden. Diese Option gilt nur für NetApp Console.
 
 
 
@@ -66,7 +66,7 @@ Sie können die kostenlose Testphase für eine Workload jederzeit auf der Starts
 [[use-a-byol-license]]
 === Eine BYOL-Lizenz verwenden
 
-Bring-your-own-Lizenzen von NetApp haben Laufzeiten von 1, 2 oder 3 Jahren. Sie zahlen nur für die Daten, die Sie in Object Storage schützen, berechnet anhand der genutzten logischen Kapazität (_vor_ jeglichen Effizienzsteigerungen) der Quell-Workloads, die in Object Storage gesichert werden. Bei ONTAP Volumes wird diese Kapazität auch als Front-End Terabytes (FETB) bezeichnet. Daten, die nur durch lokale Snapshots oder Replikation auf sekundären ONTAP Storage geschützt sind, werden nicht auf Ihre lizenzierte Kapazität angerechnet.
+Bring-your-own-Lizenzen von NetApp bieten Laufzeiten von 1, 2 oder 3 Jahren. Es fallen nur Kosten für die Daten an, die in Objektspeicher geschützt werden, berechnet anhand der genutzten logischen Kapazität (_before_ jeglicher Effizienzsteigerungen) der Quell-Workloads, die in Objektspeicher gesichert werden. Für ONTAP Volumes wird diese Kapazität auch als Front-End Terabytes (FETB) bezeichnet. Daten, die nur durch lokale Snapshots oder Replizierung auf sekundären ONTAP Storage geschützt sind, werden nicht auf die lizenzierte Kapazität angerechnet.
 
 Die BYOL-Lizenz für NetApp Backup and Recovery ist eine Floating-Lizenz, deren Gesamtkapazität von allen Systemen gemeinsam genutzt wird, die Ihrem NetApp Console Unternehmen oder Konto zugeordnet sind. Für ONTAP Volumes lässt sich der benötigte Speicherplatz grob abschätzen, indem der CLI-Befehl `volume show -fields logical-used-by-afs` für die Volumes ausgeführt wird, die im Objektspeicher gesichert werden sollen.
 
@@ -89,7 +89,7 @@ Zu den jährlichen Marktplatzvertragsoptionen gilt Folgendes:
 
 * Jahresverträge sind in jedem Marketplace als private Angebote verfügbar.
 * Mit Jahresverträgen können Sie sowohl Cloud Volumes ONTAP Daten als auch lokale ONTAP Daten sichern.
-* Sie können sich auf der Marketplace-Seite für einen Jahresvertrag anmelden. Sie können Ihr Abonnement auf der Marketplace-Seite einrichten und es anschließend mit Ihren  https://docs.netapp.com/us-en/console-setup-admin/task-adding-aws-accounts.html["AWS"^], https://docs.netapp.com/us-en/console-setup-admin/task-adding-azure-accounts.html#subscribe["Azure"^] oder GCP-Anmeldeinformationen verknüpfen. Außerdem müssen Sie Ihre Cloud Volumes ONTAP Systeme über dieses Jahresvertragsabonnement bezahlen, da Sie Ihren AWS-Anmeldeinformationen in der Console nur ein aktives Abonnement zuweisen können.
+* Eine Anmeldung für einen Jahresvertrag ist auf der Marketplace-Seite möglich. Richten Sie Ihr Abonnement auf der Marketplace-Seite ein und verknüpfen Sie es anschließend mit Ihren https://docs.netapp.com/us-en/console-setup-admin/task-adding-aws-accounts.html["AWS"^], https://docs.netapp.com/us-en/console-setup-admin/task-adding-azure-accounts.html#subscribe["Azure"^] oder GCP-Anmeldeinformationen. Beachten Sie, dass Sie Ihre Cloud Volumes ONTAP Systeme ebenfalls über dieses Jahresvertragsabonnement bezahlen müssen, da Sie Ihren AWS-Anmeldeinformationen in der Console nur ein aktives Abonnement zuweisen können.
 * Beim Kauf eines „CVO Professional“-Plans sind unbegrenzte Backups für das lizenzierte Cloud Volumes ONTAP-System enthalten. Diese Backups werden nicht auf die lizenzierte Kapazität angerechnet. Dieser Plan unterstützt keine Backups von On-Premises-ONTAP-Daten oder Cloud Volumes ONTAP-Systemen, die über die Freemium- oder Essentials-Pakete lizenziert wurden; unterstützt werden nur Cloud Volumes ONTAP-Systeme, die über das Professional-Paket lizenziert wurden.
 +
 Weitere Informationen zu dieser Lizenzierungsoption finden sich in der https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html["Thema zur Lizenzierung von Cloud Volumes ONTAP"^].

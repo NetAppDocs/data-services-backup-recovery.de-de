@@ -55,7 +55,7 @@ Eine Anwendung, die nicht mehr benötigt wird, kann gelöscht werden. NetApp Bac
 . *Snapshots und Backups löschen* aktivieren, um alle Snapshots und Backups für die Anwendung zu entfernen.
 +
 
-CAUTION: Sie können die Anwendung mithilfe dieser Snapshots und Backups nicht mehr wiederherstellen.
+CAUTION: Die Applikation kann aus diesen Snapshots und Backups nicht mehr wiederhergestellt werden.
 
 . Bestätigen Sie die Aktion und wählen Sie *Löschen*.
 

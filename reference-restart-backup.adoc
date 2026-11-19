@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference-restart-backup.html 
 keywords: backup restart, restart backup 
-summary: Es kann Situationen geben, in denen Sie NetApp Backup and Recovery neu starten müssen. 
+summary: Der Neustart von NetApp Backup and Recovery vom Console Agent-Host aus erfolgt mit dem Docker- oder Podman-Befehl für Ihren Deployment-Typ. 
 ---
 = Starten Sie NetApp Backup and Recovery neu
 :hardbreaks:

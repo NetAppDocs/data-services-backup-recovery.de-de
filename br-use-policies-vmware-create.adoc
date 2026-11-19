@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-policies-vmware-create.html 
 keywords: backing up, back up, backup, backup on-premises ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
-summary: Erstellen Sie in NetApp Backup and Recovery Ihre eigenen Richtlinien, die die Sicherungshäufigkeit, den Zeitpunkt der Sicherung und die Anzahl der aufbewahrten Sicherungsdateien regeln. 
+summary: In NetApp Backup and Recovery lassen sich VMware Sicherungsrichtlinien erstellen und löschen, um Sicherungshäufigkeit, Zeitplan, Aufbewahrung, Replikation und Objektspeicher-Einstellungen zu steuern. 
 ---
 = Erstellen und Verwalten von VMware-Sicherungsrichtlinien in NetApp Backup und Recovery
 :hardbreaks:
@@ -16,7 +16,7 @@ NetApp Backup and Recovery kann zur Erstellung von VMware Backup-Richtlinien ver
 
 Wenn Sie Ressourcen aus SnapCenter importieren, können Sie auf Unterschiede zwischen den in SnapCenter und den in NetApp Backup and Recovery verwendeten Richtlinien stoßen.  Sehenlink:reference-policy-differences-snapcenter.html["Richtlinienunterschiede zwischen SnapCenter und NetApp Backup and Recovery"] .
 
-Sie können die folgenden Ziele im Zusammenhang mit Richtlinien erreichen:
+Sie können folgende Aufgaben im Zusammenhang mit Richtlinien durchführen:
 
 * Erstellen einer lokalen Snapshot-Richtlinie
 * Erstellen einer Richtlinie für die Replikation auf sekundären Speicher

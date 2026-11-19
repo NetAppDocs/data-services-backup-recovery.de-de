@@ -18,7 +18,7 @@ NOTE: Vorlagen, die Sie hier erstellen, sind nur beim Schutz von Kubernetes-Work
 . Erweitern Sie den Abschnitt *Ausführungs-Hook-Vorlage*.
 . Wählen Sie *Ausführungs-Hook-Vorlage erstellen*.
 . Geben Sie einen Namen für den Ausführungs-Hook ein.
-. Wählen Sie optional einen Hook-Typ aus. Beispielsweise wird ein Post-Restore-Hook ausgeführt, nachdem der Wiederherstellungsvorgang abgeschlossen ist.
+. Optional kann ein Hook-Typ ausgewählt werden. Ein Post Restore Hook läuft beispielsweise nach Abschluss des Wiederherstellungsvorgangs.
 . Geben Sie im Textfeld *Skript* das ausführbare Shell-Skript ein, das Sie als Teil der Ausführungs-Hook-Vorlage ausführen möchten.  Optional können Sie *Skript hochladen* auswählen, um stattdessen eine Skriptdatei hochzuladen.
 . Wählen Sie *Erstellen*.
 +

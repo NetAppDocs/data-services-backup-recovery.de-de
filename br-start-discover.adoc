@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-start-discover.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: NetApp Backup and Recovery muss zunächst Workloads erkennen, damit Sie den Dienst nutzen können. 
+summary: Microsoft SQL Server-Workloads in NetApp Backup and Recovery identifizieren und optional SnapCenter Ressourcen, Hosts, Anmeldeinformationen und Zeitpläne importieren. 
 ---
 = Microsoft SQL Server-Workloads in NetApp Backup and Recovery erkennen
 :hardbreaks:
@@ -35,7 +35,7 @@ IMPORTANT: Vor Änderungen sowohl die bestehende CoreDNS-Konfiguration als auch 
 
 
 .Schritte
-. Die bestehende CoreDNS-Konfiguration sollte daraufhin geprüft werden, ob keine bestehende Änderung überschrieben wird:
+. Die bestehende CoreDNS-Konfiguration ist darauf zu prüfen, dass keine vorhandene Änderung überschrieben wird:
 +
 [source, shell]
 ----
@@ -250,9 +250,9 @@ Die Ermittlung erfolgt auf folgende Weise:
 * Wenn Sie bereits über SnapCenter verfügen, importieren Sie SnapCenter -Ressourcen mithilfe der NetApp Backup and Recovery -Benutzeroberfläche in NetApp Backup and Recovery .
 +
 
-NOTE: Wenn SnapCenter bereits vorhanden ist, sollte zunächst überprüft werden, ob die Voraussetzungen erfüllt sind, bevor ein Import aus SnapCenter erfolgt. Beispielsweise sollten lokale SnapCenter Cluster-Speichersysteme zur NetApp Console hinzugefügt werden, bevor ein Import aus SnapCenter erfolgt. Siehe link:concept-start-prereq-snapcenter-import.html["Voraussetzungen für den Import von Ressourcen aus SnapCenter"].
+NOTE: Wenn Sie bereits über SnapCenter verfügen, vergewissern Sie sich vor dem Importieren aus SnapCenter, dass die Voraussetzungen erfüllt sind. Fügen Sie beispielsweise lokale SnapCenter Cluster-Storagesysteme zu NetApp Console hinzu, bevor Sie aus SnapCenter importieren. Siehe link:concept-start-prereq-snapcenter-import.html["Voraussetzungen für den Import von Ressourcen aus SnapCenter"].
 
-* Wenn SnapCenter noch nicht vorhanden ist, können Workloads dennoch ermittelt werden, indem ein vCenter manuell hinzugefügt und die Erkennung durchgeführt wird.
+* Falls Sie noch nicht über SnapCenter verfügen, können Sie Workloads dennoch identifizieren, indem Sie ein vCenter manuell hinzufügen und die Identifizierung durchführen.
 
 
 
@@ -327,7 +327,7 @@ Nachdem Sie SnapCenter-Ressourcen importiert haben, werden die Hostressourcen in
 . Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Details anzeigen*, um die Arbeitslastdetails anzuzeigen.
 . Wählen Sie auf der Seite Inventar > Arbeitslast das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Verwalten*, um die Seite „Host verwalten“ anzuzeigen.
 . Wählen Sie *Verwalten*.
-. Wählen Sie auf der Seite „Host verwalten“ entweder die Verwendung eines vorhandenen vCenters oder das Hinzufügen eines neuen vCenters aus.
+. Auf der Seite „Host verwalten“ können Sie ein vorhandenes vCenter auswählen oder ein neues vCenter hinzufügen.
 . Wählen Sie *Verwalten*.
 +
 Auf der Inventarseite werden die neu verwalteten SnapCenter -Ressourcen angezeigt.

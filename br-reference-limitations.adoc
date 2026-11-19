@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-reference-limitations.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Microsoft SQL Server database, SAP HANA database 
-summary: Bekannte Einschränkungen kennzeichnen Funktionen, die von dieser Produktversion nicht unterstützt werden oder nicht ordnungsgemäß mit ihr zusammenarbeiten. Lesen Sie diese Einschränkungen sorgfältig durch. 
+summary: Bekannte Einschränkungen für NetApp Backup und Recovery mit ONTAP Volumes. 
 ---
 = Bekannte Einschränkungen bei NetApp Backup and Recovery für ONTAP -Volumes
 :hardbreaks:
@@ -95,7 +95,7 @@ Eine Erklärung zu diesen Verschlüsselungsarten finden Sie unterhttps://docs.ne
 [[restore-limitations-for-ontap-volumes]]
 == Wiederherstellungsbeschränkungen für ONTAP -Volumes
 
-Diese Einschränkungen gelten sowohl für die Methoden „Suchen und Wiederherstellen“ als auch „Durchsuchen und Wiederherstellen“ zum Wiederherstellen von Dateien und Ordnern, sofern nicht ausdrücklich darauf hingewiesen wird.
+Diese Einschränkungen gelten sowohl für die Methoden „Search & Restore“ und „Browse & Restore“ zum Wiederherstellen von Dateien und Ordnern, sofern nicht ausdrücklich anders angegeben.
 
 * Das Wiederherstellen von Ordnern aus lokalen Snapshots wird nicht unterstützt.
 * Wiederherstellung von Dateien und Ordnern in einer Disaster-Recovery-Konfiguration (DR): Nach einem Failover behalten Volumes auf einer für DR konfigurierten Storage-VM ihre bestehenden SnapMirror-Beziehungen in einem getrennten Zustand bei. Versuche, Dateien oder Ordner wiederherzustellen, die temporäre SnapMirror-RST-Beziehungen erstellen, werden von ONTAP blockiert, da das Zielvolume bereits eine Beziehung aufweist.

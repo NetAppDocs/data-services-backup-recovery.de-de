@@ -16,7 +16,7 @@ summary: Erstellen und verwalten Sie Schutzgruppen für Hyper-V-Workloads in Net
 [role="lead"]
 Schutzgruppen ermöglichen den gemeinsamen Schutz zusammengehöriger Hyper-V-VMs und die Verwaltung ihrer Backup-Vorgänge in NetApp Backup und Recovery.
 
-Sie können die folgenden Aufgaben im Zusammenhang mit Schutzgruppen ausführen:
+Sie können folgende Aufgaben für Schutzgruppen ausführen:
 
 * Erstellen Sie eine Schutzgruppe.
 * Details zur Schutzgruppe.

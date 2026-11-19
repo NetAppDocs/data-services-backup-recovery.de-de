@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-oracle-restore.html 
 keywords: restore, vm, oracle, databases, snapshots, object storage, cloud storage, backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Schützen Sie Ihre Oracle-Datenbank-Workloads mit NetApp Backup und Recovery. 
+summary: Mit NetApp Backup and Recovery können Sie Oracle Database Workloads aus lokalen Snapshots, replizierten Backups oder Objektspeicher auf den ursprünglichen oder einen alternativen Host wiederherstellen. 
 ---
 = Wiederherstellung von Oracle-Datenbank-Workloads mit NetApp Backup und Recovery
 :hardbreaks:
@@ -36,7 +36,7 @@ Sie können eine Datenbank an ihrem ursprünglichen Speicherort wiederherstellen
 [[how-oracle-database-restore-works]]
 == Wie die Wiederherstellung einer Oracle Database funktioniert
 
-Beim Wiederherstellen von Oracle Database Workloads geschieht Folgendes:
+Die Wiederherstellung von Oracle Database verhält sich wie folgt:
 
 * Wenn Sie eine Datenbank aus einem lokalen Snapshot wiederherstellen, erstellt NetApp Backup and Recovery eine _neue_ Ressource mithilfe der Daten aus dem Backup.
 * Wenn Sie aus einem replizierten Speicher wiederherstellen, können Sie es am ursprünglichen Speicherort wiederherstellen.

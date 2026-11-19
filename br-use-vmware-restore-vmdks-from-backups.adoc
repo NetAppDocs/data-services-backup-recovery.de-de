@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-vmware-restore-vmdks-from-backups.html 
 keywords:  
-summary: Sie können vorhandene VMDKs oder gelöschte oder getrennte VMDKs entweder aus einem primären oder sekundären Backup herkömmlicher VMs oder vVol-VMs wiederherstellen. 
+summary: Wiederherstellung vorhandener, gelöschter oder abgetrennter VMDKs aus primären oder sekundären Backups herkömmlicher VMs oder vVol VMs. 
 ---
 = Wiederherstellung von VMware-virtuellen Festplatten aus Backups in NetApp Backup and Recovery
 :hardbreaks:
@@ -50,7 +50,7 @@ Es wird eine Liste der auf dieser virtuellen Maschine erstellten Snapshots (Wied
 +
 Für jeden Snapshot zeigen alle leuchtenden Symbole in der Spalte *Speicherort* die Speicherorte an, an denen der Snapshot verfügbar ist (primärer Speicher, sekundärer Speicher oder Objektspeicher).
 
-. Aktivieren Sie das Optionsfeld für den Snapshot, den Sie wiederherstellen möchten.
+. Das Optionsfeld für den Snapshot, den Sie wiederherstellen möchten, ist auszuwählen.
 . Wählen Sie *Weiter*.
 +
 Optionen zum Speichern des Schnappschusses werden angezeigt.

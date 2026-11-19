@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-hyper-v-restore-guest-files-and-folders.html 
 keywords: restore, guest, files, folders, files and folders, Windows, VM, virtual machine, browse, mount, virtual disk, session, snapshot, backup 
-summary: Sie können eine oder mehrere Dateien oder Ordner aus einem Hyper-V-VM-Snapshot in eine Windows-Gast-VM wiederherstellen. 
+summary: Dateien und Ordner aus einem Hyper-V VM-Snapshot lassen sich in der ursprünglichen Windows Gast-VM wiederherstellen, indem eine virtuelle Festplatte aus dem Snapshot eingebunden wird. 
 ---
 = Wiederherstellung von Hyper-V-Gastdateien und -ordnern mit NetApp Backup und Recovery
 :hardbreaks:
@@ -31,7 +31,7 @@ Wenn Sie eine Datei- und Ordnerwiederherstellungssitzung durch Einbinden eines v
 
 Die Wiederherstellungsleistung hängt sowohl von der Größe als auch von der Anzahl der wiederherzustellenden Dateien oder Ordner ab. Bei gleicher Datensatzgröße dauert die Wiederherstellung einer großen Anzahl kleiner Dateien in der Regel länger als die Wiederherstellung einer kleinen Anzahl großer Dateien.
 
-Beachten Sie beim Wiederherstellen von Dateien und Ordnern Folgendes:
+Beim Wiederherstellen von Dateien und Ordnern sind folgende Punkte zu beachten:
 
 [NOTE]
 ====
@@ -92,7 +92,7 @@ Die zur Wiederherstellung ausgewählten Dateien und Ordner werden im Bereich *Au
 +
 Falls bereits Dateien mit demselben Namen existieren, können Sie diese überschreiben oder überspringen.
 
-. Im Abschnitt *Optionen nach der Wiederherstellung* kann die Gastsitzung nach Abschluss der Wiederherstellung optional getrennt werden, indem die Einstellung *Gastsitzung nach Abschluss der Wiederherstellung trennen* aktiviert wird. Dadurch wird die virtuelle Festplatte getrennt und der Datenspeicher ausgehängt. Das bedeutet, dass die Gastsitzung erneut verbunden werden muss, bevor weitere Datei- und Ordnerwiederherstellungsvorgänge durchgeführt werden können.
+. Im Abschnitt *Optionen nach der Wiederherstellung* können Sie die Gastsitzung nach Abschluss der Wiederherstellung optional trennen, indem Sie die Einstellung *Gastsitzung nach Abschluss der Wiederherstellung trennen* aktivieren. Dadurch werden die virtuelle Festplatte getrennt und der Datenspeicher ausgehängt. Sie müssen die Gastsitzung anschließend erneut verbinden, bevor Sie weitere Datei- und Ordnerwiederherstellungsvorgänge durchführen können.
 . Wählen Sie *Wiederherstellen*.
 +
 Den Fortschritt der Wiederherstellung können Sie auf der Seite „Auftragsüberwachung“ einsehen.

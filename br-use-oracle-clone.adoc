@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-oracle-clone.html 
 keywords: clone, clone application data, Amazon Web Services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database, protection group 
-summary: Klonen Sie Ihre Oracle-Datenbank-Workloads mit NetApp Backup and Recovery. 
+summary: Mit NetApp Backup and Recovery können Sie Klone von Oracle Database-Workloads erstellen, planen, aufteilen und löschen. 
 ---
 = Oracle-Datenbank-Workloads mit NetApp Backup und Recovery klonen
 :hardbreaks:

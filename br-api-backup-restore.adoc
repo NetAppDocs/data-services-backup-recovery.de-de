@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-api-backup-restore.html 
 keywords: api, apis, rest, restful, authorization, getting started, body, header, token, reference, expired token, expires, expired, token expired, list apis 
-summary: Die über die Web-Benutzeroberfläche verfügbaren NetApp Backup and Recovery Funktionen sind auch über RESTful-APIs verfügbar. 
+summary: Mit den NetApp Backup und Recovery REST APIs lassen sich Backup- und Wiederherstellungsaufgaben automatisieren sowie die erforderlichen Token und IDs abrufen und Jobs überwachen. 
 ---
 = Automatisieren Sie NetApp Backup und Recovery mit REST-APIs
 :hardbreaks:
@@ -117,10 +117,10 @@ Die Agenten-ID wird aus der Antwort ermittelt, indem *occm.[0].[agent].[agentId]
 [[example-using-the-apis]]
 == Beispiel für die Verwendung der APIs
 
-Das folgende Beispiel zeigt einen API-Aufruf, der NetApp Backup and Recovery auf einem System mit einer neuen Richtlinie aktiviert. Die Richtlinie hat tägliche, stündliche und wöchentliche Kennzeichnungen und archiviert nach 180 Tagen in der Azure-Region East US 2. Diese Anfrage aktiviert die Sicherung auf dem System, sichert jedoch keine Volumes.
+Der Beispiel-API-Aufruf aktiviert NetApp Backup and Recovery auf einem System mit einer neuen Richtlinie. Die Richtlinie hat tägliche, stündliche und wöchentliche Labels und archiviert nach 180 Tagen in der Azure-Region East US 2. Diese Anfrage aktiviert Backup auf dem System, sichert jedoch keine Volumes.
 
 .API-Anforderung
-Sie werden sehen, dass wir die NetApp Console Konto-ID verwenden `account-DpTFcxN3` , Konsolenagent-ID `iZwFFeVCZjWnzGlw8RgD0QQNANZvpP7Iclients` und Benutzertoken `Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5rSXlPVFUzUWpZek1E…y6nyhBjwkeMwHc4ValobjUmju2x0xUH48g` in diesem Befehl.
+Das Beispiel verwendet die NetApp Console Konto-ID `account-DpTFcxN3`, die Console Agent-ID `iZwFFeVCZjWnzGlw8RgD0QQNANZvpP7Iclients` und das Benutzertoken `Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5rSXlPVFUzUWpZek1E…y6nyhBjwkeMwHc4ValobjUmju2x0xUH48g`.
 
 [source, shell]
 ----

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-manage-kubernetes-clusters.html 
 keywords: discover, backup and recovery, snapcenter, kubernetes, k8s, clusters, applications, inventory 
-summary: Mit NetApp Backup and Recovery können Sie Ihre Kubernetes-Cluster erkennen und verwalten, sodass Sie die von den Clustern gehosteten Ressourcen schützen können. 
+summary: Kubernetes-Cluster identifizieren und managen, Clusterdetails bearbeiten, Trident Protect aktualisieren sowie Cluster erneut verbinden oder migrieren, um gehostete Ressourcen zu schützen. 
 ---
 = Kubernetes-Cluster in NetApp Backup and Recovery verwalten
 :hardbreaks:
@@ -24,7 +24,7 @@ NOTE: Informationen zum Erkennen von Kubernetes-Clustern finden Sie unterlink:br
 [[edit-kubernetes-cluster-information]]
 == Kubernetes-Clusterinformationen bearbeiten
 
-Sie können einen Cluster bearbeiten, wenn Sie seinen Namen ändern müssen.
+Einen Cluster bearbeiten, um seinen Namen zu ändern.
 
 *Erforderliche NetApp Console-Rolle*
 
@@ -83,7 +83,7 @@ Superadministrator für Backup und Recovery. link:reference-roles.html["Erfahren
 [[reconnect-a-kubernetes-cluster-to-a-console-agent]]
 == Einen Kubernetes-Cluster wieder mit einem Console-Agenten verbinden
 
-Wenn sich die IP-Adresse Ihres Console-Agenten ändert (z. B. nach einem Neustart), verliert Ihr Kubernetes-Cluster die Verbindung zum Agenten und eine erneute Verbindung ist erforderlich.
+Wenn sich die IP-Adresse Ihres Console Agent ändert (z. B. nach einem Neustart), verliert Ihr Kubernetes-Cluster die Verbindung zum Agenten, und Sie müssen die Verbindung erneut herstellen.
 
 *Erforderliche NetApp Console-Rolle*
 
@@ -119,7 +119,7 @@ Superadministrator für Backup und Recovery. link:reference-roles.html["Erfahren
 . Wählen Sie in NetApp Backup and Recovery*Inventar* > *Cluster*.
 . Wählen Sie einen nicht verbundenen Kubernetes-Cluster aus und wählen Sie das Aktionssymbol image:../media/icon-action.png["Aktionsoption"] > *Cluster ändern* > *Agent verwalten*.
 . Aus der Liste einen neuen Console Agenten auswählen.
-. Die Agenteninformationen geben Aufschluss darüber, ob der neue Konsolenagent auf die Systeme, Sicherungsziele und sekundären Ziele zugreifen kann, die von den geschützten Anwendungen in diesem Cluster verwendet werden.
+. Anhand der Agenteninformationen lässt sich bestätigen, dass der neue Console agent auf die Systeme, Sicherungsziele und sekundären Ziele zugreifen kann, die von den geschützten Applikationen auf diesem Cluster verwendet werden.
 . Die Befehlszeilenanweisungen für jeden Abschnitt können kopiert und die Befehle auf dem Cluster ausgeführt werden.
 +
 Dadurch werden Kubernetes-Secrets neu erstellt, Trident Protect auf den neuen Console Agent umgeleitet und die Einstellungen neu geladen. Nach Ausführung der Befehle verwendet der Cluster den neuen Console Agent.

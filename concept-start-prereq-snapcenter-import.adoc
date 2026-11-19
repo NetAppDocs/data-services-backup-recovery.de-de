@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: concept-start-prereq-snapcenter-import.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, backup and recovery, snapcenter, import, migration, migrate 
-summary: Beginnen Sie mit NetApp Backup and Recovery, indem Sie die Bereitschaft Ihrer Betriebsumgebung, Ihres Konsolenagenten und Ihres Konsolenkontos überprüfen.  Um NetApp Backup and Recovery verwenden zu können, benötigen Sie diese Voraussetzungen. 
+summary: Zum Importieren von SnapCenter Microsoft SQL Server-Ressourcen in NetApp Backup and Recovery müssen Systeme hinzugefügt, Host-Anforderungen überprüft und UAC-Remotebeschränkungen deaktiviert werden. 
 ---
 = Voraussetzungen für den SnapCenter-Import für NetApp Backup and Recovery
 :hardbreaks:
@@ -14,14 +14,14 @@ summary: Beginnen Sie mit NetApp Backup and Recovery, indem Sie die Bereitschaft
 
 
 [role="lead"]
-Bevor Ressourcen aus dem SnapCenter Plug-in für Microsoft SQL Server in NetApp Backup and Recovery importiert werden, muss sichergestellt sein, dass Ihre Umgebung diese zusätzlichen Anforderungen erfüllt.
+Die Vorbereitung des Imports von Ressourcen aus dem SnapCenter Plug-in for Microsoft SQL Server in NetApp Backup and Recovery erfolgt, indem Sie Ihre Systeme zur Console hinzufügen, die Host-Anforderungen bestätigen und die Remote-Beschränkungen der Benutzerkontensteuerung deaktivieren.
 
 
 
 [[create-systems-in-netapp-console-first]]
 == Erstellen Sie zuerst Systeme in der NetApp Console
 
-Wenn Sie Ressourcen aus SnapCenter importieren möchten, sollten Sie vor dem Importieren aus SnapCenter zunächst den gesamten lokalen SnapCenter -Clusterspeicher zur Konsolenseite *Systeme* hinzufügen.  Dadurch wird sichergestellt, dass Hostressourcen korrekt erkannt und importiert werden können.
+Vor dem Importieren von Ressourcen aus SnapCenter muss der gesamte lokale SnapCenter Cluster Storage der Seite *Systems* in der Console hinzugefügt werden, damit die Console Hostressourcen korrekt identifizieren und importieren kann.
 
 
 
@@ -132,7 +132,7 @@ CAUTION: Das Ausführen von PowerShell-Befehlen mit erhöhten Rechten kann sich 
 .. Klicken Sie mit der rechten Maustaste auf diese Option und wählen Sie *Als Administrator ausführen*.
 
 
-. Stellen Sie sicher, dass PowerShell auf Ihrem System installiert ist.  Nach der Installation sollte es im *Start*-Menü erscheinen.
+. Es sollte sichergestellt werden, dass PowerShell auf Ihrem System installiert ist. Nach der Installation sollte es im *Start* Menü erscheinen.
 +
 
 TIP: PowerShell ist standardmäßig in Windows 7 und späteren Versionen enthalten.

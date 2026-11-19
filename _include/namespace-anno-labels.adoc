@@ -27,7 +27,7 @@ helm upgrade trident-protect -n trident-protect netapp-trident-protect/trident-p
   --reuse-values
 ----
 
-NOTE: Während der Wiederherstellung oder des Failovers werden alle in `restoreSkipNamespaceAnnotations` und `restoreSkipNamespaceLabels` angegebenen Namespace-Annotationen und -Labels von der Wiederherstellungs- oder Failover-Operation ausgeschlossen. Stellen Sie sicher, dass diese Einstellungen während der initialen Helm-Installation konfiguriert sind. Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-customize-installation.html#configure-additional-trident-protect-helm-chart-settings["Konfigurieren Sie zusätzliche Trident Protect Helm-Chart-Einstellungen"].
+NOTE: Bei Restore oder Failover werden alle Namespace-Annotationen und -Labels, die in  `restoreSkipNamespaceAnnotations` und  `restoreSkipNamespaceLabels` angegeben sind, von dem Restore- oder Failover-Vorgang ausgeschlossen. Die Konfiguration dieser Einstellungen erfolgt während der ersten Helm Installation. Weitere Informationen finden sich in  https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-customize-installation.html#configure-additional-trident-protect-helm-chart-settings["Konfigurieren Sie zusätzliche Trident Protect Helm-Chart-Einstellungen"].
 
 Wenn Sie Helm mit dem  `--create-namespace` Flag zur Installation der Quellanwendung verwendet haben, kopiert Trident Protect die Namensbezeichnung in den Ziel-Namespace. Stimmt der Wert der Bezeichnung mit dem Namen des Quell-Namespace überein, wird er durch den Namen des Ziel-Namespace ersetzt; andernfalls bleibt er unverändert.
 
@@ -74,7 +74,7 @@ Die folgende Tabelle veranschaulicht den Zustand der Beispiel-Quell- und Ziel-Na
 
 ==== Nach dem Wiederherstellungsvorgang
 
-Die folgende Tabelle veranschaulicht den Zustand des Beispiel-Ziel-Namespace nach der Wiederherstellung oder dem Failover. Einige Schlüssel wurden hinzugefügt, einige wurden überschrieben, und das  `name` Label wurde aktualisiert, um dem Ziel-Namespace zu entsprechen:
+Die folgende Tabelle veranschaulicht den Zustand des Beispiel-Ziel Namespace nach der Wiederherstellungs- oder Failover Operation. Die Operation fügte einige Schlüssel hinzu, überschrieb andere und aktualisierte die  `name` Bezeichnung, um sie an den Ziel Namespace anzupassen:
 
 [cols="1,2a,2a"]
 |===

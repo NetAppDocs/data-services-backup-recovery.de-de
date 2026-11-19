@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: prev-ontap-backup-cvo-azure.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Schützen Sie Ihre VMware-Workloads mit NetApp Backup and Recovery. 
+summary: Das Sichern von Cloud Volumes ONTAP Volumes in Azure Blob storage mit NetApp Backup and Recovery umfasst die Überprüfung der Anforderungen, das Aktivieren des Dienstes und das Aktivieren von Backups auf Volumes. 
 ---
-= Cloud Volumes ONTAP kann mit NetApp Backup und Recovery in Azure Blob Storage gesichert werden
+= Sicherung von Cloud Volumes ONTAP in Azure Blob Storage mit NetApp Backup und Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -24,9 +24,9 @@ NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads 
 [[verify-support-for-your-configuration]]
 == Überprüfen der Unterstützung für Ihre Konfiguration
 
-Lesen Sie die folgenden Anforderungen, um sicherzustellen, dass Sie über eine unterstützte Konfiguration verfügen, bevor Sie mit der Sicherung von Volumes im Azure Blob-Speicher beginnen.
+Vor dem Starten der Sicherung von Volumes in Azure Blob Storage muss eine unterstützte Konfiguration vorhanden sein.
 
-Das folgende Bild zeigt jede Komponente und die Verbindungen, die Sie zwischen ihnen vorbereiten müssen.
+Das Bild zeigt die einzelnen Komponenten und die Verbindungen, die Sie zwischen ihnen herstellen müssen.
 
 Optional können Sie auch über die öffentliche oder private Verbindung eine Verbindung zu einem sekundären ONTAP System für replizierte Volumes herstellen.
 
@@ -168,7 +168,7 @@ https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-azure.ht
 [[requirements-for-using-customer-managed-keys-for-data-encryption]]
 === Anforderungen an die Verwendung kundenverwalteter Schlüssel zur Datenverschlüsselung
 
-Sie können im Aktivierungsassistenten Ihre eigenen, vom Kunden verwalteten Schlüssel zur Datenverschlüsselung verwenden, anstatt die standardmäßigen, von Microsoft verwalteten Verschlüsselungsschlüssel zu verwenden.  In diesem Fall benötigen Sie das Azure-Abonnement, den Key Vault-Namen und den Schlüssel. https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["Erfahren Sie, wie Sie Ihre eigenen Schlüssel verwenden"^] .
+Sie können im Aktivierungsassistenten Ihre eigenen kundenseitig verwalteten Schlüssel für die Datenverschlüsselung verwenden, anstatt die standardmäßigen von Microsoft verwalteten Verschlüsselungsschlüssel zu verwenden. In diesem Fall benötigen Sie das Azure-Abonnement, den Key Vault-Namen und den Schlüssel https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["Erfahren Sie, wie Sie Ihre eigenen Schlüssel verwenden"^].
 
 NetApp Backup and Recovery unterstützt _Azure-Zugriffsrichtlinien_, das _Azure-rollenbasierte Zugriffssteuerungsmodell_ (Azure RBAC) und das _Managed Hardware Security Model_ (HSM) (siehe https://learn.microsoft.com/en-us/azure/key-vault/managed-hsm/overview["Was ist Azure Key Vault Managed HSM?"] ).
 
@@ -195,7 +195,7 @@ Wenn Sie mit NetApp Backup and Recovery replizierte Volumes auf einem sekundäre
 * Wenn sich der Cluster vor Ort befindet, sollten Sie über eine Verbindung von Ihrem Unternehmensnetzwerk zu Ihrem virtuellen Netzwerk beim Cloud-Anbieter verfügen. Dies ist normalerweise eine VPN-Verbindung.
 * ONTAP -Cluster müssen zusätzliche Subnetz-, Port-, Firewall- und Clusteranforderungen erfüllen.
 +
-Da Sie auf Cloud Volumes ONTAP oder lokale Systeme replizieren können, überprüfen Sie die Peering-Anforderungen für lokale ONTAP -Systeme. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Voraussetzungen für Cluster-Peering in der ONTAP Dokumentation anzeigen"^] .
+Da eine Replikation auf Cloud Volumes ONTAP oder lokale Systeme möglich ist, gilt es, die Peering-Anforderungen für lokale ONTAP Systeme zu prüfen https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Voraussetzungen für Cluster-Peering in der ONTAP Dokumentation anzeigen"^].
 
 
 
@@ -404,7 +404,7 @@ Um eine Richtlinie zu erstellen, wählen Sie *Neue Richtlinie erstellen* und geh
 **** Erstellen Sie entweder Ihre eigene Ressourcengruppe, die den Blob-Container verwaltet, oder wählen Sie den Ressourcengruppentyp und die Gruppe aus.
 +
 
-TIP: Wenn Sie Ihre Sicherungsdateien vor Änderungen oder Löschungen schützen möchten, stellen Sie sicher, dass das Speicherkonto mit aktiviertem unveränderlichem Speicher und einer Aufbewahrungsfrist von 30 Tagen erstellt wurde.
+TIP: Zum Schutz Ihrer Sicherungsdateien vor Änderungen oder Löschung ist zu prüfen, ob das Storage-Konto mit aktivierter unveränderlicher Speicherung und einer Aufbewahrungsfrist von 30 Tagen erstellt wurde.
 
 
 
@@ -453,7 +453,7 @@ Um eine Richtlinie zu erstellen, wählen Sie *Neue Richtlinie erstellen* und geh
 [[review-your-selections]]
 === Überprüfen Sie Ihre Auswahl
 
-Dies ist die Gelegenheit, Ihre Auswahl zu überprüfen und gegebenenfalls Anpassungen vorzunehmen.
+Überprüfung Ihrer Auswahl und gegebenenfalls erforderliche Anpassungen.
 
 .Schritte
 . Überprüfen Sie Ihre Auswahl auf der Überprüfungsseite.
@@ -479,7 +479,7 @@ Sie können den Status von Sicherungs- und Wiederherstellungsaufträgen auch mit
 [[show-the-api-commands]]
 === API-Befehle anzeigen
 
-Sie können die im Assistenten „Backup und Recovery aktivieren“ verwendeten API-Befehle anzeigen und optional kopieren. Dies kann hilfreich sein, um die Aktivierung von Backups in zukünftigen Systemen zu automatisieren.
+Anzeige und optionales Kopieren der API-Befehle, die im Assistenten „Activate Backup and Recovery“ verwendet werden, um die Aktivierung von Backup und Recovery in zukünftigen Systemen zu automatisieren.
 
 .Schritte
 . Im Assistenten „Backup und Recovery aktivieren“ *API-Anfrage anzeigen* auswählen.

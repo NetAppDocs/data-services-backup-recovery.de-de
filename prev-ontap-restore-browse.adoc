@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-restore-browse.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Mit NetApp Backup and Recovery können Sie ONTAP-Daten mit der Funktion „Browse and Restore“ wiederherstellen. 
+summary: Die Wiederherstellung von ONTAP Volumes, Ordnern und Dateien aus Snapshots, replizierten Volumes oder Objektspeicher-Backups erfolgt mit Browse and Restore in NetApp Backup and Recovery. 
 ---
 = ONTAP-Daten mit „Browse & Restore“ in NetApp Backup and Recovery wiederherstellen
 :hardbreaks:
@@ -121,7 +121,7 @@ Für „Durchsuchen und Wiederherstellen“ kann der Konsolenagent an den folgen
 * Für ONTAP S3 kann der Console-Agent lokal (mit oder ohne Internetzugang) oder in einer Cloud-Provider-Umgebung bereitgestellt werden
 
 
-Zu beachten ist, dass Verweise auf „On-Premises ONTAP Systeme“ FAS, AFF und ONTAP Select Systeme einschließen.
+Unter „on-premises ONTAP Systemen“ sind FAS, AFF und ONTAP Select Systeme zu verstehen.
 
 
 NOTE: Wenn die ONTAP Version auf Ihrem System niedriger als 9.13.1 ist, können Sie keine Ordner oder Dateien wiederherstellen, wenn die Sicherungsdatei mit DataLock & Ransomware konfiguriert wurde.  In diesem Fall können Sie das gesamte Volume aus der Sicherungsdatei wiederherstellen und dann auf die benötigten Dateien zugreifen.
@@ -157,7 +157,7 @@ Die Spalte *Speicherort* zeigt an, ob die Sicherungsdatei (Snapshot) *lokal* (ei
 
 . Wählen Sie *Weiter*.
 +
-Beachten Sie, dass, wenn Sie eine Sicherungsdatei im Objektspeicher auswählen und für diese Sicherung ein Ransomware-Schutz aktiv ist (wenn Sie DataLock und den Ransomware-Schutz in der Sicherungsrichtlinie aktiviert haben), Sie aufgefordert werden, vor der Wiederherstellung der Daten einen zusätzlichen Ransomware-Scan der Sicherungsdatei durchzuführen. Es wird empfohlen, die Sicherungsdatei auf Ransomware zu scannen. (Für den Zugriff auf die Inhalte der Sicherungsdatei fallen zusätzliche Egress-Kosten Ihres Cloud-Anbieters an.)
+Wenn Sie eine Sicherungsdatei im Objektspeicher auswählen und für diese Sicherung der Ransomware-Schutz aktiv ist, sofern Sie in der Sicherungsrichtlinie DataLock und den Ransomware-Schutz aktiviert haben, werden Sie aufgefordert, die Sicherungsdatei vor der Datenwiederherstellung zusätzlich auf Ransomware zu scannen. Es wird empfohlen, die Sicherungsdatei auf Ransomware zu scannen. (Für den Zugriff auf den Inhalt der Sicherungsdatei fallen bei Ihrem Cloud-Provider zusätzliche Egress-Kosten an.)
 
 . Wählen Sie auf der Seite „Ziel auswählen“ das *System* aus, auf dem Sie das Volume wiederherstellen möchten.
 . Wenn Sie beim Wiederherstellen einer Sicherungsdatei aus dem Objektspeicher ein lokales ONTAP -System auswählen und die Clusterverbindung zum Objektspeicher noch nicht konfiguriert haben, werden Sie zur Eingabe zusätzlicher Informationen aufgefordert:
@@ -195,7 +195,7 @@ Sie kehren zum Restore Dashboard zurück, sodass der Fortschritt des Restore-Vor
 .Ergebnis
 NetApp Backup and Recovery erstellt basierend auf dem von Ihnen ausgewählten Backup ein neues Volume.
 
-Beachten Sie, dass die Wiederherstellung eines Volumes aus einer Sicherungsdatei, die sich im Archivspeicher befindet, je nach Archivebene und Wiederherstellungspriorität viele Minuten oder Stunden dauern kann.  Sie können die Registerkarte *Jobüberwachung* auswählen, um den Wiederherstellungsfortschritt anzuzeigen.
+Die Wiederherstellung eines Volumes aus einer Sicherungsdatei, die sich im Archiv-Storage befindet, kann je nach Archive Tier und Wiederherstellungspriorität mehrere Minuten oder Stunden dauern. Der Fortschritt der Wiederherstellung ist auf der Registerkarte *Job Monitoring* zu sehen.
 
 
 

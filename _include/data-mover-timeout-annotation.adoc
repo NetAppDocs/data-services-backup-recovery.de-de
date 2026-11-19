@@ -9,7 +9,7 @@
 
 Verwenden Sie die Annotation `protect.trident.netapp.io/data-mover-timeout-sec`, um ein Timeout (in Sekunden) für den Datentransfer pro Vorgang während der Sicherung und Wiederherstellung festzulegen. Sie gibt an, wie lange ein Datentransfer auf den Fortschritt eines Vorgangs wartet, bevor eine Zeitüberschreitung eintritt. Dies ist nützlich, um blockierte Übertragungen zu erkennen und zu behandeln (zum Beispiel, wenn Netzwerkprobleme den Fortschritt der Wiederherstellung von Volumendaten verhindern).
 
-Sie können diese Annotation in Ihrer YAML-Datei wie unten gezeigt verwenden:
+Das folgende Beispiel zeigt, wie Sie diese Annotation in Ihrer YAML-Datei verwenden:
 
 [source, yaml]
 ----
@@ -32,4 +32,4 @@ spec:
 In diesem Beispiel schlägt die Annotation beim  `BackupRestore`-Vorgang fehl, wenn innerhalb von 2 Sekunden kein Fortschritt beim Wiederherstellungsvorgang erzielt wird.
 
 
-NOTE: Ist der Wert der Annotation kleiner oder gleich 0, schlägt die Operation sofort fehl.
+NOTE: Ist der Annotationswert kleiner oder gleich 0, schlägt die Operation sofort fehl.

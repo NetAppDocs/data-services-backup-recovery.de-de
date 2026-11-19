@@ -16,7 +16,7 @@ summary: Die Microsoft SQL Server Hosts, Instanzen und Datenbanken werden in Net
 [role="lead"]
 Microsoft SQL Server Hosts, Instanzen und Datenbanken anzeigen und verwalten sowie deren Schutzeinstellungen ändern oder entfernen.
 
-Zur Verwaltung Ihres Lagerbestands sind folgende Optionen verfügbar:
+Für die Verwaltung Ihres Inventars stehen folgende Aktionen zur Verfügung:
 
 * Hostinformationen verwalten
 +
@@ -278,7 +278,7 @@ Einzelheiten zum Erstellen einer Ad-hoc-Sicherung sind unter link:br-use-mssql-b
 [[manage-database-information]]
 == Verwalten von Datenbankinformationen
 
-Sie können Datenbankinformationen auf folgende Weise verwalten:
+Für das Managen von Datenbankinformationen stehen diese Aktionen zur Verfügung:
 
 * Schützen Sie Datenbanken
 * Datenbanken wiederherstellen

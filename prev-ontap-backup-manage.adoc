@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-backup-manage.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Verwalten Sie mit NetApp Backup and Recovery Backups für Ihre Cloud Volumes ONTAP und lokalen ONTAP Systeme, indem Sie den Backup-Zeitplan ändern, Volume-Backups aktivieren, Backups anhalten, Backups löschen und vieles mehr.  Sie können die Registrierung von NetApp Backup and Recovery auch aufheben. 
+summary: Die Verwaltung von Backups für Cloud Volumes ONTAP und lokale ONTAP-Systeme umfasst das Ändern von Zeitplänen, das Anhalten oder Löschen von Backups, das Ausführen von Ransomware-Scans und das Abmelden des Service. 
 ---
 = Verwalten Sie Backups für Ihre ONTAP -Systeme mit NetApp Backup and Recovery
 :hardbreaks:
@@ -17,7 +17,7 @@ summary: Verwalten Sie mit NetApp Backup and Recovery Backups für Ihre Cloud Vo
 Mit NetApp Backup und Recovery lassen sich Snapshot-, Replikations- und Objektspeicher-Backups für Ihre Cloud Volumes ONTAP und On-Premises ONTAP Systeme verwalten. Es besteht die Möglichkeit, Zeitpläne zu ändern, Volume-Backups zu aktivieren oder zu deaktivieren, Backups zu pausieren, Backups zu löschen und den Dienst abzumelden.
 
 
-CAUTION: Verwalten oder ändern Sie Sicherungsdateien nicht direkt auf Ihren Speichersystemen oder in der Umgebung Ihres Cloud-Anbieters.  Dies kann zu einer Beschädigung der Dateien führen und zu einer nicht unterstützten Konfiguration.
+CAUTION: Das direkte Managen oder Ändern von Sicherungsdateien auf Ihren Storage-Systemen oder in der Umgebung Ihres Cloud-Anbieters ist zu vermeiden. Dies könnte die Dateien beschädigen und zu einer nicht unterstützten Konfiguration führen.
 
 
 NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
@@ -83,7 +83,7 @@ Wenn Sie mit mehreren Volumes arbeiten, müssen alle Volumes die folgenden gemei
 
 * gleiches System
 * gleicher Stil (FlexVol oder FlexGroup -Volume)
-* gleicher Typ (Lese-/Schreib- oder Datenschutz-Volume)
+* gleicher Typ (lesen/schreiben oder Data Protection Volume)
 
 
 Wenn mehr als fünf Volumes für die Sicherung aktiviert sind, initialisiert NetApp Backup and Recovery jeweils nur fünf Volumes. Wenn diese abgeschlossen sind, wird der Vorgang in Gruppen von 5 fortgesetzt, bis alle Volumes initialisiert sind.
@@ -128,7 +128,7 @@ Der Sicherungsname enthält den Zeitstempel, sodass Sie Ihre On-Demand-Sicherung
 
 Wenn bei der Aktivierung von NetApp Backup und Recovery für diesen Cluster _DataLock und Ransomware-Schutz_ aktiviert wurde, wird auch das On-Demand-Backup mit DataLock konfiguriert, und die Aufbewahrungsdauer beträgt 30 Tage. Ransomware-Scans werden für Ad-hoc-Backups nicht unterstützt. link:prev-ontap-policy-object-options.html["Erfahren Sie mehr über DataLock und Ransomware-Schutz"^].
 
-Wenn Sie eine Ad-hoc-Sicherung erstellen, wird ein Snapshot auf dem Quellvolume angelegt. Da dieser Snapshot nicht Teil eines regulären Snapshot-Zeitplans ist, wird er nicht entfernt. Es kann sinnvoll sein, diesen Snapshot nach Abschluss der Sicherung manuell vom Quellvolume zu löschen. Dadurch können die mit diesem Snapshot verbundenen Blöcke freigegeben werden. Der Name des Snapshots beginnt mit  `cbs-snapshot-adhoc-`. https://docs.netapp.com/us-en/ontap/san-admin/delete-all-existing-snapshot-copies-volume-task.html["Informationen zum Löschen eines Snapshots mit der ONTAP CLI"^].
+Wenn Sie eine Ad-hoc-Sicherung erstellen, wird ein Snapshot auf dem Quellvolume angelegt. Da dieser Snapshot nicht Teil eines regulären Snapshot-Zeitplans ist, wird er nicht automatisch gelöscht. Es empfiehlt sich, diesen Snapshot nach Abschluss der Sicherung manuell vom Quellvolume zu löschen. Dadurch werden die zugehörigen Blöcke freigegeben. Der Name des Snapshots beginnt mit `cbs-snapshot-adhoc-`. https://docs.netapp.com/us-en/ontap/san-admin/delete-all-existing-snapshot-copies-volume-task.html["Informationen zum Löschen eines Snapshots mit der ONTAP CLI"^].
 
 
 NOTE: Die On-Demand-Volume-Sicherung wird auf Datenschutzvolumes nicht unterstützt.
@@ -203,7 +203,7 @@ In der folgenden Tabelle werden die verfügbaren Aktionen beschrieben:
 | Replikation anhalten | Unterbrechen Sie die inkrementelle Übertragung von Snapshots, um das Zielvolume zu aktualisieren. Sie können den Vorgang später fortsetzen, wenn Sie die inkrementellen Updates neu starten möchten. 
 
 
-| Replikation unterbrechen | Bricht die Beziehung zwischen Quell- und Zielvolume ab und aktiviert das Zielvolume für den Datenzugriff – macht es lese- und schreibgeschützt.  Diese Option wird normalerweise verwendet, wenn das Quellvolume aufgrund von Ereignissen wie Datenbeschädigung, versehentlichem Löschen oder einem Offline-Status keine Daten bereitstellen kann.https://docs.netapp.com/us-en/ontap-sm-classic/volume-disaster-recovery/index.html["Erfahren Sie in der ONTAP -Dokumentation, wie Sie ein Zielvolume für den Datenzugriff konfigurieren und ein Quellvolume reaktivieren."^] 
+| Replikation unterbrechen | Unterbricht die Beziehung zwischen dem Quell- und dem Zielvolume und aktiviert das Zielvolume für den Datenzugriff, sodass es lesen/schreiben kann. Diese Option wird typischerweise verwendet, wenn das Quellvolume aufgrund von Ereignissen wie Datenbeschädigung, versehentlichem Löschen oder einem Offline-Zustand keine Daten bereitstellen kann. https://docs.netapp.com/us-en/ontap-sm-classic/volume-disaster-recovery/index.html["Erfahren Sie in der ONTAP -Dokumentation, wie Sie ein Zielvolume für den Datenzugriff konfigurieren und ein Quellvolume reaktivieren."^] 
 
 
 | Replikation abbrechen | Deaktiviert Sicherungen dieses Volumes auf dem Zielsystem und deaktiviert auch die Möglichkeit, ein Volume wiederherzustellen.  Eventuell vorhandene Backups werden nicht gelöscht.  Dadurch wird die Datenschutzbeziehung zwischen Quell- und Zielvolume nicht gelöscht. 
@@ -212,7 +212,7 @@ In der folgenden Tabelle werden die verfügbaren Aktionen beschrieben:
 | Umgekehrte Neusynchronisierung | Vertauscht die Rollen der Quell- und Zielvolumes. Inhalte des ursprünglichen Quellvolumes werden durch Inhalte des Zielvolumes überschrieben. Dies ist hilfreich, wenn Sie ein Quellvolume reaktivieren möchten, das offline gegangen ist. Alle Daten, die zwischen der letzten Datenreplikation und der Deaktivierung des Quellvolumes auf das ursprüngliche Quellvolume geschrieben wurden, bleiben nicht erhalten. 
 
 
-| Beziehung löschen | Löscht die Datenschutzbeziehung zwischen Quell- und Zielvolumes, was bedeutet, dass keine Datenreplikation mehr zwischen den Volumes stattfindet. Durch diese Aktion wird das Zielvolume nicht für den Datenzugriff aktiviert, d. h., es wird kein Lese-/Schreibzugriff darauf ermöglicht.  Diese Aktion löscht auch die Cluster-Peer-Beziehung und die Storage-VM (SVM)-Peer-Beziehung, wenn keine anderen Datenschutzbeziehungen zwischen den Systemen bestehen. 
+| Beziehung löschen | Löscht die Datenschutzbeziehung zwischen den Quell- und Ziel-Volumes, was bedeutet, dass zwischen den Volumes keine Datenreplizierung mehr erfolgt. Diese Aktion aktiviert das Ziel-Volume nicht für den Datenzugriff, das heißt, es wird nicht auf lesen/schreiben gesetzt. Diese Aktion löscht außerdem die Cluster Peer-Beziehung und die Peer-Beziehung der Storage VM (SVM), sofern zwischen den Systemen keine weiteren Datenschutzbeziehungen bestehen. 
 |===
 
 

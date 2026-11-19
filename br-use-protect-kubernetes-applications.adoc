@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-protect-kubernetes-applications.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, snapcenter 
-summary: Mit NetApp Backup and Recovery können Sie Ihre Workload-Host-Informationen, Datenbankinformationen und Instanzinformationen verwalten.  Sie können Schutzeinstellungen für Ihr Inventar anzeigen, bearbeiten und löschen. 
+summary: Das Hinzufügen namespace-basierter oder VM-basierter Kubernetes-Applikationen zu NetApp Backup and Recovery für den Schutz erfolgt über die Web-UI oder über benutzerdefinierte Ressourcendateien. 
 ---
 = Kubernetes-Anwendungen in NetApp Backup and Recovery hinzufügen und schützen
 :hardbreaks:
@@ -39,7 +39,7 @@ Bevor Sie eine Kubernetes-Anwendung hinzufügen und schützen können, müssen S
 --
 .Schritte
 . Wählen Sie in NetApp Backup and Recovery*Inventar* aus.
-. Oben rechts auf der Seite muss *Kubernetes* in der Liste der Workloads ausgewählt sein.
+. Oben rechts auf der Seite sollte in der Liste der Workloads *Kubernetes* ausgewählt sein.
 . Für den Workload-Eintrag kann *Ansicht* ausgewählt werden, um die Kubernetes-Ressourcen anzuzeigen.
 . Wählen Sie die Registerkarte *Anwendungen*.
 . Wählen Sie *Anwendung erstellen*.
@@ -78,7 +78,7 @@ Die Anwendung wurde erstellt und erscheint in der Liste der Anwendungen auf der 
 --
 .Schritte
 . Wählen Sie in NetApp Backup and Recovery*Inventar* aus.
-. Oben rechts auf der Seite muss *Kubernetes* in der Liste der Workloads ausgewählt sein.
+. Oben rechts auf der Seite sollte in der Liste der Workloads *Kubernetes* ausgewählt sein.
 . Für den Workload-Eintrag kann *Ansicht* ausgewählt werden, um die Kubernetes-Ressourcen anzuzeigen.
 . Wählen Sie die Registerkarte *Anwendungen*.
 . Wählen Sie *Anwendung erstellen*.

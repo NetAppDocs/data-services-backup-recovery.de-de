@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-restore-cli.html 
 keywords: CLI, ONTAP, restore, backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery 
-summary: 'In manchen Situationen ist möglicherweise die ONTAP Befehlszeilenschnittstelle (CLI) erforderlich, um ONTAP Daten wiederherzustellen.' 
+summary: Die Wiederherstellung von ONTAP Daten aus Objektspeicher-Backups mit der ONTAP CLI ist möglich, wenn keine Wiederherstellung über die Backup and Recovery Web-UI durchgeführt werden kann. 
 ---
 = ONTAP Daten mithilfe der ONTAP CLI wiederherstellen
 :hardbreaks:
@@ -19,7 +19,7 @@ Möglicherweise lassen sich einige ONTAP Daten nicht über die Backup and Recove
 .Bevor Sie beginnen
 * Voraussetzung ist, dass Sie Zugriff auf die ONTAP CLI für den Ziel-Cluster haben und wissen, welche Sicherungskopie Sie wiederherstellen möchten.
 * Wenn Sie die Wiederherstellung auf einem anderen ONTAP Cluster durchführen, muss dieser Cluster bereits Zugriff auf denselben Objektspeicher haben. Falls erforderlich, muss der Objektspeicher vor der Wiederherstellung auf dem Ziel-Cluster konfiguriert werden.
-* Wenn vor dem Aufheben der Registrierung des Systems eine neue Backup-Beziehung erstellt wurde, zeigt NetApp Backup and Recovery möglicherweise noch bis zu eine Stunde nach dem Erstellen des neuen Backups die älteren Snapshots an. Während dieses Aktualisierungszeitfensters können UI-basierte Wiederherstellungen dieser älteren Snapshots fehlschlagen.
+* Wenn vor der Abmeldung des Systems eine neue Sicherungsbeziehung erstellt wurde, zeigt NetApp Backup and Recovery möglicherweise noch bis zu einer Stunde nach der Erstellung der neuen Sicherung die älteren Snapshots an. Während dieses Aktualisierungszeitraums können Wiederherstellungen dieser älteren Snapshots über die Benutzeroberfläche fehlschlagen.
 
 
 .Schritte

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-start-discover-kubernetes.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Kubernetes 
-summary: NetApp Backup and Recovery muss zunächst Workloads erkennen, damit Sie den Dienst nutzen können. 
+summary: Mit NetApp Backup and Recovery lassen sich Kubernetes Cluster und Workloads, einschließlich physisch bzw. logisch isolierter Cluster, identifizieren, sodass Applikationen mit Richtlinien geschützt werden können. 
 ---
 = Entdecken Sie Kubernetes-Workloads in NetApp Backup and Recovery
 :hardbreaks:
@@ -27,7 +27,7 @@ Im Backup und Recovery-Inventar werden Kubernetes-Cluster und Workloads in Ihrer
 
 [NOTE]
 ====
-Wenn ein Cluster erkannt wird, der aktuell mit Trident Protect geschützt ist, werden alle mit Trident Protect verwendeten Backup-Zeitpläne während des Erkennungsprozesses deaktiviert, da Trident Protect Backup-Zeitpläne nicht mit Backup und Recovery kompatibel sind. Zum Schutz der Anwendungen des Clusters link:br-use-policies-create.html["eine neue Datensicherungsstrategie erstellen"] oder können die Anwendungen einer bestehenden Richtlinie zugeordnet werden. Anschließend lassen sich die Trident Protect Backup-Zeitpläne bei Bedarf entfernen.
+Wenn Sie einen Cluster identifizieren, der derzeit mit Trident Protect geschützt ist, werden alle mit Trident Protect verwendeten Trident Protect Sicherungszeitpläne während des Identifizierungsprozesses deaktiviert, da Trident Protect Sicherungszeitpläne nicht mit Backup und Recovery kompatibel sind. Zum Schutz der Applikationen des Clusters link:br-use-policies-create.html["eine neue Datensicherungsstrategie erstellen"] oder die Applikationen einer vorhandenen Richtlinie zuzuordnen. Die Trident Protect Sicherungszeitpläne können dann bei Bedarf entfernt werden.
 
 ====
 .Schritte
@@ -74,7 +74,7 @@ Backup und Recovery bietet Anweisungen, die sich je nach Installationstyp änder
 ... Geben Sie die URL Ihrer privaten Docker-Container-Registry ein. Diese Registry dient zum Herunterladen der Trident Protect- und Trident Protect Connector-Images während der Installation.
 ... Wenn Ihre private Container-Registry eine Authentifizierung erfordert, kann eine der folgenden Methoden zur Konfiguration der Registry-Anmeldeinformationen verwendet werden:
 +
-**** *Authentifizierung auf Knotenebene*: Die Registry-Anmeldeinformationen werden in der Container-Laufzeitumgebung auf jedem Knoten konfiguriert. Nach der Konfiguration können alle Pods Images abrufen, ohne dass zusätzliche Helm-Einstellungen erforderlich sind.
+**** *Authentifizierung auf Knotenebene*: Die Registry-Zugangsdaten werden in der Container-Laufzeitumgebung auf jedem Knoten konfiguriert. Nach der Konfiguration können alle Pods Images ohne zusätzliche Helm-Einstellungen abrufen.
 **** *Kubernetes Image Pull Secret*: Ein Kubernetes Image Pull Secret wird im  `trident-protect` Namespace erstellt und anschließend beim Helm-Upgrade-Schritt in den Trident Protect-Installationsanweisungen referenziert:
 +
 [source, console]

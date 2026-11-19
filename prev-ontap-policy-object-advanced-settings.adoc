@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-policy-object-advanced-settings.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Schützen Sie Ihre VMware-Workloads mit NetApp Backup and Recovery. 
+summary: Änderung der Einstellungen für Backup in Objektspeicher auf Cluster-Ebene in NetApp Backup and Recovery, einschließlich Bandbreite, Export historischer Snapshots, jährlicher Snapshot-Löschung und Ransomware-Scans. 
 ---
 = Erweiterte Einstellungen für Backup-zu-Objektspeicher in NetApp Backup und Recovery verwalten
 :hardbreaks:
@@ -131,8 +131,8 @@ Sie können Ransomware-Scans für einen Cluster aktivieren oder deaktivieren.
 . Erweitern Sie auf der folgenden Seite den Abschnitt *Ransomware-Scan*.
 . Aktivieren oder deaktivieren Sie den *Ransomware-Scan*.
 . Wählen Sie *Geplanter Ransomware-Scan*.
-. Ändern Sie optional den wöchentlichen Standardscan auf Tage oder Wochen.
-. Legen Sie fest, wie oft (in Tagen oder Wochen) der Scan ausgeführt werden soll.
+. Optional kann der standardmäßige wöchentliche Scan auf Tage oder Wochen geändert werden.
+. Hier wird festgelegt, wie oft der Scan in Tagen oder Wochen ausgeführt wird.
 . Wählen Sie *Übernehmen*.
 
 
@@ -150,8 +150,8 @@ Sie können Ransomware-Scans auf Anbieterebene über die Anbietereinstellungssei
 . Erweitern Sie den Abschnitt *Ransomware-Scan*.
 . Aktivieren oder deaktivieren Sie den *Ransomware-Scan*.
 . Wählen Sie *Geplanter Ransomware-Scan*.
-. Ändern Sie optional den wöchentlichen Standardscan auf Tage oder Wochen.
-. Legen Sie fest, wie oft (in Tagen oder Wochen) der Scan ausgeführt werden soll.
+. Optional kann der standardmäßige wöchentliche Scan auf Tage oder Wochen geändert werden.
+. Hier wird festgelegt, wie oft der Scan in Tagen oder Wochen ausgeführt wird.
 . Wählen Sie *Übernehmen*.
 
 

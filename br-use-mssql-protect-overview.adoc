@@ -18,7 +18,7 @@ Microsoft SQL Server-Datenbanken können von lokalen ONTAP-Systemen auf AWS, Azu
 
 NetApp Backup and Recovery verwendet NetApp SnapMirror , um Backups zu synchronisieren, indem Snapshots erstellt und an die Backup-Speicherorte übertragen werden.
 
-Die folgenden Arbeitsabläufe dienen dem Schutz Ihrer Daten:
+Zum Schutz Ihrer Daten stehen diese Workflows zur Verfügung:
 
 * link:concept-start-prereq-snapcenter-import.html["Konfigurieren Sie zusätzliche Elemente beim Importieren aus SnapCenter"]
 * link:br-start-discover.html["Entdecken Sie Microsoft SQL Server-Workloads und importieren Sie optional SnapCenter -Ressourcen"]

@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: br-use-back-up-now-kubernetes-applications-cr.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, snapcenter 
-summary: 'Benutzerdefinierte Ressourcen (CRs) ermöglichen die Erstellung von Snapshots und Backups einer Kubernetes-Anwendung auf Abruf, wodurch eine Baseline festgelegt oder die neuesten Datenänderungen geschützt werden.' 
+summary: Erstellung von On-Demand-Snapshots, Objektspeicher-Backups und 3-2-1-Fanout-Backups einer Kubernetes Applikation mithilfe benutzerdefinierter Ressourcen sowie Übersicht über unterstützte Backup-Annotationen. 
 ---
-= Kubernetes-Anwendungen können jetzt mithilfe benutzerdefinierter Ressourcen in NetApp Backup and Recovery gesichert werden.
+= Backup von Kubernetes-Applikationen mit benutzerdefinierten Ressourcen in NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -27,7 +27,7 @@ Erstellen Sie manuell ein Backup einer Kubernetes-Anwendung, um eine Basis für 
 NOTE: Clusterbezogene Ressourcen werden in eine Sicherung, einen Snapshot oder einen Klon aufgenommen, wenn sie in der Anwendungsdefinition explizit referenziert werden oder wenn sie Verweise auf einen der Anwendungs-Namespaces enthalten.
 
 .Bevor Sie beginnen
-Stellen Sie sicher, dass die Gültigkeitsdauer des AWS-Sitzungstokens für alle länger laufenden s3-Backup-Vorgänge ausreichend ist. Wenn das Token während des Backup-Vorgangs abläuft, kann der Vorgang fehlschlagen.
+Die Gültigkeitsdauer des AWS-Sitzungstokens muss für alle länger laufenden S3-Backup-Vorgänge ausreichend sein. Wenn das Token während des Backup-Vorgangs abläuft, kann der Vorgang fehlschlagen.
 
 * Weitere Informationen zum Prüfen des Ablaufs des aktuellen Sitzungstokens finden Sie in der https://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html["AWS API-Dokumentation"^].
 * Weitere Informationen zu Anmeldeinformationen für AWS-Ressourcen finden Sie im  https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html["AWS IAM-Dokumentation"^].
@@ -209,14 +209,14 @@ kubectl apply -f 3-2-1-fanout-backup-cr.yaml
 [[supported-backup-annotations]]
 == Unterstützte Sicherungsanmerkungen
 
-Die folgende Tabelle beschreibt die Anmerkungen, die Sie beim Erstellen eines Backup-CR verwenden können.
+Sie können diese Anmerkungen beim Erstellen eines Backup-CR verwenden.
 
 [cols="2,1,3,1"]
 |===
 | Anmerkung | Typ | Beschreibung | Standardwert 
 
 
-| protect.trident.netapp.io/full-backup | Zeichenkette | Legt fest, ob eine Sicherung nicht inkrementell sein soll. Setzen Sie auf  `true`, um eine nicht inkrementelle Sicherung zu erstellen. Es ist bewährte Praxis, regelmäßig eine vollständige Sicherung durchzuführen und dazwischen inkrementelle Sicherungen zu erstellen, um das mit Wiederherstellungen verbundene Risiko zu minimieren. | "false" 
+| protect.trident.netapp.io/full-backup | Zeichenkette | Legt fest, ob ein Backup nicht inkrementell sein soll. Auf  `true`true festgelegt, um ein nicht inkrementelles Backup zu erstellen. Es empfiehlt sich, regelmäßig ein vollständiges Backup und zwischen den vollständigen Backups inkrementelle Backups durchzuführen, um das mit Restores verbundene Risiko zu minimieren. | "false" 
 
 
 | protect.trident.netapp.io/snapshot-completion-timeout | Zeichenkette | Die maximal zulässige Zeit für den Abschluss des gesamten Snapshot-Vorgangs. | "60m" 

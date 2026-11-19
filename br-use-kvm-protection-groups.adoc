@@ -16,7 +16,7 @@ summary: Erstellen und verwalten Sie Schutzgruppen für KVM-Workloads in NetApp 
 [role="lead"]
 Schutzgruppen können erstellt und verwaltet werden, sodass zusammengehörige KVM-VMs und Speicherpools gemeinsam gesichert werden können.
 
-Mit Schutzgruppen sind folgende Aktionen möglich:
+Diese Aufgaben können Sie mit Schutzgruppen ausführen:
 
 * Erstellen einer Schutzgruppe
 * Schutzdetails anzeigen
@@ -61,7 +61,7 @@ Weitere Informationen finden sich unter link:br-use-policies-create.html["Erstel
 [[edit-a-protection-group]]
 == Bearbeiten Sie eine Schutzgruppe
 
-Bearbeiten Sie eine Datensicherungsgruppe, wenn Sie Details der Datensicherungsgruppe ändern müssen, ohne sie zu löschen und neu zu erstellen.
+Sie können eine Schutzgruppe bearbeiten, um ihre Details zu ändern, ohne sie zu löschen und neu zu erstellen.
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.

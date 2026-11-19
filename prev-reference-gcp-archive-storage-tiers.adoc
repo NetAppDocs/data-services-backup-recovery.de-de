@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-reference-gcp-archive-storage-tiers.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: NetApp Backup and Recovery unterstützt eine Archivspeicherklasse von Google und die meisten Regionen. 
+summary: Es folgt eine Übersicht über die von NetApp Backup and Recovery unterstützte Archivierungsstufe von Google Cloud Storage sowie über Wiederherstellungskosten und Abrufzeiten für archivierte Backups. 
 ---
 = Unterstützte Google-Archivspeicherebenen mit NetApp Backup and Recovery
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: NetApp Backup and Recovery unterstützt eine Archivspeicherklasse von G
 
 
 [role="lead"]
-Diese Informationen dienen dem Verständnis der von NetApp Backup and Recovery unterstützten Archivierungsebene von Google Cloud Storage. Auch die Wiederherstellungskosten und Abrufzeiten für archivierte Backups können überprüft werden.
+NetApp Backup and Recovery unterstützt die Google Cloud Storage Archivstufe für ältere Backups. Informationen zu den Wiederherstellungskosten und Abrufzeiten für Backups in dieser Stufe sind verfügbar.
 
 
 
@@ -23,9 +23,9 @@ Diese Informationen dienen dem Verständnis der von NetApp Backup and Recovery u
 
 Wenn Backup-Dateien initial erstellt werden, werden sie im _Standard_-Speicher gespeichert. Diese Speicherebene ist für die Speicherung von Daten optimiert, auf die selten zugegriffen wird, ermöglicht aber dennoch sofortigen Zugriff.
 
-Wenn Ihr lokaler Cluster ONTAP 9.12.1 oder höher verwendet, kann nach einer bestimmten Anzahl von Tagen (in der Regel mehr als 30 Tagen) zur weiteren Kostenoptimierung ausgewählt werden, ältere Backups in den _Archive_-Speicher in der NetApp Backup and Recovery UI zu verschieben. Daten in dieser Ebene sind mit höheren Wiederherstellungskosten verbunden, daher sollte berücksichtigt werden, wie häufig eine Wiederherstellung von Daten aus diesen archivierten Backup-Dateien erforderlich ist. Siehe den Abschnitt auf dieser Seite zum Wiederherstellen von Daten aus dem Archivspeicher.
+Wenn Ihr lokaler Cluster ONTAP 9.12.1 oder höher verwendet, können Sie ältere Backups nach einer bestimmten Anzahl von Tagen (in der Regel mehr als 30 Tage) in der NetApp Backup and Recovery Benutzeroberfläche zur weiteren Kostenoptimierung in den _Archive_ Storage verschieben. Für Daten in dieser Ebene fallen höhere Kosten bei der Wiederherstellung an. Daher sollte berücksichtigt werden, wie häufig Daten aus diesen archivierten Backup-Dateien wiederhergestellt werden müssen. Auf dieser Seite gibt es einen Abschnitt zum Wiederherstellen von Daten aus Archivierungs-Storage.
 
-Beachten Sie, dass Sie beim Konfigurieren von NetApp Backup and Recovery mit dieser Art von Lebenszyklusregel beim Einrichten des Buckets in Ihrem Google-Konto keine Lebenszyklusregeln konfigurieren dürfen.
+Wenn Sie NetApp Backup and Recovery mit dieser Art von Lebenszyklusregel konfigurieren, sollten Sie beim Einrichten des Buckets in Ihrem Google-Konto keine Lebenszyklusregeln konfigurieren.
 
 https://cloud.google.com/storage/docs/storage-classes["Informationen zu Google-Speicherklassen"^].
 
@@ -34,14 +34,14 @@ https://cloud.google.com/storage/docs/storage-classes["Informationen zu Google-S
 [[restore-data-from-archival-storage]]
 == Daten aus dem Archivspeicher wiederherstellen
 
-Während die Speicherung älterer Sicherungsdateien im Archivspeicher wesentlich günstiger ist als die Speicherung im Standardspeicher, dauert der Zugriff auf Daten aus einer Sicherungsdatei im Archivspeicher für Wiederherstellungsvorgänge etwas länger und ist teurer.
+Die Speicherung älterer Sicherungsdateien in Archive Storage ist deutlich günstiger als in Standard Storage. Die Wiederherstellung von Daten aus einer Sicherungsdatei in Archive Storage dauert jedoch etwas länger und ist teurer.
 
 Wie viel kostet die Wiederherstellung von Daten aus dem Google-Archiv?:: Detaillierte Preise für Google Cloud Storage nach Regionen finden Sie auf der https://cloud.google.com/storage/pricing["Preisseite für Google Cloud Storage"^] .
-Wie lange dauert die Wiederherstellung meiner im Google-Archiv archivierten Objekte?:: Die gesamte Wiederherstellungszeit besteht aus zwei Teilen:
+Wie lange dauert die Wiederherstellung meiner im Google-Archiv archivierten Objekte?:: Die gesamte Wiederherstellungszeit setzt sich aus zwei Teilen zusammen:
 +
 --
 * *Abrufzeit*: Die Zeit, die zum Abrufen der Sicherungsdatei aus dem Archiv und zum Platzieren im Standardspeicher benötigt wird.  Dies wird manchmal als „Rehydratationszeit“ bezeichnet.  Im Gegensatz zu den „kältesten“ Speicherlösungen anderer Cloud-Anbieter sind Ihre Daten innerhalb von Millisekunden zugänglich.
-* *Wiederherstellungszeit*: Die Zeit, die zum Wiederherstellen der Daten aus der Sicherungsdatei im Standardspeicher benötigt wird.  Diese Zeit unterscheidet sich nicht von der typischen Wiederherstellungsoperation direkt vom Standardspeicher – wenn keine Archivierungsebene verwendet wird.
+* *Wiederherstellungszeit*: Die Zeit, die benötigt wird, um die Daten aus der Sicherungsdatei in Standard Storage wiederherzustellen. Diese Zeit entspricht der für eine typische Wiederherstellung direkt aus Standard Storage, wenn keine Archivierungsebene verwendet wird.
 
 
 --

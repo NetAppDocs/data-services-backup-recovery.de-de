@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-start-discover-kvm.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, KVM, workloads, protect 
-summary: NetApp Backup and Recovery muss zunächst Workloads erkennen, damit Sie diese schützen können. 
+summary: Zum Identifizieren von KVM-Workloads in NetApp Backup and Recovery eine Managementplattform und einen KVM-Host hinzufügen und anschließend den Schutzstatus im Dashboard überprüfen. 
 ---
 = Entdecken Sie KVM-Workloads in NetApp Backup and Recovery
 :hardbreaks:
@@ -90,5 +90,5 @@ Die KVM-Arbeitslast wird in der Liste der Arbeitslasten auf der Inventarseite an
 . Wählen Sie im NetApp Console *Schutz* > *Sicherung und Wiederherstellung*.
 . Die Kachel für die KVM Workload auswählen.
 . Wählen Sie im Menü „Sichern und Wiederherstellen“ die Option „Dashboard“ aus.
-. Überprüfen Sie den Zustand des Datenschutzes.  Die Anzahl der gefährdeten oder geschützten Workloads steigt basierend auf den neu entdeckten, geschützten und gesicherten Workloads.
+. Der Zustand des Datenschutzes wird angezeigt. Die Anzahl der gefährdeten oder geschützten Workloads erhöht sich entsprechend den neu erkannten, geschützten und gesicherten Workloads.
 

@@ -43,7 +43,7 @@ Der Sicherungs- und Wiederherstellungsdienst wird in der NetApp Console aktivier
 Der Sicherungs- und Wiederherstellungsdienst wird in der lokalen Bereitstellung der NetApp Console aktiviert.
 
 .Bevor Sie beginnen
-Stellen Sie sicher, dass Sie eine Lizenz für NetApp Backup and Recovery erworben haben. Siehe  https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html#obtain-a-license-file["Lizenz erwerben"^] für weitere Informationen.
+Voraussetzung ist eine Lizenz für NetApp Backup and Recovery. Weitere Informationen sind unter https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html#obtain-a-license-file["Lizenz erwerben"^] verfügbar.
 
 .Schritte
 . Im NetApp Console-Menü *Storage* > *Fleets* auswählen.

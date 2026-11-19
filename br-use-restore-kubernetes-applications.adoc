@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-restore-kubernetes-applications.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
-summary: Mit NetApp Backup and Recovery können Sie Anwendungen wiederherstellen, die Sie mit einer Schutzrichtlinie geschützt haben. 
+summary: Kubernetes-Applikationen, die durch eine Richtlinie in NetApp Backup and Recovery geschützt sind, lassen sich mit allen Ressourcen oder einer ausgewählten Teilmenge in den ursprünglichen oder in neue Namespaces wiederherstellen. 
 ---
 = Kubernetes-Anwendungen können über die NetApp Backup and Recovery Web-Oberfläche wiederhergestellt werden.
 :hardbreaks:
@@ -45,7 +45,7 @@ Es wird eine Liste der Ressourcen und ihrer Details angezeigt. Sie können die R
 Sie können Namespace-basierte oder VM-basierte Anwendungen von einem Wiederherstellungspunkt wiederherstellen, indem Sie entweder alle Ressourcen wiederherstellen oder eine Teilmenge der wiederherzustellenden Ressourcen auswählen.
 
 .Bevor Sie beginnen
-Wenn Sie eine Anwendung wiederherstellen, die mit Trident Protect gesichert wurde, stellen Sie sicher, dass Trident Protect sowohl auf dem Quell-Cluster als auch auf dem Ziel-Cluster installiert ist.
+Bei der Wiederherstellung einer mit Trident Protect gesicherten Applikation ist zu prüfen, ob Trident Protect sowohl auf dem Quell- als auch auf dem Zielcluster installiert ist.
 
 *Erforderliche NetApp Console-Rolle*
 
@@ -159,7 +159,7 @@ Die Seite „Zieleinstellungen“ wird angezeigt.
 
 NOTE: Wenn Sie einen AppVault auf einem Kubernetes-Cluster erstellen müssen, um die Wiederherstellung eines mit Trident Protect erstellten Backups oder Snapshots zu erleichtern, lesen Sie  https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-appvault-custom-resources.html["Verwenden Sie Trident Protect AppVault-Objekte, um Buckets zu verwalten"].
 
-. Optional können Sie den Abschnitt *Wiederherstellungsskripte* erweitern und die Option *Postscript* aktivieren, um eine Ausführungs-Hook-Vorlage auszuwählen, die nach Abschluss des Wiederherstellungsvorgangs ausgeführt wird. Geben Sie bei Bedarf alle Argumente ein, die das Skript benötigt, und fügen Sie Label-Selektoren hinzu, um Ressourcen anhand von Ressourcen-Labels zu filtern.
+. Optional können Sie den Abschnitt *Wiederherstellungsskripte* erweitern und die Option *Postscript* aktivieren, um eine Vorlage für einen Ausführungshook auszuwählen, die nach Abschluss des Wiederherstellungsvorgangs ausgeführt wird. Bei Bedarf können Sie alle Argumente eingeben, die das Skript benötigt, und Label-Selektoren hinzufügen, um Ressourcen anhand von Ressourcen-Labels zu filtern.
 . Optional können Sie den Abschnitt *Ressourcentransformationen* erweitern, um während des Wiederherstellungsprozesses Ressourcenattribute hinzuzufügen, zu entfernen oder zu ändern. Gehen Sie dann wie folgt vor:
 +
 

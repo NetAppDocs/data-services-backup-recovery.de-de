@@ -159,7 +159,7 @@ NOTE: Wasabi ist derzeit der einzige qualifizierte S3-kompatible Objektspeichera
 
 | S3-kompatibler Objektspeicher (nur ONTAP Volumes) | On-Premises- ONTAP -System | On-Premises- ONTAP -System 
 |===
-Bei der Wiederherstellung sind folgende Punkte zu beachten:
+Diese Einschränkungen gelten für Wiederherstellungen:
 
 * Wiederherstellungen von Cloud Volumes ONTAP (Replikation) können nur auf Cloud Volumes ONTAP erfolgen. Cloud Volumes ONTAP in AWS unterstützt jedoch auch die Wiederherstellung auf Amazon FSx for NetApp ONTAP.
 * Wiederherstellungen von lokalem ONTAP (Replikation) können nur auf lokales ONTAP durchgeführt werden.

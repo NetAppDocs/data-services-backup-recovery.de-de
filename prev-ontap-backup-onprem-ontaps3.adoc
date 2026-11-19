@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-backup-onprem-ontaps3.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Schützen Sie Ihre VMware-Workloads mit NetApp Backup and Recovery. 
+summary: Volumendaten aus lokalen ONTAP-Systemen können in ONTAP S3 gesichert, auf ein sekundäres System repliziert und mit NetApp Backup and Recovery aktiviert werden. 
 ---
 = Sichern Sie lokale ONTAP -Daten auf ONTAP S3 mit NetApp Backup and Recovery
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Schützen Sie Ihre VMware-Workloads mit NetApp Backup and Recovery.
 
 
 [role="lead"]
-In NetApp Backup und Recovery können Sie Volumendaten Ihrer primären ONTAP-Systeme vor Ort in ONTAP S3 und optional auf ein sekundäres ONTAP System zur Replikation sichern. Auf dieser Seite lässt sich die Umgebung vorbereiten und die Backups aktivieren.
+In NetApp Backup and Recovery können Sie Volume-Daten von Ihren primären ONTAP Systemen vor Ort in ONTAP S3 und optional zur Replizierung auf ein sekundäres ONTAP System sichern. Vorbereitung Ihrer Umgebung und Aktivierung der Backups.
 
 Das primäre lokale ONTAP -System kann ein FAS, AFF oder ONTAP Select System sein.  Das sekundäre ONTAP -System kann ein lokales ONTAP oder Cloud Volumes ONTAP System sein.  Der Objektspeicher kann sich auf einem lokalen ONTAP -System oder einem Cloud Volumes ONTAP System befinden, auf dem Sie einen Simple Storage Service (S3)-Objektspeicherserver aktiviert haben.
 
@@ -38,7 +38,7 @@ Das folgende Bild zeigt jede Komponente beim Sichern eines primären lokalen ONT
 
 image:diagram_cloud_backup_onprem_ontap_s3_cloud.png["Ein Diagramm, das zeigt, wie NetApp Backup and Recovery mit den Volumes auf den Quellsystemen und dem Zielspeicher kommuniziert, auf dem sich die Sicherungsdateien befinden."]
 
-In diesem Szenario sollte der Konsolenagent in derselben Cloud-Provider-Umgebung bereitgestellt werden, in der die Cloud Volumes ONTAP -Systeme bereitgestellt werden.
+In diesem Szenario wird der Console Agent in derselben Cloud-Provider-Umgebung wie die Cloud Volumes ONTAP-Systeme eingesetzt.
 
 
 
@@ -86,7 +86,7 @@ Wenn Sie NetApp Backup and Recovery in einer Standard-SaaS-Umgebung verwenden, w
 [[verify-license-requirements]]
 == Überprüfen der Lizenzanforderungen
 
-Bevor Sie NetApp Backup and Recovery für Ihren Cluster aktivieren können, müssen Sie eine NetApp Backup and Recovery BYOL-Lizenz von NetApp erwerben und aktivieren. Die Lizenz gilt für die Datensicherung und -wiederherstellung im Objektspeicher – für die Erstellung von Snapshots oder replizierten Volumes ist keine Lizenz erforderlich. Diese Lizenz gilt für das Konto und kann systemübergreifend verwendet werden.
+Bevor Sie NetApp Backup und Recovery für Ihren Cluster aktivieren können, müssen Sie eine NetApp Backup und Recovery BYOL-Lizenz von NetApp erwerben und aktivieren. Die Lizenz gilt für Backup und Restore in Objektspeicher. Für die Erstellung von Snapshots oder replizierten Volumes ist keine Lizenz erforderlich. Diese Lizenz gilt für das Konto und kann über mehrere Systeme hinweg verwendet werden.
 
 Sie benötigen die Seriennummer von NetApp , die Ihnen die Nutzung des Dienstes für die Dauer und Kapazität der Lizenz ermöglicht. link:br-start-licensing.html["Erfahren Sie, wie Sie Ihre BYOL-Lizenzen verwalten"].
 
@@ -156,20 +156,20 @@ link:prev-ontap-protect-journey.html["Erfahren Sie mehr über die Arten der Back
 
 
 ====
-Die folgenden ONTAP Cluster-Netzwerkanforderungen sind erforderlich:
+Konfiguration des ONTAP Clusters zur Erfüllung dieser Netzwerkanforderungen:
 
 * Der ONTAP Cluster initiiert für Sicherungs- und Wiederherstellungsvorgänge eine HTTPS-Verbindung über einen benutzerdefinierten Port vom Intercluster-LIF zum ONTAP S3-Server.  Der Port kann während der Sicherungseinrichtung konfiguriert werden.
 +
-ONTAP liest und schreibt Daten in den und aus dem Objektspeicher. Der Objektspeicher wird nie initiiert, er reagiert nur.
+ONTAP liest und schreibt Daten in und aus dem Objektspeicher. Der Objektspeicher initiiert niemals eine Verbindung. Er antwortet nur.
 
 * ONTAP erfordert eine eingehende Verbindung vom Konsolenagenten zum Cluster-Management-LIF.
 * Auf jedem ONTAP Knoten, der die zu sichernden Volumes hostet, ist ein Intercluster-LIF erforderlich.  Das LIF muss mit dem _IPspace_ verknüpft sein, den ONTAP für die Verbindung mit dem Objektspeicher verwenden soll. https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html["Erfahren Sie mehr über IPspaces"^] .
 +
-Wenn Sie NetApp Backup and Recovery einrichten, werden Sie nach dem zu verwendenden IPspace gefragt. Sie sollten den IPspace auswählen, mit dem jedes LIF verknüpft ist. Dies kann der „Standard“-IP-Bereich oder ein benutzerdefinierter IP-Bereich sein, den Sie erstellt haben.
+Bei der Einrichtung von NetApp Backup und Recovery werden Sie aufgefordert, den zu verwendenden IPspace auszuwählen. Wählen Sie den IPspace aus, der jeder LIF zugeordnet ist. Dies kann der IPspace „Default“ oder ein benutzerdefinierter IPspace sein, den Sie erstellt haben.
 
 * Die Intercluster-LIFs der Knoten können auf den Objektspeicher zugreifen (nicht erforderlich, wenn der Konsolenagent an einem „dunklen“ Standort installiert ist).
 * Für die Speicher-VM, auf der sich die Volumes befinden, wurden DNS-Server konfiguriert.  Erfahren Sie, wie Sie https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html["Konfigurieren Sie DNS-Dienste für die SVM"^] .
-* Wenn Sie einen anderen IPspace als den Standard-IPspace verwenden, müssen Sie möglicherweise eine statische Route erstellen, um Zugriff auf den Objektspeicher zu erhalten.
+* Wenn Sie einen anderen IPspace als Default verwenden, müssen Sie möglicherweise eine statische Route erstellen, um auf den Objektspeicher zuzugreifen.
 * Aktualisieren Sie bei Bedarf die Firewall-Regeln, um Verbindungen des NetApp Backup and Recovery -Dienstes von ONTAP zum Objektspeicher über den von Ihnen angegebenen Port (normalerweise Port 443) und Namensauflösungsdatenverkehr von der Speicher-VM zum DNS-Server über Port 53 (TCP/UDP) zuzulassen.
 
 
@@ -187,7 +187,7 @@ Wenn Sie mit NetApp Backup and Recovery replizierte Volumes auf einem sekundäre
 * Wenn sich der Cluster vor Ort befindet, sollten Sie über eine Verbindung von Ihrem Unternehmensnetzwerk zu Ihrem virtuellen Netzwerk beim Cloud-Anbieter verfügen. Dies ist normalerweise eine VPN-Verbindung.
 * ONTAP -Cluster müssen zusätzliche Subnetz-, Port-, Firewall- und Clusteranforderungen erfüllen.
 +
-Da Sie auf Cloud Volumes ONTAP oder lokale Systeme replizieren können, überprüfen Sie die Peering-Anforderungen für lokale ONTAP -Systeme. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Voraussetzungen für Cluster-Peering in der ONTAP Dokumentation anzeigen"^] .
+Da eine Replikation auf Cloud Volumes ONTAP oder lokale Systeme möglich ist, gilt es, die Peering-Anforderungen für lokale ONTAP Systeme zu prüfen https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Voraussetzungen für Cluster-Peering in der ONTAP Dokumentation anzeigen"^].
 
 
 
@@ -205,7 +205,7 @@ Da Sie auf Cloud Volumes ONTAP oder lokale Systeme replizieren können, überpr�
 
 Sie müssen einen Simple Storage Service (S3)-Objektspeicherserver im ONTAP Cluster aktivieren, den Sie für Objektspeichersicherungen verwenden möchten. Siehe die https://docs.netapp.com/us-en/ontap/s3-config/index.html["ONTAP S3-Dokumentation"^] für Details.
 
-*Hinweis:* Sie können diesen Cluster zur Konsolenseite *Systeme* hinzufügen, er wird jedoch nicht als S3-Objektspeicherserver identifiziert und Sie können kein Quellsystem per Drag & Drop auf dieses S3-System ziehen, um die Aktivierung der Sicherung zu starten.
+*Hinweis:* Sie können diesen Cluster zur Console Seite *Systems* hinzufügen, aber die Console identifiziert ihn nicht als S3-Objektspeicherserver. Sie können ein Quellsystem nicht per Drag-and-Drop auf dieses S3-System ziehen, um die Backup-Aktivierung zu starten.
 
 Dieses ONTAP -System muss die folgenden Anforderungen erfüllen.
 
@@ -263,7 +263,7 @@ Die Einführungsseite des Assistenten zeigt die Schutzoptionen, darunter lokale 
 
 . Fahren Sie mit den folgenden Optionen fort:
 +
-** Wenn Sie bereits über einen Konsolenagenten verfügen, sind Sie startklar.  Wählen Sie einfach *Weiter*.
+** Wenn Sie bereits über einen Console Agent verfügen, ist *Next* die richtige Auswahl.
 ** Wenn Sie keinen Konsolenagenten haben, wird die Option *Konsolenagenten hinzufügen* angezeigt.  Siehe<<Vorbereiten Ihres Konsolenagenten>> .
 
 
@@ -286,12 +286,12 @@ Sie können FlexVol oder FlexGroup -Volumes schützen. Sie können jedoch keine 
 
 ====
 .Schritte
-Beachten Sie, dass, falls für die von Ihnen ausgewählten Volumes bereits Snapshot- oder Replikationsrichtlinien angewendet wurden, die später ausgewählten Richtlinien diese bestehenden Richtlinien überschreiben.
+Falls für die von Ihnen ausgewählten Volumes bereits Snapshot- oder Replikationsrichtlinien angewendet wurden, werden diese bestehenden Richtlinien durch die von Ihnen später ausgewählten Richtlinien überschrieben.
 
 . Wählen Sie auf der Seite „Volumes auswählen“ das oder die Volumes aus, die Sie schützen möchten.
 +
 ** Filtern Sie die Zeilen optional, um nur Datenträger mit bestimmten Datenträgertypen, Stilen usw. anzuzeigen und so die Auswahl zu vereinfachen.
-** Nachdem Sie das erste Volume ausgewählt haben, können Sie alle FlexVol Volumes auswählen (FlexGroup Volumes können jeweils nur einzeln ausgewählt werden).  Um alle vorhandenen FlexVol Volumes zu sichern, markieren Sie zuerst ein Volume und aktivieren Sie dann das Kontrollkästchen in der Titelzeile.
+** Nachdem Sie das erste Volume ausgewählt haben, können Sie alle FlexVol Volumes auswählen (FlexGroup Volumes können jedoch nur einzeln ausgewählt werden). Alle vorhandenen FlexVol Volumes lassen sich sichern, indem zunächst ein Volume und anschließend das Kontrollkästchen in der Titelzeile markiert wird.
 ** Um einzelne Volumes zu sichern, aktivieren Sie das Kontrollkästchen für jedes Volume.
 
 
@@ -396,7 +396,7 @@ Um eine Richtlinie zu erstellen, wählen Sie *Neue Richtlinie erstellen* und geh
 
 
 +
-** *Vorhandene Snapshots als Sicherungsdateien in den Objektspeicher exportieren*: Falls lokale Snapshots für Volumes in diesem System vorhanden sind, die dem soeben ausgewählten Sicherungsplan-Label entsprechen (z. B. täglich, wöchentlich usw.), wird diese zusätzliche Meldung angezeigt. Durch Aktivieren dieses Kontrollkästchens werden alle historischen Snapshots als Sicherungsdateien in den Objektspeicher kopiert, um den umfassendsten Schutz für Ihre Volumes sicherzustellen.
+** *Vorhandene Snapshots als Sicherungsdateien in den Objektspeicher exportieren*: Wenn in diesem System lokale Snapshots für Volumes vorhanden sind, die mit der soeben ausgewählten Bezeichnung des Sicherungsplans übereinstimmen (z. B. täglich oder wöchentlich), zeigt die Console diese zusätzliche Aufforderung an. Mit diesem Kontrollkästchen werden alle historischen Snapshots als Sicherungsdateien in den Objektspeicher kopiert, um den umfassendsten Schutz für Ihre Volumes sicherzustellen.
 
 
 . Wählen Sie *Weiter*.
@@ -407,7 +407,7 @@ Um eine Richtlinie zu erstellen, wählen Sie *Neue Richtlinie erstellen* und geh
 [[review-your-selections]]
 === Überprüfen Sie Ihre Auswahl
 
-Dies ist die Gelegenheit, Ihre Auswahl zu überprüfen und gegebenenfalls Anpassungen vorzunehmen.
+Überprüfung Ihrer Auswahl und gegebenenfalls erforderliche Anpassungen.
 
 .Schritte
 . Überprüfen Sie Ihre Auswahl auf der Überprüfungsseite.
@@ -431,7 +431,7 @@ Sie können den Status von Sicherungs- und Wiederherstellungsaufträgen auch mit
 [[show-the-api-commands]]
 === API-Befehle anzeigen
 
-Sie können die im Assistenten „Backup und Recovery aktivieren“ verwendeten API-Befehle anzeigen und optional kopieren. Dies kann hilfreich sein, um die Aktivierung von Backups in zukünftigen Systemen zu automatisieren.
+Anzeige und optionales Kopieren der API-Befehle, die im Assistenten „Activate Backup and Recovery“ verwendet werden, um die Aktivierung von Backup und Recovery in zukünftigen Systemen zu automatisieren.
 
 .Schritte
 . Im Assistenten „Backup und Recovery aktivieren“ *API-Anfrage anzeigen* auswählen.

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-policies-kvm-create.html 
 keywords: backing up, back up, backup, backup on-premises ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
-summary: Erstellen Sie in NetApp Backup and Recovery Ihre eigenen Richtlinien, die die Sicherungshäufigkeit, den Zeitpunkt der Sicherung und die Anzahl der aufbewahrten Sicherungsdateien regeln. 
+summary: In NetApp Backup and Recovery lassen sich KVM-Backup-Richtlinien erstellen, die Backup-Häufigkeit, Zeitplan und Aufbewahrung steuern, sowie bearbeiten oder löschen. 
 ---
 = Erstellen und Verwalten von KVM-Backup-Richtlinien in NetApp Backup und Recovery
 :hardbreaks:
@@ -16,7 +16,7 @@ NetApp Backup und Recovery kann zur Erstellung von KVM-Backup-Richtlinien genutz
 
 Wenn Sie Ressourcen aus SnapCenter importieren, können Sie auf Unterschiede zwischen den in SnapCenter und den in NetApp Backup and Recovery verwendeten Richtlinien stoßen.  Sehenlink:reference-policy-differences-snapcenter.html["Richtlinienunterschiede zwischen SnapCenter und NetApp Backup and Recovery"] .
 
-Sie können die folgenden Ziele im Zusammenhang mit Richtlinien erreichen:
+Diese Aufgaben lassen sich mithilfe von Richtlinien erledigen:
 
 * Erstellen einer lokalen Snapshot-Richtlinie
 * Erstellen einer Richtlinie für die Replikation auf sekundären Speicher

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-oracle-protect-overview.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
-summary: Sie können virtuelle Oracle-Maschinen von lokalen ONTAP -Systemen bis hin zu Amazon Web Services, Microsoft Azure, Google Cloud Platform und StorageGRID schützen und so sicherstellen, dass Ihre Daten geschützt sind. 
+summary: Der Schutz von Oracle Database Workloads und Protokollen erfolgt mit datenbankkonsistenten Backups in AWS S3, StorageGRID, Azure Blob oder ONTAP S3, und die Wiederherstellung erfolgt auf einem lokalen Oracle Host. 
 ---
 = Oracle Datenbank-Workloads mit NetApp Backup und Recovery schützen
 :hardbreaks:
@@ -16,10 +16,10 @@ summary: Sie können virtuelle Oracle-Maschinen von lokalen ONTAP -Systemen bis 
 [role="lead"]
 NetApp Backup und Recovery schützt Oracle Database Workloads und Protokolle mit schnellen, platzsparenden, absturzkonsistenten und datenbankkonsistenten Backups und Wiederherstellungen. Workloads können in AWS S3, StorageGRID, Azure Blob oder ONTAP S3 gesichert und Backups auf einem lokalen Oracle Host wiederhergestellt werden.
 
-Verwenden Sie NetApp Backup and Recovery , um eine 3-2-1-Schutzstrategie zu implementieren, bei der Sie 3 Kopien Ihrer Quelldaten auf 2 verschiedenen Speichersystemen sowie 1 Kopie in der Cloud haben. Zu den Vorteilen des 3-2-1-Ansatzes gehören:
+Mit NetApp Backup and Recovery lässt sich eine 3-2-1-Schutzstrategie implementieren, bei der drei Kopien der Quelldaten auf zwei verschiedenen Storage-Systemen sowie eine Kopie in der Cloud vorhanden sind. Die Vorteile des 3-2-1-Ansatzes sind:
 
 * Mehrere Datenkopien schützen vor internen und externen Cybersicherheitsbedrohungen.
-* Die Verwendung unterschiedlicher Medientypen erleichtert Ihnen die Wiederherstellung, wenn ein Typ ausfällt.
+* Verschiedene Medientypen helfen Ihnen bei der Wiederherstellung, falls ein Typ ausfällt.
 * Sie können die Wiederherstellung schnell von der Vor-Ort-Kopie durchführen und die Offsite-Kopien verwenden, wenn die Vor-Ort-Kopie kompromittiert ist.
 
 

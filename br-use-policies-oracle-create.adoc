@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-policies-oracle-create.html 
 keywords: backing up, back up, backup, backup on-premises ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
-summary: Erstellen Sie in NetApp Backup and Recovery Ihre eigenen Richtlinien, die die Sicherungshäufigkeit, den Zeitpunkt der Sicherung und die Anzahl der aufbewahrten Sicherungsdateien regeln. 
+summary: In NetApp Backup and Recovery können Sie Backup-Richtlinien für Oracle Database erstellen, mit denen Sicherungshäufigkeit, Zeitplan und Aufbewahrungsdauer gesteuert werden. 
 ---
 = Erstellen und Verwalten von Oracle-Datenbank-Backup-Richtlinien in NetApp Backup und Recovery
 :hardbreaks:
@@ -129,7 +129,7 @@ NOTE: Die angezeigten Felder unterscheiden sich je nach ausgewähltem Anbieter u
 ** *Aufbewahrungskopien*: Geben Sie die Anzahl der aufzubewahrenden Snapshots ein.
 ** *Ausführen um*: Wählen Sie den ONTAP Übertragungszeitplan zum Sichern von Daten im Objektspeicher.
 ** *Stufen Sie Ihre Backups vom Objektspeicher in den Archivspeicher auf*: Wenn Sie Backups in den Archivspeicher (z. B. AWS Glacier) aufstufen möchten, wählen Sie die Stufenoption und die Anzahl der Tage für die Archivierung aus.
-** *Integritätsprüfung aktivieren*: Es kann ausgewählt werden, ob Integritätsprüfungen (Snapshot-Sperrung) für den Objektspeicher aktiviert werden sollen. Dadurch ist sichergestellt, dass Backups gültig und wiederherstellbar sind. Die Häufigkeit der Integritätsprüfung ist standardmäßig auf sieben Tage festgelegt. Zum Schutz der Backups vor Änderungen oder Löschung steht die Option *Integritätsprüfung* zur Verfügung. Die Prüfung erfolgt nur beim neuesten Snapshot. Integritätsprüfungen können für den neuesten Snapshot aktiviert oder deaktiviert werden.
+** *Integritätsprüfung aktivieren*: Hier wird festgelegt, ob Integritätsprüfungen (Snapshot-Sperrung) für den Objektspeicher aktiviert werden sollen. Dadurch wird sichergestellt, dass Backups gültig und wiederherstellbar sind. Die Häufigkeit der Integritätsprüfung ist standardmäßig auf sieben Tage festgelegt. Zum Schutz Ihrer Backups vor Änderungen oder Löschung verwenden Sie die Option *Integritätsprüfung*. Die Prüfung erfolgt nur für den neuesten Snapshot. Sie können Integritätsprüfungen für den neuesten Snapshot aktivieren oder deaktivieren.
 
 
 . Optional lassen sich erweiterte Einstellungen in der Richtlinie konfigurieren.
@@ -147,7 +147,7 @@ Wenn Sie *Data Guard settings* nicht aktivieren, werden sowohl die primäre als 
 
 
 
-** *Backup-Überprüfung*: Wählen Sie aus, ob Sie die Backup-Überprüfung aktivieren und ob diese sofort oder später erfolgen soll. Diese Funktion stellt sicher, dass die Backups gültig sind und erfolgreich wiederhergestellt werden können. Wir empfehlen, diese Option zu aktivieren, um die Integrität Ihrer Backups zu gewährleisten. Standardmäßig wird die Backup-Überprüfung vom Sekundärspeicher ausgeführt, sofern der Sekundärspeicher konfiguriert ist. Wenn kein Sekundärspeicher konfiguriert ist, wird die Backup-Überprüfung vom Primärspeicher ausgeführt.
+** *Backup-Verifizierung*: Hier wird festgelegt, ob die Backup-Verifizierung aktiviert werden soll und ob dies sofort oder später erfolgen soll. Diese Funktion bestätigt, dass die Backups gültig sind und erfolgreich wiederhergestellt werden können. Es wird empfohlen, diese Option zu aktivieren, um die Integrität Ihrer Backups sicherzustellen. Standardmäßig wird die Backup-Verifizierung über sekundären Storage ausgeführt, sofern sekundärer Storage konfiguriert ist. Wenn kein sekundärer Storage konfiguriert ist, wird die Backup-Verifizierung über primären Storage ausgeführt.
 +
 Konfigurieren Sie zusätzlich die folgenden Optionen:
 

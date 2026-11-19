@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: concept-start-prereq.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, backup and recovery 
-summary: Beginnen Sie mit NetApp Backup and Recovery, indem Sie die Bereitschaft Ihrer Betriebsumgebung, Ihres Konsolenagenten und Ihres Konsolenkontos überprüfen.  Um NetApp Backup and Recovery verwenden zu können, benötigen Sie diese Voraussetzungen. 
+summary: Überprüfung der Anforderungen an die NetApp Console, den Objektspeicher und die Workloads zum Schutz von ONTAP Volumes, SQL Server, VMware, KVM, Oracle, Kubernetes und Hyper-V mit NetApp Backup and Recovery. 
 ---
 = NetApp Backup and Recovery-Anforderungen
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Beginnen Sie mit NetApp Backup and Recovery, indem Sie die Bereitschaft
 
 
 [role="lead"]
-Bevor Sie mit der Nutzung von NetApp Backup and Recovery beginnen, stellen Sie sicher, dass Ihre NetApp Console und Ihre Betriebsumgebung die folgenden Anforderungen erfüllen.
+Es muss sichergestellt sein, dass Ihre NetApp Console und Ihre Betriebsumgebung die Anforderungen zum Schutz Ihres ONTAP Volume, Ihrer Datenbank, Ihrer virtuellen Maschine und Ihrer Kubernetes-Workloads mit NetApp Backup and Recovery erfüllen.
 
 
 
@@ -182,7 +182,7 @@ Einige ONTAP Funktionen erfordern bestimmte ONTAP Versionen:
 | Sicherung oder Wiederherstellung in S3-kompatiblem Objektspeicher | 9.17.1 oder höher 
 
 
-| Mehr als 6 Buckets pro System bei verschiedenen Cloud-Anbietern (maximal 100 Buckets) | 9.19.1 oder später 
+| Mehr als sechs Buckets pro System über verschiedene Cloud-Provider hinweg verwenden (maximal 100 Buckets) | 9.19.1 oder später 
 |===
 Weitere Informationen zu unterstützten Funktionen, Volumentypen, Sicherungs- und Wiederherstellungszielen und mehr finden Sie unter link:prev-ontap-protect-overview.html["Schutz von ONTAP Volumes Workloads mit NetApp Backup and Recovery"].
 
@@ -194,7 +194,7 @@ Weitere Informationen zu unterstützten Funktionen, Volumentypen, Sicherungs- un
 Um NetApp Backup and Recovery für Microsoft SQL Server-Workloads zu verwenden, benötigen Sie die folgenden Voraussetzungen hinsichtlich Hostsystem, Speicherplatz und Größe.
 
 
-NOTE: ONTAP 9.19.1 oder höher ist erforderlich, um mehr als 6 Buckets pro System bei verschiedenen Cloud-Anbietern zu unterstützen (bis zu maximal 100 Buckets).
+NOTE: ONTAP 9.19.1 oder höher ist erforderlich, um mehr als sechs Buckets pro System über verschiedene Cloud-Anbieter hinweg zu unterstützen (maximal 100 Buckets).
 
 [cols="33,66a"]
 |===
@@ -212,7 +212,7 @@ Für VMware Virtual Machine File System (VMFS) und VMware Virtual Machine Disk (
 
 
 | SnapCenter Server-Version  a| 
-Wenn Sie Ihre vorhandenen Daten aus SnapCenter in NetApp Backup and Recovery importieren möchten, ist SnapCenter Server Version 5.0 oder höher erforderlich.
+SnapCenter Server Version 5.0 oder höher ist erforderlich, um Ihre vorhandenen Daten aus SnapCenter in NetApp Backup and Recovery zu importieren.
 
 
 NOTE: Wenn Sie bereits über SnapCenter verfügen, überprüfen Sie zunächst, ob Sie die Voraussetzungen erfüllt haben, bevor Sie aus SnapCenter importieren.  Sehenlink:concept-start-prereq-snapcenter-import.html["Voraussetzungen für den Import von Ressourcen aus SnapCenter"] .
@@ -227,7 +227,7 @@ NOTE: Wenn Sie bereits über SnapCenter verfügen, überprüfen Sie zunächst, o
 | Minimaler Installations- und Protokollspeicherplatz für das Plug-In auf dem SQL Server-Host  a| 
 5 GB
 
-Weisen Sie ausreichend Speicherplatz zu und überwachen Sie den Speicherverbrauch des Protokollordners.  Der erforderliche Protokollspeicherplatz variiert je nach Anzahl der durchgeführten Sicherungen und der Häufigkeit der Datenschutzvorgänge.  Wenn nicht genügend Speicherplatz vorhanden ist, werden die Protokolle für die Vorgänge nicht erstellt.
+Es sollte ausreichend Speicherplatz zugewiesen und der Storage Verbrauch des Protokollordners überwacht werden. Der erforderliche Protokollspeicherplatz variiert je nach Anzahl der durchgeführten Backups und der Häufigkeit der Datensicherungsvorgänge. Wenn nicht genügend Speicherplatz vorhanden ist, werden für die Vorgänge keine Protokolle erstellt.
 
 
 
@@ -308,7 +308,7 @@ Sie benötigen bestimmte Anforderungen, um Ihre VMware-Workloads zu erkennen und
 
 
 | Vernetzter Speicher  a| 
-* ONTAP 9.13.1 oder höher (ONTAP 9.19.1 oder höher ist erforderlich, um mehr als 6 Buckets pro System bei verschiedenen Cloud-Anbietern zu unterstützen; maximal 100 Buckets)
+* ONTAP 9.13.1 oder höher (ONTAP 9.19.1 oder höher ist erforderlich, um mehr als sechs Buckets pro System über verschiedene Cloud-Anbieter hinweg zu unterstützen; maximal 100 Buckets)
 * ASA r2 SAN-only-Systeme (ONTAP 9.17.1 oder höher erforderlich)
 * Amazon FSx for NetApp ONTAP-Speichersysteme mit Version 9.13.1 oder höher
 * Google Cloud NetApp Volumes (ONTAP-Modus und Flex Unified Service Level)
@@ -344,7 +344,7 @@ Weitere Informationen zu Backup- und Recovery-Rollen finden Sie unter  https://d
 Sie benötigen bestimmte Anforderungen, um virtuelle KVM-Maschinen zu erkennen und zu schützen.
 
 
-NOTE: ONTAP 9.19.1 oder höher ist erforderlich, um mehr als 6 Buckets pro System bei verschiedenen Cloud-Anbietern zu unterstützen (bis zu maximal 100 Buckets).
+NOTE: ONTAP 9.19.1 oder höher ist erforderlich, um mehr als sechs Buckets pro System über verschiedene Cloud-Anbieter hinweg zu unterstützen (maximal 100 Buckets).
 
 * Eine moderne Linux-Distribution mit Kernelversion 5.14.0-503.22.1.el9_5.x86_64 (longterm) oder höher
 * Ihre KVM-Hosts und VMs müssen über eine Managementplattform verwaltet werden. NetApp Backup and Recovery unterstützt die folgenden Managementplattformen:
@@ -389,7 +389,7 @@ chown -R qemu:qemu <kvm_vm_mount_path> & chmod 771 <kvm_vm_mount_path>
 Stellen Sie sicher, dass Ihre Umgebung bestimmte Anforderungen erfüllt, um Oracle Database-Ressourcen zu erkennen und zu schützen.
 
 
-NOTE: ONTAP 9.19.1 oder höher ist erforderlich, um mehr als 6 Buckets pro System bei verschiedenen Cloud-Anbietern zu unterstützen (bis zu maximal 100 Buckets).
+NOTE: ONTAP 9.19.1 oder höher ist erforderlich, um mehr als sechs Buckets pro System über verschiedene Cloud-Anbieter hinweg zu unterstützen (maximal 100 Buckets).
 
 |===
 | Anforderung | Unterstützt 
@@ -459,7 +459,7 @@ Die Host-Anmeldeinformationen, die Sie während der Ermittlung angeben, müssen 
 Sie benötigen spezifische Anforderungen, um Kubernetes-Ressourcen zu erkennen und Ihre Kubernetes-Anwendungen zu schützen.
 
 
-NOTE: ONTAP 9.19.1 oder höher ist erforderlich, um mehr als 6 Buckets pro System bei verschiedenen Cloud-Anbietern zu unterstützen (bis zu maximal 100 Buckets).
+NOTE: ONTAP 9.19.1 oder höher ist erforderlich, um mehr als sechs Buckets pro System über verschiedene Cloud-Anbieter hinweg zu unterstützen (maximal 100 Buckets).
 
 
 NOTE: NetApp empfiehlt dringend, dem für Kubernetes-Workloads verwendeten Console-Agenten eine statische IP-Adresse zuzuweisen, um Probleme zu vermeiden, falls sich die IP-Adresse des Agenten ändert.
@@ -486,7 +486,7 @@ Stellen Sie sicher, dass Ihre Hyper-V-Instanz bestimmte Anforderungen zum Erkenn
 | Anforderung | Unterstützt 
 
 
-| Microsoft Hyper-V | 2019, 2022 & 2025 Ausgaben 
+| Microsoft Hyper-V | Ausgaben von 2019, 2022 und 2025 
 
 
 | ASP.NET Core Runtime | 10.0.10 Hosting Paket 
@@ -522,11 +522,11 @@ Stellen Sie sicher, dass Ihre Hyper-V-Instanz bestimmte Anforderungen zum Erkenn
 * Mindestens 5 GB Installations- und Protokollspeicherplatz für das Plug-In auf dem Hyper-V-Host
 +
 
-NOTE: Stellen Sie sicher, dass Sie auf dem Hyper-V-Host genügend Speicherplatz für den Protokollordner zuweisen und dessen Nutzung regelmäßig überwachen.  Der erforderliche Speicherplatz hängt davon ab, wie oft Backups und Datenschutzvorgänge durchgeführt werden.  Wenn nicht genügend Speicherplatz vorhanden ist, werden keine Protokolle erstellt.
+NOTE: Auf dem Hyper-V-Host ist dem Protokollordner ausreichend Speicherplatz zuzuweisen, und seine Nutzung sollte regelmäßig überwacht werden. Der benötigte Speicherplatz hängt davon ab, wie häufig Backups und Datensicherungsvorgänge stattfinden. Wenn nicht genügend Speicherplatz vorhanden ist, werden keine Protokolle erstellt.
 
 
 
 .NetApp ONTAP Konfigurationsanforderungen
-* Ein primäres ONTAP System (ONTAP 9.14.1 oder höher, ONTAP 9.19.1 oder höher ist erforderlich, um mehr als 6 Buckets pro System bei verschiedenen Cloud-Anbietern zu unterstützen; maximal 100 Buckets)
+* Ein primäres ONTAP System (ONTAP 9.14.1 oder höher - ONTAP 9.19.1 oder höher ist erforderlich, um mehr als sechs Buckets pro System über verschiedene Cloud-Anbieter hinweg zu unterstützen; maximal 100 Buckets)
 * Für Hyper-V-Bereitstellungen, bei denen SMB-Freigaben zur Speicherung von virtuellen Maschinendaten verwendet werden, muss die Eigenschaft „Kontinuierliche Verfügbarkeit“ der Freigabe auf dem ONTAP System aktiviert sein. Siehe  https://docs.netapp.com/us-en/ontap/smb-hyper-v-sql/configure-shares-continuous-availability-task.html["ONTAP-Dokumentation"^] für Anweisungen.
 

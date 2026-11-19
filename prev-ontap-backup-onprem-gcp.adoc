@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: prev-ontap-backup-onprem-gcp.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Schützen Sie Ihre VMware-Workloads mit NetApp Backup and Recovery. 
+summary: Das Sichern lokaler ONTAP Volumedaten in Google Cloud Storage mit NetApp Backup and Recovery umfasst auch die Vorbereitung des Console Agenten, der ONTAP Cluster und der Bucket-Berechtigungen. 
 ---
-= Sichern Sie lokale ONTAP -Daten mit NetApp Backup and Recovery in Google Cloud Storage
+= Lokale ONTAP-Daten mit NetApp Backup and Recovery in Google Cloud sichern
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Schützen Sie Ihre VMware-Workloads mit NetApp Backup and Recovery.
 
 
 [role="lead"]
-In NetApp Backup und Recovery können Volume-Daten von lokalen ONTAP-Systemen auf ein sekundäres Speichersystem und in Google Cloud Storage gesichert werden. Auf dieser Seite finden Sie Informationen zur Vorbereitung Ihrer Umgebung und zur Aktivierung von Backups.
+Mit NetApp Backup and Recovery lassen sich Volumendaten Ihrer lokalen ONTAP Storage-Systeme in Google Cloud Storage und auf ein sekundäres Storage-System sichern. Nach der Vorbereitung Ihrer Umgebung folgt die Aktivierung der Backups.
 
 
 NOTE: Zu den „On-Premises ONTAP -Systemen“ gehören FAS, AFF und ONTAP Select Systeme.
@@ -33,7 +33,7 @@ Wählen Sie aus, welche der beiden Verbindungsmethoden Sie beim Konfigurieren vo
 * *Private Verbindung* – Verwenden Sie ein VPN oder Google Cloud Interconnect und leiten Sie den Datenverkehr über eine private Google Access-Schnittstelle, die eine private IP-Adresse verwendet.
 
 
-Optional können Sie auch über die öffentliche oder private Verbindung eine Verbindung zu einem sekundären ONTAP System für replizierte Volumes herstellen.
+Sie können die öffentliche oder private Verbindung auch nutzen, um eine Verbindung zu einem sekundären ONTAP System für replizierte Volumes herzustellen.
 
 Das folgende Diagramm zeigt die Methode *öffentliche Verbindung* und die Verbindungen, die Sie zwischen den Komponenten vorbereiten müssen. Der Konsolenagent muss in der Google Cloud Platform VPC bereitgestellt werden.
 
@@ -57,7 +57,7 @@ Der Konsolenagent ist die Hauptsoftware für die NetApp Console .  Zum Sichern u
 
 Wenn Sie bereits einen Konsolenagenten in Ihrer Google Cloud Platform VPC bereitgestellt haben, sind Sie startklar.
 
-Wenn nicht, müssen Sie an diesem Speicherort einen Konsolenagenten erstellen, um ONTAP -Daten in Google Cloud Storage zu sichern.  Sie können keinen Konsolenagenten verwenden, der bei einem anderen Cloud-Anbieter oder vor Ort bereitgestellt wird.
+Falls noch keiner vorhanden ist, ist für die Sicherung von ONTAP-Daten in Google Cloud Storage an diesem Standort ein Console Agent erforderlich. Ein Console Agent, der bei einem anderen Cloud-Anbieter oder On-Premises bereitgestellt wurde, kann nicht verwendet werden.
 
 * https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["Erfahren Sie mehr über Konsolenagenten"^]
 * https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-google.html["Installieren Sie einen Konsolenagenten in GCP"^]
@@ -92,7 +92,7 @@ Um die Funktion „Suchen und Wiederherstellen“ von NetApp Backup and Recovery
 
 .Schritte
 . Im https://console.cloud.google.com["Google Cloud Console"^] , gehen Sie zur Seite *Rollen*.
-. Wählen Sie mithilfe der Dropdownliste oben auf der Seite das Projekt oder die Organisation aus, das/die die Rolle enthält, die Sie bearbeiten möchten.
+. Oben auf der Seite können Sie in der Dropdown-Liste das Projekt oder Unternehmen auswählen, das die Rolle enthält, die Sie bearbeiten möchten.
 . Wählen Sie eine benutzerdefinierte Rolle aus.
 . Wählen Sie *Rolle bearbeiten*, um die Berechtigungen der Rolle zu aktualisieren.
 . Wählen Sie *Berechtigungen hinzufügen* aus, um der Rolle die folgenden neuen Berechtigungen hinzuzufügen.
@@ -192,7 +192,7 @@ Die folgenden ONTAP Cluster-Netzwerkanforderungen sind erforderlich:
 
 * Der ONTAP -Cluster initiiert für Sicherungs- und Wiederherstellungsvorgänge eine HTTPS-Verbindung über Port 443 vom Intercluster-LIF zu Google Cloud Storage.
 +
-ONTAP liest und schreibt Daten in den und aus dem Objektspeicher. Der Objektspeicher wird nie initiiert, er reagiert nur.
+ONTAP liest und schreibt Daten in und aus dem Objektspeicher. Der Objektspeicher initiiert niemals eine Verbindung. Er antwortet nur.
 
 * ONTAP erfordert eine eingehende Verbindung vom Konsolenagenten zum Cluster-Management-LIF.  Der Konsolenagent kann sich in einer Google Cloud Platform VPC befinden.
 * Auf jedem ONTAP Knoten, der die zu sichernden Volumes hostet, ist ein Intercluster-LIF erforderlich.  Das LIF muss mit dem _IPspace_ verknüpft sein, den ONTAP für die Verbindung mit dem Objektspeicher verwenden soll. https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html["Erfahren Sie mehr über IPspaces"^] .
@@ -204,7 +204,7 @@ Wenn Sie NetApp Backup and Recovery einrichten, werden Sie nach dem zu verwenden
 +
 Wenn Sie Private Google Access oder Private Service Connect verwenden, stellen Sie sicher, dass Ihre DNS-Server so konfiguriert sind, dass sie auf `storage.googleapis.com` an die richtige interne (private) IP-Adresse.
 
-* Beachten Sie, dass Sie, wenn Sie einen anderen IPspace als den Default verwenden, möglicherweise eine statische Route erstellen müssen, um Zugriff auf den Objektspeicher zu erhalten.
+* Wenn Sie einen anderen IPspace als Default verwenden, müssen Sie möglicherweise eine statische Route erstellen, um auf den Objektspeicher zuzugreifen.
 * Aktualisieren Sie bei Bedarf die Firewall-Regeln, um NetApp Backup and Recovery -Verbindungen von ONTAP zum Objektspeicher über Port 443 und Namensauflösungsdatenverkehr von der Speicher-VM zum DNS-Server über Port 53 (TCP/UDP) zuzulassen.
 
 
@@ -222,7 +222,7 @@ Wenn Sie mit NetApp Backup and Recovery replizierte Volumes auf einem sekundäre
 * Wenn sich der Cluster vor Ort befindet, sollten Sie über eine Verbindung von Ihrem Unternehmensnetzwerk zu Ihrem virtuellen Netzwerk beim Cloud-Anbieter verfügen. Dies ist normalerweise eine VPN-Verbindung.
 * ONTAP -Cluster müssen zusätzliche Subnetz-, Port-, Firewall- und Clusteranforderungen erfüllen.
 +
-Da Sie auf Cloud Volumes ONTAP oder lokale Systeme replizieren können, überprüfen Sie die Peering-Anforderungen für lokale ONTAP -Systeme. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Voraussetzungen für Cluster-Peering in der ONTAP Dokumentation anzeigen"^] .
+Da eine Replikation auf Cloud Volumes ONTAP oder lokale Systeme möglich ist, gilt es, die Peering-Anforderungen für lokale ONTAP Systeme zu prüfen https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Voraussetzungen für Cluster-Peering in der ONTAP Dokumentation anzeigen"^].
 
 
 
@@ -329,8 +329,8 @@ cloudkms.keyRings.setIamPolicy
 *CMEK-Überlegungen:*
 
 * Es werden sowohl HSM-Schlüssel (Hardware-gestützt) als auch softwaregenerierte Schlüssel unterstützt.
-* Es werden sowohl neu erstellte als auch importierte Cloud KMS-Schlüssel unterstützt.
-* Es werden nur regionale Schlüssel unterstützt, globale Schlüssel werden nicht unterstützt.
+* Sowohl neu erstellte als auch importierte Cloud KMS Schlüssel werden unterstützt.
+* Es werden nur regionale Schlüssel unterstützt. Globale Schlüssel werden nicht unterstützt.
 * Derzeit wird nur der Zweck „Symmetrische Verschlüsselung/Entschlüsselung“ unterstützt.
 * Dem mit dem Speicherkonto verknüpften Service-Agent wird von NetApp Backup and Recovery die IAM-Rolle „CryptoKey Encrypter/Decrypter (roles/cloudkms.cryptoKeyEncrypterDecrypter)“ zugewiesen.
 

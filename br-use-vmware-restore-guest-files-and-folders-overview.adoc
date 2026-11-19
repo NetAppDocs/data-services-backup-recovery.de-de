@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-vmware-restore-guest-files-and-folders-overview.html 
 keywords:  
-summary: 'Sie können Dateien oder Ordner von einer virtuellen Maschinenfestplatte (VMDK) auf einem Windows-Gastbetriebssystem wiederherstellen.' 
+summary: Hier finden Sie Informationen zur Wiederherstellung von Dateien oder Ordnern aus einer VMDK auf einem Windows- oder Linux-Gastbetriebssystem sowie zu den Anforderungen und Einschränkungen für die Wiederherstellung von Gastdateien. 
 ---
 = Anforderungen an die Wiederherstellung von VMware-Gastdateien in NetApp Backup and Recovery
 :hardbreaks:

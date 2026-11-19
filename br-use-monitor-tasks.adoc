@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-monitor-tasks.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, jobs 
-summary: Überwachen Sie mit NetApp Backup and Recovery lokale Snapshots, Replikationen und Sicherungsjobs, die Sie starten. 
+summary: Die Überwachung von Snapshot-, Replikations-, Sicherungs- und Wiederherstellungsaufträgen sowie die Prüfung von Warnmeldungen im Notification Center, die Untersuchung von Aktivitäten in Console Timeline und das Abbrechen laufender Aufträge. 
 ---
 = Überwachen von Jobs in NetApp Backup and Recovery
 :hardbreaks:
@@ -271,7 +271,7 @@ https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.htm
 [[cancel-an-ongoing-job]]
 == Einen laufenden Job abbrechen
 
-Einige Backup- und Wiederherstellungs-Workloads unterstützen das Abbrechen eines laufenden Auftrags, wenn dessen Abschluss zu lange dauert und er nicht fehlgeschlagen ist.
+Bei einigen Backup and Recovery Workloads kann ein laufender Job abgebrochen werden, wenn seine Ausführung zu lange dauert und er noch nicht fehlgeschlagen ist.
 
 
 NOTE: Informationen zum Abbrechen eines ONTAP Volumes Wiederherstellungsauftrags finden Sie unter <<Einen ONTAP Volumes Wiederherstellungsauftrag abbrechen>>.
@@ -289,7 +289,7 @@ NOTE: Informationen zum Abbrechen eines ONTAP Volumes Wiederherstellungsauftrags
 [[cancel-an-ontap-volumes-restore-job]]
 == Einen ONTAP Volumes Wiederherstellungsauftrag abbrechen
 
-Ein ONTAP Volumes Wiederherstellungsauftrag kann abgebrochen werden, wenn seine Ausführung zu lange dauert und er nicht fehlgeschlagen ist.
+Ein ONTAP Volumes Wiederherstellungsauftrag kann abgebrochen werden, wenn sein Abschluss zu lange dauert und er nicht fehlgeschlagen ist.
 
 Wenn Sie eine Volume Wiederherstellung abbrechen, wird der gesamte Wiederherstellungsvorgang rückgängig gemacht, sodass kein Teil des Volumes wiederhergestellt wird.
 

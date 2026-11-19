@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-start-discover-hyperv.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Hyper-V, workloads, protect 
-summary: NetApp Backup and Recovery muss virtuelle Hyper-V-Maschinen erkennen, bevor Sie sie schützen können. 
+summary: Durch das Hinzufügen von Hyper-V-Hosts kann NetApp Backup and Recovery virtuelle Maschinen identifizieren, Hosts nach Änderungen aktualisieren und den Schutzstatus im Dashboard überprüfen. 
 ---
 = Hyper-V-Workloads in NetApp Backup and Recovery erkennen und managen
 :hardbreaks:
@@ -90,5 +90,5 @@ IMPORTANT: Wenn ein Hyper-V-Host durch eine NetApp MetroCluster Konfiguration ge
 . Im NetApp Console-Menü *Schutz* > *Backup und Recovery* auswählen.
 . Die Hyper-V-Workload-Kachel auswählen.
 . Wählen Sie im Menü „Sichern und Wiederherstellen“ die Option „Dashboard“ aus.
-. Überprüfen Sie den Zustand des Datenschutzes.  Die Anzahl der gefährdeten oder geschützten Workloads steigt basierend auf den neu entdeckten, geschützten und gesicherten Workloads.
+. Der Zustand des Datenschutzes wird angezeigt. Die Anzahl der gefährdeten oder geschützten Workloads erhöht sich entsprechend den neu erkannten, geschützten und gesicherten Workloads.
 

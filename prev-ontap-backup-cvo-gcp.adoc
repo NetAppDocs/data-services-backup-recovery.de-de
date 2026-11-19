@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: prev-ontap-backup-cvo-gcp.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Schützen Sie Ihre VMware-Workloads mit NetApp Backup and Recovery. 
+summary: Backup von Cloud Volumes ONTAP Volumes in Google Cloud Storage mit NetApp Backup and Recovery, einschließlich der Vorbereitung des Console Agenten, der Berechtigungen und der Verschlüsselungsschlüssel. 
 ---
-= Cloud Volumes ONTAP kann mit NetApp Backup und Recovery in Google Cloud Storage gesichert werden
+= Cloud Volumes ONTAP in Google Cloud mit NetApp Backup and Recovery sichern
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -24,7 +24,7 @@ NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads 
 [[verify-support-for-your-configuration]]
 == Überprüfen der Unterstützung für Ihre Konfiguration
 
-Lesen Sie die folgenden Anforderungen, um sicherzustellen, dass Sie über eine unterstützte Konfiguration verfügen, bevor Sie mit der Sicherung von Volumes in Google Cloud Storage beginnen.
+Vor dem Sichern von Volumes in Google Cloud Storage ist sicherzustellen, dass eine unterstützte Konfiguration vorliegt.
 
 Das folgende Bild zeigt jede Komponente und die Verbindungen, die Sie zwischen ihnen vorbereiten müssen.
 
@@ -34,7 +34,7 @@ image:diagram_cloud_backup_cvo_google.png["Ein Diagramm, das zeigt, wie NetApp B
 
 Unterstützte ONTAP-Versionen:: Mindestens ONTAP 9.8; ONTAP 9.8P13 und höher wird empfohlen.
 Unterstützte GCP-Regionen:: NetApp Backup and Recovery wird in allen GCP-Regionen unterstützt.
-GCP-Dienstkonto:: Sie benötigen in Ihrem Google Cloud-Projekt ein Dienstkonto mit der benutzerdefinierten Rolle. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-creating-gcp-service-account.html["Erfahren Sie, wie Sie ein Dienstkonto erstellen"^] .
+GCP-Dienstkonto:: Sie benötigen in Ihrem Google Cloud-Projekt ein Dienstkonto mit der benutzerdefinierten Rolle. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-creating-gcp-service-account.html["Erfahren Sie, wie Sie ein Dienstkonto erstellen"^].
 
 
 
@@ -146,7 +146,7 @@ Wenn Sie mit NetApp Backup and Recovery replizierte Volumes auf einem sekundäre
 * Wenn sich der Cluster vor Ort befindet, sollten Sie über eine Verbindung von Ihrem Unternehmensnetzwerk zu Ihrem virtuellen Netzwerk beim Cloud-Anbieter verfügen. Dies ist normalerweise eine VPN-Verbindung.
 * ONTAP -Cluster müssen zusätzliche Subnetz-, Port-, Firewall- und Clusteranforderungen erfüllen.
 +
-Da Sie auf Cloud Volumes ONTAP oder lokale Systeme replizieren können, überprüfen Sie die Peering-Anforderungen für lokale ONTAP -Systeme. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Voraussetzungen für Cluster-Peering in der ONTAP Dokumentation anzeigen"^] .
+Da eine Replikation auf Cloud Volumes ONTAP oder lokale Systeme möglich ist, gilt es, die Peering-Anforderungen für lokale ONTAP Systeme zu prüfen https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Voraussetzungen für Cluster-Peering in der ONTAP Dokumentation anzeigen"^].
 
 
 
@@ -305,7 +305,7 @@ cloudkms.keyRings.setIamPolicy
 
 * Es werden sowohl HSM-Schlüssel (hardwaregestützt) als auch softwaregenerierte Schlüssel unterstützt.
 * Es werden sowohl neu erstellte als auch importierte Cloud KMS-Schlüssel unterstützt.
-* Es werden nur regionale Schlüssel unterstützt, globale Schlüssel werden nicht unterstützt.
+* Es werden nur regionale Schlüssel unterstützt. Globale Schlüssel werden nicht unterstützt.
 * Derzeit wird nur der Zweck „Symmetrische Verschlüsselung/Entschlüsselung“ unterstützt.
 * Dem mit dem Speicherkonto verknüpften Service-Agent wird von NetApp Backup and Recovery die IAM-Rolle „CryptoKey Encrypter/Decrypter (roles/cloudkms.cryptoKeyEncrypterDecrypter)“ zugewiesen.
 
@@ -369,7 +369,7 @@ Sie können FlexVol oder FlexGroup -Volumes schützen. Sie können jedoch keine 
 
 ====
 .Schritte
-Beachten Sie, dass, falls für die von Ihnen ausgewählten Volumes bereits Snapshot- oder Replikationsrichtlinien angewendet wurden, die später ausgewählten Richtlinien diese bestehenden Richtlinien überschreiben.
+Falls für die von Ihnen ausgewählten Volumes bereits Snapshot- oder Replikationsrichtlinien angewendet wurden, werden diese bestehenden Richtlinien durch die von Ihnen später ausgewählten Richtlinien überschrieben.
 
 . Wählen Sie auf der Seite „Volumes auswählen“ das oder die Volumes aus, die Sie schützen möchten.
 +

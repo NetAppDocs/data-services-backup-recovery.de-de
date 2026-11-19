@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-restore.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Mit der Such- und Wiederherstellungsfunktion können Sie Volumes, Ordner oder Dateien aus ONTAP Backup-Dateien wiederherstellen. 
+summary: Zum Vergleich stehen „Durchsuchen und Wiederherstellen“ und „Suchen und Wiederherstellen“ sowie verschiedene Optionen für die Wiederherstellung von ONTAP Volumes, Ordnern oder Dateien aus Snapshots, replizierten Volumes oder Sicherungsdateien zur Verfügung. 
 ---
 = ONTAP Datenwiederherstellungsoptionen in NetApp Backup and Recovery
 :hardbreaks:
@@ -26,7 +26,7 @@ NOTE: Wenn Sie ein SnapLock-fähiges Volume wiederherstellen, bleibt der SnapLoc
 
 Sie benötigen eine gültige NetApp Backup and Recovery -Lizenz, um Daten in einem Produktionssystem wiederherzustellen.
 
-Zusammenfassend sind dies die gültigen Flows, die Sie zum Wiederherstellen von Volume-Daten auf einem ONTAP System verwenden können:
+Diese Abläufe gelten für die Wiederherstellung von Volumendaten auf einem ONTAP System:
 
 * Sicherungsdatei -> wiederhergestelltes Volume
 * Repliziertes Volume -> wiederhergestelltes Volume
@@ -58,7 +58,7 @@ Das Wiederherstellungs-Dashboard bietet zwei verschiedene Möglichkeiten zum Wie
 
 Im Allgemeinen eignet sich „Browse & Restore“ besser, wenn Sie ein bestimmtes Volume, einen Ordner oder eine Datei aus der letzten Woche oder dem letzten Monat wiederherstellen müssen und den Namen, den Speicherort und das Datum kennen, an dem sie zuletzt intakt waren. „Search & Restore“ ist typischerweise besser geeignet, wenn Sie ein Volume, einen Ordner oder eine Datei wiederherstellen müssen, sich aber nicht mehr an den genauen Namen, das Volume, in dem sie sich befindet, oder das Datum erinnern, an dem sie zuletzt intakt war.
 
-Diese Tabelle bietet einen Funktionsvergleich der beiden Methoden.
+Die Tabelle vergleicht die Merkmale der beiden Methoden.
 
 [cols="50,50"]
 |===
@@ -73,7 +73,7 @@ Diese Tabelle bietet einen Funktionsvergleich der beiden Methoden.
 
 | Die schnelle Wiederherstellung wird unterstützt. | Die schnelle Wiederherstellung wird nicht unterstützt. 
 |===
-Diese Tabelle enthält eine Liste gültiger Wiederherstellungsvorgänge basierend auf dem Speicherort Ihrer Sicherungsdateien.
+Die Tabelle listet die gültigen Wiederherstellungsvorgänge für jeden Speicherort Ihrer Sicherungsdateien auf.
 
 [cols="14h,14,14,14,14,14,14"]
 |===
@@ -91,7 +91,7 @@ Diese Tabelle enthält eine Liste gültiger Wiederherstellungsvorgänge basieren
 
 | Sicherungsdatei | Ja | Ja | Ja | Ja | Ja | Ja 
 |===
-Bevor Sie eine der beiden Wiederherstellungsmethoden anwenden, konfigurieren Sie Ihre Umgebung so, dass sie die Ressourcenanforderungen erfüllt.  Einzelheiten finden Sie in den folgenden Abschnitten.
+Vor der Verwendung einer der beiden Wiederherstellungsmethoden sollte Ihre Umgebung so konfiguriert sein, dass sie die Ressourcenanforderungen erfüllt.
 
 Informieren Sie sich über die Anforderungen und Wiederherstellungsschritte für den Wiederherstellungsvorgangstyp, den Sie verwenden möchten:
 

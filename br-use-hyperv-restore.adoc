@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-hyperv-restore.html 
 keywords: restore, vm, virtual machine, snapshots, object storage, cloud storage, backing up, back up, backup, Amazon Web services, AWS, NetApp Backup and Recovery 
-summary: Schützen Sie Ihre Hyper-V-Workloads mit NetApp Backup and Recovery. 
+summary: Hyper-V-Workloads können aus lokalen Snapshots, sekundärem Storage oder Objektspeicher am ursprünglichen oder an einem alternativen Speicherort mit NetApp Backup and Recovery wiederhergestellt werden. 
 ---
 = Wiederherstellen von Hyper-V-Workloads mit NetApp Backup and Recovery
 :hardbreaks:
@@ -32,7 +32,7 @@ Sie können Daten an diesen Zielen wiederherstellen:
 
 
 .Überlegungen zur Wiederherstellung aus dem Objektspeicher
-Wenn Sie eine Sicherungsdatei im Objektspeicher auswählen und für diese Sicherung der Ransomware-Schutz aktiviert ist, weil Sie DataLock und den Ransomware-Schutz in der Sicherungsrichtlinie aktiviert haben, erfolgt eine Aufforderung, vor der Wiederherstellung der Daten eine zusätzliche Integritätsprüfung durchzuführen. Das Ausführen des Scans wird empfohlen.
+Wenn Sie DataLock und den Ransomware-Schutz in der Sicherungsrichtlinie aktiviert haben, ist der Ransomware-Schutz für das Backup aktiv. Wenn Sie diese Sicherungsdatei im Objektspeicher auswählen, werden Sie aufgefordert, vor der Wiederherstellung der Daten eine zusätzliche Integritätsprüfung durchzuführen. Wir empfehlen, diese Prüfung durchzuführen.
 
 
 TIP: Für den Zugriff auf den Inhalt der Sicherungsdatei fallen bei Ihrem Cloud-Anbieter zusätzliche Kosten für den Datenverkehr an.
@@ -42,7 +42,7 @@ TIP: Für den Zugriff auf den Inhalt der Sicherungsdatei fallen bei Ihrem Cloud-
 [[how-restoring-workloads-works]]
 == So funktioniert die Wiederherstellung von Workloads
 
-Wenn eine Arbeitslast wiederhergestellt wird, tritt Folgendes auf:
+Wenn Sie eine Workload wiederherstellen:
 
 * Wenn Sie eine Workload aus einer lokalen Sicherungsdatei wiederherstellen, erstellt NetApp Backup and Recovery mithilfe der Daten aus der Sicherung eine _neue_ Ressource.
 * Wenn Sie eine Wiederherstellung aus einem replizierten Workload durchführen, können Sie den Workload auf dem ursprünglichen System oder auf einem lokalen ONTAP System wiederherstellen.
@@ -64,7 +64,7 @@ Hyper-V-Workloads können über das Menü „Wiederherstellen“ wiederhergestel
 . Wählen Sie aus der Dropdown-Liste rechts neben dem Namenssuchfeld *Hyper-V* aus.
 . Geben Sie den Namen der Ressource ein, die Sie wiederherstellen möchten, oder filtern Sie nach VM-Name, VM-Host oder dem Storage-Pool, in dem sich die Ressource befindet.
 +
-Es wird eine Liste mit Snapshots angezeigt, die Ihren Suchkriterien entsprechen.
+Eine Liste der Snapshots, die Ihren Suchkriterien entsprechen, erscheint.
 
 . Wählen Sie die Schaltfläche *Wiederherstellen* für den Snapshot, den Sie wiederherstellen möchten.
 +
@@ -84,7 +84,7 @@ Es wird eine Liste möglicher Wiederherstellungspunkte angezeigt.
 .Am ursprünglichen Speicherort wiederherstellen
 --
 .. Wählen Sie den Bereich *Ursprünglicher Speicherort* aus. Wenn Sie zum ursprünglichen Speicherort wiederherstellen, können Sie die Zieleinstellungen anzeigen, indem Sie den Abschnitt *Zieleinstellungen* erweitern, aber Sie können sie nicht ändern.
-.. Im Abschnitt *Optionen nach der Wiederherstellung* sollten Sie folgende Option in Betracht ziehen:
+.. Im Abschnitt *Optionen nach der Wiederherstellung* ist folgende Option zu berücksichtigen:
 +
 *** *Starten der virtuellen Maschine*: Aktivieren Sie diese Option, um die neue virtuelle Maschine nach der Wiederherstellung zu starten.
 
@@ -95,7 +95,7 @@ Es wird eine Liste möglicher Wiederherstellungspunkte angezeigt.
 .An einem anderen Speicherort wiederherstellen
 --
 .. Wählen Sie den Bereich *Alternativer Standort* aus.
-.. Im Abschnitt *Zieleinstellungen* sind die folgenden Informationen einzugeben:
+.. Im Abschnitt *Zieleinstellungen* erfolgt die Eingabe der folgenden Informationen:
 +
 *** *Hyper-V FQDN oder IP-Adresse*: Geben Sie den vollqualifizierten Domänennamen oder die IP-Adresse des Ziel-Hyper-V-Hosts ein.
 *** *Netzwerk*: Wählen Sie das Zielnetzwerk aus, in dem Sie den Snapshot wiederherstellen möchten.
@@ -113,7 +113,7 @@ Es wird eine Liste möglicher Wiederherstellungspunkte angezeigt.
 *** *Schnellwiederherstellung*: Aktivieren Sie diese Option, um die wiederhergestellte VM sofort verfügbar zu machen. Aus dem Objektspeicher werden nur die zum Ausführen der VM benötigten Dateien wiederhergestellt, nicht das gesamte Volume.
 
 
-.. Im Abschnitt *Optionen nach der Wiederherstellung* sind folgende Optionen zu berücksichtigen:
+.. Im Abschnitt *Optionen nach der Wiederherstellung* kommen folgende Optionen infrage:
 +
 *** *Starten der virtuellen Maschine*: Aktivieren Sie diese Option, um die neue virtuelle Maschine nach der Wiederherstellung zu starten.
 

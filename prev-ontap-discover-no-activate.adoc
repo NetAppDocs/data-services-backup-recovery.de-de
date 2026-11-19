@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-discover-no-activate.html 
 keywords: activate, backup and recovery, volumes, back up, discover 
-summary: Systeme und Volumes erkennen, ohne NetApp Backup and Recovery zu aktivieren. 
+summary: ONTAP Systeme und Volumes lassen sich erkennen, ohne NetApp Backup and Recovery zu aktivieren, sodass Sie die Volumes überprüfen können, bevor Sie sie schützen. 
 ---
 = ONTAP-Systeme und Volumes erkennen, ohne NetApp Backup und Recovery zu aktivieren
 :hardbreaks:

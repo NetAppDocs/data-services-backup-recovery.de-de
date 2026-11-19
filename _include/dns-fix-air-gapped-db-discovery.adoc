@@ -14,7 +14,7 @@ IMPORTANT: Vor Änderungen sowohl die bestehende CoreDNS-Konfiguration als auch 
 
 
 .Schritte
-. Die bestehende CoreDNS-Konfiguration sollte daraufhin geprüft werden, ob keine bestehende Änderung überschrieben wird:
+. Die bestehende CoreDNS-Konfiguration ist darauf zu prüfen, dass keine vorhandene Änderung überschrieben wird:
 +
 [source, shell]
 ----

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-vmware-restore.html 
 keywords: restore, vmware, vm, virtual machine, snapshots, object storage, cloud storage, backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Schützen Sie Ihre VMware-Workloads mit NetApp Backup and Recovery. 
+summary: VMware virtuelle Maschinen können aus lokalen Snapshots, sekundärem Storage oder Objektspeicher-Backups am ursprünglichen oder an einem alternativen Speicherort wiederhergestellt werden. 
 ---
 = Wiederherstellen von VMware-Workloads mit NetApp Backup and Recovery
 :hardbreaks:
@@ -27,7 +27,7 @@ Sie können Workloads von verschiedenen Startorten wiederherstellen:
 .Stellen Sie diese Punkte wieder her
 Sie können Daten bis zu diesen Punkten wiederherstellen:
 
-* *Wiederherstellung am ursprünglichen Speicherort*: Die VM wird am ursprünglichen Speicherort wiederhergestellt, und zwar in derselben vCenter-Bereitstellung, auf demselben ESXi-Host und im selben Datenspeicher. Die VM und alle darauf befindlichen Daten werden überschrieben.
+* *Wiederherstellung am ursprünglichen Speicherort*: Die Wiederherstellung setzt die VM in dasselbe vCenter Deployment, auf denselben ESXi-Host und in denselben Datenspeicher zurück und überschreibt die VM sowie alle zugehörigen Daten.
 * *Wiederherstellung an einem alternativen Speicherort*: Sie können einen anderen vCenter-Server, ESXi-Host oder Datenspeicher als Wiederherstellungsziel für die VM auswählen. Dies ist nützlich, um verschiedene Kopien derselben VM an unterschiedlichen Standorten und in verschiedenen Zuständen zu verwalten.
 
 
@@ -42,7 +42,7 @@ TIP: Möglicherweise zahlen Sie Ihrem Cloud-Anbieter zusätzliche Gebühren für
 [[how-vmware-workload-restore-works]]
 == Funktionsweise der Wiederherstellung von VMware Workloads
 
-Beim Wiederherstellen von Workloads geschieht Folgendes:
+Das Wiederherstellungsverhalten hängt von der Wiederherstellungsquelle ab:
 
 * Wenn Sie eine Arbeitslast aus einem lokalen Snapshot oder einem Remote-Backup wiederherstellen, überschreibt NetApp Backup and Recovery die ursprüngliche VM, wenn Sie die Wiederherstellung am ursprünglichen Speicherort vornehmen, und erstellt eine _neue_ Ressource, wenn Sie die Wiederherstellung an einem alternativen Speicherort vornehmen.
 * Bei der Wiederherstellung einer replizierten Arbeitslast können Sie die Arbeitslast auf dem ursprünglichen lokalen ONTAP System oder auf einem anderen lokalen ONTAP System wiederherstellen.
@@ -68,7 +68,7 @@ Die Option „Wiederherstellen“ dient dazu, VMware-Workloads wiederherzustelle
 +
 Es erscheint eine Liste virtueller Maschinen, die Ihren Suchkriterien entsprechen.
 
-. Suchen Sie in der Liste die VM, von der Sie die VM wiederherstellen möchten, und wählen Sie die entsprechende Menüschaltfläche für diese VM aus.
+. In der Liste ist die VM zu identifizieren, die wiederhergestellt werden soll, und für diese VM ist die Schaltfläche des Optionsmenüs auszuwählen.
 . Wählen Sie im daraufhin angezeigten Menü die Option *Virtuelle Maschine wiederherstellen*.
 +
 Es wird eine Liste der auf dieser virtuellen Maschine erstellten Snapshots (Wiederherstellungspunkte) angezeigt. Standardmäßig werden die neuesten Snapshots für den im Dropdown-Menü *Zeitraum* ausgewählten Zeitraum angezeigt.
@@ -76,7 +76,7 @@ Es wird eine Liste der auf dieser virtuellen Maschine erstellten Snapshots (Wied
 +
 Für jeden Snapshot zeigen alle leuchtenden Symbole in der Spalte *Speicherort* die Speicherorte an, an denen der Snapshot verfügbar ist (primärer Speicher, sekundärer Speicher oder Objektspeicher).
 
-. Aktivieren Sie das Optionsfeld für den Snapshot, den Sie wiederherstellen möchten.
+. Sie wählen das Optionsfeld für den Snapshot aus, den Sie wiederherstellen möchten.
 . Wählen Sie *Weiter*.
 +
 Optionen zum Speichern des Schnappschusses werden angezeigt.

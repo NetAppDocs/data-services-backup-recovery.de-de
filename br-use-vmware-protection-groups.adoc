@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-vmware-protection-groups.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, vmware, vm, virtual machines, workloads, volumes, snapshots 
-summary: Erstellen und verwalten Sie Schutzgruppen für VMware-Workloads in NetApp Backup and Recovery. 
+summary: Das Erstellen und Managen von Schutzgruppen für VMware-Workloads, einschließlich tagbasierter Gruppen, ermöglicht das gemeinsame Sichern und Wiederherstellen von VMs und Datastores in NetApp Backup and Recovery. 
 ---
 = VMware-Schutzgruppen in NetApp Backup and Recovery verwalten
 :hardbreaks:
@@ -54,8 +54,8 @@ Erstellen Sie eine Schutzgruppe, um die Ressourcen zu organisieren, die Sie geme
 *Erforderliche NetApp Console-Rolle* Backup and Recovery Superadmin- oder Backup and Recovery Backup-Admin-Rolle https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Erfahren Sie mehr über die Zugriffsrollen der NetApp Console für alle Dienste"^].
 
 .Bevor Sie beginnen
-* Stellen Sie sicher, dass in Ihrer Umgebung unterstützte Versionen von VMware vSphere verwendet werden.
-* Beim Erstellen einer tagbasierten Schutzgruppe stellen Sie sicher, dass die virtuellen Maschinen und Datenspeicher, die Sie schützen möchten, bereits einem oder mehreren vSphere-Tags in vCenter zugeordnet sind.
+* Ihre Umgebung sollte unterstützte Versionen von VMware vSphere verwenden.
+* Beim Erstellen einer tagbasierten Schutzgruppe ist sicherzustellen, dass die virtuellen Maschinen und Datenspeicher, die geschützt werden sollen, bereits einem oder mehreren vSphere Tags in vCenter zugeordnet sind.
 * Bei VMware-Workloads wird für die geplante Sicherungszeit die Zeitzone des Verwaltungshosts verwendet. Weitere Informationen sind unter link:br-use-policies-vmware-create.html["Erstellen und Verwalten von VMware-Sicherungsrichtlinien in NetApp Backup und Recovery"] zu finden.
 
 
@@ -77,9 +77,9 @@ Sie können die verfügbaren Ressourcen in der Liste filtern, indem Sie ein best
 . Wenn Sie fertig sind, wählen Sie *Weiter*.
 . Wählen Sie aus, wie die Schutzgruppe mit VMs umgeht, deren virtuelle Festplatten sich über mehrere Datenspeicher erstrecken:
 +
-** *Alle übergeordneten Datenspeicher immer ausschließen*: Die Schutzgruppe umfasst nur Datenspeicher, die ihr direkt hinzugefügt werden, sowie den primären Datenspeicher aller VMs, die direkt der Schutzgruppe hinzugefügt wurden.
-** *Alle übergreifenden Datenspeicher immer einbeziehen*: Die Schutzgruppe umfasst alle Datenspeicher, die von den einbezogenen VMs übergreifend genutzt werden.
-** *Manuelle Auswahl der einzuschließenden übergreifenden Datenspeicher*: Wenn Sie diese Option wählen, müssen Sie die übergreifenden Datenspeicher, die in die Schutzgruppe aufgenommen werden sollen, manuell aus der angezeigten Liste auswählen. Diese Auswahl ist statisch; Sie müssen die Liste der übergreifenden Datenspeicher jedes Mal aktualisieren, wenn neue VMs zur Gruppe hinzugefügt werden.
+** *Grundsätzlicher Ausschluss aller übergreifenden Datastores*: Die Schutzgruppe umfasst nur Datastores, die ihr direkt hinzugefügt werden, sowie den primären Datastore aller VMs, die der Schutzgruppe direkt hinzugefügt werden.
+** *Immer alle übergreifenden Datastores einbeziehen*: Die Schutzgruppe umfasst alle Datastores, die von den einbezogenen VMs überspannt werden.
+** *Manuelle Auswahl der einzuschließenden übergreifenden Datenspeicher*: Wenn Sie diese Option auswählen, wählen Sie die übergreifenden Datenspeicher, die in die Schutzgruppe aufgenommen werden sollen, manuell aus der angezeigten Liste aus. Diese Auswahl ist statisch, daher ist bei jeder Hinzufügung neuer VMs zur Gruppe eine Aktualisierung der Liste der übergreifenden Datenspeicher erforderlich.
 
 
 . Wählen Sie *Weiter*.
@@ -117,7 +117,7 @@ Wenn Sie eine Schutzgruppe aussetzen, ändert sich der Schutzstatus in „In War
 
 Durch die Wiederaufnahme einer angehaltenen Schutzgruppe werden die geplanten Sicherungen für die Schutzgruppe neu gestartet.
 
-Der Schutzstatus ändert sich von „In Wartung“, wenn Sie eine Schutzgruppe aussetzen, zu „Geschützt“, wenn Sie sie wieder aufnehmen. Sie können den Sicherungszeitplan jederzeit fortsetzen.
+Der Schutzstatus ändert sich von „In Wartung“ zu „Geschützt“, wenn Sie eine Schutzgruppe fortsetzen. Sie können den Sicherungsplan jederzeit fortsetzen.
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Inventar* aus.
@@ -160,7 +160,7 @@ Der Assistent zum Bearbeiten der Schutzgruppe führt Sie durch die Einstellungen
 Geplante Backups verwenden die vCenter Server-Zeitzone, die beim Erstellen des Zeitplans der Schutzgruppe festgelegt wird. Wenn die vCenter Server-Zeitzone geändert wird, laufen bestehende Schutzgruppen weiterhin in ihrer ursprünglichen Zeitzone (typischerweise UTC), bis deren Zeitpläne aktualisiert werden.
 
 
-NOTE: Zeitpläne werden nur neu erstellt, wenn der Name der Schutzgruppe geändert, eine VM hinzugefügt oder entfernt, die zugewiesene Richtlinie geändert oder Vor-/Nachbearbeitungsskripte aktualisiert werden. Das Speichern ohne Änderungen aktualisiert die Zeitpläne nicht. Diese Aktualisierung des Zeitplans ist eine einmalige Aktion pro Schutzgruppe und startet keine sofortige Sicherung.
+NOTE: Zeitpläne werden nur neu erstellt, wenn Sie den Namen der Schutzgruppe ändern, eine VM hinzufügen oder entfernen, die zugewiesene Richtlinie ändern oder Pre-/Post-Skripte aktualisieren. Das Speichern ohne Änderungen aktualisiert die Zeitpläne nicht. Diese Aktualisierung des Zeitplans ist eine einmalige Aktion pro Schutzgruppe und startet keine sofortige Sicherung.
 
 .Schritte
 . Aktualisieren Sie den vCenter Server, damit seine aktuelle Zeitzone abgerufen wird.

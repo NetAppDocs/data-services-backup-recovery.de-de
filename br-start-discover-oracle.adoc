@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-start-discover-oracle.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, workloads, protect, Oracle 
-summary: NetApp Backup und Recovery müssen zunächst die Workloads erkennen, bevor sie diese schützen können. 
+summary: In NetApp Backup and Recovery lassen sich Oracle Database Hosts und Workloads identifizieren, das Oracle Inventar anzeigen und Datenbanken für den Schutz mit Backups und Snapshots vorbereiten. 
 ---
 = Entdecken Sie Oracle-Datenbank-Workloads in NetApp Backup and Recovery
 :hardbreaks:
@@ -35,7 +35,7 @@ IMPORTANT: Vor Änderungen sowohl die bestehende CoreDNS-Konfiguration als auch 
 
 
 .Schritte
-. Die bestehende CoreDNS-Konfiguration sollte daraufhin geprüft werden, ob keine bestehende Änderung überschrieben wird:
+. Die bestehende CoreDNS-Konfiguration ist darauf zu prüfen, dass keine vorhandene Änderung überschrieben wird:
 +
 [source, shell]
 ----

@@ -126,7 +126,7 @@ Die Zieloptionen werden angezeigt.
 
 
 
-[[restore-to-specific-point-in-time]]
+[[restore-to-a-specific-point-in-time]]
 === Wiederherstellung zu einem bestimmten Zeitpunkt
 
 NetApp Backup and Recovery verwendet Protokolle und die aktuellsten Snapshots, um eine zeitpunktbezogene Wiederherstellung Ihrer Daten zu erstellen.

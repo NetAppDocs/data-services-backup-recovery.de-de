@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-protect-journey.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Schützen Sie Ihre VMware-Workloads mit NetApp Backup and Recovery. 
+summary: Die Planung des Schutzes von ONTAP Volumes mit NetApp Backup and Recovery umfasst die Auswahl von Schutzfunktionen, der Backup-Architektur, von Richtlinien, des Objektspeichers und des Console Agent-Deployment-Modus. 
 ---
 = Planen Sie den ONTAP Volumeschutz in NetApp Backup und Recovery
 :hardbreaks:
@@ -14,14 +14,14 @@ summary: Schützen Sie Ihre VMware-Workloads mit NetApp Backup and Recovery.
 
 
 [role="lead"]
-Auf dieser Seite lässt sich planen, wie die ONTAP Volumes mit NetApp Backup und Recovery geschützt werden. Vor der Aktivierung von Backup und Recovery empfiehlt sich eine Überprüfung der Schutzmethoden, Architekturen, Richtlinien, Objektspeicheroptionen und Bereitstellungsmodi des Console-Agenten.
+Planen Sie, wie Sie Ihre ONTAP-Volumes mit NetApp Backup und Recovery schützen. Vor dem Aktivieren von Backup und Recovery sollten die Schutzmethoden, Architekturen, Richtlinien, Objektspeicheroptionen und Deployment-Modi des Console Agent überprüft werden.
 
 
 NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
 
-Wir gehen die folgenden Optionen durch:
+Zur Planung Ihres Schutzes sind folgende Fragen zu beantworten:
 
-* Welche Schutzfunktionen werden Sie verwenden: Snapshots, replizierte Volumes und/oder Backup in der Cloud?
+* Welche Schutzfunktionen werden Sie verwenden: Snapshots, replizierte Volumes oder Backup in der Cloud
 * Welche Backup-Architektur werden Sie verwenden: ein Kaskaden- oder Fan-Out-Backup Ihrer Volumes
 * Werden Sie die Standard-Backup-Richtlinien verwenden oder müssen Sie benutzerdefinierte Richtlinien erstellen?
 * Möchten Sie, dass der Dienst die Cloud-Buckets für Sie erstellt, oder möchten Sie Ihre Objektspeichercontainer erstellen, bevor Sie beginnen?
@@ -34,7 +34,7 @@ Wir gehen die folgenden Optionen durch:
 [[which-protection-features-will-you-use]]
 == Welche Schutzfunktionen werden Sie nutzen?
 
-Bevor Sie die Funktionen auswählen, die Sie nutzen möchten, folgt eine kurze Erklärung, was jede Funktion bewirkt und welche Art von Schutz sie bietet.
+Vor der Auswahl der zu verwendenden Funktionen empfiehlt sich eine Prüfung dessen, was die einzelnen Funktionen leisten und welche Art von Schutz sie bieten.
 
 [cols="20,70"]
 |===
@@ -53,9 +53,9 @@ Snapshots bilden die Grundlage aller Backup-Methoden und sind für die Nutzung d
 
 image:diagram-321-overview.png["Ein Diagramm, das zeigt, wie Sicherungsdateien auf dem Quellsystem als Snapshots, als replizierte Volumes auf dem sekundären Speichersystem und als Sicherungsdateien im Objektspeicher existieren."]
 
-Sie können sowohl replizierte Volumes auf einem anderen ONTAP Speichersystem erstellen als auch Dateien in der Cloud sichern.  Oder Sie können sich dafür entscheiden, nur replizierte Volumes oder Sicherungsdateien zu erstellen – Sie haben die Wahl.
+Sie können replizierte Volumes auf einem anderen ONTAP Storage-System erstellen, Dateien in der Cloud sichern oder beides.
 
-Zusammenfassend sind dies die gültigen Schutzflüsse, die Sie für Volumes in Ihrem ONTAP System erstellen können:
+Dies sind die gültigen Schutzabläufe, die Sie für Volumes in Ihrem ONTAP System erstellen können:
 
 * Quellvolume -> Snapshot -> Repliziertes Volume -> Sicherungsdatei
 * Quellvolume -> Snapshot -> Sicherungsdatei
@@ -67,9 +67,9 @@ NOTE: Die erstmalige Erstellung eines replizierten Volumes oder einer Sicherungs
 
 *Vergleich der verschiedenen Backup-Methoden*
 
-Die folgende Tabelle zeigt einen allgemeinen Vergleich der drei Sicherungsmethoden.  Obwohl Objektspeicherplatz in der Regel günstiger ist als Ihr lokaler Festplattenspeicher, können die Austrittsgebühren der Cloud-Anbieter Ihre Ersparnisse teilweise schmälern, wenn Sie davon ausgehen, dass Sie Daten häufig aus der Cloud wiederherstellen.  Sie müssen ermitteln, wie oft Sie Daten aus den Sicherungsdateien in der Cloud wiederherstellen müssen.
+Diese Tabelle vergleicht die drei Backup-Methoden. Objekt-Storage ist in der Regel kostengünstiger als lokaler Festplatten-Storage. Wenn jedoch häufig Daten aus der Cloud wiederhergestellt werden, können die Gebühren der Cloud-Anbieter für den Datenausgang die Einsparungen schmälern. Wichtig ist, wie oft Daten aus den Backup-Dateien in der Cloud wiederhergestellt werden müssen.
 
-Zusätzlich zu diesen Kriterien bietet Cloud-Speicher zusätzliche Sicherheitsoptionen, wenn die Funktion *DataLock und Ransomware-Schutz* verwendet wird, sowie zusätzliche Kosteneinsparungen, wenn Archivspeicherklassen für ältere Backup-Dateien ausgewählt werden. link:prev-ontap-policy-object-options.html["Erfahren Sie mehr über DataLock und Ransomware-Schutz sowie Archivspeichereinstellungen"].
+Zusätzlich zu diesen Kriterien bietet Cloud-Storage weitere Sicherheitsoptionen, wenn Sie die Funktion *DataLock und Ransomware-Schutz* nutzen, sowie zusätzliche Kosteneinsparungen, wenn Sie Archivierungs-Storage-Klassen für ältere Sicherungsdateien auswählen. link:prev-ontap-policy-object-options.html["Erfahren Sie mehr über DataLock und Ransomware-Schutz sowie Archivspeichereinstellungen"].
 
 [cols="18,18,22,18,22"]
 |===
@@ -101,14 +101,14 @@ image:diagram-321-cascade-detailed.png["Ein Diagramm, das zeigt, wie ein Snapsho
 
 *Vergleich der verschiedenen Architekturoptionen*
 
-Diese Tabelle bietet einen Vergleich der Fan-Out- und Kaskadenarchitekturen.
+Diese Tabelle vergleicht die Fan-Out- und Kaskadenarchitekturen.
 
 [cols="50,50"]
 |===
 | Fan-Out | Kaskade 
 
 
-| Geringe Auswirkungen auf die Leistung des Quellsystems, da Snapshots an zwei verschiedene Systeme gesendet werden. | Geringere Auswirkungen auf die Leistung des Quellspeichersystems, da der Snapshot nur einmal gesendet wird. 
+| Geringe Auswirkungen auf die Performance des Quellsystems, da es Snapshots an zwei verschiedene Systeme sendet | Geringere Auswirkungen auf die Leistung des Quellspeichersystems, da der Snapshot nur einmal gesendet wird. 
 
 
 | Einfachere Einrichtung, da alle Richtlinien, Netzwerke und ONTAP -Konfigurationen auf dem Quellsystem vorgenommen werden | Erfordert einige Netzwerk- und ONTAP -Konfigurationen, die auch vom sekundären System aus durchgeführt werden müssen. 
@@ -120,9 +120,9 @@ Diese Tabelle bietet einen Vergleich der Fan-Out- und Kaskadenarchitekturen.
 
 Sie können die von NetApp bereitgestellten Standardrichtlinien für Ihre Backups verwenden oder benutzerdefinierte Richtlinien erstellen. Wenn der Aktivierungsassistent zur Aktivierung des Backup und Recovery Dienstes für Ihre Volumes verwendet wird, stehen die Standardrichtlinien sowie alle anderen bereits im System vorhandenen Richtlinien (Cloud Volumes ONTAP oder On-Premises ONTAP System) zur Auswahl. Soll eine andere als die vorhandenen Richtlinien verwendet werden, kann die Richtlinie vor Beginn oder während der Nutzung des Aktivierungsassistenten erstellt werden.
 
-* Die Standard-Snapshot-Richtlinie erstellt stündliche, tägliche und wöchentliche Snapshots, wobei 6 stündliche, 2 tägliche und 2 wöchentliche Snapshots gespeichert werden.
-* Die Standardreplikationsrichtlinie repliziert tägliche und wöchentliche Snapshots und speichert 7 tägliche und 52 wöchentliche Snapshots.
-* Die Standard-Backup-Richtlinie repliziert tägliche und wöchentliche Snapshots und speichert 7 tägliche und 52 wöchentliche Snapshots.
+* Die Standard-Snapshot-Richtlinie erstellt stündliche, tägliche und wöchentliche Snapshots und behält sechs stündliche, zwei tägliche und zwei wöchentliche Snapshots bei.
+* Die Standardreplikationsrichtlinie repliziert tägliche und wöchentliche Snapshots und behält sieben tägliche und 52 wöchentliche Snapshots bei.
+* Die Standard-Backup-Richtlinie repliziert tägliche und wöchentliche Snapshots und speichert sieben tägliche und 52 wöchentliche Snapshots.
 
 
 Wenn Sie benutzerdefinierte Richtlinien für die Replikation oder Sicherung erstellen, müssen die Richtlinienbezeichnungen (z. B. „täglich“ oder „wöchentlich“) mit den Bezeichnungen in Ihren Snapshot-Richtlinien übereinstimmen. Andernfalls werden keine replizierten Volumes und Sicherungsdateien erstellt.
@@ -137,7 +137,7 @@ Neben der Verwendung von NetApp Backup and Recovery zum Erstellen benutzerdefini
 
 *Hinweis:* Wählen Sie bei Verwendung des System Managers *Asynchron* als Richtlinientyp für Replikationsrichtlinien und *Asynchron* und *In Cloud sichern* für Richtlinien zur Sicherung auf Objekt.
 
-Hier sind einige Beispiele für ONTAP CLI-Befehle, die beim Erstellen benutzerdefinierter Richtlinien hilfreich sein können.  Beachten Sie, dass Sie den _admin_ vserver (Speicher-VM) als `<vserver_name>` in diesen Befehlen.
+Diese ONTAP CLI Beispielbefehle können beim Erstellen benutzerdefinierter Richtlinien hilfreich sein. In diesen Befehlen muss der _admin_ vserver (Storage VM) als die `<vserver_name>` verwendet werden.
 
 [cols="30,70"]
 |===
@@ -189,7 +189,7 @@ Diese Unterschiede sind in der Tabelle dargestellt.
 
 | *Kaskade* | Primär | Sekundär | Sekundär 
 |===
-Wenn Sie planen, bei Verwendung der Kaskadenarchitektur benutzerdefinierte Richtlinien zu erstellen, müssen die Replikations- und Backup-to-Object-Richtlinien auf dem sekundären System erstellt werden, auf dem die replizierten Volumes erstellt werden. Wenn Sie planen, bei Verwendung der Fan-Out-Architektur benutzerdefinierte Richtlinien zu erstellen, müssen die Replikationsrichtlinien auf dem sekundären System erstellt werden, auf dem die replizierten Volumes erstellt werden, und die Backup-to-Object-Richtlinien auf dem primären System.
+Wenn Sie benutzerdefinierte Richtlinien für die Kaskadenarchitektur erstellen, sind die Replikations- und backup-to-object-Richtlinien auf dem sekundären System zu erstellen, auf dem die replizierten Volumes erstellt werden. Wenn Sie die Fan-Out-Architektur verwenden, sind die Replikationsrichtlinien auf dem sekundären System zu erstellen, auf dem die replizierten Volumes erstellt werden, und die backup-to-object-Richtlinien auf dem primären System.
 
 Wenn Sie die Standardrichtlinien verwenden, die auf allen ONTAP -Systemen vorhanden sind, sind Sie startklar.
 

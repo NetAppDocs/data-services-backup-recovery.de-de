@@ -16,7 +16,7 @@ summary: Klonen von Microsoft SQL Server Anwendungsdaten für Entwicklungs-, Tes
 [role="lead"]
 Erstellen, Aktualisieren, Aufteilen und Löschen von Microsoft SQL Server Klonen für Entwicklung, Tests oder Schutz.
 
-Wählen Sie zwischen den folgenden Klontypen:
+Zur Auswahl steht einer dieser Klontypen:
 
 * *Sofortiger Snapshot und Klon*: Sie können einen Klon Ihrer Microsoft SQL Server-Workloads aus einem sofortigen Snapshot erstellen. Dabei handelt es sich um eine zeitpunktbezogene Kopie der Quelldaten, die aus einer Sicherung erstellt wird. Der Klon wird in einem Objektspeicher in Ihrem öffentlichen oder privaten Cloud-Konto gespeichert. Sie können den Klon verwenden, um Ihre Workloads im Falle eines Datenverlusts oder einer Datenbeschädigung wiederherzustellen.
 * *Klonen von einem vorhandenen Snapshot*: Sie können einen vorhandenen Snapshot aus einer Liste von Snapshots auswählen, die für die Arbeitslast verfügbar sind.  Diese Option ist nützlich, wenn Sie einen Klon von einem bestimmten Zeitpunkt erstellen möchten.  Klonen Sie entweder auf den primären oder sekundären Speicher.
@@ -83,7 +83,7 @@ Wählen Sie optional *Suffix* aus der Dropdown-Liste „Zielname“ aus und füg
 . Füllen Sie den Abschnitt *Erweiterte Optionen* aus.
 . Wenn *Sofortige Momentaufnahme und Klonen* ausgewählt wird, sind die folgenden Optionen auszufüllen:
 +
-** *Aktualisierungszeitplan und Ablaufdatum des Klons*: Geben Sie das Datum ein, ab dem die Aktualisierung des Klons beginnen soll. Der Aktualisierungszeitplan definiert den Beginn der Klonaktualisierung.
+** *Aktualisierungszeitplan und Ablaufdatum des Klons*: Mit dem Datum wird der Beginn der Aktualisierung des Klons festgelegt. Der Aktualisierungszeitplan definiert, wann die Aktualisierung des Klons beginnt.
 +
 *** *Klon löschen, wenn der Zeitplan abläuft*: Diese Option löscht den Klon, wenn der Zeitplan abläuft.
 *** *Klon aktualisieren alle*: Die Aktualisierungshäufigkeit kann ausgewählt werden. Es besteht die Möglichkeit, den Klon stündlich, täglich, wöchentlich, monatlich oder vierteljährlich zu aktualisieren. Mit dieser Option bleibt der Klon mit der Quell-Workload synchronisiert.
@@ -114,7 +114,7 @@ Sie haben die Möglichkeit, den Datenbanknamen zu ändern, den neuesten Sofort-S
 . Füllen Sie den Abschnitt *Erweiterte Einstellungen* aus:
 +
 ** *Wiederherstellungsbereich*: Wählen Sie, ob alle Protokollsicherungen oder Protokollsicherungen bis zu einem bestimmten Zeitpunkt wiederhergestellt werden sollen.  Diese Option ist nützlich, wenn Sie den Klon zu einem bestimmten Zeitpunkt wiederherstellen möchten.
-** *Aktualisierungszeitplan und Ablaufdatum des Klons*: Geben Sie das Datum ein, ab dem die Aktualisierung des Klons beginnen soll. Der Aktualisierungszeitplan definiert den Beginn der Klonaktualisierung.
+** *Aktualisierungszeitplan und Ablaufdatum des Klons*: Mit dem Datum wird der Beginn der Aktualisierung des Klons festgelegt. Der Aktualisierungszeitplan definiert, wann die Aktualisierung des Klons beginnt.
 +
 *** *Klon löschen, wenn der Zeitplan abläuft*: Diese Option löscht den Klon, wenn der Zeitplan abläuft.
 *** *Klon aktualisieren alle*: Die Aktualisierungshäufigkeit kann ausgewählt werden. Es besteht die Möglichkeit, den Klon stündlich, täglich, wöchentlich, monatlich oder vierteljährlich zu aktualisieren. Mit dieser Option bleibt der Klon mit der Quell-Workload synchronisiert.
@@ -178,7 +178,7 @@ Klone Ihrer Microsoft SQL Server Workloads können entfernt werden, um Speicherp
 . Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Klon löschen*.
 . Im Bestätigungsdialogfeld „Klon löschen“ werden die Details des Löschvorgangs angezeigt.
 +
-.. Um die geklonten Ressourcen aus SnapCenter zu löschen, auch wenn auf die Klone oder ihren Speicher nicht zugegriffen werden kann, wählen Sie *Löschen erzwingen*.
+.. Wenn die Klone oder ihr Storage nicht zugänglich sind, kann zum Löschen der geklonten Ressourcen aus SnapCenter dennoch *Force delete* ausgewählt werden.
 .. Wählen Sie *Löschen*.
 
 

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-start-configure.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Führen Sie einige Schritte aus, um NetApp Backup and Recovery zu konfigurieren. 
+summary: Hinzufügen von Host-Anmeldeinformationen, Pflege von VMware vCenter Einstellungen, Import von SnapCenter Ressourcen, Hinzufügen einer KVM-Managementplattform und Erstellen von Vorlagen in NetApp Backup and Recovery. 
 ---
 = Konfigurieren der NetApp Backup and Recovery -Einstellungen
 :hardbreaks:
@@ -55,7 +55,7 @@ Sie müssen die folgenden Arten von Anmeldeinformationen konfigurieren:
 ** *Authentifizierungsmodus*: Wählen Sie *Windows*, *Microsoft SQL*, *Oracle Database* oder *Linux*.
 +
 
-TIP: Für Microsoft SQL Server Workloads müssen Anmeldeinformationen sowohl für Windows als auch für Microsoft SQL Server eingegeben werden, sodass zwei Sätze von Anmeldeinformationen erforderlich sind.
+TIP: Für Microsoft SQL Server Workloads müssen Sie zwei Sätze Anmeldedaten eingeben: einen für Windows und einen für Microsoft SQL Server.
 
 +
 [role="tabbed-block"]
@@ -182,7 +182,7 @@ Dies ist ein zweiteiliger Prozess:
 Dieser erste Schritt importiert Hostressourcen aus SnapCenter und zeigt diese Ressourcen auf der Inventarseite von NetApp Backup and Recovery an.  Zu diesem Zeitpunkt werden die Ressourcen noch nicht von NetApp Backup and Recovery verwaltet.
 
 
-TIP: Nachdem Sie SnapCenter -Hostressourcen importiert haben, übernimmt NetApp Backup and Recovery nicht die Schutzverwaltung.  Dazu müssen Sie die Verwaltung dieser Ressourcen in NetApp Backup and Recovery ausdrücklich auswählen.
+TIP: Nach dem Import der SnapCenter-Hostressourcen übernimmt NetApp Backup and Recovery die Schutzverwaltung nicht. Für die Übertragung der Verwaltung müssen diese Ressourcen in NetApp Backup and Recovery explizit zur Verwaltung ausgewählt werden.
 
 .Schritte
 . Wählen Sie im NetApp Backup and Recovery -Menü *Einstellungen* aus.
@@ -217,10 +217,10 @@ Auf der Inventarseite werden die importierten SnapCenter -Ressourcen angezeigt.
 [[manage-snapcenter-host-resources]]
 === Verwalten von SnapCenter -Hostressourcen
 
-Nachdem Sie die SnapCenter -Ressourcen importiert haben, verwalten Sie diese Hostressourcen in NetApp Backup and Recovery.  Nachdem Sie die Verwaltung dieser importierten Ressourcen ausgewählt haben, kann NetApp Backup and Recovery die Ressourcen, die Sie aus SnapCenter importieren, sichern und wiederherstellen.  Sie müssen diese Ressourcen nicht mehr im SnapCenter Server verwalten.
+Nach dem Import der SnapCenter Ressourcen erfolgt das Management dieser Hostressourcen in NetApp Backup and Recovery. Nach dem Management der importierten Ressourcen kann NetApp Backup and Recovery diese sichern und wiederherstellen. Das Management dieser Ressourcen in SnapCenter Server ist nicht mehr erforderlich.
 
 .Schritte
-. Nachdem Sie die SnapCenter -Ressourcen importiert haben, wählen Sie auf der angezeigten Inventarseite die importierten SnapCenter -Ressourcen aus, die von nun an von NetApp Backup and Recovery verwaltet werden sollen.
+. Nach dem Import der SnapCenter Ressourcen lassen sich auf der Inventarseite die importierten SnapCenter Ressourcen auswählen, die NetApp Backup and Recovery managen soll.
 . Wählen Sie das Symbol Aktionenimage:../media/icon-action.png["Aktionsoption"] > *Verwalten*, um die Ressourcen zu verwalten.
 . Wählen Sie *In NetApp Console verwalten*.
 +
@@ -307,7 +307,7 @@ NOTE: Vorlagen, die Sie hier erstellen, sind nur beim Schutz von Kubernetes-Work
 . Erweitern Sie den Abschnitt *Ausführungs-Hook-Vorlage*.
 . Wählen Sie *Ausführungs-Hook-Vorlage erstellen*.
 . Geben Sie einen Namen für den Ausführungs-Hook ein.
-. Wählen Sie optional einen Hook-Typ aus. Beispielsweise wird ein Post-Restore-Hook ausgeführt, nachdem der Wiederherstellungsvorgang abgeschlossen ist.
+. Optional kann ein Hook-Typ ausgewählt werden. Ein Post Restore Hook läuft beispielsweise nach Abschluss des Wiederherstellungsvorgangs.
 . Geben Sie im Textfeld *Skript* das ausführbare Shell-Skript ein, das Sie als Teil der Ausführungs-Hook-Vorlage ausführen möchten.  Optional können Sie *Skript hochladen* auswählen, um stattdessen eine Skriptdatei hochzuladen.
 . Wählen Sie *Erstellen*.
 +
@@ -342,7 +342,7 @@ Vorlagen für Ressourcentransformationen ermöglichen das Speichern von häufig 
 .. Geben Sie den JSON-Pfad ein, auf den sich die Operation bezieht.
 .. Geben Sie gegebenenfalls einen Wert ein, der hinzugefügt oder aktualisiert werden soll, oder einen JSON-Pfad, von dem aus verschoben werden soll.
 +
-Diese Felder werden nur bei Operationen angezeigt, die sie erfordern.
+Diese Felder werden nur bei Vorgängen angezeigt, für die sie erforderlich sind.
 
 .. Um dieser Vorlage einen weiteren Vorgang hinzuzufügen, wählen Sie *Vorgang hinzufügen*.
 

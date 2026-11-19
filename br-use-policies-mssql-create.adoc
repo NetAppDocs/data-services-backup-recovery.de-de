@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: br-use-policies-mssql-create.html 
 keywords: backing up, back up, backup, backup on-premises ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
-summary: Erstellen Sie in NetApp Backup and Recovery Ihre eigenen Richtlinien, die die Sicherungshäufigkeit, den Zeitpunkt der Sicherung und die Anzahl der aufbewahrten Sicherungsdateien regeln. 
+summary: In NetApp Backup and Recovery können Sie Sicherungsrichtlinien für Microsoft SQL Server erstellen, bearbeiten und löschen, um Sicherungshäufigkeit, Zeitplan und Aufbewahrungsdauer zu steuern. 
 ---
-= Erstellen und Verwalten von Microsoft SQL Server-Sicherungsrichtlinien in NetApp Backup und Recovery
+= Erstellung und Management von Microsoft SQL Server-Richtlinien in NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -16,7 +16,7 @@ NetApp Backup and Recovery dient zur Erstellung von Microsoft SQL Server Backup-
 
 Wenn Sie Ressourcen aus SnapCenter importieren, können Sie auf Unterschiede zwischen den in SnapCenter und den in NetApp Backup and Recovery verwendeten Richtlinien stoßen.  Sehenlink:reference-policy-differences-snapcenter.html["Richtlinienunterschiede zwischen SnapCenter und NetApp Backup and Recovery"] .
 
-Sie können die folgenden Ziele im Zusammenhang mit Richtlinien erreichen:
+Sie können diese Policy-Aufgaben abschließen:
 
 * Erstellen einer lokalen Snapshot-Richtlinie
 * Erstellen einer Richtlinie für die Replikation auf sekundären Speicher

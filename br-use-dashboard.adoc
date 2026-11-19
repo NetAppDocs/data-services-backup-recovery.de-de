@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: br-use-dashboard.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, backup, recovery, dashboard, view, health, status, alerts, notifications 
-summary: Durch die Überwachung des Zustands Ihrer Workloads wird sichergestellt, dass Sie über Probleme beim Workload-Schutz informiert sind und Schritte zu deren Lösung unternehmen können.  Zeigen Sie den Status Ihrer Backups und Wiederherstellungen an und reagieren Sie auf alle Warnungen, die im NetApp Backup and Recovery Dashboard angezeigt werden.  Sie können die Schutzzusammenfassung, die Wiederherstellungszusammenfassung, die Systemzusammenfassung und mehr überprüfen. 
+summary: Der Systemstatus Ihrer Workloads, der Backup- und Recovery-Status sowie Warnmeldungen können auf dem NetApp Backup and Recovery Dashboard überwacht, geprüft und bearbeitet werden. 
 ---
-= Schutzstatus im Backup und Recovery Dashboard anzeigen
+= Anzeige des Schutzstatus im Dashboard von NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

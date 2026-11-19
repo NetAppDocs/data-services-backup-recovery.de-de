@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-policy-manage.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Schützen Sie Ihre VMware-Workloads mit NetApp Backup and Recovery. 
+summary: Anzeigen, Erstellen, Bearbeiten und Löschen von Richtlinien für Snapshot, Replizierung und Backup in Objektspeicher, die die Backup-Häufigkeit und Aufbewahrungsdauer für Volumes in ONTAP steuern. 
 ---
 = Verwalten Sie Backup-Richtlinien für ONTAP -Volumes mit NetApp Backup and Recovery
 :hardbreaks:
@@ -19,7 +19,7 @@ In NetApp Backup und Recovery können die Standardsicherungsrichtlinien verwende
 
 NOTE: Informationen zum Wechseln zwischen NetApp Backup and Recovery -Workloads finden Sie unterlink:br-start-switch-ui.html["Wechseln Sie zu anderen NetApp Backup and Recovery -Workloads"] .
 
-Wenn Sie den Aktivierungsassistenten verwenden, um den Backup und Recovery Service für Ihre Volumes zu aktivieren, können Sie aus den Standardrichtlinien und allen anderen bereits im System vorhandenen Richtlinien (Cloud Volumes ONTAP oder On-Premises ONTAP System) auswählen. Wenn eine andere Richtlinie als die vorhandenen verwendet werden soll, kann diese vor oder während der Nutzung des Aktivierungsassistenten erstellt werden.
+Wenn Sie den Aktivierungsassistenten verwenden, um den Backup und Recovery Service für Ihre Volumes zu aktivieren, können Sie aus den Standardrichtlinien und allen anderen Richtlinien auswählen, die bereits im System vorhanden sind (Cloud Volumes ONTAP oder lokales ONTAP System). Wenn Sie eine andere Richtlinie verwenden möchten, können Sie diese vor oder während der Verwendung des Aktivierungsassistenten erstellen.
 
 Weitere Informationen zu den bereitgestellten Standard-Sicherungsrichtlinien finden Sie unterlink:prev-ontap-protect-journey.html["Planen Sie Ihren Schutzweg"] .
 
@@ -55,7 +55,7 @@ TIP: Wählen Sie bei Verwendung des System Managers *Asynchron* als Richtlinient
 +
 Die Seite „Richtlinienverwaltung“ wird angezeigt.  Snapshot-Richtlinien werden standardmäßig angezeigt.
 
-. Um andere im System vorhandene Richtlinien anzuzeigen, wählen Sie entweder *Replikationsrichtlinien* oder *Sicherungsrichtlinien*.  Wenn die vorhandenen Richtlinien für Ihre Sicherungspläne verwendet werden können, sind Sie startklar.  Wenn Sie eine Richtlinie mit anderen Merkmalen benötigen, können Sie auf dieser Seite neue Richtlinien erstellen.
+. Zur Anzeige weiterer im System vorhandener Richtlinien stehen *Replikationsrichtlinien* oder *Sicherungsrichtlinien* zur Auswahl. Wenn die vorhandenen Richtlinien Ihre Sicherungsanforderungen erfüllen, können Sie diese verwenden. Falls Sie eine Richtlinie mit anderen Eigenschaften benötigen, können Sie auf dieser Seite neue Richtlinien erstellen.
 
 
 
@@ -87,7 +87,7 @@ Die Seite „Richtlinienverwaltung“ wird angezeigt.
 
 . Auf der Seite „Richtlinienverwaltung“ *Richtlinie erstellen* > *Snapshot-Richtlinie erstellen* auswählen.
 . Geben Sie den Richtliniennamen an.
-. Wählen Sie den oder die Snapshot-Zeitpläne aus.  Sie können maximal 5 Etiketten haben.  Oder erstellen Sie einen Zeitplan.
+. Sie können den Snapshot-Zeitplan bzw. die Snapshot-Zeitpläne auswählen. Sie können maximal fünf Labels verwenden. Alternativ können Sie einen Zeitplan erstellen.
 . Wenn Sie einen Zeitplan erstellen möchten:
 +
 .. Wählen Sie die Häufigkeit stündlich, täglich, wöchentlich, monatlich oder jährlich.
@@ -129,7 +129,7 @@ Ihre 3-2-1-Strategie könnte die Replikation eines Volumes auf einem anderen Spe
 .Schritte
 . Auf der Seite „Richtlinienverwaltung“ *Richtlinie erstellen* > *Replikationsrichtlinie erstellen* auswählen.
 . Geben Sie im Abschnitt „Richtliniendetails“ den Richtliniennamen an.
-. Geben Sie die SnapMirror -Beschriftungen (maximal 5) an, die die Aufbewahrungsdauer für jede Beschriftung angeben.
+. Hier werden die SnapMirror Labels (maximal fünf) angegeben, die die Aufbewahrung für jedes Label kennzeichnen.
 . Geben Sie den Übertragungsplan an.
 . Wählen Sie *Erstellen*.
 
@@ -150,7 +150,7 @@ Diese Speicherrichtlinie befindet sich je nach Sicherungsarchitektur an verschie
 .Schritte
 . Auf der Seite „Richtlinienverwaltung“ *Richtlinie erstellen* > *Sicherungsrichtlinie erstellen* auswählen.
 . Geben Sie im Abschnitt „Richtliniendetails“ den Richtliniennamen an.
-. Geben Sie die SnapMirror -Beschriftungen (maximal 5) an, die die Aufbewahrungsdauer für jede Beschriftung angeben.
+. Hier werden die SnapMirror Labels (maximal fünf) angegeben, die die Aufbewahrung für jedes Label kennzeichnen.
 . Geben Sie die Einstellungen an, einschließlich des Übertragungszeitplans und des Zeitpunkts, zu dem die Sicherungen archiviert werden sollen.
 . (Optional) Um ältere Sicherungsdateien nach einer bestimmten Anzahl von Tagen in eine weniger teure Speicherklasse oder Zugriffsebene zu verschieben, wählen Sie die Option *Archivieren* und geben Sie die Anzahl der Tage an, die vergehen sollen, bevor die Daten archiviert werden.  Geben Sie *0* als „Archiv nach Tagen“ ein, um Ihre Sicherungsdatei direkt an den Archivspeicher zu senden.
 +

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: concept-backup-to-cloud.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
-summary: NetApp Backup and Recovery ist ein Datenservice, der effizienten, sicheren und kostengünstigen Datenschutz für alle Ihre ONTAP Workloads bietet, einschließlich Volumes, Datenbanken, virtuellen Maschinen und Kubernetes-Workloads. 
+summary: Informationen dazu, wie NetApp Backup and Recovery ONTAP Workloads schützt, einschließlich Volumes, Datenbanken, virtueller Maschinen und Kubernetes-Applikationen, mit unterstützten Zielen, Lizenzierung und Kosten. 
 ---
 = Erfahren Sie mehr über NetApp Backup and Recovery
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: NetApp Backup and Recovery ist ein Datenservice, der effizienten, siche
 
 
 [role="lead"]
-Diese Übersicht zeigt, wie NetApp Backup and Recovery Ihre ONTAP Workloads schützt, welche Workloads und Backup-Ziele unterstützt werden und wie Lizenzierung und Kosten geregelt sind.
+NetApp Backup and Recovery schützt Ihre ONTAP-Workloads mit lokalen Snapshots, Replikation und Objektspeicher-Backups. Hier finden Sie Informationen zu den unterstützten Workloads und Backup-Zielen sowie zur Funktionsweise von Lizenzierung und Kosten.
 
 Eine Workload ist eine logische Gruppierung von Ressourcen innerhalb eines Systems, die als Einheit für Schutz, Verwaltung, Erkennung und Wiederherstellung verwaltet wird. Im Bereich Backup und Recovery ist eine Workload die zu schützende Einheit. Ihre Bedeutung hängt von der Datenquelle ab: In Kubernetes ist eine Workload eine Anwendung, in VM-Umgebungen eine virtuelle Maschine und in Datenbankumgebungen eine Datenbank.
 
@@ -217,7 +217,7 @@ NetApp Backup and Recovery schützt die folgenden Arten von Workloads:
 
 Wenn Sie NetApp Backup and Recovery aktivieren, führt der Dienst eine vollständige Sicherung Ihrer Daten durch.  Nach der ersten Sicherung sind alle weiteren Sicherungen inkrementell.  Dadurch wird der Netzwerkverkehr auf ein Minimum reduziert.
 
-Das folgende Bild zeigt die Beziehung zwischen den Komponenten.
+Das Bild zeigt die Beziehung zwischen den Komponenten.
 
 image:diagram-br-321-aff-a.png["Ein Diagramm, das zeigt, wie NetApp Backup and Recovery eine 3-2-1-Schutzstrategie verwendet"]
 
@@ -229,7 +229,7 @@ NOTE: Auch die Übertragung vom Primär- zum Objektspeicher wird unterstützt, n
 [[where-backups-reside-in-object-store-locations]]
 === Wo sich Backups in Objektspeicherorten befinden
 
-Sicherungskopien werden in einem Objektspeicher gespeichert, den die NetApp Console in Ihrem Cloud-Konto erstellt.  Es gibt einen Objektspeicher pro Cluster oder System und die Konsole benennt den Objektspeicher wie folgt: `netapp-backup-clusteruuid` .  Denken Sie daran, diesen Objektspeicher nicht zu löschen.
+Sicherungskopien werden in einem Objektspeicher gespeichert, den die NetApp Console in Ihrem Cloud-Konto erstellt. Es gibt einen Objektspeicher pro Cluster oder System, und die Console benennt den Objektspeicher wie folgt: `netapp-backup-clusteruuid`. Dieser Objektspeicher sollte nicht gelöscht werden.
 
 * In AWS ermöglicht die NetApp Console die https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html["Amazon S3-Funktion „Öffentlichen Zugriff blockieren“"^] auf dem S3-Bucket.
 * In Azure verwendet die NetApp Console eine neue oder vorhandene Ressourcengruppe mit einem Speicherkonto für den Blob-Container. Die Console https://docs.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-prevent["blockiert den öffentlichen Zugriff auf Ihre Blob-Daten"] ist standardmäßig aktiviert.

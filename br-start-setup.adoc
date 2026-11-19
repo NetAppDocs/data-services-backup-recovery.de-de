@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: br-start-setup.html 
 keywords: backup, back up, restore, recovery, aws, azure 
-summary: Einen externen Speicherort wie StorageGRID, AWS oder Azure vorbereiten und die erforderlichen Berechtigungen konfigurieren, sodass dieser als Backup-Ziel genutzt werden kann. 
+summary: Einrichtung von Backup-Zielen und Konfiguration von S3-Berechtigungen für NetApp Backup and Recovery. 
 ---
-= Backup-Ziele einrichten
+= Einrichten von Backup-Zielen für NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -50,7 +50,7 @@ Gehen Sie wie folgt vor, um AWS als Sicherungsziel vorzubereiten:
 
 
 
-Nachdem die Optionen im Sicherungsziel selbst konfiguriert wurden, wird es später als Sicherungsziel in NetApp Backup and Recovery konfiguriert. Einzelheiten zur Konfiguration des Sicherungsziels in NetApp Backup and Recovery finden sich unter link:br-start-discover-backup-targets.html["Ermitteln von Sicherungszielen"].
+Nach der Konfiguration des Sicherungsziels selbst wird es in NetApp Backup and Recovery als Sicherungsziel hinzugefügt. Einzelheiten zur Konfiguration des Sicherungsziels in NetApp Backup and Recovery enthält link:br-start-discover-backup-targets.html["Ermitteln von Sicherungszielen"].
 
 
 
@@ -64,12 +64,12 @@ Sie müssen zwei Sätze von AWS S3-Berechtigungen konfigurieren:
 
 
 .Schritte
-. Stellen Sie sicher, dass der Konsolenagent über die erforderlichen Berechtigungen verfügt.  Weitere Einzelheiten finden Sie unter https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["Richtlinienberechtigungen für die NetApp Console"] .
+. Voraussetzung ist, dass der Console Agent über die erforderlichen Berechtigungen verfügt. Einzelheiten finden sich unter https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["Richtlinienberechtigungen für die NetApp Console"].
 +
 
 NOTE: Wenn Sie Backups in AWS China-Regionen erstellen, müssen Sie den AWS-Ressourcennamen „arn“ unter allen _Resource_-Abschnitten in den IAM-Richtlinien von „aws“ in „aws-cn“ ändern. Beispiel: `arn:aws-cn:s3:::netapp-backup-*` .
 
-. Wenn Sie den Dienst aktivieren, werden Sie vom Backup-Assistenten aufgefordert, einen Zugriffsschlüssel und einen geheimen Schlüssel einzugeben.  Diese Anmeldeinformationen werden an den ONTAP Cluster weitergegeben, damit ONTAP Daten im S3-Bucket sichern und wiederherstellen kann.  Dazu müssen Sie einen IAM-Benutzer mit den folgenden Berechtigungen erstellen.
+. Beim Aktivieren des Dienstes fordert der Backup-Assistent Sie zur Eingabe eines Zugriffsschlüssels und eines geheimen Schlüssels auf. Diese Anmeldedaten werden an den ONTAP Cluster übermittelt, damit ONTAP Daten im S3-Bucket sichern und wiederherstellen kann. Dazu müssen Sie einen IAM-Benutzer mit den folgenden Berechtigungen erstellen.
 +
 Siehe  https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html["AWS-Dokumentation: Erstellen einer Rolle zum Delegieren von Berechtigungen an einen IAM-Benutzer"^].
 

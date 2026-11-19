@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference-backup-cbs-db-in-dark-site.html 
 keywords: backup database, recover database, dark site, private mode, restore database, backup and recovery, Console agent 
-summary: 'Im privaten Modus (ohne Internetzugang) speichert NetApp Backup and Recovery seine Konfigurationsdaten im selben StorageGRID- oder ONTAP-S3-Bucket, der auch für Ihre Backups verwendet wird. Sollte das Hostsystem des Console-Agenten ausfallen, können Sie einen neuen Console-Agenten bereitstellen und diese Daten wiederherstellen.' 
+summary: Bereitstellung eines neuen Console-Agenten und Wiederherstellung der Konfigurationsdaten von NetApp Backup and Recovery aus einem StorageGRID oder ONTAP S3 Bucket nach einem Ausfall des Console-Agenten im privaten Modus. 
 ---
 = Wiederherstellen der NetApp Backup and Recovery -Konfigurationsdaten in einer Dark Site
 :hardbreaks:
@@ -16,7 +16,7 @@ summary: 'Im privaten Modus (ohne Internetzugang) speichert NetApp Backup and Re
 [role="lead"]
 Im privaten Modus (ohne Internetzugang) speichert NetApp Backup and Recovery seine Konfigurationsdaten im selben StorageGRID- oder ONTAP-S3-Bucket, der auch für Ihre Backups verwendet wird. Sollte das Hostsystem des Console-Agenten ausfallen, können Sie einen neuen Console-Agenten bereitstellen und diese Daten wiederherstellen.
 
-Es besteht auch die Möglichkeit, diese Schritte auszuführen, um den Console Agent zu ersetzen und Konfigurationsdaten wiederherzustellen, die darauf gespeichert waren, wenn Backup and Recovery im _Standardmodus_ lokal genutzt wurde und keine Cloud-Konten beteiligt sind (zum Beispiel wenn NetApp StorageGRID als Backup-Ziel verwendet wird).
+Sie können diese Schritte auch ausführen, um den Console Agenten zu ersetzen und die darauf gespeicherten Konfigurationsdaten wiederherzustellen, wenn Sie Backup and Recovery im _Standardmodus_ lokal ohne Cloud-Konten verwenden (z. B. wenn Sie NetApp StorageGRID als Backup-Ziel verwenden).
 
 
 NOTE: Dieses Verfahren gilt nur für ONTAP Volume-Daten.
@@ -26,7 +26,7 @@ Wenn Sie NetApp Backup and Recovery in einer SaaS-Umgebung verwenden und der Kon
 Es werden zwei Arten von Daten gesichert:
 
 * NetApp Backup and Recovery -Datenbank – enthält eine Liste aller Volumes, Sicherungsdateien, Sicherungsrichtlinien und Konfigurationsinformationen.
-* Indizierte Katalogdateien – enthalten detaillierte Indizes, die für die Such- und Wiederherstellungsfunktion verwendet werden und Ihre Suche nach Volumedaten, die Sie wiederherstellen möchten, sehr schnell und effizient machen.
+* Indizierte Katalogdateien enthalten detaillierte Indizes, die die Such- und Wiederherstellungsfunktion verwendet, um die Volume-Daten, die Sie wiederherstellen möchten, schnell zu finden.
 
 
 Diese Daten werden einmal täglich um Mitternacht gesichert und es werden maximal 7 Kopien jeder Datei aufbewahrt. Wenn der Konsolenagent mehrere lokale ONTAP -Systeme verwaltet, werden die NetApp Backup and Recovery im Bucket des zuerst aktivierten Systems gespeichert.
@@ -46,12 +46,12 @@ Sie müssen die folgenden Aufgaben ausführen, um Ihr NetApp Backup and Recovery
 * Installieren Sie einen neuen Konsolenagenten
 * Wiederherstellen der NetApp Backup and Recovery -Datenbank
 * Wiederherstellen der indizierten Katalogdateien
-* Erkennen Sie alle Ihre On-Premise ONTAP -Systeme und StorageGRID Systeme erneut in der NetApp Console Benutzeroberfläche.
+* Erneute Erkennung all Ihrer lokalen ONTAP Systeme und StorageGRID Systeme in der NetApp Console UI
 
 
 Nachdem Sie überprüft haben, ob Ihr System funktioniert, erstellen Sie neue Sicherungsdateien.
 
-.Was du brauchst
+.Bevor Sie beginnen
 Sie müssen auf die aktuellsten Datenbank- und Indexsicherungen aus dem StorageGRID oder ONTAP S3-Bucket zugreifen, in dem Ihre Sicherungsdateien gespeichert sind:
 
 * NetApp Backup and Recovery MySQL-Datenbankdatei
@@ -124,7 +124,7 @@ mysql -u root -p cloud_backup
 mysql> show tables;
 mysql> select * from volume;
 ----
-. Stellen Sie sicher, dass die angezeigten Volumina mit denen Ihrer ursprünglichen Umgebung übereinstimmen.
+. Es ist sicherzustellen, dass die angezeigten Volumes mit denen in Ihrer ursprünglichen Umgebung übereinstimmen.
 
 
 

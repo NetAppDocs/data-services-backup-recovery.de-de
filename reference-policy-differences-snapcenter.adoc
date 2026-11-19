@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference-policy-differences-snapcenter.html 
 keywords: backup policy, backup policies, snapcenter, migration 
-summary: Es gibt einige Unterschiede zwischen den in NetApp Backup and Recovery und den in SnapCenter verwendeten Richtlinien. 
+summary: Ein Vergleich der Richtlinienzeitplanstufen, der Aufbewahrung und der Bezeichnungen in SnapCenter und NetApp Backup and Recovery zeigt, wie sich importierte Ressourcen und Richtlinien ändern. 
 ---
 = Richtlinienunterschiede zwischen SnapCenter und NetApp Backup and Recovery
 :hardbreaks:
@@ -12,7 +12,7 @@ summary: Es gibt einige Unterschiede zwischen den in NetApp Backup and Recovery 
 
 
 [role="lead"]
-Diese Referenz bietet einen Überblick über die Richtlinienunterschiede zwischen SnapCenter und NetApp Backup and Recovery, die sich auf importierte Ressourcen und Richtlinien auswirken können.
+SnapCenter und NetApp Backup and Recovery handhaben Richtlinienzeitpläne, Aufbewahrungsfristen und Bezeichnungen unterschiedlich, was sich auf importierte Ressourcen und Richtlinien auswirken kann.
 
 
 
@@ -69,9 +69,9 @@ NetApp Backup and Recovery passt die SnapCenter Zeitpläne wie folgt an:
 
 Stündliche SnapCenter -Richtlinien mit Wiederholungsintervallen von mehr als einer Stunde werden in NetApp Backup and Recovery in eine tägliche Richtlinie umgewandelt.
 
-Bei jeder stündlichen Richtlinie mit Wiederholungsintervallen, die kein Faktor von 24 sind (z. B. 5, 7 usw.), werden einige Snapshots an einem Tag übersprungen.
+Bei stündlichen Richtlinien mit einem Wiederholungsintervall, das kein Faktor von 24 ist, beispielsweise 5 oder 7, überspringt die Richtlinie pro Tag einige Snapshots.
 
-*Beispiel*: Wenn Sie eine SnapCenter stündliche Richtlinie mit einem Wiederholungsintervall alle 5 Stunden ab 1:00 Uhr haben, stellt NetApp Backup and Recovery (nach der Migration) den Zeitplan auf täglich mit 5-Stunden-Intervallen um 1:00 Uhr, 6:00 Uhr, 11:00 Uhr, 16:00 Uhr und 21:00 Uhr ein. Einige Stunden werden übersprungen – nach 21:00 Uhr sollte es um 2:00 Uhr weitergehen, um alle 5 Stunden zu wiederholen, tatsächlich ist es aber immer 1:00 Uhr.
+*Beispiel*: Wenn Sie eine stündliche Richtlinie in SnapCenter mit einem Wiederholungsintervall von 5 Stunden ab 1:00 Uhr morgens haben, setzt NetApp Backup and Recovery (nach der Migration) den Zeitplan auf täglich mit 5-Stunden-Intervallen um 1:00 Uhr, 6:00 Uhr, 11:00 Uhr, 16:00 Uhr und 21:00 Uhr. Einige Stunden werden übersprungen. Nach 21:00 Uhr sollte der nächste Snapshot um 2:00 Uhr morgens erfolgen, damit er sich alle 5 Stunden wiederholt, aber er erfolgt immer um 1:00 Uhr morgens.
 
 
 

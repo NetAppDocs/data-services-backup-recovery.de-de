@@ -79,7 +79,7 @@ NOTE: Die Liste *Nach Arbeitslast* enthält keine ONTAP Volumes. Zum Erstellen e
 +
 Diese Option ist standardmäßig deaktiviert. Standardmäßig werden Berichte an alle Benutzer im Unternehmen gesendet. Zum Senden von Berichten an bestimmte Empfänger lassen sich E-Mail-Benachrichtigungen auf der Seite *Einstellungen* unter *Benachrichtigungen* konfigurieren. Details zur Konfiguration von E-Mail-Benachrichtigungen finden sich unter link:br-start-configure.html["Konfigurieren der Einstellungen"].
 
-. Unter *Aufbewahrung* können Sie im Feld *Aufbewahren für* auswählen, wie lange der Bericht aufbewahrt werden soll, bevor er gelöscht wird. Der Standardwert beträgt 30 Tage.
+. Unter *Aufbewahrung* können Sie im Feld *Aufbewahren für* auswählen, wie lange der Bericht aufbewahrt wird, bevor er gelöscht wird. Der Standardwert beträgt 30 Tage.
 . Wählen Sie *Hinzufügen*.
 +
 Der Bericht erscheint oben in der Liste *Generierte Berichte*. Sobald der Bericht fertig ist, wird eine Erfolgsmeldung angezeigt und Sie können den Bericht herunterladen oder löschen.

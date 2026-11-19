@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-manage-execution-hook-templates.html 
 keywords: hooks, execution hooks, exec hooks, hook, execution, script, postscript, prescript, post, pre, run, backup, snapshot, freeze 
-summary: Mit NetApp Backup and Recovery können Sie Ausführungs-Hooks verwalten, um vor oder nach Anwendungsschutzvorgängen Maßnahmen zu ergreifen. 
+summary: Management von Ausführungshooks zum Ausführen benutzerdefinierter Skripte vor oder nach Schutzvorgängen auf Kubernetes-Applikationen in NetApp Backup and Recovery. 
 ---
 = Verwaltung von Kubernetes Execution Hook-Vorlagen in NetApp Backup and Recovery
 :hardbreaks:
@@ -92,7 +92,7 @@ NOTE: Ausführungshooks können die Funktionalität einer Anwendung einschränke
 [[execution-hook-filters]]
 == Ausführungs-Hook-Filter
 
-Beim Hinzufügen oder Bearbeiten eines Ausführungshooks für eine Anwendung können Filter hinzugefügt werden, um festzulegen, auf welche Container der Hook zutrifft. Filter sind nützlich für Anwendungen, die auf allen Containern dasselbe Container-Image verwenden, aber jedes Image für einen anderen Zweck nutzen (wie beispielsweise Elasticsearch). Filter ermöglichen die Erstellung von Szenarien, in denen Ausführungshooks auf einigen, aber nicht unbedingt allen identischen Containern ausgeführt werden. Wenn mehrere Filter für einen einzelnen Ausführungshook erstellt werden, werden sie mit einem logischen UND-Operator kombiniert. Pro Ausführungshook können bis zu 10 Filter aktiv sein.
+Beim Hinzufügen oder Bearbeiten eines Ausführungshooks für eine Applikation können Sie Filter zum Ausführungshook hinzufügen, um festzulegen, auf welche Container der Hook zutrifft. Filter sind nützlich für Applikationen, die auf allen Containern dasselbe Container-Image verwenden, aber jedes Image für einen anderen Zweck nutzen können, wie etwa Elasticsearch. Filter ermöglichen, dass Ausführungshooks auf einigen, aber nicht auf allen identischen Containern ausgeführt werden. Wenn Sie mehrere Filter für einen einzelnen Ausführungshook erstellen, werden sie mit einem logischen UND-Operator kombiniert. Pro Ausführungshook können bis zu 10 aktive Filter vorhanden sein.
 
 Jeder Filter, den Sie einem Ausführungshook hinzufügen, verwendet einen regulären Ausdruck, um Container in Ihrem Cluster zu finden. Wenn ein Hook mit einem Container übereinstimmt, führt der Hook das zugehörige Skript auf diesem Container aus. Reguläre Ausdrücke für Filter verwenden die Regular Expression 2 (RE2) Syntax, die das Erstellen eines Filters, der Container von der Liste der Treffer ausschließt, nicht unterstützt. Informationen zur Syntax, die NetApp Backup and Recovery für reguläre Ausdrücke in Ausführungshook-Filtern unterstützt, siehe  https://github.com/google/re2/wiki/Syntax["Unterstützung der Syntax „Regulärer Ausdruck 2“ (RE2)"^].
 
@@ -125,7 +125,7 @@ NOTE: Vorlagen, die Sie hier erstellen, sind nur beim Schutz von Kubernetes-Work
 . Erweitern Sie den Abschnitt *Ausführungs-Hook-Vorlage*.
 . Wählen Sie *Ausführungs-Hook-Vorlage erstellen*.
 . Geben Sie einen Namen für den Ausführungs-Hook ein.
-. Wählen Sie optional einen Hook-Typ aus. Beispielsweise wird ein Post-Restore-Hook ausgeführt, nachdem der Wiederherstellungsvorgang abgeschlossen ist.
+. Optional kann ein Hook-Typ ausgewählt werden. Ein Post Restore Hook läuft beispielsweise nach Abschluss des Wiederherstellungsvorgangs.
 . Geben Sie im Textfeld *Skript* das ausführbare Shell-Skript ein, das Sie als Teil der Ausführungs-Hook-Vorlage ausführen möchten.  Optional können Sie *Skript hochladen* auswählen, um stattdessen eine Skriptdatei hochzuladen.
 . Wählen Sie *Erstellen*.
 +

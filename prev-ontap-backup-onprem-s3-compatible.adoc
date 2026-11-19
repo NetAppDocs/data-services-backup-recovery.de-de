@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: prev-ontap-backup-onprem-s3-compatible.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, S3, compatible, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Schützen Sie Ihre VMware-Workloads mit NetApp Backup and Recovery. 
+summary: Unterstützte Konfigurationen und das Sichern von Volume-Daten von lokalen ONTAP Systemen in S3-kompatiblen Objektspeicher mit NetApp Backup and Recovery überprüfen. 
 ---
-= On-Premises ONTAP-Daten auf S3-kompatiblen Speicher mit NetApp Backup und Recovery sichern
+= ONTAP Daten mit NetApp Backup and Recovery in S3-kompatiblen Storage sichern
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,14 +14,14 @@ summary: Schützen Sie Ihre VMware-Workloads mit NetApp Backup and Recovery.
 
 
 [role="lead"]
-Auf dieser Seite kann überprüft werden, ob die Konfiguration unterstützt wird, und Backups von den primären On-Premises ONTAP Systemen in S3-kompatiblen Objektspeicher in NetApp Backup and Recovery konfiguriert werden.
+Wenn Ihre Konfiguration unterstützt wird, lässt sich in NetApp Backup and Recovery die Sicherung Ihrer primären lokalen ONTAP Systeme auf S3-kompatiblen Objektspeicher konfigurieren.
 
 
 
 [[verify-support-for-your-configuration]]
 == Überprüfen der Unterstützung für Ihre Konfiguration
 
-Lesen Sie die folgenden Anforderungen, um sicherzustellen, dass Sie über eine unterstützte Konfiguration verfügen, bevor Sie mit dem Sichern von Volumes auf S3-kompatiblen Speicher beginnen.
+Vor dem Start der Sicherung von Volumes auf S3-kompatiblen Storage ist eine unterstützte Konfiguration erforderlich.
 
 Unterstützte ONTAP-Versionen:: Eine Mindestversion von ONTAP 9.17.1 ist erforderlich.
 
@@ -92,7 +92,7 @@ Wenn Sie Daten auf einem S3-kompatiblen Speicher sichern, muss ein Console Agent
 [[prepare-console-agent-networking-requirements]]
 === Netzwerkanforderungen für den Konsolenagenten vorbereiten
 
-Stellen Sie sicher, dass das Netzwerk, in dem der Konsolenagent installiert ist, die folgenden Verbindungen ermöglicht:
+Es ist sicherzustellen, dass das Netzwerk, in dem der Console agent installiert ist, die folgenden Verbindungen zulässt:
 
 * Eine HTTPS-Verbindung über Port 443 zum S3-kompatiblen Server
 * Eine HTTPS-Verbindung über Port 443 zu Ihrem Quell ONTAP Cluster-Management-LIF
@@ -170,7 +170,7 @@ https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-sn
 [[verify-ontap-networking-requirements-for-backing-up-data-to-object-storage]]
 === Überprüfen Sie die ONTAP Netzwerkanforderungen für die Datensicherung im Objektspeicher
 
-Sie müssen sicherstellen, dass die folgenden Anforderungen auf dem System erfüllt sind, das eine Verbindung zum Objektspeicher herstellt.
+Bestätigen Sie, dass das System, das eine Verbindung zum Objektspeicher herstellt, die folgenden Anforderungen erfüllt.
 
 [NOTE]
 ====
@@ -266,7 +266,7 @@ Sie können FlexVol oder FlexGroup -Volumes schützen. Sie können jedoch keine 
 
 ====
 .Schritte
-Beachten Sie, dass, falls für die von Ihnen ausgewählten Volumes bereits Snapshot- oder Replikationsrichtlinien angewendet wurden, die später ausgewählten Richtlinien diese bestehenden Richtlinien überschreiben.
+Falls für die von Ihnen ausgewählten Volumes bereits Snapshot- oder Replikationsrichtlinien angewendet wurden, werden diese bestehenden Richtlinien durch die von Ihnen später ausgewählten Richtlinien überschrieben.
 
 . Wählen Sie auf der Seite „Volumes auswählen“ das oder die Volumes aus, die Sie schützen möchten.
 +
@@ -384,7 +384,7 @@ Um eine Richtlinie zu erstellen, wählen Sie *Neue Richtlinie erstellen* und geh
 [[review-your-selections]]
 === Überprüfen Sie Ihre Auswahl
 
-Dies ist die Gelegenheit, Ihre Auswahl zu überprüfen und gegebenenfalls Anpassungen vorzunehmen.
+Überprüfung Ihrer Auswahl und gegebenenfalls erforderliche Anpassungen.
 
 .Schritte
 . Überprüfen Sie Ihre Auswahl auf der Überprüfungsseite.

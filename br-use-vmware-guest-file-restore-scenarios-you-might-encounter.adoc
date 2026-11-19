@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-vmware-guest-file-restore-scenarios-you-might-encounter.html 
 keywords:  
-summary: Beim Versuch, eine Gastdatei wiederherzustellen, können Szenarien auftreten, in denen die Sitzung zur Wiederherstellung der Gastdatei leer ist, der Vorgang zum Anhängen der Festplatte bei der Wiederherstellung der Gastdatei fehlschlägt oder Sicherungen nicht getrennt werden, nachdem die Sitzung zur Wiederherstellung der Gastdatei abgebrochen wurde. 
+summary: Fehlerbehebung bei der Wiederherstellung von VMware-Gastdateien in NetApp Backup and Recovery, einschließlich einer leeren Wiederherstellungssitzung, eines fehlgeschlagenen Festplatteneinbindungsvorgangs und von Sicherungen, die angehängt bleiben. 
 ---
 = Fehlerbehebung bei der Wiederherstellung von VMware-Gastdateien in NetApp Backup and Recovery
 :hardbreaks:
@@ -23,7 +23,7 @@ Sollten beim Wiederherstellen einer Gastdatei Probleme auftreten, können diese 
 
 Dieses Problem tritt auf, wenn Sie eine Gastdatei-Wiederherstellungssitzung erstellen und das Gastbetriebssystem während der Sitzung neu startet. VMDKs im Gastbetriebssystem könnten offline bleiben, sodass die Liste der Wiederherstellungssitzungen für Gastdateien leer ist.
 
-Um das Problem zu beheben, schalten Sie die VMDKs im Gastbetriebssystem manuell wieder online. Wenn die VMDKs online sind, zeigt die Dateiwiederherstellungssitzung des Gastes den richtigen Inhalt an.
+Zur Behebung des Problems werden die VMDKs im Gastbetriebssystem manuell wieder online geschaltet. Sobald die VMDKs online sind, zeigt die Gastdateiwiederherstellungssitzung die korrekten Inhalte an.
 
 
 
